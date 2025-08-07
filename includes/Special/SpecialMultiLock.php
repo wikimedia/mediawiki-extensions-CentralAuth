@@ -329,7 +329,6 @@ class SpecialMultiLock extends SpecialPage {
 	}
 
 	/**
-	 * @param CentralAuthUser $globalUser
 	 * @return string
 	 */
 	private function getUserTableRow( CentralAuthUser $globalUser ) {

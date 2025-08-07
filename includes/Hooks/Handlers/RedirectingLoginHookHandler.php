@@ -78,7 +78,6 @@ class RedirectingLoginHookHandler implements
 	 * @param string $returnTo
 	 * @param array $returnToQuery
 	 * @param string $type
-	 * @return void
 	 */
 	private function redoLocalAuthentication( IContextSource $context, $returnTo, $returnToQuery, $type ): void {
 		$wikiId = WikiMap::getCurrentWikiId();

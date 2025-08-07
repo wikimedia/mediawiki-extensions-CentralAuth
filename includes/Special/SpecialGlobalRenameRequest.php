@@ -295,7 +295,6 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	}
 
 	/**
-	 * @param array $data
 	 * @return Status
 	 */
 	public function onSubmit( array $data ) {

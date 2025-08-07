@@ -34,8 +34,6 @@ class WikiSetLogFormatter extends LogFormatter {
 
 	/**
 	 * @param string $type
-	 *
-	 * @return string
 	 */
 	private function formatType( $type ): string {
 		// Give grep a chance to find the usages:

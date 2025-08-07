@@ -76,10 +76,6 @@ class AbuseFilterHookHandler implements
 
 	/**
 	 * Computes the global_user_groups and global_user_editcount variables
-	 * @param string $method
-	 * @param VariableHolder $vars
-	 * @param array $parameters
-	 * @param ?string &$result
 	 * @return bool
 	 */
 	public function onAbuseFilter_computeVariable(
@@ -115,9 +111,6 @@ class AbuseFilterHookHandler implements
 
 	/**
 	 * Load our global_user_groups and global_user_editcount variables
-	 * @param VariableHolder $vars
-	 * @param User $user
-	 * @param ?RecentChange $rc
 	 * @return bool
 	 */
 	public function onAbuseFilter_generateUserVars(
@@ -132,7 +125,6 @@ class AbuseFilterHookHandler implements
 
 	/**
 	 * Tell AbuseFilter about our global_user_groups and global_user_editcount variables
-	 * @param array &$realValues
 	 * @return bool
 	 */
 	public function onAbuseFilter_builder( array &$realValues ) {
@@ -150,10 +142,6 @@ class AbuseFilterHookHandler implements
 	/**
 	 * Avoid filtering page moves during global rename
 	 *
-	 * @param VariableHolder $vars
-	 * @param Title $title
-	 * @param User $user
-	 * @param array &$skipReasons
 	 * @return bool
 	 */
 	public function onAbuseFilterShouldFilterAction(

@@ -65,7 +65,6 @@ class GlobalVanishJob extends Job {
 	 * @param GlobalRenameRequest $request The GlobalRenameRequest to process via a job. Should have the
 	 *   vanishing type.
 	 * @param string $renamer The username to attribute the vanish to
-	 * @return IJobSpecification
 	 */
 	public static function newSpec(
 		GlobalRenameRequest $request,

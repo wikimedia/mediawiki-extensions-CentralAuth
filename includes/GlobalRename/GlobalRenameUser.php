@@ -107,9 +107,6 @@ class GlobalRenameUser {
 
 	/**
 	 * Set session data to use with this rename.
-	 *
-	 * @param array $session
-	 * @return self
 	 */
 	public function withSession( array $session ): self {
 		$this->session = $session;
@@ -118,9 +115,6 @@ class GlobalRenameUser {
 
 	/**
 	 * Override the performer to be credited with account locking for vanishes.
-	 *
-	 * @param UserIdentity $lockPerformingUser
-	 * @return self
 	 */
 	public function withLockPerformingUser( UserIdentity $lockPerformingUser ): self {
 		$this->lockPerformingUser = $lockPerformingUser;
@@ -131,7 +125,6 @@ class GlobalRenameUser {
 	 * Rename a global user (this assumes that the data has been verified before
 	 * and that $newUser is being a creatable user)!
 	 *
-	 * @param array $options
 	 * @return Status
 	 */
 	public function rename( array $options ) {
@@ -209,8 +202,6 @@ class GlobalRenameUser {
 	}
 
 	/**
-	 * @param array $wikis
-	 *
 	 * @return Status
 	 */
 	private function setRenameStatuses( array $wikis ) {

@@ -40,9 +40,6 @@ class GlobalRenameUserStatus {
 
 	/**
 	 * Get the where clause to query rows by either old or new name
-	 *
-	 * @param IReadableDatabase $db
-	 * @return IExpression
 	 */
 	private function getNameWhereClause( IReadableDatabase $db ): IExpression {
 		return $db->expr( 'ru_oldname', '=', $this->name )->or( 'ru_newname', '=', $this->name );

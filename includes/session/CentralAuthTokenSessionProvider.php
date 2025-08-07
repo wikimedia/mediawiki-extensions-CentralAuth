@@ -28,11 +28,6 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 	private CentralAuthSessionManager $sessionManager;
 	protected CentralAuthTokenManager $tokenManager;
 
-	/**
-	 * @param UserIdentityLookup $userIdentityLookup
-	 * @param CentralAuthSessionManager $sessionManager
-	 * @param CentralAuthTokenManager $tokenManager
-	 */
 	public function __construct(
 		UserIdentityLookup $userIdentityLookup,
 		CentralAuthSessionManager $sessionManager,
@@ -72,7 +67,6 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 	}
 
 	/**
-	 * @param WebRequest $request
 	 * @return mixed `null` indicates that no token was provided, `false` indicates an invalid token,
 	 *   any other value is detokenized data
 	 */

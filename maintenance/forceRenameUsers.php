@@ -77,8 +77,6 @@ class ForceRenameUsers extends Maintenance {
 	}
 
 	/**
-	 * @param IDatabase $dbw
-	 *
 	 * @return int
 	 */
 	protected function getCurrentRenameCount( IDatabase $dbw ) {

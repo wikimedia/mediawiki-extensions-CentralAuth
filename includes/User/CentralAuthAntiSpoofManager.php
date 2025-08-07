@@ -24,12 +24,6 @@ class CentralAuthAntiSpoofManager {
 	private IConnectionProvider $connectionProvider;
 	private CentralAuthDatabaseManager $databaseManager;
 
-	/**
-	 * @param ServiceOptions $options
-	 * @param LoggerInterface $logger
-	 * @param IConnectionProvider $connectionProvider
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 */
 	public function __construct(
 		ServiceOptions $options,
 		LoggerInterface $logger,

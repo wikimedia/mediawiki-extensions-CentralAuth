@@ -935,8 +935,6 @@ class SpecialCentralAuth extends SpecialPage {
 	/**
 	 * @see BlockListPager::getRestrictionListHTML()
 	 *
-	 * @param array $row
-	 *
 	 * @return string
 	 */
 	private function getRestrictionListHTML( array $row ) {

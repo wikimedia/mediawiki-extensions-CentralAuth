@@ -124,7 +124,6 @@ class WikiSet {
 
 	/**
 	 * @param stdClass|bool $row
-	 * @return self|null
 	 */
 	public static function newFromRow( $row ): ?self {
 		if ( !$row ) {
@@ -140,7 +139,6 @@ class WikiSet {
 
 	/**
 	 * @param string $name
-	 * @return self|null
 	 */
 	public static function newFromName( $name ): ?self {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
@@ -186,7 +184,6 @@ class WikiSet {
 
 	/**
 	 * @param string|int $id
-	 * @return self|null
 	 */
 	public static function newFromID( $id ): ?self {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();

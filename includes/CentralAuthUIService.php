@@ -45,7 +45,6 @@ class CentralAuthUIService {
 	 * Format a number of seconds into a human-readable timespan ("XX hours ago").
 	 * @param MessageLocalizer $localizer
 	 * @param int $time in seconds
-	 * @return string
 	 */
 	public function prettyTimespan( MessageLocalizer $localizer, int $time ): string {
 		// map all units for how many times they fit in the next unit
@@ -83,8 +82,6 @@ class CentralAuthUIService {
 
 	/**
 	 * Append an extract of the global rename log for the specific username.
-	 * @param IContextSource $context
-	 * @param string $name
 	 */
 	public function showRenameLogExtract( IContextSource $context, string $name ): void {
 		$caTitle = $this->titleFactory->makeTitle( NS_SPECIAL, 'CentralAuth/' . $name );

@@ -137,7 +137,6 @@ class GlobalRenameDenylist {
 	/**
 	 * Checks if $userName can request a global rename
 	 *
-	 * @param string $userName
 	 * @return bool
 	 */
 	public function checkUser( string $userName ) {

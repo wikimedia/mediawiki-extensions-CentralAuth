@@ -51,13 +51,6 @@ class LoginCompleteHookHandler implements
 	private CentralDomainUtils $centralDomainUtils;
 	private SharedDomainUtils $sharedDomainUtils;
 
-	/**
-	 * @param HookContainer $hookContainer
-	 * @param Config $config
-	 * @param CentralAuthTokenManager $tokenManager
-	 * @param CentralDomainUtils $centralDomainUtils
-	 * @param SharedDomainUtils $sharedDomainUtils
-	 */
 	public function __construct(
 		HookContainer $hookContainer,
 		Config $config,

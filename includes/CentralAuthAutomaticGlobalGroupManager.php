@@ -31,8 +31,6 @@ class CentralAuthAutomaticGlobalGroupManager {
 	 * Compare whether an expiry timestamp is earlier (smaller) than another expiry timestamp.
 	 * Note that null represents no expiry, so is always later than any defined expiry.
 	 *
-	 * @param ?string $expiry1
-	 * @param ?string $expiry2
 	 * @return bool $expiry1 is earlier than $expiry2
 	 */
 	private function expiryEarlierThan( ?string $expiry1, ?string $expiry2 ): bool {
@@ -48,8 +46,6 @@ class CentralAuthAutomaticGlobalGroupManager {
 	/**
 	 * Compare expiry timestamps for equality, or equivalence if they are in different formats.
 	 *
-	 * @param ?string $expiry1
-	 * @param ?string $expiry2
 	 * @return bool $expiry1 is the same time as $expiry2
 	 */
 	private function expiryEquals( ?string $expiry1, ?string $expiry2 ): bool {

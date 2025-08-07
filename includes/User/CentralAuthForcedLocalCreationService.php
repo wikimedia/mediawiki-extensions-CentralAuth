@@ -52,7 +52,6 @@ class CentralAuthForcedLocalCreationService {
 	 * @param string $username
 	 * @param Authority|null $performer
 	 * @param string|null $reason
-	 * @return Status
 	 */
 	public function attemptAutoCreateLocalUserFromName(
 		string $username,

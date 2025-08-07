@@ -45,8 +45,6 @@ class GlobalRenameRequestStore {
 
 	/**
 	 * Persists the given global rename request to the central database.
-	 * @param GlobalRenameRequest $request
-	 * @return bool
 	 */
 	public function save( GlobalRenameRequest $request ): bool {
 		$dbw = $this->dbManager->getCentralPrimaryDB();
@@ -263,7 +261,6 @@ class GlobalRenameRequestStore {
 	 * Creates a new GlobalRenameRequest object from a database row.
 	 *
 	 * @param stdClass|false $row Database result
-	 * @return GlobalRenameRequest
 	 */
 	protected function newFromRow( $row ): GlobalRenameRequest {
 		$request = $this->newBlankRequest();

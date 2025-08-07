@@ -106,7 +106,6 @@ class CentralAuthDatabaseManager {
 
 	/**
 	 * @param int $recency IDBAccessObject::READ_* constant
-	 * @return IReadableDatabase
 	 */
 	public function getCentralDBFromRecency( int $recency ): IReadableDatabase {
 		if ( DBAccessObjectUtils::hasFlags( $recency, IDBAccessObject::READ_LATEST ) ) {
@@ -123,8 +122,6 @@ class CentralAuthDatabaseManager {
 	 * @param string $wikiId
 	 *
 	 * @todo Split to two for IReadableDatabase support or drop entirely
-	 *
-	 * @return IDatabase
 	 * @throws CentralAuthReadOnlyError
 	 * @throws InvalidArgumentException
 	 */

@@ -418,9 +418,6 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 
 	/**
 	 * Retrieve entity data from the Wikidata API.
-	 *
-	 * @param array $parameters
-	 * @return Status
 	 */
 	private function queryWikidata( array $parameters ): Status {
 		$options = [

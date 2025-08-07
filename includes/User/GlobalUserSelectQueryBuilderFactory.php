@@ -17,12 +17,6 @@ class GlobalUserSelectQueryBuilderFactory {
 
 	private TempUserConfig $tempUserConfig;
 
-	/**
-	 * @param IReadableDatabase $db
-	 * @param ActorStore $actorStore
-	 * @param UserNameUtils $userNameUtils
-	 * @param TempUserConfig $tempUserConfig
-	 */
 	public function __construct(
 		IReadableDatabase $db,
 		ActorStore $actorStore,

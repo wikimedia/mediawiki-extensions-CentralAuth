@@ -74,16 +74,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	private LoggerInterface $logger;
 	private string $subpage;
 
-	/**
-	 * @param HookContainer $hookContainer
-	 * @param LanguageFactory $languageFactory
-	 * @param UserFactory $userFactory
-	 * @param UserOptionsLookup $userOptionsLookup
-	 * @param CentralAuthSessionManager $sessionManager
-	 * @param CentralAuthTokenManager $tokenManager
-	 * @param CentralAuthUtilityService $centralAuthUtilityService
-	 * @param CentralDomainUtils $centralDomainUtils
-	 */
 	public function __construct(
 		HookContainer $hookContainer,
 		LanguageFactory $languageFactory,
@@ -152,7 +142,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	/**
 	 * Check whether the user's preferences are such that a UI reload is
 	 * recommended.
-	 * @param User $user
 	 * @return bool
 	 */
 	private function isUIReloadRecommended( User $user ) {
@@ -912,8 +901,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 	}
 
 	/**
-	 * @param string|null $wikiId
-	 *
 	 * @return bool
 	 */
 	private function assertLocalWikiIsValid( ?string $wikiId ) {

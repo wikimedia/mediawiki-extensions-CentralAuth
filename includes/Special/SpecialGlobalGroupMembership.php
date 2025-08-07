@@ -237,7 +237,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 *
 	 * @param CentralAuthUser $user Target user object.
 	 * @param string $reason Reason for group change
-	 * @return Status
 	 */
 	private function saveUserGroups( CentralAuthUser $user, string $reason ): Status {
 		$allgroups = $this->globalGroupLookup->getDefinedGroups();
@@ -453,13 +452,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		return $reason;
 	}
 
-	/**
-	 * @param CentralAuthUser $user
-	 * @param array $oldGroups
-	 * @param array $newGroups
-	 * @param string $reason
-	 * @param array $tags
-	 */
 	private function addLogEntry(
 		CentralAuthUser $user,
 		array $oldGroups,
@@ -734,7 +726,6 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 	 *
 	 * This is very similar to SpecialUserRights::groupCheckboxes (T395365).
 	 *
-	 * @param CentralAuthUser $user
 	 * @return string The HTML table element with checkboxes and expiry dropdowns
 	 */
 	private function groupCheckboxes( CentralAuthUser $user ) {

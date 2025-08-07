@@ -42,12 +42,6 @@ class GlobalRenameFactory {
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
 	private CentralAuthDatabaseManager $databaseManager;
 
-	/**
-	 * @param JobQueueGroupFactory $jobQueueGroupFactory
-	 * @param UserFactory $userFactory
-	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
-	 * @param CentralAuthDatabaseManager $databaseManager
-	 */
 	public function __construct(
 		JobQueueGroupFactory $jobQueueGroupFactory,
 		UserFactory $userFactory,

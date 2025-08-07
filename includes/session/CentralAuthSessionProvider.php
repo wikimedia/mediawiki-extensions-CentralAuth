@@ -165,7 +165,6 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 	 *   a local user that's not attached to the global CentralAuth user.
 	 * - When $wgCentralAuthCookies is disabled, falls back to CookieSessionProvider entirely.
 	 *
-	 * @param WebRequest $request
 	 * @return SessionInfo|null
 	 */
 	public function provideSessionInfo( WebRequest $request ) {

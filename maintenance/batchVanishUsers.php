@@ -158,9 +158,6 @@ class BatchVanishUsers extends Maintenance {
 	/**
 	 * Submit a user vanish using provided information in the request.
 	 *
-	 * @param array $request
-	 * @param CentralAuthUser $performer
-	 * @param UserIdentity $uiPerformer
 	 * @return array with keys:
 	 *  - "success" (bool) if the vanish action was successful
 	 *  - "message" (string) detail of the operation
@@ -300,10 +297,6 @@ class BatchVanishUsers extends Maintenance {
 	 * Attempt to send a success email to the user whose vanish was fulfilled.
 	 *
 	 * TODO: https://phabricator.wikimedia.org/T369134 - refactor email sending
-	 *
-	 * @param CentralAuthUser $causer
-	 * @param GlobalRenameRequest $request
-	 * @return void
 	 */
 	private function sendVanishingSuccessfulEmail( CentralAuthUser $causer, GlobalRenameRequest $request ): void {
 		$bodyKey = 'globalrenamequeue-vanish-email-body-approved-with-note';
@@ -334,7 +327,6 @@ class BatchVanishUsers extends Maintenance {
 	 *
 	 * @param string|string[]|MessageSpecifier $key
 	 * @param mixed ...$params
-	 * @return string
 	 */
 	private function msg( $key, ...$params ): string {
 		return wfMessage( $key, ...$params )->inLanguage( 'en' )->text();

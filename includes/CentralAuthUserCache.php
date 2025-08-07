@@ -27,7 +27,6 @@ class CentralAuthUserCache {
 	 *
 	 * @param string $name The normalized username
 	 * @param bool $fromPrimary Whether the data is required to be from the primary.
-	 * @return CentralAuthUser|null
 	 */
 	public function get( string $name, $fromPrimary = false ): ?CentralAuthUser {
 		/** @var CentralAuthUser|null $centralUser */
@@ -43,8 +42,6 @@ class CentralAuthUserCache {
 
 	/**
 	 * Store a user to the cache
-	 *
-	 * @param CentralAuthUser $centralUser
 	 */
 	public function set( CentralAuthUser $centralUser ) {
 		$this->map->set( $centralUser->getName(), $centralUser );
@@ -59,8 +56,6 @@ class CentralAuthUserCache {
 
 	/**
 	 * Delete all entries with the specified username
-	 *
-	 * @param string $name
 	 */
 	public function delete( string $name ) {
 		$this->map->clear( [ $name ] );

@@ -118,9 +118,6 @@ class ApiSetGlobalAccountStatus extends ApiBase {
 	 * Calculates a state hash for edit conflict detection. This is separate
 	 * from {@link CentralAuthUser::getStateHash()} as it uses the 'old'
 	 * (non-normalized string) values for the hidden level value.
-	 *
-	 * @param CentralAuthUser $user
-	 * @return string
 	 */
 	private function getStateHash( CentralAuthUser $user ): string {
 		$parts = [

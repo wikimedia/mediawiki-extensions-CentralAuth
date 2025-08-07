@@ -152,7 +152,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	/**
-	 * @param array $reqs
 	 * @return PasswordAuthenticationRequest|null
 	 */
 	private static function getPasswordAuthenticationRequest( array $reqs ) {
@@ -519,7 +518,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	}
 
 	/**
-	 * @param array $reqs
 	 * @return AntiSpoofAuthenticationRequest|null
 	 */
 	private static function getAntiSpoofAuthenticationRequest( array $reqs ) {
@@ -642,7 +640,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	 * @param User $user
 	 * @param string $source Autocreation source - the $autocreate parameter passed to
 	 *   testUserForCreation(), or the $source parameter passed to autoCreatedAccount().
-	 * @return bool
 	 */
 	private function isAutoCreatedByCentralAuth( User $user, string $source ): bool {
 		if ( $source === AuthManager::AUTOCREATE_SOURCE_SESSION ) {

@@ -42,7 +42,6 @@ class CentralAuthTokenManager {
 	 *
 	 * @param string|array $namespace Key parts; the first goes before the token, the rest go after.
 	 * @param string $token
-	 * @return string
 	 */
 	private function makeLegacyTokenKey( $namespace, $token ): string {
 		if ( is_array( $namespace ) ) {

@@ -94,8 +94,6 @@ class SharedDomainUtils {
 	 * subdirectory). In the latter case, we want to prevent non-authentication actions
 	 * to prevent complications like cache splits. This flag differentiates between the two
 	 * setups.
-	 *
-	 * @return bool
 	 * @see SharedDomainHookHandler
 	 */
 	public function shouldRestrictCurrentDomain(): bool {
@@ -126,8 +124,6 @@ class SharedDomainUtils {
 	 * @param WebRequest $request
 	 * @param bool $excludeApiRequest Whether to exclude this API request from the
 	 *    SUL3 mode.
-	 *
-	 * @return bool
 	 */
 	public function isSul3Enabled( WebRequest $request, bool $excludeApiRequest = true ): bool {
 		if ( !$this->canSul3BeEnabled() ) {
@@ -166,7 +162,6 @@ class SharedDomainUtils {
 	/**
 	 * Assert that the SUL3 mode is allowed.
 	 *
-	 * @param WebRequest $request
 	 * @return void
 	 */
 	public function assertSul3Enabled( WebRequest $request ) {
@@ -212,8 +207,6 @@ class SharedDomainUtils {
 	 * @param string $action 'login' or 'signup' action
 	 * @param WebRequest $request There could be more to look at
 	 *    in the request like if we're coming from a campaign link.
-	 *
-	 * @return string
 	 */
 	public function getUrlForSharedDomainAction( string $action, WebRequest $request ): string {
 		switch ( $action ) {
@@ -282,10 +275,6 @@ class SharedDomainUtils {
 	 * instead of just appending a `useformat` query parameter, if the
 	 * domain is a mobile domain, just return it but if it's not, we
 	 * detect that and append a `useformat` query param..
-	 *
-	 * @param string $url
-	 *
-	 * @return string
 	 */
 	public function makeUrlDeviceCompliant( string $url ): string {
 		// Assume either all or none of the wikis in the farm have MobileFrontend

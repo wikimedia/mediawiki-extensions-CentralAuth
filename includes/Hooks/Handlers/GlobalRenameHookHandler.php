@@ -70,11 +70,6 @@ class GlobalRenameHookHandler implements
 		}
 	}
 
-	/**
-	 * @param int $uid
-	 * @param string $old
-	 * @param string $new
-	 */
 	public function onRenameUserPreRename( int $uid, string $old, string $new ): void {
 		$oldCentral = CentralAuthUser::getPrimaryInstanceByName( $old );
 		// If we're doing a global rename, the account will not get unattached
@@ -86,10 +81,6 @@ class GlobalRenameHookHandler implements
 
 	/**
 	 * When renaming an account, update presence records and AntiSpoof system.
-	 *
-	 * @param int $uid
-	 * @param string $old
-	 * @param string $new
 	 */
 	public function onRenameUserComplete( int $uid, string $old, string $new ): void {
 		$oldCentral = CentralAuthUser::getPrimaryInstanceByName( $old );

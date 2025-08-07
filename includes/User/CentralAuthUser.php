@@ -201,8 +201,6 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
-	 * @param UserIdentity $user
-	 * @return self
 	 */
 	public static function getInstance( UserIdentity $user ): self {
 		return self::getInstanceByName( $user->getName() );
@@ -237,7 +235,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $username A valid username. (Since 1.42 it does not have to be in the
 	 *   canonical form anymore.) IP addresses/ranges and external usernames are also accepted
 	 *   for B/C but discouraged; they will be handled like a non-registered username.
-	 * @return self
 	 * @throws NormalizedException on invalid usernames.
 	 */
 	public static function getInstanceByName( $username ): self {
@@ -255,7 +252,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Create a (cached) CentralAuthUser object corresponding to the supplied User.
 	 * This object will use DB_PRIMARY.
 	 * @param UserIdentity $user
-	 * @return self
 	 * @since 1.37
 	 */
 	public static function getPrimaryInstance( UserIdentity $user ): self {
@@ -268,7 +264,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $username A valid username. (Since 1.44 it does not have to be in the
 	 *   canonical form anymore.) IP addresses/ranges and external usernames are also accepted
 	 *   for B/C but discouraged; they will be handled like a non-registered username.
-	 * @return self
 	 * @since 1.37
 	 * @throws NormalizedException on invalid usernames.
 	 */
@@ -406,7 +401,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param stdClass $row
 	 * @param string[] $renameUser Empty if no rename is going on, else (oldname, newname)
 	 * @param bool $fromPrimary
-	 * @return self
 	 */
 	public static function newFromRow( $row, $renameUser, $fromPrimary = false ): self {
 		$caUser = new self( $row->gu_name );
@@ -419,7 +413,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $name A valid username. (Since 1.44 it does not have to be in the
 	 *   canonical form anymore).
 	 * @param bool $fromPrimary
-	 * @return self
 	 */
 	public static function newUnattached( $name, $fromPrimary = false ): self {
 		$canonicalName = self::normalizeUsername( $name );
@@ -731,7 +724,6 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Generate a valid memcached key for caching the object's data.
-	 * @param WANObjectCache $cache
 	 * @return string
 	 */
 	protected function getCacheKey( WANObjectCache $cache ) {
@@ -871,7 +863,6 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Returns an array of blocks per wiki the user is attached to.
 	 * @throws LocalUserNotFoundException
-	 * @return array
 	 */
 	public function getBlocks(): array {
 		$blocksByWikiId = [];
@@ -935,7 +926,6 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Returns true if the account has any blocks on any wikis.
 	 * @throws LocalUserNotFoundException
-	 * @return bool
 	 */
 	public function isBlocked(): bool {
 		$blocksByWikiId = $this->getBlocks();
@@ -956,7 +946,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 * have a log record of that type.
 	 *
 	 * @param array $excludeTypes is an array of log types to ignore
-	 * @return bool
 	 */
 	public function hasPublicLogs( $excludeTypes = [ 'newusers' ] ): bool {
 		$services = MediaWikiServices::getInstance();
@@ -3299,7 +3288,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @param string $group The global group
 	 * @param string|null $expiry Timestamp of membership expiry in TS_MW format, or null if no expiry
-	 * @return Status
 	 */
 	public function addToGlobalGroup( string $group, ?string $expiry = null ): Status {
 		$this->checkWriteMode();

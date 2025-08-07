@@ -122,7 +122,6 @@ class CentralAuthIdLookup extends CentralIdLookup {
 	 * @param string|false $wikiId
 	 * @param Authority|null $audience The authority for viewing rows, or null for unauthenticated
 	 * @param int $flags
-	 * @return array
 	 */
 	private function lookupUserNamesWithForeignFilter(
 		array $nameToId,
@@ -176,7 +175,6 @@ class CentralAuthIdLookup extends CentralIdLookup {
 	 * @param string $filter The simplified config-independent filter
 	 * @param Authority|null $audience The authority for viewing rows, or null for unauthenticated
 	 * @param int $flags
-	 * @return array
 	 */
 	private function lookupUserNamesWithLocalFilter(
 		array $nameToId,
@@ -263,10 +261,6 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 	/**
 	 * Determine if the authority can view a row with a given hidden level
-	 *
-	 * @param Authority|null $authority
-	 * @param int $hiddenLevel
-	 * @return bool
 	 */
 	private function canView( ?Authority $authority, int $hiddenLevel ): bool {
 		return $hiddenLevel === CentralAuthUser::HIDDEN_LEVEL_NONE
@@ -359,8 +353,6 @@ class CentralAuthIdLookup extends CentralIdLookup {
 	 *
 	 * @param UserIdentity $user The user to fetch the corresponding central user for.
 	 * @param int $flags Bitmask of IDBAccessObject::READ_* constants.
-	 *
-	 * @return CentralAuthUser
 	 */
 	private function getCentralUserInstance(
 		UserIdentity $user,

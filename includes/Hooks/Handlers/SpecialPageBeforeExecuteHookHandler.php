@@ -46,13 +46,6 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	private CentralDomainUtils $centralDomainUtils;
 	private SharedDomainUtils $sharedDomainUtils;
 
-	/**
-	 * @param AuthManager $authManager
-	 * @param HookContainer $hookContainer
-	 * @param CentralAuthTokenManager $tokenManager
-	 * @param CentralDomainUtils $centralDomainUtils
-	 * @param SharedDomainUtils $sharedDomainUtils
-	 */
 	public function __construct(
 		AuthManager $authManager,
 		HookContainer $hookContainer,
@@ -231,9 +224,6 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	 *
 	 * For example when anon users set their theme to dark mode, it
 	 * should be applied to the shared domain and render in dark mode.
-	 *
-	 * @param WebRequest $request
-	 * @return void
 	 */
 	private function setClientPreferences( WebRequest $request ): void {
 		$token = $request->getRawVal( 'centralauthLoginToken' );

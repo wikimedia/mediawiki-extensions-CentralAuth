@@ -87,7 +87,6 @@ class CentralDomainUtils {
 	 *   canonical form.
 	 * @param WebRequest $request
 	 * @param array $params Query parameters to apply to the URL.
-	 * @return string
 	 * @see CentralAuthHooks::onTestCanonicalRedirect()
 	 */
 	public function getUrl( string $wikiId, string $page, WebRequest $request, array $params = [] ): string {
@@ -155,9 +154,6 @@ class CentralDomainUtils {
 	 * Check if we're on the central domain.
 	 * In SUL2 mode, this means the current wiki is $wgCentralAuthLoginWiki (or the fallback).
 	 * In SUL3 mode, this means we're using the shared domain.
-	 *
-	 * @param WebRequest $request
-	 * @return bool
 	 */
 	public function isCentralDomain( WebRequest $request ): bool {
 		$loginWiki = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
@@ -181,10 +177,6 @@ class CentralDomainUtils {
 	 * Checks if we have a central domain for the user currently performing
 	 * the request. Central domain is either the central login wiki in SUL2
 	 * or the shared domain in SUL3 mode.
-	 *
-	 * @param WebRequest $request
-	 *
-	 * @return bool
 	 */
 	public function centralDomainExists( WebRequest $request ): bool {
 		if ( $this->sharedDomainUtils->isSul3Enabled( $request ) ) {
@@ -196,8 +188,6 @@ class CentralDomainUtils {
 	}
 
 	/**
-	 * @param WebRequest $request
-	 *
 	 * @return string The canonical server of the central domain
 	 */
 	public function getCentralDomainHost( WebRequest $request ): string {

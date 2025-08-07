@@ -24,9 +24,6 @@ class GlobalRenameUserValidator {
 	/**
 	 * Check that we can perform the rename
 	 *
-	 * @param UserIdentity $oldUser
-	 * @param UserIdentity $newUser
-	 *
 	 * @return Status
 	 */
 	public function validate( UserIdentity $oldUser, UserIdentity $newUser ) {

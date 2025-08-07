@@ -23,7 +23,6 @@ class CentralAuthEditCounter {
 	/**
 	 * Get the global edit count for a user
 	 *
-	 * @param CentralAuthUser $centralUser
 	 * @return int
 	 */
 	public function getCount( CentralAuthUser $centralUser ) {
@@ -86,7 +85,6 @@ class CentralAuthEditCounter {
 	/**
 	 * Get the count by adding the user_editcount value across all attached wikis
 	 *
-	 * @param CentralAuthUser $centralUser
 	 * @return int
 	 */
 	public function getCountFromWikis( CentralAuthUser $centralUser ) {
@@ -100,8 +98,6 @@ class CentralAuthEditCounter {
 	}
 
 	/**
-	 * @param IReadableDatabase $dbr
-	 * @param int $userId
 	 * @return int|false
 	 */
 	private function getCountFromDB( IReadableDatabase $dbr, int $userId ) {

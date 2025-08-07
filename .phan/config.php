@@ -32,4 +32,8 @@ $cfg['exclude_analysis_directory_list'] = array_merge(
 	]
 );
 
+$cfg['plugins'] = array_merge( $cfg['plugins'], [
+	'PHPDocRedundantPlugin',
+] );
+
 return $cfg;

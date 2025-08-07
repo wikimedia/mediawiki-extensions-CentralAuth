@@ -26,12 +26,6 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 
 	private bool $initRan = false;
 
-	/**
-	 * @param IReadableDatabase $db
-	 * @param ActorStore $actorStore
-	 * @param UserNameUtils $userNameUtils
-	 * @param TempUserConfig $tempUserConfig
-	 */
 	public function __construct(
 		IReadableDatabase $db,
 		ActorStore $actorStore,
@@ -90,7 +84,6 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 	}
 
 	/**
-	 * @param bool $isLocked
 	 * @return $this
 	 */
 	public function whereLocked( bool $isLocked ): self {
@@ -103,7 +96,6 @@ class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 	 *
 	 * @param string $timestamp
 	 * @param bool $before Direction flag (if true, user_registration must be before $timestamp)
-	 * @return self
 	 */
 	public function whereRegisteredTimestamp( string $timestamp, bool $before ): self {
 		$this->conds(

@@ -680,7 +680,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	}
 
 	/**
-	 * @param array $data
 	 * @return Status
 	 */
 	public function onProcessSubmit( array $data ) {

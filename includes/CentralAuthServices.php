@@ -40,8 +40,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 *
-	 * @return CentralAuthAntiSpoofManager
 	 * @since 1.41
 	 */
 	public static function getAntiSpoofManager( ?ContainerInterface $services = null ): CentralAuthAntiSpoofManager {
@@ -52,8 +50,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 *
-	 * @return CentralAuthApiTokenGenerator
 	 * @since 1.44
 	 */
 	public static function getApiTokenGenerator(
@@ -66,8 +62,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 *
-	 * @return CentralAuthAutomaticGlobalGroupManager
 	 * @since 1.44
 	 */
 	public static function getAutomaticGlobalGroupManager(
@@ -87,8 +81,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 *
-	 * @return CentralAuthDatabaseManager
 	 * @since 1.37
 	 */
 	public static function getDatabaseManager( ?ContainerInterface $services = null ): CentralAuthDatabaseManager {
@@ -113,8 +105,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 *
-	 * @return CentralAuthForcedLocalCreationService
 	 */
 	public static function getForcedLocalCreationService(
 		?ContainerInterface $services = null
@@ -126,8 +116,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 *
-	 * @return CentralAuthSessionManager
 	 */
 	public static function getSessionManager( ?ContainerInterface $services = null ): CentralAuthSessionManager {
 		return ( $services ?: MediaWikiServices::getInstance() )
@@ -137,8 +125,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 *
-	 * @return SharedDomainUtils
 	 */
 	public static function getSharedDomainUtils( ?ContainerInterface $services = null ): SharedDomainUtils {
 		return ( $services ?: MediaWikiServices::getInstance() )
@@ -148,8 +134,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 *
-	 * @return CentralAuthTokenManager
 	 */
 	public static function getTokenManager( ?ContainerInterface $services = null ): CentralAuthTokenManager {
 		return ( $services ?: MediaWikiServices::getInstance() )
@@ -159,8 +143,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 *
-	 * @return CentralAuthUIService
 	 */
 	public static function getUIService( ?ContainerInterface $services = null ): CentralAuthUIService {
 		return ( $services ?: MediaWikiServices::getInstance() )
@@ -170,8 +152,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 *
-	 * @return CentralAuthUserCache
 	 */
 	public static function getUserCache( ?ContainerInterface $services = null ): CentralAuthUserCache {
 		return ( $services ?: MediaWikiServices::getInstance() )
@@ -181,7 +161,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 * @return CentralAuthUtilityService
 	 */
 	public static function getUtilityService( ?ContainerInterface $services = null ): CentralAuthUtilityService {
 		return ( $services ?: MediaWikiServices::getInstance() )
@@ -191,7 +170,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 * @return CentralAuthWikiListService
 	 * @since 1.37
 	 */
 	public static function getWikiListService( ?ContainerInterface $services = null ): CentralAuthWikiListService {
@@ -207,7 +185,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 * @return GlobalRenameFactory
 	 */
 	public static function getGlobalRenameFactory(
 		?ContainerInterface $services = null
@@ -219,7 +196,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 * @return GlobalRenameRequestStore
 	 */
 	public static function getGlobalRenameRequestStore(
 		?ContainerInterface $services = null
@@ -231,7 +207,6 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
-	 * @return GlobalUserSelectQueryBuilderFactory
 	 */
 	public static function getGlobalUserSelectQueryBuilderFactory(
 		?ContainerInterface $services = null

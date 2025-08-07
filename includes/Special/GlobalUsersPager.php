@@ -43,9 +43,6 @@ class GlobalUsersPager extends AlphabeticPager {
 		$this->linkBatchFactory = $linkBatchFactory;
 	}
 
-	/**
-	 * @param string $group
-	 */
 	public function setGroup( string $group = '' ) {
 		if ( $group === '' ) {
 			$this->requestedGroup = false;
@@ -54,9 +51,6 @@ class GlobalUsersPager extends AlphabeticPager {
 		$this->requestedGroup = $group;
 	}
 
-	/**
-	 * @param string $username
-	 */
 	public function setUsername( string $username = '' ) {
 		if ( $username === '' ) {
 			$this->requestedUser = false;
@@ -271,7 +265,6 @@ class GlobalUsersPager extends AlphabeticPager {
 	 *
 	 * @param string $id
 	 * @param string $username
-	 * @return string|null
 	 */
 	protected function getUserGroups( $id, $username ): ?string {
 		$rights = [];

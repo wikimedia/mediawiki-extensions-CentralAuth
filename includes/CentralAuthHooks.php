@@ -685,7 +685,6 @@ class CentralAuthHooks implements
 	/**
 	 * @param string[] &$dependencies
 	 * @param RL\Context|null $context
-	 * @return void
 	 */
 	public function onResourceLoaderForeignApiModules(
 		&$dependencies,

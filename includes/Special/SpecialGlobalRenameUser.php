@@ -181,7 +181,6 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	/**
 	 * Perform validation on the user submitted data
 	 * and check that we can perform the rename
-	 * @param array $data
 	 *
 	 * @return Status
 	 */
@@ -273,7 +272,6 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	}
 
 	/**
-	 * @param array $data
 	 * @return Status
 	 */
 	public function onSubmit( array $data ) {

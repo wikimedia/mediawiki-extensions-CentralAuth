@@ -76,7 +76,6 @@ class GlobalRenameRequest {
 
 	/**
 	 * @internal Use GlobalRenameRequestStore::newBlankRequest instead
-	 * @param UserNameUtils $userNameUtils
 	 */
 	public function __construct( UserNameUtils $userNameUtils ) {
 		$this->userNameUtils = $userNameUtils;
