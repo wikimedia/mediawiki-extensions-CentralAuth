@@ -28,8 +28,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 				$services->getSpecialPageFactory(),
 				new HookRunner( $services->getHookContainer() ),
 				null,
-				false,
-				$services->getTempUserConfig(),
+				false
 			);
 		};
 
@@ -56,8 +55,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			$services->getSpecialPageFactory(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
-			false,
-			$services->getTempUserConfig(),
+			false
 		);
 		$wrappedHandler = TestingAccessWrapper::newFromObject( $sharedDomainUtils );
 		$this->assertTrue( $wrappedHandler->isSharedDomain() );
@@ -74,8 +72,7 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			$services->getSpecialPageFactory(),
 			new HookRunner( $services->getHookContainer() ),
 			null,
-			false,
-			$services->getTempUserConfig()
+			false
 		);
 		$wrappedHandler = TestingAccessWrapper::newFromObject( $sharedDomainUtils );
 		$this->assertFalse( $wrappedHandler->isSharedDomain() );
