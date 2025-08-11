@@ -28,8 +28,8 @@
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "वैश्विक सदस्य-समूह जिनमें सदस्य है",
-	"action-centralauth-lock": "वैश्विक खाते लॉक करें या लॉक हटाएँ",
-	"action-centralauth-rename": "वैश्विक खातों के पुनः नामकरण करें",
+	"action-centralauth-lock": "ग्लोबल खाता लॉक या अनलॉक करने",
+	"action-centralauth-rename": "ग्लोबल खातों का पुनः नामकरण करने",
 	"centralauth": "वैश्विक खाता प्रबंधन",
 	"centralauth-account-exists": "खाता नहीं बनाया जा सकता: अनुरोधित सदस्यनाम नाम पहले से ही किसी अन्य विकि पर किसी सदस्य द्वारा लिया गया है।",
 	"centralauth-account-exists-reset": "$1 सदस्यनाम इस विकि पर पंजीकृत नहीं है। [[Special:CentralAuth/$1|यह जिन विकियों पर पंजीकृत है]] उन पर आप इसका कूटशब्द बदल सकते हैं।",
@@ -426,10 +426,10 @@
 	"logentry-gblrename-rename": "$1 वैश्विक रूप से {{GENDER:$2|पुनःनामकरण किया गया}} $4 से $5",
 	"mergeaccount": "खाता एकत्रिकरण स्थिति",
 	"multilock": "अनेक वैश्विक खाते लॉक करें",
-	"right-centralauth-lock": "वैश्विक खाता लॉक करें या लॉक हटाएँ",
+	"right-centralauth-lock": "ग्लोबल खाता लॉक या अनलॉक करना",
 	"right-centralauth-merge": "उनके खाते एकत्रित करें",
 	"right-centralauth-suppress": "वैश्विक खाते को छुपाएँ",
-	"right-centralauth-rename": "वैश्विक खातों के पुनः नामकरण करें",
+	"right-centralauth-rename": "ग्लोबल खातों का पुनः नामकरण करना",
 	"right-centralauth-unmerge": "वैश्विक खाता अलग करें",
 	"right-globalgroupmembership": "वैश्विक सदस्य-समूहों में सदस्यता सम्पादन",
 	"right-globalgrouppermissions": "वैश्विक सदस्य-समूह व्यवस्थापन"
