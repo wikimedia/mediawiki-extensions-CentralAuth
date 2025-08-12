@@ -14,7 +14,8 @@
 			"Turkmen",
 			"Vago",
 			"Vugar 1981",
-			"Wertuose"
+			"Wertuose",
+			"Gadir"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "İstifadəçinin qlobal redaktə sayı ($1)",
@@ -74,7 +75,7 @@
 	"centralauth-admin-list-blocked": "Bloklanıb",
 	"centralauth-admin-list-editcount": "Redaktə sayı",
 	"centralauth-admin-list-groups": "Qruplar",
-	"centralauth-admin-list-legend-ro": "Yerli hesabların siyahısı",
+	"centralauth-admin-list-legend-ro": "Lokal hesabların siyahısı",
 	"centralauth-admin-list-legend-rw": "Yerli hesabları birləşdirmə",
 	"centralauth-admin-list-localwiki": "Lokal viki",
 	"centralauth-admin-list-method": "Üsul",

@@ -412,7 +412,7 @@
 	"centralauth-rename-progress-list-header": "目前正在进行以下全域更名：",
 	"centralauth-rename-progress-logs-fieldset": "日志记录",
 	"centralauth-rename-progress-username": "用户名",
-	"centralauth-rename-queued": "重命名$1至$2的工作已加入队列。\n\n在[[Special:GlobalRenameProgress/$2]]查看进展。",
+	"centralauth-rename-queued": "重命名$1至$2的作业已加入队列。\n\n在[[Special:GlobalRenameProgress/$2]]查看进展。",
 	"centralauth-rename-same-name": "用户已经拥有请求的用户名。",
 	"centralauth-rename-table-domain": "本地wiki",
 	"centralauth-rename-table-status": "状态",
