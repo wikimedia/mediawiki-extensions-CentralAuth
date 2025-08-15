@@ -912,7 +912,12 @@ class CentralAuthUser implements IDBAccessObject {
 				->getDatabaseBlockStoreFactory()
 				->getDatabaseBlockStore( $wikiId );
 			$blocksByWikiId[$wikiId] = $blockStore->newListFromConds(
-				[ 'bt_user' => $row->user_id ]
+				[
+					'bt_user' => $row->user_id,
+					// SECURITY: The user might not have permissions to view suppress blocks
+					// on the foreign wiki (T400892).
+					'bl_deleted' => 0,
+				]
 			);
 		}
 
