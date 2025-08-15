@@ -802,7 +802,7 @@
 		"UserSetEmailAuthenticationTimestamp": "default"
 	},
 	"ConfigRegistry": {
-		"CentralAuth": "GlobalVarConfig::newInstance"
+		"CentralAuth": "MediaWiki\\Config\\GlobalVarConfig::newInstance"
 	},
 	"config": {
 		"CentralAuthDatabase": {
