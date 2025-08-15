@@ -37,6 +37,7 @@
 	"centralauth-abortlogin-renamed": "שם החשבון שלך עודכן ועכשיו הוא \"$1\". נא להשתמש באותו השם.",
 	"centralauth-account-exists": "לא ניתן ליצור את החשבון: שם המשתמש המבוקש כבר בשימוש של משתמש בוויקי אחר.",
 	"centralauth-account-exists-reset": "שם המשתמש $1 אינו רשום באתר הוויקי הזה, אבל באפשרותך לאפס את הסיסמה שלו ב[[Special:CentralAuth/$1|אחד מהאתרים בהם הוא רשום]].",
+	"centralauth-account-expired": "לא ניתן ליצור חשבון חולף באופן אוטומטי: שם המשתמש המבוקש משמש חשבון חולף שפג.",
 	"centralauth-account-rename-exists": "לא ניתן ליצור חשבון: השם כבר בשימוש. נא לבחור שם אחר.",
 	"centralauth-account-unattached-exists": "לא ניתן ליצור חשבון: שם המשתמש כבר בשימוש. נא לבחור שם אחר.",
 	"centralauth-admin-action-hide-lists": "הסתרת החשבונות שנבחרו מרשימת המשתמשים הגלובליים",

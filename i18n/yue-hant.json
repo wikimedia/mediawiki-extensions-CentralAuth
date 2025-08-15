@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"H78c67c",
+			"JeffreyKim",
 			"Ktchankt",
 			"Winston Sung",
 			"Yueman"
@@ -201,7 +202,7 @@
 	"centralauth-prefs-unattached": "未完全統一",
 	"centralauth-prefs-view": "睇下你個全域戶口嘅資料",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|睇下更多有關'''統一簽到'''嘅細節]]...''",
-	"centralauth-rename-doesnotexist": "畀出嚟嘅戶口並唔存在。",
+	"centralauth-rename-doesnotexist": "畀出嚟嘅用戶並唔存在。",
 	"centralauth-rename-form-reason": "原因",
 	"centralauth-rename-progress-fieldset": "本地戶口清單",
 	"centralauth-rename-progress-username": "用戶名",
