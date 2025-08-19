@@ -10,6 +10,7 @@
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Колдонуучунун бүткүл түзөтүүлөрүнүн саны",
+	"centralauth": "Глобалдуу аккаунттун менеджери",
 	"centralauth-account-rename-exists": "Катталуу мүмкүн эмес: колдонуучунун аты колдонулууда. Башка атты ойлоп табыңыз.",
 	"centralauth-account-unattached-exists": "Катталуу мүмкүн эмес: колдонуучунун аты колдонулууда. Башка атты ойлоп табыңыз.",
 	"centralauth-admin-action-lock-lock": "Тандалган эсеп жазууларды бөгөттөө",
@@ -40,7 +41,7 @@
 	"centralauth-admin-status-hidden": "Жашыруун:",
 	"centralauth-admin-status-locked": "Бөгөттөлгөн:",
 	"centralauth-admin-status-submit": "Макам ыйгаруу",
-	"centralauth-admin-title-ro": "«$1» глобалдуу аккаунту боюнча маалымат",
+	"centralauth-admin-title-ro": "\"$1\" глобалдуу аккаунту боюнча маалымат",
 	"centralauth-admin-unattached": "кошулган эмес",
 	"centralauth-admin-username": "Колдонуучунун аты:",
 	"centralauth-admin-yes": "ооба",
