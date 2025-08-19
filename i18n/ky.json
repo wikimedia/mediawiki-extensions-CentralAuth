@@ -62,6 +62,7 @@
 	"centralauth-editset-name": "Аталыш:",
 	"centralauth-editset-nouse": "(жок)",
 	"centralauth-editset-reason": "Себеп:",
+	"centralauth-editset-submit": "Жөнөтүү",
 	"centralauth-editset-usage": "Топтордо колдонулат:",
 	"centralauth-editset-wikis": "Викилер:",
 	"centralauth-error-locked": "Сиз оңдой албайсыз, себеби сиздин эсеп жазууңуз бөгөттөлгөн.",
@@ -112,5 +113,6 @@
 	"globalrenamequeue-form-username": "Колдонуучунун аты:",
 	"globalrenamequeue-request-cancel-text": "Жокко чыгаруу",
 	"globalrenamequeue-request-title": "«‎$1» атыңыз өзгөртүлсүнбү ?",
+	"globalrenamerequest-email-label": "Электрондук почта:",
 	"mergeaccount": "Эсеп жазууларды бириктирүү абалы"
 }
