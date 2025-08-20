@@ -71,7 +71,8 @@
 			"阿pp",
 			"阿南之人",
 			"飞舞回堂前",
-			"人间百态"
+			"人间百态",
+			"Peterxy12"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "用户的全域编辑数（$1）",
@@ -189,6 +190,8 @@
 	"centralauth-attach-success": "该账号已被迁移到整合账号中。",
 	"centralauth-attach-text": "此账号还未被迁移到整合账号中。如果您已经拥有了一个整合账号，您可以在此输入该整合账号的密码来并入此账号：",
 	"centralauth-attach-title": "确认账号",
+	"centralauth-automatic-global-groups-reason-local": "由於本地群組變更，自動更新全域群組。",
+	"centralauth-automatic-global-groups-reason-global": "$1由於全域群組變更，自動更新全域群組。",
 	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]]的账号已被全域锁定。",
 	"centralauth-block-editing-action": "$1个{{PLURAL:$1|操作}}",
 	"centralauth-block-editing-page": "$1{{PLURAL:$1|个页面|个页面}}",
@@ -435,6 +438,8 @@
 	"centralauth-state-mismatch": "错误：此用户账号的状态在此期间发生了变化。如果需要，请验证当前状态并重试。",
 	"centralauth-token-mismatch": "对不起，由于会话数据丢失，我们不能处理您的表单提交行为。",
 	"centralauth-years-ago": "$1年前",
+	"centralauth-sul3-oathmanage-sitenotice-local": "要设置新的WebAuthn密钥，请使用[$1中央域]。",
+	"centralauth-sul3-oathmanage-sitenotice-central": "要删除旧的WebAuthn密钥，请使用[$1设置它们的域]。",
 	"centralautologin": "中央登录",
 	"centrallogin": "中央用户登录",
 	"createlocalaccount": "强制创建本地账号",
