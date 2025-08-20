@@ -22,6 +22,7 @@ namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Special;
 
 use Generator;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
@@ -50,6 +51,9 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 	protected function setUp(): void {
 		parent::setUp();
+
+		// To avoid complexity related to the use of shared domain
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, false );
 
 		$caDbw = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )
 			->getCentralPrimaryDB();

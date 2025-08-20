@@ -2,6 +2,7 @@
 
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\User;
@@ -29,6 +30,9 @@ class CentralAuthCreateLocalTest extends MediaWikiIntegrationTestCase {
 	private const USERNAME_SUPPRESSED = 'SuppressedTestUser';
 
 	protected function setUp(): void {
+		// To avoid complexity related to the use of shared domain
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, false );
+
 		parent::setUp();
 
 		$this->specialCreateLocalAccount = new SpecialCreateLocalAccount(

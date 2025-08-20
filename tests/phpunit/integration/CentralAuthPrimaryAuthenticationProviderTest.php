@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration;
 
 use MediaWiki\Extension\CentralAuth\CentralAuthPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\Unit\Auth\AuthenticationProviderTestTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
@@ -17,6 +18,13 @@ use MediaWikiIntegrationTestCase;
 class CentralAuthPrimaryAuthenticationProviderTest extends MediaWikiIntegrationTestCase {
 	use AuthenticationProviderTestTrait;
 	use TempUserTestTrait;
+
+	protected function setUp(): void {
+		parent::setUp();
+
+		// To avoid complexity related to the use of shared domain
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, false );
+	}
 
 	/** @dataProvider provideTestUserForCreationWithTemporaryUser */
 	public function testTestUserForCreationWithTemporaryUser( $expired ) {

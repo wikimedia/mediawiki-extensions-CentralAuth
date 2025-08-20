@@ -25,6 +25,7 @@ use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAuth;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
@@ -60,6 +61,8 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			MainConfigNames::LocalDatabases => [ WikiMap::getCurrentWikiId() ],
 			// Testing the GlobalBlocking integration requires using CentralAuth's central ID provider.
 			MainConfigNames::CentralIdLookupProvider => 'CentralAuth',
+			// To avoid complexity related to the use of shared domain
+			CAMainConfigNames::CentralAuthEnableSul3 => false,
 		] );
 
 		// Add the current site to the SiteStore to allow it to appear in the attached local accounts list.

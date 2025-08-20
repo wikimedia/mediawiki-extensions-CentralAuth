@@ -6,6 +6,7 @@ use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthEditCounter;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logging\LogEntryBase;
 use MediaWiki\MainConfigNames;
@@ -519,6 +520,9 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testScramble() {
+		// To avoid complexity related to the use of shared domain
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, false );
+
 		$extensionJson = file_get_contents( __DIR__ . '/../../extension.json' );
 		$originalConfig = json_decode( $extensionJson, true )['AuthManagerAutoConfig'];
 		$this->overrideConfigValue( MainConfigNames::AuthManagerConfig, [
