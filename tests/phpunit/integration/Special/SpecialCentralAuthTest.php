@@ -21,6 +21,7 @@
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Special;
 
 use CentralAuthTestUser;
+use MediaWiki\Config\SiteConfiguration;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
@@ -64,6 +65,8 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			// To avoid complexity related to the use of shared domain
 			CAMainConfigNames::CentralAuthEnableSul3 => false,
 		] );
+		// Clear $wgConf so that the sites table changes below have an effect
+		$this->setMwGlobals( 'wgConf', new SiteConfiguration() );
 
 		// Add the current site to the SiteStore to allow it to appear in the attached local accounts list.
 		$sitesTable = $this->getServiceContainer()->getSiteStore();
