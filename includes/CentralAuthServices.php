@@ -25,6 +25,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUserStatusLookupFactory;
 use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilderFactory;
 use MediaWiki\MediaWikiServices;
 use Psr\Container\ContainerInterface;
@@ -213,5 +214,12 @@ class CentralAuthServices {
 	): GlobalUserSelectQueryBuilderFactory {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->get( 'CentralAuth.GlobalUserSelectQueryBuilderFactory' );
+	}
+
+	public static function getUserStatusLookupFactory(
+		?ContainerInterface $services = null
+	): CentralAuthUserStatusLookupFactory {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->get( 'CentralAuth.CentralAuthUserStatusLookupFactory' );
 	}
 }
