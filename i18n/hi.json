@@ -130,6 +130,7 @@
 	"centralauth-complete": "खाता एकत्रिकरण पूरा हुआ!",
 	"centralauth-complete-text": "अब आप {{int:Centralauth-groupname}} की किसी भी विकि साइट पर नया खाता बनाए बिना लॉग इन कर सकते हैं।",
 	"centralauth-completelogin-back": "पिछले पृष्ठ पर वापिस जाएँ",
+	"centralauth-contribs-link": "ग्लोबल खाता",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|दिन पहले}}",
 	"centralauth-delete-empty-account": "खाली खाता",
 	"centralauth-desc": "{{int:Centralauth-groupname}} की विकियों में [[Special:MergeAccount|खाता एकत्रिकरण]] करें",
