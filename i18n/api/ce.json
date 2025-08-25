@@ -16,5 +16,6 @@
 	"apihelp-query+globalallusers-param-dir": "Къепе листар.",
 	"apihelp-query+globalgroups-example-1": "Глобалан тобанаш гайта",
 	"apihelp-query+globaluserinfo-summary": "Глобалан декъашхочух лаьцна информаци гайтар.",
-	"apihelp-query+wikisets-example-1": "Вики-кхаьжнийн могӀам"
+	"apihelp-query+wikisets-example-1": "Вики-кхаьжнийн могӀам",
+	"apihelp-query+wikisets-param-orderbyname": "ЦӀерашца дӀасакъастаде жамӀаш."
 }
