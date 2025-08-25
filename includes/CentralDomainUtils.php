@@ -74,10 +74,10 @@ class CentralDomainUtils {
 	 *
 	 * The URL is guaranteed to have the following properties:
 	 * - Preserves the current mobile mode, even if the target wiki does not have a mobile mode (so
-	 *   that at the end of the redirect chain the user is still in the same mode they started with).
+	 *   that at the end of the redirect chain, the user is still in the same mode they started with).
 	 * - Uses a nice URL (no index.php). This simplifies URL pattern recognition at the edge cache.
 	 * - When using CENTRAL_DOMAIN_ID or PASSIVE_CENTRAL_DOMAIN_ID, and it resolves to the SUL3
-	 *   domain, the namespace will be formatted like in a local URL.
+	 *   domain, the namespace will be formatted like a local URL.
 	 *   In all other cases, it uses the page name as it was passed (does not localize namespaces).
 	 *   This can be important for identifying authentication-related cross-wiki requests at the
 	 *   edge cache level.
@@ -107,9 +107,8 @@ class CentralDomainUtils {
 			if ( $useSul3Domain ) {
 				$sharedDomainWikiId = null;
 				if ( $wikiId === self::AUTOLOGIN_CENTRAL_DOMAIN_ID || $wikiId === self::SUL3_CENTRAL_DOMAIN_ID ) {
-					$sharedDomainWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
+					$sharedDomainWikiId = $this->config->get( CAMainConfigNames::CentralAuthCentralWiki )
 						?? WikiMap::getCurrentWikiId();
-
 					// The shared domain will parse this URL with the configuration of a different
 					// wiki, possibly in a different language; everything must be canonical.
 					$normalUrl = WikiMap::getWiki( $sharedDomainWikiId )->getCanonicalUrl( $page );
@@ -175,8 +174,8 @@ class CentralDomainUtils {
 
 	/**
 	 * Checks if we have a central domain for the user currently performing
-	 * the request. Central domain is either the central login wiki in SUL2
-	 * or the shared domain in SUL3 mode.
+	 * the request. The central domain is either the central login wiki in
+	 * SUL2 or the shared domain in SUL3 mode.
 	 */
 	public function centralDomainExists( WebRequest $request ): bool {
 		if ( $this->sharedDomainUtils->isSul3Enabled( $request ) ) {

@@ -24,21 +24,24 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 				'foowiki' => 'https://foowiki.example.org',
 				'loginwiki' => 'https://login.example.org',
 				'enwiktionary' => 'https://en.wiktionary.org',
+				'metawiki' => 'https://metawiki.example.org',
 			],
 			'wgArticlePath' => [
 				'foowiki' => '/wiki/$1',
 				'loginwiki' => '/wiki/$1',
 				'enwiktionary' => '/wiki/$1',
+				'metawiki' => '/wiki/$1',
 			],
 		];
 		$conf->suffixes = [ 'wiki', 'wiktionary' ];
 		$this->setMwGlobals( 'wgConf', $conf );
 		$this->overrideConfigValues( [
-			MainConfigNames::LocalDatabases => [ 'foowiki', 'loginwiki', 'enwiktionary' ],
+			MainConfigNames::LocalDatabases => [ 'foowiki', 'loginwiki', 'enwiktionary', 'metawiki' ],
 			MainConfigNames::CanonicalServer => 'https://foowiki.example.org',
 			MainConfigNames::DBname => 'foowiki',
 			MainConfigNames::DBprefix => null,
 			CAMainConfigNames::CentralAuthLoginWiki => 'loginwiki',
+			CAMainConfigNames::CentralAuthCentralWiki => 'metawiki',
 			CAMainConfigNames::CentralAuthSharedDomainCallback
 				=> static fn ( $wikiId ) => "https://auth.example.org/$wikiId",
 		] );
@@ -94,17 +97,17 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			[ false, $sul2Domain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
 				'https://login.example.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
 			[ false, $sul3Domain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
-				'https://auth.example.org/loginwiki/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
+				'https://auth.example.org/metawiki/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
 			[ false, 'enwiktionary', 'Special:UserLogin', [ 'foo' => 'bar' ],
 				'https://en.wiktionary.org/wiki/Special:UserLogin?useformat=desktop&foo=bar' ],
 			[ true, $centralDomain, 'Special:UserLogin', [ 'foo' => 'bar' ],
 				'https://auth.example.org/foowiki/wiki/Spezial:UserLogin?useformat=desktop&foo=bar' ],
 			[ true, $autologinDomain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
-				'https://auth.example.org/loginwiki/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
+				'https://auth.example.org/metawiki/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
 			[ true, $sul2Domain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
 				'https://login.example.org/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
 			[ true, $sul3Domain, 'Special:CentralAutoLogin/start', [ 'foo' => 'bar' ],
-				'https://auth.example.org/loginwiki/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
+				'https://auth.example.org/metawiki/wiki/Special:CentralAutoLogin/start?useformat=desktop&foo=bar' ],
 			[ true, 'enwiktionary', 'Special:UserLogin', [ 'foo' => 'bar' ],
 				'https://en.wiktionary.org/wiki/Special:UserLogin?useformat=desktop&foo=bar' ],
 		];

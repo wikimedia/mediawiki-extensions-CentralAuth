@@ -971,6 +971,10 @@
 				}
 			},
 			"merge_strategy": "array_replace_recursive"
+		},
+		"CentralAuthCentralWiki": {
+			"description": "Central wiki of the wiki farm. Will be used for various cross-wiki management workflows.",
+			"value": null
 		}
 	},
 	"AuthManagerAutoConfig": {

@@ -47,7 +47,7 @@ class SharedDomainUtils {
 	 * The returned prefix is equivalent to $wgCanonicalServer in how it should be used to
 	 * construct URLs.
 	 *
-	 * @param ?string $wikiId The ID of the wiki which should be used for configuration when the
+	 * @param ?string $wikiId The ID of the wiki that should be used for configuration when the
 	 *   shared domain URL is processed. Defaults to the current wiki ID.
 	 * @return string|null URL prefix for the shared authentication domain, without a trailing
 	 *   slash; or null if the shared domain is not configured.
@@ -102,7 +102,7 @@ class SharedDomainUtils {
 
 	/**
 	 * Whether the wiki supports SUL3 at all. This does not necessarily mean SUL3 is enabled on
-	 * the wiki; but at a minimum, when this function is true, it can be enabled for a given
+	 * the wiki, but at a minimum, when this function returns true, it can be enabled for a given
 	 * request by using the usesul3=1 URL parameter.
 	 *
 	 */
