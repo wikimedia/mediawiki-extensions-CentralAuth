@@ -120,7 +120,6 @@ class FixRenameUserLocalLogs extends Maintenance {
 		$oldUserName = $globalLogEntry->getParameters()['4::olduser'];
 		$newUserName = $globalLogEntry->getParameters()['5::newuser'];
 
-		$titleFactory = $this->getServiceContainer()->getTitleFactory();
 		$localDb = $this->getReplicaDB();
 
 		// For each global 'gblrename' log entry, try to find corresponding local 'renameuser' log entry,
@@ -132,7 +131,8 @@ class FixRenameUserLocalLogs extends Maintenance {
 				'log_action' => 'renameuser',
 				$localDb->expr( 'log_timestamp', '>=', $localDb->timestamp( $globalLogEntry->getTimestamp() ) ),
 				'log_namespace' => NS_USER,
-				'log_title' => $titleFactory->makeTitleSafe( NS_USER, $oldUserName )->getDBkey(),
+				// Old username may not be valid today, so don't try to parse it, just manually convert to dbkey format
+				'log_title' => strtr( $oldUserName, ' ', '_' ),
 			] );
 		// We need to fiddle with the query, because DatabaseLogEntry does an INNER JOIN with `actor`,
 		// but the actor row might not exist due to the bug we're trying to clean up after.
