@@ -36,6 +36,8 @@ class FixRenamedUserGlobalEditCount extends Maintenance {
 			"as once upon a time that corrupted the edit counts (T313900).\n\n" .
 			"Run this on the wiki that has 'gblrename' log entries (e.g. 'metawiki').\n\n" .
 			"This script performs a dry run by default." );
+		$this->addOption( 'since', 'Only process renames since (timestamp)', false, true );
+		$this->addOption( 'until', 'Only process renames until (timestamp)', false, true );
 		$this->addOption( 'fix', 'Save the changes to the database' );
 		$this->setBatchSize( 100 );
 	}
@@ -46,12 +48,23 @@ class FixRenamedUserGlobalEditCount extends Maintenance {
 
 		$counter = CentralAuthServices::getEditCounter( $this->getServiceContainer() );
 
-		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $this->getReplicaDB() )
+		$dbr = $this->getReplicaDB();
+		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $dbr )
 			->where( [
 				'log_type' => 'gblrename',
 				'log_action' => 'rename',
 			] );
-		$batches = new BatchRowIterator( $this->getReplicaDB(), $sqb, 'log_timestamp', $this->getBatchSize() );
+		if ( $this->getOption( 'since' ) ) {
+			$sqb->where( $dbr->expr(
+				'log_timestamp', '>=', $dbr->timestamp( $this->getOption( 'since' ) )
+			) );
+		}
+		if ( $this->getOption( 'until' ) ) {
+			$sqb->where( $dbr->expr(
+				'log_timestamp', '<', $dbr->timestamp( $this->getOption( 'until' ) )
+			) );
+		}
+		$batches = new BatchRowIterator( $dbr, $sqb, 'log_timestamp', $this->getBatchSize() );
 		foreach ( $batches as $rows ) {
 			$this->beginTransactionRound( __METHOD__ );
 			foreach ( $rows as $row ) {
