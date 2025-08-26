@@ -90,10 +90,12 @@ class FixRenamedUserGlobalEditCount extends Maintenance {
 					$this->output( "Edit count already correct for '$newUserName'\n" );
 				} else {
 					$changed++;
+					$details = sprintf( 'from %d to %d (%+d; %0.2fx)',
+						$oldCount, $newCount, $newCount - $oldCount, $oldCount ? ( $newCount / $oldCount ) : 0 );
 					if ( $fix ) {
-						$this->output( "Corrected edit count for '$newUserName': from $oldCount to $newCount\n" );
+						$this->output( "Corrected edit count for '$newUserName': $details\n" );
 					} else {
-						$this->output( "Would correct edit count for '$newUserName': from $oldCount to $newCount\n" );
+						$this->output( "Would correct edit count for '$newUserName': $details\n" );
 					}
 				}
 			}
