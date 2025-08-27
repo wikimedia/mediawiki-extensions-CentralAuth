@@ -62,6 +62,7 @@
 	"centralauth-admin-hidden-oversight": "gizlədildi",
 	"centralauth-admin-info-attached": "Bağlanmış hesabların sayı:",
 	"centralauth-admin-info-editcount": "Ümumi redaktə sayı:",
+	"centralauth-admin-info-editcountsum": "Lokal redaktə saylarının cəmi:",
 	"centralauth-admin-info-groups": "Qlobal {{PLURAL:$1|istifadəçi qrupu|istifadəçi qrupları}}:",
 	"centralauth-admin-info-groups-manage": "idarə et",
 	"centralauth-admin-info-header": "Qlobal istifadəçi haqqında məlumatlar",

@@ -52,6 +52,7 @@
 	"centralauth-admin-hidden-oversight": "притаен",
 	"centralauth-admin-info-attached": "Број на приврзани сметки:",
 	"centralauth-admin-info-editcount": "Вкупно уредувања:",
+	"centralauth-admin-info-editcountsum": "Вкупно месни уредувања:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Глобална група|Глобални групи}}:",
 	"centralauth-admin-info-groups-manage": "раководи",
 	"centralauth-admin-info-header": "Информации за глобалната сметка",

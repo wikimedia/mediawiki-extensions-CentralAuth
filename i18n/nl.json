@@ -83,6 +83,7 @@
 	"centralauth-admin-hidden-oversight": "onderdrukt",
 	"centralauth-admin-info-attached": "Aantal verbonden accounts:",
 	"centralauth-admin-info-editcount": "Totaal aantal bewerkingen:",
+	"centralauth-admin-info-editcountsum": "Som van de aantallen lokale bewerkingen:",
 	"centralauth-admin-info-groups": "Globale {{PLURAL:$1|groep|groepen}}:",
 	"centralauth-admin-info-groups-manage": "beheren",
 	"centralauth-admin-info-header": "Gegevens globale account",

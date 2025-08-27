@@ -72,6 +72,7 @@
 	"centralauth-admin-hidden-oversight": "unterdrückt",
 	"centralauth-admin-info-attached": "Anzahl der verbundenen Benutzerkonten:",
 	"centralauth-admin-info-editcount": "Anzahl der Bearbeitungen in allen Wikis:",
+	"centralauth-admin-info-editcountsum": "Summe der lokalen Bearbeitungszahlen:",
 	"centralauth-admin-info-groups": "Globale {{PLURAL:$1|Gruppe|Gruppen}}:",
 	"centralauth-admin-info-groups-manage": "verwalten",
 	"centralauth-admin-info-header": "Globale Benutzerkonteninformationen",

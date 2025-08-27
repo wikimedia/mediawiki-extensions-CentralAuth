@@ -79,6 +79,7 @@
 	"centralauth-admin-hidden-oversight": "häivytetty",
 	"centralauth-admin-info-attached": "Liitettyjen tunnusten lukumäärä:",
 	"centralauth-admin-info-editcount": "Muokkauksia yhteensä:",
+	"centralauth-admin-info-editcountsum": "Paikallisten muokkausten yhteismäärä:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Järjestelmänlaajuinen ryhmä|Järjestelmänlaajuiset ryhmät}}:",
 	"centralauth-admin-info-groups-manage": "hallitse",
 	"centralauth-admin-info-header": "Järjestelmänlaajuiset käyttäjätiedot",
