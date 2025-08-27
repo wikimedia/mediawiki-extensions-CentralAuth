@@ -25,6 +25,8 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logging\DatabaseLogEntry;
 use MediaWiki\Maintenance\Maintenance;
+use MediaWiki\Utils\MWTimestamp;
+use MediaWiki\WikiMap\WikiMap;
 use stdClass;
 
 class FixRenameUserLocalLogs extends Maintenance {
@@ -121,7 +123,6 @@ class FixRenameUserLocalLogs extends Maintenance {
 	private function getLocalLogEntry( DatabaseLogEntry $globalLogEntry ): array {
 		$oldUserName = $globalLogEntry->getParameters()['4::olduser'];
 		$newUserName = $globalLogEntry->getParameters()['5::newuser'];
-
 		$localDb = $this->getReplicaDB();
 
 		// For each global 'gblrename' log entry, try to find corresponding local 'renameuser' log entry,
@@ -132,7 +133,15 @@ class FixRenameUserLocalLogs extends Maintenance {
 			->where( [
 				'log_type' => 'renameuser',
 				'log_action' => 'renameuser',
-				$localDb->expr( 'log_timestamp', '>=', $localDb->timestamp( $globalLogEntry->getTimestamp() ) ),
+				// Sometimes the local log entry has a timestamp a few seconds before the global one... (10 seconds)
+				// Beware: ->sub() and ->add() modify MWTimestamp in-place (it's mutable).
+				$localDb->expr( 'log_timestamp', '>=', $localDb->timestamp(
+					( new MWTimestamp( $globalLogEntry->getTimestamp() ) )->sub( 'PT10S' )->getTimestamp( TS_MW )
+				) ),
+				// If we're doing ugly date math already, also limit how far in the future we might look (1 week)
+				$localDb->expr( 'log_timestamp', '<', $localDb->timestamp(
+					( new MWTimestamp( $globalLogEntry->getTimestamp() ) )->add( 'P1W' )->getTimestamp( TS_MW )
+				) ),
 				'log_namespace' => NS_USER,
 				// Old username may not be valid today, so don't try to parse it, just manually convert to dbkey format
 				'log_title' => strtr( $oldUserName, ' ', '_' ),
@@ -156,11 +165,16 @@ class FixRenameUserLocalLogs extends Maintenance {
 			}
 		}
 		if ( !$result ) {
-			// If the renamed user exists on the local wiki, the lack of matching local log entry is weird.
+			// If the renamed user has existed on the local wiki at the time of the rename, the lack of
+			// matching local log entry is weird.
 			// Note that a log entry may exist even when the user does not exist (if it was renamed again).
 			$centralUser = CentralAuthUser::getInstanceByName( $newUserName );
-			if ( $centralUser->isAttached() ) {
-				$this->output( "User exists, but no local log entry for global #{$globalLogEntry->getId()}\n" );
+			$attachTime = $centralUser->queryAttachedBasic()[WikiMap::getCurrentWikiId()]['attachedTimestamp'] ?? null;
+			if (
+				$attachTime &&
+				wfTimestamp( TS_UNIX, $globalLogEntry->getTimestamp() ) > wfTimestamp( TS_UNIX, $attachTime )
+			) {
+				$this->output( "User has existed, but no local log entry for global #{$globalLogEntry->getId()}\n" );
 			}
 			return [ null, null ];
 		}
