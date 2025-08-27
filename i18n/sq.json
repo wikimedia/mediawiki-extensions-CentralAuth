@@ -297,6 +297,7 @@
 	"globalrenamerequest-username-label": "Emri i tanishëm:",
 	"globalusers": "Lista e llogarive globale",
 	"grant-setglobalaccountstatus": "Menaxho statusin global të llogarisë",
+	"log-name-gblrename": "Regjistri i riemërtimeve globale",
 	"mergeaccount": "Identfikoni statusin  e unifikuar.",
 	"right-centralauth-lock": "Bllokoni ose zhbllokoni llogari globale",
 	"right-centralauth-merge": "Bashkoni llogarit",

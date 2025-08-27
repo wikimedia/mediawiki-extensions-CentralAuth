@@ -3,7 +3,8 @@
 		"authors": [
 			"Imre",
 			"Pacha Tchernof",
-			"פוילישער"
+			"פוילישער",
+			"Shvermer"
 		]
 	},
 	"centralauth": "גלאבאלע קאנטע פארוואלטער",
@@ -66,7 +67,7 @@
 	"centralauth-centralautologin-logged-in": "איר זענט אריינלאגירט צענטראל ווי $1. טוט ווידערלאדן דעם בלאט אנצואווענדן אייערע באניצער־איינשטעלונגען.",
 	"centralauth-complete": "אריינלאגירן פאראייניקונג פֿארענדיקט!",
 	"centralauth-complete-text": "אצינד קענט איר אריינלאגירן צו נארוועלכן וויקי זײַטל פון {{int:Centraluth-groupname}} אן שאפן א נייע קאנטע.",
-	"centralauth-days-ago": "פֿאר $1 {{PLURAL:$1|טאג|טעג}}",
+	"centralauth-days-ago": "פאַר $1 {{PLURAL:$1|טאָג|טעג}} צוריק",
 	"centralauth-delete-empty-account": "ליידיגע קאנטע",
 	"centralauth-desc": "[[Special:MergeAccount|צונויפגיסן קאנטעס]] אריבער וויקיס פון {{int:Centralauth-groupname}}",
 	"centralauth-editgroup-display": "לאקאליזירטער נאמען פון גרופע:",
@@ -118,7 +119,7 @@
 	"centralauth-globalgroupperms-newgroupname": "נייע גרופע נאמען",
 	"centralauth-globalgroupperms-nogroups": "קיין גלאבאלע גרופעס נישט דעפינירט.",
 	"centralauth-hidden-blockreason": "גלאבאל באהאלטן דורך $1 ביי $2 מיטן גרונד: $3",
-	"centralauth-hours-ago": "פֿאר $1 {{PLURAL:$1|שעה|שעה'ן}}",
+	"centralauth-hours-ago": "פֿאר $1 {{PLURAL:$1|שעה}}",
 	"centralauth-incomplete": "אריינלאגירן פאראייניקונג נישט פֿארענדיקט!",
 	"centralauth-invalid-wiki": "נישט פאראן די וויקי־דאטנבאזע: $1",
 	"centralauth-list-home-title": "היים וויקי",
@@ -176,7 +177,7 @@
 	"centralauth-rightslog-header": "דאס לאגבוך אנטהאלט אפעראציעס אויף גלאבאלע גרופעס: מיטגלידערשאפֿט און רעכטן ענדערונגען",
 	"centralauth-rightslog-name": "גלאבאלער רעכטן לאגבוך",
 	"centralauth-ro": "גלאבאלע קאנטע אינפארמאציע",
-	"centralauth-seconds-ago": "פֿאַר $1 {{PLURAL:$1|סעקונדע|סעקונדעס}}",
+	"centralauth-seconds-ago": "פאַר $1 {{PLURAL:$1|סעקונדע|סעקונדעס}}",
 	"centralauth-years-ago": "פֿאר $1 {{PLURAL:$1|יאר|יאר}}",
 	"centralautologin": "צענטראלע אריינלאגירונג",
 	"centrallogin": "צענטראלע באניצער־אריינלאגירן",
