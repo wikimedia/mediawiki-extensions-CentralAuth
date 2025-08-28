@@ -22,7 +22,6 @@ namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
 use BatchRowIterator;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Logging\DatabaseLogEntry;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Utils\MWTimestamp;
@@ -44,30 +43,164 @@ class FixRenameUserLocalLogs extends Maintenance {
 		$this->setBatchSize( 100 );
 	}
 
-	public function execute() {
-		$fix = $this->hasOption( 'fix' );
-		$changed = 0;
-
-		$userFactory = $this->getServiceContainer()->getUserFactory();
+	/**
+	 * List the global 'gblrename' log entries, in batches of the specified size.
+	 * @return iterable<iterable<stdClass>>
+	 */
+	private function getGlobalLogEntries() {
 		$databaseManager = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() );
 		$metaWikiDbr = $databaseManager->getLocalDB( DB_REPLICA, $this->getOption( 'logwiki' ) );
-
-		// List the global 'gblrename' log entries
 		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $metaWikiDbr )
 			->caller( __METHOD__ )
 			->where( [
 				'log_type' => 'gblrename',
 				'log_action' => 'rename',
 			] );
-		$batches = new BatchRowIterator( $this->getReplicaDB(), $sqb, 'log_timestamp', $this->getBatchSize() );
-		foreach ( $batches as $rows ) {
+		return new BatchRowIterator( $this->getReplicaDB(), $sqb, 'log_timestamp', $this->getBatchSize() );
+	}
+
+	/**
+	 * List the local 'renameuser' log entries from the relevant period.
+	 * @param iterable<stdClass> $globalLogRows
+	 * @return iterable<stdClass>
+	 */
+	private function getLocalLogEntries( iterable $globalLogRows ) {
+		$logTitleValues = [];
+		$firstGlobalLogEntry = null;
+		$lastGlobalLogEntry = null;
+		foreach ( $globalLogRows as $row ) {
+			$globalLogEntry = DatabaseLogEntry::newFromRow( $row );
+			$firstGlobalLogEntry ??= $globalLogEntry;
+			$lastGlobalLogEntry = $globalLogEntry;
+
+			$oldUserName = $globalLogEntry->getParameters()['4::olduser'];
+			// Old username may not be valid today, so don't try to parse it, just manually convert to dbkey format
+			$logTitleValues[] = strtr( $oldUserName, ' ', '_' );
+		}
+		if ( !$firstGlobalLogEntry || !$lastGlobalLogEntry ) {
+			return [];
+		}
+
+		$localDb = $this->getReplicaDB();
+		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $localDb )
+			->caller( __METHOD__ )
+			->where( [
+				'log_type' => 'renameuser',
+				'log_action' => 'renameuser',
+				// Sometimes the local log entry has a timestamp a few seconds before the global one... (10 seconds)
+				// Beware: ->sub() and ->add() modify MWTimestamp in-place (it's mutable).
+				$localDb->expr( 'log_timestamp', '>=', $localDb->timestamp(
+					( new MWTimestamp( $firstGlobalLogEntry->getTimestamp() ) )->sub( 'PT10S' )->getTimestamp( TS_MW )
+				) ),
+				// If we're doing ugly date math already, also limit how far in the future we might look (1 week)
+				$localDb->expr( 'log_timestamp', '<', $localDb->timestamp(
+					( new MWTimestamp( $lastGlobalLogEntry->getTimestamp() ) )->add( 'P1W' )->getTimestamp( TS_MW )
+				) ),
+				'log_namespace' => NS_USER,
+				'log_title' => $logTitleValues,
+			] );
+		// We need to fiddle with the query, because DatabaseLogEntry does an INNER JOIN with `actor`,
+		// but the actor row might not exist due to the bug we're trying to clean up after.
+		$queryInfo = $sqb->getQueryInfo();
+		$queryInfo['join_conds']['logging_actor'][0] = 'LEFT JOIN';
+		$sqb = $localDb->newSelectQueryBuilder()->queryInfo( $queryInfo );
+		return $sqb->fetchResultSet();
+	}
+
+	/**
+	 * List the global user attachment timestamps on the current wiki for the users involved,
+	 * as a map from username to timestamp (or null if not attached).
+	 * @param iterable<stdClass> $globalLogRows
+	 * @return array<string, ?string>
+	 */
+	private function getUserAttachmentTimestamps( iterable $globalLogRows ) {
+		$db = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+
+		$userNames = [];
+		$attachedTimestamps = [];
+		foreach ( $globalLogRows as $row ) {
+			$globalLogEntry = DatabaseLogEntry::newFromRow( $row );
+			$newUserName = $globalLogEntry->getParameters()['5::newuser'];
+			$userNames[] = $newUserName;
+			$attachedTimestamps[$newUserName] = null;
+		}
+
+		$rows = $db->newSelectQueryBuilder()
+			->select( [ 'lu_name', 'lu_attached_timestamp' ] )
+			->from( 'localuser' )
+			->where( [
+				'lu_name' => $userNames,
+				'lu_wiki' => WikiMap::getCurrentWikiId(),
+			] )
+			->caller( __METHOD__ )
+			->fetchResultSet();
+
+		foreach ( $rows as $row ) {
+			$attachedTimestamps[$row->lu_name] = $row->lu_attached_timestamp;
+		}
+		return $attachedTimestamps;
+	}
+
+	/**
+	 * @param DatabaseLogEntry $globalLogEntry
+	 * @param iterable<stdClass> $localLogRows
+	 * @return list<array{DatabaseLogEntry, stdClass}>
+	 */
+	private function findMatchingLogEntries( DatabaseLogEntry $globalLogEntry, iterable $localLogRows ): array {
+		$oldUserName = $globalLogEntry->getParameters()['4::olduser'];
+		$newUserName = $globalLogEntry->getParameters()['5::newuser'];
+
+		$matchingResults = [];
+		// For each global 'gblrename' log entry, try to find corresponding local 'renameuser' log entry.
+		foreach ( $localLogRows as $localRow ) {
+			$localLogEntry = DatabaseLogEntry::newFromRow( $localRow );
+			if (
+				$oldUserName === $localLogEntry->getParameters()['4::olduser'] &&
+				$newUserName === $localLogEntry->getParameters()['5::newuser']
+			) {
+				$matchingResults[] = [ $localLogEntry, $localRow ];
+			}
+		}
+		return $matchingResults;
+	}
+
+	private function reportNoMatchingEntry( DatabaseLogEntry $globalLogEntry, int $count, array $attachedTimestamps ) {
+		if ( $count > 1 ) {
+			$this->output( "More than one matching local log entry for global #{$globalLogEntry->getId()}\n" );
+		} elseif ( $count < 1 ) {
+			// If the renamed user has existed on the local wiki at the time of the rename, the lack of
+			// matching local log entry is weird.
+			// Note that a log entry may exist even when the user does not exist (if it was renamed again).
+			$attachTime = $attachedTimestamps[ $globalLogEntry->getParameters()['5::newuser'] ];
+			if (
+				$attachTime &&
+				wfTimestamp( TS_UNIX, $globalLogEntry->getTimestamp() ) > wfTimestamp( TS_UNIX, $attachTime )
+			) {
+				$this->output( "User has existed, but no local log entry for global #{$globalLogEntry->getId()}\n" );
+			}
+		}
+	}
+
+	public function execute() {
+		$fix = $this->hasOption( 'fix' );
+		$changed = 0;
+
+		$userFactory = $this->getServiceContainer()->getUserFactory();
+
+		foreach ( $this->getGlobalLogEntries() as $globalLogRows ) {
+			$localLogRows = $this->getLocalLogEntries( $globalLogRows );
+			$attachedTimestamps = $this->getUserAttachmentTimestamps( $globalLogRows );
+
 			$this->beginTransactionRound( __METHOD__ );
-			foreach ( $rows as $globalRow ) {
+			foreach ( $globalLogRows as $globalRow ) {
 				$globalLogEntry = DatabaseLogEntry::newFromRow( $globalRow );
-				[ $localLogEntry, $localRow ] = $this->getLocalLogEntry( $globalLogEntry );
-				if ( !$localLogEntry instanceof DatabaseLogEntry || !$localRow instanceof stdClass ) {
+
+				$matchingResults = $this->findMatchingLogEntries( $globalLogEntry, $localLogRows );
+				if ( count( $matchingResults ) !== 1 ) {
+					$this->reportNoMatchingEntry( $globalLogEntry, count( $matchingResults ), $attachedTimestamps );
 					continue;
 				}
+				[ $localLogEntry, $localRow ] = $matchingResults[0];
 
 				// Find the local account of the user who really performed the rename.
 				// Do not use $globalLogEntry->getPerformerIdentity() on a log entry loaded from a different wiki,
@@ -117,67 +250,5 @@ class FixRenameUserLocalLogs extends Maintenance {
 		} else {
 			$this->output( "Dry run done, would correct $changed actor IDs\n" );
 		}
-	}
-
-	/** @return array{?DatabaseLogEntry, ?stdClass} */
-	private function getLocalLogEntry( DatabaseLogEntry $globalLogEntry ): array {
-		$oldUserName = $globalLogEntry->getParameters()['4::olduser'];
-		$newUserName = $globalLogEntry->getParameters()['5::newuser'];
-		$localDb = $this->getReplicaDB();
-
-		// For each global 'gblrename' log entry, try to find corresponding local 'renameuser' log entry,
-		// based on the approximate time and the old and new user names.
-		$result = null;
-		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $localDb )
-			->caller( __METHOD__ )
-			->where( [
-				'log_type' => 'renameuser',
-				'log_action' => 'renameuser',
-				// Sometimes the local log entry has a timestamp a few seconds before the global one... (10 seconds)
-				// Beware: ->sub() and ->add() modify MWTimestamp in-place (it's mutable).
-				$localDb->expr( 'log_timestamp', '>=', $localDb->timestamp(
-					( new MWTimestamp( $globalLogEntry->getTimestamp() ) )->sub( 'PT10S' )->getTimestamp( TS_MW )
-				) ),
-				// If we're doing ugly date math already, also limit how far in the future we might look (1 week)
-				$localDb->expr( 'log_timestamp', '<', $localDb->timestamp(
-					( new MWTimestamp( $globalLogEntry->getTimestamp() ) )->add( 'P1W' )->getTimestamp( TS_MW )
-				) ),
-				'log_namespace' => NS_USER,
-				// Old username may not be valid today, so don't try to parse it, just manually convert to dbkey format
-				'log_title' => strtr( $oldUserName, ' ', '_' ),
-			] );
-		// We need to fiddle with the query, because DatabaseLogEntry does an INNER JOIN with `actor`,
-		// but the actor row might not exist due to the bug we're trying to clean up after.
-		$queryInfo = $sqb->getQueryInfo();
-		$queryInfo['join_conds']['logging_actor'][0] = 'LEFT JOIN';
-		$sqb = $localDb->newSelectQueryBuilder()->queryInfo( $queryInfo );
-		foreach ( $sqb->fetchResultSet() as $localRow ) {
-			$localLogEntry = DatabaseLogEntry::newFromRow( $localRow );
-			if (
-				$oldUserName === $localLogEntry->getParameters()['4::olduser'] &&
-				$newUserName === $localLogEntry->getParameters()['5::newuser']
-			) {
-				if ( $result ) {
-					$this->output( "More than one matching local log entry for global #{$globalLogEntry->getId()}\n" );
-					return [ null, null ];
-				}
-				$result = [ $localLogEntry, $localRow ];
-			}
-		}
-		if ( !$result ) {
-			// If the renamed user has existed on the local wiki at the time of the rename, the lack of
-			// matching local log entry is weird.
-			// Note that a log entry may exist even when the user does not exist (if it was renamed again).
-			$centralUser = CentralAuthUser::getInstanceByName( $newUserName );
-			$attachTime = $centralUser->queryAttachedBasic()[WikiMap::getCurrentWikiId()]['attachedTimestamp'] ?? null;
-			if (
-				$attachTime &&
-				wfTimestamp( TS_UNIX, $globalLogEntry->getTimestamp() ) > wfTimestamp( TS_UNIX, $attachTime )
-			) {
-				$this->output( "User has existed, but no local log entry for global #{$globalLogEntry->getId()}\n" );
-			}
-			return [ null, null ];
-		}
-		return $result;
 	}
 }
