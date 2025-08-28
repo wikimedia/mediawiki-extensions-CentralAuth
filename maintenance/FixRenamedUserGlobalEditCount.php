@@ -50,6 +50,7 @@ class FixRenamedUserGlobalEditCount extends Maintenance {
 
 		$dbr = $this->getReplicaDB();
 		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $dbr )
+			->caller( __METHOD__ )
 			->where( [
 				'log_type' => 'gblrename',
 				'log_action' => 'rename',

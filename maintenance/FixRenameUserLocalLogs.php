@@ -52,6 +52,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 
 		// List the global 'gblrename' log entries
 		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $metaWikiDbr )
+			->caller( __METHOD__ )
 			->where( [
 				'log_type' => 'gblrename',
 				'log_action' => 'rename',
@@ -96,6 +97,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 				$changed++;
 				if ( $fix ) {
 					$this->getPrimaryDB()->newUpdateQueryBuilder()
+						->caller( __METHOD__ )
 						->update( 'logging' )
 						->where( [ 'log_id' => $localLogEntry->getId() ] )
 						->set( [ 'log_actor' => $newPerformer->getActorId() ] )
@@ -126,6 +128,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 		// based on the approximate time and the old and new user names.
 		$result = null;
 		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $localDb )
+			->caller( __METHOD__ )
 			->where( [
 				'log_type' => 'renameuser',
 				'log_action' => 'renameuser',
