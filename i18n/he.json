@@ -65,6 +65,7 @@
 	"centralauth-admin-hidden-oversight": "מועלם",
 	"centralauth-admin-info-attached": "מספר החשבונות המשויכים:",
 	"centralauth-admin-info-editcount": "מספר עריכות כולל:",
+	"centralauth-admin-info-editcountsum": "סכום מנייני העריכות המקומיים:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|קבוצה גלובלית|קבוצות גלובליות}}:",
 	"centralauth-admin-info-groups-manage": "ניהול",
 	"centralauth-admin-info-header": "מידע על החשבון הגלובלי",

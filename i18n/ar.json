@@ -87,6 +87,7 @@
 	"centralauth-admin-hidden-oversight": "مخفي",
 	"centralauth-admin-info-attached": "عدد الحسابات المرفقة:",
 	"centralauth-admin-info-editcount": "مجموع عدد التعديلات:",
+	"centralauth-admin-info-editcountsum": "مجموع عدد عمليات التحرير المحلية:",
 	"centralauth-admin-info-groups": "ال{{PLURAL:$1|مجموعة|مجموعات}} العامة:",
 	"centralauth-admin-info-groups-manage": "إدارة",
 	"centralauth-admin-info-header": "معلومات الحساب العام",
