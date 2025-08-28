@@ -202,6 +202,13 @@ class FixRenameUserLocalLogs extends Maintenance {
 				}
 				[ $localLogEntry, $localRow ] = $matchingResults[0];
 
+				if ( $localRow->log_user_text === 'Global rename script' ) {
+					// These rows were created when the global performer's account did not exist locally at
+					// the time of the rename. No need to do anything about these rows, as they can't be
+					// affected by this bug, and we probably shouldn't retroactively attribute them to the
+					// global performer if their account was created locally in the meantime.
+					continue;
+				}
 				// Find the local account of the user who really performed the rename.
 				// Do not use $globalLogEntry->getPerformerIdentity() on a log entry loaded from a different wiki,
 				// as it will poison global actor cache with actor IDs from that wiki (T398177)
