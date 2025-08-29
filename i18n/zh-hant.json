@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"1F616EMO",
 			"A2093064",
 			"Alexsh",
 			"Anakmalaysia",
@@ -426,7 +427,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "關閉日期",
 	"globalrenamequeue-column-rq-name": "使用者名稱",
 	"globalrenamequeue-column-rq-newname": "請求的使用者名稱",
-	"globalrenamequeue-column-rq-performer": "完成由",
+	"globalrenamequeue-column-rq-performer": "執行者",
 	"globalrenamequeue-column-rq-requested-ts": "開放日期",
 	"globalrenamequeue-column-rq-status": "狀態",
 	"globalrenamequeue-column-rq-wiki": "本地 wiki",
