@@ -83,6 +83,7 @@
 	"centralauth-admin-hidden-oversight": "gizlendi",
 	"centralauth-admin-info-attached": "Bağlı olan hesap sayısı:",
 	"centralauth-admin-info-editcount": "Toplam değişiklik sayısı:",
+	"centralauth-admin-info-editcountsum": "Yerel düzenleme sayılarının toplamı:",
 	"centralauth-admin-info-groups": "Küresel {{PLURAL:$1|grup|gruplar}}:",
 	"centralauth-admin-info-groups-manage": "yönet",
 	"centralauth-admin-info-header": "Küresel hesap bilgisi",
