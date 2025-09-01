@@ -29,10 +29,13 @@
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "वैश्विक सदस्य-समूह जिनमें सदस्य है",
 	"action-centralauth-createlocal": "ज़बरदस्ती लोकल खाता बनाने",
-	"action-centralauth-lock": "ग्लोबल खाता लॉक या अनलॉक करने",
+	"action-centralauth-lock": "ग्लोबल खाते लॉक या अनलॉक करने",
 	"action-centralauth-merge": "अपने खाते मर्ज करने",
 	"action-centralauth-suppress": "ग्लोबल खाते सप्रेस करने या छिपाने",
 	"action-centralauth-rename": "ग्लोबल खातों का पुनः नामकरण करने",
+	"action-centralauth-unmerge": "ग्लोबल खाते अलग करने",
+	"action-globalgroupmembership": "ग्लोबल समूहों की सदस्यता सम्पादित करने",
+	"action-globalgrouppermissions": "ग्लोबल समूह प्रबंधित करने",
 	"centralauth": "वैश्विक खाता प्रबंधन",
 	"centralauth-account-exists": "खाता नहीं बनाया जा सकता: अनुरोधित सदस्यनाम नाम पहले से ही किसी अन्य विकि पर किसी सदस्य द्वारा लिया गया है।",
 	"centralauth-account-exists-reset": "$1 सदस्यनाम इस विकि पर पंजीकृत नहीं है। [[Special:CentralAuth/$1|यह जिन विकियों पर पंजीकृत है]] उन पर आप इसका कूटशब्द बदल सकते हैं।",
@@ -434,7 +437,7 @@
 	"right-centralauth-merge": "अपने खाते मर्ज करना",
 	"right-centralauth-suppress": "ग्लोबल खाते सप्रेस करना या छिपाना",
 	"right-centralauth-rename": "ग्लोबल खातों का पुनः नामकरण करना",
-	"right-centralauth-unmerge": "वैश्विक खाता अलग करें",
-	"right-globalgroupmembership": "वैश्विक सदस्य-समूहों में सदस्यता सम्पादन",
-	"right-globalgrouppermissions": "वैश्विक सदस्य-समूह व्यवस्थापन"
+	"right-centralauth-unmerge": "ग्लोबल खाता अलग करना",
+	"right-globalgroupmembership": "ग्लोबल समूहों की सदस्यता सम्पादित करना",
+	"right-globalgrouppermissions": "ग्लोबल समूह प्रबंधित करना"
 }

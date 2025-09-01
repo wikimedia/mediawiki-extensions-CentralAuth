@@ -46,7 +46,8 @@
 			"Arielyurusova",
 			"Cookai1205",
 			"SunAfterRain",
-			"Lakejason0"
+			"Lakejason0",
+			"1F616EMO"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "使用者的全域編輯計數",
@@ -430,7 +431,7 @@
 	"globalrenamequeue-column-rq-completed-ts": "關閉日期",
 	"globalrenamequeue-column-rq-name": "使用者名稱",
 	"globalrenamequeue-column-rq-newname": "請求的使用者名稱",
-	"globalrenamequeue-column-rq-performer": "完成由",
+	"globalrenamequeue-column-rq-performer": "執行者",
 	"globalrenamequeue-column-rq-requested-ts": "開放日期",
 	"globalrenamequeue-column-rq-status": "狀態",
 	"globalrenamequeue-column-rq-wiki": "本地 wiki",

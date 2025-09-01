@@ -119,6 +119,8 @@
 	"globalrenamerequest-email-label": "E-postal adreso:",
 	"globalrenamerequest-newname-help-basic": "Informez l'uzero-nomo quon vu deziras uzar.",
 	"globalusers": "Listo di generala konti",
+	"grant-createlocalaccount": "Koakte krear lokala konto por globala konto",
+	"grant-setglobalaccountstatus": "Administrar stando di globala konto",
 	"log-action-filter-gblrights": "Tipo di modifikuro:",
 	"log-action-filter-gblrights-groupprms": "Modifiki en la tota grupo di uzeri",
 	"log-action-filter-gblrights-setmodify": "Modifiko en ajusti di la Wiki",

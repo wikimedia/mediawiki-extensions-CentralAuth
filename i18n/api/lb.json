@@ -7,6 +7,7 @@
 	},
 	"apierror-centralauth-badusername": "De Benotzernumm \"$1\" kann op dëser Wiki net benotzt ginn",
 	"apierror-centralauth-editconflict": "Ännerungskonflikt entdeckt",
+	"apihelp-createlocalaccount-example-1": "D'Uleeë vun engem lokale Kont fir [[User:Example]] forcéieren.",
 	"apihelp-deleteglobalaccount-description": "E globale Benotzer läschen.",
 	"apihelp-deleteglobalaccount-example-1": "De globale Benotzerkont fir [[User:Example]] läschen",
 	"apihelp-deleteglobalaccount-param-reason": "Grond fir d'Läsche vum Benotzer.",
