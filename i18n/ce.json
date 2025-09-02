@@ -52,6 +52,7 @@
 	"centralauth-admin-hidden-oversight": "йуьззина къайлайаьккхина",
 	"centralauth-admin-info-attached": "Вовшахтесна аккаунтийн дукхалла:",
 	"centralauth-admin-info-editcount": "Массо нисдарийн ларар:",
+	"centralauth-admin-info-editcountsum": "Локалан хийцамаш баран барам:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Глобалан тоба}}:",
 	"centralauth-admin-info-groups-manage": "урхалладан",
 	"centralauth-admin-info-header": "Глобалан аккаунтан хаамаш",
@@ -543,6 +544,6 @@
 	"right-globalgrouppermissions": "глобалан тобанашна урхалладар",
 	"sessionprovider-centralauthsessionprovider": "cookie файлийн бух тӀехь йолу сессеш",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken сессеш",
-	"centralauth-badaccess-blacklisted": "Глобалан цӀе хийца йиш йац хьан, хӀунда аьлча хьо Ӏаьржачу могӀаман чохь хилар бахьанехь.",
+	"centralauth-badaccess-blacklisted": "Глобалан цӀе хийца йиш йац хьан, хӀунда аьлча хьо блоктоьхначу могӀаман чохь хилар бахьанехь.",
 	"centralauth-action-forbidden-shared-domain": "Хьан бакъо йац и ардам бан йукъарчу аутентификацин доменехь."
 }
