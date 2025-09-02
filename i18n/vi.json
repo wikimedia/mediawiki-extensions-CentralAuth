@@ -23,7 +23,8 @@
 			"Trần Nguyễn Minh Huy",
 			"Vinhtantran",
 			"Nvdtn19",
-			"Chaiwan2009"
+			"Chaiwan2009",
+			"Noeruchan"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Số sửa đổi toàn cục của người dùng",
@@ -521,7 +522,7 @@
 	"right-centralauth-createlocal": "Ép buộc mở một tài khoản cục bộ cho một tài khoản toàn cục",
 	"right-centralauth-lock": "Khóa hoặc mở khóa tài khoản chung",
 	"right-centralauth-merge": "Trộn tài khoản của họ",
-	"right-centralauth-suppress": "Cưỡng chế hoặc ẩn tài khoản chung",
+	"right-centralauth-suppress": "Triệt bỏ hoặc ẩn tài khoản toàn cục",
 	"right-centralauth-rename": "Đổi tên tài khoản toàn cục",
 	"right-centralauth-unmerge": "Bỏ hợp nhất tài khoản chung",
 	"right-globalgroupmembership": "Sửa thành viên của nhóm toàn cục",
