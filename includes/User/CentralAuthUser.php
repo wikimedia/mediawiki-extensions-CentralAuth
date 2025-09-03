@@ -66,6 +66,7 @@ use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IReadableDatabase;
+use Wikimedia\Stats\StatsFactory;
 
 class CentralAuthUser implements IDBAccessObject {
 
@@ -136,6 +137,7 @@ class CentralAuthUser implements IDBAccessObject {
 	protected $mCasToken = 0;
 	/** @var \Psr\Log\LoggerInterface */
 	private $logger;
+	private StatsFactory $statsFactory;
 
 	/** @var string[] */
 	private static $mCacheVars = [
@@ -197,6 +199,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$this->mFromPrimary = true;
 		}
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
+		$this->statsFactory = MediaWikiServices::getInstance()->getStatsFactory();
 	}
 
 	/**
@@ -865,6 +868,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @throws LocalUserNotFoundException
 	 */
 	public function getBlocks(): array {
+		$getBlocksTimingStart = microtime( true );
 		$blocksByWikiId = [];
 
 		$mwServices = MediaWikiServices::getInstance();
@@ -919,6 +923,16 @@ class CentralAuthUser implements IDBAccessObject {
 				[ 'bt_user' => $row->user_id ]
 			);
 		}
+
+		// Time how long it takes to run this function
+		$this->statsFactory->withComponent( 'CentralAuth' )
+			->getTiming( 'centralauthuser_getblocks_timing_seconds' )
+			->observe( ( microtime( true ) - $getBlocksTimingStart ) * 1000 );
+
+		// Track the scale of the problem (more wikis, longer run time)
+		$this->statsFactory->withComponent( 'CentralAuth' )
+			->getGauge( 'centralauthuser_getblocks_wikis_count' )
+			->set( ( count( $wikis ) ) );
 
 		return $blocksByWikiId;
 	}

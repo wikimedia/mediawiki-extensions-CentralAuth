@@ -582,6 +582,26 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( [ CentralAuthUser::AUTHENTICATE_OK ], $caUser->authenticate( $password ) );
 	}
 
+	public function testGetBlocksInstrumentation() {
+		$targetUsername = $this->getTestCentralAuthUserWithExistingLocalWikis();
+		$caUser = CentralAuthUser::getInstanceByName( $targetUsername );
+		$caUser->getBlocks();
+
+		// Verify that the instrumentation was logged as expected
+		$statsFactory = $this->getServiceContainer()->getStatsFactory();
+		$timing = $statsFactory
+			->withComponent( 'CentralAuth' )
+			->getTiming( 'centralauthuser_getblocks_timing_seconds' );
+		$count = $statsFactory
+			->withComponent( 'CentralAuth' )
+			->getGauge( 'centralauthuser_getblocks_wikis_count' );
+
+		$timingSamples = $timing->getSamples();
+		$countSamples = $count->getSamples();
+		$this->assertIsNumeric( $timingSamples[0]->getValue() );
+		$this->assertIsNumeric( $countSamples[0]->getValue() );
+	}
+
 	private function createCentralAccountForGlobalUser(): void {
 		$user = new CentralAuthTestUser(
 			'GlobalUser',
