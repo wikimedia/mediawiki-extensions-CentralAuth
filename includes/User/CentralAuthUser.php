@@ -25,6 +25,7 @@ use CentralAuthSessionProvider;
 use DomainException;
 use Exception;
 use LogicException;
+use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\DAO\WikiAwareEntity;
@@ -864,17 +865,17 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Returns an array of blocks per wiki the user is attached to.
+	 * Actually run the queries for getBlocks()
+	 *
+	 * @param array[] $wikis
+	 * @return array<array<DatabaseBlock>>
 	 * @throws LocalUserNotFoundException
 	 */
-	public function getBlocks(): array {
-		$getBlocksTimingStart = microtime( true );
-		$blocksByWikiId = [];
-
+	private function queryForBlocks( $wikis ) {
 		$mwServices = MediaWikiServices::getInstance();
 		$dbm = CentralAuthServices::getDatabaseManager();
+		$blocksByWikiId = [];
 
-		$wikis = $this->queryAttachedBasic();
 		foreach ( $wikis as $wikiId => $_ ) {
 			$db = $dbm->getLocalDB( DB_REPLICA, $wikiId );
 			$fields = [ 'user_id' ];
@@ -923,6 +924,98 @@ class CentralAuthUser implements IDBAccessObject {
 				[ 'bt_user' => $row->user_id ]
 			);
 		}
+
+		return $blocksByWikiId;
+	}
+
+	/**
+	 * Returns an array of blocks per wiki the user is attached to.
+	 *
+	 * @param array|null $wikis Should conform to the schema of ::queryAttachedBasic() as necessary.
+	 *                          This is useful for testing, where ::queryAttachedBasic() may not work as expected,
+	 *                          and should only be used in those cases. Regular callers shouldn't manually set this.
+	 * @return array<array<DatabaseBlock>>
+	 * @throws LocalUserNotFoundException
+	 */
+	public function getBlocks( ?array $wikis = null ): array {
+		$getBlocksTimingStart = microtime( true );
+		if ( !$wikis ) {
+			$wikis = $this->queryAttachedBasic();
+		}
+
+		// If the user doesn't have a central id, there won't ever be a cache entry
+		// Run the blocks queries and return the result
+		$centralId = $this->getId();
+		if ( !$centralId ) {
+			// Record that we don't expect to interact with the cache
+			$this->statsFactory->withComponent( 'CentralAuth' )
+				->getCounter( 'centralauthuser_getblocks_cache' )
+				->setLabel( 'interaction', 'never' )
+				->increment();
+
+			return $this->queryForBlocks( $wikis );
+		}
+
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$cacheKey = $cache->makeGlobalKey(
+			'centralauthuser-getblocks',
+			$centralId
+		);
+		$blocksByWikiId = $cache->getWithSetCallback(
+			$cacheKey,
+			$cache::TTL_MONTH,
+			function ( $oldValue ) use ( $wikis ) {
+				if ( is_array( $oldValue ) ) {
+					$oldWikis = array_keys( $oldValue );
+
+					// Match queryForBlocks() adjustment of local wiki's id before sorting
+					$newWikis = array_keys( $wikis );
+					$localWiki = array_search( WikiMap::getCurrentWikiId(), $newWikis );
+					if ( $localWiki !== false ) {
+						$newWikis[ $localWiki ] = (int)WikiAwareEntity::LOCAL;
+					}
+
+					// If all wikis exist in the cache, use that value with adjustment
+					// to match what a fresh query would return and reset the expiry.
+					if (
+						!count( array_diff( $oldWikis, $newWikis ) ) &&
+						!count( array_diff( $newWikis, $oldWikis ) )
+					) {
+						// There isn't a hook for blocks expiring. Cached values need to
+						// manually filter out for expired blocks to match with the fresh
+						// value from queryForBlocks()
+						$filteredBlocks = [];
+						foreach ( $oldValue as $wikiId => $blocksOnWiki ) {
+							$filteredBlocks[ $wikiId ] = [];
+
+							foreach ( $blocksOnWiki as $block ) {
+								if ( !$block->isExpired() ) {
+									$filteredBlocks[ $wikiId ][] = $block;
+								}
+							}
+						}
+
+						// Record a cache hit
+						$this->statsFactory->withComponent( 'CentralAuth' )
+							->getCounter( 'centralauthuser_getblocks_cache' )
+							->setLabel( 'interaction', 'hit' )
+							->increment();
+
+						return $filteredBlocks;
+					}
+				}
+				// Record a cache miss
+				$this->statsFactory->withComponent( 'CentralAuth' )
+					->getCounter( 'centralauthuser_getblocks_cache' )
+					->setLabel( 'interaction', 'miss' )
+					->increment();
+
+				// Otherwise cached value doesn't exist or the wikis are mismatched, rerun
+				return $this->queryForBlocks( $wikis );
+			},
+			// Always run the callback
+			[ 'minAsOf' => INF ]
+		);
 
 		// Time how long it takes to run this function
 		$this->statsFactory->withComponent( 'CentralAuth' )

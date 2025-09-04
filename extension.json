@@ -563,6 +563,8 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\BlockHookHandler",
 			"services": [
 				"BlockTargetFactory",
+				"MainWANObjectCache",
+				"StatsFactory",
 				"UserNameUtils"
 			]
 		},
@@ -744,6 +746,7 @@
 			"pagedisplay",
 			"shareddomain"
 		],
+		"BlockIpComplete": "block",
 		"ContentSecurityPolicyDefaultSource": "contentsecuritypolicy",
 		"ContentSecurityPolicyScriptSource": "contentsecuritypolicy",
 		"GetLocalURL": "shareddomain",
@@ -785,6 +788,7 @@
 		"SiteNoticeAfter": "shareddomain",
 		"TempUserCreatedRedirect": "logincomplete",
 		"TestCanonicalRedirect": "default",
+		"UnblockUserComplete": "block",
 		"UnitTestsAfterDatabaseSetup": "unittests",
 		"UnitTestsBeforeDatabaseTeardown": "unittests",
 		"UserArrayFromResult": "default",

@@ -23,30 +23,38 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use MediaWiki\Block\AbstractBlock;
 use MediaWiki\Block\BlockTargetFactory;
 use MediaWiki\Block\CompositeBlock;
+use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Block\Hook\GetUserBlockHook;
 use MediaWiki\Block\SystemBlock;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Hook\BlockIpCompleteHook;
 use MediaWiki\Hook\OtherBlockLogLinkHook;
+use MediaWiki\Hook\UnblockUserCompleteHook;
 use MediaWiki\Html\Html;
 use MediaWiki\User\User;
+use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\IPUtils;
+use Wikimedia\ObjectCache\WANObjectCache;
+use Wikimedia\Stats\StatsFactory;
 
 /**
  * @author Taavi Väänänen <hi@taavi.wtf>
  */
 class BlockHookHandler implements
 	GetUserBlockHook,
-	OtherBlockLogLinkHook
+	OtherBlockLogLinkHook,
+	BlockIpCompleteHook,
+	UnblockUserCompleteHook
 {
 
-	private BlockTargetFactory $blockTargetFactory;
-	private UserNameUtils $userNameUtils;
-
-	public function __construct( BlockTargetFactory $blockTargetFactory, UserNameUtils $userNameUtils ) {
-		$this->blockTargetFactory = $blockTargetFactory;
-		$this->userNameUtils = $userNameUtils;
+	public function __construct(
+		private BlockTargetFactory $blockTargetFactory,
+		private WANObjectCache $wanCache,
+		private StatsFactory $statsFactory,
+		private UserNameUtils $userNameUtils
+	) {
 	}
 
 	/**
@@ -123,5 +131,61 @@ class BlockHookHandler implements
 			);
 		}
 		return true;
+	}
+
+	/**
+	 * Expire user's blocks cache; next instance of CentralAuthUser::getBlocks will reinstantiate
+	 *
+	 * @inheritDoc
+	 */
+	public function onBlockIpComplete( $block, $user, $priorBlock ) {
+		$this->invalidateCentralAuthUserGetBlocksCache( $block );
+	}
+
+	/**
+	 * Expire user's blocks cache; next instance of CentralAuthUser::getBlocks will reinstantiate
+	 *
+	 * @inheritDoc
+	 */
+	public function onUnblockUserComplete( $block, $user ) {
+		$this->invalidateCentralAuthUserGetBlocksCache( $block );
+	}
+
+	/**
+	 * Given a block passed from a block changing hook (onBlockIpComplete, onUnblockUserComplete),
+	 * Check against it to see if the associated user could have a cached CentralAuth::getBlocks()
+	 * and if so, invalidate it as something about their blocked status has changed.
+	 *
+	 * @param DatabaseBlock $block
+	 */
+	private function invalidateCentralAuthUserGetBlocksCache( $block ): void {
+		// Return early if the block target doesn't yield a central id because
+		// there won't be a cache object associated with the target either
+		$userIdentity = $block->getTargetUserIdentity();
+		if ( !( $userIdentity instanceof UserIdentity ) ) {
+			return;
+		}
+		$centralUserId = CentralAuthUser::getInstance( $userIdentity )->getId();
+		if ( !$centralUserId ) {
+			return;
+		}
+
+		$cacheKey = $this->wanCache->makeGlobalKey(
+			'centralauthuser-getblocks',
+			$centralUserId
+		);
+
+		// Track how often cache invalidation happens
+		$curTTL = null;
+		$cachedValue = $this->wanCache->get( $cacheKey, $curTTL );
+		if ( $curTTL && $curTTL > 0 ) {
+			$this->statsFactory->withComponent( 'CentralAuth' )
+				->getCounter( 'centralauthuser_getblocks_cache' )
+				->setLabel( 'interaction', 'invalidate' )
+				->increment();
+		}
+
+		// Invalidate because something about this user's blocks changed
+		$this->wanCache->delete( $cacheKey );
 	}
 }

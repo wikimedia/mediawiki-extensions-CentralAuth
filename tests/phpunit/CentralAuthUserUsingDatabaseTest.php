@@ -2,8 +2,10 @@
 
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\PasswordAuthenticationRequest;
+use MediaWiki\Block\DatabaseBlock;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\RequestContext;
+use MediaWiki\DAO\WikiAwareEntity;
 use MediaWiki\Extension\CentralAuth\CentralAuthEditCounter;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
@@ -21,6 +23,7 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
  * Setup database tests for centralauth
  *
  * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser
+ * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\BlockHookHandler
  * @group CentralAuthDB
  * @group Database
  */
@@ -580,6 +583,105 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertTrue( $caUser->unscramblePassword( 'foo' ) );
 		$this->assertFalse( $caUser->hasScrambledPassword() );
 		$this->assertSame( [ CentralAuthUser::AUTHENTICATE_OK ], $caUser->authenticate( $password ) );
+	}
+
+	public function testGetBlocksExecute() {
+		// Block a user and check for it with ::getBlocks()
+		// The test manually passes the local wiki through because
+		// the WikiMap class doesn't recognize the test database
+		$targetUser = $this->getTestUser()->getUser();
+		$caUserName = $this->getTestCentralAuthUserWithExistingLocalWikis( $targetUser->getName() );
+		$caTarget = CentralAuthUser::getPrimaryInstanceByName( $targetUser->getName() );
+		$wikis = [
+			WikiMap::getCurrentWikiId() => [
+				'wiki' => WikiMap::getCurrentWikiId(),
+			],
+		];
+		$this->checkGetBlocksCacheInstrumentationState( 0, 0, 0, 0 );
+
+		// Assert no blocks are found on a fresh account and that we miss the cache
+		$blocksFound = $caTarget->getBlocks( $wikis );
+		$this->checkGetBlocksCacheInstrumentationState( 0, 1, 0, 0 );
+
+		// Wiki should still be returned even if no blocks are found
+		$this->assertCount( 1, $blocksFound );
+
+		// This key resolves to 0 but is actually the internal function converting the local name to the entity int
+		$this->assertTrue( isset( $blocksFound[ (int)WikiAwareEntity::LOCAL ] ) );
+		$this->assertCount( 0, $blocksFound[ 0 ] );
+
+		// Assert that the cache is hit if we call this again
+		$caTarget->getBlocks( $wikis );
+		$this->checkGetBlocksCacheInstrumentationState( 1, 1, 0, 0 );
+	}
+
+	public function testGetBlocksExecuteWhenUserIsBlocked() {
+		// This test is split from testGetBlocksExecute() because of odd interactions
+		// with the test CA user dissassociating the local user from the central account
+		// It's not expected to hit the cache as the user has no central id
+		$targetUser = $this->getTestUser()->getUser();
+		$caTarget = CentralAuthUser::getPrimaryInstanceByName( $targetUser->getName() );
+		$wikis = [
+			WikiMap::getCurrentWikiId() => [
+				'wiki' => WikiMap::getCurrentWikiId(),
+			],
+		];
+		$this->checkGetBlocksCacheInstrumentationState( 0, 0, 0, 0 );
+
+		// Assert no blocks are found on a fresh account and that we never hit the cache
+		$blocksFound = $caTarget->getBlocks( $wikis );
+		$this->checkGetBlocksCacheInstrumentationState( 0, 0, 1, 0 );
+
+		// Block the target and assert that the block is found
+		$performer = $this->getTestSysop()->getUser();
+		$this->getServiceContainer()->getDatabaseBlockStore()
+			->insertBlockWithParams( [
+					'targetUser' => $targetUser,
+					'by' => $performer,
+					'expiry' => 'infinity',
+			] );
+		$blocksFound = $caTarget->getBlocks( $wikis );
+
+		$this->assertCount( 1, $blocksFound );
+		$this->assertTrue( isset( $blocksFound[ (int)WikiAwareEntity::LOCAL ] ) );
+		$this->assertCount( 1, $blocksFound[ 0 ] );
+		$this->assertInstanceOf( DatabaseBlock::class, $blocksFound[ 0 ][ 0 ] );
+		$this->checkGetBlocksCacheInstrumentationState( 0, 0, 2, 0 );
+	}
+
+	/**
+	 * Check if the state of cache interaction is as-expected
+	 *
+	 * @param int $hitCount
+	 * @param int $missCount
+	 * @param int $neverCount
+	 * @param int $invalidateCount
+	 */
+	private function checkGetBlocksCacheInstrumentationState(
+		int $hitCount,
+		int $missCount,
+		int $neverCount,
+		int $invalidateCount
+	) {
+		$statsFactory = $this->getServiceContainer()->getStatsFactory();
+		$labels = [
+			'hit' => $hitCount,
+			'miss' => $missCount,
+			'never' => $neverCount,
+			'invalidate' => $invalidateCount
+		];
+
+		$counts = $statsFactory
+			->withComponent( 'CentralAuth' )
+			->getCounter( 'centralauthuser_getblocks_cache' )
+			->getSamples();
+
+		foreach ( $labels as $label => $expectedCount ) {
+			$samples = array_filter( $counts, static function ( $sample ) use ( $label ) {
+				return $sample->getLabelValues()[ 0 ] === $label;
+			} );
+			$this->assertCount( $expectedCount, $samples, "$label count mismatch" );
+		}
 	}
 
 	public function testGetBlocksInstrumentation() {
