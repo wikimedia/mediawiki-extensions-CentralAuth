@@ -765,7 +765,7 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 		$html .= Html::rawElement( 'td', [ 'class' => 'mw-centralauth-wikislist-method' ], $attachedMethod );
 
-		$html .= Html::rawElement( 'td', [], $this->formatBlockStatus( $row ) ) .
+		$html .= Html::rawElement( 'td', [ 'style' => 'overflow-wrap: anywhere;' ], $this->formatBlockStatus( $row ) ) .
 			Html::rawElement(
 				'td', [ 'class' => 'mw-centralauth-wikislist-editcount' ], $this->formatEditcount( $row )
 			) .
