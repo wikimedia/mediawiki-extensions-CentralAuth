@@ -118,6 +118,7 @@
 	"centralauth-admin-hidden-oversight": "supprimé",
 	"centralauth-admin-info-attached": "Nombre de comptes attachés :",
 	"centralauth-admin-info-editcount": "Nombre total de modifications :",
+	"centralauth-admin-info-editcountsum": "Somme des nombres de modifications locaux :",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Groupe global|Groupes globaux}} :",
 	"centralauth-admin-info-groups-manage": "gérer",
 	"centralauth-admin-info-header": "Informations sur le compte global",
