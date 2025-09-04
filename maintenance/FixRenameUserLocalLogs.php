@@ -44,6 +44,21 @@ class FixRenameUserLocalLogs extends Maintenance {
 	}
 
 	/**
+	 * Parse a timestamp string into a Unix timestamp, optionally modifying it.
+	 */
+	private function ts( mixed $timestamp, ?string $modify = null ): int {
+		$mwTimestamp = new MWTimestamp( $timestamp );
+		if ( $modify !== null && str_starts_with( $modify, '+' ) ) {
+			$mwTimestamp->add( substr( $modify, 1 ) );
+		} elseif ( $modify !== null && str_starts_with( $modify, '-' ) ) {
+			$mwTimestamp->sub( substr( $modify, 1 ) );
+		} elseif ( $modify !== null ) {
+			throw new \LogicException( "Incorrect parameter $modify" );
+		}
+		return (int)$mwTimestamp->getTimestamp( TS_UNIX );
+	}
+
+	/**
 	 * List the global 'gblrename' log entries, in batches of the specified size.
 	 * @return iterable<iterable<stdClass>>
 	 */
@@ -56,55 +71,73 @@ class FixRenameUserLocalLogs extends Maintenance {
 				'log_type' => 'gblrename',
 				'log_action' => 'rename',
 			] );
+		// Also select the timestamp of the next rename of the same user, if there was any,
+		// to avoid mismatches later when querying local log entries
+		$sqb->field(
+			'(' . $sqb->newSubquery()
+				->from( 'logging', 'x' )
+				->field( 'log_timestamp' )
+				->where( [
+					'x.log_namespace = logging.log_namespace',
+					'x.log_title = logging.log_title',
+					'x.log_timestamp > logging.log_timestamp',
+				] )
+				->getSQL() . ')',
+			'_next_log_timestamp'
+		);
 		return new BatchRowIterator( $this->getReplicaDB(), $sqb, 'log_timestamp', $this->getBatchSize() );
 	}
 
 	/**
 	 * List the local 'renameuser' log entries from the relevant period.
 	 * @param iterable<stdClass> $globalLogRows
-	 * @return iterable<stdClass>
+	 * @return stdClass[][][] Result rows grouped by old and new username
 	 */
 	private function getLocalLogEntries( iterable $globalLogRows ) {
-		$logTitleValues = [];
 		$firstGlobalLogEntry = null;
 		$lastGlobalLogEntry = null;
 		foreach ( $globalLogRows as $row ) {
 			$globalLogEntry = DatabaseLogEntry::newFromRow( $row );
 			$firstGlobalLogEntry ??= $globalLogEntry;
 			$lastGlobalLogEntry = $globalLogEntry;
-
-			$oldUserName = $globalLogEntry->getParameters()['4::olduser'];
-			// Old username may not be valid today, so don't try to parse it, just manually convert to dbkey format
-			$logTitleValues[] = strtr( $oldUserName, ' ', '_' );
 		}
 		if ( !$firstGlobalLogEntry || !$lastGlobalLogEntry ) {
 			return [];
 		}
 
+		// Sometimes the local log entry has a timestamp a few seconds before the global one... (10 seconds)
+		$minTimestamp = $this->ts( $firstGlobalLogEntry->getTimestamp(), '-PT10S' );
+		// Assume that renames were completed (unblocked, if stuck) within 1 week
+		$maxTimestamp = $this->ts( $lastGlobalLogEntry->getTimestamp(), '+P1W' );
+
+		// We can't query by the target user, since `log_title` may have been overwritten by subsequent renames.
+		// Just select all log entries in the relevant time range.
 		$localDb = $this->getReplicaDB();
 		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $localDb )
 			->caller( __METHOD__ )
 			->where( [
 				'log_type' => 'renameuser',
 				'log_action' => 'renameuser',
-				// Sometimes the local log entry has a timestamp a few seconds before the global one... (10 seconds)
-				// Beware: ->sub() and ->add() modify MWTimestamp in-place (it's mutable).
-				$localDb->expr( 'log_timestamp', '>=', $localDb->timestamp(
-					( new MWTimestamp( $firstGlobalLogEntry->getTimestamp() ) )->sub( 'PT10S' )->getTimestamp( TS_MW )
-				) ),
-				// If we're doing ugly date math already, also limit how far in the future we might look (1 week)
-				$localDb->expr( 'log_timestamp', '<', $localDb->timestamp(
-					( new MWTimestamp( $lastGlobalLogEntry->getTimestamp() ) )->add( 'P1W' )->getTimestamp( TS_MW )
-				) ),
-				'log_namespace' => NS_USER,
-				'log_title' => $logTitleValues,
+				$localDb->expr( 'log_timestamp', '>=', $localDb->timestamp( $minTimestamp ) ),
+				$localDb->expr( 'log_timestamp', '<', $localDb->timestamp( $maxTimestamp ) ),
 			] );
+
 		// We need to fiddle with the query, because DatabaseLogEntry does an INNER JOIN with `actor`,
 		// but the actor row might not exist due to the bug we're trying to clean up after.
 		$queryInfo = $sqb->getQueryInfo();
 		$queryInfo['join_conds']['logging_actor'][0] = 'LEFT JOIN';
 		$sqb = $localDb->newSelectQueryBuilder()->queryInfo( $queryInfo );
-		return $sqb->fetchResultSet();
+		$rows = $sqb->fetchResultSet();
+
+		// Group the results by old and new username to avoid scanning the whole list repeatedly later
+		$rowsByOldNewUsername = [];
+		foreach ( $rows as $row ) {
+			$localLogEntry = DatabaseLogEntry::newFromRow( $row );
+			$oldUserName = $localLogEntry->getParameters()['4::olduser'];
+			$newUserName = $localLogEntry->getParameters()['5::newuser'];
+			$rowsByOldNewUsername[$oldUserName][$newUserName][] = $row;
+		}
+		return $rowsByOldNewUsername;
 	}
 
 	/**
@@ -142,23 +175,32 @@ class FixRenameUserLocalLogs extends Maintenance {
 	}
 
 	/**
-	 * @param DatabaseLogEntry $globalLogEntry
-	 * @param iterable<stdClass> $localLogRows
-	 * @return list<array{DatabaseLogEntry, stdClass}>
+	 * @param stdClass $globalRow
+	 * @param stdClass[][][] $localLogRowsByOldNewUsername Result rows grouped by old and new username
+	 * @return list<stdClass>
 	 */
-	private function findMatchingLogEntries( DatabaseLogEntry $globalLogEntry, iterable $localLogRows ): array {
+	private function findMatchingLogEntries( stdClass $globalRow, array $localLogRowsByOldNewUsername ): array {
+		$globalLogEntry = DatabaseLogEntry::newFromRow( $globalRow );
 		$oldUserName = $globalLogEntry->getParameters()['4::olduser'];
 		$newUserName = $globalLogEntry->getParameters()['5::newuser'];
 
+		// See getLocalLogEntries() for explanation of these values
+		$minTimestamp = $this->ts( $globalLogEntry->getTimestamp(), '-PT10S' );
+		$maxTimestamp = $this->ts( $globalLogEntry->getTimestamp(), '+P1W' );
+		// See getGlobalLogEntries() for explanation of this condition
+		if ( $globalRow->_next_log_timestamp !== null ) {
+			$maxTimestamp = min( $maxTimestamp, $this->ts( $globalRow->_next_log_timestamp ) );
+		}
+
 		$matchingResults = [];
 		// For each global 'gblrename' log entry, try to find corresponding local 'renameuser' log entry.
-		foreach ( $localLogRows as $localRow ) {
+		foreach ( $localLogRowsByOldNewUsername[$oldUserName][$newUserName] ?? [] as $localRow ) {
 			$localLogEntry = DatabaseLogEntry::newFromRow( $localRow );
 			if (
-				$oldUserName === $localLogEntry->getParameters()['4::olduser'] &&
-				$newUserName === $localLogEntry->getParameters()['5::newuser']
+				$this->ts( $localLogEntry->getTimestamp() ) >= $this->ts( $minTimestamp ) &&
+				$this->ts( $localLogEntry->getTimestamp() ) < $this->ts( $maxTimestamp )
 			) {
-				$matchingResults[] = [ $localLogEntry, $localRow ];
+				$matchingResults[] = $localRow;
 			}
 		}
 		return $matchingResults;
@@ -172,10 +214,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 			// matching local log entry is weird.
 			// Note that a log entry may exist even when the user does not exist (if it was renamed again).
 			$attachTime = $attachedTimestamps[ $globalLogEntry->getParameters()['5::newuser'] ];
-			if (
-				$attachTime &&
-				wfTimestamp( TS_UNIX, $globalLogEntry->getTimestamp() ) > wfTimestamp( TS_UNIX, $attachTime )
-			) {
+			if ( $attachTime && $this->ts( $globalLogEntry->getTimestamp() ) > $this->ts( $attachTime ) ) {
 				$this->output( "User has existed, but no local log entry for global #{$globalLogEntry->getId()}\n" );
 			}
 		}
@@ -195,12 +234,13 @@ class FixRenameUserLocalLogs extends Maintenance {
 			foreach ( $globalLogRows as $globalRow ) {
 				$globalLogEntry = DatabaseLogEntry::newFromRow( $globalRow );
 
-				$matchingResults = $this->findMatchingLogEntries( $globalLogEntry, $localLogRows );
+				$matchingResults = $this->findMatchingLogEntries( $globalRow, $localLogRows );
 				if ( count( $matchingResults ) !== 1 ) {
 					$this->reportNoMatchingEntry( $globalLogEntry, count( $matchingResults ), $attachedTimestamps );
 					continue;
 				}
-				[ $localLogEntry, $localRow ] = $matchingResults[0];
+				$localRow = $matchingResults[0];
+				$localLogEntry = DatabaseLogEntry::newFromRow( $localRow );
 
 				if ( $localRow->log_user_text === 'Global rename script' ) {
 					// These rows were created when the global performer's account did not exist locally at
