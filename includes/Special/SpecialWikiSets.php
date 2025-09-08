@@ -19,10 +19,8 @@ use MediaWiki\Xml\XmlSelect;
  * Special page to allow to edit "wikisets" which are used to restrict
  * specific global group permissions to certain wikis.
  *
- * @file
  * @ingroup Extensions
  */
-
 class SpecialWikiSets extends SpecialPage {
 
 	/** @var bool */

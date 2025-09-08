@@ -37,10 +37,8 @@ use MediaWiki\Xml\XmlSelect;
  * Special page to allow managing global groups
  * Prototype for a similar system in core.
  *
- * @file
  * @ingroup Extensions
  */
-
 class SpecialGlobalGroupPermissions extends SpecialPage {
 
 	private PermissionManager $permissionManager;

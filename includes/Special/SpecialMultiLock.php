@@ -19,10 +19,8 @@ use Wikimedia\Rdbms\LikeValue;
  * Special page to allow locking and hiding multiple users
  * at one time. Lots of code derived from Special:CentralAuth.
  *
- * @file
  * @ingroup Extensions
  */
-
 class SpecialMultiLock extends SpecialPage {
 
 	/** @var bool */
