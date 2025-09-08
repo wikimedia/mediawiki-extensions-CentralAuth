@@ -17,6 +17,7 @@
 			"CAPTAIN MEDUSA"
 		]
 	},
+	"action-centralauth-createlocal": "जबरजस्ती स्थानीय खाता सिर्जना गर्नुहोस्",
 	"centralauth": "विश्वव्यापी खाता प्रवन्धक",
 	"centralauth-admin-already-unmerged": "$1लाई नाघेर जाँदै, छुट्याइ सकिएको",
 	"centralauth-admin-bad-input": "अवैध गाभ्ने चयन।",
@@ -189,6 +190,7 @@
 	"globalrenamequeue-request-cancel-text": "रद्द गर्नुहोस्",
 	"globalrenamequeue-view-approved": "अनुमोदित",
 	"globalrenamequeue-view-rejected": "अस्वीकार",
+	"globalrenamerequest": "विश्वव्यापी प्रयोगकर्ता खाता पुन: नामकरण अनुरोध",
 	"globalusers": "विश्वव्यापी खाता सूची",
 	"log-action-filter-globalauth-delete": "ग्लोबल खाता मेटिएको",
 	"log-action-filter-globalauth-setstatus": "विश्वव्यापी खाता स्थिति परिवर्तन",
