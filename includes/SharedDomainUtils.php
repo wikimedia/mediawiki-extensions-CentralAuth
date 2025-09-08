@@ -104,7 +104,6 @@ class SharedDomainUtils {
 	 * Whether the wiki supports SUL3 at all. This does not necessarily mean SUL3 is enabled on
 	 * the wiki, but at a minimum, when this function returns true, it can be enabled for a given
 	 * request by using the usesul3=1 URL parameter.
-	 *
 	 */
 	public function canSul3BeEnabled(): bool {
 		return (bool)$this->config->get( CAMainConfigNames::CentralAuthSharedDomainCallback );

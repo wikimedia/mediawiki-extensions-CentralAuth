@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ruleset>
-	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki" />
+	<rule ref="./vendor/mediawiki/mediawiki-codesniffer/MediaWiki">
+		<exclude name="MediaWiki.Commenting.ClassAnnotations.UnrecognizedAnnotation" />
+	</rule>
 	<rule ref="Generic.Files.LineLength">
 		<exclude-pattern>CentralAuth\.*alias\.php</exclude-pattern>
 		<exclude-pattern>*/tests/*</exclude-pattern>
