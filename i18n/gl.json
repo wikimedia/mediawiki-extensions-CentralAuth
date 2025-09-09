@@ -50,7 +50,7 @@
 	"centralauth-admin-blocked2-indef": "Bloqueado indefinidamente.",
 	"centralauth-admin-blocklog": "rexistro de bloqueos",
 	"centralauth-admin-delete-button": "Borrar esta conta",
-	"centralauth-admin-delete-confirm": "Está seguro de querer borrar a conta?",
+	"centralauth-admin-delete-confirm": "Quere borrar a conta?",
 	"centralauth-admin-delete-description": "Ao eliminar unha conta global sepáranse todas as contas locais, e deixa libre o nome da conta global para que outro usuario o use.\nTodas as contas locais continuarán existindo.",
 	"centralauth-admin-delete-nonexistent": "Erro: A conta global \"<nowiki>$1</nowiki>\" non existe.",
 	"centralauth-admin-delete-success": "Borrouse a conta global de \"<nowiki>$1</nowiki>\"",

@@ -133,7 +133,7 @@
 	"centralauth-admin-reason-other": "Другая/дополнительная причина:",
 	"centralauth-admin-reason-other-select": "Другая причина",
 	"centralauth-admin-rename-in-progress": "Эта учётная запись сейчас переименовывается. Вы можете [[Special:GlobalRenameProgress/$1|видеть прогресс]] переименования. Журнал глобального переименования {{GENDER:$1|этого участника|этой участницы}} представлен ниже.",
-	"centralauth-admin-setstatus-success": "Вы изменили статус этой глобальной учётной записи.",
+	"centralauth-admin-setstatus-success": "Вы изменили статус глобальной учётной записи «$1».",
 	"centralauth-admin-status": "Установить глобальный статус учётной записи",
 	"centralauth-admin-status-hidden": "Скрыт:",
 	"centralauth-admin-status-hidden-list": "Учётная запись скрыта из списка глобальных участников",
