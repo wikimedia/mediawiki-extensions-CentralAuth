@@ -560,9 +560,10 @@ class CentralAuthHooks implements
 		$data = [];
 		$centralDomainUtils = self::getCentralDomainUtils();
 		$sharedDomainUtils = self::getSharedDomainUtils();
+		$request = RequestContext::getMain()->getRequest();
 
 		$wikiId = WikiMap::getCurrentWikiId();
-		if ( !$centralDomainUtils->isActiveOrPassiveCentralDomain() ) {
+		if ( !$centralDomainUtils->isCentralDomain( $request ) ) {
 			$startUrl = WikiMap::getForeignURL( $wikiId, 'Special:CentralAutoLogin/start' );
 
 			if ( $startUrl !== false ) {
@@ -570,8 +571,6 @@ class CentralAuthHooks implements
 					'type' => 'script',
 					// Can't depend on the user in a ResourceLoader callback.
 					'usesul3' => $sharedDomainUtils->getSharedDomainPrefix() ? 1 : 0,
-					// Bypass edge cache
-					'urlversion' => 2,
 				];
 				$startUrl = $sharedDomainUtils->makeUrlDeviceCompliant( $startUrl );
 				$data['startURL'] = wfAppendQuery( $startUrl, $params );

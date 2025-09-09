@@ -39,14 +39,6 @@ class CentralDomainUtils {
 	 * @internal
 	 * Pseudo-wiki-ID for the CentralDomainUtils::getUrl() method.
 	 *
-	 * Resolves to the SUL2 central login wiki.
-	 */
-	public const SUL2_CENTRAL_DOMAIN_ID = '#sul2-central#';
-
-	/**
-	 * @internal
-	 * Pseudo-wiki-ID for the CentralDomainUtils::getUrl() method.
-	 *
 	 * Resolves to the central login wiki on the SUL3 shared login domain. Titles are not localized.
 	 * This is suitable for autologin, same as CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID.
 	 */
@@ -92,12 +84,9 @@ class CentralDomainUtils {
 	public function getUrl( string $wikiId, string $page, WebRequest $request, array $params = [] ): string {
 		if ( $wikiId === self::CENTRAL_DOMAIN_ID
 			|| $wikiId === self::AUTOLOGIN_CENTRAL_DOMAIN_ID
-			|| $wikiId === self::SUL2_CENTRAL_DOMAIN_ID
 			|| $wikiId === self::SUL3_CENTRAL_DOMAIN_ID
 		) {
-			if ( $wikiId === self::SUL2_CENTRAL_DOMAIN_ID
-				|| !$this->sharedDomainUtils->canSul3BeEnabled()
-			) {
+			if ( !$this->sharedDomainUtils->canSul3BeEnabled() ) {
 				$useSul3Domain = false;
 			} else {
 				$useSul3Domain = $this->sharedDomainUtils->isSul3Enabled( $request ) ||
@@ -125,8 +114,8 @@ class CentralDomainUtils {
 				}
 				$url = $sharedDomainPrefix . $localUrl;
 			} else {
-				$centralWikiId = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
-					?? $this->fallbackLoginWikiId;
+				$loginWiki = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki );
+				$centralWikiId = $loginWiki ?: $this->fallbackLoginWikiId;
 				$url = $this->getWikiPageUrl( $centralWikiId, $page );
 			}
 		} else {
@@ -160,16 +149,6 @@ class CentralDomainUtils {
 
 		return ( !$this->sharedDomainUtils->isSul3Enabled( $request ) && WikiMap::getCurrentWikiId() === $loginWiki )
 			|| ( $this->sharedDomainUtils->isSul3Enabled( $request ) && $this->sharedDomainUtils->isSharedDomain() );
-	}
-
-	/**
-	 * Check if we are either on the SUL2 or the SUL3 central domain, ignoring which is the
-	 * "correct" one for the user's SUL3 opt-in flag.
-	 */
-	public function isActiveOrPassiveCentralDomain(): bool {
-		$loginWiki = $this->config->get( CAMainConfigNames::CentralAuthLoginWiki )
-			?? $this->fallbackLoginWikiId;
-		return WikiMap::getCurrentWikiId() === $loginWiki || $this->sharedDomainUtils->isSharedDomain();
 	}
 
 	/**

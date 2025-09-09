@@ -22,7 +22,6 @@ use MediaWiki\Json\FormatJson;
 use MediaWiki\Languages\LanguageFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MainConfigNames;
-use MediaWiki\Request\WebRequest;
 use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Session\Session;
 use MediaWiki\Skin\SkinTemplate;
@@ -207,10 +206,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			// SUL3 opt-in flag to make sure a sequence of central autologin steps all use the
 			// same mechanism on a wiki farm that is in the middle of SUL3 rollout
 			'usesul3',
-			// Edge cache busting parameter
-			'urlversion',
 		);
-		// Other parameters that that are not always preserved:
+		// Other parameters that are not always preserved:
 		// 'wikiid': The wiki where the user is being auto-logged in. (used in checkIsCentralWiki)
 		// 'token': Random store key, used to pass information in a secure manner.
 
@@ -339,7 +336,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				$useSul3 = $request->getBool( 'usesul3' ) ? 1 : 0;
 				$domain = $useSul3
 					? CentralDomainUtils::SUL3_CENTRAL_DOMAIN_ID
-					: CentralDomainUtils::SUL2_CENTRAL_DOMAIN_ID;
+					: $this->getConfig()->get( CAMainConfigNames::CentralAuthLoginWiki );
 				$this->do302Redirect( $domain, 'checkLoggedIn', [
 					'wikiid' => WikiMap::getCurrentWikiId(),
 					'usesul3' => $useSul3,
@@ -366,35 +363,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 				if ( !$this->checkSession() ) {
 					return;
-				}
-
-				if ( !$this->getUser()->isRegistered()
-					&& $this->hasDifferentDomainForSul3( $request )
-				) {
-					// Try /checkLoggedIn on both the SUL2 and SUL3 central domains: if it didn't
-					// work on the current one, redirect to the other one.
-					// At this point, requests without a session cookie still need to be cacheable,
-					// and changes to the code won't immediately affect cached responses, so this
-					// needs to be managed carefully to avoid e.g. redirect loops.
-					$triedSul3Fallback = $this->getRequest()->getCheck( 'triedSul3Fallback' );
-					if ( !$triedSul3Fallback ) {
-						// Make sure we have a deterministic, URL-based opt-in flag, like in /start.
-						// This is the opposite of the actual URL parameter, since we want to switch.
-						$useSul3 = $request->getBool( 'usesul3' ) ? 0 : 1;
-						$domain = $useSul3
-							? CentralDomainUtils::SUL3_CENTRAL_DOMAIN_ID
-							: CentralDomainUtils::SUL2_CENTRAL_DOMAIN_ID;
-						$this->do302Redirect( $domain, 'checkLoggedIn', [
-							'wikiid' => $wikiid,
-							'usesul3' => $useSul3,
-							'triedSul3Fallback' => 1,
-						] + $params );
-						return;
-					} else {
-						$this->doFinalOutput( false, 'Not centrally logged in',
-							self::getInlineScript( 'anon-set.js' ) );
-						return;
-					}
 				}
 
 				// If we got here, the user is probably logged in, and responses will contain
@@ -651,7 +619,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 				// First, do an edge login on the next pageview (unless we are already doing one,
 				// or we are on a central domain).
-				if ( !$this->centralDomainUtils->isActiveOrPassiveCentralDomain() && !$isEdgeLogin ) {
+				if ( !$this->centralDomainUtils->isCentralDomain( $request ) && !$isEdgeLogin ) {
 					$this->logger->debug( 'Edge login on the next pageview after CentralAutoLogin' );
 					$request->setSessionData( 'CentralAuthDoEdgeLogin', true );
 				}
@@ -960,14 +928,5 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		}
 
 		return $centralSession;
-	}
-
-	private function hasDifferentDomainForSul3( WebRequest $request ): bool {
-		if ( !$this->sharedDomainUtils->canSul3BeEnabled() ) {
-			return false;
-		}
-		$sul2Url = $this->centralDomainUtils->getUrl( CentralDomainUtils::SUL2_CENTRAL_DOMAIN_ID, 'X', $request );
-		$sul3Url = $this->centralDomainUtils->getUrl( CentralDomainUtils::SUL3_CENTRAL_DOMAIN_ID, 'X', $request );
-		return parse_url( $sul2Url, PHP_URL_HOST ) !== parse_url( $sul3Url, PHP_URL_HOST );
 	}
 }
