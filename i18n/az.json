@@ -280,7 +280,7 @@
 	"centralauth-merge-dryrun-or": "'''və ya'''",
 	"centralauth-merge-home-password": "Bu hesabın (aşağıda göstərilən) parolu ev vikisində daxil etdiyiniz paroldan fərqlidir.\nEv vikisi üçün parolu daxil edin.",
 	"centralauth-merge-method-admin": "adminin birləşdirdiyi hesab",
-	"centralauth-merge-method-admin-desc": "Lokal hesabın stüardlar tərəfindən manual birləşdirildiyini göstərir.\nTəhlükəsizlik səbəbindən bu funksiya indi deaktiv edilib.",
+	"centralauth-merge-method-admin-desc": "Lokal hesabın stüardlar və ya sistem administratorları tərəfindən manual birləşdirildiyini göstərir.",
 	"centralauth-merge-method-empty": "töhfəsiz",
 	"centralauth-merge-method-empty-desc": "Lokal hesabın heç bir redaktəsi olmadığı üçün birləşdirildiyini göstərir.",
 	"centralauth-merge-method-login": "daxil olarkən yaradılıb",

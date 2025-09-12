@@ -249,7 +249,7 @@
 	"centralauth-merge-dryrun-or": "'''или'''",
 	"centralauth-merge-home-password": "Главни вики за овај налог (приказан испод) има другачију лозинку од ове коју сте унели. Молимо унесите лозинку вашег главног викија.",
 	"centralauth-merge-method-admin": "налог који је објединио администратор",
-	"centralauth-merge-method-admin-desc": "Означава да су локални налог стјуарди ручно спојили.\nСада је та функција онемогућена из безбедносних разлога.",
+	"centralauth-merge-method-admin-desc": "Означава да су локални налог стјуарди или систем админи ручно спојили.",
 	"centralauth-merge-method-empty": "нема доприноса",
 	"centralauth-merge-method-empty-desc": "Означава да је локални налог био спојен јер није имао измена.",
 	"centralauth-merge-method-login": "направљено при пријављивању",

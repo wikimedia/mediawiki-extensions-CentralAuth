@@ -297,7 +297,7 @@
 	"centralauth-merge-dryrun-or": "'''tai'''",
 	"centralauth-merge-home-password": "Tämän tunnuksen kotiwikissä (listattu alla) on eri salasana kuin syöttämäsi salasana.\nAnna kotiwikisi salasana.",
 	"centralauth-merge-method-admin": "ylläpitäjän yhdistämä käyttäjätunnus",
-	"centralauth-merge-method-admin-desc": "Tarkoittaa, että ylivalvoja yhdisti paikallisen tunnuksen manuaalisesti.\nTämä ominaisuus on nyt poistettu käytöstä tietoturvasyistä johtuen.",
+	"centralauth-merge-method-admin-desc": "Tarkoittaa, että ylivalvoja tai järjestelmän ylläpitäjä yhdisti paikallisen tunnuksen manuaalisesti.",
 	"centralauth-merge-method-empty": "ei muokkauksia",
 	"centralauth-merge-method-empty-desc": "Tarkoittaa, että paikallinen tunnus yhdistettiin, koska sillä ei ollut muokkauksia.",
 	"centralauth-merge-method-login": "luotu kirjautumishetkellä",

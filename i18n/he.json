@@ -283,7 +283,7 @@
 	"centralauth-merge-dryrun-or": "'''או'''",
 	"centralauth-merge-home-password": "באתר הראשי לחשבון הזה (הרשום להלן) ישנה סיסמה שונה מזו שהקלדת.\nנא להקליד את הסיסמה לאתר הראשי.",
 	"centralauth-merge-method-admin": "חשבון שמוזג על־ידי מפעיל",
-	"centralauth-merge-method-admin-desc": "מציין שהחשבון המקומי מוזג ידנית על־ידי דיילים.\nהתכונה הזאת כבויה כעת מטעמי אבטחה.",
+	"centralauth-merge-method-admin-desc": "מציין שהחשבון המקומי מוזג ידנית על־ידי דיילים או מפעילי מערכת.",
 	"centralauth-merge-method-empty": "אין תרומות",
 	"centralauth-merge-method-empty-desc": "מציין שהחשבון המקומי מוזג כי לא בוצעו ממנו עריכות.",
 	"centralauth-merge-method-login": "נוצר בעת כניסה לחשבון",
