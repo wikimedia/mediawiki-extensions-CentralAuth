@@ -96,9 +96,10 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 				'display' => $request->getRawVal( 'display' ),
 				'uselang' => $request->getRawVal( 'uselang' ),
 				'variant' => $request->getRawVal( 'variant' ),
-				'returnto' => $request->getRawVal( 'returnto' ),
-				'returntoquery' => $request->getRawVal( 'returntoquery' ),
-				'returntoanchor' => $request->getRawVal( 'returntoanchor' ),
+				// Mask these parameters, so that Userlogin doesn't immediately return if the user is logged in
+				'sul3-returnto' => $request->getRawVal( 'returnto' ),
+				'sul3-returntoquery' => $request->getRawVal( 'returntoquery' ),
+				'sul3-returntoanchor' => $request->getRawVal( 'returntoanchor' ),
 			];
 			$params['sul3-action'] = 'signup';
 			$url = wfAppendQuery( $localLoginUrl, $params );
