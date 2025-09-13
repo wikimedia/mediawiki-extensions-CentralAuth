@@ -243,9 +243,11 @@ class SharedDomainUtils {
 		// Make sure SUL3 opt-in state is preserved, e.g. in case of the user changing networks
 		$params['usesul3'] = '1';
 
-		// Skip the login form if the user is already logged in on the central domain.
-		// See LoginSignupSpecialPage: "In the case where the user is already logged in"...
-		if ( ( $params['returnto'] ?? '' ) === '' && ( $params['returntoquery'] ?? '' ) === '' ) {
+		// Skip the login form if the user is logged out on the local domain, but already logged in on the central
+		// domain. See LoginSignupSpecialPage: "In the case where the user is already logged in"...
+		if ( ( $params['returnto'] ?? '' ) === '' && ( $params['returntoquery'] ?? '' ) === ''
+			&& !$request->getSession()->getUser()->isNamed() && $action === 'login'
+		) {
 			// This is enough to pass the check in LoginSignupSpecialPage and make sure
 			// PostLoginRedirect is called even when the user is already logged in.
 			$params['returntoquery'] = '?';
