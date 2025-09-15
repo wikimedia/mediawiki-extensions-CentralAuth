@@ -40,6 +40,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 			CAMainConfigNames::CentralAuthCookieDomain => 'wiki.org',
 			CAMainConfigNames::CentralAuthCentralWiki => 'issuer',
 			MainConfigNames::CookieExpiration => 100,
+			MainConfigNames::SessionCookieJwtExpiration => 100,
 			MainConfigNames::ExtendedLoginCookieExpiration => 200,
 			// these are needed by CookieSessionProvider::getConfig
 			MainConfigNames::SessionName => null,
