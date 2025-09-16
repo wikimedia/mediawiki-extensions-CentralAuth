@@ -41,6 +41,8 @@ abstract class LocalRenameJob extends Job {
 
 	private bool $markedAsDone = false;
 
+	private const LOCK_PREFIX = 'CentralAuth-LocalRenameJob-';
+
 	/**
 	 * @param Title $title
 	 * @param array $params
@@ -72,7 +74,26 @@ abstract class LocalRenameJob extends Job {
 		$factory->commitPrimaryChanges( $fnameTrxOwner );
 
 		if ( empty( $this->params['ignorestatus'] ) ) {
-			if ( $status !== 'queued' && $status !== 'failed' ) {
+			$method = __METHOD__;
+			// Use a lock that is released when this job finished, or when the machine running it is
+			// terminated (T402435), and allow retrying jobs for renames already marked as 'inprogress'
+			// if this lock can be acquired (which means it's not really in progress). (T402830)
+			$dbw = MediaWikiServices::getInstance()->getConnectionProvider()->getPrimaryDatabase();
+			$lock = $dbw->lock( self::LOCK_PREFIX . $this->params['to'], $method, 0 );
+			if ( $lock === false ) {
+				$this->logger->info( 'Job already running for rename from {oldName} to {newName}', [
+					'oldName' => $this->params['from'],
+					'newName' => $this->params['to'],
+					'component' => 'GlobalRename',
+					'status' => $status,
+				] );
+				return true;
+			}
+			$this->addTeardownCallback( function () use ( $dbw, $method ) {
+				$dbw->unlock( self::LOCK_PREFIX . $this->params['to'], $method );
+			} );
+
+			if ( $status !== 'queued' && $status !== 'failed' && $status !== 'inprogress' ) {
 				$this->logger->info( 'Skipping duplicate rename from {oldName} to {newName}', [
 					'oldName' => $this->params['from'],
 					'newName' => $this->params['to'],
@@ -81,6 +102,14 @@ abstract class LocalRenameJob extends Job {
 				] );
 				return true;
 			}
+		}
+		if ( $status !== 'queued' ) {
+			$this->logger->info( "Retrying rename from {oldName} to {newName}, status was '{status}'", [
+				'oldName' => $this->params['from'],
+				'newName' => $this->params['to'],
+				'component' => 'GlobalRename',
+				'status' => $status,
+			] );
 		}
 
 		if ( isset( $this->params['session'] ) ) {
