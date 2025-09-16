@@ -40,7 +40,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 			CAMainConfigNames::CentralAuthCookieDomain => 'wiki.org',
 			CAMainConfigNames::CentralAuthCentralWiki => 'issuer',
 			MainConfigNames::CookieExpiration => 100,
-			MainConfigNames::SessionCookieJwtExpiration => 100,
+			MainConfigNames::SessionCookieJwtExpiration => 10,
 			MainConfigNames::ExtendedLoginCookieExpiration => 200,
 			// these are needed by CookieSessionProvider::getConfig
 			MainConfigNames::SessionName => null,
@@ -256,7 +256,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 		$sessionJwtData = $request->response()->getCookieData( 'sessionJwt' );
 		$this->assertNotNull( $sessionJwtData );
 		$this->assertSame( 'wiki.org', $sessionJwtData['domain'] );
-		$this->assertSame( $startTime + 100, $sessionJwtData['expire'] );
+		$this->assertSame( $startTime + 10, $sessionJwtData['expire'] );
 		$claims = $jwtCodec->parse( $sessionJwtData['value'] );
 		$this->assertSame( 'http://issuer.wiki.org', $claims['iss'] );
 		$this->assertSame( 'mw:CentralAuth::' . $centralUser->getId(), $claims['sub'] );
