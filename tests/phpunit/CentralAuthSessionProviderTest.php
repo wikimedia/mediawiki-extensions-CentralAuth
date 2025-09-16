@@ -7,7 +7,6 @@ use MediaWiki\Request\FauxRequest;
 use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionId;
 use MediaWiki\Session\SessionInfo;
-use MediaWiki\Session\SingleBackendSessionStore;
 use MediaWiki\Session\UserInfo;
 use MediaWiki\Tests\Json\PlainJsonJwtCodec;
 use MediaWiki\Tests\MockWikiMapTrait;
@@ -216,6 +215,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 		);
 		$config = $this->getConfig();
 		$config->set( MainConfigNames::UseSessionCookieJwt, true );
+		$config->set( MainConfigNames::AnonSessionCacheType, false );
 		$this->initProvider( $provider, null, $config, $services->getSessionManager() );
 
 		$jwtCodec = new PlainJsonJwtCodec();
@@ -237,7 +237,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 				'idIsSafe' => true,
 				'userInfo' => UserInfo::newFromUser( $user, true ),
 			] ),
-			new SingleBackendSessionStore( $store, new NullLogger() ),
+			$this->getServiceContainer()->getSessionStore(),
 			new NullLogger(),
 			$hookContainer,
 			10
