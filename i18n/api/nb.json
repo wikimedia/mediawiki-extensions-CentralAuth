@@ -40,6 +40,8 @@
 	"apihelp-query+globalallusers-param-from": "Brukernavnet det skal nummereres fra.",
 	"apihelp-query+globalallusers-param-group": "Begrens brukere til gitte globale grupper.",
 	"apihelp-query+globalallusers-param-limit": "Hvor mange brukernavn som skal returneres totalt.",
+	"apihelp-query+globalallusers-param-excludenamed": "Ekskluder brukere med navngitte kontoer.",
+	"apihelp-query+globalallusers-param-excludetemp": "Ekskluder brukre med midlertidige kontoer.",
 	"apihelp-query+globalallusers-param-prefix": "Søk etter alle brukere som begynner med denne verdien.",
 	"apihelp-query+globalallusers-param-prop": "Hvilken informasjon som skal inkluderes:",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "Hvorvidt kontoen er låst.",
