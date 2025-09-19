@@ -270,6 +270,7 @@
 	"centralauth-error-token-wrongattempt": "Used as error message.",
 	"centralauth-error-token-wronguser": "Used as error message.",
 	"centralauth-error-wrongprovider": "Used as an error message. Parameters:\n* $1 - Session type in use that makes it not possible to use the special page, from a message like {{msg-mw|sessionprovider-mediawiki-session-cookiesessionprovider}}.",
+	"centralauth-warning-reauth": "Used as an explanatory message on [[Special:UserLogin]] when the user in logged in on their local wiki, but is not logged in on the central domain, and the action they are trying to take has to be performed on the local domain. This is a bit similar to {{msg-mw|userlogin-reauth}}.",
 	"centralauth-finish-incomplete": "See also:\n* {{msg-mw|Centralauth-finish-noconfirms}}",
 	"centralauth-finish-login": "Used as submit button label of the form.\n\nSee also:\n* {{msg-mw|Centralauth-finish-title}}\n* {{msg-mw|Centralauth-finish-text}}\n{{Identical|Log in}}",
 	"centralauth-finish-noconfirms": "See also:\n* {{msg-mw|Centralauth-finish-incomplete}}",

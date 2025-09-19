@@ -87,6 +87,8 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		if ( $special->getName() === 'CreateAccount'
 			&& $isSul3Enabled
 			&& !$this->sharedDomainUtils->isSharedDomain()
+			// The isNamed() case is handled in SharedDomainHookHandler::onSpecialPageBeforeExecute()
+			&& !$special->getUser()->isNamed()
 		) {
 			$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
 			$params = [];

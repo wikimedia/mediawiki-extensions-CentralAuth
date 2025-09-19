@@ -751,6 +751,7 @@
 		"InvalidateEmailComplete": "default",
 		"LoadExtensionSchemaUpdates": "noservices",
 		"LocalUserCreated": "usercreation",
+		"LoginFormValidErrorMessages": "shareddomain",
 		"LogEventsListGetExtraInputs": "log",
 		"MakeGlobalVariablesScript": [
 			"default",

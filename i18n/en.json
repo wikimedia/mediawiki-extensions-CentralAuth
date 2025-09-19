@@ -239,6 +239,7 @@
 	"centralauth-error-token-wrongattempt": "The authentication token does not belong to your current login attempt.\nSomeone might be trying to log you in under a malicious account.",
 	"centralauth-error-token-wronguser": "The token does not match with your session username.\nSomeone might be trying to log you in under a malicious account.\nIf you are just trying to log in as another user, please log out first.",
 	"centralauth-error-wrongprovider": "This special page is unavailable when using $1.",
+	"centralauth-warning-reauth": "Your central login session has expired. Please log in again to continue.",
 	"centralauth-finish-incomplete": "Several accounts were merged using this password.\nOther accounts are not yet confirmed.",
 	"centralauth-finish-login": "Login",
 	"centralauth-finish-noconfirms": "No accounts could be confirmed using this password.",

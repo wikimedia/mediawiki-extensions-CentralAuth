@@ -21,6 +21,7 @@ use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\FilteredRequestTracker;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Hook\GetLocalURLHook;
+use MediaWiki\Hook\LoginFormValidErrorMessagesHook;
 use MediaWiki\Hook\SetupAfterCacheHook;
 use MediaWiki\Hook\SiteNoticeBeforeHook;
 use MediaWiki\MainConfigNames;
@@ -36,6 +37,7 @@ use MediaWiki\Rest\LocalizedHttpException;
 use MediaWiki\Rest\Module\Module;
 use MediaWiki\Rest\RequestInterface;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
@@ -54,6 +56,7 @@ class SharedDomainHookHandler implements
 	BeforePageDisplayHook,
 	GetLocalURLHook,
 	GetUserPermissionsErrorsHook,
+	LoginFormValidErrorMessagesHook,
 	MakeGlobalVariablesScriptHook,
 	ResourceLoaderModifyEmbeddedSourceUrlsHook,
 	RestCheckCanExecuteHook,
@@ -421,16 +424,43 @@ class SharedDomainHookHandler implements
 		$credentialsChangeSpecialPages = $this->getRestrictions( self::CENTRAL_SPECIAL_PAGES );
 
 		if ( $this->sharedDomainUtils->isSul3Enabled( $request )
-			 && !$this->sharedDomainUtils->isSharedDomain()
-			 && in_array( $special->getName(), $credentialsChangeSpecialPages, true )
+			&& !$this->sharedDomainUtils->isSharedDomain()
+			&& ( in_array( $special->getName(), $credentialsChangeSpecialPages, true )
+				// The !isNamed() case is handled in SpecialPageBeforeExecuteHookHandler::onSpecialPageBeforeExecute()
+				|| ( $special->getName() === 'CreateAccount' && $special->getUser()->isNamed() ) )
 		) {
-			$url = $this->sharedDomainUtils->getSharedDomainPrefix() . $request->getRequestURL();
+			if ( $special->getUser()->isNamed() ) {
+				// Redirect through Special:UserLogin in order to display a custom message if the user
+				// is no longer logged in on the central domain (T393459).
+				// Redirect directly to Special:UserLogin on central domain (not on local domain),
+				// because if the user is logged in, that short-circuits the central domain redirect.
+				$query = $request->getQueryValues();
+				unset( $query['title'] );
+				// Adapted from UserNotLoggedIn::report() and AuthManagerSpecialPage::handleReauthBeforeExecute().
+				// TODO: These different ways of redirecting to the login page should be consolidated...
+				$keepParams = [ 'uselang', 'useskin', 'useformat', 'variant', 'debug', 'safemode' ];
+				$localUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL( [
+					'returnto' => $special->getFullTitle()->getFullText(),
+					'returntoquery' => wfArrayToCgi( $query ),
+					'warning' => 'centralauth-warning-reauth',
+				] + array_intersect_key( $query, array_fill_keys( $keepParams, true ) ) );
+			} else {
+				$localUrl = $request->getRequestURL();
+			}
+			$url = $this->sharedDomainUtils->getSharedDomainPrefix() . $localUrl;
 			$url = $this->sharedDomainUtils->makeUrlDeviceCompliant( $url );
 			$special->getOutput()->redirect( $url );
 			return false;
 		}
 
 		return true;
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function onLoginFormValidErrorMessages( array &$messages ) {
+		$messages[] = 'centralauth-warning-reauth';
 	}
 
 	/**

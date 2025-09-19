@@ -117,10 +117,17 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			'clientPref' => $clientPref,
 		];
 		$token = $this->tokenManager->tokenize( $data, self::START_TOKEN_KEY_PREFIX );
+		$isSignup = $this->manager->getRequest()->getRawVal( 'sul3-action' ) === 'signup';
 
 		$queryParams = [
 			'centralauthLoginToken' => $token,
 		];
+		if ( $this->manager->getRequest()->getSession()->getUser()->isNamed() && !$isSignup ) {
+			$queryParams += [
+				// This warning message is only shown if the user is not logged in on the central domain.
+				'warning' => 'centralauth-warning-reauth',
+			];
+		}
 		if ( $this->manager->getRequest()->getRawVal( 'force' ) ) {
 			$queryParams += [
 				'force' => RedirectingLoginHookHandler::SECURITY_OP,
@@ -128,7 +135,6 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			];
 		}
 
-		$isSignup = $this->manager->getRequest()->getRawVal( 'sul3-action' ) === 'signup';
 		$url = wfAppendQuery(
 			$this->sharedDomainUtils->getUrlForSharedDomainAction(
 				$isSignup ? 'signup' : 'login',
