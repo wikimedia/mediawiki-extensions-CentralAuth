@@ -131,6 +131,12 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		if ( $this->manager->getRequest()->getRawVal( 'force' ) ) {
 			$queryParams += [
 				'force' => RedirectingLoginHookHandler::SECURITY_OP,
+				// FIXME: This query parameter is currently unused.
+				// The value should be passed to AuthManager::securitySensitiveOperationStatus( ... )
+				// somewhere, to match the default functionality of the 'force' parameter we're clobbering.
+				// In practice it doesn't matter now, because nothing important uses different elevated
+				// security levels, but it could matter in the future if we do e.g. T208667.
+				// For now, passing the parameter is helpful for debugging/understanding the redirects.
 				'forceOriginal' => $this->manager->getRequest()->getRawVal( 'force' ),
 			];
 		}
