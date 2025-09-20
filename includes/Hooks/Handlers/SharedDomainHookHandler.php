@@ -130,7 +130,7 @@ class SharedDomainHookHandler implements
 		],
 		self::CENTRAL_SPECIAL_PAGES => [
 			// credentials change
-			'PasswordReset', 'ChangePassword', 'ChangeCredentials', 'RemoveCredentials',
+			'PasswordReset', 'ChangePassword', 'ChangeCredentials', 'RemoveCredentials', 'OATHManage',
 		],
 		self::ALLOWED_ACTION_API_MODULES => [
 			// needed for allowing any query API, even if we only want meta modules; it can be
