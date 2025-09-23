@@ -262,6 +262,7 @@
 	"globalvanishrequest-username-label": "غوښتونکي کارن‌نوم",
 	"globalvanishrequest-reason-label": "د غوښتنې لامل",
 	"globalusers": "نړيوال گڼون لړليک",
+	"grant-createlocalaccount": "خامخا د ټوليز گڼون لپاره سيمه‌ييز گڼون جوړول",
 	"grant-setglobalaccountstatus": "د ټوليز گڼون دريځ مهارول",
 	"log-action-filter-gblrights": "د بدلون ډول:",
 	"log-action-filter-gblrights-setmodify": "ويکي ټولگه بدلول",
