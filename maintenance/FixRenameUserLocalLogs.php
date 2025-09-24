@@ -114,7 +114,6 @@ class FixRenameUserLocalLogs extends Maintenance {
 		// Just select all log entries in the relevant time range.
 		$localDb = $this->getReplicaDB();
 		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $localDb )
-			->caller( __METHOD__ )
 			->where( [
 				'log_type' => 'renameuser',
 				'log_action' => 'renameuser',
@@ -127,7 +126,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 		$queryInfo = $sqb->getQueryInfo();
 		$queryInfo['join_conds']['logging_actor'][0] = 'LEFT JOIN';
 		$sqb = $localDb->newSelectQueryBuilder()->queryInfo( $queryInfo );
-		$rows = $sqb->fetchResultSet();
+		$rows = $sqb->caller( __METHOD__ )->fetchResultSet();
 
 		// Group the results by old and new username to avoid scanning the whole list repeatedly later
 		$rowsByOldNewUsername = [];
@@ -279,10 +278,10 @@ class FixRenameUserLocalLogs extends Maintenance {
 				$changed++;
 				if ( $fix ) {
 					$this->getPrimaryDB()->newUpdateQueryBuilder()
-						->caller( __METHOD__ )
 						->update( 'logging' )
 						->where( [ 'log_id' => $localLogEntry->getId() ] )
 						->set( [ 'log_actor' => $newPerformer->getActorId() ] )
+						->caller( __METHOD__ )
 						->execute();
 				}
 				$this->output( ( $fix ? "Updated" : "Would update" ) . " performer for " .
