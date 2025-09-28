@@ -305,12 +305,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 		$rqId = array_shift( $pathArgs );
 		if ( !is_numeric( $rqId ) ) {
-			$this->showUnkownRequest();
+			$this->showUnknownRequest();
 			return;
 		}
 		$req = $this->globalRenameRequestStore->newFromId( $rqId );
 		if ( !$req->exists() ) {
-			$this->showUnkownRequest();
+			$this->showUnknownRequest();
 			return;
 		}
 
@@ -332,7 +332,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		}
 	}
 
-	private function showUnkownRequest() {
+	private function showUnknownRequest() {
 		$this->commonPreamble( 'globalrenamequeue-request-unknown-title' );
 		$this->getOutput()->addWikiMsg(
 			'globalrenamequeue-request-unknown-body'
