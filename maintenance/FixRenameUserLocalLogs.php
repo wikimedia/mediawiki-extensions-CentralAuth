@@ -82,6 +82,8 @@ class FixRenameUserLocalLogs extends Maintenance {
 					'x.log_title = logging.log_title',
 					'x.log_timestamp > logging.log_timestamp',
 				] )
+				->orderBy( 'x.log_timestamp', $sqb::SORT_ASC )
+				->limit( 1 )
 				->getSQL() . ')',
 			'_next_log_timestamp'
 		);
