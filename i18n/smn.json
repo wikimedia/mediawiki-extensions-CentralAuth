@@ -29,6 +29,7 @@
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|hammim|hammim|hammim|hammiimid}} wikist $2",
 	"centralauth-foreign-link": "Tubdâldâh $1 projektist $2",
 	"centralauth-globalgroupperms-rights": "Vuoigâdvuođah",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|tijme|tiijme|tiijme|tijmed}} tassaaš",
 	"centralauth-list-home-title": "Päikkiwiki",
 	"centralauth-log-status-hidden": "čiehhum",
 	"centralauth-merge-method-login": "rahtum siisâčáládâttâm ääigi",
