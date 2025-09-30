@@ -761,7 +761,10 @@
 		"LoadExtensionSchemaUpdates": "noservices",
 		"LocalUserCreated": "usercreation",
 		"LogEventsListGetExtraInputs": "log",
-		"MakeGlobalVariablesScript": "default",
+		"MakeGlobalVariablesScript": [
+			"default",
+			"shareddomain"
+		],
 		"OtherBlockLogLink": "block",
 		"PasswordPoliciesForUser": "passwordpolicies",
 		"PostLoginRedirect": "loginredirect",

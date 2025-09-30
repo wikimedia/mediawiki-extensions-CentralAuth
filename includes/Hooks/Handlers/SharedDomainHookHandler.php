@@ -28,10 +28,10 @@ use MediaWiki\Html\Html;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
+use MediaWiki\Output\Hook\MakeGlobalVariablesScriptHook;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderModifyEmbeddedSourceUrlsHook;
-use MediaWiki\ResourceLoader\ResourceLoader;
 use MediaWiki\Rest\Handler;
 use MediaWiki\Rest\Hook\RestCheckCanExecuteHook;
 use MediaWiki\Rest\HttpException;
@@ -60,6 +60,7 @@ class SharedDomainHookHandler implements
 	BeforePageDisplayHook,
 	GetLocalURLHook,
 	GetUserPermissionsErrorsHook,
+	MakeGlobalVariablesScriptHook,
 	ResourceLoaderModifyEmbeddedSourceUrlsHook,
 	RestCheckCanExecuteHook,
 	SetupAfterCacheHook,
@@ -306,16 +307,16 @@ class SharedDomainHookHandler implements
 		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
 			$out->disallowUserJs();
 		}
+	}
 
+	/** @inheritDoc */
+	public function onMakeGlobalVariablesScript( &$vars, $out ): void {
 		if ( $this->sharedDomainUtils->isSharedDomain() ) {
-			// Override some global `mw.config` items defined by ResourceLoader::getSiteConfigSettings()
-			// (used by 'mediawiki.base'), because the load.php request that normally sets them is served
-			// from the normal domain, giving wrong values for page views on the shared domain. (T380552)
-			// This can't use the 'MakeGlobalVariablesScript' hook to set page-specific `mw.config` items,
-			// because global items with identical names override them. There is therefore a very small
-			// risk of race conditions where another inline script reads `mw.config` before we can set it.
 			$conf = $out->getConfig();
-			$vars = [
+			// Define page-specific overrides for config vars that are normally site-level,
+			// because the load.php request that normally sets them is served from the normal domain,
+			// giving wrong values for page views on the shared domain. (T380552)
+			$vars += [
 				'wgArticlePath' => $conf->get( MainConfigNames::ArticlePath ),
 				'wgScriptPath' => $conf->get( MainConfigNames::ScriptPath ),
 				'wgScript' => $conf->get( MainConfigNames::Script ),
@@ -323,15 +324,6 @@ class SharedDomainHookHandler implements
 				'wgServer' => $conf->get( MainConfigNames::Server ),
 				'wgActionPaths' => (object)$conf->get( MainConfigNames::ActionPaths ),
 			];
-			$out->addHeadItem(
-				'CentralAuth-SharedDomain-Variables',
-				// We must do our override after 'mediawiki.base' sets the initial `mw.config` data
-				Html::inlineScript( ResourceLoader::makeInlineCodeWithModule(
-					// Implicit dependency on 'mediawiki.base'
-					[],
-					'mw.config.set(' . json_encode( $vars, JSON_THROW_ON_ERROR ) . ');'
-				) )
-			);
 		}
 	}
 
