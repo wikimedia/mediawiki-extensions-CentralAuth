@@ -112,8 +112,8 @@ class FixRenameUserLocalLogs extends Maintenance {
 		// Assume that renames were completed (unblocked, if stuck) within 1 week
 		$maxTimestamp = $this->ts( $lastGlobalLogEntry->getTimestamp(), '+P1W' );
 
-		// We can't query by the target user, since `log_title` may have been overwritten by subsequent renames.
-		// Just select all log entries in the relevant time range.
+		// We can't query by the target user, since `log_title` may have been overwritten by subsequent
+		// renames (T200731, T231829). Just select all log entries in the relevant time range.
 		$localDb = $this->getReplicaDB();
 		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $localDb )
 			->where( [
@@ -250,9 +250,13 @@ class FixRenameUserLocalLogs extends Maintenance {
 					// global performer if their account was created locally in the meantime.
 					continue;
 				}
+				if ( $localRow->log_actor !== $globalRow->log_actor ) {
+					// Not affected by T398177, nothing to do
+					continue;
+				}
 				// Find the local account of the user who really performed the rename.
 				// Do not use $globalLogEntry->getPerformerIdentity() on a log entry loaded from a different wiki,
-				// as it will poison global actor cache with actor IDs from that wiki (T398177)
+				// as it will poison global actor cache with actor IDs from that wiki (that's what caused T398177)
 				$newPerformer = $userFactory->newFromName( $globalRow->log_user_text );
 				if ( !$newPerformer || !$newPerformer->isRegistered() ) {
 					$this->output( "Global performer {$globalRow->log_user_text} does not exist locally\n" );
