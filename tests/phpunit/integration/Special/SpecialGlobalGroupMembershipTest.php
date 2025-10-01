@@ -162,13 +162,13 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		// Group one: not a member
 		// TODO: would be cool to not test the raw HTML structure here
 		$this->assertStringContainsString(
-			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" id="wpGroup-group-one" name="wpGroup-group-one">',
+			'<input type="checkbox" name="wpGroup-group-one" value="1" id="wpGroup-group-one" class="mw-userrights-groupcheckbox">',
 			$html
 		);
 
 		// Group two: indefinite member
 		$this->assertStringContainsString(
-			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" checked="" id="wpGroup-group-two" name="wpGroup-group-two">',
+			'<input type="checkbox" name="wpGroup-group-two" value="1" id="wpGroup-group-two" checked="" class="mw-userrights-groupcheckbox">',
 			$html
 		);
 		$this->assertStringContainsString(
@@ -184,7 +184,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 		// Group three: temporary member
 		$this->assertStringContainsString(
-			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" checked="" id="wpGroup-group-three" name="wpGroup-group-three">',
+			'<input type="checkbox" name="wpGroup-group-three" value="1" id="wpGroup-group-three" checked="" class="mw-userrights-groupcheckbox">',
 			$html
 		);
 		$this->assertStringContainsString(
@@ -267,13 +267,13 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 		// Automatic group one: not a member
 		$this->assertStringContainsString(
-			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" id="wpGroup-group-auto-one" name="wpGroup-group-auto-one" disabled="">',
+			'<input type="checkbox" name="wpGroup-group-auto-one" value="1" id="wpGroup-group-auto-one" class="mw-userrights-groupcheckbox" disabled="">',
 			$html
 		);
 
 		// Automatic group two: indefinite member
 		$this->assertStringContainsString(
-			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" checked="" id="wpGroup-group-auto-two" name="wpGroup-group-auto-two" disabled="">',
+			'<input type="checkbox" name="wpGroup-group-auto-two" value="1" id="wpGroup-group-auto-two" checked="" class="mw-userrights-groupcheckbox" disabled="">',
 			$html
 		);
 		$this->assertStringContainsString(
@@ -283,7 +283,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 		// Automatic group three: temporary member
 		$this->assertStringContainsString(
-			'<input class="mw-userrights-groupcheckbox" type="checkbox" value="1" checked="" id="wpGroup-group-auto-three" name="wpGroup-group-auto-three" disabled="">',
+			'<input type="checkbox" name="wpGroup-group-auto-three" value="1" id="wpGroup-group-auto-three" checked="" class="mw-userrights-groupcheckbox" disabled="">',
 			$html
 		);
 		$this->assertStringContainsString(

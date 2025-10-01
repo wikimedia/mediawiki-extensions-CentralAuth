@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
@@ -39,21 +38,20 @@ use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Message\Message;
 use MediaWiki\Output\OutputPage;
-use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\SpecialPage\UserGroupsSpecialPage;
 use MediaWiki\Specials\SpecialUserRights;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
-use MediaWiki\Xml\XmlSelect;
 
 /**
  * Equivalent of Special:Userrights for global groups.
  *
  * @ingroup Extensions
  */
-class SpecialGlobalGroupMembership extends SpecialPage {
+class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 	/**
 	 * The target of the local right-adjuster's interest.  Can be gotten from
@@ -510,7 +508,7 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 		$user = $status->value;
 		'@phan-var CentralAuthUser $user';
 
-		$this->showEditUserGroupsForm( $user );
+		$this->getOutput()->addHTML( $this->buildGroupsForm( $user->getName() ) );
 
 		// This isn't really ideal logging behavior, but let's not hide the
 		// interwiki logs if we're using them as is.
@@ -602,11 +600,32 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 			->displayForm( false );
 	}
 
-	/**
-	 * Show the form to edit group memberships.
-	 * @param CentralAuthUser $user user you're editing
-	 */
-	private function showEditUserGroupsForm( CentralAuthUser $user ) {
+	/** @inheritDoc */
+	protected function makeConflictCheckKey(): string {
+		$user = $this->mFetchedUser;
+		return implode( ',', $user->getGlobalGroups() );
+	}
+
+	/** @inheritDoc */
+	protected function getTargetDescriptor(): string {
+		return $this->mTarget;
+	}
+
+	/** @inheritDoc */
+	protected function getTargetUserToolLinks(): string {
+		$user = $this->mFetchedUser;
+		return Linker::userToolLinks(
+			$user->getId(),
+			$user->getName(),
+			// default for redContribsWhenNoEdits
+			false,
+			Linker::TOOL_LINKS_EMAIL
+		);
+	}
+
+	/** @inheritDoc */
+	protected function getCurrentUserGroupsText(): string {
+		$user = $this->mFetchedUser;
 		$list = $membersList = $tempList = $tempMembersList = [];
 		foreach ( $user->getGlobalGroupsWithExpiration() as $group => $expiration ) {
 			$ugm = new UserGroupMembership( $user->getId(), $group, $expiration );
@@ -637,268 +656,69 @@ class SpecialGlobalGroupMembership extends SpecialPage {
 				->parse();
 			$grouplist = '<p>' . $grouplist . ' ' . $displayedList . "</p>\n";
 		}
-
-		$userToolLinks = Linker::userToolLinks(
-			$user->getId(),
-			$user->getName(),
-			// default for redContribsWhenNoEdits
-			false,
-			Linker::TOOL_LINKS_EMAIL
-		);
-
-		$canChangeAny = $this->changeableGroups() !== [];
-		$this->getOutput()->addHTML(
-			Html::openElement(
-				'form',
-				[
-					'method' => 'post',
-					'action' => $this->getPageTitle()->getLocalURL(),
-					'name' => 'editGroup',
-					'id' => 'mw-userrights-form2'
-				]
-			) .
-			Html::hidden( 'user', $this->mTarget ) .
-			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken( $this->mTarget ) ) .
-			// Conflict detection
-			Html::hidden(
-				'conflictcheck-originalgroups',
-				implode( ',', $user->getGlobalGroups() )
-			) .
-			Html::openElement( 'fieldset' ) .
-			Html::element(
-				'legend',
-				[],
-				$this->msg(
-					$canChangeAny ? 'userrights-editusergroup' : 'userrights-viewusergroup',
-					$user->getName()
-				)->text()
-			) .
-			$this->msg(
-				$canChangeAny ? 'editinguser' : 'viewinguserrights'
-			)->params( wfEscapeWikiText( $user->getName() ) )
-				->rawParams( $userToolLinks )->parse()
-		);
-		if ( $canChangeAny ) {
-			$this->getOutput()->addHTML(
-				$this->msg( 'userrights-groups-help', $user->getName() )->parse() .
-				$grouplist .
-				$this->groupCheckboxes( $user ) .
-				Html::openElement( 'table', [ 'id' => 'mw-userrights-table-outer' ] ) .
-					"<tr>
-						<td class='mw-label'>" .
-							Html::label( $this->msg( 'userrights-reason' )->text(), 'wpReason' ) .
-						"</td>
-						<td class='mw-input'>" .
-							Html::input( 'user-reason', $this->getRequest()->getVal( 'user-reason' ) ?? false, 'text', [
-								'id' => 'wpReason',
-								'size' => 60,
-								// HTML maxlength uses "UTF-16 code units", which means that characters outside BMP
-								// (e.g. emojis) count for two each. This limit is overridden in JS to instead count
-								// Unicode codepoints.
-								'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
-							] ) .
-						"</td>
-					</tr>
-					<tr>
-						<td></td>
-						<td class='mw-submit'>" .
-							Html::submitButton( $this->msg( 'saveusergroups', $user->getName() )->text(),
-								[ 'name' => 'saveusergroups' ] +
-									Linker::tooltipAndAccesskeyAttribs( 'userrights-set' )
-							) .
-						"</td>
-					</tr>" .
-				Html::closeElement( 'table' ) . "\n"
-			);
-		} else {
-			$this->getOutput()->addHTML( $grouplist );
-		}
-		$this->getOutput()->addHTML(
-			Html::closeElement( 'fieldset' ) .
-			Html::closeElement( 'form' ) . "\n"
-		);
+		return $grouplist;
 	}
 
-	/**
-	 * Adds a table with checkboxes where you can select what groups to add/remove.
-	 *
-	 * This is only called when the user can change any of the groups.
-	 *
-	 * This is very similar to SpecialUserRights::groupCheckboxes (T395365).
-	 *
-	 * @return string The HTML table element with checkboxes and expiry dropdowns
-	 */
-	private function groupCheckboxes( CentralAuthUser $user ) {
-		$allgroups = $this->globalGroupLookup->getDefinedGroups();
-		$currentGroups = $user->getGlobalGroupsWithExpiration();
+	/** @inheritDoc */
+	protected function listAllExplicitGroups(): array {
+		return $this->globalGroupLookup->getDefinedGroups();
+	}
+
+	/** @inheritDoc */
+	protected function getGroupMemberships(): array {
+		$user = $this->mFetchedUser;
+		return $user->getGlobalGroupsWithExpiration();
+	}
+
+	/** @inheritDoc */
+	protected function getDisplayUsername(): string {
+		$user = $this->mFetchedUser;
+		return $user->getName();
+	}
+
+	protected function canAdd( string $group ): bool {
+		if ( !$this->getContext()->getAuthority()->isAllowed( 'globalgroupmembership' ) ) {
+			return false;
+		}
+
+		$automaticGroups = $this->automaticGroupManager->getAutomaticGlobalGroups();
+		if ( in_array( $group, $automaticGroups ) ) {
+			return false;
+		}
+
+		return true;
+	}
+
+	protected function canRemove( string $group ): bool {
+		return $this->canAdd( $group );
+	}
+
+	protected function getGroupAnnotations( string $group ): array {
 		$automaticGroups = $this->automaticGroupManager->getAutomaticGlobalGroups();
 		$automaticGroupsConfig = $this->getConfig()->get(
 			CAMainConfigNames::CentralAuthAutomaticGlobalGroups
 		);
-		$ret = '';
 
-		// Get the list of preset expiry times from the system message
-		$expiryOptionsMsg = $this->msg( 'userrights-expiry-options' )->inContentLanguage();
-		$expiryOptions = $expiryOptionsMsg->isDisabled()
-			? []
-			: XmlSelect::parseOptionsMessage( $expiryOptionsMsg->text() );
+		$groupIsAutomatic = in_array( $group, $automaticGroups );
 
-		$columns = [ 'unchangeable' => [], 'changeable' => [] ];
-
-		foreach ( $allgroups as $group ) {
-			$set = array_key_exists( $group, $currentGroups );
-
-			// The checkbox should be disabled if the group is automatic
-			$groupIsAutomatic = array_search( $group, $automaticGroups ) !== false;
-			$checkbox = [
-				'set' => $set,
-				'disabled' => $groupIsAutomatic,
-			];
-
-			if ( $groupIsAutomatic ) {
-				$columns['unchangeable'][$group] = $checkbox;
-			} else {
-				$columns['changeable'][$group] = $checkbox;
-			}
-		}
-
-		// Build the HTML table
-		$ret .= Html::openElement( 'table', [ 'class' => 'mw-userrights-groups' ] ) .
-			"<tr>\n";
-		$columns = array_filter( $columns, static function ( $column ) {
-			return $column !== [];
-		} );
-		foreach ( $columns as $name => $column ) {
-			// Messages: userrights-changeable-col, userrights-unchangeable-col
-			$ret .= Html::element(
-				'th',
-				[],
-				$this->msg( 'userrights-' . $name . '-col', count( $column ) )->text()
+		if ( $groupIsAutomatic ) {
+			return [ 'centralauth-globalgroupperms-automatic-group-reason' ];
+		} elseif ( isset( $automaticGroupsConfig[$group] ) && $automaticGroupsConfig[$group] ) {
+			$uiLanguage = $this->getLanguage();
+			$user = $this->mFetchedUser;
+			$groupNames = array_map(
+				static function ( $automaticGroup ) use ( $uiLanguage, $user ) {
+					return $uiLanguage->getGroupMemberName( $automaticGroup, $user->getName() );
+				},
+				$automaticGroupsConfig[$group]
 			);
+
+			return [
+				$this->msg( 'centralauth-globalgroupperms-automatic-group-info' )
+					->params( Message::listParam( $groupNames ) )
+			];
 		}
-
-		$ret .= "</tr>\n<tr>\n";
-		$uiLanguage = $this->getLanguage();
-
-		foreach ( $columns as $column ) {
-			$ret .= "\t<td style='vertical-align:top;'>\n";
-			foreach ( $column as $group => $checkbox ) {
-				$member = $uiLanguage->getGroupMemberName( $group, $user->getName() );
-				$id = "wpGroup-$group";
-
-				$checkboxHtml = Html::element( 'input', [
-					'class' => 'mw-userrights-groupcheckbox',
-					'type' => 'checkbox', 'value' => '1', 'checked' => $checkbox['set'],
-					'id' => $id, 'name' => $id,
-					'disabled' => $checkbox['disabled'],
-				] ) . '&nbsp;' . Html::label( $member, $id );
-
-				if ( $checkbox['disabled'] ) {
-					$checkboxHtml .= Html::rawElement(
-						'div',
-						[ 'class' => 'mw-userrights-unaddable-reason' ],
-						$this->msg( 'centralauth-globalgroupperms-automatic-group-reason' )->parse()
-					);
-				} elseif ( isset( $automaticGroupsConfig[$group] ) && $automaticGroupsConfig[$group] ) {
-					$groupNames = array_map(
-						static function ( $automaticGroup ) use ( $uiLanguage, $user ) {
-							return $uiLanguage->getGroupMemberName( $automaticGroup, $user->getName() );
-						},
-						$automaticGroupsConfig[$group]
-					);
-					$checkboxHtml .= Html::rawElement(
-						'div',
-						[ 'class' => 'mw-centralauth-globalgroupmembership-disabled ' .
-							'mw-centralauth-globalgroupmembership-group-info' ],
-						$this->msg( 'centralauth-globalgroupperms-automatic-group-info' )
-							->params( Message::listParam( $groupNames ) )
-							->parse()
-					);
-				}
-
-				$uiUser = $this->getUser();
-
-				$currentExpiry = $currentGroups[$group] ?? null;
-
-				if ( $checkbox['disabled'] ) {
-					if ( $currentExpiry ) {
-						$expiryFormatted = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
-						$expiryFormattedD = $uiLanguage->userDate( $currentExpiry, $uiUser );
-						$expiryFormattedT = $uiLanguage->userTime( $currentExpiry, $uiUser );
-						$expiryHtml = Html::element( 'span', [],
-							$this->msg( 'userrights-expiry-current' )->params(
-								$expiryFormatted, $expiryFormattedD, $expiryFormattedT
-							)->text()
-						);
-					} else {
-						$expiryHtml = Html::element( 'span', [],
-							$this->msg( 'userrights-expiry-none' )->text() );
-					}
-				} else {
-					$expiryHtml = Html::element( 'span', [],
-						$this->msg( 'userrights-expiry' )->text() );
-					$expiryHtml .= Html::openElement( 'span' );
-
-					// add a form element to set the expiry date
-					$expiryFormOptions = new XmlSelect(
-						"wpExpiry-$group",
-						// forward compatibility with HTMLForm
-						"mw-input-wpExpiry-$group",
-						$currentExpiry ? 'existing' : 'infinite'
-					);
-
-					if ( $currentExpiry ) {
-						$timestamp = $uiLanguage->userTimeAndDate( $currentExpiry, $uiUser );
-						$d = $uiLanguage->userDate( $currentExpiry, $uiUser );
-						$t = $uiLanguage->userTime( $currentExpiry, $uiUser );
-						$existingExpiryMessage = $this->msg( 'userrights-expiry-existing',
-							$timestamp, $d, $t );
-						$expiryFormOptions->addOption( $existingExpiryMessage->text(), 'existing' );
-					}
-
-					$expiryFormOptions->addOption(
-						$this->msg( 'userrights-expiry-none' )->text(),
-						'infinite'
-					);
-					$expiryFormOptions->addOption(
-						$this->msg( 'userrights-expiry-othertime' )->text(),
-						'other'
-					);
-
-					$expiryFormOptions->addOptions( $expiryOptions );
-
-					// Add expiry dropdown
-					$expiryHtml .= $expiryFormOptions->getHTML() . '<br />';
-
-					// Add custom expiry field
-					$attribs = [
-						'id' => "mw-input-wpExpiry-$group-other",
-						'class' => 'mw-userrights-expiryfield',
-						'size' => 30,
-					];
-					$expiryHtml .= Html::input( "wpExpiry-$group-other", '', 'text', $attribs );
-
-					$expiryHtml .= Html::closeElement( 'span' );
-				}
-
-				$divAttribs = [
-					'id' => "mw-userrights-nested-wpGroup-$group",
-					'class' => 'mw-userrights-nested',
-				];
-				$checkboxHtml .= "\t\t\t" . Html::rawElement( 'div', $divAttribs, $expiryHtml ) . "\n";
-
-				$ret .= "\t\t" . (
-					$checkbox['disabled'] ?
-					Html::rawElement( 'div', [ 'class' => 'mw-userrights-disabled' ], $checkboxHtml ) :
-					Html::rawElement( 'div', [], $checkboxHtml )
-				) . "\n";
-			}
-		}
-		$ret .= "\t</td>\n";
-
-		$ret .= Html::closeElement( 'tr' ) . Html::closeElement( 'table' );
-
-		return $ret;
+		return parent::getGroupAnnotations( $group );
 	}
 
 	/**
