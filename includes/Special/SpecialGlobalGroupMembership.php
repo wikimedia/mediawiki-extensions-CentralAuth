@@ -731,6 +731,11 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		return [];
 	}
 
+	/** @inheritDoc */
+	protected function supportsWatchUser(): bool {
+		return false;
+	}
+
 	/**
 	 * @param CentralAuthUser $user
 	 * @param OutputPage $output
