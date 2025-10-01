@@ -40,7 +40,8 @@
 			"محمد أحمد عبد الفتاح",
 			"مشعل الحربي",
 			"وهراني",
-			"Mohammed Qays"
+			"Mohammed Qays",
+			"SZX"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "عدد تعديلات المستخدم عالميًا ($1)",
@@ -164,7 +165,7 @@
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1| عمل | إجراءات}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|صفحة|صفحات}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|نطاق|نطاقات}}",
-	"centralauth-centralautologin-desc": "هذه صفحة خاصة للاستخدام من قبل ميدياويكي. إذا زرت هذه الصفحة وأنت غير مسجل بحسابك ستقوم هذه الصفحة بتحديد إذا ما قمت بالولوج على النطاق العام.\nوبما أنك قمت بطلب هذه الصفحة من غير توفير بيانات  الاستيثاق فلن تقوم الصفحة بعرض أي شيئ.",
+	"centralauth-centralautologin-desc": "هذه صفحة خاصة للاستخدام من قبل ميدياويكي. إذا زرت هذه الصفحة وأنت غير مسجل بحسابك ستقوم هذه الصفحة بتحديد إذا ما قمت بالولوج على النطاق العام.\nوبما أنك قمت بطلب هذه الصفحة من غير توفير بيانات  الاستيثاق فلن تعرض الصفحة شيئًا.",
 	"centralauth-centralautologin-logged-in": "لقد سجلت الدخول الموحد باسم $1. أعد تحميل الصفحة لتطبيق إعداداتك.",
 	"centralauth-complete": "توحيد الدخول اكتمل!",
 	"centralauth-complete-text": "يمكنك الآن الدخول لأي موقع ويكي ل{{int:Centralauth-groupname}} بدون إنشاء حساب جديد.",
