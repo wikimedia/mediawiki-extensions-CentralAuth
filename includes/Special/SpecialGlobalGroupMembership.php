@@ -43,6 +43,7 @@ use MediaWiki\Specials\SpecialUserRights;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserGroupMembership;
+use MediaWiki\User\UserGroupsSpecialPageTarget;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 
@@ -508,7 +509,8 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		$user = $status->value;
 		'@phan-var CentralAuthUser $user';
 
-		$this->getOutput()->addHTML( $this->buildGroupsForm( $user->getName() ) );
+		$target = new UserGroupsSpecialPageTarget( $user->getName(), $user );
+		$this->getOutput()->addHTML( $this->buildGroupsForm( $target ) );
 
 		// This isn't really ideal logging behavior, but let's not hide the
 		// interwiki logs if we're using them as is.
@@ -601,9 +603,8 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	}
 
 	/** @inheritDoc */
-	protected function makeConflictCheckKey(): string {
-		$user = $this->mFetchedUser;
-		return implode( ',', $user->getGlobalGroups() );
+	protected function makeConflictCheckKey( UserGroupsSpecialPageTarget $target ): string {
+		return implode( ',', $target->userObject->getGlobalGroups() );
 	}
 
 	/** @inheritDoc */
@@ -624,8 +625,8 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	}
 
 	/** @inheritDoc */
-	protected function getCurrentUserGroupsText(): string {
-		$user = $this->mFetchedUser;
+	protected function getCurrentUserGroupsText( UserGroupsSpecialPageTarget $target ): string {
+		$user = $target->userObject;
 		$list = $membersList = $tempList = $tempMembersList = [];
 		foreach ( $user->getGlobalGroupsWithExpiration() as $group => $expiration ) {
 			$ugm = new UserGroupMembership( $user->getId(), $group, $expiration );
@@ -665,9 +666,8 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	}
 
 	/** @inheritDoc */
-	protected function getGroupMemberships(): array {
-		$user = $this->mFetchedUser;
-		return $user->getGlobalGroupsWithExpiration();
+	protected function getGroupMemberships( UserGroupsSpecialPageTarget $target ): array {
+		return $target->userObject->getGlobalGroupsWithExpiration();
 	}
 
 	/** @inheritDoc */
@@ -732,7 +732,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	}
 
 	/** @inheritDoc */
-	protected function supportsWatchUser(): bool {
+	protected function supportsWatchUser( UserGroupsSpecialPageTarget $target ): bool {
 		return false;
 	}
 
