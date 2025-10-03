@@ -625,49 +625,20 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	}
 
 	/** @inheritDoc */
-	protected function getCurrentUserGroupsText( UserGroupsSpecialPageTarget $target ): string {
-		$user = $target->userObject;
-		$list = $membersList = $tempList = $tempMembersList = [];
-		foreach ( $user->getGlobalGroupsWithExpiration() as $group => $expiration ) {
-			$ugm = new UserGroupMembership( $user->getId(), $group, $expiration );
-			$linkG = UserGroupMembership::getLinkHTML( $ugm, $this->getContext() );
-			$linkM = UserGroupMembership::getLinkHTML( $ugm, $this->getContext(), $user->getName() );
-			if ( $ugm->getExpiry() ) {
-				$tempList[] = $linkG;
-				$tempMembersList[] = $linkM;
-			} else {
-				$list[] = $linkG;
-				$membersList[] = $linkM;
-			}
-		}
-
-		$language = $this->getLanguage();
-		$displayedList = $this->msg( 'userrights-groupsmember-type' )
-			->rawParams(
-				$language->commaList( array_merge( $tempList, $list ) ),
-				$language->commaList( array_merge( $tempMembersList, $membersList ) )
-			)->escaped();
-
-		$grouplist = '';
-		$count = count( $list ) + count( $tempList );
-		if ( $count > 0 ) {
-			$grouplist = $this->msg( 'userrights-groupsmember' )
-				->numParams( $count )
-				->params( $user->getName() )
-				->parse();
-			$grouplist = '<p>' . $grouplist . ' ' . $displayedList . "</p>\n";
-		}
-		return $grouplist;
-	}
-
-	/** @inheritDoc */
 	protected function listAllExplicitGroups(): array {
 		return $this->globalGroupLookup->getDefinedGroups();
 	}
 
 	/** @inheritDoc */
 	protected function getGroupMemberships( UserGroupsSpecialPageTarget $target ): array {
-		return $target->userObject->getGlobalGroupsWithExpiration();
+		$groups = $target->userObject->getGlobalGroupsWithExpiration();
+		$userId = $target->userObject->getId();
+
+		$groupMemberships = [];
+		foreach ( $groups as $group => $expiration ) {
+			$groupMemberships[$group] = new UserGroupMembership( $userId, $group, $expiration );
+		}
+		return $groupMemberships;
 	}
 
 	/** @inheritDoc */
