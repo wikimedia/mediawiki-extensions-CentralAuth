@@ -157,6 +157,25 @@ class CentralAuthUser implements IDBAccessObject {
 	public const HIDDEN_LEVEL_LISTS = 1;
 	public const HIDDEN_LEVEL_SUPPRESSED = 2;
 
+	public const ATTACHMENT_METHOD_PRIMARY = 0;
+	public const ATTACHMENT_METHOD_EMPTY = 1;
+	public const ATTACHMENT_METHOD_MAIL = 2;
+	public const ATTACHMENT_METHOD_PASSWORD = 3;
+	public const ATTACHMENT_METHOD_ADMIN = 4;
+	public const ATTACHMENT_METHOD_NEW = 5;
+	public const ATTACHMENT_METHOD_LOGIN = 6;
+
+	/** @var array Mapping for new int attachment method values to the old enum values. */
+	public const ATTACHMENT_METHOD_MAPPING = [
+		'primary' => self::ATTACHMENT_METHOD_PRIMARY,
+		'empty' => self::ATTACHMENT_METHOD_EMPTY,
+		'mail' => self::ATTACHMENT_METHOD_MAIL,
+		'password' => self::ATTACHMENT_METHOD_PASSWORD,
+		'admin' => self::ATTACHMENT_METHOD_ADMIN,
+		'new' => self::ATTACHMENT_METHOD_NEW,
+		'login' => self::ATTACHMENT_METHOD_LOGIN
+	];
+
 	/**
 	 * The maximum number of edits a user can have and still be hidden
 	 */
@@ -2425,6 +2444,7 @@ class CentralAuthUser implements IDBAccessObject {
 				'lu_name'               => $this->mName,
 				'lu_attached_timestamp' => $dbcw->timestamp( $ts ),
 				'lu_attached_method'    => $method,
+				'lu_attachment_method'  => self::ATTACHMENT_METHOD_MAPPING[$method],
 				'lu_local_id'           => $this->getLocalId( $wikiID, IDBAccessObject::READ_LATEST ),
 				'lu_global_id'          => $this->getId()
 			] )
