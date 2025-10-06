@@ -40,7 +40,8 @@
 			"NEHAOUA",
 			"Cigaryno",
 			"XIDME",
-			"Mohammed Qays"
+			"Mohammed Qays",
+			"SZX"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "عدد التحرير العمومي للمستخدم",
@@ -161,7 +162,7 @@
 	"centralauth-centralautologin-badstate-local": "الحالة «$1» غير صالحة على الويكي المحلية.",
 	"centralauth-centralautologin-badwiki": "لا يمكن الولوج إلى الويكي \"$1\" باستخدام الحساب الموحد.",
 	"centralauth-centralautologin-corsfail": "فشلت عملية التحقق من أصل نص كورز (CORS).",
-	"centralauth-centralautologin-desc": "هذه صفحة خاصة للاستخدام من قبل ميدياويكي. إذا زرت هذه الصفحة وأنت غير مسجل بحسابك ستقوم هذه الصفحة بتحديد إذا ما قمت بالولوج على النطاق العام.\nوبما أنك قمت بطلب هذه الصفحة من غير توفير بيانات  الاستيثاق فلن تقوم الصفحة بعرض أي شيئ.",
+	"centralauth-centralautologin-desc": "هذه صفحة خاصة للاستخدام من قبل ميدياويكي. إذا زرت هذه الصفحة وأنت غير مسجل بحسابك ستقوم هذه الصفحة بتحديد إذا ما قمت بالولوج على النطاق العام.\nوبما أنك قمت بطلب هذه الصفحة من غير توفير بيانات  الاستيثاق فلن تعرض الصفحة شيئًا.",
 	"centralauth-centralautologin-logged-in": "لقد سجلت الدخول الموحد باسم $1. أعد تحميل الصفحة لتطبيق إعداداتك.",
 	"centralauth-centralautologin-logged-in-nouser": "لقد قمت بتسجيل الدخول الموحد. قم بإعادة تحميل الصفحة لتطبيق إعدادت المستخدم الخاصة بك.",
 	"centralauth-centralautologin-lostsession": "لقد فقدت بيانات الجلسة.",
