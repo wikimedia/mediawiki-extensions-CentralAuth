@@ -32,12 +32,9 @@ use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
-use MediaWiki\Logging\LogEventsList;
-use MediaWiki\Logging\LogPage;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Message\Message;
-use MediaWiki\Output\OutputPage;
 use MediaWiki\SpecialPage\UserGroupsSpecialPage;
 use MediaWiki\Specials\SpecialUserRights;
 use MediaWiki\Status\Status;
@@ -89,13 +86,6 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		$this->userNameUtils = $userNameUtils;
 		$this->automaticGroupManager = $automaticGroupManager;
 		$this->globalGroupLookup = $globalGroupLookup;
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function doesWrites() {
-		return true;
 	}
 
 	/**
@@ -514,7 +504,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 		// This isn't really ideal logging behavior, but let's not hide the
 		// interwiki logs if we're using them as is.
-		$this->showLogFragment( $user, $this->getOutput() );
+		$this->showLogFragment( $target, $this->getOutput() );
 	}
 
 	/**
@@ -613,8 +603,8 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	}
 
 	/** @inheritDoc */
-	protected function getTargetUserToolLinks(): string {
-		$user = $this->mFetchedUser;
+	protected function getTargetUserToolLinks( UserGroupsSpecialPageTarget $target ): string {
+		$user = $target->userObject;
 		return Linker::userToolLinks(
 			$user->getId(),
 			$user->getName(),
@@ -639,12 +629,6 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 			$groupMemberships[$group] = new UserGroupMembership( $userId, $group, $expiration );
 		}
 		return $groupMemberships;
-	}
-
-	/** @inheritDoc */
-	protected function getDisplayUsername(): string {
-		$user = $this->mFetchedUser;
-		return $user->getName();
 	}
 
 	protected function canAdd( string $group ): bool {
@@ -707,18 +691,9 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		return false;
 	}
 
-	/**
-	 * @param CentralAuthUser $user
-	 * @param OutputPage $output
-	 */
-	private function showLogFragment( $user, $output ) {
-		$logPage = new LogPage( 'gblrights' );
-		$output->addHTML( Html::element( 'h2', [], $logPage->getName()->text() . "\n" ) );
-		LogEventsList::showLogExtract(
-			$output,
-			'gblrights',
-			$this->titleFactory->makeTitle( NS_USER, $user->getName() )
-		);
+	/** @inheritDoc */
+	protected function getLogType(): array {
+		return [ 'gblrights', 'gblrights' ];
 	}
 
 	/**
@@ -738,12 +713,5 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		// Autocomplete subpage as user list - public to allow caching
 		return $this->userNamePrefixSearch
 			->search( UserNamePrefixSearch::AUDIENCE_PUBLIC, $search, $limit, $offset );
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	protected function getGroupName() {
-		return 'users';
 	}
 }
