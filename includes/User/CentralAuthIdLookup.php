@@ -160,7 +160,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 		foreach ( $res as $row ) {
 			if ( $this->canView( $audience, $row->gu_hidden_level ) ) {
-				$nameToId[$row->gu_name] = $row->gu_id;
+				$nameToId[$row->gu_name] = (int)$row->gu_id;
 			}
 		}
 		return $nameToId;
