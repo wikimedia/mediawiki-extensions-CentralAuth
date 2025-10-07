@@ -20,6 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
+use InvalidArgumentException;
 use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
@@ -594,7 +595,10 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 	/** @inheritDoc */
 	protected function makeConflictCheckKey( UserGroupsSpecialPageTarget $target ): string {
-		return implode( ',', $target->userObject->getGlobalGroups() );
+		$user = $target->userObject;
+		$this->assertIsCentralAuthUser( $user );
+		/** @var CentralAuthUser $user */
+		return implode( ',', $user->getGlobalGroups() );
 	}
 
 	/** @inheritDoc */
@@ -605,6 +609,8 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	/** @inheritDoc */
 	protected function getTargetUserToolLinks( UserGroupsSpecialPageTarget $target ): string {
 		$user = $target->userObject;
+		$this->assertIsCentralAuthUser( $user );
+		/** @var CentralAuthUser $user */
 		return Linker::userToolLinks(
 			$user->getId(),
 			$user->getName(),
@@ -621,12 +627,14 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 	/** @inheritDoc */
 	protected function getGroupMemberships( UserGroupsSpecialPageTarget $target ): array {
-		$groups = $target->userObject->getGlobalGroupsWithExpiration();
-		$userId = $target->userObject->getId();
+		$user = $target->userObject;
+		$this->assertIsCentralAuthUser( $user );
+		/** @var CentralAuthUser $user */
+		$groups = $user->getGlobalGroupsWithExpiration();
 
 		$groupMemberships = [];
 		foreach ( $groups as $group => $expiration ) {
-			$groupMemberships[$group] = new UserGroupMembership( $userId, $group, $expiration );
+			$groupMemberships[$group] = new UserGroupMembership( $user->getId(), $group, $expiration );
 		}
 		return $groupMemberships;
 	}
@@ -713,5 +721,17 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		// Autocomplete subpage as user list - public to allow caching
 		return $this->userNamePrefixSearch
 			->search( UserNamePrefixSearch::AUDIENCE_PUBLIC, $search, $limit, $offset );
+	}
+
+	/**
+	 * A helper function to assert that an object is of type {@see CentralAuthUser}.
+	 * It's used when retrieving the user object from a {@see UserGroupsSpecialPageTarget}.
+	 * @throws InvalidArgumentException If the object is not of the expected type
+	 * @param mixed $object The object to check
+	 */
+	private function assertIsCentralAuthUser( mixed $object ): void {
+		if ( !$object instanceof CentralAuthUser ) {
+			throw new InvalidArgumentException( 'Target userObject must be a CentralAuthUser' );
+		}
 	}
 }
