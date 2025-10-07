@@ -332,7 +332,7 @@
 	"centralauth-years-ago": "пре {{PLURAL:$1|годину дана|$1 године|$1 година}}",
 	"centralautologin": "Централна пријава",
 	"centrallogin": "Централна корисничка пријава",
-	"createlocalaccount": "Принудно направи локални налог",
+	"createlocalaccount": "Принудно прављење локалног налога",
 	"globalgroupmembership": "Чланство у глобалним групама",
 	"globalgrouppermissions": "Управљање глобалним групама",
 	"globalrenameprogress": "Стање глобалног преименовања",
