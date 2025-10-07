@@ -255,7 +255,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 
 		$sessionJwtData = $request->response()->getCookieData( 'sessionJwt' );
 		$this->assertNotNull( $sessionJwtData );
-		$this->assertSame( 'wiki.org', $sessionJwtData['domain'] );
+		$this->assertSame( 'local.wiki.org', $sessionJwtData['domain'] );
 		$this->assertSame( $startTime + 10, $sessionJwtData['expire'] );
 		$claims = $jwtCodec->parse( $sessionJwtData['value'] );
 		$this->assertSame( 'http://issuer.wiki.org', $claims['iss'] );

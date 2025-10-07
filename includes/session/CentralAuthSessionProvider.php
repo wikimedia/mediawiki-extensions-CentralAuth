@@ -628,8 +628,4 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		] + parent::getJwtClaimOverrides( $expirationDuration );
 	}
 
-	protected function getJwtCookieOptions(): array {
-		return [ 'prefix' => '' ] + $this->centralCookieOptions;
-	}
-
 }
