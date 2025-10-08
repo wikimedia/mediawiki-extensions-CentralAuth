@@ -357,7 +357,6 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 	 * @dataProvider provideOnSiteNoticeBeforeAfter
 	 * @param bool $isSul3SharedDomain
 	 * @param bool $isSul3Enabled
-	 * @param bool $isWebAuthnOATHManage
 	 * @param string|null $expectedSiteNoticeSnippet Part of the sitenotice, or the empty string
 	 *   to assert that no sitenotice won't be shown, or null to assert that the normal sitenotice
 	 *   will be shown.
@@ -365,7 +364,6 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 	public function testOnSiteNoticeBeforeAfter(
 		bool $isSul3SharedDomain,
 		bool $isSul3Enabled,
-		bool $isWebAuthnOATHManage,
 		?string $expectedSiteNoticeSnippet
 	): void {
 		$this->overrideConfigValue( CAMainConfigNames::CentralAuthSharedDomainCallback,
@@ -377,14 +375,8 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		] ) );
 
 		$extReg = $this->createMock( ExtensionRegistry::class );
-		$extReg->method( 'isLoaded' )->with( 'WebAuthn' )->willReturn( $isWebAuthnOATHManage );
 
-		$title = $this->createNoOpMock( Title::class, [ 'isSpecial', 'getPrefixedText' ] );
-		$title->method( 'isSpecial' )->willReturnCallback(
-			static fn ( $specialPageName ) => $isWebAuthnOATHManage ? ( $specialPageName == 'OATHManage' ) : false
-		);
-		$title->expects( $isWebAuthnOATHManage ? $this->any() : $this->never() )
-			->method( 'getPrefixedText' )->willReturn( 'Special:OATHManage' );
+		$title = $this->createNoOpMock( Title::class );
 		$skin = $this->createNoOpMock( Skin::class, [ 'getRequest', 'getTitle', 'msg' ] );
 		$skin->method( 'getRequest' )->willReturn( new FauxRequest() );
 		$skin->method( 'getTitle' )->willReturn( $title );
@@ -403,7 +395,6 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 
 		$siteNotice = 'Old sitenotice';
 		$handler->onSiteNoticeBefore( $siteNotice, $skin );
-		$handler->onSiteNoticeAfter( $siteNotice, $skin );
 
 		if ( $expectedSiteNoticeSnippet ) {
 			$this->assertStringNotContainsString( 'Old sitenotice', $siteNotice );
@@ -420,32 +411,17 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 			'does nothing in SUL2 mode' => [
 				'isSul3SharedDomain' => false,
 				'isSul3Enabled' => false,
-				'isWebAuthnOATHManage' => true,
 				'expectedSiteNoticeSnippet' => null,
 			],
 			'does nothing on the local domain when not on the special page' => [
 				'isSul3SharedDomain' => false,
 				'isSul3Enabled' => true,
-				'isWebAuthnOATHManage' => false,
 				'expectedSiteNoticeSnippet' => null,
 			],
 			'disables the site notice on the shared domain' => [
 				'isSul3SharedDomain' => true,
 				'isSul3Enabled' => true,
-				'isWebAuthnOATHManage' => false,
 				'expectedSiteNoticeSnippet' => '',
-			],
-			'links to central on local Special:OATHManager' => [
-				'isSul3SharedDomain' => false,
-				'isSul3Enabled' => true,
-				'isWebAuthnOATHManage' => true,
-				'expectedSiteNoticeSnippet' => 'centralauth-sul3-oathmanage-sitenotice-local',
-			],
-			'links to local on central Special:OATHManager' => [
-				'isSul3SharedDomain' => true,
-				'isSul3Enabled' => true,
-				'isWebAuthnOATHManage' => true,
-				'expectedSiteNoticeSnippet' => 'centralauth-sul3-oathmanage-sitenotice-central',
 			],
 		];
 	}
