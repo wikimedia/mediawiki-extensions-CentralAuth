@@ -37,7 +37,6 @@ class LocalRenameUserJobTest extends \PHPUnit\Framework\TestCase {
 		parent::setUp();
 		$clazz = new ReflectionClass( LocalRenameUserJob::class );
 		$this->escapeReplacement = $clazz->getMethod( 'escapeReplacement' );
-		$this->escapeReplacement->setAccessible( true );
 	}
 
 	/**

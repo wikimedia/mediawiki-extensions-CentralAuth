@@ -543,7 +543,6 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		// T287318 - TestingAccessWrapper::__call does not support pass-by-reference
 		$classReflection = new ReflectionClass( $specialPage->object );
 		$methodReflection = $classReflection->getMethod( 'adjustForAutomaticGlobalGroups' );
-		$methodReflection->setAccessible( true );
 		$methodReflection->invokeArgs( $specialPage->object, [
 			$user, $assignedGroups, &$add, &$remove, &$groupExpiries,
 		] );

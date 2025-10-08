@@ -220,7 +220,6 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 	public function testGetPasswordFromString( $pass, $salt, $type ) {
 		$class = new ReflectionClass( CentralAuthUser::class );
 		$method = $class->getMethod( 'getPasswordFromString' );
-		$method->setAccessible( true );
 		$ca = new CentralAuthUser( 'DoesNotExist' );
 		$password = $method->invokeArgs( $ca, [ $pass, $salt ] );
 		$this->assertInstanceOf( Password::class, $password );
