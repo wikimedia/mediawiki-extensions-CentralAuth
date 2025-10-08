@@ -57,6 +57,7 @@
 	"centralauth-admin-info-registered": "Registreeritud:",
 	"centralauth-admin-info-unattached": "Ühendamata kontosid:",
 	"centralauth-admin-info-username": "Kasutajanimi:",
+	"centralauth-admin-info-expired": "Ajutine konto aegunud:",
 	"centralauth-admin-intro": "See liides on globaalsete kontode haldamiseks.",
 	"centralauth-admin-list-attached-on": "Ühendatud",
 	"centralauth-admin-list-blocked": "Blokeeritud",
