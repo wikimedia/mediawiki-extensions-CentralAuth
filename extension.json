@@ -785,7 +785,6 @@
 		],
 		"SpecialPasswordResetOnSubmit": "default",
 		"SiteNoticeBefore": "shareddomain",
-		"SiteNoticeAfter": "shareddomain",
 		"TempUserCreatedRedirect": "logincomplete",
 		"TestCanonicalRedirect": "default",
 		"UnblockUserComplete": "block",

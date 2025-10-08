@@ -432,8 +432,6 @@
 	"centralauth-state-mismatch": "Error message when another admin has updated the user, and an edit conflict was detected.\n\nSee also:\n* {{msg-mw|Centralauth-token-mismatch}}\n* {{msg-mw|Centralauth-admin-bad-input}}",
 	"centralauth-token-mismatch": "Used as error message.\n\nSee also:\n* {{msg-mw|Centralauth-state-mismatch}}\n* {{msg-mw|Centralauth-admin-bad-input}}\n{{Identical|Loss of session data}}",
 	"centralauth-years-ago": "Parameters:\n* $1 - number of years\n{{Related|Centralauth-ago}}",
-	"centralauth-sul3-oathmanage-sitenotice-local": "Notice shown when on the local 2FA management page ([[Special:Manage_Two-factor_authentication]]).\n\n* $1 - URL of the same special page on the central authentication domain.",
-	"centralauth-sul3-oathmanage-sitenotice-central": "Notice shown when on the central 2FA management page ([[Special:Manage_Two-factor_authentication]]).\n\n* $1 - URL of the same special page on the local wiki domain.",
 	"centralauth-scrambled": "Error message when the user tries to log in with a scrambled password.",
 	"centralauth-scrambled-noemail": "Error message when the user tries to log in with a scrambled password and does not have an email address.",
 	"centralauth-scrambled-cannotusesame": "Error message when the user tries to password-reset their scrambled password back to the original, compromised password.",
