@@ -140,7 +140,7 @@ class SsoHookHandlerTest extends MediaWikiIntegrationTestCase {
 			->setConstructorArgs( [
 				$this->getServiceContainer()->getMainConfig(),
 				$this->getServiceContainer()->getTitleFactory(),
-				$this->getServiceContainer()->get( "MobileFrontend.Context" ),
+				null,
 			] )
 			->onlyMethods( [ 'isSharedDomain', 'isSul3Enabled' ] )
 			->getMock();
