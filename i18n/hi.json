@@ -389,8 +389,6 @@
 	"centralauth-state-mismatch": "त्रुटि: इस बीच इस सदस्य खाते की स्थिति बदल चुकी है। कृपया वर्तमान स्थिति सत्यापित करें और आवश्यक हो तो पुनः प्रयास करें।",
 	"centralauth-token-mismatch": "क्षमा करें, सत्र की डेटा के खो जाने के कारण हम आपकी फ़ॉर्म प्रस्तुति को प्रोसेस नहीं किया जा सका।",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|वर्ष}} पहले",
-	"centralauth-sul3-oathmanage-sitenotice-local": "नए WebAuthn पासकुँजियाँ सेटअप करने के लिए कृपया [$1 केंद्रीय डोमेन] का प्रयोग करें।",
-	"centralauth-sul3-oathmanage-sitenotice-central": "पुराने WebAuthn पासकुँजियाँ हटाने के लिए कृपया उस डोमेन का प्रयोग करें [$1 जहाँ इन्हें सेटअप किया गया था]।",
 	"centralauth-scrambled": "आपके खाते तक अवैध पहुँच के कारण आपका खाता अक्षम कर दिया गया है। इसे पुनर्प्राप्त करने के लिए कृपया [[Special:PasswordReset|अपना पासवर्ड रीसेट करें]]।",
 	"centralauth-scrambled-noemail": "आपके खाते तक अवैध पहुँच के कारण आपका खाता अक्षम कर दिया गया है।",
 	"centralauth-scrambled-cannotusesame": "कृपया एक दूसरे पासवर्ड का उपयोग करें।",

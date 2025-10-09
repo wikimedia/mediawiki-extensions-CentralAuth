@@ -413,8 +413,6 @@
 	"centralauth-state-mismatch": "エラー：このユーザーアカウントの状態が別の所で変更されました。現在の状態を確認し、必要に応じて操作をやり直してください。",
 	"centralauth-token-mismatch": "申し訳ありませんが、セッションデータが消失したため、フォームでの投稿を処理できませんでした。",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|年}}前",
-	"centralauth-sul3-oathmanage-sitenotice-local": "新しいWebAuthnパスキーを設定するには、[$1 中央ドメイン]を使用してください。",
-	"centralauth-sul3-oathmanage-sitenotice-central": "古いWebAuthnパスキーを削除するには、[$1 パスキーが設定されているドメイン]を使用してください。",
 	"centralauth-scrambled": "あなたのアカウントへ不正なアクセスが確認されたため、アカウントが無効化されました。アカウントを回復するためには、[[Special:PasswordReset|パスワードをリセット]]してください。",
 	"centralauth-scrambled-noemail": "あなたのアカウントへ不正なアクセスが確認されたため、アカウントが無効化されました。",
 	"centralauth-scrambled-cannotusesame": "別のパスワードを使用してください。",

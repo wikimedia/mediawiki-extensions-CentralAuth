@@ -401,8 +401,6 @@
 	"centralauth-state-mismatch": "Fout: De status van deze gebruiker is ondertussen gewijzigd. Controleer de huidige status en probeer het opnieuw.",
 	"centralauth-token-mismatch": "Vanwege verlies van de sessiegegevens kon uw verzoek niet verwerkt worden.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|jaar|jaar}} geleden",
-	"centralauth-sul3-oathmanage-sitenotice-local": "Om nieuwe WebAuthn-wachtwoorden in te stellen gebruikt u [$1 het centrale domein].",
-	"centralauth-sul3-oathmanage-sitenotice-central": "Om oude WebAuthn-wachtwoorden te verwijderen gebruikt u [$1 het domein waarop ze zijn ingesteld].",
 	"centralauth-scrambled": "Vanwege onrechtmatige toegang tot uw account is uw account uitgeschakeld. [[Special:PasswordReset|Stel uw wachtwoord opnieuw in]] om het te herstellen.",
 	"centralauth-scrambled-noemail": "Vanwege onrechtmatige toegang tot uw account is uw account uitgeschakeld.",
 	"centralauth-scrambled-cannotusesame": "Gebruik een ander wachtwoord.",

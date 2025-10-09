@@ -372,8 +372,6 @@
 	"centralauth-state-mismatch": "ГӀалат: ХӀокху хенахь хӀокху декъашхочун аккаунтан хьал хийцаделла. ХӀинцалера хьал хьажа, эшахь йуха гӀорта хӀара кхочушдан.",
 	"centralauth-token-mismatch": "Хьан форма кечйан цало, сеансан хаамаш байна хилар бахьнехь.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|шо}} хьалха",
-	"centralauth-sul3-oathmanage-sitenotice-local": "Керла WebAuthn паролаш хӀитто, леладе [$1 центран домен].",
-	"centralauth-sul3-oathmanage-sitenotice-central": "Шира WebAuthn паролаш дӀайаха, леладе [$1 домен, уьш тӀехь дӀахӀиттийна йолу].",
 	"centralauth-scrambled": "Хьан аккаунте низамехь доцуш лелар бахьана долуш, хьан аккаунт дӀакъоьвлина. Дехар до, [[Special:PasswordReset|хьайн пароль меттахӀоттайе]] иза меттахӀотто.",
 	"centralauth-scrambled-noemail": "Хьан аккаунте низамехь доцуш лелар бахьана долуш, хьан аккаунт дӀакъоьвлина.",
 	"centralauth-scrambled-cannotusesame": "Дехар до, кхин пароль лелайе.",

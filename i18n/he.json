@@ -383,8 +383,6 @@
 	"centralauth-state-mismatch": "שגיאה: המצב של חשבון המשתמש הזה השתנה בינתיים. נא לאמת את המצב הנוכחי ולנסות שוב, אם זה נחוץ.",
 	"centralauth-token-mismatch": "מצטערים, לא יכולנו לעבד את בקשתך עקב אובדן נתוני ההתחברות.",
 	"centralauth-years-ago": "לפני {{PLURAL:$1|שנה|שנתיים|$1 שנה|$1 שנים}}",
-	"centralauth-sul3-oathmanage-sitenotice-local": "כדי להגדיר מפתחות כניסה של WebAuthn, נא להשתמש ב[$1 תחום המרכזי].",
-	"centralauth-sul3-oathmanage-sitenotice-central": "כדי להגדיר מפתחות כניסה של WebAuthn, נא להשתמש ב[$1 תחום שהם הוגדרו בו].",
 	"centralauth-scrambled": "עקב גישה לא חוקית לחשבונך, החשבון הושבת. נא [[Special:PasswordReset|לאפס את הסיסמה שלך]] כדי לשחזר את הגישה לחשבון.",
 	"centralauth-scrambled-noemail": "עקב גישה לא חוקית לחשבונך, החשבון הושבת.",
 	"centralauth-scrambled-cannotusesame": "נא להשתמש בסיסמה אחרת.",

@@ -381,8 +381,6 @@
 	"centralauth-state-mismatch": "Erro: O estado desta conta de usuario cambiou. Verifique o estado actual e inténteo de novo, se fose necesario.",
 	"centralauth-token-mismatch": "Sentímolo, non se pode procesar o formulario enviado debido a que se perderon os datos da sesión.",
 	"centralauth-years-ago": "hai {{PLURAL:$1|un ano|$1 anos}}",
-	"centralauth-sul3-oathmanage-sitenotice-local": "Para configurar novas claves de acceso de WebAuthn, utiliza [$1 o dominio central].",
-	"centralauth-sul3-oathmanage-sitenotice-central": "Para eliminar as claves de acceso de WebAuthn vellas, utiliza [$1 o dominio no que se configuraron].",
 	"centralauth-scrambled": "Desactivouse a túa conta debido a un acceso ilexítimo. [[Special:PasswordReset|Restablece o teu contrasinal]] para recuperala.",
 	"centralauth-scrambled-noemail": "Desactivouse a túa conta debido a un acceso ilexítimo.",
 	"centralauth-scrambled-cannotusesame": "Utiliza un contrasinal diferente.",

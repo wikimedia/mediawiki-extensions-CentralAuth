@@ -381,8 +381,6 @@
 	"centralauth-state-mismatch": "Feil: Statusen for denne brukerkontoen har endret seg i mellomtiden. Sjekk den nåværende statusen og prøv igjen om nødvendig.",
 	"centralauth-token-mismatch": "Beklager, skjemaet kunne ikke lagres på grunn av et tap av øktdata.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|år|år}} siden",
-	"centralauth-sul3-oathmanage-sitenotice-local": "Bruk [$1 det sentrale domenet] for å sette opp nye WebAuthn-passord.",
-	"centralauth-sul3-oathmanage-sitenotice-central": "Bruk [$1 det sentrale domenet] for å fjerne gamle WebAuthn-passord.",
 	"centralauth-scrambled": "Kontoen din har blitt deaktivert på grunn av illegitim tilgang. [[Special:PasswordReset|Tilbakestill passordet ditt]] for å få tilbake tilgangen.",
 	"centralauth-scrambled-noemail": "Kontoen din har blitt deaktivert på grunn av illegitim tilgang.",
 	"centralauth-scrambled-cannotusesame": "Bruk et annet passord.",

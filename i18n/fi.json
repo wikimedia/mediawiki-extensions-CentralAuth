@@ -395,8 +395,6 @@
 	"centralauth-state-mismatch": "Virhe: Tämän käyttäjätunnuksen tila on muuttunut tällä välin. Tarkista nykyinen tila ja yritä tarvittaessa uudelleen.",
 	"centralauth-token-mismatch": "Lomakkeen käsittely keskeytettiin istuntotietojen puuttumisen takia.",
 	"centralauth-years-ago": "$1 {{PLURAL:$1|vuosi|vuotta}} sitten",
-	"centralauth-sul3-oathmanage-sitenotice-local": "Asettaaksesi uudet WebAuthn-todennusavaimet käytä [$1 keskityttyä verkkotunnusta].",
-	"centralauth-sul3-oathmanage-sitenotice-central": "Poistaaksesi vanhat WebAuthn-todennusavaimet käytä [$1 verkkotunnusta, jossa ne on asetettu].",
 	"centralauth-scrambled": "Tunnuksesi on poistettu käytöstä, koska joku pääsi siihen käsiksi luvattomasti. Voit palauttaa sen [[Special:PasswordReset|nollaamalla salasanasi]].",
 	"centralauth-scrambled-noemail": "Tunnuksesi on poistettu käytöstä, koska joku pääsi siihen käsiksi luvattomasti.",
 	"centralauth-scrambled-cannotusesame": "Käytä toista salasanaa.",

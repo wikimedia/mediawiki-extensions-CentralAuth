@@ -375,8 +375,6 @@
 	"centralauth-state-mismatch": "Napaka: Stanje uporabniškega računa se je v tem času spremenilo. Prosimo, preverite trenutno stanje in poskusite znova.",
 	"centralauth-token-mismatch": "Oprostite, nismo mogli obdelati vašega poslanega obrazca zaradi izgube podatkov o seji.",
 	"centralauth-years-ago": "pred $1 {{PLURAL:$1|letom|letoma|leti}}",
-	"centralauth-sul3-oathmanage-sitenotice-local": "Za nastavitev novih ključev za dostop za WebAuthn uporabite [$1 centralno domeno].",
-	"centralauth-sul3-oathmanage-sitenotice-central": "Za odstranitev starih ključev za dostop za WebAuthn uporabite [$1 domeno, na kateri so bili nastavljeni].",
 	"centralauth-scrambled": "Zaradi nezakonitega dostopa do vašega računa je bil vaš račun onemogočen. Prosimo, [[Special:PasswordReset|ponastavite geslo]], da ga obnovite.",
 	"centralauth-scrambled-noemail": "Zaradi nezakonitega dostopa do vašega računa je bil vaš račun onemogočen.",
 	"centralauth-scrambled-cannotusesame": "Prosimo, uporabite drugo geslo.",
