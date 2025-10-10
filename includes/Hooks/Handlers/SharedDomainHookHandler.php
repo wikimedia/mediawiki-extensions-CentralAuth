@@ -24,7 +24,6 @@ use MediaWiki\Hook\GetLocalURLHook;
 use MediaWiki\Hook\SetupAfterCacheHook;
 use MediaWiki\Hook\SiteNoticeBeforeHook;
 use MediaWiki\MainConfigNames;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\Hook\MakeGlobalVariablesScriptHook;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
@@ -37,8 +36,6 @@ use MediaWiki\Rest\LocalizedHttpException;
 use MediaWiki\Rest\Module\Module;
 use MediaWiki\Rest\RequestInterface;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
-use MediaWiki\SpecialPage\SpecialPage;
-use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
@@ -204,37 +201,6 @@ class SharedDomainHookHandler implements
 		}
 	}
 
-	/**
-	 * Update the two-factor management button on the Special:Preferences page on the local
-	 * domain to point to the central domain.
-	 * @param User $user
-	 * @param array &$preferences
-	 * @return void
-	 * @note This hook is registered via HookContainer::register() rather than extension.json,
-	 *    to run after OATHAuth.
-	 * @see https://www.mediawiki.org/wiki/Manual:Hooks/GetPreferences
-	 * @see self::onExtensionFunctions()
-	 */
-	public static function onGetPreferences( $user, &$preferences ) {
-		$sharedDomainUtils = CentralAuthServices::getSharedDomainUtils();
-		if ( isset( $preferences['oathauth-module']['default'] )
-			&& $sharedDomainUtils->isSul3Enabled( RequestContext::getMain()->getRequest() )
-			&& !$sharedDomainUtils->isSharedDomain()
-		) {
-			// match the URL used in MediaWiki\Extension\OATHAuth\Hook\HookHandler::onGetPreferences()
-			$localUrl = SpecialPage::getTitleFor( 'OATHManage' )->getLocalURL();
-			$centralUrl = $sharedDomainUtils->getSharedDomainPrefix() . $localUrl;
-			// match OOUI 'href' handling, sort of (see OOUI\Tag::toString())
-			$localUrlEncoded = htmlspecialchars( $localUrl, ENT_QUOTES );
-			$centralUrlEncoded = htmlspecialchars( $centralUrl, ENT_QUOTES );
-
-			$manageButtonHtml = $preferences['oathauth-module']['default'];
-			$manageButtonHtml = str_replace( "'$localUrlEncoded'", "'$centralUrlEncoded'", $manageButtonHtml );
-			$manageButtonHtml = str_replace( "\"$localUrlEncoded\"", "\"$centralUrlEncoded\"", $manageButtonHtml );
-			$preferences['oathauth-module']['default'] = $manageButtonHtml;
-		}
-	}
-
 	/** @inheritDoc */
 	public function onGetUserPermissionsErrors( $title, $user, $action, &$result ) {
 		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
@@ -323,9 +289,6 @@ class SharedDomainHookHandler implements
 		}
 	}
 
-	/**
-	 * @see self::onGetPreferences()
-	 */
 	public static function onExtensionFunctions(): void {
 		// Duplicate the disallowUserJs() call from BeforePageDisplay for good measure.
 		// While in theory it can be called at any time before output is generated,
@@ -337,11 +300,6 @@ class SharedDomainHookHandler implements
 			$out = RequestContext::getMain()->getOutput();
 			$out->disallowUserJs();
 		}
-
-		// Register the GetPreferences hook and make sure it runs after OATHAuth registers its
-		// preference button.
-		$hookContainer = MediaWikiServices::getInstance()->getHookContainer();
-		$hookContainer->register( 'GetPreferences', [ __CLASS__, 'onGetPreferences' ] );
 	}
 
 	/**
