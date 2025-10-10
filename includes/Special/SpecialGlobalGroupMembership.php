@@ -595,9 +595,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 	/** @inheritDoc */
 	protected function makeConflictCheckKey( UserGroupsSpecialPageTarget $target ): string {
-		$user = $target->userObject;
-		$this->assertIsCentralAuthUser( $user );
-		/** @var CentralAuthUser $user */
+		$user = $this->assertIsCentralAuthUser( $target->userObject );
 		return implode( ',', $user->getGlobalGroups() );
 	}
 
@@ -608,9 +606,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 	/** @inheritDoc */
 	protected function getTargetUserToolLinks( UserGroupsSpecialPageTarget $target ): string {
-		$user = $target->userObject;
-		$this->assertIsCentralAuthUser( $user );
-		/** @var CentralAuthUser $user */
+		$user = $this->assertIsCentralAuthUser( $target->userObject );
 		return Linker::userToolLinks(
 			$user->getId(),
 			$user->getName(),
@@ -627,9 +623,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 	/** @inheritDoc */
 	protected function getGroupMemberships( UserGroupsSpecialPageTarget $target ): array {
-		$user = $target->userObject;
-		$this->assertIsCentralAuthUser( $user );
-		/** @var CentralAuthUser $user */
+		$user = $this->assertIsCentralAuthUser( $target->userObject );
 		$groups = $user->getGlobalGroupsWithExpiration();
 
 		$groupMemberships = [];
@@ -728,10 +722,12 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	 * It's used when retrieving the user object from a {@see UserGroupsSpecialPageTarget}.
 	 * @throws InvalidArgumentException If the object is not of the expected type
 	 * @param mixed $object The object to check
+	 * @return CentralAuthUser The input object, but with a type hint for IDEs
 	 */
-	private function assertIsCentralAuthUser( mixed $object ): void {
+	private function assertIsCentralAuthUser( mixed $object ): CentralAuthUser {
 		if ( !$object instanceof CentralAuthUser ) {
 			throw new InvalidArgumentException( 'Target userObject must be a CentralAuthUser' );
 		}
+		return $object;
 	}
 }
