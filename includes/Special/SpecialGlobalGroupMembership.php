@@ -24,16 +24,16 @@ use InvalidArgumentException;
 use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
-use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
-use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\UserGroupsSpecialPage;
@@ -65,12 +65,11 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	 */
 	protected $mFetchedUser = null;
 
-	private HookContainer $hookContainer;
-	private TitleFactory $titleFactory;
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
 	private CentralAuthAutomaticGlobalGroupManager $automaticGroupManager;
 	private GlobalGroupLookup $globalGroupLookup;
+	private GlobalGroupAssignmentService $globalGroupAssignmentService;
 
 	public function __construct(
 		HookContainer $hookContainer,
@@ -81,12 +80,13 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( 'GlobalGroupMembership' );
-		$this->hookContainer = $hookContainer;
-		$this->titleFactory = $titleFactory;
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
 		$this->automaticGroupManager = $automaticGroupManager;
 		$this->globalGroupLookup = $globalGroupLookup;
+		// This is temporary, to avoid breaking changes in the constructor signature until all usages
+		// of this special page are migrated to the assignment service.
+		$this->globalGroupAssignmentService = CentralAuthServices::getGlobalGroupAssignmentService();
 	}
 
 	/**
@@ -271,74 +271,23 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 			}
 		}
 
-		$this->doSaveUserGroups( $user, $addgroup, $removegroup, $reason, [], $groupExpiries );
+		$this->globalGroupAssignmentService->saveChangesToUserGroups(
+			$this->getAuthority(),
+			$user,
+			$addgroup,
+			$removegroup,
+			$groupExpiries,
+			$reason
+		);
 
 		return Status::newGood();
-	}
-
-	/**
-	 * Add or remove automatic global groups, or update expiries, based on:
-	 * - existing global groups
-	 * - existing local groups
-	 * - groups we are about to add
-	 * - groups we are about to remove
-	 * - groups whose expiries we are about to change
-	 *
-	 * @param CentralAuthUser $user
-	 * @param array<string,?string> $globalGroups Associative array of (group name => expiry),
-	 *   representing global groups that $user already has
-	 * @param string[] &$add Array of groups to add
-	 * @param string[] &$remove Array of groups to remove
-	 * @param array<string,?string> &$groupExpiries Associative array of (group name => expiry),
-	 *   containing only those groups that are to have new expiry values set
-	 */
-	private function adjustForAutomaticGlobalGroups(
-		CentralAuthUser $user,
-		array $globalGroups,
-		array &$add,
-		array &$remove,
-		array &$groupExpiries
-	) {
-		// Get the user's local groups and their expiries. If the user has the same group on
-		// multiple wikis, add the latest expiry (with null representing no expiry).
-		$userInfo = $user->queryAttached();
-		$localGroups = [];
-		foreach ( $userInfo as $info ) {
-			foreach ( $info['groupMemberships'] as $groupMembership ) {
-				$group = $groupMembership->getGroup();
-				$expiry = $groupMembership->getExpiry();
-				if ( $expiry === null ) {
-					$localGroups[$group] = null;
-				} elseif (
-					!array_key_exists( $group, $localGroups ) ||
-					( $localGroups[$group] !== null && $localGroups[$group] < $expiry )
-				) {
-					$localGroups[$group] = $expiry;
-				}
-			}
-		}
-
-		$addGroupsWithExpiries = array_intersect_key(
-			$groupExpiries,
-			array_fill_keys( $add, null )
-		);
-		$assignedGroups = array_diff_key(
-			array_merge( $globalGroups, $localGroups, $addGroupsWithExpiries ),
-			array_fill_keys( $remove, null )
-		);
-
-		$this->automaticGroupManager->handleAutomaticGlobalGroups(
-			$assignedGroups,
-			$add,
-			$remove,
-			$groupExpiries
-		);
 	}
 
 	/**
 	 * Save user groups changes in the database. This function does not throw errors;
 	 * instead, it ignores groups that the performer does not have permission to set.
 	 *
+	 * @deprecated since 1.45, use {@see GlobalGroupAssignmentService::saveChangesToUserGroups()} directly
 	 * @param CentralAuthUser $user
 	 * @param string[] $add Array of groups to add
 	 * @param string[] $remove Array of groups to remove
@@ -356,130 +305,15 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		array $tags = [],
 		array $groupExpiries = []
 	) {
-		// Validate input set...
-		$groups = $user->getGlobalGroupsWithExpiration();
-		$changeable = $this->changeableGroups();
-
-		$remove = array_unique( array_intersect( $remove, $changeable, array_keys( $groups ) ) );
-		$add = array_intersect( $add, $changeable );
-
-		$this->adjustForAutomaticGlobalGroups( $user, $groups, $add, $remove, $groupExpiries );
-
-		// add only groups that are not already present or that need their expiry updated
-		$add = array_filter( $add,
-			static function ( $group ) use ( $groups, $groupExpiries ) {
-				return !array_key_exists( $group, $groups ) || array_key_exists( $group, $groupExpiries );
-			} );
-
-		// Remove groups, then add new ones/update expiries of existing ones
-		if ( $remove ) {
-			foreach ( $remove as $group ) {
-				$user->removeFromGlobalGroups( $group );
-			}
-		}
-		if ( $add ) {
-			foreach ( $add as $group ) {
-				$expiry = $groupExpiries[$group] ?? null;
-				$user->addToGlobalGroup( $group, $expiry );
-			}
-		}
-
-		$newGroups = $user->getGlobalGroupsWithExpiration();
-
-		// Ensure that caches are cleared
-		$user->invalidateCache();
-
-		$reason = $this->getLogReason( $reason, $add, $remove );
-
-		// Only add a log entry if something actually changed
-		if ( $groups !== $newGroups ) {
-			// Allow other extensions to respond to changes in global group membership
-			$caHookRunner = new CentralAuthHookRunner( $this->hookContainer );
-			$caHookRunner->onCentralAuthGlobalUserGroupMembershipChanged( $user, $groups, $newGroups );
-			$this->addLogEntry(
-				$user,
-				$groups,
-				$newGroups,
-				$reason,
-				$tags
-			);
-		}
-
-		return [ $add, $remove ];
-	}
-
-	/**
-	 * Update the reason if any automatic global groups were changed, unless the
-	 * reason already explains an automatic update due to a local group change.
-	 *
-	 * @param string $reason The given reason
-	 * @param string[] $addedGroups
-	 * @param string[] $removedGroups
-	 * @return string The updated reason
-	 */
-	private function getLogReason(
-		string $reason,
-		array $addedGroups,
-		array $removedGroups
-	) {
-		$automaticGroups = $this->automaticGroupManager->getAutomaticGlobalGroups();
-		$localReason = $this->msg( 'centralauth-automatic-global-groups-reason-local' )
-			->inContentLanguage()
-			->text();
-
-		if ( $reason !== $localReason ) {
-			foreach ( $automaticGroups as $automaticGroup ) {
-				if (
-					in_array( $automaticGroup, $addedGroups ) ||
-					in_array( $automaticGroup, $removedGroups )
-				) {
-					$reason = $this->msg( 'centralauth-automatic-global-groups-reason-global', $reason )->text();
-					break;
-				}
-			}
-		}
-
-		return $reason;
-	}
-
-	private function addLogEntry(
-		CentralAuthUser $user,
-		array $oldGroups,
-		array $newGroups,
-		string $reason,
-		array $tags
-	) {
-		$oldGroupNames = [];
-		$newGroupNames = [];
-		$oldGroupMetadata = [];
-		$newGroupMetadata = [];
-
-		foreach ( $oldGroups as $key => &$value ) {
-			$oldGroupNames[] = $key;
-			$oldGroupMetadata[] = [ 'expiry' => $value ];
-		}
-
-		foreach ( $newGroups as $key => &$value ) {
-			$newGroupNames[] = $key;
-			$newGroupMetadata[] = [ 'expiry' => $value ];
-		}
-
-		// The following message is generated here:
-		// * logentry-gblrename-usergroups
-		// * log-action-filter-gblrename-usergroups
-		$entry = new ManualLogEntry( 'gblrights', 'usergroups' );
-		$entry->setTarget( $this->titleFactory->makeTitle( NS_USER, $user->getName() ) );
-		$entry->setPerformer( $this->getUser() );
-		$entry->setComment( $reason );
-		$entry->setParameters( [
-			'oldGroups' => $oldGroupNames,
-			'newGroups' => $newGroupNames,
-			'oldMetadata' => $oldGroupMetadata,
-			'newMetadata' => $newGroupMetadata,
-		] );
-		$entry->addTags( $tags );
-		$logid = $entry->insert();
-		$entry->publish( $logid );
+		return $this->globalGroupAssignmentService->saveChangesToUserGroups(
+			$this->getAuthority(),
+			$user,
+			$add,
+			$remove,
+			$groupExpiries,
+			$reason,
+			$tags
+		);
 	}
 
 	/**
@@ -676,16 +510,6 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 			];
 		}
 		return parent::getGroupAnnotations( $group );
-	}
-
-	/**
-	 * @return string[]
-	 */
-	private function changeableGroups() {
-		if ( $this->getContext()->getAuthority()->isAllowed( 'globalgroupmembership' ) ) {
-			return $this->globalGroupLookup->getDefinedGroups();
-		}
-		return [];
 	}
 
 	/** @inheritDoc */

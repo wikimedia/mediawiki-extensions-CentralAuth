@@ -29,6 +29,7 @@ use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiResult;
 use MediaWiki\ChangeTags\ChangeTags;
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -53,6 +54,7 @@ class ApiGlobalUserRights extends ApiBase {
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
 	private CentralAuthAutomaticGlobalGroupManager $automaticGroupManager;
+	private GlobalGroupAssignmentService $globalGroupAssignmentService;
 	private GlobalGroupLookup $globalGroupLookup;
 
 	public function __construct(
@@ -63,6 +65,7 @@ class ApiGlobalUserRights extends ApiBase {
 		UserNamePrefixSearch $userNamePrefixSearch,
 		UserNameUtils $userNameUtils,
 		CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
+		GlobalGroupAssignmentService $globalGroupAssignmentService,
 		GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( $mainModule, $moduleName );
@@ -71,6 +74,7 @@ class ApiGlobalUserRights extends ApiBase {
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
 		$this->automaticGroupManager = $automaticGroupManager;
+		$this->globalGroupAssignmentService = $globalGroupAssignmentService;
 		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
@@ -135,15 +139,13 @@ class ApiGlobalUserRights extends ApiBase {
 				$this->dieStatus( $ableToTag );
 			}
 		}
-		$form = $this->getUserRightsPage();
-		$form->setContext( $this->getContext() );
 		$r = [];
 		$r['user'] = $user->getName();
 		$r['userid'] = $user->getId();
-		[ $r['added'], $r['removed'] ] = $form->doSaveUserGroups(
+		[ $r['added'], $r['removed'] ] = $this->globalGroupAssignmentService->saveChangesToUserGroups(
 			// Don't pass null to doSaveUserGroups() for array params, cast to empty array
-			$user, $add, (array)$params['remove'],
-			$params['reason'], (array)$tags, $groupExpiries
+			$this->getAuthority(), $user, $add, (array)$params['remove'], $groupExpiries,
+			$params['reason'], (array)$tags
 		);
 		$result = $this->getResult();
 		ApiResult::setIndexedTagName( $r['added'], 'group' );

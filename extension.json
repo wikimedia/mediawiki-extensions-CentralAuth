@@ -363,6 +363,7 @@
 				"UserNamePrefixSearch",
 				"UserNameUtils",
 				"CentralAuth.CentralAuthAutomaticGlobalGroupManager",
+				"CentralAuth.GlobalGroupAssignmentService",
 				"CentralAuth.GlobalGroupLookup"
 			]
 		}
