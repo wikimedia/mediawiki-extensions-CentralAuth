@@ -3,7 +3,9 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
@@ -158,6 +160,18 @@ return [
 		MediaWikiServices $services
 	): FilteredRequestTracker {
 		return new FilteredRequestTracker();
+	},
+
+	'CentralAuth.GlobalGroupAssignmentService' => static function (
+		MediaWikiServices $services
+	): GlobalGroupAssignmentService {
+		return new GlobalGroupAssignmentService(
+			$services->getUserNameUtils(),
+			$services->getHookContainer(),
+			CentralAuthServices::getGlobalGroupLookup(),
+			CentralAuthServices::getAutomaticGlobalGroupManager(),
+			RequestContext::getMain()
+		);
 	},
 
 	'CentralAuth.GlobalGroupLookup' => static function ( MediaWikiServices $services ): GlobalGroupLookup {

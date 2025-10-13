@@ -20,6 +20,7 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
@@ -176,6 +177,13 @@ class CentralAuthServices {
 	public static function getWikiListService( ?ContainerInterface $services = null ): CentralAuthWikiListService {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->get( 'CentralAuth.CentralAuthWikiListService' );
+	}
+
+	public static function getGlobalGroupAssignmentService(
+		?ContainerInterface $services = null
+	): GlobalGroupAssignmentService {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->get( 'CentralAuth.GlobalGroupAssignmentService' );
 	}
 
 	public static function getGlobalGroupLookup( ?ContainerInterface $services = null ): GlobalGroupLookup {
