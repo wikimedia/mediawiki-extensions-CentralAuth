@@ -388,7 +388,7 @@
 	"centralauth-rename-queued": "المهام الضرورية لإعادة تسمية $1 إلى $2 مصفوفة في $3.\n\nتابع التقدم في معالجة الطلب في صفحة [[Special:GlobalRenameProgress/$2]].",
 	"centralauth-rename-table-domain": "ويكي محلي",
 	"centralauth-rename-table-status": "الحالة",
-	"centralauth-rename-table-status-done": "تم",
+	"centralauth-rename-table-status-done": "نُفّذ",
 	"centralauth-rename-table-status-failed": "فشل",
 	"centralauth-rename-table-status-inprogress": "في تقدم",
 	"centralauth-rename-table-status-queued": "في قائمة الانتظار",
