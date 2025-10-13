@@ -188,7 +188,7 @@
 	"centralauth-block-editing-page": "Link text to link user to the local block list when there are pages. Parameters: \n* $1 - Number of pages.",
 	"centralauth-block-editing-ns": "Link text to link user to the local block list when there are namespaces. Parameters: \n* $1 - Number of namespaces.",
 	"centralauth-centralautologin-desc": "This is the text shown on [[Special:CentralAutoLogin]] when this page is requested by a user, not by the automatic global login system.",
-	"centralauth-centralautologin-logged-in": "Message displayed by JavaScript when the auto-login succeeds. Parameters:\n* $1 - username\n* $2 - (Optional) user gender code, for GENDER support",
+	"centralauth-centralautologin-logged-in": "Message displayed by JavaScript when the auto-login succeeds. Parameters:\n* $1 - username\n* $2 - User's gender code, for GENDER support",
 	"centralauth-complete": "Title of special page \"MergeAccount\" when a user account is unified.",
 	"centralauth-complete-text": "{{doc-important|Please leave <code><nowiki>{{int:Centralauth-groupname}}</nowiki></code> exactly as it is.}}\nStatus message after successful unification of a user account.\n\nRefers to {{msg-mw|Centralauth-groupname}}.",
 	"centralauth-completelogin-back": "Used as action link text.",
