@@ -20,7 +20,9 @@ class CentralAuthHookRunner implements
 	CentralAuthSilentLoginRedirectHook,
 	CentralAuthWikiListHook,
 	CentralAuthInfoFieldsHook,
-	CentralAuthGlobalUserGroupMembershipChangedHook
+	CentralAuthGlobalUserGroupMembershipChangedHook,
+	CentralAuthUserVisibilityChangedHook,
+	CentralAuthAccountDeletedHook
 {
 
 	private HookContainer $hookContainer;
@@ -106,6 +108,29 @@ class CentralAuthHookRunner implements
 		$this->hookContainer->run(
 			'CentralAuthGlobalUserGroupMembershipChanged',
 			[ $centralAuthUser, $oldGroups, $newGroups ]
+		);
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function onCentralAuthUserVisibilityChanged(
+		CentralAuthUser $centralAuthUser,
+		int $newVisibility
+	): void {
+		$this->hookContainer->run(
+			'CentralAuthUserVisibilityChanged',
+			[ $centralAuthUser, $newVisibility ]
+		);
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function onCentralAuthAccountDeleted( int $userID, string $userName ): void {
+		$this->hookContainer->run(
+			'CentralAuthAccountDeleted',
+			[ $userID, $userName ]
 		);
 	}
 }

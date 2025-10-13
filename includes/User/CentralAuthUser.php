@@ -32,6 +32,7 @@ use MediaWiki\DAO\WikiAwareEntity;
 use MediaWiki\Deferred\DeferredUpdates;
 use MediaWiki\Extension\CentralAuth\CentralAuthReadOnlyError;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\LocalUserNotFoundException;
 use MediaWiki\Extension\CentralAuth\RCFeed\CARCFeedFormatter;
 use MediaWiki\Extension\CentralAuth\ScrambledPassword;
@@ -2007,7 +2008,11 @@ class CentralAuthUser implements IDBAccessObject {
 				[],
 			);
 		}
+		$idBeforeDeletion = $this->mGlobalId;
+		$nameBeforeDeletion = $this->mName;
 		$this->invalidateCache();
+		$hookRunner = new CentralAuthHookRunner( MediaWikiServices::getInstance()->getHookContainer() );
+		$hookRunner->onCentralAuthAccountDeleted( $idBeforeDeletion, $nameBeforeDeletion );
 
 		return Status::newGood();
 	}
@@ -2104,6 +2109,8 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$this->invalidateCache();
+		$hookRunner = new CentralAuthHookRunner( MediaWikiServices::getInstance()->getHookContainer() );
+		$hookRunner->onCentralAuthUserVisibilityChanged( $this, $level );
 
 		return Status::newGood();
 	}
