@@ -365,6 +365,13 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 					return;
 				}
 
+				if ( !$this->getUser()->isRegistered() ) {
+					$this->doFinalOutput( false, 'Not centrally logged in',
+							self::getInlineScript( 'anon-set.js' ) );
+
+					return;
+				}
+
 				// If we got here, the user is probably logged in, and responses will contain
 				// information specific to them; prevent further caching. The cache is split
 				// on cookies, and isRegistered() couldn't be passed if there weren't any, so
