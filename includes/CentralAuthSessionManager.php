@@ -31,6 +31,7 @@ use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\ObjectCache\CachedBagOStuff;
 use Wikimedia\Stats\IBufferingStatsdDataFactory;
 use Wikimedia\Stats\StatsFactory;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 class CentralAuthSessionManager {
 
@@ -68,7 +69,7 @@ class CentralAuthSessionManager {
 	 */
 	private function getCentralAuthDBForSessionKey() {
 		return MediaWikiServices::getInstance()
-			->getDBLoadBalancerFactory()->getPrimaryDatabase( 'virtual-centralauth' )->getDomainID();
+			->getConnectionProvider()->getPrimaryDatabase( 'virtual-centralauth' )->getDomainID();
 	}
 
 	/**
@@ -195,8 +196,8 @@ class CentralAuthSessionManager {
 		}
 
 		$isDirty = ( $data !== $existing );
-		if ( $isDirty || !isset( $data['expiry'] ) || $data['expiry'] < time() + 32100 ) {
-			$data['expiry'] = time() + $sessionStore::TTL_DAY;
+		if ( $isDirty || !isset( $data['expiry'] ) || $data['expiry'] < ConvertibleTimestamp::time() + 32100 ) {
+			$data['expiry'] = ConvertibleTimestamp::time() + $sessionStore::TTL_DAY;
 			$stime = microtime( true );
 			$sessionStore->set(
 				$key,
