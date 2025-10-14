@@ -147,6 +147,7 @@ class GlobalRenameUserStatus {
 		);
 	}
 
+	/** @param array[] $rows */
 	public function setStatuses( array $rows ): bool {
 		if ( !$rows ) {
 			return false;
@@ -173,8 +174,8 @@ class GlobalRenameUserStatus {
 			// ROLLBACK or COMMIT as is. We could use SAVEPOINT here, but it's not worth it.
 			$keyConds = [];
 			foreach ( $rows as $row ) {
-				$keyConds[] = $dbw->expr( 'ru_wiki', '=', $row->ru_wiki )
-					->and( 'ru_oldname', '=', $row->ru_oldname );
+				$keyConds[] = $dbw->expr( 'ru_wiki', '=', $row['ru_wiki'] )
+					->and( 'ru_oldname', '=', $row['ru_oldname'] );
 			}
 			// (a) Do a locking check for conflicting rows on the unique key
 			$ok = !$dbw->newSelectQueryBuilder()
