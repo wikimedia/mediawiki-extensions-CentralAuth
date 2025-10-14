@@ -359,11 +359,7 @@
 		"globaluserrights": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiGlobalUserRights",
 			"services": [
-				"HookContainer",
-				"TitleFactory",
-				"UserNamePrefixSearch",
-				"UserNameUtils",
-				"CentralAuth.CentralAuthAutomaticGlobalGroupManager",
+				"CentralAuth.CentralAuthUserHelper",
 				"CentralAuth.GlobalGroupAssignmentService",
 				"CentralAuth.GlobalGroupLookup"
 			]

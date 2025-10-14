@@ -29,6 +29,7 @@ use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUserHelper;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
@@ -70,6 +71,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	private CentralAuthAutomaticGlobalGroupManager $automaticGroupManager;
 	private GlobalGroupLookup $globalGroupLookup;
 	private GlobalGroupAssignmentService $globalGroupAssignmentService;
+	private CentralAuthUserHelper $userHelper;
 
 	public function __construct(
 		HookContainer $hookContainer,
@@ -87,6 +89,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		// This is temporary, to avoid breaking changes in the constructor signature until all usages
 		// of this special page are migrated to the assignment service.
 		$this->globalGroupAssignmentService = CentralAuthServices::getGlobalGroupAssignmentService();
+		$this->userHelper = CentralAuthServices::getUserHelper();
 	}
 
 	/**
@@ -208,10 +211,24 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 			}
 		}
 
-		// show some more forms
-		if ( $this->mTarget !== null ) {
-			$this->editUserGroupsForm( $this->mTarget );
+		if ( $this->mTarget === null ) {
+			return;
 		}
+
+		if ( !$fetchedStatus->isOK() ) {
+			foreach ( $fetchedStatus->getMessages() as $msg ) {
+				$this->getOutput()->addWikiMsg( $msg );
+			}
+			return;
+		}
+		if ( !$this->globalGroupAssignmentService->targetCanHaveUserGroups( $this->mFetchedUser ) ) {
+			$this->getOutput()->addWikiMsg( 'userrights-no-group' );
+			return;
+		}
+
+		$target = new UserGroupsSpecialPageTarget( $this->mFetchedUser->getName(), $this->mFetchedUser );
+		$this->getOutput()->addHTML( $this->buildGroupsForm( $target ) );
+		$this->showLogFragment( $target, $this->getOutput() );
 	}
 
 	/**
@@ -317,82 +334,16 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	}
 
 	/**
-	 * Edit user groups membership
-	 * @param string $username Name of the user.
-	 */
-	private function editUserGroupsForm( $username ) {
-		$status = $this->fetchUser( $username );
-		if ( !$status->isOK() ) {
-			foreach ( $status->getMessages() as $msg ) {
-				$this->getOutput()->addWikiMsg( $msg );
-			}
-
-			return;
-		}
-
-		/** @var CentralAuthUser $user */
-		$user = $status->value;
-		'@phan-var CentralAuthUser $user';
-
-		$target = new UserGroupsSpecialPageTarget( $user->getName(), $user );
-		$this->getOutput()->addHTML( $this->buildGroupsForm( $target ) );
-
-		// This isn't really ideal logging behavior, but let's not hide the
-		// interwiki logs if we're using them as is.
-		$this->showLogFragment( $target, $this->getOutput() );
-	}
-
-	/**
 	 * @param string $username
-	 * @return Status
+	 * @return Status<CentralAuthUser>
 	 */
-	public function fetchUser( $username ) {
-		if ( $username === '' ) {
-			return Status::newFatal( 'nouserspecified' );
-		}
-
-		if ( $username[0] == '#' ) {
+	private function fetchUser( $username ) {
+		if ( str_starts_with( $username, '#' ) ) {
 			$id = intval( substr( $username, 1 ) );
-			$globalUser = CentralAuthUser::newPrimaryInstanceFromId( $id );
-			// If the user exists, but is hidden from the viewer, pretend that it does
-			// not exist. - T285190/T260863
-			if (
-				!$globalUser
-				|| (
-					( $globalUser->isSuppressed() || $globalUser->isHidden() )
-					&& !$this->getContext()->getAuthority()->isAllowed( 'centralauth-suppress' )
-				)
-			) {
-				return Status::newFatal( 'noname', $id );
-			}
+			return $this->userHelper->getCentralAuthUserByIdFromPrimary( $id, $this->getAuthority() );
 		} else {
-			// fetchUser() is public; normalize in case the caller forgot to. See T343963 and
-			// T344495.
-			$canonUsername = $this->userNameUtils->getCanonical( $username );
-			if ( !is_string( $canonUsername ) ) {
-				// $username was invalid, return nosuchuser.
-				return Status::newFatal( 'nosuchusershort', $username );
-			}
-
-			// If the user exists, but is hidden from the viewer, pretend that it does
-			// not exist. - T285190
-			$globalUser = CentralAuthUser::getPrimaryInstanceByName( $canonUsername );
-			if (
-				!$globalUser->exists()
-				|| (
-					( $globalUser->isSuppressed() || $globalUser->isHidden() )
-					&& !$this->getContext()->getAuthority()->isAllowed( 'centralauth-suppress' )
-				)
-			) {
-				return Status::newFatal( 'nosuchusershort', $canonUsername );
-			}
+			return $this->userHelper->getCentralAuthUserByNameFromPrimary( $username, $this->getAuthority() );
 		}
-
-		if ( $this->userNameUtils->isTemp( $globalUser->getName() ) ) {
-			return Status::newFatal( 'userrights-no-group' );
-		}
-
-		return Status::newGood( $globalUser );
 	}
 
 	/**

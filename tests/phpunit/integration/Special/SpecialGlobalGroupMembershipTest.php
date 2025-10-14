@@ -34,6 +34,7 @@ use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\WikiMap\WikiMap;
 use SpecialPageTestBase;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership
@@ -99,7 +100,8 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 	 */
 	public function testFetchUserForGoodStatus( $inputFunction ) {
 		[ $user, ] = $this->getRegisteredTestUser();
-		$status = $this->newSpecialPage()->fetchUser( $inputFunction( $user ) );
+		$specialPage = TestingAccessWrapper::newFromObject( $this->newSpecialPage() );
+		$status = $specialPage->fetchUser( $inputFunction( $user ) );
 
 		$this->assertStatusGood( $status );
 		$value = $status->getValue();
@@ -117,7 +119,8 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 	 * @dataProvider provideFetchUserForFatalStatus
 	 */
 	public function testFetchUserForFatalStatus( string $input, string $error ) {
-		$status = $this->newSpecialPage()->fetchUser( $input );
+		$specialPage = TestingAccessWrapper::newFromObject( $this->newSpecialPage() );
+		$status = $specialPage->fetchUser( $input );
 		$this->assertStatusError( $error, $status );
 	}
 
@@ -126,15 +129,6 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		yield 'Username' => [ 'Not in use', 'nosuchusershort' ];
 		yield 'Invalid username' => [ 'Invalid@username', 'nosuchusershort' ];
 		yield 'ID' => [ '#12345678', 'noname' ];
-	}
-
-	public function testFetchUserForTemporaryAccount() {
-		$this->enableAutoCreateTempUser();
-		$this->testFetchUserForFatalStatus(
-			$this->getServiceContainer()->getTempUserCreator()
-				->create( null, new FauxRequest() )->getUser()->getName(),
-			'userrights-no-group'
-		);
 	}
 
 	public function testViewSpecialPageForTemporaryAccountTarget() {

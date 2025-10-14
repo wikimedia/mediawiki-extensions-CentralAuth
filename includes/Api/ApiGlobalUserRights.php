@@ -28,17 +28,12 @@ use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiResult;
 use MediaWiki\ChangeTags\ChangeTags;
-use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
-use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUserHelper;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\Specials\SpecialUserRights;
-use MediaWiki\Title\TitleFactory;
-use MediaWiki\User\UserNamePrefixSearch;
-use MediaWiki\User\UserNameUtils;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\Rdbms\IDBAccessObject;
 
@@ -49,44 +44,14 @@ class ApiGlobalUserRights extends ApiBase {
 
 	private ?CentralAuthUser $user = null;
 
-	private HookContainer $hookContainer;
-	private TitleFactory $titleFactory;
-	private UserNamePrefixSearch $userNamePrefixSearch;
-	private UserNameUtils $userNameUtils;
-	private CentralAuthAutomaticGlobalGroupManager $automaticGroupManager;
-	private GlobalGroupAssignmentService $globalGroupAssignmentService;
-	private GlobalGroupLookup $globalGroupLookup;
-
 	public function __construct(
 		ApiMain $mainModule,
 		string $moduleName,
-		HookContainer $hookContainer,
-		TitleFactory $titleFactory,
-		UserNamePrefixSearch $userNamePrefixSearch,
-		UserNameUtils $userNameUtils,
-		CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
-		GlobalGroupAssignmentService $globalGroupAssignmentService,
-		GlobalGroupLookup $globalGroupLookup
+		private readonly CentralAuthUserHelper $userHelper,
+		private readonly GlobalGroupAssignmentService $globalGroupAssignmentService,
+		private readonly GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( $mainModule, $moduleName );
-		$this->hookContainer = $hookContainer;
-		$this->titleFactory = $titleFactory;
-		$this->userNamePrefixSearch = $userNamePrefixSearch;
-		$this->userNameUtils = $userNameUtils;
-		$this->automaticGroupManager = $automaticGroupManager;
-		$this->globalGroupAssignmentService = $globalGroupAssignmentService;
-		$this->globalGroupLookup = $globalGroupLookup;
-	}
-
-	private function getUserRightsPage(): SpecialGlobalGroupMembership {
-		return new SpecialGlobalGroupMembership(
-			$this->hookContainer,
-			$this->titleFactory,
-			$this->userNamePrefixSearch,
-			$this->userNameUtils,
-			$this->automaticGroupManager,
-			$this->globalGroupLookup
-		);
 	}
 
 	public function execute() {
@@ -159,16 +124,25 @@ class ApiGlobalUserRights extends ApiBase {
 		}
 
 		$this->requireOnlyOneParameter( $params, 'user', 'userid' );
-		$user = $params['user'] ?? '#' . $params['userid'];
-		$form = $this->getUserRightsPage();
-		$form->setContext( $this->getContext() );
-		$status = $form->fetchUser( $user );
+
+		if ( isset( $params['userid'] ) ) {
+			$id = intval( $params['userid'] );
+			$status = $this->userHelper->getCentralAuthUserByIdFromPrimary( $id, $this->getAuthority() );
+		} else {
+			$status = $this->userHelper->getCentralAuthUserByNameFromPrimary( $params['user'], $this->getAuthority() );
+		}
+
 		if ( !$status->isOK() ) {
 			$this->dieStatus( $status );
 		}
 
-		$this->user = $status->value;
-		return $status->value;
+		$user = $status->value;
+		if ( !$this->globalGroupAssignmentService->targetCanHaveUserGroups( $user ) ) {
+			$this->dieWithError( 'userrights-no-group' );
+		}
+
+		$this->user = $user;
+		return $user;
 	}
 
 	/** @inheritDoc */
