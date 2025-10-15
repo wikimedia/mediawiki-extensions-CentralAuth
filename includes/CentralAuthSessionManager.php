@@ -30,7 +30,6 @@ use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\ObjectCache\CachedBagOStuff;
-use Wikimedia\Stats\IBufferingStatsdDataFactory;
 use Wikimedia\Stats\StatsFactory;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
@@ -48,17 +47,14 @@ class CentralAuthSessionManager {
 	private $sessionStore = null;
 
 	private ServiceOptions $options;
-	private IBufferingStatsdDataFactory $statsdDataFactory;
 	private StatsFactory $statsFactory;
 
 	public function __construct(
 		ServiceOptions $options,
-		IBufferingStatsdDataFactory $statsdDataFactory,
 		StatsFactory $statsFactory
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
-		$this->statsdDataFactory = $statsdDataFactory;
 		$this->statsFactory = $statsFactory;
 	}
 
@@ -147,11 +143,6 @@ class CentralAuthSessionManager {
 		$data = $this->getSessionStore()->get( $key ) ?: [];
 		$real = microtime( true ) - $stime;
 
-		// Stay backward compatible with the dashboard feeding on
-		// this data. NOTE: $real is in second with microsecond-level
-		// precision. This is reconciled on the grafana dashboard.
-		$this->statsdDataFactory->timing( 'centralauth.session.read', $real );
-
 		$this->statsFactory->withComponent( 'CentralAuth' )
 			->getTiming( 'session_read_seconds' )
 			->setLabel( 'wiki', WikiMap::getCurrentWikiId() )
@@ -207,10 +198,6 @@ class CentralAuthSessionManager {
 				$sessionStore::TTL_DAY
 			);
 			$real = microtime( true ) - $stime;
-			// Stay backward compatible with the dashboard feeding on
-			// this data. NOTE: $real is in second with microsecond-level
-			// precision. This is reconciled on the grafana dashboard.
-			$this->statsdDataFactory->timing( 'centralauth.session.write', $real );
 
 			$this->statsFactory->withComponent( 'CentralAuth' )
 				->getTiming( 'session_write_seconds' )
