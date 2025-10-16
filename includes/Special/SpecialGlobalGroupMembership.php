@@ -36,10 +36,12 @@ use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MainConfigNames;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\UserGroupsSpecialPage;
 use MediaWiki\Specials\SpecialUserRights;
 use MediaWiki\Status\Status;
+use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserGroupsSpecialPageTarget;
@@ -62,9 +64,9 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	protected $mTarget;
 
 	/**
-	 * @var null|CentralAuthUser The user object of the target username or null.
+	 * @var CentralAuthUser The user object of the target username.
 	 */
-	protected $mFetchedUser = null;
+	protected CentralAuthUser $targetUser;
 
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
@@ -72,6 +74,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	private GlobalGroupLookup $globalGroupLookup;
 	private GlobalGroupAssignmentService $globalGroupAssignmentService;
 	private CentralAuthUserHelper $userHelper;
+	private StatusFormatter $statusFormatter;
 
 	public function __construct(
 		HookContainer $hookContainer,
@@ -90,38 +93,64 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		// of this special page are migrated to the assignment service.
 		$this->globalGroupAssignmentService = CentralAuthServices::getGlobalGroupAssignmentService();
 		$this->userHelper = CentralAuthServices::getUserHelper();
+		$this->statusFormatter = MediaWikiServices::getInstance()->getFormatterFactory()
+			->getStatusFormatter( $this->getContext() );
 	}
 
 	/**
 	 * Manage forms to be shown according to posted data.
 	 * Depending on the submit button used, call a form or a save function.
 	 *
-	 * @param string|null $par String if any subpage provided, else null
+	 * @param string|null $subPage String if any subpage provided, else null
 	 * @throws UserBlockedError|PermissionsError
 	 */
-	public function execute( $par ) {
+	public function execute( $subPage ) {
 		$user = $this->getUser();
 		$request = $this->getRequest();
 		$session = $request->getSession();
 		$out = $this->getOutput();
 
-		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
-		$out->addModuleStyles( 'ext.centralauth.misc.styles' );
+		$this->setHeaders();
+		$this->outputHeader();
+
 		$out->addModules( [ 'mediawiki.special.userrights' ] );
+		$out->addModuleStyles( 'mediawiki.special' );
+		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
+		$this->addHelpLink( 'Help:Assigning permissions' );
 
-		$this->mTarget = $par ?? $request->getVal( 'user' );
+		$targetName = $subPage ?? $request->getText( 'user' );
+		$this->switchForm( $targetName );
+		$this->mTarget = $targetName;
 
-		$fetchedStatus = $this->mTarget === null ? Status::newFatal( 'nouserspecified' ) :
-			$this->fetchUser( $this->mTarget );
-		if ( $fetchedStatus->isOK() ) {
-			$this->mFetchedUser = $fetchedStatus->value;
+		// If the user just viewed this page, without trying to submit, return early
+		// It prevents from showing "nouserspecified" error message on first view
+		if ( $subPage === null && !$request->getCheck( 'user' ) ) {
+			return;
+		}
+
+		// No need to check if target is empty or non-canonical, fetchUser() does it
+		$fetchedStatus = $this->fetchUser( $targetName );
+		if ( !$fetchedStatus->isOK() ) {
+			$out->addHTML( Html::warningBox(
+				$this->statusFormatter->getMessage( $fetchedStatus )->parse()
+			) );
+			return;
+		}
+
+		$fetchedUser = $fetchedStatus->value;
+		// Phan false positive on Status object - T323205
+		'@phan-var CentralAuthUser $fetchedUser';
+		$this->targetUser = $fetchedUser;
+
+		if ( !$this->globalGroupAssignmentService->targetCanHaveUserGroups( $fetchedUser ) ) {
+			$out->addHTML( Html::warningBox(
+				$this->msg( 'userrights-no-group' )->parse()
+			) );
+			return;
 		}
 
 		// show a successbox, if the user rights was saved successfully
-		if (
-			$session->get( 'specialUserrightsSaveSuccess' ) &&
-			$this->mFetchedUser !== null
-		) {
+		if ( $session->get( 'specialUserrightsSaveSuccess' ) ) {
 			// Remove session data for the success message
 			$session->remove( 'specialUserrightsSaveSuccess' );
 
@@ -131,26 +160,17 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 					Html::element(
 						'p',
 						[],
-						$this->msg( 'savedrights', $this->mFetchedUser->getName() )->text()
+						$this->msg( 'savedrights', $fetchedUser->getName() )->text()
 					),
 					'mw-notify-success'
 				)
 			);
 		}
 
-		$this->setHeaders();
-		$this->outputHeader();
-
-		$out->addModuleStyles( 'mediawiki.special' );
-		$this->addHelpLink( 'Help:Assigning permissions' );
-
-		$this->switchForm();
-
 		if (
 			$request->wasPosted() &&
 			$request->getCheck( 'saveusergroups' ) &&
-			$this->mTarget !== null &&
-			$user->matchEditToken( $request->getVal( 'wpEditToken' ), $this->mTarget )
+			$user->matchEditToken( $request->getVal( 'wpEditToken' ), $targetName )
 		) {
 			/*
 			 * If the user is blocked and they only have "partial" access
@@ -171,20 +191,9 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 			$this->checkReadOnly();
 
-			// save settings
-			if ( !$fetchedStatus->isOK() ) {
-				foreach ( $fetchedStatus->getMessages() as $msg ) {
-					$this->getOutput()->addWikiMsg( $msg );
-				}
-
-				return;
-			}
-
-			$targetUser = $this->mFetchedUser;
-
 			$conflictCheck = $request->getVal( 'conflictcheck-originalgroups' );
 			$conflictCheck = ( $conflictCheck === '' ) ? [] : explode( ',', $conflictCheck );
-			$userGroups = $targetUser->getGlobalGroups();
+			$userGroups = $fetchedUser->getGlobalGroups();
 
 			if ( $userGroups !== $conflictCheck ) {
 				$out->addHTML( Html::errorBox(
@@ -192,7 +201,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 				) );
 			} else {
 				$status = $this->saveUserGroups(
-					$targetUser,
+					$fetchedUser,
 					$request->getVal( 'user-reason' )
 				);
 
@@ -200,7 +209,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 					// Set session data for the success message
 					$session->set( 'specialUserrightsSaveSuccess', 1 );
 
-					$out->redirect( $this->getSuccessURL() );
+					$out->redirect( $this->getSuccessURL( $targetName ) );
 					return;
 				} else {
 					// Print an error message and redisplay the form
@@ -211,22 +220,8 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 			}
 		}
 
-		if ( $this->mTarget === null ) {
-			return;
-		}
-
-		if ( !$fetchedStatus->isOK() ) {
-			foreach ( $fetchedStatus->getMessages() as $msg ) {
-				$this->getOutput()->addWikiMsg( $msg );
-			}
-			return;
-		}
-		if ( !$this->globalGroupAssignmentService->targetCanHaveUserGroups( $this->mFetchedUser ) ) {
-			$this->getOutput()->addWikiMsg( 'userrights-no-group' );
-			return;
-		}
-
-		$target = new UserGroupsSpecialPageTarget( $this->mFetchedUser->getName(), $this->mFetchedUser );
+		// Show the form (either edit or view)
+		$target = new UserGroupsSpecialPageTarget( $fetchedUser->getName(), $fetchedUser );
 		$this->getOutput()->addHTML( $this->buildGroupsForm( $target ) );
 		$this->showLogFragment( $target, $this->getOutput() );
 	}
@@ -234,8 +229,8 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	/**
 	 * @return string
 	 */
-	private function getSuccessURL() {
-		return $this->getPageTitle( $this->mTarget )->getFullURL();
+	private function getSuccessURL( string $target ) {
+		return $this->getPageTitle( $target )->getFullURL();
 	}
 
 	/**
@@ -349,9 +344,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	/**
 	 * Output a form to allow searching for a user
 	 */
-	private function switchForm() {
-		$this->addHelpLink( 'Extension:CentralAuth' );
-		$this->getOutput()->addModuleStyles( 'mediawiki.special' );
+	private function switchForm( string $target ) {
 		$formDescriptor = [
 			'user' => [
 				'class' => HTMLGlobalUserTextField::class,
@@ -360,7 +353,8 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 				'label-message' => 'userrights-user-editname',
 				'size' => 30,
 				'excludetemp' => true,
-				'default' => $this->mTarget,
+				'autofocus' => $target === '',
+				'default' => $target,
 			]
 		];
 
@@ -447,7 +441,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 			return [ 'centralauth-globalgroupperms-automatic-group-reason' ];
 		} elseif ( isset( $automaticGroupsConfig[$group] ) && $automaticGroupsConfig[$group] ) {
 			$uiLanguage = $this->getLanguage();
-			$user = $this->mFetchedUser;
+			$user = $this->targetUser;
 			$groupNames = array_map(
 				static function ( $automaticGroup ) use ( $uiLanguage, $user ) {
 					return $uiLanguage->getGroupMemberName( $automaticGroup, $user->getName() );
