@@ -125,7 +125,23 @@ class GlobalRenameUser {
 	 * Rename a global user (this assumes that the data has been verified before
 	 * and that $newUser is being a creatable user)!
 	 *
+	 * @param array $options Options to be applied when performing user rename
+	 *    - movepages (bool): Move the user page, user talk page and their
+	 *         subpages to the new name.
+	 *    - suppressredirects (bool): Whether to suppress redirects during page
+	 *         moves.
+	 *    - reason (string): The reason to be shown in the rename log.
+	 *    - type (const int): Global rename request type, can be either
+	 *         GlobalRenameRequest::RENAME or GlobalRenameRequest::VANISH.
+	 *         RENAME for regular account renames, VANISH for user account
+	 *         vanishing (see https://meta.wikimedia.org/wiki/Account_vanishing)
+	 *    - force (bool): Avoid normalizing the old username. Should only be
+	 *         used when the old username is invalid. When used, the username in
+	 *         the $oldUser object passed to the constructor should match the
+	 *         username in the DB exactly.
+	 *
 	 * @return Status
+	 * @see GlobalRenameRequest
 	 */
 	public function rename( array $options ) {
 		if ( $this->oldUser->getName() === $this->newUser->getName() ) {
