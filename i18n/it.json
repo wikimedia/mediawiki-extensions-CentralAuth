@@ -144,7 +144,7 @@
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pagina|pagine}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|namespace}}",
 	"centralauth-centralautologin-desc": "Questa pagina speciale viene utilizzata internamente da MediaWiki.\nQuando si visita un dominio collegato mentre non si è loggati, il sistema centrale di accesso utilizza questa pagina per determinare se si è connessi al dominio centrale.\nHai richiesto questa pagina senza fornire alcun dato di autenticazione, quindi non succede niente.",
-	"centralauth-centralautologin-logged-in": "Hai effettuato l'accesso globalmente come $1. Ricarica la pagina per applicare le impostazioni utente.",
+	"centralauth-centralautologin-logged-in": "{{GENDER:$2|Hai effettuato}} l'accesso globalmente come $1. Ricarica la pagina per applicare le impostazioni utente.",
 	"centralauth-complete": "Il processo di unificazione delle utenze è stato completato.",
 	"centralauth-complete-text": "È ora possibile accedere a tutti i siti di {{int:Centralauth-groupname}} senza dover creare nuove utenze.",
 	"centralauth-completelogin-back": "Torna alla pagina precedente.",

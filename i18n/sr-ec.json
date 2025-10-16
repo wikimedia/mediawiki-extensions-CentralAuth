@@ -128,7 +128,7 @@
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|радња|радње}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|страница|странице}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|именски простор|именски простори}}",
-	"centralauth-centralautologin-logged-in": "Централно сте пријављени као $1. Поново учитајте страницу да бисте применили корисничка подешавања.",
+	"centralauth-centralautologin-logged-in": "{{GENDER:$2|Централно}} сте пријављени као $1. Поново учитајте страницу да бисте применили корисничка подешавања.",
 	"centralauth-complete": "Обједињавање налога је завршено!",
 	"centralauth-complete-text": "Сада можете да се пријавите на све вики пројекте {{int:Centralauth-groupname}}, без отварања новог налога.",
 	"centralauth-completelogin-back": "Назад на претходну страницу.",

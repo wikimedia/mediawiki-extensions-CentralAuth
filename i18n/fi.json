@@ -158,7 +158,7 @@
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|sivu|sivua}}",
 	"centralauth-block-editing-ns": "{{PLURAL:$1|nimiavaruus|nimiavaruutta}}",
 	"centralauth-centralautologin-desc": "Tämä toimintosivu on MediaWikin sisäisessä käytössä.\nKun vierailet linkitetyn verkkotunnuksen alueella ilman sisäänkirjautumista, keskitetty kirjautumisjärjestelmä käyttää tätä sivua sen määrittämiseen, oletko kirjautunut keskusverkkotunnukseen. \nOlet pyytänyt tätä sivua tarjoamatta minkäänlaisia todentamistietoja, joten se ei tee mitään.",
-	"centralauth-centralautologin-logged-in": "Olet kirjautunut keskitetysti sisään nimellä $1. Lataa sivu uudelleen, jotta omat asetuksesi tulevat voimaan.",
+	"centralauth-centralautologin-logged-in": "{{GENDER:$2|Olet}} kirjautunut keskitetysti sisään nimellä $1. Lataa sivu uudelleen, jotta omat asetuksesi tulevat voimaan.",
 	"centralauth-complete": "Käyttäjätunnusten yhdistäminen on tehty!",
 	"centralauth-complete-text": "Voit nyt kirjautua mihin tahansa {{int:Centralauth-groupname}} -wikiin luomatta uutta käyttäjätunnusta.",
 	"centralauth-completelogin-back": "Palaa edelliselle sivulle.",
