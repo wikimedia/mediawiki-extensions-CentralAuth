@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
+use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\Job;
@@ -142,6 +143,7 @@ class GlobalRenameUser {
 	 *
 	 * @return Status
 	 * @see GlobalRenameRequest
+	 * @see SpecialGlobalRenameUser
 	 */
 	public function rename( array $options ) {
 		if ( $this->oldUser->getName() === $this->newUser->getName() ) {

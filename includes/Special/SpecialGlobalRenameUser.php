@@ -16,7 +16,7 @@ use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
-use MediaWiki\User\User;
+use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\User\UserRigorOptions;
 
@@ -47,6 +47,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 */
 	private $overrideTitleBlacklist = false;
 
+	private UserFactory $userFactory;
 	private UserNameUtils $userNameUtils;
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
 	private CentralAuthUIService $uiService;
@@ -60,6 +61,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	private const EDITCOUNT_THRESHOLD = 100000;
 
 	public function __construct(
+		UserFactory $userFactory,
 		UserNameUtils $userNameUtils,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
 		CentralAuthUIService $uiService,
@@ -68,6 +70,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		GlobalRenameUserValidator $globalRenameUserValidator
 	) {
 		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
+		$this->userFactory = $userFactory;
 		$this->userNameUtils = $userNameUtils;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
 		$this->uiService = $uiService;
@@ -151,7 +154,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		// Ask for confirmation if the user has more than 100k edits globally
 		$oldName = trim( $this->getRequest()->getText( 'oldname' ) );
 		if ( $oldName !== '' ) {
-			$oldUser = User::newFromName( $oldName );
+			$oldUser = $this->userFactory->newFromName( $oldName );
 			if ( $oldUser ) {
 				$caUser = CentralAuthUser::getInstance( $oldUser );
 				if ( $caUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD ) {
@@ -185,7 +188,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @return Status
 	 */
 	public function validate( array $data ) {
-		$oldUser = User::newFromName( $data['oldname'] );
+		$oldUser = $this->userFactory->newFromName( $data['oldname'] );
 		if ( !$oldUser ) {
 			return Status::newFatal( 'centralauth-rename-doesnotexist' );
 		}
@@ -198,7 +201,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			return Status::newFatal( 'centralauth-rename-badusername' );
 		}
 
-		$newUser = User::newFromName(
+		$newUser = $this->userFactory->newFromName(
 			$data['newname'],
 			// match GlobalRenameFactory
 			UserRigorOptions::RIGOR_CREATABLE
