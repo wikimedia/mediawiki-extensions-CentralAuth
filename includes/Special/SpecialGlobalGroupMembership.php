@@ -38,7 +38,6 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\UserGroupsSpecialPage;
-use MediaWiki\Specials\SpecialUserRights;
 use MediaWiki\Status\Status;
 use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\TitleFactory;
@@ -263,56 +262,18 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	 * @param string $reason Reason for group change
 	 */
 	private function saveUserGroups( CentralAuthUser $user, string $reason ): Status {
-		$allgroups = $this->globalGroupLookup->getDefinedGroups();
-		$addgroup = [];
-		// associative array of (group name => expiry)
-		$groupExpiries = [];
-		$removegroup = [];
+		$newGroupsStatus = $this->readGroupsForm();
 
-		// This could possibly create a highly unlikely race condition if permissions are changed between
-		//  when the form is loaded and when the form is saved. Ignoring it for the moment.
-		foreach ( $allgroups as $group ) {
-			// We'll tell it to remove all unchecked groups, and add all checked groups.
-			// Later on, this gets filtered for what can actually be removed
-			if ( $this->getRequest()->getCheck( "wpGroup-$group" ) ) {
-				$addgroup[] = $group;
-
-				// read the expiry information from the request
-				$expiryDropdown = $this->getRequest()->getVal( "wpExpiry-$group" );
-				if ( $expiryDropdown === 'existing' ) {
-					continue;
-				}
-
-				if ( $expiryDropdown === 'other' ) {
-					$expiryValue = $this->getRequest()->getVal( "wpExpiry-$group-other" );
-				} else {
-					$expiryValue = $expiryDropdown;
-				}
-
-				// validate the expiry
-				$groupExpiries[$group] = SpecialUserRights::expiryToTimestamp( $expiryValue );
-
-				if ( $groupExpiries[$group] === false ) {
-					return Status::newFatal( 'userrights-invalid-expiry', $group );
-				}
-
-				// not allowed to have things expiring in the past
-				if ( $groupExpiries[$group] && $groupExpiries[$group] < wfTimestampNow() ) {
-					return Status::newFatal( 'userrights-expiry-in-past', $group );
-				}
-			} else {
-				$removegroup[] = $group;
-			}
+		if ( !$newGroupsStatus->isOK() ) {
+			return $newGroupsStatus;
 		}
+		$newGroups = $newGroupsStatus->value;
 
-		$this->globalGroupAssignmentService->saveChangesToUserGroups(
-			$this->getAuthority(),
-			$user,
-			$addgroup,
-			$removegroup,
-			$groupExpiries,
-			$reason
-		);
+		// addgroup contains also existing groups with changed expiry
+		[ $addgroup, $removegroup, $groupExpiries ] = $this->splitGroupsIntoAddRemove(
+			$newGroups, $this->groupMemberships );
+		$this->globalGroupAssignmentService->saveChangesToUserGroups( $this->getAuthority(), $user, $addgroup,
+			$removegroup, $groupExpiries, $reason );
 
 		return Status::newGood();
 	}
