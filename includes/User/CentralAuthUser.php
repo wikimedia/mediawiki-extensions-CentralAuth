@@ -2024,26 +2024,31 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function adminLock() {
 		$this->checkWriteMode();
+		$this->loadState();
 
 		$services = MediaWikiServices::getInstance();
 		if ( $services->getTempUserConfig()->isTempName( $this->mName ) ) {
 			return Status::newFatal( 'centralauth-admin-cannot-lock-temporary-account' );
 		}
 
+		$newCasToken = $this->mCasToken + 1;
+
 		$dbw = CentralAuthServices::getDatabaseManager( $services )->getCentralPrimaryDB();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
-			->set( [ 'gu_locked' => 1 ] )
+			->set( [ 'gu_locked' => 1, 'gu_cas_token' => $newCasToken ] )
 			->where( [
 				'gu_name' => $this->mName,
 				// Necessary so that the call to IDatabase::affectedRows will return 0 if no update was made.
 				'gu_locked' => 0,
+				'gu_cas_token' => $this->mCasToken,
 			] )
 			->caller( __METHOD__ )
 			->execute();
 		if ( !$dbw->affectedRows() ) {
 			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
+		$this->mCasToken = $newCasToken;
 
 		$this->invalidateCache();
 		$user = User::newFromName( $this->mName );
@@ -2064,20 +2069,24 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function adminUnlock() {
 		$this->checkWriteMode();
+		$this->loadState();
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$newCasToken = $this->mCasToken + 1;
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
-			->set( [ 'gu_locked' => 0 ] )
+			->set( [ 'gu_locked' => 0, 'gu_cas_token' => $newCasToken ] )
 			->where( [
 				'gu_name' => $this->mName,
 				// Necessary so that the call to IDatabase::affectedRows will return 0 if no update was made.
 				'gu_locked' => 1,
+				'gu_cas_token' => $this->mCasToken,
 			] )
 			->caller( __METHOD__ )
 			->execute();
 		if ( !$dbw->affectedRows() ) {
 			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
+		$this->mCasToken = $newCasToken;
 
 		$this->invalidateCache();
 
@@ -2092,13 +2101,17 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function adminSetHidden( int $level ) {
 		$this->checkWriteMode();
+		$this->loadState();
+		$newCasToken = $this->mCasToken + 1;
 
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
-			->set( [ 'gu_hidden_level' => $level ] )
+			->set( [ 'gu_hidden_level' => $level,
+					 'gu_cas_token' => $newCasToken ] )
 			->where( [
 				'gu_name' => $this->mName,
+				'gu_cas_token' => $this->mCasToken,
 				// Necessary so that the call to IDatabase::affectedRows will return 0 if no update was made.
 				$dbw->expr( 'gu_hidden_level', '!=', $level ),
 			] )
@@ -2107,6 +2120,7 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( !$dbw->affectedRows() ) {
 			return Status::newFatal( 'centralauth-state-mismatch' );
 		}
+		$this->mCasToken = $newCasToken;
 
 		$this->invalidateCache();
 		$hookRunner = new CentralAuthHookRunner( MediaWikiServices::getInstance()->getHookContainer() );
