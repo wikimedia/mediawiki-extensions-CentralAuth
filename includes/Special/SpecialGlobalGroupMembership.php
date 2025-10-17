@@ -20,7 +20,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use InvalidArgumentException;
 use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
@@ -56,27 +55,21 @@ use MediaWiki\User\UserNameUtils;
 class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 	/**
-	 * The target of the local right-adjuster's interest.  Can be gotten from
-	 * either a GET parameter or a subpage-style parameter, so have a member
-	 * variable for it.
-	 * @var null|string
-	 */
-	protected $mTarget;
-
-	/**
 	 * @var CentralAuthUser The user object of the target username.
 	 */
 	protected CentralAuthUser $targetUser;
 
 	private UserNamePrefixSearch $userNamePrefixSearch;
 	private UserNameUtils $userNameUtils;
-	private CentralAuthAutomaticGlobalGroupManager $automaticGroupManager;
 	private GlobalGroupLookup $globalGroupLookup;
 	private GlobalGroupAssignmentService $globalGroupAssignmentService;
 	private CentralAuthUserHelper $userHelper;
 	private StatusFormatter $statusFormatter;
 
 	public function __construct(
+		// The unused params will be removed once all usages of this special page are migrated to the
+		// assignment service. At the same time, the services obtained from service container will be
+		// declared as parameters here.
 		HookContainer $hookContainer,
 		TitleFactory $titleFactory,
 		UserNamePrefixSearch $userNamePrefixSearch,
@@ -87,7 +80,6 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		parent::__construct( 'GlobalGroupMembership' );
 		$this->userNamePrefixSearch = $userNamePrefixSearch;
 		$this->userNameUtils = $userNameUtils;
-		$this->automaticGroupManager = $automaticGroupManager;
 		$this->globalGroupLookup = $globalGroupLookup;
 		// This is temporary, to avoid breaking changes in the constructor signature until all usages
 		// of this special page are migrated to the assignment service.
@@ -120,7 +112,6 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 		$targetName = $subPage ?? $request->getText( 'user' );
 		$this->switchForm( $targetName );
-		$this->mTarget = $targetName;
 
 		// If the user just viewed this page, without trying to submit, return early
 		// It prevents from showing "nouserspecified" error message on first view
@@ -140,6 +131,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		$fetchedUser = $fetchedStatus->value;
 		// Phan false positive on Status object - T323205
 		'@phan-var CentralAuthUser $fetchedUser';
+		$this->setTargetName( $fetchedUser->getName() );
 		$this->targetUser = $fetchedUser;
 
 		if ( !$this->globalGroupAssignmentService->targetCanHaveUserGroups( $fetchedUser ) ) {
@@ -147,6 +139,36 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 				$this->msg( 'userrights-no-group' )->parse()
 			) );
 			return;
+		}
+
+		$this->explicitGroups = $this->globalGroupLookup->getDefinedGroups();
+		$this->groupMemberships = $this->getGlobalGroupMemberships();
+		$this->enableWatchUser = false;
+
+		$changeableGroups = $this->globalGroupAssignmentService->getChangeableGroups(
+			$this->getAuthority(), $fetchedUser );
+		$this->addableGroups = $changeableGroups['add'];
+		$this->removableGroups = $changeableGroups['remove'];
+		foreach ( $changeableGroups['restricted'] as $group => $details ) {
+			if ( !$details['condition-met'] ) {
+				$this->addGroupAnnotation( $group, $details['message'] );
+			}
+		}
+
+		$uiLanguage = $this->getLanguage();
+		$automaticGroupsConfig = $this->getConfig()->get( CAMainConfigNames::CentralAuthAutomaticGlobalGroups );
+		foreach ( $automaticGroupsConfig as $group => $relatedAutomaticGroups ) {
+			$groupNames = array_map(
+				static function ( $automaticGroup ) use ( $uiLanguage, $fetchedUser ) {
+					return $uiLanguage->getGroupMemberName( $automaticGroup, $fetchedUser->getName() );
+				},
+				$relatedAutomaticGroups
+			);
+			$this->addGroupAnnotation(
+				$group,
+				$this->msg( 'centralauth-globalgroupperms-automatic-group-info' )
+					->params( Message::listParam( $groupNames ) )
+			);
 		}
 
 		// show a successbox, if the user rights was saved successfully
@@ -373,93 +395,27 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	}
 
 	/** @inheritDoc */
-	protected function makeConflictCheckKey( UserGroupsSpecialPageTarget $target ): string {
-		$user = $this->assertIsCentralAuthUser( $target->userObject );
-		return implode( ',', $user->getGlobalGroups() );
-	}
-
-	/** @inheritDoc */
-	protected function getTargetDescriptor(): string {
-		return $this->mTarget;
-	}
-
-	/** @inheritDoc */
-	protected function getTargetUserToolLinks( UserGroupsSpecialPageTarget $target ): string {
-		$user = $this->assertIsCentralAuthUser( $target->userObject );
+	protected function getTargetUserToolLinks( ?UserGroupsSpecialPageTarget $target = null ): string {
 		return Linker::userToolLinks(
-			$user->getId(),
-			$user->getName(),
+			$this->targetUser->getId(),
+			$this->targetUser->getName(),
 			// default for redContribsWhenNoEdits
 			false,
 			Linker::TOOL_LINKS_EMAIL
 		);
 	}
 
-	/** @inheritDoc */
-	protected function listAllExplicitGroups(): array {
-		return $this->globalGroupLookup->getDefinedGroups();
-	}
-
-	/** @inheritDoc */
-	protected function getGroupMemberships( UserGroupsSpecialPageTarget $target ): array {
-		$user = $this->assertIsCentralAuthUser( $target->userObject );
-		$groups = $user->getGlobalGroupsWithExpiration();
+	/**
+	 * @return array<string,UserGroupMembership>
+	 */
+	protected function getGlobalGroupMemberships(): array {
+		$groups = $this->targetUser->getGlobalGroupsWithExpiration();
 
 		$groupMemberships = [];
 		foreach ( $groups as $group => $expiration ) {
-			$groupMemberships[$group] = new UserGroupMembership( $user->getId(), $group, $expiration );
+			$groupMemberships[$group] = new UserGroupMembership( $this->targetUser->getId(), $group, $expiration );
 		}
 		return $groupMemberships;
-	}
-
-	protected function canAdd( string $group ): bool {
-		if ( !$this->getContext()->getAuthority()->isAllowed( 'globalgroupmembership' ) ) {
-			return false;
-		}
-
-		$automaticGroups = $this->automaticGroupManager->getAutomaticGlobalGroups();
-		if ( in_array( $group, $automaticGroups ) ) {
-			return false;
-		}
-
-		return true;
-	}
-
-	protected function canRemove( string $group ): bool {
-		return $this->canAdd( $group );
-	}
-
-	protected function getGroupAnnotations( string $group ): array {
-		$automaticGroups = $this->automaticGroupManager->getAutomaticGlobalGroups();
-		$automaticGroupsConfig = $this->getConfig()->get(
-			CAMainConfigNames::CentralAuthAutomaticGlobalGroups
-		);
-
-		$groupIsAutomatic = in_array( $group, $automaticGroups );
-
-		if ( $groupIsAutomatic ) {
-			return [ 'centralauth-globalgroupperms-automatic-group-reason' ];
-		} elseif ( isset( $automaticGroupsConfig[$group] ) && $automaticGroupsConfig[$group] ) {
-			$uiLanguage = $this->getLanguage();
-			$user = $this->targetUser;
-			$groupNames = array_map(
-				static function ( $automaticGroup ) use ( $uiLanguage, $user ) {
-					return $uiLanguage->getGroupMemberName( $automaticGroup, $user->getName() );
-				},
-				$automaticGroupsConfig[$group]
-			);
-
-			return [
-				$this->msg( 'centralauth-globalgroupperms-automatic-group-info' )
-					->params( Message::listParam( $groupNames ) )
-			];
-		}
-		return parent::getGroupAnnotations( $group );
-	}
-
-	/** @inheritDoc */
-	protected function supportsWatchUser( UserGroupsSpecialPageTarget $target ): bool {
-		return false;
 	}
 
 	/** @inheritDoc */
@@ -484,19 +440,5 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		// Autocomplete subpage as user list - public to allow caching
 		return $this->userNamePrefixSearch
 			->search( UserNamePrefixSearch::AUDIENCE_PUBLIC, $search, $limit, $offset );
-	}
-
-	/**
-	 * A helper function to assert that an object is of type {@see CentralAuthUser}.
-	 * It's used when retrieving the user object from a {@see UserGroupsSpecialPageTarget}.
-	 * @throws InvalidArgumentException If the object is not of the expected type
-	 * @param mixed $object The object to check
-	 * @return CentralAuthUser The input object, but with a type hint for IDEs
-	 */
-	private function assertIsCentralAuthUser( mixed $object ): CentralAuthUser {
-		if ( !$object instanceof CentralAuthUser ) {
-			throw new InvalidArgumentException( 'Target userObject must be a CentralAuthUser' );
-		}
-		return $object;
 	}
 }
