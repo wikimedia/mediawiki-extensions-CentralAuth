@@ -42,7 +42,6 @@ use MediaWiki\Status\Status;
 use MediaWiki\Status\StatusFormatter;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserGroupMembership;
-use MediaWiki\User\UserGroupsSpecialPageTarget;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 
@@ -242,9 +241,8 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		}
 
 		// Show the form (either edit or view)
-		$target = new UserGroupsSpecialPageTarget( $fetchedUser->getName(), $fetchedUser );
-		$this->getOutput()->addHTML( $this->buildGroupsForm( $target ) );
-		$this->showLogFragment( $target, $this->getOutput() );
+		$this->getOutput()->addHTML( $this->buildGroupsForm() );
+		$this->showLogFragment( 'gblrights', 'gblrights' );
 	}
 
 	/**
@@ -356,7 +354,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	}
 
 	/** @inheritDoc */
-	protected function getTargetUserToolLinks( ?UserGroupsSpecialPageTarget $target = null ): string {
+	protected function getTargetUserToolLinks(): string {
 		return Linker::userToolLinks(
 			$this->targetUser->getId(),
 			$this->targetUser->getName(),
@@ -377,11 +375,6 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 			$groupMemberships[$group] = new UserGroupMembership( $this->targetUser->getId(), $group, $expiration );
 		}
 		return $groupMemberships;
-	}
-
-	/** @inheritDoc */
-	protected function getLogType(): array {
-		return [ 'gblrights', 'gblrights' ];
 	}
 
 	/**
