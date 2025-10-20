@@ -176,11 +176,11 @@
 		"GlobalGroupMembership": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupMembership",
 			"services": [
-				"HookContainer",
-				"TitleFactory",
+				"FormatterFactory",
 				"UserNamePrefixSearch",
 				"UserNameUtils",
-				"CentralAuth.CentralAuthAutomaticGlobalGroupManager",
+				"CentralAuth.CentralAuthUserHelper",
+				"CentralAuth.GlobalGroupAssignmentService",
 				"CentralAuth.GlobalGroupLookup"
 			]
 		},

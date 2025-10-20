@@ -22,25 +22,21 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Exception\UserBlockedError;
-use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
-use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserHelper;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Language\FormatterFactory;
 use MediaWiki\Linker\Linker;
 use MediaWiki\MainConfigNames;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\UserGroupsSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\Status\StatusFormatter;
-use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
@@ -57,34 +53,18 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	 */
 	protected CentralAuthUser $targetUser;
 
-	private UserNamePrefixSearch $userNamePrefixSearch;
-	private UserNameUtils $userNameUtils;
-	private GlobalGroupLookup $globalGroupLookup;
-	private GlobalGroupAssignmentService $globalGroupAssignmentService;
-	private CentralAuthUserHelper $userHelper;
 	private StatusFormatter $statusFormatter;
 
 	public function __construct(
-		// The unused params will be removed once all usages of this special page are migrated to the
-		// assignment service. At the same time, the services obtained from service container will be
-		// declared as parameters here.
-		HookContainer $hookContainer,
-		TitleFactory $titleFactory,
-		UserNamePrefixSearch $userNamePrefixSearch,
-		UserNameUtils $userNameUtils,
-		CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
-		GlobalGroupLookup $globalGroupLookup
+		FormatterFactory $formatterFactory,
+		private readonly UserNamePrefixSearch $userNamePrefixSearch,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly CentralAuthUserHelper $userHelper,
+		private readonly GlobalGroupAssignmentService $globalGroupAssignmentService,
+		private readonly GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( 'GlobalGroupMembership' );
-		$this->userNamePrefixSearch = $userNamePrefixSearch;
-		$this->userNameUtils = $userNameUtils;
-		$this->globalGroupLookup = $globalGroupLookup;
-		// This is temporary, to avoid breaking changes in the constructor signature until all usages
-		// of this special page are migrated to the assignment service.
-		$this->globalGroupAssignmentService = CentralAuthServices::getGlobalGroupAssignmentService();
-		$this->userHelper = CentralAuthServices::getUserHelper();
-		$this->statusFormatter = MediaWikiServices::getInstance()->getFormatterFactory()
-			->getStatusFormatter( $this->getContext() );
+		$this->statusFormatter = $formatterFactory->getStatusFormatter( $this->getContext() );
 	}
 
 	/**

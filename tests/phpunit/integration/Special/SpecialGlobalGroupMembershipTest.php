@@ -72,11 +72,11 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 	protected function newSpecialPage(): SpecialGlobalGroupMembership {
 		return new SpecialGlobalGroupMembership(
-			$this->getServiceContainer()->getHookContainer(),
-			$this->getServiceContainer()->getTitleFactory(),
+			$this->getServiceContainer()->getFormatterFactory(),
 			$this->getServiceContainer()->getUserNamePrefixSearch(),
 			$this->getServiceContainer()->getUserNameUtils(),
-			CentralAuthServices::getAutomaticGlobalGroupManager( $this->getServiceContainer() ),
+			CentralAuthServices::getUserHelper( $this->getServiceContainer() ),
+			CentralAuthServices::getGlobalGroupAssignmentService( $this->getServiceContainer() ),
 			CentralAuthServices::getGlobalGroupLookup( $this->getServiceContainer() )
 		);
 	}
