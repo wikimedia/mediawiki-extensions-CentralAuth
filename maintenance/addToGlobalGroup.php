@@ -2,15 +2,12 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use MediaWiki\Context\DerivativeContext;
-use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Permissions\UltimateAuthority;
-use MediaWiki\Specials\SpecialUserRights;
 use MediaWiki\User\User;
+use MediaWiki\User\UserGroupAssignmentService;
 
 // @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
@@ -35,23 +32,13 @@ class AddToGlobalGroup extends Maintenance {
 	}
 
 	public function execute() {
-		$userFactory = $this->getServiceContainer()->getUserFactory();
-		$specialPage = new SpecialGlobalGroupMembership(
-			$this->getServiceContainer()->getHookContainer(),
-			$this->getServiceContainer()->getTitleFactory(),
-			$this->getServiceContainer()->getUserNamePrefixSearch(),
-			$this->getServiceContainer()->getUserNameUtils(),
-			CentralAuthServices::getAutomaticGlobalGroupManager( $this->getServiceContainer() ),
-			CentralAuthServices::getGlobalGroupLookup( $this->getServiceContainer() )
-		);
-
 		$username = $this->getArg( 0 );
 		$group = $this->getArg( 1 );
 		$groupsToAdd = $this->getOption( 'remove' ) ? [] : [ $group ];
 		$groupsToRemove = $this->getOption( 'remove' ) ? [ $group ] : [];
 		$expiry = [];
 		if ( $this->hasOption( 'expiry' ) ) {
-			$parsedExpiry = SpecialUserRights::expiryToTimestamp( $this->getOption( 'expiry' ) );
+			$parsedExpiry = UserGroupAssignmentService::expiryToTimestamp( $this->getOption( 'expiry' ) );
 			if ( $parsedExpiry === false ) {
 				$this->fatalError( 'Invalid expiry' );
 			}
@@ -63,11 +50,10 @@ class AddToGlobalGroup extends Maintenance {
 		if ( !$performingUser ) {
 			$this->fatalError( 'Maintenance user unavailable' );
 		}
-		$context = new DerivativeContext( RequestContext::getMain() );
-		$context->setUser( $performingUser );
-		$context->setAuthority( new UltimateAuthority( $performingUser ) );
-		$specialPage->setContext( $context );
+		$performingAuthority = new UltimateAuthority( $performingUser );
 
+		$services = $this->getServiceContainer();
+		$userFactory = $services->getUserFactory();
 		$user = $userFactory->newFromName( $username );
 		if ( !$user ) {
 			$this->fatalError( 'Invalid username' );
@@ -77,13 +63,15 @@ class AddToGlobalGroup extends Maintenance {
 			$this->fatalError( 'User does not exist centrally' );
 		}
 
-		[ $added, $removed ] = $specialPage->doSaveUserGroups(
+		$globalGroupAssignmentService = CentralAuthServices::getGlobalGroupAssignmentService( $services );
+
+		[ $added, $removed ] = $globalGroupAssignmentService->saveChangesToUserGroups(
+			$performingAuthority,
 			$centralUser,
 			$groupsToAdd,
 			$groupsToRemove,
-			$this->getOption( 'reason' ),
-			[],
-			$expiry
+			$expiry,
+			$reason,
 		);
 
 		if ( $added || $removed ) {

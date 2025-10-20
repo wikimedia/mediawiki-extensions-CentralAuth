@@ -2,44 +2,17 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use MediaWiki\Config\Config;
-use MediaWiki\Context\DerivativeContext;
-use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
-use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
-use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Message\Message;
 use MediaWiki\Permissions\UltimateAuthority;
-use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\Hook\UserGroupsChangedHook;
-use MediaWiki\User\UserNamePrefixSearch;
-use MediaWiki\User\UserNameUtils;
 
 class UserGroupsHookHandler implements UserGroupsChangedHook {
 
-	private HookContainer $hookContainer;
-	private TitleFactory $titleFactory;
-	private UserNamePrefixSearch $userNamePrefixSearch;
-	private UserNameUtils $userNameUtils;
-	private CentralAuthAutomaticGlobalGroupManager $automaticGroupManager;
-	private GlobalGroupLookup $globalGroupLookup;
-
 	public function __construct(
-		HookContainer $hookContainer,
-		Config $config,
-		TitleFactory $titleFactory,
-		UserNamePrefixSearch $userNamePrefixSearch,
-		UserNameUtils $userNameUtils,
-		CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
-		GlobalGroupLookup $globalGroupLookup
+		private readonly GlobalGroupAssignmentService $globalGroupAssignmentService
 	) {
-		$this->hookContainer = $hookContainer;
-		$this->titleFactory = $titleFactory;
-		$this->userNamePrefixSearch = $userNamePrefixSearch;
-		$this->userNameUtils = $userNameUtils;
-		$this->automaticGroupManager = $automaticGroupManager;
-		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
 	/**
@@ -68,34 +41,18 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 			return;
 		}
 
-		// To do: Have a service that the special page, APIs and hook handler call: T270857
-		$specialPage = new SpecialGlobalGroupMembership(
-			$this->hookContainer,
-			$this->titleFactory,
-			$this->userNamePrefixSearch,
-			$this->userNameUtils,
-			$this->automaticGroupManager,
-			$this->globalGroupLookup
-		);
-
 		// Automatic global groups must be updated, even if this user does not have
 		// the rights to do so. Do now rather than via a maintenance script so that
 		// the change is made immediately and the performer who changed the local
 		// group is logged.
-		$context = new DerivativeContext( $specialPage->getContext() );
-		$context->setAuthority( new UltimateAuthority( $performer ) );
-		$specialPage->setContext( $context );
-
-		// Automatic global groups are managed in ::doSaveUserGroups.
+		$authority = new UltimateAuthority( $performer );
 		$reason = Message::newFromKey( 'centralauth-automatic-global-groups-reason-local' )
 			->inContentLanguage()
 			->text();
-		$specialPage->doSaveUserGroups(
-			$globalUser,
-			[],
-			[],
-			$reason
-		);
-	}
 
+		// We set add=[] and remove=[] on purpose. This call is made so that the automatic
+		// global groups are recalculated and applied (so that even if we seemingly request
+		// no change to global groups, a change may still occur).
+		$this->globalGroupAssignmentService->saveChangesToUserGroups( $authority, $globalUser, [], [], [], $reason );
+	}
 }

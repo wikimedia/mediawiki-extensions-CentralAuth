@@ -33,7 +33,7 @@ use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserHelper;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
-use MediaWiki\Specials\SpecialUserRights;
+use MediaWiki\User\UserGroupAssignmentService;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\Rdbms\IDBAccessObject;
 
@@ -84,7 +84,7 @@ class ApiGlobalUserRights extends ApiBase {
 		$groupExpiries = [];
 		foreach ( $expiry as $index => $expiryValue ) {
 			$group = $add[$index];
-			$groupExpiries[$group] = SpecialUserRights::expiryToTimestamp( $expiryValue );
+			$groupExpiries[$group] = UserGroupAssignmentService::expiryToTimestamp( $expiryValue );
 			if ( $groupExpiries[$group] === false ) {
 				$this->dieWithError( [ 'apierror-invalidexpiry', wfEscapeWikiText( $expiryValue ) ] );
 			}

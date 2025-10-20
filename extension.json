@@ -690,13 +690,7 @@
 		"usergroups": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserGroupsHookHandler",
 			"services": [
-				"HookContainer",
-				"MainConfig",
-				"TitleFactory",
-				"UserNamePrefixSearch",
-				"UserNameUtils",
-				"CentralAuth.CentralAuthAutomaticGlobalGroupManager",
-				"CentralAuth.GlobalGroupLookup"
+				"CentralAuth.GlobalGroupAssignmentService"
 			]
 		},
 		"usercreation": {
