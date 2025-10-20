@@ -278,6 +278,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		array $tags = [],
 		array $groupExpiries = []
 	) {
+		wfDeprecated( __METHOD__, '1.45' );
 		return $this->globalGroupAssignmentService->saveChangesToUserGroups(
 			$this->getAuthority(),
 			$user,
