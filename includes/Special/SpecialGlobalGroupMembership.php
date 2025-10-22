@@ -109,8 +109,6 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		$fetchedUser = $fetchedStatus->value;
 		// Phan false positive on Status object - T323205
 		'@phan-var CentralAuthUser $fetchedUser';
-		$this->setTargetName( $fetchedUser->getName() );
-		$this->targetUser = $fetchedUser;
 
 		if ( !$this->globalGroupAssignmentService->targetCanHaveUserGroups( $fetchedUser ) ) {
 			$out->addHTML( Html::warningBox(
@@ -119,35 +117,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 			return;
 		}
 
-		$this->explicitGroups = $this->globalGroupLookup->getDefinedGroups();
-		$this->groupMemberships = $this->getGlobalGroupMemberships();
-		$this->enableWatchUser = false;
-
-		$changeableGroups = $this->globalGroupAssignmentService->getChangeableGroups(
-			$this->getAuthority(), $fetchedUser );
-		$this->addableGroups = $changeableGroups['add'];
-		$this->removableGroups = $changeableGroups['remove'];
-		foreach ( $changeableGroups['restricted'] as $group => $details ) {
-			if ( !$details['condition-met'] ) {
-				$this->addGroupAnnotation( $group, $details['message'] );
-			}
-		}
-
-		$uiLanguage = $this->getLanguage();
-		$automaticGroupsConfig = $this->getConfig()->get( CAMainConfigNames::CentralAuthAutomaticGlobalGroups );
-		foreach ( $automaticGroupsConfig as $group => $relatedAutomaticGroups ) {
-			$groupNames = array_map(
-				static function ( $automaticGroup ) use ( $uiLanguage, $fetchedUser ) {
-					return $uiLanguage->getGroupMemberName( $automaticGroup, $fetchedUser->getName() );
-				},
-				$relatedAutomaticGroups
-			);
-			$this->addGroupAnnotation(
-				$group,
-				$this->msg( 'centralauth-globalgroupperms-automatic-group-info' )
-					->params( Message::listParam( $groupNames ) )
-			);
-		}
+		$this->initialize( $fetchedUser );
 
 		// show a successbox, if the user rights was saved successfully
 		if ( $session->get( 'specialUserrightsSaveSuccess' ) ) {
@@ -223,6 +193,53 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		// Show the form (either edit or view)
 		$this->getOutput()->addHTML( $this->buildGroupsForm() );
 		$this->showLogFragment( 'gblrights', 'gblrights' );
+	}
+
+	/**
+	 * Initializes the class with data related to the current target user. This method should be called
+	 * before delegating any operations related to viewing, editing or saving user groups to the parent class.
+	 */
+	private function initialize( CentralAuthUser $user ): void {
+		$this->targetUser = $user;
+		$this->setTargetName( $user->getName() );
+
+		$this->explicitGroups = $this->globalGroupLookup->getDefinedGroups();
+		$this->groupMemberships = $this->getGlobalGroupMemberships();
+		$this->enableWatchUser = false;
+
+		$changeableGroups = $this->globalGroupAssignmentService->getChangeableGroups(
+			$this->getAuthority(), $user );
+		$this->addableGroups = $changeableGroups['add'];
+		$this->removableGroups = $changeableGroups['remove'];
+		foreach ( $changeableGroups['restricted'] as $group => $details ) {
+			if ( !$details['condition-met'] ) {
+				$this->addGroupAnnotation( $group, $details['message'] );
+			}
+		}
+
+		$this->addAnnotationsForAutomaticGroups();
+	}
+
+	/**
+	 * Add group annotations for automatically assigned groups
+	 */
+	private function addAnnotationsForAutomaticGroups(): void {
+		$user = $this->targetUser;
+		$uiLanguage = $this->getLanguage();
+		$automaticGroupsConfig = $this->getConfig()->get( CAMainConfigNames::CentralAuthAutomaticGlobalGroups );
+		foreach ( $automaticGroupsConfig as $group => $relatedAutomaticGroups ) {
+			$groupNames = array_map(
+				static function ( $automaticGroup ) use ( $uiLanguage, $user ) {
+					return $uiLanguage->getGroupMemberName( $automaticGroup, $user->getName() );
+				},
+				$relatedAutomaticGroups
+			);
+			$this->addGroupAnnotation(
+				$group,
+				$this->msg( 'centralauth-globalgroupperms-automatic-group-info' )
+					->params( Message::listParam( $groupNames ) )
+			);
+		}
 	}
 
 	/**
