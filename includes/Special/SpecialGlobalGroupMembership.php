@@ -125,23 +125,6 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 			$request->getCheck( 'saveusergroups' ) &&
 			$user->matchEditToken( $request->getVal( 'wpEditToken' ), $targetName )
 		) {
-			/*
-			 * If the user is blocked and they only have "partial" access
-			 * (e.g. they don't have the userrights permission), then don't
-			 * allow them to change any user rights.
-			 */
-			if ( !$this->getAuthority()->isAllowed( 'userrights' ) ) {
-				$block = $user->getBlock();
-				if ( $block && $block->isSitewide() ) {
-					throw new UserBlockedError(
-						$block,
-						$user,
-						$this->getLanguage(),
-						$request->getIP()
-					);
-				}
-			}
-
 			$this->checkReadOnly();
 
 			$status = $this->saveUserGroups(
