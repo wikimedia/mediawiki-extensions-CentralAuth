@@ -77,7 +77,6 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	public function execute( $subPage ) {
 		$user = $this->getUser();
 		$request = $this->getRequest();
-		$session = $request->getSession();
 		$out = $this->getOutput();
 
 		$this->setHeaders();
