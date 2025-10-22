@@ -179,7 +179,7 @@
 	"centralauth-completelogin-back": "前のページに戻る。",
 	"centralauth-contribs-link": "グローバルアカウント",
 	"centralauth-contribs-locked": "このアカウントはグローバルロックされています。\n詳細は[[Special:CentralAuth/$1|グローバルアカウント情報]]を参照してください。",
-	"centralauth-contribs-locked-log": "このアカウントはグローバルロックされています。\n参考のために最新のロック記録を以下に示します:",
+	"centralauth-contribs-locked-log": "このアカウントはグローバルロックされています。\n最新のロック記録は以下の通りです:",
 	"centralauth-createlocal-already-exists": "指定されたグローバルアカウントに関連付けられたローカルアカウントは既に作成されています。",
 	"centralauth-createlocal-no-global-account": "そのようなグローバルアカウントは存在しません。",
 	"centralauth-createlocal-pretext": "何らかの理由で利用者が自らのローカルアカウントを作成できない場合、このフォームを使用することでグローバルアカウントに関連付けられたローカルアカウントを作成できます。",
