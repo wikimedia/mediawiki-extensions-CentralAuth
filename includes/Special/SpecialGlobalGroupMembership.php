@@ -144,29 +144,19 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 			$this->checkReadOnly();
 
-			$conflictCheck = $request->getVal( 'conflictcheck-originalgroups' );
-			$conflictCheck = ( $conflictCheck === '' ) ? [] : explode( ',', $conflictCheck );
-			$userGroups = $fetchedUser->getGlobalGroups();
+			$status = $this->saveUserGroups(
+				$request->getText( 'user-reason' ),
+				$fetchedUser,
+			);
 
-			if ( $userGroups !== $conflictCheck ) {
-				$out->addHTML( Html::errorBox(
-					$this->msg( 'userrights-conflict' )->parse()
-				) );
+			if ( $status->isOK() ) {
+				$this->setSuccessFlag();
+				$out->redirect( $this->getSuccessURL( $targetName ) );
+				return;
 			} else {
-				$status = $this->saveUserGroups(
-					$fetchedUser,
-					$request->getVal( 'user-reason' )
-				);
-
-				if ( $status->isOK() ) {
-					$this->setSuccessFlag();
-					$out->redirect( $this->getSuccessURL( $targetName ) );
-					return;
-				} else {
-					// Print an error message and redisplay the form
-					foreach ( $status->getMessages() as $msg ) {
-						$this->getOutput()->addHTML( Html::errorBox( $this->msg( $msg )->parse() ) );
-					}
+				// Print an error message and redisplay the form
+				foreach ( $status->getMessages() as $msg ) {
+					$this->getOutput()->addHTML( Html::errorBox( $this->msg( $msg )->parse() ) );
 				}
 			}
 		}
@@ -232,12 +222,17 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 
 	/**
 	 * Save user groups changes in the database.
-	 * Data comes from the editUserGroupsForm() form function
 	 *
-	 * @param CentralAuthUser $user Target user object.
 	 * @param string $reason Reason for group change
+	 * @param CentralAuthUser $user Target user object.
 	 */
-	private function saveUserGroups( CentralAuthUser $user, string $reason ): Status {
+	private function saveUserGroups( string $reason, CentralAuthUser $user ): Status {
+		// This conflict check doesn't prevent from a situation when two concurrent DB transactions
+		// update the same user's groups, but that's highly unlikely.
+		if ( $this->conflictOccured() ) {
+			return Status::newFatal( 'userrights-conflict' );
+		}
+
 		$newGroupsStatus = $this->readGroupsForm();
 
 		if ( !$newGroupsStatus->isOK() ) {
