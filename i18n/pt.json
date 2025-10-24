@@ -145,7 +145,7 @@
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|página|páginas}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|espaço nominal|espaços nominais}}",
 	"centralauth-centralautologin-desc": "Esta página especial é usada internamente pelo MediaWiki. \nQuando visita um domínio vinculado sem sessão iniciada, o sistema de autenticação central usa esta página para determinar se está autenticado no domínio central. Solicitou esta página sem fornecer quaisquer dados de autenticação, logo não tem nenhum propósito.",
-	"centralauth-centralautologin-logged-in": "Está autenticado centralmente como $1. Recarregue a página para aplicar as suas configurações de utilizador.",
+	"centralauth-centralautologin-logged-in": "{{GENDER:$2|Você}} está autenticado centralmente como $1. Recarregue a página para aplicar as suas definições de utilizador.",
 	"centralauth-complete": "Unificação da autenticação completa!",
 	"centralauth-complete-text": "Agora pode entrar em qualquer wiki da {{int:Centralauth-groupname}} sem ter de criar uma conta nova.",
 	"centralauth-completelogin-back": "Regressar à página anterior.",
