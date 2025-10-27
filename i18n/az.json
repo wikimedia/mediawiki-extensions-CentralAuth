@@ -125,7 +125,7 @@
 	"centralauth-attach-success": "Bu hesab vahid hesaba birləşdirilib.",
 	"centralauth-attach-text": "Bu hesab hələ vahid hesaba köçürülməyib.\nQlobal hesab da sizindirsə, qlobal hesab parolunu daxil etsəniz, bu hesabı birləşdirə bilərsiniz:",
 	"centralauth-attach-title": "Hesabı təsdiqlə",
-	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]] artıq qlobal olaraq kilidlənib.",
+	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]] adlı hesab artıq qlobal olaraq kilidlənib.",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|səhifə}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|ad fəzası}}",
 	"centralauth-centralautologin-desc": "Bu xüsusi səhifə MediaWiki tərəfindən daxili olaraq istifadə olunur.\nDaxil olmadığınız halda əlaqəli domenə baş çəkdiyiniz zaman mərkəzi giriş sistemi sizin mərkəzi domenə daxil olub-olmadığınızı müəyyən etmək üçün bu səhifədən istifadə edir.\nBu səhifəni heç bir identifikasiya məlumatı təqdim etmədən açmısınız, buna görə də heç bir dəyişiklik edilmədi.",

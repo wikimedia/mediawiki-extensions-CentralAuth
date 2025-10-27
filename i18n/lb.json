@@ -44,7 +44,7 @@
 	"centralauth-admin-group-temporary": "$1 ''(temporär)''",
 	"centralauth-admin-hidden-list": "vun der Lëscht vun de globale Benotzer",
 	"centralauth-admin-hidden-oversight": "ënnerdréckt",
-	"centralauth-admin-info-attached": "Zuel vun de verbonne Benotzerkonten:",
+	"centralauth-admin-info-attached": "Zuel vun de verbonnene Benotzerkonten:",
 	"centralauth-admin-info-editcount": "Gesamtzuel vun den Ännerungen",
 	"centralauth-admin-info-groups": "Global {{PLURAL:$1|Grupp|Gruppen}}:",
 	"centralauth-admin-info-groups-manage": "geréieren",
