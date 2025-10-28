@@ -1,7 +1,6 @@
 {
 	"@metadata": {
 		"authors": [
-			"Amire80",
 			"Bjankuloski06",
 			"Vlad5250"
 		]
@@ -84,7 +83,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Дали корисников да биде скриен, скриен од списокот на глобални корисници или да биде притаен.",
 	"apihelp-setglobalaccountstatus-param-locked": "Дали корисников да биде заклучен или не.",
 	"apihelp-setglobalaccountstatus-param-reason": "Причина за промената на статусот на корисникот.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "По желба MD5 на очекуваното тековно <samp>userid:username:hidden:locked</samp>. Ова се користи за утврдување на спротиставени уредувања. Вредност ана <samp>hidden</samp> мора да биде празна низа ако не е скриено или низите <code>lists</code> или <code>suppressed</code>. Вредноста на <samp>locked</samp> мора да биде 1 за заклученјо, 0 за отклучено. Примери: <samp>2128506:LeeSmith::0</samp>; <samp>3839611:VandalGoblin:suppressed:1</samp>.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "По желба MD5 на очекуваното тековно <samp>userid:username:hidden:locked</samp>. Ова се користи за утврдување на спротивставени уредувања. Вредност ана <samp>hidden</samp> мора да биде празна низа ако не е скриено или низите <code>lists</code> или <code>suppressed</code>. Вредноста на <samp>locked</samp> мора да биде 1 за заклученјо, 0 за отклучено. Примери: <samp>2128506:LeeSmith::0</samp>; <samp>3839611:VandalGoblin:suppressed:1</samp>.",
 	"apihelp-setglobalaccountstatus-param-user": "На кој корисник да му се смени статусот.",
 	"apihelp-setglobalaccountstatus-summary": "Скриј или заклучи (или откриј/отклучи) глобална корисничка сметка."
 }
