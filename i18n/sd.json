@@ -69,7 +69,6 @@
 	"centralauth-months-ago": "$1 {{PLURAL:$1|مھينو|مھينا}} اڳ",
 	"centralauth-prefs-status": "عالمي کاتو:",
 	"centralauth-prefs-view": "پنھنجي عالمي کاتي جي معلومات ڏسو",
-	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified Login|''مرڪزي طور داخل ٿيڻ'''']]…'' بابت وڌيڪ پڙھو",
 	"centralauth-rename-alreadyexists": "گُهريل واپرائيندڙنانءُ اڳ ۾ ئي موجود آهي.",
 	"centralauth-rename-alreadyinprogress": "ھن واپرائيندڙَ لاءِ اڳ ئي نانءُمٽا جو [[Special:GlobalRenameProgress/$1|عمل ھتي ھلندڙ]] آھي.",
 	"centralauth-rename-badusername": "گُهريل واپرائيندڙنانءُ صحيح ناهي.",

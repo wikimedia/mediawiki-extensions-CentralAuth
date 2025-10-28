@@ -106,7 +106,6 @@
 	"centralauth-finish-login": "تىزىمغا كىرىڭ",
 	"centralauth-finish-noconfirms": "بۇ پارول بىلەن جەزملىگىلى بولىدىغان ھېسابات يوق.",
 	"centralauth-finish-password": "پارول:",
-	"centralauth-finish-problems": "مەسىلىگە يولۇقتىڭىزمۇ ياكى بۇ باشقا ھېساباتلار ئۆزىڭىزنىڭ ئەمەسمۇ؟\n…[[m:Special:MyLanguage/Help:Unified login|ياردەمنى قانداق ئىزدەيدۇ]]",
 	"centralauth-finish-send-confirmation": "تورخەت ئىم",
 	"centralauth-finish-title": "بىرلەشتۈرۈش تامام",
 	"centralauth-foreign-contributions": "$2 دىكى $1 {{PLURAL:$1|تۆھپىكار}}",

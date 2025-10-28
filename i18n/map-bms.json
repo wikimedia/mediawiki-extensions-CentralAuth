@@ -121,7 +121,6 @@
 	"centralauth-prefs-status": "Status akun global:",
 	"centralauth-prefs-unattached": "Durung dekonfirmasi",
 	"centralauth-prefs-view": "Deleng info panganggo global",
-	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Monggo diwaca kanggo informasi sabanjuré ngenani '''log mlebu gabungan''']]...''",
 	"centralauth-renameuser-merged": "Panganggo $1 wis pindah ming sistem akun global.\nGanti jeneng bakal marekna akun lokal kasebut kapisah sekang akun globalé.",
 	"centralauth-renameuser-reserved": "Panganggo $2 wis dicadhangna kanggo akun global.",
 	"centralauth-rightslog-name": "Log hak-hak global",
