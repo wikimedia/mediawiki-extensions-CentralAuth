@@ -819,6 +819,12 @@ $specialPageAliases['sk'] = [
 	'GlobalGroupPermissions' => [ 'GlobálneSkupinovéOprávnenia' ],
 	'WikiSets' => [ 'UpraviťWikiMnožiny' ],
 	'GlobalUsers' => [ 'GlobálniPoužívatelia' ],
+	'CreateLocalAccount' => [ 'VytvoriťLokálnyÚčet' ],
+	'MultiLock' => [ 'HromadnéZamknutie' ],
+	'GlobalRenameUser' => [ 'GlobálnePremenovaniePoužívateľa' ],
+	'GlobalRenameProgress' => [ 'PriebehGlobálnehoPremenovania' ],
+	'GlobalRenameRequest' => [ 'ŽiadosťOGlobálnePremenovanie' ],
+	'GlobalRenameQueue' => [ 'PoradieGlobálnychPremenovaní' ],
 ];
 
 /** Serbian (Cyrillic script) (српски (ћирилица)) */
