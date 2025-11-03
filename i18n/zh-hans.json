@@ -88,7 +88,7 @@
 	"centralauth": "全域账号管理器",
 	"centralauth-abortlogin-renamed": "您的账号已重命名为“$1”。请改用新用户名。",
 	"centralauth-account-exists": "不能创建账号：请求的用户名已被另一个wiki上的用户使用。",
-	"centralauth-account-exists-reset": "用户$1并不是在此Wiki上注册的，但您可以在[[Special:CentralAuth/$1|它所在Wiki中的任意一个Wiki]]上重置它的密码。",
+	"centralauth-account-exists-reset": "用户$1并不是在此Wiki上注册的，但您可以在[[Special:CentralAuth/$1|它所在wiki中的任意一个wiki]]上重置它的密码。",
 	"centralauth-account-rename-exists": "不能创建账号：用户名已被使用。请选择其他名字。",
 	"centralauth-account-unattached-exists": "不能创建账号：用户名已被使用。请选择其他名字。",
 	"centralauth-admin-action-hide-lists": "从全域用户列表中隐藏选定账号",
