@@ -243,8 +243,15 @@ class GlobalGroupAssignmentService {
 					in_array( $automaticGroup, $addedGroups ) ||
 					in_array( $automaticGroup, $removedGroups )
 				) {
-					$reason = $this->messageLocalizer
-						->msg( 'centralauth-automatic-global-groups-reason-global', $reason )->text();
+					if ( $reason ) {
+						$reason .= $this->messageLocalizer
+							->msg( 'semicolon-separator' )
+							->inContentLanguage()->text();
+					}
+					$reason .= $this->messageLocalizer
+						// The parameter is unused, but declared for compatibility with old translations
+						->msg( 'centralauth-automatic-global-groups-reason-global', '' )
+						->inContentLanguage()->text();
 					break;
 				}
 			}
