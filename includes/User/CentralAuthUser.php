@@ -3176,6 +3176,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string|null $password plaintext
 	 * @param bool $resetAuthToken if we should reset the login token
 	 * @return bool true
+	 * @throws NormalizedException
 	 */
 	public function setPassword( $password, $resetAuthToken = true ) {
 		$this->checkWriteMode();
@@ -3188,15 +3189,23 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->mPassword = $hash;
 
 		if ( $this->getId() ) {
+			$newCasToken = $this->mCasToken + 1;
 			$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 			$dbw->newUpdateQueryBuilder()
 				->update( 'globaluser' )
-				->set( [ 'gu_password' => $hash ] )
-				->where( [ 'gu_id' => $this->getId(), ] )
+				->set( [ 'gu_password' => $hash, 'gu_cas_token' => $newCasToken ] )
+				->where( [ 'gu_id' => $this->getId(), 'gu_cas_token' => $this->mCasToken ] )
 				->caller( __METHOD__ )
 				->execute();
+			$success = ( $dbw->affectedRows() > 0 );
 
-			$this->logger->info( "Set global password for {user}", [ 'user' => $this->mName ] );
+			if ( $success ) {
+				$this->logger->info( "Set global password for {user}", [ 'user' => $this->mName ] );
+				$this->mCasToken = $newCasToken;
+			} else {
+				throw new NormalizedException( "Attempted to set global password for {user} but" .
+					" the expected CAS token doesn't match. Possible race condition!", [ 'user' => $this->mName ] );
+			}
 		} else {
 			$this->logger->warning( "Tried changing password for user that doesn't exist {user}",
 				[ 'user' => $this->mName ] );
@@ -3636,6 +3645,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *   Must be a single ASCII alphanumeric word.
 	 * @return bool Success flag. False could mean the account does not exist or the password
 	 *   has already been scrambled.
+	 * @throws NormalizedException
 	 */
 	public function scramblePassword( string $reason ): bool {
 		if ( !preg_match( '/^[a-zA-Z0-9]+$/', $reason ) ) {
@@ -3648,17 +3658,25 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		// Make sure old-style password hashes get converted, we'll rely on the hash starting with ':'.
+		$this->checkWriteMode();
+		$newCasToken = $this->mCasToken + 1;
 		$originalPasswordHash = $this->getPasswordObject()->toString();
 		$scrambledPasswordHash = ":scrambled:$reason$originalPasswordHash";
 
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
-			->set( [ 'gu_password' => $scrambledPasswordHash ] )
-			->where( [ 'gu_id' => $this->getId(), ] )
+			->set( [ 'gu_password' => $scrambledPasswordHash, 'gu_cas_token' => $newCasToken ] )
+			->where( [ 'gu_id' => $this->getId(), 'gu_cas_token' => $this->mCasToken ] )
 			->caller( __METHOD__ )
 			->execute();
 		$success = ( $dbw->affectedRows() > 0 );
+		if ( $success ) {
+			$this->mCasToken = $newCasToken;
+		} else {
+			throw new NormalizedException( "User password for {user} was NOT scrambled," .
+				 " possibly due to a mismatch in the CAS token", [ 'user' => $this->mName ] );
+		}
 
 		$this->invalidateCache();
 		return $success;
@@ -3671,20 +3689,25 @@ class CentralAuthUser implements IDBAccessObject {
 	 *   wasn't scrambled or was scrambled with a different reason.
 	 */
 	public function unscramblePassword( string $reason ): bool {
+		$this->checkWriteMode();
 		$scrambledPasswordHash = $this->getPassword();
 		if ( !str_starts_with( $scrambledPasswordHash, ":scrambled:$reason:" ) ) {
 			return false;
 		}
 		$originalPasswordHash = substr( $scrambledPasswordHash, strlen( ":scrambled:$reason" ) );
 
+		$newCasToken = $this->mCasToken + 1;
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
-			->set( [ 'gu_password' => $originalPasswordHash ] )
-			->where( [ 'gu_id' => $this->getId(), ] )
+			->set( [ 'gu_password' => $originalPasswordHash, 'gu_cas_token' => $newCasToken ] )
+			->where( [ 'gu_id' => $this->getId(), 'gu_cas_token' => $this->mCasToken ] )
 			->caller( __METHOD__ )
 			->execute();
 		$success = ( $dbw->affectedRows() > 0 );
+		if ( $success ) {
+			$this->mCasToken = $newCasToken;
+		}
 
 		$this->invalidateCache();
 		return $success;
