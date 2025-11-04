@@ -37,6 +37,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthHooks;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
+use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
@@ -123,10 +124,14 @@ class BackfillLocalAccounts extends Maintenance {
 	 * @param bool $verbose
 	 */
 	private function createLocalAccount( $username, $verbose ) {
-		$status = CentralAuthServices::getForcedLocalCreationService()
-			->attemptAutoCreateLocalUserFromName(
-				$username, $this->performer,
-				"Backfilled by autocreation script" );
+		$performer = $this->performer ?? new UltimateAuthority(
+			User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] )
+		);
+		$status = CentralAuthServices::getForcedLocalCreationService()->attemptAutoCreateLocalUserFromName(
+			$username,
+			$performer,
+			"Backfilled by autocreation script"
+		);
 
 		if ( !$status->isGood() ) {
 			$this->error( "autoCreateUser failed for $username:" );

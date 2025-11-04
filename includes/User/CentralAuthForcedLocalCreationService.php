@@ -69,6 +69,7 @@ class CentralAuthForcedLocalCreationService {
 			return Status::newFatal( 'centralauth-createlocal-already-exists' );
 		}
 
+		$performer ??= $user;
 		$centralUser = CentralAuthUser::getInstance( $user );
 
 		if ( !$centralUser->exists() ) {
@@ -76,35 +77,32 @@ class CentralAuthForcedLocalCreationService {
 		}
 
 		if ( $centralUser->isSuppressed() ) {
-			$canSuppress = $performer && $performer->isAllowed( 'centralauth-suppress' );
+			$canSuppress = $performer->isAllowed( 'centralauth-suppress' );
 
 			return Status::newFatal( $canSuppress
 				? 'centralauth-createlocal-suppressed'
 				: 'centralauth-createlocal-no-global-account' );
 		}
 
-		$status = $this->utilityService->autoCreateUser( $user, false, $performer );
+		$status = $this->utilityService->autoCreateUser( $user, false );
 		if ( !$status->isGood() ) {
 			return Status::wrap( $status );
 		}
 
-		// Add log entry
-		if ( $performer ) {
-			// The following message is generated here:
-			// * logentry-newusers-forcecreatelocal
-			$logEntry = new ManualLogEntry( 'newusers', 'forcecreatelocal' );
-			$logEntry->setPerformer( $performer->getUser() );
-			$logEntry->setTarget( $user->getUserPage() );
-			if ( $reason !== null ) {
-				$logEntry->setComment( $reason );
-			}
-			$logEntry->setParameters( [
-				'4::userid' => $user->getId(),
-			] );
-
-			$logId = $logEntry->insert();
-			$logEntry->publish( $logId );
+		// Add log entry. The following message is generated here:
+		// * logentry-newusers-forcecreatelocal
+		$logEntry = new ManualLogEntry( 'newusers', 'forcecreatelocal' );
+		$logEntry->setPerformer( $performer->getUser() );
+		$logEntry->setTarget( $user->getUserPage() );
+		if ( $reason !== null ) {
+			$logEntry->setComment( $reason );
 		}
+		$logEntry->setParameters( [
+			'4::userid' => $user->getId(),
+		] );
+
+		$logId = $logEntry->insert();
+		$logEntry->publish( $logId );
 
 		// Update user count
 		SiteStatsUpdate::factory( [ 'users' => 1 ] )->doUpdate();

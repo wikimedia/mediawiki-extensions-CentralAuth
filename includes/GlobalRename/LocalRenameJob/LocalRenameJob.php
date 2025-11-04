@@ -178,7 +178,8 @@ abstract class LocalRenameJob extends Job {
 
 		if ( $user->getId() == 0 ) {
 			// No local user, lets "auto-create" one
-			if ( CentralAuthServices::getUtilityService()->autoCreateUser( $user )->isGood() ) {
+			$status = CentralAuthServices::getUtilityService()->autoCreateUser( $user );
+			if ( $status->isGood() ) {
 				// So the internal cache is reloaded
 				return User::newFromName( $user->getName() );
 			}

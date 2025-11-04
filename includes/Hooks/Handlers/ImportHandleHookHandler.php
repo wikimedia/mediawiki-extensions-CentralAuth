@@ -48,7 +48,10 @@ class ImportHandleHookHandler implements ImportHandleUnknownUserHook {
 		if ( $user ) {
 			$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 
-			if ( $centralUser->exists() && $this->utilityService->autoCreateUser( $user )->isGood() ) {
+			$status = $centralUser->exists() ?
+				$this->utilityService->autoCreateUser( $user ) : false;
+
+			if ( $status && $status->isGood() ) {
 				$centralUser->invalidateCache();
 				return false;
 			}

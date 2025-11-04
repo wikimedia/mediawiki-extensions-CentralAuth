@@ -67,21 +67,26 @@ class CentralAuthUtilityService {
 	 *
 	 * @param User $user User to auto-create
 	 * @param bool $log Whether to generate a user creation log entry
-	 * @param Authority|null $performer The user performing the creation
+	 * @param Authority|null $performer The user performing the creation.
+	 * 		NOTE: For callers passing the performer as NULL, the auto-created
+	 *		user will be used as the performer.
 	 * @return StatusValue a status value
 	 */
 	public function autoCreateUser( User $user, $log = true,
 		?Authority $performer = null
 	): StatusValue {
-		// Ignore warnings about primary database connections/writes...hard to avoid here
+		$performer ??= $user;
 
+		// Ignore warnings about primary database connections/writes...hard to avoid here
 		Profiler::instance()->getTransactionProfiler()->resetExpectations();
 
 		$source = CentralAuthPrimaryAuthenticationProvider::ID;
 		if ( !$this->authManager->getAuthenticationProvider( $source ) ) {
 			$source = AuthManager::AUTOCREATE_SOURCE_SESSION;
 		}
-		return $this->authManager->autoCreateUser( $user, $source, false, $log, $performer );
+		return $this->authManager->autoCreateUser(
+			$user, $source, false, $log, $performer
+		);
 	}
 
 	/**
