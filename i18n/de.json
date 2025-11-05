@@ -145,7 +145,7 @@
 	"centralauth-attach-text": "Dieses Benutzerkonto wurde noch nicht in ein globales Benutzerkonto integriert.\nWenn das globale Benutzerkonto auch von {{#FORMAL:dir|Ihnen}} ist, {{#FORMAL:kannst du|können Sie}} die Zusammenführung veranlassen, indem {{#FORMAL:du|Sie}} hier das Passwort des globalen Benutzerkontos {{#FORMAL:eingibst|eingeben}}:",
 	"centralauth-attach-title": "Benutzerkonto bestätigen",
 	"centralauth-automatic-global-groups-reason-local": "Automatisch aktualisierte globale Gruppen aufgrund lokaler Gruppenänderungen.",
-	"centralauth-automatic-global-groups-reason-global": "$1 Automatisch aktualisierte globale Gruppen aufgrund einer Änderung der globalen Gruppe.",
+	"centralauth-automatic-global-groups-reason-global": "Automatisch aktualisierte globale Gruppen aufgrund einer Änderung der globalen Gruppe.",
 	"centralauth-block-already-locked": "Das Benutzerkonto [[Special:CentralAuth/$1|$1]] ist bereits global geschlossen.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|Aktion|Aktionen}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|Seite|Seiten}}",

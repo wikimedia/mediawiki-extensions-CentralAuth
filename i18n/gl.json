@@ -134,7 +134,7 @@
 	"centralauth-attach-text": "Esta conta aínda non se pasou á conta unificada. Se a conta global tamén é súa, pode unificar esta conta se escribe o contrasinal da conta global:",
 	"centralauth-attach-title": "Confirmar a conta",
 	"centralauth-automatic-global-groups-reason-local": "Grupos globais actualizados automaticamente debido ao cambio de grupo local.",
-	"centralauth-automatic-global-groups-reason-global": "$1 actualizou automaticamente os grupos globais debido ao cambio de grupo local.",
+	"centralauth-automatic-global-groups-reason-global": "actualizou automaticamente os grupos globais debido ao cambio de grupo local.",
 	"centralauth-block-already-locked": "A conta [[Special:CentralAuth/$1|$1]] xa está bloqueada globalmente.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|acción|accións}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|páxina|páxinas}}",

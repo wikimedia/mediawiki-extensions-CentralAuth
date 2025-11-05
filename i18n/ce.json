@@ -124,7 +124,7 @@
 	"centralauth-attach-text": "ХӀара аккаунт йукъара аккаунтийн системин йукъатоьхна йац. Глобалан аккаунт хьа йелахь хьан йиш йу хьай пароль дӀайазйина и йукъатоха:",
 	"centralauth-attach-title": "Аккаунт бакъйар",
 	"centralauth-automatic-global-groups-reason-local": "Автоматикца карлайаьккхина глобалан тобанаш локалан тобанаш хийцайалар бахьана долуш.",
-	"centralauth-automatic-global-groups-reason-global": "$1 Автоматикца карлайаьхна глобалан тобанаш глобалан тобанаш хийцайалар бахьана долуш.",
+	"centralauth-automatic-global-groups-reason-global": "Автоматикца карлайаьхна глобалан тобанаш глобалан тобанаш хийцайалар бахьана долуш.",
 	"centralauth-block-already-locked": "Аккаунт [[Special:CentralAuth/$1|$1]] хӀинцале глобалан дӀайайина йу.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|ардам}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|агӀо}}",

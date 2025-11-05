@@ -148,7 +148,7 @@
 	"centralauth-attach-text": "Цей обліковий запис ще не перенесений до системи єдиного облікового запису. Якщо глобальний обліковий запис також належить Вам, Ви можете приєднати цей акаунт, зазначивши пароль глобального облікового запису:",
 	"centralauth-attach-title": "Підтвердження облікового запису",
 	"centralauth-automatic-global-groups-reason-local": "Автоматичне оновлення глобальних груп через зміни локальних груп.",
-	"centralauth-automatic-global-groups-reason-global": "$1 Автоматичне оновлення глобальних груп через зміни локальних груп.",
+	"centralauth-automatic-global-groups-reason-global": "Автоматичне оновлення глобальних груп через зміни локальних груп.",
 	"centralauth-block-already-locked": "Обліковий запис [[Special:CentralAuth/$1|$1]] вже закрито глобально.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|дія|дії|дій}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|сторінка|сторінки|сторінок}}",

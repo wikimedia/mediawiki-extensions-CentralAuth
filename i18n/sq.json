@@ -127,7 +127,7 @@
 	"centralauth-attach-text": "Kjo llogari nuk është shkrirë ende tek llogaritë e unifikuara.\nNëse llogaria globale është e juaja gjithashtu, ju mund ta shkrini këtë llogari nëse fjalëkalimin e llogarisë globale:",
 	"centralauth-attach-title": "Konfirmoni llogarinë",
 	"centralauth-automatic-global-groups-reason-local": "Grupe globale të përditësuara automatikisht për shkak të ndryshimit të grupit lokal.",
-	"centralauth-automatic-global-groups-reason-global": "$1 Grupe globale të përditësuara automatikisht për shkak të ndryshimit të grupit global.",
+	"centralauth-automatic-global-groups-reason-global": "Grupe globale të përditësuara automatikisht për shkak të ndryshimit të grupit global.",
 	"centralauth-block-already-locked": "Llogaria [[Special:CentralAuth/$1|$1]] është tashmë e bllokuar globalisht.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|veprim|veprime}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|faqe}}",

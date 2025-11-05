@@ -135,7 +135,7 @@
 	"centralauth-attach-text": "Denne kontoen er ennå ikke blitt slått sammen med hovedkontoen. Om hovedkontoen også er din kan du koble denne til den ved å skrive inn hovedkontoens passord:",
 	"centralauth-attach-title": "Bekreft konto",
 	"centralauth-automatic-global-groups-reason-local": "Oppdaterte automatisk globale grupper på grunn av endring i lokale grupper.",
-	"centralauth-automatic-global-groups-reason-global": "$1 Oppdaterte automatisk globale grupper på grunn av endring i lokale grupper.",
+	"centralauth-automatic-global-groups-reason-global": "Oppdaterte automatisk globale grupper på grunn av endring i lokale grupper.",
 	"centralauth-block-already-locked": "Konto [[Special:CentralAuth/$1|$1]] er allerede globalt låst.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|handling|handlinger}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|side|sider}}",

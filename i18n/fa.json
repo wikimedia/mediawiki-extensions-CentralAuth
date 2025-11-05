@@ -153,7 +153,7 @@
 	"centralauth-attach-text": "این حساب هنوز به حساب سراسری انتقال داده نشده است. اگر حساب سراسری متعلق به شما است، می‌توانید این حساب را هم با واردکردن رمز عبور آن به حساب سراسری ادغام کنید:",
 	"centralauth-attach-title": "تأیید حساب",
 	"centralauth-automatic-global-groups-reason-local": "پیرو تغییر گروه محلی، گروه‌های سراسری به‌صورت خودکار به‌روز شدند.",
-	"centralauth-automatic-global-groups-reason-global": "$1 به‌دلیل اعمال تغییر در گروه‌های سراسری، این گروه‌ها به‌طور خودکار به‌روز شدند.",
+	"centralauth-automatic-global-groups-reason-global": "به‌دلیل اعمال تغییر در گروه‌های سراسری، این گروه‌ها به‌طور خودکار به‌روز شدند.",
 	"centralauth-block-already-locked": "حساب [[Special:CentralAuth/$1|$1]] از قبل به طور سراسری مسدود شده است.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|عمل}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|صفحه}}",

@@ -143,7 +143,7 @@
 	"centralauth-attach-text": "यह खाता अभी तक एकीकृत खाते में माइग्रेट नहीं किया गया है।\nअगर ग्लोबल खाता भी आपका है तो आप ग्लोबल खाते का पासवर्ड लिखकर इस खाते को विलय कर सकते हैं।",
 	"centralauth-attach-title": "खाता पुष्ट करें",
 	"centralauth-automatic-global-groups-reason-local": "लोकल समूहों में बदलावों के कारण ग्लोबल समूह अपने आप अपडेट किए।",
-	"centralauth-automatic-global-groups-reason-global": "$1 ग्लोबल समूहों में बदलावों के कारण ग्लोबल समूह अपने आप अपडेट किए।",
+	"centralauth-automatic-global-groups-reason-global": "ग्लोबल समूहों में बदलावों के कारण ग्लोबल समूह अपने आप अपडेट किए।",
 	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]] खाता पहले से ही ग्लोबल रूप से लॉक किया जा चुका है।",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|क्रिया|क्रियाएँ}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|पृष्ठ}}",

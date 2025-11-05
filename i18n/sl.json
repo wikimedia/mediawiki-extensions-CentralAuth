@@ -126,7 +126,7 @@
 	"centralauth-attach-text": "Ta račun še ni bil združen v enotni račun.\nČe je tudi globalni račun vaš, lahko ta račun združite z vpisom njegovega gesla:",
 	"centralauth-attach-title": "Potrdi račun",
 	"centralauth-automatic-global-groups-reason-local": "Samodejno posodobljene globalne skupine zaradi spremembe lokalne skupine.",
-	"centralauth-automatic-global-groups-reason-global": "$1 Samodejno posodobljene globalne skupine zaradi spremembe globalne skupine.",
+	"centralauth-automatic-global-groups-reason-global": "Samodejno posodobljene globalne skupine zaradi spremembe globalne skupine.",
 	"centralauth-block-already-locked": "Račun [[Special:CentralAuth/$1|$1]] je že globalno zaklenjen.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|dejanje|dejanji|dejanja|dejanj}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|stran|strani}}",

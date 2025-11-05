@@ -134,7 +134,7 @@
 	"centralauth-attach-text": "Bu hesab hələ vahid hesaba köçürülməyib.\nQlobal hesab da sizindirsə, qlobal hesab parolunu daxil etsəniz, bu hesabı birləşdirə bilərsiniz:",
 	"centralauth-attach-title": "Hesabı təsdiqlə",
 	"centralauth-automatic-global-groups-reason-local": "Lokal qrup dəyişikliyinə görə qlobal qruplar avtomatik yeniləndi.",
-	"centralauth-automatic-global-groups-reason-global": "$1 Qlobal qrup dəyişikliyinə görə qlobal qruplar avtomatik yeniləndi.",
+	"centralauth-automatic-global-groups-reason-global": "Qlobal qrup dəyişikliyinə görə qlobal qruplar avtomatik yeniləndi.",
 	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]] adlı hesab artıq qlobal olaraq kilidlənib.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|fəaliyyət}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|səhifə}}",

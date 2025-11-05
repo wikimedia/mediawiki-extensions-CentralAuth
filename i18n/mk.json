@@ -124,7 +124,7 @@
 	"centralauth-attach-text": "Оваа сметка сè уште ме е присоединета кон обединетата сметка.\nАко и глобалната сметка е ваша, тогаш можете да ја споите со оваа сметка со внесување на лозинката на глобалната сметка:",
 	"centralauth-attach-title": "Потврди ја сметката",
 	"centralauth-automatic-global-groups-reason-local": "Автоматски подновени глобални групи поради измена во месните групи.",
-	"centralauth-automatic-global-groups-reason-global": "$1 Автоматски подновени глобални групи поради измена во глобалните групи.",
+	"centralauth-automatic-global-groups-reason-global": "Автоматски подновени глобални групи поради измена во глобалните групи.",
 	"centralauth-block-already-locked": "Сметката [[Special:CentralAuth/$1|$1]] веќе е глобално заклучена.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|дејство|дејства}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|страница|страници}}",

@@ -191,7 +191,7 @@
 	"centralauth-attach-text": "Votre compte utilisé ici n’a pas encore été migré vers le compte unifié.\nSi le compte unifié vous appartient également, vous pouvez y fusionner votre compte local en tapant le mot de passe du compte unifié :",
 	"centralauth-attach-title": "Confirmer le compte",
 	"centralauth-automatic-global-groups-reason-local": "Groupes mondiaux mis à jour automatiquement en raison d'un changement de groupe local.",
-	"centralauth-automatic-global-groups-reason-global": "$1 groupes globaux mis à jour automatiquement en raison d'un changement de groupe global.",
+	"centralauth-automatic-global-groups-reason-global": "groupes globaux mis à jour automatiquement en raison d'un changement de groupe global.",
 	"centralauth-block-already-locked": "Le compte [[Special:CentralAuth/$1|$1]] est déjà verrouillé globalement.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|action|actions}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|page|pages}}",
