@@ -8,7 +8,7 @@ use MediaWiki\Session\SessionBackend;
 use MediaWiki\Session\SessionId;
 use MediaWiki\Session\SessionInfo;
 use MediaWiki\Session\UserInfo;
-use MediaWiki\Tests\Json\PlainJsonJwtCodec;
+use MediaWiki\Tests\Mocks\Json\PlainJsonJwtCodec;
 use MediaWiki\Tests\MockWikiMapTrait;
 use MediaWiki\Tests\Session\SessionProviderTestTrait;
 use MediaWiki\Tests\Session\TestBagOStuff;
