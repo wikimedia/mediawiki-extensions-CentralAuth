@@ -173,7 +173,6 @@
 	"centralauth-prefs-status": "वैश्विक खाता स्थिति:",
 	"centralauth-prefs-unattached": "अप्रमाणित",
 	"centralauth-prefs-view": "वैश्विक खाता जानकारी देखा जाय",
-	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''एकत्रित खाता कय लिये''' ढेर जानकारी]]...''",
 	"centralauth-readonly": "वैश्विक खाता डाटाबेस लॉक कई गा है",
 	"centralauth-readonlytext": "वैश्विक खाता डाटाबेस अभी नई प्रविष्टियों और बदलावों से लॉक किया हुआ है। संभवतः यह सामान्य रखरखाव के लिए किया गया हो, जिसके बाद ये पुनः अपनी सामान्य स्थिति पर आ जाएगा।",
 	"centralauth-rename-form-movepages": "प्रयोगकर्ता पन्ना कय स्थान परिवर्तन करा जाय",

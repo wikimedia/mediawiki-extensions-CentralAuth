@@ -29,7 +29,6 @@
 	"centralauth-finish-login": "Нэвтрэх",
 	"centralauth-finish-noconfirms": "Энэхүү нууц үгийг ашиглан ямар ч бүртгэлийг баталгаажуулж чадсангүй.",
 	"centralauth-finish-password": "Нууц үг:",
-	"centralauth-finish-problems": "Таньд асуудал тулгарсан, эсвэл та эдгээр бусад бүтгэлүүдийн эзэн биш үү?\n[[m:Special:MyLanguage/Help:Unified login|Тусламж олох тухай]]…",
 	"centralauth-finish-send-confirmation": "Нууц үгийг мэйлээр явуулах",
 	"centralauth-finish-text": "Эдгээр бүртгэлүүд таных биш бол та энд бусад бүртгэлүүдийн нууц үгийг оруулан нэвтрэлтийг нэгдүүлэх процессийг дуусгах боломжтой:",
 	"centralauth-finish-title": "Нэгтгэлийг дуусгах",
@@ -79,6 +78,5 @@
 	"centralauth-mergeaccount-desc": "Ганц хэрэглэгчийн нэвтрэлтэд [[Special:MergeAccount|олон бүртгэлийг нэгтгэнэ]]",
 	"centralauth-not-owner-text": "\"$1\" хэрэглэгчийн нэрийг $2 дээрх бүртгэл эзэмшигчид автоматаар оноолоо.\n\nХэрэв энэ нь та бол энд өөрийн үндсэн нууц үгийг бичиж нэвтрэлт нэгтгэх явцыг дуусгаж болно:",
 	"centralauth-notice-dryrun": "Зөвхөн туршилтын хувилбар",
-	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''Нэгдмэл нэвтрэлтийн''' талаар дэлгэрэнгүйг унших]]…''",
 	"mergeaccount": "Нэвтрэлтийг нэгдүүлсэн байдал"
 }

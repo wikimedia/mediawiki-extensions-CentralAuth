@@ -55,7 +55,6 @@
 	"centralauth-prefs-count-attached": "Akun Sanak aktif pado $1 {{PLURAL:$1|situs}} proyek.",
 	"centralauth-prefs-manage": "Kalola akun global Sanak",
 	"centralauth-prefs-view": "Caliak info pangguno global",
-	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|Baco labiah lanjuik soal '''log masuak global''']]...''",
 	"centralauth-rightslog-header": "Iko log pancatatan parubahan kalompok global, tamasuak parubahan kaanggotaan kalompok jo hak-hak satiok kalompok.",
 	"globalgrouppermissions": "Manajemen kalompok global",
 	"globalrenamerequest": "Pamintaan parubahan namo pangguno global",
