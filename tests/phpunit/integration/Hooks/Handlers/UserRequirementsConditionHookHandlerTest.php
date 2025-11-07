@@ -20,17 +20,18 @@
 
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Hooks\Handlers;
 
-use MediaWiki\Extension\CentralAuth\Hooks\Handlers\AutopromoteConditionHookHandler;
+use MediaWiki\Extension\CentralAuth\Hooks\Handlers\UserRequirementsConditionHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\User;
+use MediaWiki\User\UserIdentityValue;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
 
 /**
  * @group Database
- * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\AutopromoteConditionHookHandler
+ * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\UserRequirementsConditionHookHandler
  */
-class AutopromoteConditionHookHandlerTest extends MediaWikiIntegrationTestCase {
+class UserRequirementsConditionHookHandlerTest extends MediaWikiIntegrationTestCase {
 
 	private function getRegisteredTestUser( $centralAccountExists, $centralAccountAttached ): User {
 		$testUser = $this->getMutableTestUser();
@@ -47,20 +48,30 @@ class AutopromoteConditionHookHandlerTest extends MediaWikiIntegrationTestCase {
 		return $testUser->getUser();
 	}
 
-	private function getObjectUnderTest(): AutopromoteConditionHookHandler {
-		return new AutopromoteConditionHookHandler();
+	private function getObjectUnderTest(): UserRequirementsConditionHookHandler {
+		return new UserRequirementsConditionHookHandler();
 	}
 
-	public function testOnAutopromoteConditionForNonCentralAuthCondition() {
+	public function testOnUserRequirementsConditionForNonCentralAuthCondition() {
 		$result = null;
-		$this->getObjectUnderTest()->onAutopromoteCondition(
-			APCOND_AGE, [ 1234 ], $this->createMock( User::class ), $result
+		$userIdentity = new UserIdentityValue( 1, 'TestUser' );
+		$this->getObjectUnderTest()->onUserRequirementsCondition(
+			APCOND_AGE, [ 1234 ], $userIdentity, true, $result
 		);
 		$this->assertNull( $result );
 	}
 
-	/** @dataProvider provideOnAutopromoteCondition */
-	public function testOnAutopromoteCondition(
+	public function testIsCalledFromUserRequirementsConditionChecker() {
+		$condition = [ APCOND_CA_INGLOBALGROUPS, 'test-group' ];
+		$user = new UserIdentityValue( 1, 'TestUser' );
+
+		$checker = $this->getServiceContainer()->getUserRequirementsConditionChecker();
+		$result = $checker->recursivelyCheckCondition( $condition, $user );
+		$this->assertFalse( $result );
+	}
+
+	/** @dataProvider provideOnUserRequirementsCondition */
+	public function testOnUserRequirementsCondition(
 		$centralAccountExists, $centralAccountAttached, $centralAccountGlobalGroups, $globalGroupArguments,
 		$expectedResult
 	) {
@@ -71,11 +82,13 @@ class AutopromoteConditionHookHandlerTest extends MediaWikiIntegrationTestCase {
 		}
 
 		$result = null;
-		$this->getObjectUnderTest()->onAutopromoteCondition( APCOND_CA_INGLOBALGROUPS, $globalGroupArguments, $user, $result );
+		$this->getObjectUnderTest()->onUserRequirementsCondition(
+			APCOND_CA_INGLOBALGROUPS, $globalGroupArguments, $user->getUser(), true, $result
+		);
 		$this->assertSame( $expectedResult, $result );
 	}
 
-	public static function provideOnAutopromoteCondition() {
+	public static function provideOnUserRequirementsCondition() {
 		return [
 			'Global user does not exist' => [
 				'centralAccountExists' => false, 'centralAccountAttached' => false,

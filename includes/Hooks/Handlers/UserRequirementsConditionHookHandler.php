@@ -21,19 +21,26 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\User\Hook\AutopromoteConditionHook;
+use MediaWiki\User\Hook\UserRequirementsConditionHook;
+use MediaWiki\User\UserIdentity;
 
-class AutopromoteConditionHookHandler implements AutopromoteConditionHook {
+class UserRequirementsConditionHookHandler implements UserRequirementsConditionHook {
 
 	/** @inheritDoc */
-	public function onAutopromoteCondition( $type, $args, $user, &$result ) {
+	public function onUserRequirementsCondition(
+		$type,
+		array $args,
+		UserIdentity $user,
+		bool $isPerformingRequest,
+		?bool &$result
+	): void {
 		if ( $type !== APCOND_CA_INGLOBALGROUPS ) {
 			return;
 		}
 
 		// If there is no central account for this user or if the central account is not attached to the local
 		// user, then consider the local user to have no global groups.
-		$centralUser = CentralAuthUser::getInstanceByName( $user );
+		$centralUser = CentralAuthUser::getInstanceByName( $user->getName() );
 		if ( !$centralUser->isAttached() ) {
 			$result = false;
 			return;

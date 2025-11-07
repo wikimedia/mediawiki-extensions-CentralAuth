@@ -553,9 +553,6 @@
 				"MainConfig"
 			]
 		},
-		"autopromotecondition": {
-			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\AutopromoteConditionHookHandler"
-		},
 		"block": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\BlockHookHandler",
 			"services": [
@@ -713,6 +710,9 @@
 				"MainConfig",
 				"CentralAuth.SharedDomainUtils"
 			]
+		},
+		"userrequirementscondition": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserRequirementsConditionHookHandler"
 		}
 	},
 	"Hooks": {
@@ -732,7 +732,6 @@
 		],
 		"AuthManagerVerifyAuthentication": "shareddomain",
 		"AuthPreserveQueryParams": "loginredirect",
-		"AutopromoteCondition": "autopromotecondition",
 		"BeforePageDisplay": [
 			"pagedisplay",
 			"shareddomain"
@@ -797,6 +796,7 @@
 		"UserLoginComplete": "logincomplete",
 		"UserLogout": "userlogout",
 		"UserLogoutComplete": "userlogout",
+		"UserRequirementsCondition": "userrequirementscondition",
 		"UserSaveSettings": "default",
 		"UserSetEmail": "default",
 		"UserSetEmailAuthenticationTimestamp": "default"
