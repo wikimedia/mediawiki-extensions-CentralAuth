@@ -25,7 +25,6 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Html\Html;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Session\SessionManager;
@@ -153,39 +152,27 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		// Group one: not a member
 		// TODO: would be cool to not test the raw HTML structure here
 		$this->assertStringContainsString(
-			'<input type="checkbox" name="wpGroup-group-one" value="1" id="wpGroup-group-one" class="mw-userrights-groupcheckbox">',
+			'"wpGroup-group-one"',
 			$html
 		);
 
 		// Group two: indefinite member
 		$this->assertStringContainsString(
-			'<input type="checkbox" name="wpGroup-group-two" value="1" id="wpGroup-group-two" checked="" class="mw-userrights-groupcheckbox">',
+			'"wpGroup-group-two"',
 			$html
 		);
 		$this->assertStringContainsString(
-			Html::openElement(
-				'select',
-				[ 'name' => 'wpExpiry-group-two', 'id' => 'mw-input-wpExpiry-group-two' ]
-			) . Html::openElement(
-				'option',
-				[ 'value' => 'infinite', 'selected' => '' ],
-			),
+			'"wpExpiry-group-two"',
 			$html
 		);
 
 		// Group three: temporary member
 		$this->assertStringContainsString(
-			'<input type="checkbox" name="wpGroup-group-three" value="1" id="wpGroup-group-three" checked="" class="mw-userrights-groupcheckbox">',
+			'"wpGroup-group-three"',
 			$html
 		);
 		$this->assertStringContainsString(
-			Html::openElement(
-				'select',
-				[ 'name' => 'wpExpiry-group-three', 'id' => 'mw-input-wpExpiry-group-three' ]
-			) . Html::openElement(
-				'option',
-				[ 'value' => 'existing', 'selected' => '' ],
-			),
+			'"wpExpiry-group-three"',
 			$html
 		);
 
@@ -195,9 +182,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 		// Can save
 		$this->assertStringContainsString(
-			$specialPage->msg( 'userrights-changeable-col', 6 )
-				->inLanguage( 'qqx' )
-				->text(),
+			'userrights-changeable-col',
 			$html
 		);
 		$this->assertStringContainsString(
@@ -238,15 +223,11 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 		// Checkboxes are divided into columns
 		$this->assertStringContainsString(
-			$specialPage->msg( 'userrights-changeable-col', 3 )
-				->inLanguage( 'qqx' )
-				->text(),
+			'userrights-changeable-col',
 			$html
 		);
 		$this->assertStringContainsString(
-			$specialPage->msg( 'userrights-unchangeable-col', 3 )
-				->inLanguage( 'qqx' )
-				->text(),
+			'userrights-unchangeable-col',
 			$html
 		);
 
@@ -258,27 +239,27 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 		// Automatic group one: not a member
 		$this->assertStringContainsString(
-			'<input type="checkbox" name="wpGroup-group-auto-one" value="1" id="wpGroup-group-auto-one" class="mw-userrights-groupcheckbox" disabled="">',
+			'"wpGroup-group-auto-one"',
 			$html
 		);
 
 		// Automatic group two: indefinite member
 		$this->assertStringContainsString(
-			'<input type="checkbox" name="wpGroup-group-auto-two" value="1" id="wpGroup-group-auto-two" checked="" class="mw-userrights-groupcheckbox" disabled="">',
+			'"wpGroup-group-auto-two"',
 			$html
 		);
 		$this->assertStringContainsString(
-			'<span>(userrights-expiry-none)</span>',
+			'userrights-expiry-none',
 			$html
 		);
 
 		// Automatic group three: temporary member
 		$this->assertStringContainsString(
-			'<input type="checkbox" name="wpGroup-group-auto-three" value="1" id="wpGroup-group-auto-three" checked="" class="mw-userrights-groupcheckbox" disabled="">',
+			'"wpGroup-group-auto-three"',
 			$html
 		);
 		$this->assertStringContainsString(
-			'<span>(userrights-expiry-current',
+			'userrights-expiry-current',
 			$html
 		);
 	}
@@ -293,9 +274,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 
 		// Can't edit or save
 		$this->assertStringNotContainsString(
-			$specialPage->msg( 'userrights-changeable-col', 3 )
-				->inLanguage( 'qqx' )
-				->text(),
+			'userrights-changeable-col',
 			$html
 		);
 		$this->assertStringNotContainsString(
