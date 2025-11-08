@@ -52,7 +52,7 @@ class ScramblePassword extends Maintenance {
 			$queryBuilder = CentralAuthServices::getGlobalUserSelectQueryBuilderFactory()
 				->newGlobalUserSelectQueryBuilder();
 			$queryBuilder->whereUserNames( array_values( $userNameBatch ) );
-			$centralUsers = $queryBuilder->fetchCentralAuthUsers();
+			$centralUsers = $queryBuilder->caller( __METHOD__ )->fetchCentralAuthUsers();
 
 			$inputs = array_flip( $userNameBatch );
 			foreach ( $centralUsers as $centralUser ) {
