@@ -61,12 +61,12 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 		$mockLookup = $this->createMock( AccountCreationDetailsLookup::class );
 		$mockLookup->method( 'getAccountCreationIPAndUserAgent' )->willReturnCallback(
 			static function ( $username ) {
-				return [
+				return match ( $username ) {
 					'Fake user 1' => [ 'ip' => '192.168.1.5', 'agent' => 'Fake user agent 1' ],
 					'Fake user 2' => [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 2' ],
 					'Fake user 3' => null,
-					'Fake user 5' => [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 5' ]
-				][ $username ];
+					'Fake user 5' => [ 'ip' => '192.168.1.6', 'agent' => 'Fake user agent 5' ],
+				};
 			}
 		);
 		return $mockLookup;
