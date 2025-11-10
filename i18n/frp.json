@@ -53,7 +53,7 @@
 	"centralauth-admin-status-locked-no": "Lo compto est pas vèrrolyê",
 	"centralauth-admin-status-locked-yes": "Lo compto est vèrrolyê en ècritura",
 	"centralauth-admin-status-nonexistent": "Èrror : lo compto globâl « <nowiki>$1</nowiki> » ègziste pas.",
-	"centralauth-admin-status-reasons": "* Rêsons corentes de vèrroly\n** compto que sèrvét justo a vandalisar\n** compto que sèrvét justo a fâre de spame\n* Rêsons corentes de vèrroly et cachiê\n** nom d’utilisator abusif\n** enformacions a sè que vont pas avouéc",
+	"centralauth-admin-status-reasons": "* Rêsons corentes de vèrroly\n** compto que sèrvét justo a vandalisar\n** compto que sèrvét justo a fâre de spame\n* Rêsons corentes de vèrroly avouéc cachâjo\n** nom d’utilisator abusif\n** enformacions a sè que vont pas avouéc",
 	"centralauth-admin-status-submit": "Changiér lo statut",
 	"centralauth-admin-suppressreason": "Suprimâ dens l’ensemblo per $1 por ceta rêson : $2",
 	"centralauth-admin-unattached": "pas rapondu",
