@@ -208,16 +208,11 @@ class SharedDomainUtils {
 	 *    in the request like if we're coming from a campaign link.
 	 */
 	public function getUrlForSharedDomainAction( string $action, WebRequest $request ): string {
-		switch ( $action ) {
-			case 'login':
-				$localUrl = $this->specialPageFactory->getTitleForAlias( 'Userlogin' )->getLocalURL();
-				break;
-			case 'signup':
-				$localUrl = $this->specialPageFactory->getTitleForAlias( 'CreateAccount' )->getLocalURL();
-				break;
-			default:
-				throw new RuntimeException( 'Unknown action: ' . $action );
-		}
+		$localUrl = match ( $action ) {
+			'login' => $this->specialPageFactory->getTitleForAlias( 'Userlogin' )->getLocalURL(),
+			'signup' => $this->specialPageFactory->getTitleForAlias( 'CreateAccount' )->getLocalURL(),
+			default => throw new RuntimeException( "Unknown action: $action" )
+		};
 
 		$sharedDomainPrefix = $this->getSharedDomainPrefix();
 		if ( !$sharedDomainPrefix ) {
