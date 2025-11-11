@@ -365,7 +365,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Get a CentralAuthUser object from a user's id
 	 *
 	 * @param int $id
-	 * @return self|bool false if no user exists with that id
+	 * @return self|false false if no user exists with that id
 	 */
 	public static function newFromId( $id ) {
 		$name = CentralAuthServices::getDatabaseManager()
@@ -384,7 +384,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Get a primary CentralAuthUser object from a user's id
 	 *
 	 * @param int $id
-	 * @return self|bool false if no user exists with that id
+	 * @return self|false false if no user exists with that id
 	 * @since 1.37
 	 */
 	public static function newPrimaryInstanceFromId( $id ) {
