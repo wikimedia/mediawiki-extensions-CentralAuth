@@ -2572,7 +2572,6 @@ class CentralAuthUser implements IDBAccessObject {
 			if ( $passwordMatchStatus->isGood() ) {
 				$this->logger->info( "authentication for '{user}' succeeded", $logData );
 
-				$config = RequestContext::getMain()->getConfig();
 				$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
 				if ( $passwordFactory->needsUpdate( $passwordObject ) ) {
 					DeferredUpdates::addCallableUpdate( function () use ( $password, $passwordObject ) {
@@ -3166,7 +3165,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return string Password in the form :<TYPE>:<PARAM1>:<PARAM2>:...:<HASH>
 	 */
 	protected function saltedPassword( $password ) {
-		$config = RequestContext::getMain()->getConfig();
 		$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
 		return $passwordFactory->newFromPlaintext( $password )->toString();
 	}
