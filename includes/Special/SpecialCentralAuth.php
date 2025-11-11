@@ -1001,8 +1001,7 @@ class SpecialCentralAuth extends SpecialPage {
 			$row['wiki'],
 			'Special:Contributions/' . $this->mUserName,
 			$editCount,
-			$this->msg( 'centralauth-foreign-contributions' )
-				->params( $editCount, $wikiname )->text()
+			$this->msg( 'centralauth-foreign-contributions', $editCount, $wikiname )->text()
 		);
 	}
 
@@ -1290,9 +1289,8 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 
 		if ( $this->mGlobalUser->isLocked() ) {
-			$logOtherWikiMsg = $this
-				->msg( 'centralauth-admin-log-otherwiki' )
-				->params( $this->mGlobalUser->getName() );
+			$logOtherWikiMsg = $this->msg( 'centralauth-admin-log-otherwiki',
+				$this->mGlobalUser->getName() );
 
 			if ( !$logOtherWikiMsg->isDisabled() ) {
 				$this->getOutput()->addHTML(

@@ -83,8 +83,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$html = "<ul>\n";
 		foreach ( $renames as $oldname => $newname ) {
 			$html .= '<li>' .
-				$this->msg( 'centralauth-rename-progress-item' )
-					->params( $oldname, $newname )->parse() .
+				$this->msg( 'centralauth-rename-progress-item', $oldname, $newname )->parse() .
 				"</li>\n";
 		}
 

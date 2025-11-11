@@ -320,8 +320,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	}
 
 	public function onSuccess() {
-		$msg = $this->msg( 'centralauth-rename-queued' )
-			->params( $this->oldUsername, $this->newUsername )
+		$msg = $this->msg( 'centralauth-rename-queued', $this->oldUsername, $this->newUsername )
 			->parse();
 		$this->getOutput()->addHTML( $msg );
 	}
