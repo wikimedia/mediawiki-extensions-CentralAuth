@@ -1763,7 +1763,7 @@ class CentralAuthUser implements IDBAccessObject {
 		foreach ( $rows as $row ) {
 			$wiki = $row['wiki'];
 			if ( $this->matchHash( $password,
-				$this->getPasswordFromString( $row['password'], $row['id'] ) )->isGood()
+				$this->getPasswordFromString( $row['password'], $row['id'] ) )
 			) {
 				$logger->info(
 					'Attaching \'{user}\' on {wiki} by password',
@@ -2554,7 +2554,7 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$passwordObject = $this->getPasswordObject();
-		$passwordMatchStatus = $this->matchHash( $password, $passwordObject );
+		$passwordMatches = $this->matchHash( $password, $passwordObject );
 
 		// Log a few bits of the password to differentiate between broken bot sand brute-force attacks.
 		$siteSecret = RequestContext::getMain()->getConfig()->get( 'SecretKey' );
@@ -2569,7 +2569,7 @@ class CentralAuthUser implements IDBAccessObject {
 		];
 
 		if ( $canAuthenticate === true ) {
-			if ( $passwordMatchStatus->isGood() ) {
+			if ( $passwordMatches ) {
 				$this->logger->info( "authentication for '{user}' succeeded", $logData );
 
 				$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
@@ -2601,7 +2601,7 @@ class CentralAuthUser implements IDBAccessObject {
 				return [ self::AUTHENTICATE_BAD_PASSWORD ];
 			}
 		} else {
-			if ( $passwordMatchStatus->isGood() ) {
+			if ( $passwordMatches ) {
 				$this->logger->info( "authentication for '{user}' failed, correct pass but locked", $logData );
 				return [ self::AUTHENTICATE_LOCKED ];
 			} else {
@@ -2630,14 +2630,10 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * @param string $plaintext User-provided password plaintext.
 	 * @param Password $password Password to check against
-	 *
-	 * @return Status
 	 */
-	protected function matchHash( $plaintext, Password $password ) {
-		$matched = false;
-
+	protected function matchHash( $plaintext, Password $password ): bool {
 		if ( $password->verify( $plaintext ) ) {
-			$matched = true;
+			return true;
 		} elseif ( !( $password instanceof AbstractPbkdf2Password ) && function_exists( 'iconv' ) ) {
 			// Some wikis were converted from ISO 8859-1 to UTF-8;
 			// retained hashes may contain non-latin chars.
@@ -2645,15 +2641,11 @@ class CentralAuthUser implements IDBAccessObject {
 			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
 			AtEase::restoreWarnings();
 			if ( $latin1 !== false && $password->verify( $latin1 ) ) {
-				$matched = true;
+				return true;
 			}
 		}
 
-		if ( $matched ) {
-			return Status::newGood();
-		} else {
-			return Status::newFatal( 'bad' );
-		}
+		return false;
 	}
 
 	/**
@@ -2663,13 +2655,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	protected function matchHashes( array $passwords, Password $password ) {
-		foreach ( $passwords as $plaintext ) {
-			if ( $this->matchHash( $plaintext, $password )->isGood() ) {
-				return true;
-			}
-		}
-
-		return false;
+		return array_any(
+			$passwords,
+			fn ( $plaintext ) => $this->matchHash( $plaintext, $password )
+		);
 	}
 
 	/**
@@ -2798,7 +2787,6 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( $this->mAttachedList !== null && $this->mAttachedList !== '' ) {
 			// We have a list already, probably from the cache.
 			$this->mAttachedArray = explode( "\n", $this->mAttachedList );
-
 			return;
 		}
 
@@ -2828,7 +2816,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function listAttached() {
 		$this->loadAttached();
-
 		return $this->mAttachedArray;
 	}
 
@@ -2914,7 +2901,6 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$this->mAttachedInfo = $wikis;
-
 		return $wikis;
 	}
 
@@ -2961,7 +2947,6 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$this->mAttachedInfo = $wikis;
-
 		return $wikis;
 	}
 
