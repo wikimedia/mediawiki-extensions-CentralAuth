@@ -9,38 +9,26 @@ use Wikimedia\Rdbms\IReadableDatabase;
 
 class CentralAuthSpoofUser extends SpoofUser {
 
-	private CentralAuthDatabaseManager $centralAuthDatabaseManager;
-
-	public function __construct( string $name, CentralAuthDatabaseManager $centralAuthDatabaseManager ) {
+	public function __construct(
+		string $name,
+		private readonly CentralAuthDatabaseManager $centralAuthDatabaseManager
+	) {
 		parent::__construct( $name );
-		$this->centralAuthDatabaseManager = $centralAuthDatabaseManager;
 	}
 
-	/**
-	 * @return IReadableDatabase
-	 */
-	protected function getDBReplica() {
+	protected function getDBReplica(): IReadableDatabase {
 		return $this->centralAuthDatabaseManager->getCentralReplicaDB();
 	}
 
-	/**
-	 * @return IDatabase
-	 */
-	protected function getDBPrimary() {
+	protected function getDBPrimary(): IDatabase {
 		return $this->centralAuthDatabaseManager->getCentralPrimaryDB();
 	}
 
-	/**
-	 * @return string
-	 */
-	protected function getTableName() {
+	protected function getTableName(): string {
 		return 'globaluser';
 	}
 
-	/**
-	 * @return string
-	 */
-	protected function getUserColumn() {
+	protected function getUserColumn(): string {
 		return 'gu_name';
 	}
 }
