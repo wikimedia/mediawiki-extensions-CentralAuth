@@ -370,7 +370,7 @@ class SpecialWikiSets extends SpecialPage {
 		$name = $this->getContentLanguage()->ucfirst( $this->getRequest()->getVal( 'wpName' ) );
 		$type = $this->getRequest()->getVal( 'wpType' );
 		$wikis = array_unique( preg_split(
-			'/(\s+|\s*\W\s*)/', $this->getRequest()->getVal( 'wpWikis' ), -1, PREG_SPLIT_NO_EMPTY )
+			'/\W+/', $this->getRequest()->getVal( 'wpWikis' ), -1, PREG_SPLIT_NO_EMPTY )
 		);
 		$reason = $this->getRequest()->getVal( 'wpReason' );
 
