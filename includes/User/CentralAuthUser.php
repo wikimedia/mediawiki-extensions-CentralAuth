@@ -134,9 +134,9 @@ class CentralAuthUser implements IDBAccessObject {
 	/** @var string[]|null */
 	private $mBeingRenamedArray;
 	/** @var array[]|null */
-	protected $mAttachedInfo;
+	private $mAttachedInfo;
 	/** @var int */
-	protected $mCasToken = 0;
+	private $mCasToken = 0;
 	/** @var \Psr\Log\LoggerInterface */
 	private $logger;
 	private StatsFactory $statsFactory;
@@ -308,7 +308,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return IReadableDatabase Primary database or replica based on shouldUsePrimaryDB()
 	 * @throws CentralAuthReadOnlyError
 	 */
-	protected function getSafeReadDB() {
+	private function getSafeReadDB() {
 		if ( $this->shouldUsePrimaryDB() ) {
 			return CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		} else {
@@ -321,7 +321,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @return bool
 	 */
-	protected function shouldUsePrimaryDB() {
+	private function shouldUsePrimaryDB() {
 		$dbManager = CentralAuthServices::getDatabaseManager();
 		if ( $dbManager->isReadOnly() ) {
 			return false;
@@ -430,7 +430,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Clear state information cache
 	 * Does not clear $this->mName, so the state information can be reloaded with loadState()
 	 */
-	protected function resetState() {
+	private function resetState() {
 		$this->mGlobalId = null;
 		$this->mGroups = null;
 		$this->mAttachedArray = null;
@@ -479,7 +479,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @param bool $force Set to true to load even when already loaded.
 	 */
-	protected function loadGroups( bool $force = false ) {
+	private function loadGroups( bool $force = false ) {
 		if ( $this->mGroups !== null && !$force ) {
 			// Already loaded
 			return;
@@ -553,7 +553,7 @@ class CentralAuthUser implements IDBAccessObject {
 		return $closestExpiry;
 	}
 
-	protected function loadFromDatabase() {
+	private function loadFromDatabase() {
 		$this->logger->debug(
 			'Loading state for global user {user} from DB',
 			[ 'user' => $this->mName ]
@@ -586,7 +586,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string[] $renameUser Empty if no rename is going on, else (oldname, newname)
 	 * @param bool $fromPrimary
 	 */
-	protected function loadFromRow( $row, $renameUser, $fromPrimary = false ) {
+	private function loadFromRow( $row, $renameUser, $fromPrimary = false ) {
 		if ( $row ) {
 			$this->mGlobalId = intval( $row->gu_id );
 			$this->mIsAttached = ( $row->lu_wiki !== null );
@@ -622,7 +622,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @return bool
 	 */
-	protected function loadFromCache() {
+	private function loadFromCache() {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$data = $cache->getWithSetCallback(
 			$this->getCacheKey( $cache ),
@@ -660,7 +660,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Load user state from a cached array.
 	 */
-	protected function loadFromCacheObject( array $object ) {
+	private function loadFromCacheObject( array $object ) {
 		$this->logger->debug(
 			'Loading CentralAuthUser for user {user} from cache object',
 			[ 'user' => $this->mName ]
@@ -731,7 +731,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Generate a valid memcached key for caching the object's data.
 	 * @return string
 	 */
-	protected function getCacheKey( WANObjectCache $cache ) {
+	private function getCacheKey( WANObjectCache $cache ) {
 		return $cache->makeGlobalKey( 'centralauth-user', md5( $this->mName ) );
 	}
 
@@ -1278,13 +1278,12 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Store global user data in the auth server's main table.
 	 *
-	 * @param string $salt
 	 * @param string $hash
 	 * @param string $email
 	 * @param string $emailAuth timestamp
 	 * @return bool Whether we were successful or not.
 	 */
-	protected function storeGlobalData( $salt, $hash, $email, $emailAuth ) {
+	private function storeGlobalData( $hash, $email, $emailAuth ) {
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		$data = [
 			'gu_name' => $this->mName,
@@ -1330,7 +1329,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Record the current username in the AntiSpoof system
 	 */
-	protected function recordAntiSpoof() {
+	private function recordAntiSpoof() {
 		$spoof = CentralAuthServices::getAntiSpoofManager()->getSpoofUser( $this->mName );
 		$spoof->record();
 	}
@@ -1575,7 +1574,6 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$ok = $this->storeGlobalData(
-			$info['id'],
 			$info['password'],
 			$info['email'],
 			$info['emailAuthenticated']
@@ -1626,7 +1624,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param bool $checkHome Re-check the user's ownership of the home wiki
 	 * @return bool Whether full automatic migration completed successfully.
 	 */
-	protected function attemptAutoMigration(
+	private function attemptAutoMigration(
 		$passwords = [], $sendToRC = true, $safe = false, $checkHome = false
 	) {
 		$this->checkWriteMode();
@@ -1685,7 +1683,6 @@ class CentralAuthUser implements IDBAccessObject {
 		$homeWiki = $this->mHomeWiki;
 		// Actually do the migration
 		$ok = $this->storeGlobalData(
-			$home['id'],
 			$home['password'],
 			$this->mEmail,
 			$this->mEmailAuthenticated
@@ -1807,7 +1804,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string[] $list
 	 * @return array An associative array containing the valid and invalid entries.
 	 */
-	protected static function validateList( $list ) {
+	private static function validateList( $list ) {
 		$unique = array_unique( $list );
 		$wikiList = CentralAuthServices::getWikiListService()->getWikiList();
 		$valid = array_intersect( $unique, $wikiList );
@@ -1906,7 +1903,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @param string $wikiId
 	 */
-	protected function queueAdminUnattachJob( $wikiId ) {
+	private function queueAdminUnattachJob( $wikiId ) {
 		$services = MediaWikiServices::getInstance();
 
 		$job = $services->getJobFactory()->newJob(
@@ -2288,7 +2285,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $by
 	 * @param string $reason
 	 */
-	protected function doCrosswikiSuppression( $suppress, $by, $reason ) {
+	private function doCrosswikiSuppression( $suppress, $by, $reason ) {
 		global $wgCentralAuthWikisPerSuppressJob;
 		$this->loadAttached();
 		if ( count( $this->mAttachedArray ) <= $wgCentralAuthWikisPerSuppressJob ) {
@@ -2631,7 +2628,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $plaintext User-provided password plaintext.
 	 * @param Password $password Password to check against
 	 */
-	protected function matchHash( $plaintext, Password $password ): bool {
+	private function matchHash( $plaintext, Password $password ): bool {
 		if ( $password->verify( $plaintext ) ) {
 			return true;
 		} elseif ( !( $password instanceof AbstractPbkdf2Password ) && function_exists( 'iconv' ) ) {
@@ -2654,7 +2651,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @return bool
 	 */
-	protected function matchHashes( array $passwords, Password $password ) {
+	private function matchHashes( array $passwords, Password $password ) {
 		return array_any(
 			$passwords,
 			fn ( $plaintext ) => $this->matchHash( $plaintext, $password )
@@ -2986,7 +2983,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @throws LocalUserNotFoundException if local user not found
 	 * @return array
 	 */
-	protected function localUserData( $wikiID ) {
+	private function localUserData( $wikiID ) {
 		$mwServices = MediaWikiServices::getInstance();
 		$databaseManager = CentralAuthServices::getDatabaseManager();
 
@@ -3149,7 +3146,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string|null $password plaintext
 	 * @return string Password in the form :<TYPE>:<PARAM1>:<PARAM2>:...:<HASH>
 	 */
-	protected function saltedPassword( $password ) {
+	private function saltedPassword( $password ) {
 		$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
 		return $passwordFactory->newFromPlaintext( $password )->toString();
 	}
