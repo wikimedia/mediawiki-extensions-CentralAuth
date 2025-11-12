@@ -266,6 +266,8 @@
 	"globalgrouppermissions": "Handsaming av globale grupper",
 	"globalrenameprogress": "Framgang på global omdøyping",
 	"globalrenameprogress-legend": "Sjå framgang på global omdøyping",
+	"globalrenamequeue-nav-closedqueue": "Avslutta førespurnader",
+	"globalrenamequeue-nav-openqueue": "Opne førespurnader",
 	"globalrenameuser": "Døyp om global brukar",
 	"globalrenameuser-legend": "Døyp om global brukar",
 	"globalusers": "Global brukarliste",

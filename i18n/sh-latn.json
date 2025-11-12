@@ -123,7 +123,7 @@
 	"centralauth-complete": "Unifikacija korisnika završena!",
 	"centralauth-complete-text": "Sada možete se prijaviti na bilo koji viki-projekt {{int:Centralauth-groupname}} bez potrebe da pravite nove račune.",
 	"centralauth-completelogin-back": "Vrati se na prethodnu stranicu.",
-	"centralauth-contribs-locked": "Ovaj račun je globalno zaključan.\nZa više informacija pogledajte [[Special:CentralAuth/$1|detalje o globalnom računu]].",
+	"centralauth-contribs-locked": "Ovaj račun globalno je zaključan.\nZa više informacija pogledajte [[Special:CentralAuth/$1|globalni račun]].",
 	"centralauth-contribs-locked-log": "Ovaj račun je globalno zaključan.\nIspod je prikazana posljednja stavka u evidenciji zaključavanja:",
 	"centralauth-createlocal-already-exists": "Već postoji lokalni račun za navedeni globalni račun.",
 	"centralauth-createlocal-no-global-account": "Taj globalni račun ne postoji.",
