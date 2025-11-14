@@ -155,6 +155,7 @@
 	"centralauth-globalgroupperms-group-listmembers": "د غړو لړليک",
 	"centralauth-globalgroupperms-newgroupname": "د نوې ډلې نوم:",
 	"centralauth-globalgroupperms-rights": "رښتې",
+	"centralauth-globalgroupperms-wikiset-none": "دا ډله په ټولو ويکي‌گانو کې کارنده ده.",
 	"centralauth-globalgroupperms-automatic-group-reason": "خپلکاري ډول ټاکل‌شوې",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|گړۍ}} مخکې",
 	"centralauth-invalid-wiki": "د ويکي دا ډول توکبنسټ نشته: $1.",

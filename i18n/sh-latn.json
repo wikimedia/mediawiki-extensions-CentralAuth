@@ -185,6 +185,7 @@
 	"centralauth-error-badtoken": "Navedeni žeton za autentifikaciju je istekao ili je pogrešan.",
 	"centralauth-error-locked": "Ne možete uređivati jer je Vaš račun zaključan.",
 	"centralauth-error-nologinattempt": "Nema momentalnog pokušaja prijave u vašoj sesiji.",
+	"centralauth-warning-reauth": "Sesija centralne prijave je istekla. Prijavite se ponovo da biste nastavili.",
 	"centralauth-finish-incomplete": "S ovom lozinkom je spojeno nekoliko računa.\nOstali nalozi još nisu potvrđeni.",
 	"centralauth-finish-login": "Prijava",
 	"centralauth-finish-noconfirms": "S ovom lozinkom ne mogao da se potvrdi nijedan račun.",
