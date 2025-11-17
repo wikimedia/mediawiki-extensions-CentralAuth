@@ -22,7 +22,7 @@
 	"centralauth-account-unattached-exists": "Ne mogu napraviti račun: Korisničko ime je zauzeto. Izaberite drugo.",
 	"centralauth-admin-already-unmerged": "Preskočen $1, već je odspojen",
 	"centralauth-admin-bad-input": "Selekcija spajanja nije validna",
-	"centralauth-admin-blocklog": "zapisnik blokiranja",
+	"centralauth-admin-blocklog": "zapisnik blokada",
 	"centralauth-admin-delete-button": "Izbriši ovaj račun",
 	"centralauth-admin-delete-description": "Brisanje globalnog računa razdvojit će sve lokalne račune i omogućit će drugim korisnicima da preuzmu to globalno ime.\nSvi lokalni računi i dalje će postojati.",
 	"centralauth-admin-delete-nonexistent": "Greška: globalni račun \"<nowiki>$1</nowiki>\" ne postoji.",
