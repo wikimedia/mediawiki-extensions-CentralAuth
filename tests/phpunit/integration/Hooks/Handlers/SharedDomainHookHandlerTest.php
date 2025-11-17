@@ -22,7 +22,6 @@ use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logger\Spi;
 use MediaWiki\MainConfigNames;
-use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Skin\Skin;
 use MediaWiki\Tests\Api\ApiTestCase;
@@ -374,8 +373,6 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 			'sul3' => $isSul3Enabled,
 		] ) );
 
-		$extReg = $this->createMock( ExtensionRegistry::class );
-
 		$title = $this->createNoOpMock( Title::class );
 		$skin = $this->createNoOpMock( Skin::class, [ 'getRequest', 'getTitle', 'msg' ] );
 		$skin->method( 'getRequest' )->willReturn( new FauxRequest() );
@@ -384,10 +381,8 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 
 		$container = $this->getServiceContainer();
 		$handler = new SharedDomainHookHandler(
-			$extReg,
 			$container->getMainConfig(),
 			$container->getUrlUtils(),
-			CentralAuthServices::getCentralDomainUtils( $container ),
 			CentralAuthServices::getFilteredRequestTracker( $container ),
 			CentralAuthServices::getSharedDomainUtils( $container ),
 			null
@@ -472,6 +467,24 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		}
 		$this->fail( "Expected log message '$expectedLogMessage' not found in '$channel' logs; actual:\n"
 			. print_r( $logs, true ) );
+	}
+
+	public function testRestrictionsWithRegistrationSchema() {
+		$config = $this->getServiceContainer()->getMainConfig();
+		$schemaConfigRestrictions = array_keys(
+			$config->get( CAMainConfigNames::CentralAuthSul3SharedDomainRestrictions )
+		);
+
+		$sharedDomainHookHandler = new SharedDomainHookHandler(
+			$config,
+			$this->getServiceContainer()->getUrlUtils(),
+			CentralAuthServices::getFilteredRequestTracker( $this->getServiceContainer() ),
+			CentralAuthServices::getSharedDomainUtils( $this->getServiceContainer() ),
+			null
+		);
+		$defaultRestrictions = array_keys( $sharedDomainHookHandler->getDefaultRestrictions() );
+
+		$this->assertEquals( $defaultRestrictions, $schemaConfigRestrictions );
 	}
 
 }

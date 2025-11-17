@@ -16,7 +16,6 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Exception\MWExceptionHandler;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\FilteredRequestTracker;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
@@ -28,7 +27,6 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Output\Hook\BeforePageDisplayHook;
 use MediaWiki\Output\Hook\MakeGlobalVariablesScriptHook;
 use MediaWiki\Permissions\Hook\GetUserPermissionsErrorsHook;
-use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\ResourceLoader\Hook\ResourceLoaderModifyEmbeddedSourceUrlsHook;
 use MediaWiki\Rest\Handler;
 use MediaWiki\Rest\Hook\RestCheckCanExecuteHook;
@@ -42,6 +40,7 @@ use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\UrlUtils;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
+use RuntimeException;
 use Wikimedia\Message\MessageValue;
 use Wikimedia\NormalizedException\NormalizedException;
 
@@ -76,11 +75,25 @@ class SharedDomainHookHandler implements
 	/**
 	 * List of the special pages that are only allowed on the shared domain
 	 * (the user should be redirected when trying to access them on the local domain).
+	 *
+	 * Unlike CENTRAL_SPECIAL_PAGES_AUTHENTICATED, no effort is made to ensure the
+	 * user is logged in.
+	 */
+	private const CENTRAL_SPECIAL_PAGES_UNAUTHENTICATED = 'centralSpecialPagesUnauthenticated';
+	/**
+	 * List of the special pages that are only allowed on the shared domain
+	 * (the user should be redirected when trying to access them on the local domain)
+	 * and we prefer the user to be authenticated while using them.
+	 *
+	 * For pages on this list, if the user was logged in when trying to access
+	 * them on the local wiki, we'll ensure they are logged in on the central
+	 * domain as well before sending them to the page.
+	 *
 	 * In practice, these will be the credentials change related pages.
 	 * Authentication-related pages are not included here - even though the user will only
-	 * see them on the central domain, they need special handling locally.
+	 * see them on the central domain, they need special logic and can't be handled here.
 	 */
-	private const CENTRAL_SPECIAL_PAGES = 'centralSpecialPages';
+	private const CENTRAL_SPECIAL_PAGES_AUTHENTICATED = 'centralSpecialPagesAuthenticated';
 	/**
 	 * List of action API modules that are allowed on the shared domain.
 	 * @see ApiBase::getModulePath()
@@ -124,9 +137,13 @@ class SharedDomainHookHandler implements
 			// debugging
 			'WikimediaDebug',
 		],
-		self::CENTRAL_SPECIAL_PAGES => [
-			// credentials change
-			'PasswordReset', 'ChangePassword', 'ChangeCredentials', 'RemoveCredentials', 'OATHManage',
+		self::CENTRAL_SPECIAL_PAGES_AUTHENTICATED => [
+			// credentials change special pages that require the user to be authenticated.
+			'ChangePassword', 'ChangeCredentials', 'RemoveCredentials', 'OATHManage',
+		],
+		self::CENTRAL_SPECIAL_PAGES_UNAUTHENTICATED => [
+			// credentials change special pages that may not require the user to be authenticated.
+			'PasswordReset',
 		],
 		self::ALLOWED_ACTION_API_MODULES => [
 			// needed for allowing any query API, even if we only want meta modules; it can be
@@ -164,27 +181,21 @@ class SharedDomainHookHandler implements
 		],
 	];
 
-	private ExtensionRegistry $extensionRegistry;
 	private Config $config;
 	private UrlUtils $urlUtils;
-	private CentralDomainUtils $centralDomainUtils;
 	private FilteredRequestTracker $filteredRequestTracker;
 	private SharedDomainUtils $sharedDomainUtils;
 	private ?MobileContext $mobileContext;
 
 	public function __construct(
-		ExtensionRegistry $extensionRegistry,
 		Config $config,
 		UrlUtils $urlUtils,
-		CentralDomainUtils $centralDomainUtils,
 		FilteredRequestTracker $filteredRequestTracker,
 		SharedDomainUtils $sharedDomainUtils,
 		?MobileContext $mobileContext = null
 	) {
-		$this->extensionRegistry = $extensionRegistry;
 		$this->config = $config;
 		$this->urlUtils = $urlUtils;
-		$this->centralDomainUtils = $centralDomainUtils;
 		$this->filteredRequestTracker = $filteredRequestTracker;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 		$this->mobileContext = $mobileContext;
@@ -199,7 +210,7 @@ class SharedDomainHookHandler implements
 			// FIXME should not log a production error
 			$allowedEntryPoints = $this->getRestrictions( self::ALLOWED_ENTRY_POINTS );
 			if ( !in_array( MW_ENTRY_POINT, $allowedEntryPoints, true ) ) {
-				throw new \RuntimeException( MW_ENTRY_POINT . ' endpoint is not allowed on the shared domain' );
+				throw new RuntimeException( MW_ENTRY_POINT . ' endpoint is not allowed on the shared domain' );
 			}
 		}
 	}
@@ -421,7 +432,11 @@ class SharedDomainHookHandler implements
 	 */
 	public function onSpecialPageBeforeExecute( $special, $subPage ) {
 		$request = $special->getRequest();
-		$credentialsChangeSpecialPages = $this->getRestrictions( self::CENTRAL_SPECIAL_PAGES );
+		$credentialsChangeSpecialPages = array_merge(
+			$this->getRestrictions( self::CENTRAL_SPECIAL_PAGES_AUTHENTICATED ),
+			$this->getRestrictions( self::CENTRAL_SPECIAL_PAGES_UNAUTHENTICATED )
+		);
+		$noAuthCredSpecialPages = $this->getRestrictions( self::CENTRAL_SPECIAL_PAGES_UNAUTHENTICATED );
 
 		if ( $this->sharedDomainUtils->isSul3Enabled( $request )
 			&& !$this->sharedDomainUtils->isSharedDomain()
@@ -429,7 +444,11 @@ class SharedDomainHookHandler implements
 				// The !isNamed() case is handled in SpecialPageBeforeExecuteHookHandler::onSpecialPageBeforeExecute()
 				|| ( $special->getName() === 'CreateAccount' && $special->getUser()->isNamed() ) )
 		) {
-			if ( $special->getUser()->isNamed() ) {
+			if ( $special->getUser()->isNamed() &&
+				// T409984: Don't loop PasswordReset through user login. We can land directly on the
+				// password reset page whether or not the user is logged-in.
+				!in_array( $special->getName(), $noAuthCredSpecialPages, true )
+			) {
 				// Redirect through Special:UserLogin in order to display a custom message if the user
 				// is no longer logged in on the central domain (T393459).
 				// Redirect directly to Special:UserLogin on central domain (not on local domain),
@@ -496,6 +515,17 @@ class SharedDomainHookHandler implements
 			);
 		}
 		return $restrictions;
+	}
+
+	/**
+	 * @internal To be used by PHPUnit tests ONLY.
+	 */
+	public function getDefaultRestrictions(): array {
+		if ( !defined( 'MW_PHPUNIT_TEST' ) ) {
+			throw new RuntimeException( 'This method should not be called outside tests' );
+		}
+
+		return self::DEFAULT_RESTRICTIONS;
 	}
 
 }

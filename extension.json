@@ -661,10 +661,8 @@
 		"shareddomain": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SharedDomainHookHandler",
 			"services": [
-				"ExtensionRegistry",
 				"MainConfig",
 				"UrlUtils",
-				"CentralAuth.CentralDomainUtils",
 				"CentralAuth.FilteredRequestTracker",
 				"CentralAuth.SharedDomainUtils"
 			],
@@ -961,7 +959,8 @@
 			"value": {
 				"allowedEntryPoints": [],
 				"allowedSpecialPages": [],
-				"centralSpecialPages": [],
+				"centralSpecialPagesAuthenticated": [],
+				"centralSpecialPagesUnauthenticated": [],
 				"allowedActionApiModules": [],
 				"allowedRestApiEndpoints": [],
 				"allowedLocalProviders": {
