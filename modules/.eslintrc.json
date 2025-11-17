@@ -7,9 +7,5 @@
 	],
 	"env": {
 		"commonjs": true
-	},
-	"rules": {
-		"mediawiki/no-cookie": "warn",
-		"mediawiki/no-storage": "warn"
 	}
 }

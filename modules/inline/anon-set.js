@@ -1,3 +1,4 @@
+/* eslint-disable mediawiki/no-storage, mediawiki/no-cookie -- Dependency-free inline script */
 ( function () {
 
 	const t = new Date();

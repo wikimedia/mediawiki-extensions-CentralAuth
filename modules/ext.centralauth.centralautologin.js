@@ -1,3 +1,4 @@
+/* eslint-disable mediawiki/no-storage, mediawiki/no-cookie -- Consistency with inline/anon-set.js */
 ( function () {
 	// Are we already logged in?
 	if ( mw.config.get( 'wgUserName' ) !== null ) {

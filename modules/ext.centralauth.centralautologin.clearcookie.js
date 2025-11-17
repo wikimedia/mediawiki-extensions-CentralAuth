@@ -1,3 +1,4 @@
+/* eslint-disable mediawiki/no-storage, mediawiki/no-cookie -- Consistency with inline/anon-remove.js */
 ( function () {
 	if ( mw.config.get( 'wgUserName' ) !== null ) {
 		try {

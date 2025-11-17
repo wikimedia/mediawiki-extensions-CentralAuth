@@ -1,3 +1,5 @@
+/* eslint-disable mediawiki/no-storage, mediawiki/no-cookie -- Dependency-free inline script */
+
 try {
 	localStorage.removeItem( 'CentralAuthAnon' );
 } catch ( e ) {}
