@@ -69,10 +69,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	 */
 	protected function getDB() {
 		static $db = null;
-
-		if ( $db === null ) {
-			$db = $this->databaseManager->getCentralReplicaDB();
-		}
+		$db ??= $this->databaseManager->getCentralReplicaDB();
 		return $db;
 	}
 

@@ -392,7 +392,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$renamerLink = WikiMap::getForeignURL( $homewiki, 'User:' . $renamer->getName() );
 		}
 
-		if ( strpos( $reason, "\n" ) !== false ) {
+		if ( str_contains( $reason, "\n" ) ) {
 			$reason = "<dl><dd>" . str_replace( "\n", "</dd><dd>", $reason ) . "</dd></dl>";
 		} else {
 			$reason = ': ' . $reason;

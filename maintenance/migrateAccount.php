@@ -242,9 +242,7 @@ class MigrateAccount extends Maintenance {
 			$emailMatch = true;
 			$email = null;
 			foreach ( $unattached as $local ) {
-				if ( $email === null ) {
-					$email = $local['email'];
-				}
+				$email ??= $local['email'];
 				if ( $local['email'] === $email && $local['emailAuthenticated'] !== null ) {
 					continue;
 				}
