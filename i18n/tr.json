@@ -501,7 +501,7 @@
 	"logentry-gblrights-grouprename": "$1, $5 kümesini $4 olarak yeniden {{GENDER:$2|adlandırdı}}",
 	"logentry-gblrights-groupprms2": "$1, $3 için küresel küme izinlerini {{GENDER:$2|değiştirdi}}: $4 eklendi; $5 çıkarıldı",
 	"logentry-gblrights-groupprms3": "$1, $3 için küme kısıtlı viki kümesini $4 iken $5 olarak {{GENDER:$2|değiştirdi}}",
-	"logentry-gblrights-usergroups": "$1, {{GENDER:$6|$3}} için küresel küme üyeliğini $4 iken $5 olarak {{GENDER:$2|değiştirdi}}",
+	"logentry-gblrights-usergroups": "$1, {{GENDER:$6|$3}} için küresel küme üyeliği {{GENDER:$2|değiştirdi}}: $7",
 	"logentry-globalauth-delete": "$1, \"$3\" küresel hesabını {{GENDER:$2|sildi}}",
 	"logentry-globalauth-setstatus": "$1, \"$3\" küresel hesap durumunu {{GENDER:$2|değiştirdi}}: $4 ayarlandı; $5 ayarı kaldırıldı",
 	"logentry-newusers-forcecreatelocal": "$1, $3 için zorla yerel bir hesap {{GENDER:$2|oluşturdu}}",
