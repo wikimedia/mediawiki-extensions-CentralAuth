@@ -254,14 +254,14 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			!$this->overrideTitleBlacklist
 			&& ExtensionRegistry::getInstance()->isLoaded( 'TitleBlacklist' )
 		) {
-			$titleBlacklist = TitleBlacklist::singleton()->isBlacklisted(
+			$match = TitleBlacklist::singleton()->isBlacklisted(
 				Title::makeTitleSafe( NS_USER, $newUser->getName() ),
 				'new-account'
 			);
-			if ( $titleBlacklist instanceof TitleBlacklistEntry ) {
+			if ( $match instanceof TitleBlacklistEntry ) {
 				return Status::newFatal(
 					$this->msg( 'centralauth-rename-titleblacklist-match' )
-						->params( wfEscapeWikiText( $titleBlacklist->getRegex() ) )
+						->params( wfEscapeWikiText( $match->getRegex() ) )
 				);
 			}
 		}

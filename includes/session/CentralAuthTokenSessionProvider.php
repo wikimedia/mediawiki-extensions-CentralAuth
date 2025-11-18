@@ -132,7 +132,7 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 		$key = $this->sessionManager->makeSessionKey( 'api-token-blacklist', (string)$centralUser->getId() );
 		$sessionStore = $this->sessionManager->getSessionStore();
 		if ( $sessionStore->get( $key ) ) {
-			$this->logger->info( __METHOD__ . ': user is blacklisted' );
+			$this->logger->info( __METHOD__ . ': user is deny listed' );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 
@@ -196,7 +196,7 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 			return;
 		}
 
-		// Assume blacklisting for a day will be enough because we assume by
+		// Assume blocklisting for a day will be enough because we assume by
 		// then CentralAuth itself will have been instructed to more
 		// permanently block the user.
 		$sessionStore = $this->sessionManager->getSessionStore();

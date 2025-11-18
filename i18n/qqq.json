@@ -491,7 +491,7 @@
 	"globalrenamequeue-request-status-title": "Page title when viewing processed request.",
 	"globalrenamequeue-request-suppressredirects": "Form checkbox label text.",
 	"globalrenamequeue-request-title": "Page title when processing request.\n\n* $1 is the user's current name\n{{Identical|Rename}}",
-	"globalrenamequeue-request-titleblacklist": "Message shown when a user's requested name matches a [[mw:Extension:TitleBlacklist|title blacklist]] entry. $1 is the regular expression which matched the username.",
+	"globalrenamequeue-request-titleblacklist": "Message shown when a user's requested name matches a [[mw:Extension:TitleBlacklist|TitleBlacklist]] entry. $1 is the regular expression which matched the username.",
 	"globalrenamequeue-request-unknown-body": "Page content when an invalid URL is requested.",
 	"globalrenamequeue-request-unknown-title": "Page title when an invalud URL is requested.",
 	"globalrenamequeue-request-userinfo-global": "Message expected to be configured per-wiki via MediaWiki:Globalrenamequeue-request-userinfo-global.\n\n* $1 is the requesting user's name.\n* $2 is the domain name of the requesting user's home wiki.\n* $3 is the requested username.\n* $4 is the number of edits by the global account.",
@@ -605,6 +605,6 @@
 	"right-globalgrouppermissions": "{{doc-right|globalgrouppermissions}}",
 	"sessionprovider-centralauthsessionprovider": "Description of the sessions provided by the CentralAuthSessionProvider class, which use HTTP cookies. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}.",
 	"sessionprovider-centralauthtokensessionprovider": "Description of the sessions provided by the CentralAuthTokenSessionProvider class, which uses the 'centralauthtoken' parameter on API requests. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}.",
-	"centralauth-badaccess-blacklisted": "Message shown to users who can't request to be renamed because they are listed on a blacklist.",
+	"centralauth-badaccess-blacklisted": "Message shown to users who can't request to be renamed because they are listed on a deny list.",
 	"centralauth-action-forbidden-shared-domain": "Message shown to users when they try to perform a disallowed action on the shared authentication domain."
 }

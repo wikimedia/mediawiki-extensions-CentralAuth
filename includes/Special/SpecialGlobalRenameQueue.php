@@ -626,16 +626,16 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			);
 		}
 
-		// Show a message if the new username matches the title blacklist.
+		// Show a message if the new username matches the deny list
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'TitleBlacklist' ) ) {
-			$titleBlacklist = TitleBlacklist::singleton()->isBlacklisted(
+			$match = TitleBlacklist::singleton()->isBlacklisted(
 				Title::makeTitleSafe( NS_USER, $req->getNewName() ),
 				'new-account'
 			);
-			if ( $titleBlacklist instanceof TitleBlacklistEntry ) {
+			if ( $match instanceof TitleBlacklistEntry ) {
 				$htmlForm->addHeaderHtml(
 					$this->msg( 'globalrenamequeue-request-titleblacklist' )
-						->params( wfEscapeWikiText( $titleBlacklist->getRegex() ) )->parseAsBlock()
+						->params( wfEscapeWikiText( $match->getRegex() ) )->parseAsBlock()
 				);
 			}
 		}

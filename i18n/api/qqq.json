@@ -79,7 +79,7 @@
 	"apihelp-query+wikisets-param-limit": "{{doc-apihelp-param|query+wikisets|limit}}",
 	"apihelp-query+wikisets-param-orderbyname": "{{doc-apihelp-param|query+wikisets|orderbyname}}",
 	"apihelp-query+wikisets-param-prop": "{{doc-apihelp-param|query+wikisets|prop}}",
-	"apihelp-query+wikisets-paramvalue-prop-type": "{{doc-apihelp-paramvalue|query+wikisets|prop|type}}\n----\nThe \"wiki set\" is the set of wikis where a certain permission is available. The \"opt in\" wikisets are made by whitelisting (explicitly listing all members) while the \"opt out\" wikisets are made by blacklisting (all wikis are included unless explicit).",
+	"apihelp-query+wikisets-paramvalue-prop-type": "{{doc-apihelp-paramvalue|query+wikisets|prop|type}}\n----\nThe \"wiki set\" is the set of wikis where a certain permission is available. The \"opt in\" wikisets are made by explicitly listing all members while the \"opt out\" wikisets are made by listing wikis to exclude (all wikis are included unless listed).",
 	"apihelp-query+wikisets-paramvalue-prop-wikisincluded": "{{doc-apihelp-paramvalue|query+wikisets|prop|wikisincluded}}\n----\nThe \"wiki set\" is the set of wikis where a certain permission is available.",
 	"apihelp-query+wikisets-paramvalue-prop-wikisnotincluded": "{{doc-apihelp-paramvalue|query+wikisets|prop|wikisnotincluded}}\n----\nThe \"wiki set\" is the set of wikis where a certain permission is available.",
 	"apihelp-query+wikisets-summary": "{{doc-apihelp-summary|query+wikisets}}",
