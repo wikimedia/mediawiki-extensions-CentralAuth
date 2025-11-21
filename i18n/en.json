@@ -235,7 +235,7 @@
 	"centralauth-error-badtoken-title": "Invalid return URL token",
 	"centralauth-error-sul3-expired": "Authentication was successful but your session has expired. Please click \"{{int:pt-login}}\" to recover it.",
 	"centralauth-error-locked": "You cannot edit because your account is locked.",
-	"centralauth-error-nologinattempt": "No active login attempt is in progress for your session.",
+	"centralauth-error-nologinattempt": "Could not establish an active session. This may be because your browser does not store cookies.",
 	"centralauth-error-token-wrongattempt": "The authentication token does not belong to your current login attempt.\nSomeone might be trying to log you in under a malicious account.",
 	"centralauth-error-token-wronguser": "The token does not match with your session username.\nSomeone might be trying to log you in under a malicious account.\nIf you are just trying to log in as another user, please log out first.",
 	"centralauth-error-wrongprovider": "This special page is unavailable when using $1.",
