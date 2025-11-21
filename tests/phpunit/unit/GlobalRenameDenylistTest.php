@@ -28,7 +28,7 @@ use Psr\Log\NullLogger;
 
 /**
  * @author DannyS712
- * @covers MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist
+ * @covers \MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist
  */
 class GlobalRenameDenylistTest extends MediaWikiUnitTestCase {
 

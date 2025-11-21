@@ -4,7 +4,7 @@ use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\LBFactory;
 
 /**
- * @covers MediaWiki\Extension\CentralAuth\LogFormatter\GroupMembershipChangeLogFormatter
+ * @covers \MediaWiki\Extension\CentralAuth\LogFormatter\GroupMembershipChangeLogFormatter
  */
 class GroupMembershipChangeLogFormatterTest extends LogFormatterTestCase {
 

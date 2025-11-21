@@ -4,7 +4,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 
 /**
- * @covers MediaWiki\Extension\CentralAuth\CentralAuthWikiListService
+ * @covers \MediaWiki\Extension\CentralAuth\CentralAuthWikiListService
  */
 class CentralAuthWikiListServiceTest extends MediaWikiUnitTestCase {
 

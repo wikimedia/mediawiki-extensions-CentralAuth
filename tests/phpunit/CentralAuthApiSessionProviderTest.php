@@ -15,6 +15,7 @@ use MediaWiki\Tests\Session\SessionProviderTestTrait;
 
 /**
  * @covers CentralAuthApiSessionProvider
+ * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\ApiHookHandler
  * @group medium
  * @group Database
  */
@@ -81,9 +82,6 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		return $provider;
 	}
 
-	/**
-	 * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\ApiHookHandler::onAPIGetAllowedParams
-	 */
 	public function testApiParameterDeclared() {
 		// hook is registered dynamically when creating the SessionProvider
 		$this->newSessionProvider();

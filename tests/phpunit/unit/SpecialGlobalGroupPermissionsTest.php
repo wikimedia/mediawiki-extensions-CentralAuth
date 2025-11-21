@@ -7,7 +7,7 @@ use MediaWiki\Permissions\PermissionManager;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupPermissions
+ * @covers \MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupPermissions
  */
 class SpecialGlobalGroupPermissionsTest extends MediaWikiUnitTestCase {
 

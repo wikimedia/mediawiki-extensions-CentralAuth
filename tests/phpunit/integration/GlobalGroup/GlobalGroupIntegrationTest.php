@@ -27,8 +27,8 @@ use Wikimedia\TestingAccessWrapper;
 /**
  * Tests to make sure the whole global group membership flow works correctly.
  *
- * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser
- * @covers MediaWiki\Extension\CentralAuth\CentralAuthHooks::onUserGetRights
+ * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthUser
+ * @covers \MediaWiki\Extension\CentralAuth\CentralAuthHooks
  *
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  * @group Database

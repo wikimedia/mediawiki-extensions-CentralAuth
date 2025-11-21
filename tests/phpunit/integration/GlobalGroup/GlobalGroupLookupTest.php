@@ -23,7 +23,7 @@ use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
- * @covers MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup
+ * @covers \MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup
  * @group Database
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */

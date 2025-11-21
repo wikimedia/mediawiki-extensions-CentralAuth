@@ -25,7 +25,7 @@ use MediaWiki\User\UserNameUtils;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore
+ * @covers \MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore
  * @group Database
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */

@@ -47,6 +47,7 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\Special\SpecialCentralAuth
+ * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthUser
  * @group Database
  */
 class SpecialCentralAuthTest extends SpecialPageTestBase {
@@ -605,9 +606,6 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		return $html;
 	}
 
-	/**
-	 * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthUser
-	 */
 	public function testSetStatusFormForLockingUserThenUnlockingUser() {
 		// Get our testing global account
 		$targetUsername = $this->getTestCentralAuthUser();
@@ -668,9 +666,6 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( $targetUsername, $logSnippet );
 	}
 
-	/**
-	 * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthUser
-	 */
 	public function testSetStatusFormForSuppressingUser() {
 		// Get our testing global account
 		$targetUsername = $this->getTestCentralAuthUser();
