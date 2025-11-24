@@ -274,7 +274,7 @@
 	"centralauth-error-badtoken-title": "返回URL令牌无效",
 	"centralauth-error-sul3-expired": "身份验证成功，但您的会话已过期。请点击“{{int:pt-login}}”以恢复。",
 	"centralauth-error-locked": "由于您的账号已被锁定，您目前无法编辑。",
-	"centralauth-error-nologinattempt": "您的会话没有正在进行的登录尝试。",
+	"centralauth-error-nologinattempt": "无法建立活动会话。这可能是因为您的浏览器未存储cookies。",
 	"centralauth-error-token-wrongattempt": "身份验证令牌并不属于你目前的登入尝试。\n有人可能试图利用恶意账号登入。",
 	"centralauth-error-token-wronguser": "令牌与您的会话用户名称不匹配。\n有人可能试图利用恶意账号登入。\n若你只是希望以另一个账号登入，请先登出。",
 	"centralauth-error-wrongprovider": "此特殊页面在使用$1时不可用。",

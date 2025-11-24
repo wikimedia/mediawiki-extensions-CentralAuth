@@ -196,7 +196,7 @@
 	"centralauth-editset-zerowikis": "Није наведен ниједан вики.",
 	"centralauth-error-badtoken": "Наведени токен за потврду идентитета је истекао или није важећи.",
 	"centralauth-error-locked": "Не можете да уређујете јер је ваш налог закључан.",
-	"centralauth-error-nologinattempt": "Нема пријава у току за вашу сесију.",
+	"centralauth-error-nologinattempt": "Нема пријава у току за вашу сесију. Можда Ваш прегледач не чува колачиће.",
 	"centralauth-warning-reauth": "Ваша централна сесија је истекла. Молимо пријавите се поново да наставите.",
 	"centralauth-finish-incomplete": "С овом лозинком је спојено неколико налога.\nДруги налози још нису потврђени.",
 	"centralauth-finish-login": "Пријава",

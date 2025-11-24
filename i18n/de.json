@@ -227,7 +227,7 @@
 	"centralauth-error-badtoken-title": "Ungültiges Token in der Rückgabe-URL",
 	"centralauth-error-sul3-expired": "Die Authentifizierung war erfolgreich, aber deine Sitzung ist abgelaufen. Klicke bitte auf „{{int:pt-login}}“, um sie wiederherzustellen.",
 	"centralauth-error-locked": "{{#FORMAL:Du darfst|Sie dürfen}} keine Seiten bearbeiten, da {{#FORMAL:dein|Ihr}} Benutzerkonto global gesperrt ist.",
-	"centralauth-error-nologinattempt": "Es ist kein aktiver Anmeldeversuch für deine Sitzung in Gang.",
+	"centralauth-error-nologinattempt": "Es konnte keine aktive Sitzung hergestellt werden. Dies kann daran liegen, dass dein Browser keine Cookies speichert.",
 	"centralauth-error-token-wrongattempt": "Der Authentifikationstoken gehört nicht zu deinem aktuellen Anmeldeversuch.\nEin anderer könnte derzeit versuchen, dich unter einem bösartigen Benutzerkonto anzumelden.",
 	"centralauth-error-token-wronguser": "Der Token stimmt nicht mit deinem Sitzungsbenutzernamen überein.\nEin anderer könnte derzeit versuchen, dich unter einem bösartigen Benutzerkonto anzumelden.\nWenn du dich unter einem anderen Benutzer anmelden möchtest, melde dich bitte zuerst ab.",
 	"centralauth-error-wrongprovider": "Diese Spezialseite ist mit Verwendung von $1 nicht verfügbar.",

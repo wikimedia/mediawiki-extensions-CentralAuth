@@ -216,7 +216,7 @@
 	"centralauth-error-badtoken-title": "Etibarsız qayıdış URL açarı",
 	"centralauth-error-sul3-expired": "Doğrulama uğurlu oldu, lakin sessiyanızın vaxtı bitib. Onu bərpa etmək üçün \"{{int:pt-login}}\" düyməsinə klikləyin.",
 	"centralauth-error-locked": "Hesabınız bloklandığına görə redaktə edə bilməzsiniz.",
-	"centralauth-error-nologinattempt": "Sessiyanız üçün heç bir aktiv giriş cəhdi davam etmir.",
+	"centralauth-error-nologinattempt": "Aktiv sessiya qurmaq mümkün olmadı. Bunun səbəbi brauzerinizin kukiləri saxlamaması ola bilər.",
 	"centralauth-error-token-wrongattempt": "Doğrulama açarı cari giriş cəhdinizə aid deyil.\nKimsə sizi zərərli hesaba daxil etməyə cəhd edə bilər.",
 	"centralauth-error-token-wronguser": "Açar sessiya istifadəçi adınızla uyğun gəlmir.\nKimsə sizi zərərli hesaba daxil etməyə cəhd edə bilər.\nƏgər siz sadəcə olaraq başqa istifadəçi kimi daxil olmağa çalışırsınızsa, zəhmət olmasa əvvəlcə hesabdan çıxın.",
 	"centralauth-error-wrongprovider": "$1 istifadə edərkən bu xüsusi səhifə mövcud deyil.",
