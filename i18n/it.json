@@ -217,7 +217,7 @@
 	"centralauth-error-badtoken": "Il token di autenticazione fornito è scaduto o non valido.",
 	"centralauth-error-sul3-expired": "L'autenticazione è riuscita ma la sessione è scaduta. Clicca su \"{{int:pt-login}}\" per recuperarla.",
 	"centralauth-error-locked": "Non puoi fare modifiche perché la tua utenza globale è bloccata.",
-	"centralauth-error-nologinattempt": "Nessun tentativo di accesso attivo è in corso per la sessione.",
+	"centralauth-error-nologinattempt": "Impossibile stabilire una sessione attiva. Ciò potrebbe essere dovuto al fatto che il browser non memorizza i cookie.",
 	"centralauth-error-token-wrongattempt": "Il token di autenticazione non appartiene al tuo tentativo di accesso corrente.\nQualcuno potrebbe star cercando di farti accedere con un account manipolato.",
 	"centralauth-error-token-wronguser": "Il token non corrisponde al nome utente della tua sessione.\nQualcuno potrebbe star tentando di farti accedere con un account maligno.\nSe stai solo cercando di accedere come un altro utente, per favore fai prima log-out.",
 	"centralauth-error-wrongprovider": "Questa pagina speciale non è disponibile quando utilizzi $1.",
