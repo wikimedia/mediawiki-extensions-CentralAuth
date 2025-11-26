@@ -1783,6 +1783,11 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$this->invalidateCache();
+
+		// Clear cache for CentralAuthUser::getLocalGroups()
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$cache->delete( $cache->makeGlobalKey( 'centralauthuser-getlocalgroups', $this->getId() ) );
+
 		return $status;
 	}
 
@@ -2313,6 +2318,10 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->invalidateCache();
 
+		// Clear cache for CentralAuthUser::getLocalGroups()
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$cache->delete( $cache->makeGlobalKey( 'centralauthuser-getlocalgroups', $this->getId() ) );
+
 		if ( !$success ) {
 			$this->logger->info(
 				'Race condition? Already attached {user}@{wiki}, just tried by \'{method}\'',
@@ -2736,13 +2745,21 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return string[] List of group names where the user is a member on at least one wiki
 	 */
 	public function getLocalGroups() {
-		$localgroups = [];
-		foreach ( $this->queryAttached() as $local ) {
-			$localgroups = array_unique( array_merge(
-				$localgroups, array_keys( $local['groupMemberships'] )
-			) );
-		}
-		return $localgroups;
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		// Cache is invalidated in onUserGroupsChanged() hook handler, so we can use long TTL
+		return $cache->getWithSetCallback(
+			$cache->makeGlobalKey( 'centralauthuser-getlocalgroups', $this->getId() ),
+			$cache::TTL_MONTH,
+			function () {
+				$localgroups = [];
+				foreach ( $this->queryAttached() as $local ) {
+					$localgroups = array_unique( array_merge(
+						$localgroups, array_keys( $local['groupMemberships'] )
+					) );
+				}
+				return $localgroups;
+			}
+		);
 	}
 
 	/**

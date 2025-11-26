@@ -256,10 +256,12 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 		/** @var MockObject|CentralAuthUser $ca */
 		$ca = $this->getMockBuilder( CentralAuthUser::class )
 			->disableOriginalConstructor()
-			->onlyMethods( [ 'queryAttached' ] )
+			->onlyMethods( [ 'queryAttached', 'getId' ] )
 			->getMock();
 		$ca->method( 'queryAttached' )
 			->willReturn( $attached );
+		$ca->method( 'getId' )
+			->willReturn( 123 );
 
 		$this->assertSame( $expected, $ca->getLocalGroups() );
 	}

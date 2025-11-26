@@ -8,6 +8,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupMembership;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Title\TitleFactory;
@@ -52,15 +53,19 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 		$oldUGMs,
 		$newUGMs
 	) {
+		$globalUser = CentralAuthUser::getPrimaryInstance( $user );
+		if ( !( $globalUser->exists() && $globalUser->isAttached() ) ) {
+			return;
+		}
+
+		// Clear cache for CentralAuthUser::getLocalGroups()
+		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
+		$cache->delete( $cache->makeGlobalKey( 'centralauthuser-getlocalgroups', $globalUser->getId() ) );
+
 		// T387523: Return if no performer is set to avoid throwing an exception, which occurs when
 		// the user is autopromoted into a group through $wgAutopromoteOnce. Updating automatic
 		// global groups on autopromote is not supported.
 		if ( !$performer ) {
-			return;
-		}
-
-		$globalUser = CentralAuthUser::getPrimaryInstance( $user );
-		if ( !( $globalUser->exists() && $globalUser->isAttached() ) ) {
 			return;
 		}
 
