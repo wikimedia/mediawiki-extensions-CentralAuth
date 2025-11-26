@@ -7,7 +7,8 @@
 			"Matma Rex",
 			"Ерней",
 			"Ильнар",
-			"Умар"
+			"Умар",
+			"Ильгиз"
 		]
 	},
 	"centralauth": "Гомуми хисап язмасы менеджеры",
@@ -106,7 +107,7 @@
 	"centralauth-prefs-not-managed": "Бердәм хисап язмасы кулланылмый",
 	"centralauth-prefs-status": "Гомуми хисап язмасы:",
 	"centralauth-prefs-unattached": "Тулысынча берләшмәгән",
-	"centralauth-prefs-view": "Гомуми хисап язмасыгыз мәгълүматын карау",
+	"centralauth-prefs-view": "Гомуми хисапязмагыз мәгълүматын карау",
 	"centralauth-readmore-text": ":''[[m:Special:MyLanguage/Help:Unified login|'''Гомуми кулланучы язмасы''' турында күбрәк белү]]…''",
 	"centralauth-rename-form-reason": "Сәбәп",
 	"centralauth-seconds-ago": "$1 {{PLURAL:$1|секунд}} элек",

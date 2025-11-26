@@ -102,7 +102,7 @@
 	"centralauth-desc": "{{int:Centralauth-groupname}}का विकिहरुको [[Special:MergeAccount|खाता मिलन ]]",
 	"centralauth-editgroup-members": "सदस्य सूची:",
 	"centralauth-editgroup-noset": "(केहि पनि होइन)",
-	"centralauth-editgroup-reason": "कारण :",
+	"centralauth-editgroup-reason": "कारण:",
 	"centralauth-editset-name": "नाम:",
 	"centralauth-editset-nouse": "(केहि पनि होइन)",
 	"centralauth-editset-nowikis": "(केहि पनि होइन)",
