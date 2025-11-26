@@ -53,10 +53,6 @@ class MigrateAccount extends Maintenance {
 		$this->partial = 0;
 		$this->migrated = 0;
 		$this->total = 0;
-		$this->safe = false;
-		$this->autoMigrate = false;
-		$this->resetToken = false;
-		$this->suppressRC = false;
 
 		$this->addOption( 'auto',
 			'Extended migration: ALWAYS create a global account for the username where missing ' .
@@ -89,27 +85,18 @@ class MigrateAccount extends Maintenance {
 	}
 
 	public function execute() {
-		if ( $this->getOption( 'safe', false ) !== false ) {
-			$this->safe = true;
-		}
-		if ( $this->getOption( 'auto', false ) !== false ) {
-			$this->autoMigrate = true;
-		}
-		if ( $this->getOption( 'resettoken', false ) !== false ) {
-			$this->resetToken = true;
-		}
-
-		if ( $this->getOption( 'suppressrc', false ) !== false ) {
-			$this->suppressRC = true;
-		}
+		$this->safe = $this->hasOption( 'safe' );
+		$this->autoMigrate = $this->hasOption( 'auto' );
+		$this->resetToken = $this->hasOption( 'resettoken' );
+		$this->suppressRC = $this->hasOption( 'suppressrc' );
 
 		// Check to see if we are processing a single username
-		if ( $this->getOption( 'username', false ) !== false ) {
+		if ( $this->hasOption( 'username' ) ) {
 			$username = $this->getOption( 'username' );
-			$homewiki = $this->getOption( 'homewiki', null );
+			$homewiki = $this->getOption( 'homewiki' );
 			$this->migrate( $username, $homewiki );
 
-		} elseif ( $this->getOption( 'userlist', false ) !== false ) {
+		} elseif ( $this->hasOption( 'userlist' ) ) {
 			$list = $this->getOption( 'userlist' );
 			if ( !is_file( $list ) ) {
 				$this->output( "ERROR - File not found: $list" );
@@ -135,7 +122,7 @@ class MigrateAccount extends Maintenance {
 						$this->output( "ERROR: Invalid account specification: '$line'\n" );
 						break;
 				}
-				if ( $this->total % $this->mBatchSize == 0 ) {
+				if ( $this->total % $this->mBatchSize === 0 ) {
 					$this->output( "Waiting for replicas to catch up ... " );
 					$this->waitForReplication();
 					$this->output( "done\n" );
@@ -176,7 +163,7 @@ class MigrateAccount extends Maintenance {
 			$this->output( "INFO: A global account already exists for: $username\n" );
 
 			if (
-				$this->getOption( 'attachmissing', false )
+				$this->hasOption( 'attachmissing' )
 				&& $central->getEmailAuthenticationTimestamp() !== null
 			) {
 				foreach ( $unattached as $wiki => $local ) {
@@ -190,7 +177,7 @@ class MigrateAccount extends Maintenance {
 				}
 			}
 
-			if ( $this->getOption( 'attachbroken', false ) ) {
+			if ( $this->hasOption( 'attachbroken' ) ) {
 				// This option is for T63876 / T41996 where the account has
 				// an empty password and email set, and became unattached.
 				// Since there is no way an account can have an empty password manually
@@ -212,7 +199,7 @@ class MigrateAccount extends Maintenance {
 			/**
 			 * Migration without an existing global account
 			 */
-			if ( count( $unattached ) == 0 ) {
+			if ( count( $unattached ) === 0 ) {
 				$this->output( "ERROR: No local accounts found for: $username\n" );
 				return;
 			}
@@ -250,7 +237,7 @@ class MigrateAccount extends Maintenance {
 				break;
 			}
 
-			// All of the emails are the same and confirmed? Merge all the accounts.
+			// All the email addresses are the same and confirmed? Merge all the accounts.
 			// They aren't? Skip, or merge the winner if --auto was specified.
 			if ( $emailMatch ) {
 				$this->output( "Email addresses match and are confirmed for: $username\n" );
@@ -266,15 +253,19 @@ class MigrateAccount extends Maintenance {
 		}
 		$unattachedAfter = $central->queryUnattached();
 
-		if ( count( $unattachedAfter ) == 0 ) {
+		if ( count( $unattachedAfter ) === 0 ) {
 			$this->migrated++;
 			return;
-		} elseif ( count( $unattachedAfter ) > 0 &&
+		}
+
+		if (
+			count( $unattachedAfter ) > 0 &&
 			count( $unattachedAfter ) < count( $unattached )
 		) {
 			$this->partial++;
 			$this->output( "INFO: Incomplete migration for '$username'\n" );
 		}
+
 		if ( $this->resetToken ) {
 			$this->output( "INFO: Resetting CentralAuth auth token for '$username'\n" );
 			$central->resetAuthToken();
