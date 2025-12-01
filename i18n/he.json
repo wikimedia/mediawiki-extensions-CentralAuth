@@ -219,7 +219,7 @@
 	"centralauth-error-badtoken-title": "אסימון כתובת URL לחזרה בלתי־תקין",
 	"centralauth-error-sul3-expired": "האימות הצליח אבל ההתחברות שלך פגה. נא ללחוץ על \"{{int:pt-login}}\" כדי לשחזר אותה.",
 	"centralauth-error-locked": "אין באפשרותך לערוך כיוון שהחשבון שלך נעול.",
-	"centralauth-error-nologinattempt": "אין ניסיון כניסה בהתחברות הנוכחית.",
+	"centralauth-error-nologinattempt": "לא היה אפשר ליצור התחברות פעילה. ייתכן שהסיבה לכך היא שהדפדפן שלך אינו מאחסן עוגיות.",
 	"centralauth-error-token-wrongattempt": "קוד האימות אינו מתאים בניסיון הכניסה הנוכחי.\nייתכן שמישהו מנסה להיכנס במקומך.",
 	"centralauth-error-token-wronguser": "קוד האימות אינו תואם את שם המשתמש שלך בהתחברות הזאת.\nייתכן שמישהו מנסה להכניס אותך לחשבון זדוני.\nאם רק ניסית להיכנס בתור משתמש אחר, אנא להתנתק תחילה.",
 	"centralauth-error-wrongprovider": "הדף המיוחד הזה אינו זמין בעת שימוש ב{{GRAMMAR:תחילית|$1}}.",
