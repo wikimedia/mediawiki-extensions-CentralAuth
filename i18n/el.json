@@ -46,7 +46,7 @@
 	"centralauth-admin-action-hide-oversight": "Πλήρης απόκρυψη επιλεγμένων λογαριασμών",
 	"centralauth-admin-action-lock-lock": "Κλείδωμα επιλεγμένων λογαριασμών",
 	"centralauth-admin-already-unmerged": "Παράβλεψη του $1, η αποσύζευξη έχει ήδη πραγματοποιηθεί",
-	"centralauth-admin-bad-input": "Η επιλογή για την συγχώνευση είναι άκυρη",
+	"centralauth-admin-bad-input": "Μη έγκυρη επιλογή συγχώνευσης.",
 	"centralauth-admin-blocked-reason": "Αιτία: $1",
 	"centralauth-admin-blocked2": "Υπό φραγή, λήγει $2 στις $3.",
 	"centralauth-admin-blocked2-indef": "Υπό φραγή επ' αόριστο.",
