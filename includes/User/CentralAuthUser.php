@@ -3045,6 +3045,14 @@ class CentralAuthUser implements IDBAccessObject {
 				->fetchRow();
 		}
 		if ( !$row ) {
+			// temporary hack for T385310: break through repeatable read snapshots
+			$seenWithLock = (bool)$db->newSelectQueryBuilder()
+				->select( $fields )
+				->from( 'user' )
+				->where( $conds )
+				->lockInShareMode()
+				->caller( __METHOD__ )
+				->fetchRow();
 			$ex = new LocalUserNotFoundException(
 				'Could not find local user data for {username}@{wikiId}',
 				[ 'username' => $this->mName, 'wikiId' => $wikiID ]
@@ -3055,6 +3063,8 @@ class CentralAuthUser implements IDBAccessObject {
 					'username' => $this->mName,
 					'wikiId' => $wikiID,
 					'exception' => $ex,
+					'T385310_uses_primary_ca' => $this->shouldUsePrimaryDB(),
+					'T385310_seenWithLock' => $seenWithLock,
 				]
 			);
 			throw $ex;
