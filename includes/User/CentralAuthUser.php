@@ -140,6 +140,7 @@ class CentralAuthUser implements IDBAccessObject {
 	/** @var \Psr\Log\LoggerInterface */
 	private $logger;
 	private StatsFactory $statsFactory;
+	private WANObjectCache $wanCache;
 
 	/** @var string[] */
 	private static $mCacheVars = [
@@ -201,7 +202,10 @@ class CentralAuthUser implements IDBAccessObject {
 			$this->mFromPrimary = true;
 		}
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
-		$this->statsFactory = MediaWikiServices::getInstance()->getStatsFactory();
+
+		$mwServices = MediaWikiServices::getInstance();
+		$this->statsFactory = $mwServices->getStatsFactory();
+		$this->wanCache = $mwServices->getMainWANObjectCache();
 	}
 
 	/**
@@ -623,10 +627,9 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	private function loadFromCache() {
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
-		$data = $cache->getWithSetCallback(
-			$this->getCacheKey( $cache ),
-			$cache::TTL_DAY,
+		$data = $this->wanCache->getWithSetCallback(
+			$this->getCacheKey( $this->wanCache ),
+			$this->wanCache::TTL_DAY,
 			function ( $oldValue, &$ttl, array &$setOpts ) {
 				$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 				$setOpts += Database::getCacheSetOptions( $dbr );
@@ -649,7 +652,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 				return $data;
 			},
-			[ 'pcTTL' => $cache::TTL_PROC_LONG, 'version' => self::VERSION ]
+			[ 'pcTTL' => $this->wanCache::TTL_PROC_LONG, 'version' => self::VERSION ]
 		);
 
 		$this->loadFromCacheObject( $data );
@@ -962,14 +965,13 @@ class CentralAuthUser implements IDBAccessObject {
 			return $this->queryForBlocks( $wikis );
 		}
 
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
-		$cacheKey = $cache->makeGlobalKey(
+		$cacheKey = $this->wanCache->makeGlobalKey(
 			'centralauthuser-getblocks',
 			$centralId
 		);
-		$blocksByWikiId = $cache->getWithSetCallback(
+		$blocksByWikiId = $this->wanCache->getWithSetCallback(
 			$cacheKey,
-			$cache::TTL_MONTH,
+			$this->wanCache::TTL_MONTH,
 			function ( $oldValue ) use ( $wikis ) {
 				if ( is_array( $oldValue ) ) {
 					$oldWikis = array_keys( $oldValue );
@@ -2862,11 +2864,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return string[] List of group names where the user is a member on at least one wiki
 	 */
 	public function getLocalGroups() {
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		// Cache is invalidated in onUserGroupsChanged() hook handler, so we can use long TTL
-		return $cache->getWithSetCallback(
-			$cache->makeGlobalKey( 'centralauthuser-getlocalgroups', $this->getId() ),
-			$cache::TTL_MONTH,
+		return $this->wanCache->getWithSetCallback(
+			$this->wanCache->makeGlobalKey( 'centralauthuser-getlocalgroups', $this->getId() ),
+			$this->wanCache::TTL_MONTH,
 			function () {
 				$localgroups = [];
 				foreach ( $this->queryAttached() as $local ) {
