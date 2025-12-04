@@ -694,27 +694,46 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Return the local user account ID of the user with the same name on given wiki,
-	 * irrespective of whether it is attached or not
+	 * Return the local user `user` table fields of the user with the same name on given wiki,
+	 * irrespective of whether it is attached or not.
+	 *
 	 * @param string $wikiId ID for the local database to connect to
+	 * @param array $fields List of `user` table fields to fetch
+	 * @param int $recency Bitfield of IDBAccessObject::READ_* constants.
+	 *  Supports READ_LATEST_IMMUTABLE to attempt reading from replica first and fall back to primary if not found.
+	 * @return stdClass|null Query result. Null if $wikiID is invalid or local user doesn't exist
+	 */
+	public function getLocalUserFields( $wikiId, array $fields, int $recency = IDBAccessObject::READ_NORMAL ) {
+		$db = CentralAuthServices::getDatabaseManager()->getLocalDBFromRecency( $wikiId, $recency );
+		$row = $db->newSelectQueryBuilder()
+			->select( $fields )
+			->from( 'user' )
+			->where( [ 'user_name' => $this->mName ] )
+			->recency( $recency )
+			->caller( __METHOD__ )
+			->fetchRow();
+
+		if ( !$row && DBAccessObjectUtils::hasFlags( $recency, IDBAccessObject::READ_LATEST_IMMUTABLE ) ) {
+			// If not found in replica, and a fallback to primary was requested, try again
+			$row = $this->getLocalUserFields( $wikiId, $fields, $recency & IDBAccessObject::READ_LATEST );
+		}
+
+		return $row ?: null;
+	}
+
+	/**
+	 * Return the local user account ID of the user with the same name on given wiki,
+	 * irrespective of whether it is attached or not.
+	 *
+	 * @param string $wikiId ID for the local database to connect to
+	 * @param int $recency Bitfield of IDBAccessObject::READ_* constants.
+	 *  Supports READ_LATEST_IMMUTABLE to attempt reading from replica first and fall back to primary if not found.
 	 * @return int|null Local user ID for given $wikiID. Null if $wikiID is invalid or local user
 	 *  doesn't exist
 	 */
-	public function getLocalId( $wikiId ) {
-		// Make sure the wiki ID is valid. (This prevents DBConnectionError in unit tests)
-		$wikiList = CentralAuthServices::getWikiListService()->getWikiList();
-		if ( !in_array( $wikiId, $wikiList ) ) {
-			return null;
-		}
-		// Retrieve the local user ID from the specified database.
-		$db = CentralAuthServices::getDatabaseManager()->getLocalDB( DB_PRIMARY, $wikiId );
-		$id = $db->newSelectQueryBuilder()
-			->select( 'user_id' )
-			->from( 'user' )
-			->where( [ 'user_name' => $this->mName ] )
-			->caller( __METHOD__ )
-			->fetchField();
-		return $id ? (int)$id : null;
+	public function getLocalId( $wikiId, int $recency = IDBAccessObject::READ_NORMAL ) {
+		$row = $this->getLocalUserFields( $wikiId, [ 'user_id' ], $recency );
+		return $row ? (int)$row->user_id : null;
 	}
 
 	/**
@@ -800,16 +819,10 @@ class CentralAuthUser implements IDBAccessObject {
 			if ( $this->isAttached() ) {
 				$this->mExistsLocally = true;
 			} else {
-				$db = CentralAuthServices::getDatabaseManager()->getLocalDB(
-					$this->mFromPrimary ? DB_PRIMARY : DB_REPLICA,
-					WikiMap::getCurrentWikiId()
+				$this->mExistsLocally = (bool)$this->getLocalId(
+					WikiMap::getCurrentWikiId(),
+					$this->mFromPrimary ? IDBAccessObject::READ_LATEST : IDBAccessObject::READ_NORMAL,
 				);
-				$this->mExistsLocally = (bool)$db->newSelectQueryBuilder()
-					->select( 'user_id' )
-					->from( 'user' )
-					->where( [ 'user_name' => $this->getName() ] )
-					->caller( __METHOD__ )
-					->fetchField();
 			}
 		}
 		return $this->mExistsLocally;
@@ -868,27 +881,9 @@ class CentralAuthUser implements IDBAccessObject {
 		$blocksByWikiId = [];
 
 		foreach ( $wikis as $wikiId => $_ ) {
-			$db = $dbm->getLocalDB( DB_REPLICA, $wikiId );
-			$fields = [ 'user_id' ];
-			$conds = [ 'user_name' => $this->mName ];
+			$localUserId = $this->getLocalId( $wikiId, IDBAccessObject::READ_LATEST_IMMUTABLE );
 
-			$row = $db->newSelectQueryBuilder()
-				->select( $fields )
-				->from( 'user' )
-				->where( $conds )
-				->caller( __METHOD__ )
-				->fetchRow();
-			if ( !$row ) {
-				# Row missing from replica, try the primary database instead
-				$db = $dbm->getLocalDB( DB_PRIMARY, $wikiId );
-				$row = $db->newSelectQueryBuilder()
-					->select( $fields )
-					->from( 'user' )
-					->where( $conds )
-					->caller( __METHOD__ )
-					->fetchRow();
-			}
-			if ( !$row ) {
+			if ( !$localUserId ) {
 				$ex = new LocalUserNotFoundException(
 					'Could not find local user data for {username}@{wikiId}',
 					[ 'username' => $this->mName, 'wikiId' => $wikiId ]
@@ -913,7 +908,7 @@ class CentralAuthUser implements IDBAccessObject {
 				->getDatabaseBlockStore( $wikiId );
 			$blocksByWikiId[$wikiId] = $blockStore->newListFromConds(
 				[
-					'bt_user' => $row->user_id,
+					'bt_user' => $localUserId,
 					// SECURITY: The user might not have permissions to view suppress blocks
 					// on the foreign wiki (T400892).
 					'bl_deleted' => 0,
@@ -2426,7 +2421,7 @@ class CentralAuthUser implements IDBAccessObject {
 				'lu_name'               => $this->mName,
 				'lu_attached_timestamp' => $dbcw->timestamp( $ts ),
 				'lu_attached_method'    => $method,
-				'lu_local_id'           => $this->getLocalId( $wikiID ),
+				'lu_local_id'           => $this->getLocalId( $wikiID, IDBAccessObject::READ_LATEST ),
 				'lu_global_id'          => $this->getId()
 			] )
 			->caller( __METHOD__ )
@@ -2484,15 +2479,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $wikiID
 	 */
 	protected function addLocalEdits( $wikiID ) {
-		$dblw = CentralAuthServices::getDatabaseManager()->getLocalDB( DB_PRIMARY, $wikiID );
-		$editCount = $dblw->newSelectQueryBuilder()
-			->select( 'user_editcount' )
-			->from( 'user' )
-			->where( [ 'user_name' => $this->mName ] )
-			->caller( __METHOD__ )
-			->fetchField();
-		$counter = CentralAuthServices::getEditCounter();
-		$counter->increment( $this, $editCount );
+		$row = $this->getLocalUserFields( $wikiID, [ 'user_editcount' ], IDBAccessObject::READ_LATEST );
+		if ( $row ) {
+			$counter = CentralAuthServices::getEditCounter();
+			$counter->increment( $this, $row->user_editcount );
+		}
 	}
 
 	/**
@@ -2993,7 +2984,6 @@ class CentralAuthUser implements IDBAccessObject {
 			throw new LocalUserNotFoundException( 'Could not find {wikiId}', [ 'wikiId' => $wikiID ] );
 		}
 
-		$db = $databaseManager->getLocalDB( DB_REPLICA, $wikiID );
 		$fields = [
 			'user_id',
 			'user_email',
@@ -3003,32 +2993,10 @@ class CentralAuthUser implements IDBAccessObject {
 			'user_editcount',
 			'user_registration',
 		];
-		$conds = [ 'user_name' => $this->mName ];
-		$row = $db->newSelectQueryBuilder()
-			->select( $fields )
-			->from( 'user' )
-			->where( $conds )
-			->caller( __METHOD__ )
-			->fetchRow();
-		if ( !$row ) {
-			# Row missing from replica, try the primary database instead
-			$db = $databaseManager->getLocalDB( DB_PRIMARY, $wikiID );
-			$row = $db->newSelectQueryBuilder()
-				->select( $fields )
-				->from( 'user' )
-				->where( $conds )
-				->caller( __METHOD__ )
-				->fetchRow();
-		}
+		$row = $this->getLocalUserFields( $wikiID, $fields, IDBAccessObject::READ_LATEST_IMMUTABLE );
 		if ( !$row ) {
 			// temporary hack for T385310: break through repeatable read snapshots
-			$seenWithLock = (bool)$db->newSelectQueryBuilder()
-				->select( $fields )
-				->from( 'user' )
-				->where( $conds )
-				->lockInShareMode()
-				->caller( __METHOD__ )
-				->fetchRow();
+			$seenWithLock = (bool)$this->getLocalUserFields( $wikiID, $fields, IDBAccessObject::READ_LOCKING );
 			$ex = new LocalUserNotFoundException(
 				'Could not find local user data for {username}@{wikiId}',
 				[ 'username' => $this->mName, 'wikiId' => $wikiID ]
@@ -3062,6 +3030,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		// Edit count field may not be initialized...
 		if ( $row->user_editcount === null ) {
+			$db = $databaseManager->getLocalDB( DB_REPLICA, $wikiID );
 			$data['editCount'] = $db->newSelectQueryBuilder()
 				->select( 'COUNT(*)' )
 				->from( 'revision' )

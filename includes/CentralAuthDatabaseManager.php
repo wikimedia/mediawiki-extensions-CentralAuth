@@ -139,6 +139,18 @@ class CentralAuthDatabaseManager {
 	}
 
 	/**
+	 * @param string $wikiId
+	 * @param int $recency IDBAccessObject::READ_* constant
+	 */
+	public function getLocalDBFromRecency( string $wikiId, int $recency ): IReadableDatabase {
+		if ( DBAccessObjectUtils::hasFlags( $recency, IDBAccessObject::READ_LATEST ) ) {
+			return $this->getLocalDB( DB_PRIMARY, $wikiId );
+		} else {
+			return $this->getLocalDB( DB_REPLICA, $wikiId );
+		}
+	}
+
+	/**
 	 * Check hasOrMadeRecentPrimaryChanges() on the CentralAuth load balancer
 	 *
 	 * @return bool

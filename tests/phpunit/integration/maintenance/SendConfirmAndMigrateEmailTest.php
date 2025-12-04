@@ -55,7 +55,8 @@ class SendConfirmAndMigrateEmailTest extends MaintenanceBaseTestCase {
 				'getCentralDBFromRecency',
 				'getCentralPrimaryDB',
 				'getCentralReplicaDB',
-				'getLocalDB'
+				'getLocalDB',
+				'getLocalDBFromRecency',
 			)
 		)->willReturn( $this->getDb() );
 

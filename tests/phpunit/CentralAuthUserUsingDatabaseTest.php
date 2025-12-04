@@ -180,10 +180,15 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testAttach() {
+		// This test can't connect to 'anotherwiki' to fetch edit counts,
+		// override the functions that would try to do it
 		$caUser = new class( $this->getTestCentralAuthUserWithExistingLocalWikis() ) extends CentralAuthUser {
 
 			protected function addLocalEdits( $wikiID ) {
-				// This test can't connect to anotherwiki to fetch edit counts
+			}
+
+			public function getLocalId( $wikiId, int $recency = IDBAccessObject::READ_NORMAL ) {
+				return null;
 			}
 		};
 		$this->assertNotContains( 'anotherwiki', $caUser->listAttached() );
