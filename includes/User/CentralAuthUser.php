@@ -1491,8 +1491,12 @@ class CentralAuthUser implements IDBAccessObject {
 		$unattached = [];
 
 		// First, make sure we were given the current wiki's password.
-		$self = $this->localUserData( WikiMap::getCurrentWikiId() );
-		$selfPassword = $this->getPasswordFromString( $self['password'], $self['id'] );
+		$selfRow = $this->getLocalUserFields(
+			WikiMap::getCurrentWikiId(),
+			[ 'user_password', 'user_id' ],
+			IDBAccessObject::READ_LATEST_IMMUTABLE
+		);
+		$selfPassword = $this->getPasswordFromString( $selfRow->user_password, $selfRow->user_id );
 		if ( !$this->matchHashes( $passwords, $selfPassword ) ) {
 			$this->logger->info( 'dry run: failed self-password check' );
 			return Status::newFatal( 'wrongpassword' );
@@ -2325,7 +2329,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$databaseManager = CentralAuthServices::getDatabaseManager();
 		$dbw = $databaseManager->getLocalDB( DB_PRIMARY, $wiki );
-		$data = $this->localUserData( $wiki );
+		$localUserId = $this->getLocalId( $wiki, IDBAccessObject::READ_LATEST_IMMUTABLE );
 
 		$wikiId = $wiki === WikiMap::getCurrentWikiId() ? WikiAwareEntity::LOCAL : $wiki;
 
@@ -2342,7 +2346,7 @@ class CentralAuthUser implements IDBAccessObject {
 				->inLanguage( $lang )->text();
 
 			$block = $blockStore->newUnsaved( [
-				'targetUser' => UserIdentityValue::newRegistered( $data['id'], $this->mName, $wikiId ),
+				'targetUser' => UserIdentityValue::newRegistered( $localUserId, $this->mName, $wikiId ),
 				'wiki' => $wikiId,
 				'reason' => $blockReason,
 				'timestamp' => wfTimestampNow(),
@@ -2364,12 +2368,12 @@ class CentralAuthUser implements IDBAccessObject {
 			}
 			# Ditto for BlockIpComplete hook.
 
-			RevisionDeleteUser::suppressUserName( $this->mName, $data['id'], $dbw );
+			RevisionDeleteUser::suppressUserName( $this->mName, $localUserId, $dbw );
 
 			# Locally log to suppress ?
 		} else {
 			$affected = $blockStore->deleteBlocksMatchingConds( [
-				'bt_user' => $data['id'],
+				'bt_user' => $localUserId,
 				// Our blocks don't have a user associated
 				'bl_by' => null,
 				'bl_deleted' => true,
@@ -2377,7 +2381,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 			// Unsuppress only if unblocked
 			if ( $affected ) {
-				RevisionDeleteUser::unsuppressUserName( $this->mName, $data['id'], $dbw );
+				RevisionDeleteUser::unsuppressUserName( $this->mName, $localUserId, $dbw );
 			}
 		}
 		return null;
@@ -2960,8 +2964,10 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Fetch a row of user data needed for migration.
-	 *
 	 * Returns most data in the user and ipblocks tables, user groups, and editcount.
+	 *
+	 * Only intended for use by queryAttached() and queryUnattached(). For other purposes,
+	 * fetch the fields you need with getLocalUserFields() or getLocalId().
 	 *
 	 * @param string $wikiID
 	 * @throws LocalUserNotFoundException if local user not found
