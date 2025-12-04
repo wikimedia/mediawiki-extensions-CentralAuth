@@ -2888,7 +2888,10 @@ class CentralAuthUser implements IDBAccessObject {
 			$this->wanCache::TTL_MONTH,
 			function () {
 				$localgroups = [];
-				foreach ( $this->queryAttached() as $local ) {
+				// T385310: Read attached accounts from replicas to avoid warnings about accounts
+				// which are just being created. Any newly created accounts are probably not in any
+				// interesting local groups, so this is fine.
+				foreach ( $this->queryAttached( IDBAccessObject::READ_NORMAL ) as $local ) {
 					$localgroups = array_unique( array_merge(
 						$localgroups, array_keys( $local['groupMemberships'] )
 					) );
@@ -2901,13 +2904,14 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Get information about each local user attached to this account
 	 *
+	 * @param int $recency Bitfield of IDBAccessObject::READ_* constants
 	 * @return array[] Map of database name to property table with members:
 	 *    wiki                  The wiki ID (database name)
 	 *    attachedTimestamp     The MW timestamp when the account was attached
 	 *    attachedMethod        Attach method: see {@link CentralAuthUser::attach()}.
 	 *    ...                   All information returned by localUserData()
 	 */
-	public function queryAttached() {
+	public function queryAttached( int $recency = IDBAccessObject::READ_LATEST_IMMUTABLE ) {
 		// Cache $wikis to avoid expensive query whenever possible
 		// mAttachedInfo is shared with queryAttachedBasic(); check whether it contains partial data
 		if (
@@ -2921,7 +2925,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		foreach ( $wikis as $wikiId => $_ ) {
 			try {
-				$localUser = $this->localUserData( $wikiId );
+				$localUser = $this->localUserData( $wikiId, $recency );
 				$wikis[$wikiId] = array_merge( $wikis[$wikiId], $localUser );
 			} catch ( LocalUserNotFoundException ) {
 				// T119736: localuser table told us that the user was attached
@@ -2988,16 +2992,17 @@ class CentralAuthUser implements IDBAccessObject {
 	 * some global account.
 	 * Formatted as associative array with some data.
 	 *
+	 * @param int $recency Bitfield of IDBAccessObject::READ_* constants
 	 * @throws Exception
 	 * @return array[]
 	 */
-	public function queryUnattached() {
+	public function queryUnattached( int $recency = IDBAccessObject::READ_LATEST_IMMUTABLE ) {
 		$wikiIDs = $this->listUnattached();
 
 		$items = [];
 		foreach ( $wikiIDs as $wikiID ) {
 			try {
-				$items[$wikiID] = $this->localUserData( $wikiID );
+				$items[$wikiID] = $this->localUserData( $wikiID, $recency );
 			} catch ( LocalUserNotFoundException ) {
 				// T119736: localnames table told us that the name was
 				// unattached on $wikiId but there is no data in the primary database
@@ -3018,10 +3023,11 @@ class CentralAuthUser implements IDBAccessObject {
 	 * fetch the fields you need with getLocalUserFields() or getLocalId().
 	 *
 	 * @param string $wikiID
+	 * @param int $recency Bitfield of IDBAccessObject::READ_* constants
 	 * @throws LocalUserNotFoundException if local user not found
 	 * @return array
 	 */
-	private function localUserData( $wikiID ) {
+	private function localUserData( $wikiID, int $recency ) {
 		$mwServices = MediaWikiServices::getInstance();
 		$databaseManager = CentralAuthServices::getDatabaseManager();
 
@@ -3047,24 +3053,26 @@ class CentralAuthUser implements IDBAccessObject {
 			'user_editcount',
 			'user_registration',
 		];
-		$row = $this->getLocalUserFields( $wikiID, $fields, IDBAccessObject::READ_LATEST_IMMUTABLE );
+		$row = $this->getLocalUserFields( $wikiID, $fields, $recency );
 		if ( !$row ) {
-			// temporary hack for T385310: break through repeatable read snapshots
-			$seenWithLock = (bool)$this->getLocalUserFields( $wikiID, $fields, IDBAccessObject::READ_LOCKING );
 			$ex = new LocalUserNotFoundException(
 				'Could not find local user data for {username}@{wikiId}',
 				[ 'username' => $this->mName, 'wikiId' => $wikiID ]
 			);
-			$this->logger->warning(
-				'Could not find local user data for {username}@{wikiId}',
-				[
-					'username' => $this->mName,
-					'wikiId' => $wikiID,
-					'exception' => $ex,
-					'T385310_uses_primary_ca' => $this->shouldUsePrimaryDB(),
-					'T385310_seenWithLock' => $seenWithLock,
-				]
-			);
+			// (T385310) Only log a warning if we queried the primary database
+			if (
+				DBAccessObjectUtils::hasFlags( $recency, IDBAccessObject::READ_LATEST ) ||
+				DBAccessObjectUtils::hasFlags( $recency, IDBAccessObject::READ_LATEST_IMMUTABLE )
+			) {
+				$this->logger->warning(
+					'Could not find local user data for {username}@{wikiId}',
+					[
+						'username' => $this->mName,
+						'wikiId' => $wikiID,
+						'exception' => $ex,
+					]
+				);
+			}
 			throw $ex;
 		}
 
