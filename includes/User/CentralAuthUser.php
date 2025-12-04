@@ -2701,19 +2701,7 @@ class CentralAuthUser implements IDBAccessObject {
 			return [];
 		}
 
-		return $this->doListUnattached();
-	}
-
-	/**
-	 * @return string[]
-	 */
-	private function doListUnattached() {
-		$databaseManager = CentralAuthServices::getDatabaseManager();
-		// Make sure lazy-loading in listUnattached() works, as we
-		// may need to *switch* to using the primary DB for this query
-		$db = $databaseManager->centralLBHasRecentPrimaryChanges()
-			? $databaseManager->getCentralPrimaryDB()
-			: $this->getSafeReadDB();
+		$db = $this->getSafeReadDB();
 
 		$result = $db->newSelectQueryBuilder()
 			->select( 'ln_wiki' )
