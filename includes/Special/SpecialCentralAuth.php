@@ -229,17 +229,12 @@ class SpecialCentralAuth extends SpecialPage {
 		}
 
 		// Show just a user friendly message when a rename is in progress
-		try {
-			$this->mAttachedLocalAccounts = $globalUser->queryAttached();
-		} catch ( Exception $e ) {
-			if ( $globalUser->renameInProgress() ) {
-				$this->showRenameInProgressError();
-				return;
-			}
-			// Rethrow
-			throw $e;
+		if ( $globalUser->renameInProgress() ) {
+			$this->showRenameInProgressError();
+			return;
 		}
 
+		$this->mAttachedLocalAccounts = $globalUser->queryAttached();
 		$this->mUnattachedLocalAccounts = $globalUser->queryUnattached();
 
 		if ( !$globalUser->exists() && !count( $this->mUnattachedLocalAccounts ) ) {
