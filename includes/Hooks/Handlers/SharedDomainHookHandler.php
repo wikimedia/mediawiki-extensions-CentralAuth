@@ -479,7 +479,10 @@ class SharedDomainHookHandler implements
 	 * @inheritDoc
 	 */
 	public function onLoginFormValidErrorMessages( array &$messages ) {
-		$messages[] = 'centralauth-warning-reauth';
+		$userIsLoggedIn = RequestContext::getMain()->getUser()->isNamed();
+		if ( $this->sharedDomainUtils->isSharedDomain() && !$userIsLoggedIn ) {
+			$messages[] = 'centralauth-warning-reauth';
+		}
 	}
 
 	/**
