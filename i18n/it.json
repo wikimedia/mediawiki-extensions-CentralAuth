@@ -115,7 +115,7 @@
 	"centralauth-admin-status-hidden-list": "L'account è nascosto dall'elenco globale degli utenti",
 	"centralauth-admin-status-hidden-no": "L'account non è nascosto",
 	"centralauth-admin-status-hidden-oversight": "L'account è completamente nascosto",
-	"centralauth-admin-status-intro": "È possibile utilizzare questo modulo per modificare lo stato di questo utente globale",
+	"centralauth-admin-status-intro": "È possibile utilizzare questo modulo per modificare lo stato di quest'utenza globale",
 	"centralauth-admin-status-locked": "Bloccato:",
 	"centralauth-admin-status-locked-no": "L'account non è bloccato",
 	"centralauth-admin-status-locked-yes": "L'account è bloccato",

@@ -136,6 +136,7 @@
 	"centralauth-completelogin-back": "Назад на претходну страницу.",
 	"centralauth-contribs-locked": "Овај налог је глобално закључан.\nЗа више информација погледајте [[Special:CentralAuth/$1]].",
 	"centralauth-contribs-locked-log": "Овај налог је глобално закључан.\nПоследње закључавање је наведено испод:",
+	"centralauth-createlocal-no-global-account": "Не постоји глобални налог.",
 	"centralauth-createlocal-pretext": "Образац за прављење локалног налога за глобални налог ако то није могуће аутоматски из неког разлога.",
 	"centralauth-createlocal-reason": "Разлог:",
 	"centralauth-createlocal-success": "Локални налог је направљен.",

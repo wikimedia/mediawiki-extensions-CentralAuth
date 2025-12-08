@@ -125,7 +125,7 @@
 	"centralauth-globalgroupperms-management": "व्यवस्थापन",
 	"centralauth-globalgroupperms-newgroupname": "नयाँ समूहको नाम:",
 	"centralauth-globalgroupperms-rights": "अधिकारहरू",
-	"centralauth-hours-ago": "$1 {{PLURAL:$1|घण्टा|घण्टा}} अघि",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|घन्टा|घन्टा}} अघि",
 	"centralauth-incomplete": "प्रवेश सम्बन्धित एकीकरण पूर्ण भएन!",
 	"centralauth-incomplete-text": "तपाईंको प्रवेश एकपल्ट एकीकृत भएपछि {{int:Centralauth-groupname}}को कुनै पनि साइटमा खाता नबनाई प्रवेश गर्न सक्नु हुन्छ",
 	"centralauth-invalid-wiki": "त्यस्तो विकी आँकडा नभएको: $1",

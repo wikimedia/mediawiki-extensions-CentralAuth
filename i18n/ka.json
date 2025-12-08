@@ -13,7 +13,8 @@
 			"Otogi",
 			"Tokoko",
 			"გიორგიმელა",
-			"Გიო ოქრო"
+			"Გიო ოქრო",
+			"Mehman97"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "მომხმარებლის გლობალური ჯგუფები",
@@ -324,6 +325,7 @@
 	"centralautologin": "გლობალური შესვლა",
 	"centrallogin": "ცენტრალური შესვლა სისტემაში",
 	"centralloginsuccesful": "შესვლა განხორციელდა",
+	"createlocalaccount": "ლოკალური ანგარიშის იძულებით შექმნა",
 	"globalgroupmembership": "წევრობა გლობალურ ჯგუფებში",
 	"globalgrouppermissions": "გლობალური ჯგუფების მართვა",
 	"globalrenameprogress": "გლობალური გადარქმევის პროგრესი",
