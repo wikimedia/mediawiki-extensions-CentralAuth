@@ -107,7 +107,23 @@ class CentralAuthCreateLocalTest extends MediaWikiIntegrationTestCase {
 		$this->assertNotEquals( 0, User::newFromName( $name )->getId() );
 	}
 
-	public function testWithNonAttachedUser() {
+	public static function provideWithNonAttachedUser() {
+		return [
+			'CreateLocalAccount from an unblocked source IP' => [
+				'blockSourceIP' => false,
+				'msg' => 'Autocreation failed unexpectedly',
+			],
+			'CreateLocalAccount from a blocked source IP' => [
+				'blockSourceIP' => true,
+				'msg' => 'Autocreation failed unexpectedly despite ipblock-exempt permission',
+			],
+		];
+	}
+
+	/**
+	 * @dataProvider provideWithNonAttachedUser
+	 */
+	public function testWithNonAttachedUser( bool $blockSourceIP, string $msg ) {
 		$name = self::USERNAME_NOT_ATTACHED;
 
 		$u = new CentralAuthTestUser(
@@ -122,13 +138,29 @@ class CentralAuthCreateLocalTest extends MediaWikiIntegrationTestCase {
 		$u->save( $this->getDb() );
 
 		// Make sure we have a named user set with the request.
-		RequestContext::getMain()->setUser( $this->getTestUser()->getUser() );
+		$performer = $this->getTestSysop()->getUser();
+		$this->assertTrue( $performer->isAllowed( 'centralauth-createlocal' ) );
+		if ( $blockSourceIP ) {
+			$this->assertTrue( $performer->isAllowed( 'ipblock-exempt' ) );
+		}
+		$context = RequestContext::getMain();
+		$context->setUser( $performer );
+
+		// Block the context user's source IP: this block should be bypassed
+		if ( $blockSourceIP ) {
+			$status = $this->getServiceContainer()->getBlockUserFactory()->newBlockUser(
+				$context->getRequest()->getIP(), $this->getTestSysop()->getAuthority(), 'infinity',
+				'', [ 'isCreateAccountBlocked' => true ]
+			)->placeBlock();
+			$this->assertStatusOK( $status, 'Block was not placed' );
+		}
+
 		$result = $this->specialCreateLocalAccount->onSubmit( [
 			'username' => $name,
 			'reason' => 'Test reason',
 		] );
 
-		$this->assertStatusGood( $result );
+		$this->assertStatusGood( $result, $msg );
 		$this->assertNotEquals( 0, User::newFromName( $name )->getId() );
 	}
 }
