@@ -546,17 +546,6 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		// so this cookie is not needed.
 	}
 
-	/** @inheritDoc */
-	protected function setLoggedOutCookie( $loggedOut, WebRequest $request ) {
-		if ( $loggedOut + 86400 > time() &&
-			$loggedOut !== (int)$this->getCookie(
-				$request, 'LoggedOut', $this->centralCookieOptions['prefix'] )
-		) {
-			$request->response()->setCookie( 'LoggedOut', (string)$loggedOut, $loggedOut + 86400,
-				$this->centralCookieOptions );
-		}
-	}
-
 	/**
 	 * @return string[]
 	 */
@@ -566,7 +555,6 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		if ( $this->enable ) {
 			$prefix = $this->centralCookieOptions['prefix'];
 			$cookies[] = $prefix . 'Token';
-			$cookies[] = $prefix . 'LoggedOut';
 			$cookies[] = $this->params['centralSessionName'];
 		}
 
