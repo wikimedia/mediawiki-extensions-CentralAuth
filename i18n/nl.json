@@ -237,7 +237,7 @@
 	"centralauth-error-badtoken-title": "Ongeldige retour-URL-token",
 	"centralauth-error-sul3-expired": "Authenticatie is geslaagd maar uw sessie is verlopen. Klik op \"{{int:pt-login}}\" om deze te herstellen.",
 	"centralauth-error-locked": "U kunt niet bewerken omdat uw account geblokkeerd is.",
-	"centralauth-error-nologinattempt": "Er is geen actieve aanmeldpoging voor uw sessie.",
+	"centralauth-error-nologinattempt": "Er kon geen actieve sessie tot stand worden gebracht. Dit kan komen doordat uw browser geen cookies opslaat.",
 	"centralauth-error-token-wrongattempt": "Het authenticatietoken hoort niet bij uw huidige aanmeldpoging.\nMogelijk probeert iemand anders als u aan te melden.",
 	"centralauth-error-token-wronguser": "Het token hoort niet bij de gebruikersnaam voor uw sessie.\nMogelijk probeert iemand anders als u aan te melden.\nAls u probeert aan te melden als een andere gebruiker, meld u dan eerst af.",
 	"centralauth-error-wrongprovider": "Deze speciale pagina is niet beschikbaar bij het gebruik van $1.",
