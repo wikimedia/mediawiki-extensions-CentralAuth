@@ -5,5 +5,8 @@
 		]
 	},
 	"centralauth-contribs-link": "sijelo pi ma ale",
-	"centralauth-token-mismatch": "pakala a. sona pi awen sina li weka la, mi ken ala kepeken pali sina."
+	"centralauth-log-name": "sijelo pi ma ale la pini",
+	"centralauth-rightslog-name": "lawa pi wawa jan lon ma ale la pini",
+	"centralauth-token-mismatch": "pakala a. sona pi awen sina li weka la, mi ken ala kepeken pali sina.",
+	"log-name-gblrename": "ante pi nimi jan lon ma ale la pini"
 }

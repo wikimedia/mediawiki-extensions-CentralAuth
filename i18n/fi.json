@@ -171,7 +171,7 @@
 	"centralauth-createlocal-username": "Järjestelmänlaajuisen käyttäjätunnuksen nimi",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|päivä|päivää}} sitten",
 	"centralauth-delete-empty-account": "Tyhjä tunnus",
-	"centralauth-desc": "[[Special:MergeAccount|Käyttäjätunnusten yhdistäminen]] sivuston {{int:Centralauth-groupname}} wikeissä.",
+	"centralauth-desc": "[[Special:MergeAccount|Käyttäjätunnusten yhdistäminen]] {{GRAMMAR:genitive|{{int:Centralauth-groupname}}}} wikeissä.",
 	"centralauth-disabled-dryrun": "Tunnusten yhdistäminen on tällä hetkellä kokeilutilassa. Tunnusten yhdistämisoperaatioita ei suoriteta.",
 	"centralauth-editgroup-delete-removemembers": "Sinun on poistettava kaikki jäsenet ryhmästä ennen ryhmän poistamista.",
 	"centralauth-editgroup-display": "Ryhmän käännetty nimi:",
