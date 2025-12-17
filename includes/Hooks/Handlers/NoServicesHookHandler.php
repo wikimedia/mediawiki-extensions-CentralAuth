@@ -58,6 +58,15 @@ class NoServicesHookHandler implements
 			"$baseDir/schema/$dbType/patch-drop-gu_salt.sql",
 			true
 		] );
+
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-centralauth',
+			'addField',
+			'localuser',
+			'lu_attachment_method',
+			"$baseDir/schema/$dbType/patch-add-lu_attachment_method.sql",
+			true
+		] );
 	}
 
 }
