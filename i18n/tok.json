@@ -5,6 +5,7 @@
 		]
 	},
 	"centralauth-contribs-link": "sijelo pi ma ale",
+	"centralauth-contribs-locked": "sijelo ni la ken kepeken li weka lon ma ale. o lukin e [[Special:CentralAuth/$1|sijelo lon ma ale]].",
 	"centralauth-log-name": "sijelo pi ma ale la pini",
 	"centralauth-rightslog-name": "lawa pi wawa jan lon ma ale la pini",
 	"centralauth-token-mismatch": "pakala a. sona pi awen sina li weka la, mi ken ala kepeken pali sina.",
