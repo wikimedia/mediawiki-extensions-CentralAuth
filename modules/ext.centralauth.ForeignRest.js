@@ -42,29 +42,22 @@
 	 * @inheritdoc
 	 */
 	CentralAuthForeignRest.prototype.ajax = function ( path, ajaxOptions ) {
+		ajaxOptions = ajaxOptions || {};
+		const abortable = this.foreignActionApi.makeAbortablePromise( ajaxOptions );
+
 		const self = this,
-			parent = CentralAuthForeignRest.super.prototype.ajax,
-			abortedPromise = $.Deferred().reject(
-				'http',
-				{ textStatus: 'abort', exception: 'abort' }
-			).promise();
-		let tokenPromise,
-			abortable,
-			aborted;
+			parent = CentralAuthForeignRest.super.prototype.ajax;
 
 		// If we know we can't get a 'centralauthtoken', don't request it
+		let tokenPromise;
 		if ( this.noTokenNeeded ) {
 			tokenPromise = $.Deferred().reject();
 		} else {
-			tokenPromise = abortable = self.foreignActionApi.getCentralAuthToken();
+			tokenPromise = self.foreignActionApi.getCentralAuthToken( ajaxOptions );
 		}
 
 		return tokenPromise.then(
 			( centralAuthToken ) => {
-				if ( aborted ) {
-					return abortedPromise;
-				}
-
 				const newAjaxOptions = Object.assign( {}, ajaxOptions );
 				newAjaxOptions.headers = Object.assign( {}, newAjaxOptions.headers, {
 					Authorization: 'CentralAuthToken ' + centralAuthToken
@@ -76,22 +69,12 @@
 					withCredentials: false
 				} );
 
-				return ( abortable = parent.call( self, path, newAjaxOptions ) );
+				return parent.call( self, path, newAjaxOptions );
 			},
-			() => {
-				if ( aborted ) {
-					return abortedPromise;
-				}
-				// We couldn't get the token, but continue anyway, using browser credentials.
-				// This is expected in some cases, like anonymous users.
-				return ( abortable = parent.call( self, path, ajaxOptions ) );
-			}
-		).promise( { abort: function () {
-			aborted = true;
-			if ( abortable && abortable.abort ) {
-				abortable.abort();
-			}
-		} } );
+			// We couldn't get the token, but continue anyway, using browser credentials.
+			// This is expected in some cases, like anonymous users.
+			() => parent.call( self, path, ajaxOptions )
+		).promise( abortable );
 	};
 
 	// Expose
