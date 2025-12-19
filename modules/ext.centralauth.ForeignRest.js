@@ -1,7 +1,7 @@
 ( function () {
 
 	/**
-	 * Extend mw.ForeignRestApi with CentralAuth authentication handling.
+	 * Extend mw.ForeignRest with CentralAuth authentication handling.
 	 *
 	 * Every request to the foreign wiki will be preceded by a 'action=centralauthtoken'
 	 * request to the local wiki. The acquired token will be passed added to the foreign
@@ -14,14 +14,22 @@
 	 *
 	 * @constructor
 	 * @param {string} url URL pointing to another wiki's `rest.php` endpoint.
-	 * @param {mw.ForeignApi} foreignActionApi used for action=centralauthtoken requests
 	 * @param {Object} [options] See mw.RestApi.
-	 * @param {Object} [options.anonymous=false] See mw.ForeignRestApi.
+	 * @param {Object} [options.anonymous=false] See mw.ForeignRest.
+	 * @param {Object} [optionsCompat] No longer used, kept for compatibility.
 	 */
-	function CentralAuthForeignRest( url, foreignActionApi, options ) {
+	function CentralAuthForeignRest( url, options, optionsCompat ) {
 		// Call parent constructor
-		CentralAuthForeignRest.super.call( this, url, foreignActionApi, options );
+		CentralAuthForeignRest.super.call( this, url, options, optionsCompat );
 
+		// For backwards compatibility, we support passing options in the 3rd parameter
+		if ( options instanceof mw.Api ) {
+			options = optionsCompat;
+		}
+
+		// Properties
+		// mw.Api instance used for action=centralauthtoken requests
+		this.localApi = new mw.Api();
 		if ( mw.config.get( 'wgUserName' ) === null || ( options && options.anonymous ) ) {
 			// Anonymous users cannot obtain a centralauthtoken
 			this.noTokenNeeded = true;
@@ -34,7 +42,7 @@
 	 * @inheritDoc
 	 */
 	CentralAuthForeignRest.prototype.abort = function () {
-		this.foreignActionApi.abort();
+		this.localApi.abort();
 		CentralAuthForeignRest.super.prototype.abort.call( this );
 	};
 
@@ -43,7 +51,7 @@
 	 */
 	CentralAuthForeignRest.prototype.ajax = function ( path, ajaxOptions ) {
 		ajaxOptions = ajaxOptions || {};
-		const abortable = this.foreignActionApi.makeAbortablePromise( ajaxOptions );
+		const abortable = this.localApi.makeAbortablePromise( ajaxOptions );
 
 		const self = this,
 			parent = CentralAuthForeignRest.super.prototype.ajax;
@@ -53,7 +61,7 @@
 		if ( this.noTokenNeeded ) {
 			tokenPromise = $.Deferred().reject();
 		} else {
-			tokenPromise = self.foreignActionApi.getCentralAuthToken( ajaxOptions );
+			tokenPromise = self.localApi.getCentralAuthToken( ajaxOptions );
 		}
 
 		return tokenPromise.then(

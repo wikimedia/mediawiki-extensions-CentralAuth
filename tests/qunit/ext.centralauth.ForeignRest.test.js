@@ -12,10 +12,9 @@ QUnit.test( 'Anonymous users do not get centralauthtoken', function ( assert ) {
 		request.respond( 200, { 'Content-Type': 'application/json' }, '[]' );
 	} );
 
-	const actionApi = new mw.ForeignApi( '//localhost:4242/w/api.php' );
-	const spy = this.sandbox.spy( actionApi, 'getCentralAuthToken' );
+	const spy = this.sandbox.spy( mw.Api.prototype, 'getCentralAuthToken' );
 
-	const api = new mw.ForeignRest( '//localhost:4242/w/rest.php', actionApi );
+	const api = new mw.ForeignRest( '//localhost:4242/w/rest.php', null );
 	return api.get( '/hello' ).then( () => {
 		assert.false( spy.called, 'Not called' );
 	} );
@@ -33,15 +32,14 @@ QUnit.test( 'Logged in users always get centralauthtoken', function ( assert ) {
 	const loginSpy = this.sandbox.stub( mw.ForeignApi.prototype, 'checkForeignLogin' ).returns(
 		$.Deferred().reject()
 	);
-	const tokenSpy = this.sandbox.stub( mw.ForeignApi.prototype, 'getCentralAuthToken' ).returns(
+	const tokenSpy = this.sandbox.stub( mw.Api.prototype, 'getCentralAuthToken' ).returns(
 		$.Deferred().resolve( 'CENTRALAUTHTOKEN' )
 	);
-	const actionApi = new mw.ForeignApi( '//localhost:4242/w/api.php' );
 
-	const api = new mw.ForeignRest( '//localhost:4242/w/rest.php', actionApi );
+	const api = new mw.ForeignRest( '//localhost:4242/w/rest.php', null );
 	return api.get( '/hello' ).then( () => {
-		// This is still called, even though it is useless now...
-		assert.true( loginSpy.called, 'Login spy called' );
+		// We used to call this method unnecessarily, check for regressions
+		assert.false( loginSpy.called, 'Login spy called' );
 		assert.true( tokenSpy.called, 'Token spy called' );
 	} );
 } );

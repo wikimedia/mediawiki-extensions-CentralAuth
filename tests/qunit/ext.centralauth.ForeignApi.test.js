@@ -13,7 +13,7 @@ QUnit.test( 'Anonymous users do not get centralauthtoken', function ( assert ) {
 	} );
 
 	const api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
-	const spy = this.sandbox.spy( api, 'getCentralAuthToken' );
+	const spy = this.sandbox.spy( mw.Api.prototype, 'getCentralAuthToken' );
 
 	return api.get( {} ).then( () => {
 		assert.false( spy.called, 'Not called' );
@@ -32,7 +32,7 @@ QUnit.test( 'Logged in users get centralauthtoken if not logged in remotely', fu
 	} );
 
 	const api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
-	const spy = this.sandbox.stub( api, 'getCentralAuthToken' ).returns(
+	const spy = this.sandbox.stub( mw.Api.prototype, 'getCentralAuthToken' ).returns(
 		$.Deferred().resolve( 'CENTRALAUTHTOKEN' )
 	);
 
@@ -53,7 +53,7 @@ QUnit.test( 'Logged in users do not get centralauthtoken if logged in remotely',
 	} );
 
 	const api = new mw.ForeignApi( '//localhost:4242/w/api.php' );
-	const spy = this.sandbox.stub( api, 'getCentralAuthToken' ).returns(
+	const spy = this.sandbox.stub( mw.Api.prototype, 'getCentralAuthToken' ).returns(
 		$.Deferred().resolve( 'CENTRALAUTHTOKEN' )
 	);
 

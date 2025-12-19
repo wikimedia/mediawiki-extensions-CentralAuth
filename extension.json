@@ -493,6 +493,7 @@
 		},
 		"ext.centralauth.ForeignApi": {
 			"scripts": [
+				"ext.centralauth.Api.js",
 				"ext.centralauth.ForeignApi.js",
 				"ext.centralauth.ForeignRest.js"
 			],

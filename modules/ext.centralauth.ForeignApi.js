@@ -57,23 +57,6 @@
 	OO.inheritClass( CentralAuthForeignApi, mw.ForeignApi );
 
 	/**
-	 * Get a 'centralauthtoken' from the local wiki for use on the foreign wiki.
-	 *
-	 * @private
-	 * @param {Object} [ajaxOptions]
-	 * @return {jQuery.Promise}
-	 */
-	CentralAuthForeignApi.prototype.getCentralAuthToken = function ( ajaxOptions ) {
-		return this.localApi.get( { action: 'centralauthtoken' }, ajaxOptions ).then( ( resp ) => {
-			if ( resp.error ) {
-				return $.Deferred().reject( resp.error );
-			} else {
-				return resp.centralauthtoken.centralauthtoken;
-			}
-		} );
-	};
-
-	/**
 	 * Query the foreign wiki to see if we're already logged in there in the user's browser, which
 	 * means that there's no need to query for and use 'centralauthtoken' parameter.
 	 *
@@ -156,10 +139,10 @@
 				// If succeeded, no 'centralauthtoken' needed
 				() => $.Deferred().reject(),
 				// If failed, get the token
-				() => foreignApi.getCentralAuthToken( tokenAjaxOptions )
+				() => this.localApi.getCentralAuthToken( tokenAjaxOptions )
 			);
 		} else {
-			tokenPromise = this.getCentralAuthToken( tokenAjaxOptions );
+			tokenPromise = this.localApi.getCentralAuthToken( tokenAjaxOptions );
 		}
 
 		return tokenPromise.then(
