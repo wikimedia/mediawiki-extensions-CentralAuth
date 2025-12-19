@@ -25,10 +25,6 @@
 		if ( mw.config.get( 'wgUserName' ) === null || ( options && options.anonymous ) ) {
 			// Anonymous users cannot obtain a centralauthtoken
 			this.noTokenNeeded = true;
-		} else {
-			// We're logged in locally, check to see if we're logged in on the foreign wiki too, and
-			// thus can skip 'centralauthtoken' requests
-			this.foreignLoginPromise = this.foreignActionApi.checkForeignLogin();
 		}
 	}
 
@@ -56,16 +52,9 @@
 			abortable,
 			aborted;
 
-		// If we know we can't get a 'centralauthtoken', or if one was provided, don't request it
+		// If we know we can't get a 'centralauthtoken', don't request it
 		if ( this.noTokenNeeded ) {
 			tokenPromise = $.Deferred().reject();
-		} else if ( this.foreignLoginPromise ) {
-			tokenPromise = this.foreignLoginPromise.then(
-				// If succeeded, no 'centralauthtoken' needed
-				() => $.Deferred().reject(),
-				// If failed, get the token
-				() => ( abortable = self.foreignActionApi.getCentralAuthToken() )
-			);
 		} else {
 			tokenPromise = abortable = self.foreignActionApi.getCentralAuthToken();
 		}
@@ -93,8 +82,8 @@
 				if ( aborted ) {
 					return abortedPromise;
 				}
-				// We couldn't get the token, but continue anyway. This is expected in some cases,
-				// like anonymous users.
+				// We couldn't get the token, but continue anyway, using browser credentials.
+				// This is expected in some cases, like anonymous users.
 				return ( abortable = parent.call( self, path, ajaxOptions ) );
 			}
 		).promise( { abort: function () {
