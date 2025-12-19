@@ -53,15 +53,14 @@
 		ajaxOptions = ajaxOptions || {};
 		const abortable = this.localApi.makeAbortablePromise( ajaxOptions );
 
-		const self = this,
-			parent = CentralAuthForeignRest.super.prototype.ajax;
+		const parent = CentralAuthForeignRest.super.prototype.ajax;
 
 		// If we know we can't get a 'centralauthtoken', don't request it
 		let tokenPromise;
 		if ( this.noTokenNeeded ) {
 			tokenPromise = $.Deferred().reject();
 		} else {
-			tokenPromise = self.localApi.getCentralAuthToken( ajaxOptions );
+			tokenPromise = this.localApi.getCentralAuthToken( ajaxOptions );
 		}
 
 		return tokenPromise.then(
@@ -77,11 +76,11 @@
 					withCredentials: false
 				} );
 
-				return parent.call( self, path, newAjaxOptions );
+				return parent.call( this, path, newAjaxOptions );
 			},
 			// We couldn't get the token, but continue anyway, using browser credentials.
 			// This is expected in some cases, like anonymous users.
-			() => parent.call( self, path, ajaxOptions )
+			() => parent.call( this, path, ajaxOptions )
 		).promise( abortable );
 	};
 
