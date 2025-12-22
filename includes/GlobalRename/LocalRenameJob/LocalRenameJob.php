@@ -177,12 +177,21 @@ abstract class LocalRenameJob extends Job {
 		}
 
 		if ( $user->getId() == 0 ) {
-			// No local user, lets "auto-create" one
+			// No local user, let's "auto-create" one
 			$status = CentralAuthServices::getUtilityService()->autoCreateUser( $user );
 			if ( $status->isGood() ) {
 				// So the internal cache is reloaded
 				return User::newFromName( $user->getName() );
 			}
+
+			[ $message, $context ] = MediaWikiServices::getInstance()
+				->getFormatterFactory()
+				->getStatusFormatter( RequestContext::getMain() )
+				->getPsr3MessageAndContext( $status );
+			$this->logger->info(
+				'Failed to auto-create {username} to perform local rename: {error}',
+				[ 'username' => $user->getName(), 'error' => $message ] + $context,
+			);
 
 			// Auto-creation didn't work, fallback on the system account.
 			return User::newSystemUser( 'Global rename script', [ 'steal' => true ] );
