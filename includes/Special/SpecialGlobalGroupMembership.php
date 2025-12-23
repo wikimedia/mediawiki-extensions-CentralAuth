@@ -212,40 +212,6 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	}
 
 	/**
-	 * Save user groups changes in the database. This function does not throw errors;
-	 * instead, it ignores groups that the performer does not have permission to set.
-	 *
-	 * @deprecated since 1.45, use {@see GlobalGroupAssignmentService::saveChangesToUserGroups()} directly
-	 * @param CentralAuthUser $user
-	 * @param string[] $add Array of groups to add
-	 * @param string[] $remove Array of groups to remove
-	 * @param string $reason Reason for group change
-	 * @param string[] $tags Array of change tags to add to the log entry
-	 * @param array<string,?string> $groupExpiries Associative array of (group name => expiry),
-	 *   containing only those groups that are to have new expiry values set
-	 * @return array Tuple of added, then removed groups
-	 */
-	public function doSaveUserGroups(
-		CentralAuthUser $user,
-		array $add,
-		array $remove,
-		string $reason = '',
-		array $tags = [],
-		array $groupExpiries = []
-	) {
-		wfDeprecated( __METHOD__, '1.45' );
-		return $this->globalGroupAssignmentService->saveChangesToUserGroups(
-			$this->getAuthority(),
-			$user,
-			$add,
-			$remove,
-			$groupExpiries,
-			$reason,
-			$tags
-		);
-	}
-
-	/**
 	 * @param string $username
 	 * @return Status<CentralAuthUser>
 	 */
