@@ -395,10 +395,6 @@ class SpecialCentralAuth extends SpecialPage {
 	private function showInfo() {
 		$attribs = $this->getInfoFields();
 
-		// Give grep a chance to find the usages:
-		// centralauth-admin-info-username, centralauth-admin-info-registered,
-		// centralauth-admin-info-editcount, centralauth-admin-info-locked,
-		// centralauth-admin-info-hidden, centralauth-admin-info-groups
 		$content = Html::openElement( "ul" );
 		foreach ( $attribs as $key => [ 'label' => $msg, 'data' => $data ] ) {
 			$content .= Html::rawElement(
@@ -495,8 +491,15 @@ class SpecialCentralAuth extends SpecialPage {
 			}
 		}
 
-		// Convert the values of the existing $attribs array into arrays, where the value is placed in the 'data'
-		// key and the 'label' is the message key generated from the associated key.
+		// Convert the values of the existing $attribs array into arrays, where the value is placed
+		// in the 'data' key and the 'label' is the message key generated from the associated key.
+
+		// Give grep a chance to find the usages:
+		// centralauth-admin-info-username, centralauth-admin-info-registered,
+		// centralauth-admin-info-editcount, centralauth-admin-info-locked,
+		// centralauth-admin-info-hidden, centralauth-admin-info-editcountsum,
+		// centralauth-admin-info-attached, centralauth-admin-info-unattached,
+		// centralauth-admin-info-expired
 		$attribsWithMessageKeys = [];
 		foreach ( $attribs as $key => $value ) {
 			$attribsWithMessageKeys[$key] = [
