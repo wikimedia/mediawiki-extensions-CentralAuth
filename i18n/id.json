@@ -429,7 +429,7 @@
 	"globalrenamerequest-email-mismatch": "Alamat email berbeda. <br /> Mohon cek kedua nya dan coba lagi",
 	"globalrenamerequest-email-why-explain": "Kami membutuhkan alamat surel selama proses ini untuk memastikan Anda tidak kehilangan akses ke akun ini.<br />Anda bisa menarik kembali alamat surel Anda setelah proses perubahan nama selesai.",
 	"globalrenamerequest-email2-help": "Untuk konfirmasi harap masukkan alamat email seperti di atas.",
-	"globalrenamerequest-email2-label": "Konfirmasi alamat surel:",
+	"globalrenamerequest-email2-label": "Konfirmasi surel:",
 	"globalrenamerequest-forced": "Ladang wiki ini sedang menyatukan nama-nama pengguna di semua proyek. Nama pengguna ini sedang digunakan di wiki-wiki lain dan harus diubah untuk menyelesaikan penyatuan ini. Oleh karena itu, Anda harus memilih nama pengguna yang baru.",
 	"globalrenamerequest-legend": "Permintaan penyatuan perubahan nama pengguna",
 	"globalrenamerequest-newname-err-invalid": "Anda belum menetapkan nama pengguna",
