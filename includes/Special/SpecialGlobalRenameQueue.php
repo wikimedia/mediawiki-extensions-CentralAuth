@@ -346,6 +346,21 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	}
 
 	/**
+	 * Format a rename reason for display, handling multi-line content properly.
+	 *
+	 * @param string $reason The reason text
+	 * @return string Formatted HTML
+	 */
+	protected function formatReason( $reason ) {
+		if ( $reason === '' ) {
+			return '';
+		}
+		$escaped = htmlspecialchars( $reason, ENT_QUOTES | ENT_HTML5 );
+		$withBreaks = str_replace( "\n", '<br>', $escaped );
+		return "<dl><dd>$withBreaks</dd></dl>";
+	}
+
+	/**
 	 * Display a request.
 	 */
 	protected function doViewRequest( GlobalRenameRequest $req ) {
@@ -363,7 +378,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			);
 		}
 
-		$reason = $req->getReason() ?: '';
+		$reason = $this->formatReason( $req->getReason() ?: '' );
 
 		$renamer = CentralAuthUser::newFromId( $req->getPerformer() );
 		if ( $renamer === false ) {
@@ -377,12 +392,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$renamerLink = Title::makeTitleSafe( NS_USER, $renamer->getName() )->getFullURL();
 		} else {
 			$renamerLink = WikiMap::getForeignURL( $homewiki, 'User:' . $renamer->getName() );
-		}
-
-		if ( str_contains( $reason, "\n" ) ) {
-			$reason = "<dl><dd>" . str_replace( "\n", "</dd><dd>", $reason ) . "</dd></dl>";
-		} else {
-			$reason = ': ' . $reason;
 		}
 
 		$status = $req->getStatus();
@@ -644,11 +653,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			);
 		}
 
-		$reason = $req->getReason() ?: '';
+		$reason = $this->formatReason( $req->getReason() ?: '' );
 
-		$htmlForm->addHeaderHtml( $this->msg( $reasonMsg,
-			"<dl><dd>" . str_replace( "\n", "</dd><dd>", $reason ) . "</dd></dl>"
-		)->parseAsBlock() );
+		$htmlForm->addHeaderHtml( $this->msg( $reasonMsg, $reason )->parseAsBlock() );
 
 		// Show warning when reviewing own request
 		if ( $req->getName() === $this->getUser()->getName() ) {
