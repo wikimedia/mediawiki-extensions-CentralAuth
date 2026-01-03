@@ -219,7 +219,7 @@ class SharedDomainHookHandler implements
 	public function onGetUserPermissionsErrors( $title, $user, $action, &$result ) {
 		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
 			if ( !$title->isSpecialPage() ) {
-				$result = wfMessage( 'badaccess-group0' );
+				$result = wfMessage( 'centralauth-action-forbidden-shared-domain' );
 				return false;
 			}
 			$allowedSpecialPages = $this->getRestrictions( self::ALLOWED_SPECIAL_PAGES );
@@ -228,7 +228,7 @@ class SharedDomainHookHandler implements
 					return true;
 				}
 			}
-			$result = wfMessage( 'badaccess-group0' );
+			$result = wfMessage( 'centralauth-action-forbidden-shared-domain' );
 			return false;
 		}
 	}
