@@ -124,7 +124,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		if ( $this->userCanEdit( $this->getUser() ) ) {
 			// "Create a group" prompt
 			// @todo Move this out of main view to a separate page
-			$html = Xml::fieldset( $this->msg( 'centralauth-newgroup-legend' )->text() );
+			$html = Html::openElement( 'fieldset' ) . "\n" .
+				Html::element( 'legend', [], $this->msg( 'centralauth-newgroup-legend' )->text() ) . "\n";
 			$html .= $this->msg( 'centralauth-newgroup-intro' )->parseAsBlock();
 			$html .= Html::openElement( 'form', [
 				'method' => 'post',
@@ -290,11 +291,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$fieldsetClass = $editable
 			? 'mw-centralauth-editgroup'
 			: 'mw-centralauth-editgroup-readonly';
-		$html = Xml::fieldset(
-			$this->msg( 'centralauth-editgroup-fieldset', $group )->text(),
-			false,
-			[ 'class' => $fieldsetClass ]
-		);
+		$html = Html::openElement( 'fieldset', [ 'class' => $fieldsetClass ] ) . "\n" .
+			Html::element( 'legend', [], $this->msg( 'centralauth-editgroup-fieldset', $group )->text() ) . "\n";
 
 		if ( $editable ) {
 			$html .= Html::openElement( 'form', [

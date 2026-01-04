@@ -22,6 +22,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
+use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
@@ -38,7 +39,6 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
-use MediaWiki\Xml\Xml;
 use OOUI\MessageWidget;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
@@ -635,9 +635,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		] );
 		if ( $extractCount ) {
 			$htmlForm->addHeaderHtml(
-				Xml::fieldset( $this->msg( 'globalrenamequeue-request-previous-renames' )
-					->numParams( $extractCount )
-					->text(), $extract )
+				Html::rawElement( 'fieldset', [],
+					Html::element( 'legend', [], $this->msg( 'globalrenamequeue-request-previous-renames' )
+						->numParams( $extractCount )
+						->text()
+					) . "\n" . $extract
+				)
 			);
 		}
 

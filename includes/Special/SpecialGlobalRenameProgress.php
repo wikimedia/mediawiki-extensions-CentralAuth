@@ -12,7 +12,6 @@ use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
-use MediaWiki\Xml\Xml;
 
 class SpecialGlobalRenameProgress extends FormSpecialPage {
 
@@ -162,8 +161,10 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		}
 		$table .= Html::closeElement( 'tbody' );
 		$table .= Html::closeElement( 'table' );
-		$fieldset = Xml::fieldset(
-			$this->msg( 'centralauth-rename-progress-fieldset' )->text(), $table );
+		$fieldset = Html::rawElement( 'fieldset', [],
+			Html::element( 'legend', [], $this->msg( 'centralauth-rename-progress-fieldset' )->text() )
+				. "\n" . $table
+		);
 
 		$this->uiService->showRenameLogExtract( $this->getContext(), $newName );
 		$out->addHTML( $fieldset );
