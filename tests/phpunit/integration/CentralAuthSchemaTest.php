@@ -11,11 +11,6 @@ use MediaWiki\Tests\Structure\AbstractSchemaTestBase;
  */
 class CentralAuthSchemaTest extends AbstractSchemaTestBase {
 
-	protected function setUp(): void {
-		parent::setUp();
-		$this->markTestSkipped( 'Temporary disabled for gerrit 1212288' );
-	}
-
 	protected static function getSchemasDirectory(): string {
 		return __DIR__ . '/../../../schema';
 	}
