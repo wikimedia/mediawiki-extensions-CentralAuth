@@ -73,7 +73,7 @@
 	"apihelp-query+wikisets-param-prop": "Que pecias de information includer.\n;type:Inclusion (include solmente le wikis specificate) o exclusion (include tote le wikis excepte illos specificate).\n;wikisincluded:Le wikis includite in iste gruppo de wikis.\n;wikisnotincluded:Le wikis non includite in iste gruppo de wikis.",
 	"apihelp-query+wikisets-summary": "Enumerar tote le gruppos de wikis.",
 	"apihelp-setglobalaccountstatus-description": "Definir le stato de un usator global.",
-	"apihelp-setglobalaccountstatus-example-1": "Blocar le conto global de [[User:Example]] con motivo \"Spam\"",
+	"apihelp-setglobalaccountstatus-example-1": "Serrar le conto global de [[User:Example]] con motivo \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Disblocar e supprimer le conto global de [[User:Example]] con motivo \"io pote\"",
 	"apihelp-setglobalaccountstatus-param-hidden": "Indicar si iste usator non es celate, es celate del lista global de usatores, o es supprimite.",
 	"apihelp-setglobalaccountstatus-param-locked": "Indicar si iste usator es blocate o non.",
