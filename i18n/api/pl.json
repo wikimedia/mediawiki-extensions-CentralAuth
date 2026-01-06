@@ -15,6 +15,7 @@
 	"apierror-centralauth-notloggedin": "Anonimowi użytkownicy nie mogą uzyskać centralauthtoken.",
 	"apierror-centralauth-renameinprogress": "Użytkownik jest w trakcie zmieniania nazwy. Nie można wykorzystać.",
 	"apihelp-centralauthtoken-example-1": "Uzyskaj centralauthtoken",
+	"apihelp-centralauthtoken-extended-description": "Zwraca token, którego można użyć do uwierzytelniania żądań API w innych wiki. W przypadku żądań API akcji należy umieścić go w parametrze GET <var>centralauthtoken</var>. W przypadku żądań API REST należy dodać nagłówek <code>Authorization: CentralAuthToken {token}</code>. W logice frontendu MediaWiki można użyć modułu ResourceLoadera <code>mediawiki.ForeignApi</code>.",
 	"apihelp-centralauthtoken-summary": "Uzyskaj centralauthtoken, aby wykonać autoryzowane żądanie do połączonej wiki.",
 	"apihelp-createlocalaccount-example-1": "Wymuś utworzenie konta lokalnego dla [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Powód tworzenia konta lokalnego.",
@@ -84,7 +85,7 @@
 	"apihelp-setglobalaccountstatus-param-hidden": "Zmień, czy ten użytkownik jest widoczny, ukryty na globalnej liście użytkowników lub wyłączony.",
 	"apihelp-setglobalaccountstatus-param-locked": "Zmień, czy ten użytkownik jest zablokowany, czy nie.",
 	"apihelp-setglobalaccountstatus-param-reason": "Powód zmiany statusu użytkownika.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Opcjonalny skrót MD5 aktualnej wartości <userid>:<username>:<hidden>:<locked>, służący do wykrywania konfliktów edycji. Ustaw <locked> na 1 dla zablokowanego użytkownika albo na 0 dla odblokowanego.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Opcjonalny hash MD5 oczekiwanego stanu w postaci <samp>userid:username:hidden:locked</samp>. Służy to do wykrywania konfliktów edycji. Wartością części <samp>hidden</samp> musi być pusty ciąg znaków w przypadku braku ukrycia konta albo ciągi znaków <code>lists</code> lub <code>suppressed</code>. Wartość w miejscu <samp>locked</samp> musi wynosić 1 dla konta zablokowanego, 0 dla odblokowanego. Przykłady: <samp>2128506:LeeSmith::0</samp>; <samp>3839611:VandalGoblin:suppressed:1</samp>.",
 	"apihelp-setglobalaccountstatus-param-user": "Użytkownik, którego status chcesz zmienić.",
 	"apihelp-setglobalaccountstatus-summary": "Ukryj lub zablokuj (albo odsłoń lub odblokuj) globalne konto użytkownika."
 }

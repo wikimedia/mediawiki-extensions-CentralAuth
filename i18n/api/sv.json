@@ -5,7 +5,8 @@
 			"Lokal Profil",
 			"Magol",
 			"Sabelöga",
-			"WikiPhoenix"
+			"WikiPhoenix",
+			"Stefan2255"
 		]
 	},
 	"apierror-centralauth-badsession": "Kan endast erhålla en centralauthtoken när CentralAuth sessioner används.",
@@ -20,7 +21,7 @@
 	"apihelp-createlocalaccount-example-1": "Tvinga skapa ett lokalt konto för [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Anledning till att skapa det lokala kontot.",
 	"apihelp-createlocalaccount-param-username": "Användare att skapa det lokala kontot för.",
-	"apihelp-createlocalaccount-summary": "Tvinga skapa ett lokalt konto",
+	"apihelp-createlocalaccount-summary": "Tvångsskapa ett lokalt konto. Det centrala kontot måste finnas.",
 	"apihelp-deleteglobalaccount-example-1": "Ta bort det globala kontot för [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Anledning för att ta bort användaren.",
 	"apihelp-deleteglobalaccount-param-user": "Användare att ta bort.",
@@ -28,7 +29,7 @@
 	"apihelp-globaluserrights-example-1": "Lägg till användare FooBot till den globala gruppen \"bot\", och ta bort från de globala grupperna \"administratör\" och \"byråkrat\"",
 	"apihelp-globaluserrights-example-2": "Lägg den globala användaren med ID 123 till den globala gruppen \"bot\", och ta bort från de globala grupperna \"administratör\" och \"byråkrat\"",
 	"apihelp-globaluserrights-param-add": "Lägga till användaren till dessa globala grupper.",
-	"apihelp-globaluserrights-param-expiry": "Denna parameter används inte för tillfället.",
+	"apihelp-globaluserrights-param-expiry": "Utgångstidsstämplar. Kan vara relativa (t.ex. <kbd>5 months</kbd> eller <kbd>2 weeks</kbd> ) eller absoluta (t.ex. <kbd>2014-09-18T12:34:56Z</kbd>). Om bara en tidsstämpel är inställd kommer den att användas för alla grupper som skickas till <var>add-parametern $1</var> . Använd <kbd>infinite</kbd>, <kbd>indefinite</kbd>, <kbd>infinity</kbd> eller <kbd>never</kbd> för en användargrupp som aldrig löper ut.",
 	"apihelp-globaluserrights-param-reason": "Orsaken till förändringen.",
 	"apihelp-globaluserrights-param-remove": "Ta bort användaren från dessa globala grupper.",
 	"apihelp-globaluserrights-param-tags": "Denna parameter används för tillfället inte.",
@@ -44,7 +45,7 @@
 	"apihelp-query+globalallusers-param-group": "Begränsa användare till angivna globala grupper.",
 	"apihelp-query+globalallusers-param-limit": "Hur många användarnamn som ska returneras.",
 	"apihelp-query+globalallusers-param-prefix": "Sök efter alla användare som börjar med detta värde.",
-	"apihelp-query+globalallusers-param-prop": "Vilka bitar av information som ska tas med:\n;lockinfo:Om användarens konto är låst.\n;groups:Listar globala grupper som användaren är i. Detta använder mer resurser på servern och kan resultera i färre resultat än den satta gränsen.\n;existslocally:Lägger till information om användaren finns lokalt.",
+	"apihelp-query+globalallusers-param-prop": "Vilka uppgifter som ska inkluderas:",
 	"apihelp-query+globalallusers-param-to": "Användarnamnet att sluta räkna upp vid.",
 	"apihelp-query+globalallusers-summary": "Räkna upp alla globala användare.",
 	"apihelp-query+globalgroups-example-1": "Lista globala grupper",
@@ -57,7 +58,7 @@
 	"apihelp-query+globaluserinfo-example-1": "Få information om den aktuella globala användaren",
 	"apihelp-query+globaluserinfo-example-2": "Få information om den globala användaren [[User:Example|Example]]",
 	"apihelp-query+globaluserinfo-param-id": "Globalt användar-ID för att få information om. Om <var>$1user</var> och <var>$1id</var> utelämnas är det standard för den aktuella användaren.",
-	"apihelp-query+globaluserinfo-param-prop": "Vilka egenskaper som ska tas med:\n;groups:Få en lista över globala grupper som användaren tillhör.\n;rights:Få en lista över globala rättigheter användaren innehar.\n;merged:Få en lista över sammanslagna konton.\n;unattached:Få en lista av icke sammanslagna konton.\n;editcount:Få användarens globala redigeringsantal.",
+	"apihelp-query+globaluserinfo-param-prop": "Vilka egenskaper att hämta.",
 	"apihelp-query+globaluserinfo-param-user": "Användaren att få information om. Om både <var>$1user</var> och <var>$1id</var> utelämnas, använder den aktuell användare.",
 	"apihelp-query+globaluserinfo-summary": "Visa information om en global användare.",
 	"apihelp-query+wikisets-example-1": "Lista wiki-set",
@@ -65,14 +66,14 @@
 	"apihelp-query+wikisets-param-from": "Namnet på wiki-setet att starta från.",
 	"apihelp-query+wikisets-param-limit": "Antalet wiki-set som ska returneras.",
 	"apihelp-query+wikisets-param-orderbyname": "Sortera resultat efter namn.",
-	"apihelp-query+wikisets-param-prop": "Vilka informationsbitar som ska inkluderas.\n;type:Opt-in-baserad (inkluderar enbart angivna wikier) eller opt-out-baserad (inkluderar all wikier utom de angivna).\n;wikisincluded:The wikier som är inkluderade i detta wiki-set.\n;wikisnotincluded:The wikier som inte är inkluderade i detta wiki-set.",
+	"apihelp-query+wikisets-param-prop": "Vilka uppgifter som ska inkluderas:",
 	"apihelp-query+wikisets-summary": "Räkna upp alla wiki-set.",
 	"apihelp-setglobalaccountstatus-example-1": "Lås det globala kontot för [[User:Example]] med anledning \"Spam\"",
 	"apihelp-setglobalaccountstatus-example-2": "Lås upp och censurera det globala kontot för [[User:Example]] med motivationen \"I can\"",
 	"apihelp-setglobalaccountstatus-param-hidden": "Ändra om denna användaren inte är dold, dold från den globala användarlistan eller censurerad.",
 	"apihelp-setglobalaccountstatus-param-locked": "Ändra om användaren är låst eller inte.",
 	"apihelp-setglobalaccountstatus-param-reason": "Skäl för att ändra användarens status.",
-	"apihelp-setglobalaccountstatus-param-statecheck": "Valfri MD5 för den förväntade aktuella <userid>:<username>:<hidden>:<locked>, för att upptäcka redigeringskonflikter. Ange <locked> till 1 för låst, 0 för olåst.",
+	"apihelp-setglobalaccountstatus-param-statecheck": "Valfri MD5 för det förväntade nuvarande <samp>userid:username:hidden:locked</samp>. Detta används för att upptäcka redigeringskonflikter. Värdet för <samp>hidden</samp> måste vara en tom sträng om den inte är hidden (dold), eller så är strängarna <code>lists</code> eller <code>suppressed</code> . Värdet för <samp>locked</samp> måste vara 1 för locked, 0 för unlocked. Exempel: <samp>2128506:LeeSmith::0</samp>; <samp>3839611:VandalGoblin:suppressed:1</samp>.",
 	"apihelp-setglobalaccountstatus-param-user": "Användare att ändra statusen för.",
-	"apihelp-setglobalaccountstatus-summary": "Ändra en global användares status."
+	"apihelp-setglobalaccountstatus-summary": "Dölj eller lås (eller visa eller lås upp) ett globalt användarkonto."
 }
