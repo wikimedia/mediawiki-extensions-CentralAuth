@@ -54,7 +54,8 @@
 			"Краснорядцева Елена",
 			"Тест",
 			"Умар",
-			"Ядерный Трамвай"
+			"Ядерный Трамвай",
+			"Vonavy"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобальные группы участника ($1)",
@@ -100,7 +101,7 @@
 	"centralauth-admin-info-header": "Информация о глобальной учётной записи",
 	"centralauth-admin-info-hidden": "Сокрытие:",
 	"centralauth-admin-info-locked": "Отключён:",
-	"centralauth-admin-info-registered": "{{GENDER:$1|Зарегистрирован|Зарегистрирована|Зарегистрирован}}:",
+	"centralauth-admin-info-registered": "Дата регистрации:",
 	"centralauth-admin-info-unattached": "Количество неприсоединённых учётных записей:",
 	"centralauth-admin-info-username": "Имя учётной записи:",
 	"centralauth-admin-intro": "Этот интерфейс может быть использован для управления глобальными учётными записями.",
