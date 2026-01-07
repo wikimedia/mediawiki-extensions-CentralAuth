@@ -74,5 +74,12 @@
 	"globalrenamerequest-email2-label": "Priim e-pååʹštaddrõõzz:",
 	"globalrenamerequest-username-label": "Ânnʼjõž õõʹnninõmm:",
 	"globalrenameuser": "Riâžldõkveiddsõs õõʹnnʼja ođđ nõõm uʹvdded",
+	"globalusers": "Listt riâžldõkveiddsõs tobdldõõǥǥin",
+	"log-action-filter-globalauth-delete": "Riâžldõkveiddsõs tobdldõõǥǥ jaukkummuš",
+	"log-action-filter-suppress-cadelete": "Riâžldõkveiddsõs tobdldõõǥǥ jaukkummuš",
+	"logentry-globalauth-delete": "Õõʹnni $1 {{GENDER:$2|jaukkii}} riâžldõkveiddsõs tobdldõõǥǥ \"$3\"",
+	"logentry-globalauth-hide": "Õõʹnni $1 {{GENDER:$2|čiõǥǥi}} riâžldõkveiddsõs tobdldõõǥǥ \"$3\"",
+	"logentry-globalauth-lock": "Õõʹnni $1 {{GENDER:$2|lokkii}} riâžldõkveiddsõs tobdldõõǥǥ \"$3\"",
+	"logentry-globalauth-lockandhid": "Õõʹnni $1 {{GENDER:$2|lokkii da čiõǥǥi}} riâžldõkveiddsõs tobdldõõǥǥ \"$3\"",
 	"right-centralauth-rename": "Riâžldõkveiddsõs õõʹnnitobldõõǥǥid ođđ nõõm uʹvdded"
 }
