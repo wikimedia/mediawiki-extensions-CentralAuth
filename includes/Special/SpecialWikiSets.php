@@ -247,18 +247,18 @@ class SpecialWikiSets extends SpecialPage {
 		} else {
 			// Give grep a chance to find the usages: centralauth-editset-optin,
 			// centralauth-editset-optout
-			$form = [];
-			$form['centralauth-editset-name'] = htmlspecialchars( $name );
-			$form['centralauth-editset-usage'] = $usage;
-			$form['centralauth-editset-type'] = $this->msg( "centralauth-editset-{$type}" )
-				->escaped();
-			$form['centralauth-editset-wikis'] = self::buildTableByList(
-				$sortedWikis, 3, [ 'style' => 'width:100%;' ]
-			) . '<hr>';
-			$form['centralauth-editset-restwikis'] = self::buildTableByList(
-				$restWikis, 3, [ 'style' => 'width:100%;' ]
-			);
-
+			$form = [
+				'centralauth-editset-name' => htmlspecialchars( $name ),
+				'centralauth-editset-usage' => $usage,
+				'centralauth-editset-type' => $this->msg( "centralauth-editset-$type" )
+					->escaped(),
+				'centralauth-editset-wikis' => self::buildTableByList( $sortedWikis, 3,
+					[ 'style' => 'width:100%;' ]
+				) . '<hr>',
+				'centralauth-editset-restwikis' => self::buildTableByList( $restWikis, 3,
+					[ 'style' => 'width:100%;' ]
+				),
+			];
 			$this->getOutput()->addHTML( Xml::buildForm( $form ) );
 		}
 

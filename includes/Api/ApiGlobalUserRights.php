@@ -91,9 +91,10 @@ class ApiGlobalUserRights extends ApiBase {
 				$this->dieStatus( $ableToTag );
 			}
 		}
-		$r = [];
-		$r['user'] = $user->getName();
-		$r['userid'] = $user->getId();
+		$r = [
+			'user' => $user->getName(),
+			'userid' => $user->getId(),
+		];
 		[ $r['added'], $r['removed'] ] = $this->globalGroupAssignmentService->saveChangesToUserGroups(
 			// Don't pass null for array params; cast to empty array
 			$this->getAuthority(), $user, $add, (array)$params['remove'], $groupExpiries,
