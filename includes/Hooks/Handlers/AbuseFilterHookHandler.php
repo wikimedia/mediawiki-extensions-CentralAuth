@@ -47,16 +47,16 @@ class AbuseFilterHookHandler implements
 			$vars->setVar( 'global_account_groups', [] );
 			$vars->setVar( 'global_account_editcount', 0 );
 		} elseif ( $action === 'autocreateaccount' ) {
-			$accountname = $vars->getComputedVariable( 'accountname' )->toString();
+			$accountName = $vars->getComputedVariable( 'account_name' )->toString();
 			$vars->setLazyLoadVar(
 				'global_account_groups',
 				'global-user-groups',
-				[ 'user' => $accountname, 'new' => true ]
+				[ 'user' => $accountName, 'new' => true ]
 			);
 			$vars->setLazyLoadVar(
 				'global_account_editcount',
 				'global-user-editcount',
-				[ 'user' => $accountname, 'new' => true ]
+				[ 'user' => $accountName, 'new' => true ]
 			);
 		}
 	}
