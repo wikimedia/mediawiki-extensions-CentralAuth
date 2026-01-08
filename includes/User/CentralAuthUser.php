@@ -1046,7 +1046,7 @@ class CentralAuthUser implements IDBAccessObject {
 	public function isBlocked(): bool {
 		$blocksByWikiId = $this->getBlocks();
 
-		foreach ( $blocksByWikiId as $wikiId => $blocks ) {
+		foreach ( $blocksByWikiId as $blocks ) {
 			if ( count( $blocks ) > 0 ) {
 				return true;
 			}
