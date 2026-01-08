@@ -596,7 +596,7 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		// the WikiMap class doesn't recognize the test database
 		$targetUser = $this->getTestUser()->getUser();
 		$caUserName = $this->getTestCentralAuthUserWithExistingLocalWikis( $targetUser->getName() );
-		$caTarget = CentralAuthUser::getPrimaryInstanceByName( $targetUser->getName() );
+		$caTarget = CentralAuthUser::getPrimaryInstanceByName( $caUserName );
 		$wikis = [
 			WikiMap::getCurrentWikiId() => [
 				'wiki' => WikiMap::getCurrentWikiId(),
@@ -635,6 +635,9 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 
 		// Assert no blocks are found on a fresh account and that we never hit the cache
 		$blocksFound = $caTarget->getBlocks( $wikis );
+		$this->assertCount( 1, $blocksFound );
+		$this->assertTrue( isset( $blocksFound[ (int)WikiAwareEntity::LOCAL ] ) );
+		$this->assertCount( 0, $blocksFound[0] );
 		$this->checkGetBlocksCacheInstrumentationState( 0, 0, 1, 0 );
 
 		// Block the target and assert that the block is found
