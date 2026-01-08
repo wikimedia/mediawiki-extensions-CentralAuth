@@ -297,7 +297,7 @@ class SpecialMergeAccount extends SpecialPage {
 				$out = Html::rawElement( 'h2', [],
 					$this->msg( 'centralauth-list-home-title' )->escaped() );
 				$out .= $this->msg( 'centralauth-list-home-dryrun' )->parseAsBlock();
-				$out .= $this->listAttached( [ $home ], [ $home => 'primary' ] );
+				$out .= $this->listWikis( [ $home ], [ $home => 'primary' ] );
 				$this->getOutput()->addHTML( $out );
 			}
 
@@ -433,7 +433,7 @@ class SpecialMergeAccount extends SpecialPage {
 		$globalUser = CentralAuthUser::getInstance( $this->getUser() );
 		$merged = $globalUser->listAttached();
 		$this->getOutput()->addWikiMsg( 'centralauth-attach-list-attached', $this->mUserName );
-		$this->getOutput()->addHTML( $this->listAttached( $merged ) );
+		$this->getOutput()->addHTML( $this->listWikis( $merged ) );
 		$this->getOutput()->addHTML( $this->attachActionForm() );
 	}
 
@@ -459,7 +459,7 @@ class SpecialMergeAccount extends SpecialPage {
 				$this->mUserName,
 				count( $merged )
 			);
-			$this->getOutput()->addHTML( $this->listAttached( $merged ) );
+			$this->getOutput()->addHTML( $this->listWikis( $merged ) );
 		}
 
 		if ( $remainder ) {
@@ -469,7 +469,7 @@ class SpecialMergeAccount extends SpecialPage {
 				$this->mUserName,
 				$remainderCount
 			);
-			$this->getOutput()->addHTML( $this->listUnattached( $remainder ) );
+			$this->getOutput()->addHTML( $this->listWikis( $remainder ) );
 
 			// Try the password form!
 			$this->getOutput()->addHTML( $this->passwordForm(
@@ -481,64 +481,26 @@ class SpecialMergeAccount extends SpecialPage {
 	}
 
 	/**
-	 * @param string[] $wikiList
-	 * @param string[] $methods
-	 * @return string
-	 */
-	private function listAttached( $wikiList, $methods = [] ) {
-		return $this->listWikis( $wikiList, $methods );
-	}
-
-	/**
-	 * @param string[] $wikiList
-	 * @return string
-	 */
-	private function listUnattached( $wikiList ) {
-		return $this->listWikis( $wikiList );
-	}
-
-	/**
 	 * @param string[] $list
-	 * @param string[] $methods
-	 * @return string
+	 * @param array<string,string> $methods
 	 */
-	private function listWikis( $list, $methods = [] ) {
-		asort( $list );
-		return $this->formatList( $list, $methods, [ $this, 'listWikiItem' ] );
-	}
-
-	/**
-	 * @param string[] $items
-	 * @param string[] $methods
-	 * @param callable $callback
-	 * @return string
-	 */
-	private function formatList( $items, $methods, $callback ) {
-		if ( !$items ) {
+	private function listWikis( array $list, array $methods = [] ): string {
+		if ( !$list ) {
 			return '';
 		}
 
-		$itemMethods = [];
-		foreach ( $items as $item ) {
-			$itemMethods[] = $methods[$item] ?? '';
-		}
+		asort( $list );
 
-		$html = Html::openElement( 'ul' ) . "\n";
-		$list = array_map( $callback, $items, $itemMethods );
+		$html = '';
 		foreach ( $list as $item ) {
-			$html .= Html::rawElement( 'li', [], $item ) . "\n";
+			$html .= Html::rawElement( 'li', [],
+				$this->listWikiItem( $item, $methods[$item] ?? '' )
+			) . "\n";
 		}
-		$html .= Html::closeElement( 'ul' ) . "\n";
-
-		return $html;
+		return Html::rawElement( 'ul', [], "\n" . $html ) . "\n";
 	}
 
-	/**
-	 * @param string $wikiID
-	 * @param string $method
-	 * @return string
-	 */
-	private function listWikiItem( $wikiID, $method ) {
+	private function listWikiItem( string $wikiID, string $method ): string {
 		$return = $this->foreignUserLink( $wikiID );
 		if ( $method ) {
 			// Give grep a chance to find the usages:
@@ -653,14 +615,14 @@ class SpecialMergeAccount extends SpecialPage {
 			$this->msg( 'centralauth-merge-step2-title' )->text(),
 			$this->msg( 'centralauth-merge-step2-detail',
 				$this->getUser()->getName() )->parseAsBlock() .
-				$this->listUnattached( $unattached ),
+				$this->listWikis( $unattached ),
 			$this->msg( 'centralauth-merge-step2-submit' )->text() );
 	}
 
 	/**
 	 * @param string $home
 	 * @param string[] $attached
-	 * @param string[] $methods
+	 * @param array<string,string> $methods
 	 * @return string
 	 */
 	private function step3ActionForm( $home, $attached, $methods ) {
@@ -669,7 +631,7 @@ class SpecialMergeAccount extends SpecialPage {
 			Html::rawElement( 'h3', [],
 				$this->msg( 'centralauth-list-home-title' )->escaped()
 			) . $this->msg( 'centralauth-list-home-dryrun' )->parseAsBlock() .
-			$this->listAttached( [ $home ], $methods );
+			$this->listWikis( [ $home ], $methods );
 
 		if ( count( $attached ) ) {
 			$html .= Html::rawElement( 'h3', [],
@@ -679,7 +641,7 @@ class SpecialMergeAccount extends SpecialPage {
 				count( $attached ) )->parseAsBlock();
 		}
 
-		$html .= $this->listAttached( $attached, $methods ) .
+		$html .= $this->listWikis( $attached, $methods ) .
 			Html::rawElement( 'p', [],
 				Html::submitButton( $this->msg( 'centralauth-merge-step3-submit' )->text(),
 					[ 'name' => 'wpLogin' ] )
