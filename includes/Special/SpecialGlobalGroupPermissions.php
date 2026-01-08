@@ -153,14 +153,14 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			[ 'class' => 'mw-centralauth-groups-table wikitable' ] );
 
 		// Header stuff
-		$table .= Html::openElement( 'tr' );
-		$table .= Html::element( 'th', [],
-			$this->msg( 'centralauth-globalgroupperms-group' )->text()
+		$table .= Html::rawElement( 'tr', [],
+			Html::element( 'th', [],
+				$this->msg( 'centralauth-globalgroupperms-group' )->text()
+			) .
+			Html::element( 'th', [],
+				$this->msg( 'centralauth-globalgroupperms-rights' )->text()
+			)
 		);
-		$table .= Html::element( 'th', [],
-			$this->msg( 'centralauth-globalgroupperms-rights' )->text()
-		);
-		$table .= Html::closeElement( 'tr' );
 
 		foreach ( $groups as $groupName ) {
 			$groupInfo = $this->getGroupInfo( $groupName );
@@ -173,10 +173,9 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$table .= $this->getOutput()->parseInlineAsInterface(
 				UserGroupMembership::getLinkWiki( $groupName, $this->getContext() ) ) . '<br />';
 
-			$groupWithParentheses = $this->msg( 'parentheses', $groupName )->escaped();
-			$table .= Html::openElement( 'code' );
-			$table .= $groupWithParentheses;
-			$table .= Html::closeElement( 'code' ) . Html::element( 'br' );
+			$table .= Html::element( 'code', [],
+					$this->msg( 'parentheses', $groupName )->text()
+				) . Html::element( 'br' );
 
 			$linkRenderer = $this->getLinkRenderer();
 			$links = [
@@ -397,7 +396,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$assignedRights = $this->getAssignedRights( $group );
 
-		$checkboxes = [];
 		$attribs = [];
 
 		if ( !$editable ) {
@@ -412,6 +410,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		);
 		sort( $rights );
 
+		$checkboxes = '';
 		foreach ( $rights as $right ) {
 			// Build a checkbox
 			$checked = in_array( $right, $assignedRights );
@@ -426,23 +425,13 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$liClass = $checked
 				? 'mw-centralauth-editgroup-checked'
 				: 'mw-centralauth-editgroup-unchecked';
-			$checkboxes[] = Html::rawElement(
+			$checkboxes .= Html::rawElement(
 				'li', [ 'class' => $liClass ], "$checkbox&#160;$label" );
 		}
 
-		$count = count( $checkboxes );
-
-		$html = Html::openElement( 'div', [ 'class' => 'mw-centralauth-rights' ] )
-			. '<ul>';
-
-		foreach ( $checkboxes as $cb ) {
-			$html .= $cb;
-		}
-
-		$html .= '</ul>'
-			. Html::closeElement( 'div' );
-
-		return $html;
+		return Html::rawElement( 'div', [ 'class' => 'mw-centralauth-rights' ],
+			Html::rawElement( 'ul', [], $checkboxes )
+		);
 	}
 
 	/**
