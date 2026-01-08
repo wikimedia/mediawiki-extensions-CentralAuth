@@ -462,7 +462,7 @@
 	"globalvanishrequest-status-title": "La richiesta di anonimizzazione è in attesa di approvazione",
 	"globalvanishrequest-status-text": "La tua richiesta di anonimizzazione del nome utente è attualmente in corso in attesa di approvazione da parte di chi è in grado di eseguire questa operazione. Riceverai una notifica via email quando la richiesta verrà elaborata.",
 	"globalvanishrequest-vanished-text": "La tua richiesta di anonimizzazione è stata processata con successo.",
-	"globalvanishrequest-blocked-text": "Sei attualmente bloccato su uno o più wiki e non puoi rendere anonimo il tuo account. Puoi fare un appello contro i blocchi sul tuo account. Consulta i seguenti link per informazioni su come fare appello per ogni rispettivo wiki in cui sei stato bloccato. Per saperne di più sull'anonimizzazione dell'account, leggi la [[m:Special:MyLanguage/Account vanishing|relativa pagina informativa]].",
+	"globalvanishrequest-blocked-text": "Sei attualmente bloccato/a su uno o più wiki e non puoi rendere anonimo il tuo account. Puoi fare un appello contro i blocchi sul tuo account. Consulta i seguenti link per informazioni su come fare appello per ogni rispettivo wiki in cui sei stato/a bloccato/a. Per saperne di più sull'anonimizzazione dell'account, leggi la [[m:Special:MyLanguage/Account vanishing|relativa pagina informativa]].",
 	"globalvanishrequest-blocked-text-minimal": "Sei attualmente bloccato su uno o più wiki e non puoi rendere anonimo il tuo account. Per saperne di più sull'anonimizzazione dell'account, leggi la [[m:Special:MyLanguage/Account vanishing|relativa pagina informativa]].",
 	"globalvanishrequest-reason-label": "Motivo della richiesta",
 	"globalvanishrequest-submit-text": "Richiedi l'anonimizzazione",
