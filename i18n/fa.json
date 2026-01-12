@@ -69,7 +69,7 @@
 	"centralauth-admin-blocked-reason": "دلیل: $1",
 	"centralauth-admin-blocked2": "بسته‌شده، در $2 ساعت $3 انقضا می‌یابد.",
 	"centralauth-admin-blocked2-indef": "بی‌پایان بسته شده است.",
-	"centralauth-admin-blocklog": "سیاههٔ بسته‌شده‌ها",
+	"centralauth-admin-blocklog": "سیاههٔ قطع دسترسی",
 	"centralauth-admin-delete-button": "حذف این حساب",
 	"centralauth-admin-delete-confirm": "آیا واقعاً می‌خواهید این حساب را حذف کنید؟",
 	"centralauth-admin-delete-description": "حذف حساب سراسری باعث از ادغام در آمدن حساب‌های محلی می‌شود و نام کاربری مشترک را برای استفاده دیگر کاربرها آزاد می‌گذارد.\nهمه حساب‌های محلی باقی خواهند ماند.",
