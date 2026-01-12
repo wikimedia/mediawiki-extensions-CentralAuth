@@ -2,12 +2,12 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use MediaWiki\Cache\LinkBatchFactory;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
+use MediaWiki\Page\LinkBatchFactory;
 use MediaWiki\SpecialPage\IncludableSpecialPage;
 use MediaWiki\Title\Title;
 
