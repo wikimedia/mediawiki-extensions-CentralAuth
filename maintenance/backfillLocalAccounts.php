@@ -266,7 +266,6 @@ class BackfillLocalAccounts extends Maintenance {
 		do {
 			[ $startGlobalUID, $result ] = $this->getGlobalUserBatch( $cadb, $startGlobalUID, $maxGlobalUID, $wikiID );
 
-			$this->beginTransaction( $dbw, __METHOD__ );
 			foreach ( $result as $row ) {
 				$homeWiki = $this->checkUserAndGetHomeWiki( $row->gu_name, $userFactory, $verbose );
 				if ( !$homeWiki ) {
@@ -293,15 +292,19 @@ class BackfillLocalAccounts extends Maintenance {
 						continue;
 					}
 					$callback = RequestContext::importScopedSession( $fakeSession );
+					// Use per-user transactions to ensure CheckUser's deferred logging
+					// (via onTransactionPreCommitOrIdle) runs while the fake session
+					// with the correct IP is still active.
+					$this->beginTransaction( $dbw, __METHOD__ );
 					// Dig down far enough and this uses User::addToDatabase() which relies on
 					// MediaWikiServices::getInstance()->getConnectionProvider()->getPrimaryDatabase()
 					// which should be the same as our $dbw arg to begin/commitTransaction(). But I don't like it.
 					$this->createLocalAccount( $row->gu_name, $verbose );
+					$this->commitTransaction( $dbw, __METHOD__ );
 					ScopedCallback::consume( $callback );
 					$createdUsers++;
 				}
 			}
-			$this->commitTransaction( $dbw, __METHOD__ );
 			if ( $startGlobalUID > $maxGlobalUID ) {
 				break;
 			}
