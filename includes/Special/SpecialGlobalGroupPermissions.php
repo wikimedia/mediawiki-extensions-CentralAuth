@@ -332,11 +332,20 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$fields['centralauth-editgroup-member'] =
 				htmlspecialchars( $lang->getGroupMemberName( $group, '#' ) );
 		}
-		$fields['centralauth-editgroup-members'] = $this->msg(
-			'centralauth-editgroup-members-link',
-			$group,
-			$lang->getGroupMemberName( $group, '#' )
-		)->parse();
+
+		// A group only exists if it has one or more rights assigned to it.
+		// Special:GlobalUsers/<group> will interpret group as a username to
+		// start iterating from if the specific group does not exist (has no rights
+		// assigned to it). So only show the link for groups that have rights
+		// assigned to them on page load.
+		if ( $assignedRights ) {
+			$fields['centralauth-editgroup-members'] = $this->msg(
+				'centralauth-editgroup-members-link',
+				$group,
+				$lang->getGroupMemberName( $group, '#' )
+			)->parse();
+		}
+
 		$fields['centralauth-editgroup-restrictions'] = $this->buildWikiSetSelector( $group );
 		$fields['centralauth-editgroup-perms'] = $this->buildCheckboxes( $group );
 
