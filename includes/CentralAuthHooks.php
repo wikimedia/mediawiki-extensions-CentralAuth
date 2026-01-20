@@ -143,11 +143,9 @@ class CentralAuthHooks implements
 		// Register the AuthManagerLoginAuthenticateAudit hook and try to make sure it is called
 		// first. This relies on the implementation detail that $wgHooks handlers are called before
 		// extension.json handlers and HookContainer::register() handlers.
-		if ( !isset( $wgHooks['AuthManagerLoginAuthenticateAudit'] ) ) {
-			$wgHooks['AuthManagerLoginAuthenticateAudit'] = [];
-		}
+		$wgHooks['AuthManagerLoginAuthenticateAudit'] ??= [];
 		array_unshift( $wgHooks['AuthManagerLoginAuthenticateAudit'],
-			[ RedirectingLoginHookHandler::class, 'onAuthManagerLoginAuthenticateAudit' ] );
+			RedirectingLoginHookHandler::onAuthManagerLoginAuthenticateAudit( ... ) );
 
 		$wgPasswordConfig['scrambled'] = [ 'class' => ScrambledPassword::class ];
 	}

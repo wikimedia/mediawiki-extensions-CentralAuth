@@ -377,7 +377,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		$skin = $this->createNoOpMock( Skin::class, [ 'getRequest', 'getTitle', 'msg' ] );
 		$skin->method( 'getRequest' )->willReturn( new FauxRequest() );
 		$skin->method( 'getTitle' )->willReturn( $title );
-		$skin->method( 'msg' )->willReturnCallback( fn ( $key ) => $this->getMockMessage( $key ) );
+		$skin->method( 'msg' )->willReturnCallback( $this->getMockMessage( ... ) );
 
 		$container = $this->getServiceContainer();
 		$handler = new SharedDomainHookHandler(

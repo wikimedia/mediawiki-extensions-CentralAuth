@@ -184,10 +184,7 @@ class GlobalVanishJob extends Job {
 
 		if ( !$renameResult->isGood() ) {
 			throw new RuntimeException(
-				implode( ', ', array_map(
-					static fn ( $message ) => wfMessage( $message ),
-					$renameResult->getMessages()
-				) )
+				implode( ', ', array_map( wfMessage( ... ), $renameResult->getMessages() ) )
 			);
 		}
 	}
