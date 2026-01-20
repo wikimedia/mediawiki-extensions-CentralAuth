@@ -41,7 +41,8 @@
 			"Cigaryno",
 			"XIDME",
 			"Mohammed Qays",
-			"SZX"
+			"SZX",
+			"Hubaishan"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "عدد تعديلات المستخدم عالميًا ($1)",
@@ -413,7 +414,7 @@
 	"centrallogin": "تسجيل دخول مركزي",
 	"createlocalaccount": "إنشاء حساب محلي بالقوة",
 	"globalgroupmembership": "العضوية في المجموعات العامة",
-	"globalgrouppermissions": "التحكم بالمجموعة العامة",
+	"globalgrouppermissions": "صلاحيات المجموعات العامة",
 	"globalrenameprogress": "تقدم التسمية الموحدة",
 	"globalrenameprogress-legend": "عرض تقدم التسمية الموحدة",
 	"globalrenamequeue": "طابور تغيير اسم الحساب الموحد",
