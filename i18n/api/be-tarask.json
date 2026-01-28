@@ -3,9 +3,10 @@
 		"authors": [
 			"Renessaince",
 			"Vlad5250",
-			"W"
+			"W",
+			"Ucukor"
 		]
 	},
-	"apihelp-createlocalaccount-summary": "Прымусовае стварэньне лякальнага ўліковага запісу. Цэнтралізаваны ўліковы запіс ўжо мусіць існаваць.",
+	"apihelp-createlocalaccount-summary": "Прымусовае стварэньне лякальнага рахунку. Цэнтралізаваны рахунак ўжо мусіць існаваць.",
 	"apihelp-globaluserrights-param-reason": "Прычына зьмяненьня."
 }
