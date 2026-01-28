@@ -183,6 +183,7 @@
 	"centralauth-attach-title": "Used as title for the form.\n\nSee also:\n* {{msg-mw|Centralauth-attach-text}}\n* {{msg-mw|Centralauth-attach-submit}}",
 	"centralauth-automatic-global-groups-reason-local": "Reason given in the gblrights/usergroups log when a global group is updated automatically due to an update of local groups.",
 	"centralauth-automatic-global-groups-reason-global": "Explanation appended to the reason given in the gblrights/usergroups log when a global group is updated automatically due to an update of global groups.",
+	"centralauth-automatic-global-groups-reason-config": "Reason given in the gblrights/usergroups log when a global group is updated automatically due to new configuration.",
 	"centralauth-block-already-locked": "{{gender}}\nShown at [[Special:Block]] when the user is already globally locked. Parameters:\n* $1 - the requested username",
 	"centralauth-block-editing-action": "Link text to link user to the local block list when there are actions. Parameters: \n* $1 - Number of actions.",
 	"centralauth-block-editing-page": "Link text to link user to the local block list when there are pages. Parameters: \n* $1 - Number of pages.",

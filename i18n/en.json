@@ -152,6 +152,7 @@
 	"centralauth-attach-title": "Confirm account",
 	"centralauth-automatic-global-groups-reason-local": "Automatically updated global groups due to local group change.",
 	"centralauth-automatic-global-groups-reason-global": "Automatically updated global groups due to global group change.",
+	"centralauth-automatic-global-groups-reason-config": "Automatically updated global groups after configuration was changed.",
 	"centralauth-block-already-locked": "The account [[Special:CentralAuth/$1|$1]] is already locked globally.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|action|actions}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|page|pages}}",
