@@ -12,6 +12,12 @@ class CentralAuthEditCounter {
 	private CentralAuthDatabaseManager $databaseManager;
 	private WANObjectCache $wanCache;
 
+	/**
+	 * @var int[] Mapping of central user id to global edit count for instance caching to avoid
+	 *   repeated calls to to read rows from the global_edit_count table
+	 */
+	private array $userEditCountCache = [];
+
 	public function __construct(
 		CentralAuthDatabaseManager $databaseManager,
 		WANObjectCache $wanCache
@@ -21,15 +27,28 @@ class CentralAuthEditCounter {
 	}
 
 	/**
-	 * Get the global edit count for a user
+	 * Get the global edit count for a user, falling back to initialise.
 	 *
-	 * @return int
+	 * Note that this method has a instance cache so that {@link self::preloadGetCountCache} can work as
+	 * intended. This instance cache is cleared when {@link self::increment} or {@link self::recalculate}
+	 * is called.
+	 *
+	 * @stable to call - since 1.46
 	 */
-	public function getCount( CentralAuthUser $centralUser ) {
+	public function getCount( CentralAuthUser $centralUser ): int {
 		$userId = $centralUser->getId();
+		if ( !$userId ) {
+			return 0;
+		}
+
+		if ( isset( $this->userEditCountCache[$userId] ) ) {
+			return $this->userEditCountCache[$userId];
+		}
+
 		$dbr = $this->databaseManager->getCentralReplicaDB();
 		$count = $this->getCountFromDB( $dbr, $userId );
 		if ( $count !== false ) {
+			$this->userEditCountCache[$userId] = $count;
 			return $count;
 		}
 
@@ -47,6 +66,7 @@ class CentralAuthEditCounter {
 		$dbw = $this->databaseManager->getCentralPrimaryDB();
 		$count = $this->getCountFromDB( $dbw, $userId );
 		if ( $count !== false ) {
+			$this->userEditCountCache[$userId] = $count;
 			return $count;
 		}
 
@@ -66,6 +86,7 @@ class CentralAuthEditCounter {
 			$dbw->endAtomic( __METHOD__ );
 			$count = $this->getCountFromDB( $dbw, $userId );
 			if ( $count !== false ) {
+				$this->userEditCountCache[$userId] = $count;
 				return $count;
 			}
 			$dbw->startAtomic( __METHOD__ );
@@ -79,7 +100,51 @@ class CentralAuthEditCounter {
 			->caller( __METHOD__ )
 			->execute();
 		$dbw->endAtomic( __METHOD__ );
+		$this->userEditCountCache[$userId] = $count;
 		return $count;
+	}
+
+	/**
+	 * Preloads the internal global edit count instance cache for the given
+	 * {@link CentralAuthUser} objects
+	 *
+	 * Use this when calls to {@link self::getCount} are expected for multiple users,
+	 * so that the queries can be batched instead of performing one query per user.
+	 *
+	 * Unlike {@link self::getCount}, this will not try to initialise the global edit count
+	 * for a user if it is not defined and will not attempt to read this data from a primary
+	 * DB connection. In both of these cases, a call to {@link self::getCount} will act as if
+	 * the global edit count has not been cached.
+	 *
+	 * @param CentralAuthUser[] $users
+	 * @since 1.46
+	 * @stable to call
+	 */
+	public function preloadGetCountCache( array $users ): void {
+		$userIds = [];
+
+		foreach ( $users as $user ) {
+			if ( $user->exists() ) {
+				$userIds[] = $user->getId();
+			}
+		}
+
+		$userIds = array_unique( $userIds );
+
+		$dbr = $this->databaseManager->getCentralReplicaDB();
+
+		foreach ( array_chunk( $userIds, 500 ) as $userIdsBatch ) {
+			$rows = $dbr->newSelectQueryBuilder()
+				->select( [ 'gec_user', 'gec_count' ] )
+				->from( 'global_edit_count' )
+				->where( [ 'gec_user' => $userIdsBatch ] )
+				->caller( __METHOD__ )
+				->fetchResultSet();
+
+			foreach ( $rows as $row ) {
+				$this->userEditCountCache[(int)$row->gec_user] = (int)$row->gec_count;
+			}
+		}
 	}
 
 	/**
@@ -127,6 +192,7 @@ class CentralAuthEditCounter {
 			->where( [ 'gec_user' => $centralUser->getId() ] )
 			->caller( __METHOD__ )
 			->execute();
+		$this->clearUserEditCountCache( $centralUser );
 		// No need to populate when affectedRows() = 0, we can just wait for
 		// getCount() to be called.
 	}
@@ -148,6 +214,14 @@ class CentralAuthEditCounter {
 			->where( [ 'gec_user' => $centralUser->getId() ] )
 			->caller( __METHOD__ )
 			->execute();
+		$this->clearUserEditCountCache( $centralUser );
 		return $newCount;
+	}
+
+	/**
+	 * Clears the internal global edit count instance cache for a given {@link CentralAuthUser}
+	 */
+	private function clearUserEditCountCache( CentralAuthUser $centralUser ): void {
+		unset( $this->userEditCountCache[$centralUser->getId()] );
 	}
 }
