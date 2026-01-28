@@ -27,8 +27,8 @@ use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use SpecialPageTestBase;
 use TestUserRegistry;
-use Wikimedia\Parsoid\Utils\DOMCompat;
-use Wikimedia\Parsoid\Utils\DOMUtils;
+use Wikimedia\Parsoid\Core\DOMCompat;
+use Wikimedia\Parsoid\Ext\DOMUtils;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
