@@ -154,7 +154,7 @@
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|сторінка|сторінки|сторінок}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|простір назв|простори назв|просторів назв}}",
 	"centralauth-centralautologin-desc": "Ця спеціальна сторінка використовується всередині MediaWiki.\nКоли Ви відвідуєте пов'язаний домен, не ввійшовши до системи, система централізованого входу використовує цю сторінку, щоб визначити, чи Ви входили на центральний домен.\nВи запитали цю сторінку без надання будь-яких даних автентифікації, тож вона нічого не робить.",
-	"centralauth-centralautologin-logged-in": "Ви центрально увійшли як $1. Перезавантажте сторінку, щоб застосувались Ваші користувацькі налаштування.",
+	"centralauth-centralautologin-logged-in": "{{GENDER:$2|Ви}} централізовано увійшли як $1. Перезавантажте сторінку, щоб були застосовані ваші користувацькі налаштування.",
 	"centralauth-complete": "Об'єднання облікових записів завершене!",
 	"centralauth-complete-text": "Тепер Ви можете авторизуватися на будь-якому сайті {{int:Centralauth-groupname}} без створення нового облікового запису.",
 	"centralauth-completelogin-back": "Повернутися до попередньої сторінки.",
@@ -230,7 +230,7 @@
 	"centralauth-error-badtoken": "Наданий токен автентифікації прострочений або недійсний.",
 	"centralauth-error-badtoken-title": "Недійний токен URL повернення",
 	"centralauth-error-locked": "Ви не можете редагувати, бо ваш обліковий запис закритий.",
-	"centralauth-error-nologinattempt": "Немає активних спроб входу в ході Вашого сеансу.",
+	"centralauth-error-nologinattempt": "Не вдалося встановити активний сеанс. Можливо, ваш браузер не зберігає файли cookie.",
 	"centralauth-error-token-wrongattempt": "Токен автентифікації не належить до Вашої поточної спроби входу.\nМожливо, хтось намагається зробити, щоб Ви ввійшли під зловмисним обліковим записом.",
 	"centralauth-error-token-wronguser": "Токен не збігається з Вашим іменем користувача в сеансі.\nХтось, можливо, намагається, щоб Ви ввійшли під зловмисним обліковим записом.\nЯкщо Ви просто намагаєтесь увійти як інший користувач, будь ласка, спершу вийдіть із системи.",
 	"centralauth-error-wrongprovider": "Ця спеціальна сторінка недоступна при використанні $1.",
@@ -552,8 +552,8 @@
 	"right-centralauth-unmerge": "Роз'єднання глобальних облікових записів",
 	"right-globalgroupmembership": "Зміна членства у глобальних групах",
 	"right-globalgrouppermissions": "Керування глобальними групами",
-	"sessionprovider-centralauthsessionprovider": "центральних сесій на основі кук",
-	"sessionprovider-centralauthtokensessionprovider": "сесій centralauthtoken",
+	"sessionprovider-centralauthsessionprovider": "центральних сеансів на основі кукі",
+	"sessionprovider-centralauthtokensessionprovider": "сеансів centralauthtoken",
 	"centralauth-badaccess-blacklisted": "Ви не можете подати запит на глобальне перейменування, оскільки перебуваєте в заборонному списку.",
 	"centralauth-action-forbidden-shared-domain": "Вам не дозволено виконувати цю дію на спільному домені автентифікації."
 }
