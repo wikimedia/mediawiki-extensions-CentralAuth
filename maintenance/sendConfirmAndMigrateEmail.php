@@ -31,44 +31,32 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 
 	/**
 	 * Whether to send to accounts with confirmed emails
-	 * @var bool
 	 */
-	private $sendToConfirmed;
+	private bool $sendToConfirmed;
 
 	/**
 	 * How long to wait in between emails
-	 *
-	 * @var int
 	 */
-	private $sleep;
+	private int $sleep;
 
-	/**
-	 * @var bool
-	 */
-	private $dryrun;
+	private bool $dryrun;
 
 	/**
 	 * @var string|bool
 	 */
 	private $resume;
 
-	/** @var float */
-	protected $start;
+	protected float $start;
 
-	/** @var int */
-	protected $sent;
+	protected int $sent = 0;
 
-	/** @var int */
-	protected $total;
+	protected int $total = 0;
 
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
 		$this->addDescription( "Resends the 'confirm your email address email' with a link to " .
 			"Special:MergeAccount" );
-		$this->start = microtime( true );
-		$this->sent = 0;
-		$this->total = 0;
 
 		$this->addOption( 'userlist', 'List of usernames', false, true );
 		$this->addOption( 'username', 'The user name to migrate', false, true, 'u' );
@@ -86,13 +74,15 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->dryrun = $this->hasOption( 'dryrun' );
 		$this->resume = $this->getOption( 'resume', true );
 
+		$this->start = microtime( true );
+
 		// check to see if we are processing a single username
-		if ( $this->getOption( 'username', false ) !== false ) {
+		if ( $this->hasOption( 'username' ) ) {
 			$username = $this->getOption( 'username' );
 
 			$this->resendConfirmationEmail( $username );
 
-		} elseif ( $this->getOption( 'userlist', false ) !== false ) {
+		} elseif ( $this->hasOption( 'userlist' ) ) {
 			$list = $this->getOption( 'userlist' );
 			if ( !is_file( $list ) ) {
 				$this->output( "ERROR - File not found: $list\n" );
@@ -134,10 +124,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
-	/**
-	 * @param string $username
-	 */
-	private function resendConfirmationEmail( $username ) {
+	private function resendConfirmationEmail( string $username ) {
 		$wikiID = WikiMap::getCurrentWikiId();
 
 		$this->total++;
@@ -182,7 +169,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			return;
 		}
 
-		if ( $this->sendConfirmAndMigrateMail( $user ) ) {
+		if ( $this->sendConfirmAndMigrateMail( $user )->isGood() ) {
 			$this->output( "Sent email to $username\n" );
 			$this->sent++;
 			sleep( $this->sleep );
@@ -198,9 +185,8 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	 * mail to the user's given address.
 	 *
 	 * @param User $user The user to send the confirmation email to
-	 * @return Status
 	 */
-	private function sendConfirmAndMigrateMail( User $user ) {
+	private function sendConfirmAndMigrateMail( User $user ): Status {
 		// we want this token to last a little bit longer (14 days) since we are cold-emailing
 		// users and we really want as many responses as possible
 		$tokenLife = 14 * 24 * 60 * 60;
@@ -238,7 +224,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		);
 	}
 
-	private function report() {
+	private function report(): void {
 		$delta = microtime( true ) - $this->start;
 		$this->output( sprintf(
 			"%s: %s processed %d usernames (%.1f/sec), %d (%.1f%%) emails sent\n",

@@ -21,35 +21,22 @@ class CheckLocalUser extends Maintenance {
 	/** @var float */
 	protected $start;
 
-	/** @var int */
-	protected $deleted;
+	protected int $deleted = 0;
 
-	/** @var int */
-	protected $total;
+	protected int $total = 0;
 
-	/** @var bool */
-	protected $dryrun;
+	protected bool $dryrun = true;
 
-	/** @var string|null */
-	protected $wiki;
+	protected ?string $wiki = null;
 
-	/** @var string|null|false */
-	protected $user;
+	protected string|null|false $user = null;
 
-	/** @var bool */
-	protected $verbose;
+	protected bool $verbose = false;
 
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
 		$this->addDescription( 'Checks the contents of the localuser table and deletes invalid entries' );
-		$this->start = microtime( true );
-		$this->deleted = 0;
-		$this->total = 0;
-		$this->dryrun = true;
-		$this->wiki = null;
-		$this->user = null;
-		$this->verbose = false;
 
 		$this->addOption( 'delete',
 			'Performs delete operations on the offending entries', false, false
@@ -62,29 +49,26 @@ class CheckLocalUser extends Maintenance {
 		);
 		$this->addOption( 'allwikis', 'If specified, checks all wikis', false, false );
 		$this->addOption( 'user', 'If specified, only checks the given user', false, true );
-		$this->addOption( 'verbose', 'Prints more information', false, true, 'v' );
+		$this->addOption( 'verbose', 'Prints more information', false, false, 'v' );
 		$this->setBatchSize( 1000 );
 	}
 
 	protected function initialize() {
-		if ( $this->getOption( 'delete', false ) !== false ) {
+		if ( $this->hasOption( 'delete' ) ) {
 			$this->dryrun = false;
 		}
 
 		$wiki = $this->getOption( 'wiki', false );
-		if ( $wiki !== false && !$this->getOption( 'allwikis' ) ) {
+		if ( $wiki !== false && !$this->hasOption( 'allwikis' ) ) {
 			$this->wiki = $wiki;
 		}
 
 		$user = $this->getOption( 'user', false );
 		if ( $user !== false ) {
-			$userNameUtils = $this->getServiceContainer()->getUserNameUtils();
-			$this->user = $userNameUtils->getCanonical( $user );
+			$this->user = $this->getServiceContainer()->getUserNameUtils()->getCanonical( $user );
 		}
 
-		if ( $this->getOption( 'verbose', false ) !== false ) {
-			$this->verbose = true;
-		}
+		$this->verbose = $this->hasOption( 'verbose' );
 	}
 
 	/**
@@ -94,6 +78,8 @@ class CheckLocalUser extends Maintenance {
 		$this->initialize();
 
 		$centralPrimaryDb = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+
+		$this->start = microtime( true );
 
 		// since the keys on localnames are not conducive to batch operations and
 		// because of the database shards, grab a list of the wikis and we will

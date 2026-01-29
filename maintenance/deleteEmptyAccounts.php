@@ -20,27 +20,19 @@ use Wikimedia\Rdbms\IDBAccessObject;
 
 class DeleteEmptyAccounts extends Maintenance {
 
-	/** @var bool */
-	protected $fix;
+	protected bool $fix;
 
-	/** @var bool */
-	protected $safe;
+	protected bool $safe;
 
-	/** @var bool */
-	protected $migrate;
+	protected bool $migrate;
 
-	/** @var bool */
-	protected $suppressRC;
+	protected bool $suppressRC;
 
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
 		$this->addDescription( 'Delete all global accounts with no attached local accounts, ' .
 			'then attempt to migrate a local account' );
-		$this->fix = false;
-		$this->safe = false;
-		$this->migrate = false;
-		$this->suppressRC = false;
 
 		$this->addOption( 'fix', 'Actually update the database. Otherwise, ' .
 			'only prints what would be done.', false, false );
@@ -64,19 +56,10 @@ class DeleteEmptyAccounts extends Maintenance {
 
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 
-		if ( $this->getOption( 'fix', false ) !== false ) {
-			$this->fix = true;
-		}
-		if ( $this->getOption( 'safe-migrate', false ) !== false ) {
-			$this->safe = true;
-			$this->migrate = true;
-		}
-		if ( $this->getOption( 'migrate', false ) !== false ) {
-			$this->migrate = true;
-		}
-		if ( $this->getOption( 'suppressrc', false ) !== false ) {
-			$this->suppressRC = true;
-		}
+		$this->fix = $this->hasOption( 'fix' );
+		$this->safe = $this->hasOption( 'safe-migrate' );
+		$this->migrate = $this->hasOption( 'safe-migrate' ) || $this->hasOption( 'migrate' );
+		$this->suppressRC = $this->hasOption( 'suppressrc' );
 
 		$end = $dbr->newSelectQueryBuilder()
 			->select( 'MAX(gu_id)' )
@@ -113,11 +96,7 @@ class DeleteEmptyAccounts extends Maintenance {
 		$wgUser = $original;
 	}
 
-	/**
-	 * @param string $username
-	 * @param User $deleter
-	 */
-	private function process( $username, User $deleter ) {
+	private function process( string $username, User $deleter ): void {
 		$central = new CentralAuthUser( $username, IDBAccessObject::READ_LATEST );
 		if ( !$central->exists() ) {
 			$this->output(
@@ -154,7 +133,7 @@ class DeleteEmptyAccounts extends Maintenance {
 			$this->output( "DELETE: [$username] Would delete\n" );
 		}
 
-		if ( count( $unattached ) !== 0 && $this->migrate ) {
+		if ( $this->migrate && count( $unattached ) !== 0 ) {
 			if ( $this->fix ) {
 				$central = CentralAuthUser::newUnattached( $username, true );
 				if ( $central->storeAndMigrate( [], !$this->suppressRC, $this->safe ) ) {

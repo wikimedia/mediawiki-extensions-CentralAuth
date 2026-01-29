@@ -16,35 +16,23 @@ use Wikimedia\Rdbms\SelectQueryBuilder;
 
 class CheckLocalNames extends Maintenance {
 
-	/** @var float */
-	protected $start;
+	protected float $start;
 
-	/** @var int */
-	protected $deleted;
+	protected int $deleted = 0;
 
-	/** @var int */
-	protected $total;
+	protected int $total = 0;
 
-	/** @var bool */
-	protected $dryrun;
+	protected bool $dryrun;
 
-	/** @var string|null */
-	protected $wiki;
+	protected ?string $wiki;
 
-	/** @var bool */
-	protected $verbose;
+	protected bool $verbose;
 
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
 		$this->addDescription( "Checks the contents of the localnames table and deletes " .
 			"invalid entries" );
-		$this->start = microtime( true );
-		$this->deleted = 0;
-		$this->total = 0;
-		$this->dryrun = true;
-		$this->wiki = null;
-		$this->verbose = false;
 
 		$this->addOption( 'delete',
 			'Performs delete operations on the offending entries', false, false
@@ -52,7 +40,7 @@ class CheckLocalNames extends Maintenance {
 		$this->addOption( 'wiki',
 			'If specified, only runs against local names from this wiki', false, true, 'u'
 		);
-		$this->addOption( 'verbose', 'Prints more information', false, true, 'v' );
+		$this->addOption( 'verbose', 'Prints more information', false, false, 'v' );
 		$this->setBatchSize( 1000 );
 	}
 
@@ -61,18 +49,11 @@ class CheckLocalNames extends Maintenance {
 		$centralPrimaryDb = $databaseManager->getCentralPrimaryDB();
 		$centralReplica = $databaseManager->getCentralReplicaDB();
 
-		if ( $this->getOption( 'delete', false ) !== false ) {
-			$this->dryrun = false;
-		}
+		$this->dryrun = $this->hasOption( 'delete' );
+		$this->wiki = $this->getOption( 'wiki' );
+		$this->verbose = $this->hasOption( 'verbose' );
 
-		$wiki = $this->getOption( 'wiki', false );
-		if ( $wiki !== false ) {
-			$this->wiki = $wiki;
-		}
-
-		if ( $this->getOption( 'verbose', false ) !== false ) {
-			$this->verbose = true;
-		}
+		$this->start = microtime( true );
 
 		// since the keys on localnames are not conducive to batch operations and
 		// because of the database shards, grab a list of the wikis and we will
