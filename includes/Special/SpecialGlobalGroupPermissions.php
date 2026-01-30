@@ -19,10 +19,10 @@ use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Logging\LogEventsList;
 use MediaWiki\Logging\LogPage;
 use MediaWiki\Logging\ManualLogEntry;
-use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -124,23 +124,22 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		if ( $this->userCanEdit( $this->getUser() ) ) {
 			// "Create a group" prompt
 			// @todo Move this out of main view to a separate page
-			$html = Html::openElement( 'fieldset' ) . "\n" .
-				Html::element( 'legend', [], $this->msg( 'centralauth-newgroup-legend' )->text() ) . "\n";
-			$html .= $this->msg( 'centralauth-newgroup-intro' )->parseAsBlock();
-			$html .= Html::openElement( 'form', [
-				'method' => 'post',
-				'action' => $this->getConfig()->get( MainConfigNames::Script ),
-				'name' => 'centralauth-globalgroups-newgroup'
-			] );
-			$html .= Html::hidden( 'title', $this->getPageTitle()->getPrefixedText() );
+			$formDescriptor = [
+				'Group' => [
+					'type' => 'text',
+					'label-message' => 'centralauth-globalgroupperms-newgroupname',
+				]
+			];
 
-			$fields = [ 'centralauth-globalgroupperms-newgroupname' => Html::input( 'wpGroup' ) ];
-
-			$html .= Xml::buildForm( $fields, 'centralauth-globalgroupperms-creategroup-submit' );
-			$html .= Html::closeElement( 'form' );
-			$html .= Html::closeElement( 'fieldset' );
-
-			$out->addHTML( $html );
+			HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
+				->setMethod( 'get' )
+				->setSubmitText( $this->msg( 'centralauth-globalgroupperms-creategroup-submit' )->escaped() )
+				->setWrapperLegend( $this->msg( 'centralauth-newgroup-legend' )->text() )
+				->addHeaderHtml( $this->msg( 'centralauth-newgroup-intro' )->parseAsBlock() )
+				->setName( 'centralauth-globalgroups-newgroup' )
+				->setTitle( $this->getPageTitle() )
+				->prepareForm()
+				->displayForm( false );
 		}
 	}
 
