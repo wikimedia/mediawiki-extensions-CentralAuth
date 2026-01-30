@@ -6,6 +6,7 @@ use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Html\Html;
+use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Logging\LogEventsList;
 use MediaWiki\Logging\LogPage;
 use MediaWiki\Logging\ManualLogEntry;
@@ -331,18 +332,20 @@ class SpecialWikiSets extends SpecialPage {
 			return;
 		}
 
-		$legend = $this->msg( 'centralauth-editset-legend-delete', $set->getName() )->text();
-		$form = [ 'centralauth-editset-reason' => Html::input( 'wpReason' ) ];
-		$url = $this->getPageTitle( 'delete/' . $subpage )->getLocalUrl();
-		$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
+		$formDescriptor = [
+			'Reason' => [
+				'type' => 'text',
+				'label-message' => 'centralauth-editset-reason',
+			]
+		];
 
-		$this->getOutput()->addHTML(
-			Html::openElement( 'fieldset' ) .
-			Html::element( 'legend', [], $legend ) .
-			Html::openElement( 'form', [ 'action' => $url, 'method' => 'post' ] )
-		);
-		$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit-delete' ) );
-		$this->getOutput()->addHTML( "<p>{$edittoken}</p></form></fieldset>" );
+		HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
+			->setSubmitText( $this->msg( 'centralauth-editset-submit-delete' )->escaped() )
+			->setSubmitDestructive()
+			->setWrapperLegend( $this->msg( 'centralauth-editset-legend-delete', $set->getName() )->text() )
+			->setTitle( $this->getPageTitle( 'delete/' . $subpage ) )
+			->prepareForm()
+			->displayForm( false );
 	}
 
 	/**
