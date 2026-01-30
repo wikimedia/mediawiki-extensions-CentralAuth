@@ -18,8 +18,7 @@ require_once "$IP/extensions/AntiSpoof/maintenance/BatchAntiSpoofClass.php";
 
 class BatchCAAntiSpoof extends BatchAntiSpoof {
 
-	/** @inheritDoc */
-	protected function batchRecord( $items ) {
+	protected function batchRecord( array $items ): void {
 		CentralAuthSpoofUser::batchRecord( CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB(), $items );
 	}
 
@@ -34,26 +33,19 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 			: CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 	}
 
-	/** @inheritDoc */
-	protected function getTableName() {
+	protected function getTableName(): string {
 		return 'globaluser';
 	}
 
-	/** @inheritDoc */
-	protected function getPrimaryKey() {
+	protected function getPrimaryKey(): string {
 		return 'gu_id';
 	}
 
-	/** @inheritDoc */
-	protected function getUserColumn() {
+	protected function getUserColumn(): string {
 		return 'gu_name';
 	}
 
-	/**
-	 * @param string $name
-	 * @return CentralAuthSpoofUser
-	 */
-	protected function makeSpoofUser( $name ) {
+	protected function makeSpoofUser( string $name ): CentralAuthSpoofUser {
 		return CentralAuthServices::getAntiSpoofManager()->getSpoofUser( $name );
 	}
 }

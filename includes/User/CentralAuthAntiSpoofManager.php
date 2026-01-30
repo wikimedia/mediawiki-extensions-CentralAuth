@@ -19,22 +19,13 @@ class CentralAuthAntiSpoofManager {
 		CAMainConfigNames::CentralAuthOldNameAntiSpoofWiki,
 	];
 
-	private ServiceOptions $options;
-	private LoggerInterface $logger;
-	private IConnectionProvider $connectionProvider;
-	private CentralAuthDatabaseManager $databaseManager;
-
 	public function __construct(
-		ServiceOptions $options,
-		LoggerInterface $logger,
-		IConnectionProvider $connectionProvider,
-		CentralAuthDatabaseManager $databaseManager
+		private readonly ServiceOptions $options,
+		private readonly LoggerInterface $logger,
+		private readonly IConnectionProvider $connectionProvider,
+		private readonly CentralAuthDatabaseManager $databaseManager
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
-		$this->logger = $logger;
-		$this->connectionProvider = $connectionProvider;
-		$this->databaseManager = $databaseManager;
 	}
 
 	public function getSpoofUser( string $name ): CentralAuthSpoofUser {
@@ -46,16 +37,10 @@ class CentralAuthAntiSpoofManager {
 
 	/**
 	 * Test if an account is acceptable
-	 *
-	 * @param User $user
-	 * @param User $creator
-	 * @param bool $enable
-	 * @param bool $override
-	 * @param LoggerInterface|null $logger
-	 *
-	 * @return StatusValue
 	 */
-	public function testNewAccount( $user, $creator, $enable, $override, $logger = null ) {
+	public function testNewAccount(
+		User $user, User $creator, bool $enable, bool $override, ?LoggerInterface $logger = null
+	): StatusValue {
 		$logger ??= $this->logger;
 
 		if ( !$enable ) {
@@ -119,9 +104,9 @@ class CentralAuthAntiSpoofManager {
 	 *
 	 * @param string $name Name to lookup
 	 *
-	 * @return null|string Old username, or null
+	 * @return ?string Old username, or null
 	 */
-	public function getOldRenamedUserName( $name ) {
+	public function getOldRenamedUserName( string $name ): ?string {
 		$dbrLogWiki = $this->connectionProvider->getReplicaDatabase(
 			// If nobody has set this variable, it will be false,
 			// which will mean the current wiki, which sounds like as
