@@ -18,26 +18,20 @@ require_once "$IP/extensions/AntiSpoof/maintenance/BatchAntiSpoofClass.php";
 
 class BatchCAAntiSpoof extends BatchAntiSpoof {
 
-	/**
-	 * @param array $items
-	 */
+	/** @inheritDoc */
 	protected function batchRecord( $items ) {
 		CentralAuthSpoofUser::batchRecord( CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB(), $items );
 	}
 
 	/**
-	 * @param int $db
-	 * @param string|string[] $groups
-	 * @param string|bool $wiki
+	 * @inheritDoc
 	 * @return IReadableDatabase
 	 * @suppress PhanParamSignatureMismatch
 	 */
 	protected function getDB( $db, $groups = [], $wiki = false ) {
-		if ( $db === DB_PRIMARY ) {
-			return CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		} else {
-			return CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
-		}
+		return $db === DB_PRIMARY
+			? CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB()
+			: CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 	}
 
 	/** @inheritDoc */

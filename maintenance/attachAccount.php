@@ -31,42 +31,28 @@ class AttachAccount extends Maintenance {
 	protected float $start;
 
 	/** Number of accounts which weren't found */
-	protected int $missing;
+	protected int $missing = 0;
 
 	/** Number of accounts which were partially attached (ie. some wikis succeeded, some failed) */
-	protected int $partial;
+	protected int $partial = 0;
 
 	/** Number of accounts for which all attach attempts failed */
-	protected int $failed;
+	protected int $failed = 0;
 
-	/** @var int */
-	protected int $attached;
+	protected int $attached = 0;
 
-	/** @var int */
-	protected int $ok;
+	protected int $ok = 0;
 
-	/** @var int */
-	protected int $total;
+	protected int $total = 0;
 
-	/** @var bool */
 	protected bool $dryRun;
 
-	/** @var bool */
 	protected bool $quiet;
 
 	public function __construct() {
 		parent::__construct();
 		$this->requireExtension( 'CentralAuth' );
 		$this->addDescription( 'Attaches the specified usernames to a global account' );
-		$this->start = microtime( true );
-		$this->missing = 0;
-		$this->partial = 0;
-		$this->failed = 0;
-		$this->attached = 0;
-		$this->ok = 0;
-		$this->total = 0;
-		$this->dryRun = false;
-		$this->quiet = false;
 
 		$this->addOption( 'userlist',
 			'File with the list of usernames to attach, one per line, on every possible wiki', false, true );
@@ -81,6 +67,8 @@ class AttachAccount extends Maintenance {
 	public function execute() {
 		$this->dryRun = $this->hasOption( 'dry-run' );
 		$this->quiet = $this->hasOption( 'quiet' );
+
+		$this->start = microtime( true );
 
 		if ( $this->hasOption( 'wiki-user-list' ) ) {
 			foreach ( $this->readFileByLine( $this->getOption( 'wiki-user-list' ) ) as $line ) {
@@ -109,7 +97,7 @@ class AttachAccount extends Maintenance {
 	 * @param string $username
 	 * @param string|null $wiki Wiki ID, or null for all available wikis
 	 */
-	protected function attach( string $username, ?string $wiki = null ) {
+	protected function attach( string $username, ?string $wiki = null ): void {
 		$this->total++;
 		if ( !$this->quiet ) {
 			$this->output( "CentralAuth account attach for: {$username}\n" );
@@ -179,19 +167,14 @@ class AttachAccount extends Maintenance {
 		}
 	}
 
-	/**
-	 * @param int|float $val
-	 *
-	 * @return float|int
-	 */
-	protected function reportPcnt( $val ) {
+	protected function reportPcnt( int|float $val ): int|float {
 		if ( $this->total > 0 ) {
 			return $val / $this->total * 100.0;
 		}
 		return 0;
 	}
 
-	protected function report() {
+	protected function report(): void {
 		$delta = microtime( true ) - $this->start;
 		$format = '[%s]' .
 			' processed: %d (%.1f/sec);' .

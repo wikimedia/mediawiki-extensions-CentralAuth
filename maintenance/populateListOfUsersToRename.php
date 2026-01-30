@@ -31,10 +31,9 @@ require_once "$IP/maintenance/Maintenance.php";
  */
 class PopulateListOfUsersToRename extends Maintenance {
 
-	/** @var string|null */
-	private $lName = '';
-	/** @var string|null */
-	private $lWiki = '';
+	private ?string $lName = '';
+
+	private ?string $lWiki = '';
 
 	public function __construct() {
 		parent::__construct();
@@ -44,12 +43,10 @@ class PopulateListOfUsersToRename extends Maintenance {
 
 	/**
 	 * Fetches unattached accounts and attempts to continue.
-	 *
-	 * @return IResultWrapper
 	 */
-	private function doQuery() {
+	private function doQuery(): IResultWrapper {
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
-		$rows = $dbr->newSelectQueryBuilder()
+		return $dbr->newSelectQueryBuilder()
 			->select( [ 'name' => 'ln_name', 'wiki' => 'ln_wiki' ] )
 			->from( 'localnames' )
 			->leftJoin( 'localuser', null, [ 'ln_name=lu_name', 'ln_wiki=lu_wiki' ] )
@@ -64,8 +61,6 @@ class PopulateListOfUsersToRename extends Maintenance {
 			->limit( $this->mBatchSize )
 			->caller( __METHOD__ )
 			->fetchResultSet();
-
-		return $rows;
 	}
 
 	public function execute() {

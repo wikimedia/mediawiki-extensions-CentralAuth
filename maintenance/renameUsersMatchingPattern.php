@@ -30,20 +30,15 @@ class RenameUsersMatchingPattern extends Maintenance {
 	private GlobalRenameFactory $globalRenameFactory;
 	private GlobalRenameUserValidator $validator;
 
-	/** @var User */
-	private $performer;
+	private User $performer;
 
-	/** @var string */
-	private $reason;
+	private string $reason;
 
-	/** @var bool */
-	private $dryRun;
+	private bool $dryRun;
 
-	/** @var bool */
-	private $suppressRedirect;
+	private bool $suppressRedirect;
 
-	/** @var bool */
-	private $skipPageMoves;
+	private bool $skipPageMoves;
 
 	public function __construct() {
 		parent::__construct();
@@ -132,11 +127,9 @@ class RenameUsersMatchingPattern extends Maintenance {
 	}
 
 	/**
-	 * @param string $oldName
-	 * @param string $newName
 	 * @return bool True if the user was renamed
 	 */
-	private function renameUser( $oldName, $newName ) {
+	private function renameUser( string $oldName, string $newName ): bool {
 		$oldUser = $this->userFactory->newFromName( $oldName, UserRigorOptions::RIGOR_NONE );
 		$newUser = $this->userFactory->newFromName( $newName, UserRigorOptions::RIGOR_CREATABLE );
 		if ( !$oldUser ) {
@@ -173,23 +166,24 @@ class RenameUsersMatchingPattern extends Maintenance {
 		if ( $this->dryRun ) {
 			$this->output( "Would rename \"$oldName\" to \"$newName\"\n" );
 			return true;
-		} else {
-			$status = $globalRenameUser->rename( $data );
-			if ( $status->isGood() ) {
-				$this->output( "Successfully queued rename of \"$oldName\" to \"$newName\"\n" );
-				return true;
-			} else {
-				$this->output( "Error renaming \"$oldName\" to \"$newName\": " );
-				$this->error( $status );
-				return false;
-			}
 		}
+
+		$status = $globalRenameUser->rename( $data );
+		if ( $status->isGood() ) {
+			$this->output( "Successfully queued rename of \"$oldName\" to \"$newName\"\n" );
+			return true;
+		}
+
+		$this->output( "Error renaming \"$oldName\" to \"$newName\": " );
+		$this->error( $status );
+
+		return false;
 	}
 
 	/**
 	 * Wait until fewer than 15 rename jobs are pending
 	 */
-	private function waitForJobs() {
+	private function waitForJobs(): void {
 		while ( true ) {
 			$count = $this->dbManager->getCentralPrimaryDB()->newSelectQueryBuilder()
 				->from( 'renameuser_status' )

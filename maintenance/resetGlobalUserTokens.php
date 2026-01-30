@@ -64,11 +64,11 @@ class ResetGlobalUserTokens extends Maintenance {
 		}
 
 		$databaseManager = CentralAuthServices::getDatabaseManager();
-		// We list user by user_id from one of the replica database
+		// We list user by user_id from one of the replica databases
 		$dbr = $databaseManager->getCentralReplicaDB();
 		$maxid = $this->getOption( 'maxid', -1 );
 
-		if ( $maxid == -1 ) {
+		if ( $maxid === -1 ) {
 			$maxid = $dbr->newSelectQueryBuilder()
 				->select( 'MAX(gu_id)' )
 				->from( 'globaluser' )
@@ -105,10 +105,7 @@ class ResetGlobalUserTokens extends Maintenance {
 		} while ( $min < $maxid );
 	}
 
-	/**
-	 * @param string $username
-	 */
-	private function updateUser( $username ) {
+	private function updateUser( string $username ): void {
 		$user = new CentralAuthUser( $username, IDBAccessObject::READ_LATEST );
 		$this->output( 'Resetting user_token for "' . $username . '": ' );
 		// Change value

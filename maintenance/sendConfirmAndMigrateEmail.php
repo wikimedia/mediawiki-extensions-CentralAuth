@@ -41,10 +41,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 
 	private bool $dryrun;
 
-	/**
-	 * @var string|bool
-	 */
-	private $resume;
+	private string|bool $resume;
 
 	protected float $start;
 
@@ -124,7 +121,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
-	private function resendConfirmationEmail( string $username ) {
+	private function resendConfirmationEmail( string $username ): void {
 		$wikiID = WikiMap::getCurrentWikiId();
 
 		$this->total++;

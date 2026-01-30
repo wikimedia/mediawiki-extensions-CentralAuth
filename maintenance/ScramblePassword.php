@@ -77,7 +77,7 @@ class ScramblePassword extends Maintenance {
 		}
 	}
 
-	private function validateOptions() {
+	private function validateOptions(): void {
 		if ( !preg_match( '/^[a-zA-Z0-9]+$/', $this->getOption( 'task' ) ) ) {
 			$this->fatalError( 'Invalid task ID: ' . $this->getOption( 'task' ) );
 		}

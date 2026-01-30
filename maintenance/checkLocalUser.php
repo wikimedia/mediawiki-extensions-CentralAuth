@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
 use Generator;
+use MediaWiki\Extension\CentralAuth\CentralAuthReadOnlyError;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\WikiMap\WikiMap;
@@ -18,18 +19,17 @@ require_once "$IP/maintenance/Maintenance.php";
 
 class CheckLocalUser extends Maintenance {
 
-	/** @var float */
-	protected $start;
+	protected float $start;
 
 	protected int $deleted = 0;
 
 	protected int $total = 0;
 
-	protected bool $dryrun = true;
+	protected bool $dryrun;
 
 	protected ?string $wiki = null;
 
-	protected string|null|false $user = null;
+	protected ?string $user = null;
 
 	protected bool $verbose = false;
 
@@ -53,29 +53,23 @@ class CheckLocalUser extends Maintenance {
 		$this->setBatchSize( 1000 );
 	}
 
-	protected function initialize() {
-		if ( $this->hasOption( 'delete' ) ) {
-			$this->dryrun = false;
-		}
+	/**
+	 * @throws CentralAuthReadOnlyError
+	 */
+	public function execute() {
+		$this->dryrun = !$this->hasOption( 'delete' );
 
 		$wiki = $this->getOption( 'wiki', false );
 		if ( $wiki !== false && !$this->hasOption( 'allwikis' ) ) {
 			$this->wiki = $wiki;
 		}
 
-		$user = $this->getOption( 'user', false );
-		if ( $user !== false ) {
-			$this->user = $this->getServiceContainer()->getUserNameUtils()->getCanonical( $user );
+		if ( $this->hasOption( 'user' ) ) {
+			$this->user = $this->getServiceContainer()->getUserNameUtils()
+				->getCanonical( $this->getOption( 'user' ) );
 		}
 
 		$this->verbose = $this->hasOption( 'verbose' );
-	}
-
-	/**
-	 * @throws \MediaWiki\Extension\CentralAuth\CentralAuthReadOnlyError
-	 */
-	public function execute() {
-		$this->initialize();
 
 		$centralPrimaryDb = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 
@@ -125,7 +119,7 @@ class CheckLocalUser extends Maintenance {
 					->fetchResultSet();
 
 				// check to see if the user did not exist in the local user table
-				if ( $localUser->numRows() == 0 ) {
+				if ( $localUser->numRows() === 0 ) {
 					if ( $this->verbose ) {
 						$this->output(
 							"Local user not found for localuser entry $username@$wiki\n"
@@ -153,7 +147,7 @@ class CheckLocalUser extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
-	private function report() {
+	private function report(): void {
 		$this->output( sprintf( "%s found %d invalid localuser, %d (%.1f%%) deleted\n",
 			wfTimestamp( TS_DB ),
 			$this->total,
@@ -165,33 +159,29 @@ class CheckLocalUser extends Maintenance {
 	/**
 	 * @return array|null[]|string[]
 	 */
-	protected function getWikis() {
+	protected function getWikis(): array {
 		$centralReplica = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 
 		if ( $this->wiki !== null ) {
 			return [ $this->wiki ];
-		} else {
-			$conds = [];
-			if ( $this->user !== null ) {
-				$conds['lu_name'] = $this->user;
-			}
-			return $centralReplica->newSelectQueryBuilder()
-				->select( 'lu_wiki' )
-				->distinct()
-				->from( 'localuser' )
-				->where( $conds )
-				->orderBy( 'lu_wiki', SelectQueryBuilder::SORT_ASC )
-				->caller( __METHOD__ )
-				->fetchFieldValues();
 		}
+
+		$conds = [];
+		if ( $this->user !== null ) {
+			$conds['lu_name'] = $this->user;
+		}
+
+		return $centralReplica->newSelectQueryBuilder()
+			->select( 'lu_wiki' )
+			->distinct()
+			->from( 'localuser' )
+			->where( $conds )
+			->orderBy( 'lu_wiki', SelectQueryBuilder::SORT_ASC )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 	}
 
-	/**
-	 * @param string $wiki
-	 *
-	 * @return Generator
-	 */
-	protected function getUsers( $wiki ) {
+	protected function getUsers( string $wiki ): Generator {
 		if ( $this->user !== null ) {
 			$this->output( "\t ... querying '$this->user'\n" );
 			yield $this->user;

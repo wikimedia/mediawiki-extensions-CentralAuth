@@ -40,7 +40,6 @@ class FixStuckGlobalRename extends Maintenance {
 	public function execute() {
 		global $wgLocalDatabases;
 		$userNameUtils = $this->getServiceContainer()->getUserNameUtils();
-		$databaseManager = CentralAuthServices::getDatabaseManager();
 
 		$oldName = $userNameUtils->getCanonical( $this->getArg( 0 ) );
 		$newName = $userNameUtils->getCanonical( $this->getArg( 1 ) );
@@ -53,6 +52,8 @@ class FixStuckGlobalRename extends Maintenance {
 		if ( !$ca->renameInProgressOn( WikiMap::getCurrentWikiId() ) ) {
 			$this->fatalError( "{$ca->getName()} does not have a rename in progress on this wiki." );
 		}
+
+		$databaseManager = CentralAuthServices::getDatabaseManager();
 
 		$dbr = $databaseManager->getLocalDB( DB_REPLICA, $this->getOption( 'logwiki' ) );
 		$dbLogEntrySqb = DatabaseLogEntry::newSelectQueryBuilder( $dbr );

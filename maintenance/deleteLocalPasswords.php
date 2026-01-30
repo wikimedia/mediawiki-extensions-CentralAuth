@@ -20,11 +20,11 @@ require_once "$IP/maintenance/includes/DeleteLocalPasswords.php";
 // @phpcs:ignore MediaWiki.Files.ClassMatchesFilename.NotMatch
 class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 
-	/** @var string|null Wiki to run on, or null for all. */
-	protected $wiki;
+	/** Wiki to run on, or null for all. */
+	protected ?string $wiki;
 
-	/** @var string|null The wiki being currently processed */
-	protected $currentWiki;
+	/** The wiki being currently processed */
+	protected ?string $currentWiki;
 
 	public function __construct() {
 		parent::__construct();
@@ -83,28 +83,24 @@ class CentralAuthDeleteLocalPasswords extends DeleteLocalPasswords {
 
 		if ( $this->wiki !== null ) {
 			return [ $this->wiki ];
-		} else {
-			$conds = [];
-			if ( $this->user !== null ) {
-				$conds['lu_name'] = $this->user;
-			}
-			return $centralReplica->newSelectQueryBuilder()
-				->select( 'lu_wiki' )
-				->distinct()
-				->from( 'localuser' )
-				->where( $conds )
-				->orderBy( 'lu_wiki', SelectQueryBuilder::SORT_ASC )
-				->caller( __METHOD__ )
-				->fetchFieldValues();
 		}
+
+		$conds = [];
+		if ( $this->user !== null ) {
+			$conds['lu_name'] = $this->user;
+		}
+
+		return $centralReplica->newSelectQueryBuilder()
+			->select( 'lu_wiki' )
+			->distinct()
+			->from( 'localuser' )
+			->where( $conds )
+			->orderBy( 'lu_wiki', SelectQueryBuilder::SORT_ASC )
+			->caller( __METHOD__ )
+			->fetchFieldValues();
 	}
 
-	/**
-	 * @param string $wiki
-	 *
-	 * @return Generator
-	 */
-	protected function getUsers( $wiki ) {
+	protected function getUsers( string $wiki ): Generator {
 		if ( $this->user !== null ) {
 			$this->output( "\t ... querying '$this->user'\n" );
 			yield [ $this->user ];

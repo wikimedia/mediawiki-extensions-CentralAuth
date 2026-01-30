@@ -57,7 +57,7 @@ class MigratePass1 extends Maintenance {
 			if ( $central->storeAndMigrate() ) {
 				$this->migrated++;
 			}
-			if ( ++$this->total % 1000 == 0 ) {
+			if ( ++$this->total % 1000 === 0 ) {
 				$this->migratePassOneReport();
 			}
 		}

@@ -17,29 +17,21 @@ use Wikimedia\Rdbms\IDBAccessObject;
 
 class MigrateAccount extends Maintenance {
 
-	/** @var float */
-	protected $start;
+	protected float $start;
 
-	/** @var int */
-	protected $partial;
+	protected int $partial = 0;
 
-	/** @var int */
-	protected $migrated;
+	protected int $migrated = 0;
 
-	/** @var int */
-	protected $total;
+	protected int $total = 0;
 
-	/** @var bool */
-	protected $safe;
+	protected bool $safe;
 
-	/** @var bool */
-	protected $autoMigrate;
+	protected bool $autoMigrate;
 
-	/** @var bool */
-	protected $resetToken;
+	protected bool $resetToken;
 
-	/** @var bool */
-	protected $suppressRC;
+	protected bool $suppressRC;
 
 	public function __construct() {
 		parent::__construct();
@@ -49,10 +41,6 @@ class MigrateAccount extends Maintenance {
 			and there are no conflicts. Assumes the localuser and globaluser tables
 			are up to date (e.g. migratePass0 has been run).
 			TEXT );
-		$this->start = microtime( true );
-		$this->partial = 0;
-		$this->migrated = 0;
-		$this->total = 0;
 
 		$this->addOption( 'auto',
 			'Extended migration: ALWAYS create a global account for the username where missing ' .
@@ -89,6 +77,8 @@ class MigrateAccount extends Maintenance {
 		$this->autoMigrate = $this->hasOption( 'auto' );
 		$this->resetToken = $this->hasOption( 'resettoken' );
 		$this->suppressRC = $this->hasOption( 'suppressrc' );
+
+		$this->start = microtime( true );
 
 		// Check to see if we are processing a single username
 		if ( $this->hasOption( 'username' ) ) {
@@ -139,11 +129,7 @@ class MigrateAccount extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
-	/**
-	 * @param string $username
-	 * @param string|null $homewiki
-	 */
-	private function migrate( $username, $homewiki = null ) {
+	private function migrate( string $username, ?string $homewiki = null ): void {
 		$this->total++;
 		$this->output( "CentralAuth account migration for: " . $username . "\n" );
 
@@ -156,9 +142,7 @@ class MigrateAccount extends Maintenance {
 			return;
 		}
 
-		/**
-		 * Migration with an existing global account
-		 */
+		// Migration with an existing global account
 		if ( $central->exists() ) {
 			$this->output( "INFO: A global account already exists for: $username\n" );
 
@@ -196,9 +180,7 @@ class MigrateAccount extends Maintenance {
 				}
 			}
 		} else {
-			/**
-			 * Migration without an existing global account
-			 */
+			// Migration without an existing global account
 			if ( count( $unattached ) === 0 ) {
 				$this->output( "ERROR: No local accounts found for: $username\n" );
 				return;
@@ -272,7 +254,7 @@ class MigrateAccount extends Maintenance {
 		}
 	}
 
-	private function migratePassOneReport() {
+	private function migratePassOneReport(): void {
 		$delta = microtime( true ) - $this->start;
 		$this->output( sprintf(
 			"%s processed %d usernames (%.1f/sec), %d (%.1f%%) fully migrated, %d (%.1f%%) " .

@@ -24,18 +24,14 @@ class CentralAuthExpireTemporaryAccounts extends ExpireTemporaryAccounts {
 
 	private GlobalUserSelectQueryBuilderFactory $globalUserSelectQueryBuilderFactory;
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	protected function initServices(): void {
 		parent::initServices();
 
 		$this->globalUserSelectQueryBuilderFactory = CentralAuthServices::getGlobalUserSelectQueryBuilderFactory();
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	protected function getTempAccountsToExpireQueryBuilder(
 		int $registeredBeforeUnix,
 		int $frequencyDays
@@ -52,9 +48,7 @@ class CentralAuthExpireTemporaryAccounts extends ExpireTemporaryAccounts {
 			), false );
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	protected function queryBuilderToUserIdentities( SelectQueryBuilder $queryBuilder ): Iterator {
 		if ( $queryBuilder instanceof GlobalUserSelectQueryBuilder ) {
 			return $queryBuilder->fetchLocalUserIdentities();

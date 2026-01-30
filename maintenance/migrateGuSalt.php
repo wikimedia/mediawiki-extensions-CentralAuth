@@ -33,16 +33,12 @@ class MigrateGuSalt extends LoggedUpdateMaintenance {
 		$this->requireExtension( 'CentralAuth' );
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	protected function getUpdateKey() {
 		return 'MigrateGuSalt';
 	}
 
-	/**
-	 * @inheritDoc
-	 */
+	/** @inheritDoc */
 	public function doDBUpdates() {
 		$dbw = $this->getDB( DB_PRIMARY );
 

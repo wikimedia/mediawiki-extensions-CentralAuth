@@ -47,9 +47,8 @@ class FixRenameUserLocalLogs extends Maintenance {
 
 	/**
 	 * List the global 'gblrename' log entries, in batches of the specified size.
-	 * @return iterable<iterable<stdClass>>
 	 */
-	private function getGlobalLogEntries() {
+	private function getGlobalLogEntries(): BatchRowIterator {
 		$databaseManager = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() );
 		$metaWikiDbr = $databaseManager->getLocalDB( DB_REPLICA, $this->getOption( 'logwiki' ) );
 		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $metaWikiDbr )
@@ -134,7 +133,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 	 * @param iterable<stdClass> $globalLogRows
 	 * @return array<string, ?string>
 	 */
-	private function getUserAttachmentTimestamps( iterable $globalLogRows ) {
+	private function getUserAttachmentTimestamps( iterable $globalLogRows ): array {
 		$db = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 
 		$userNames = [];
@@ -194,7 +193,9 @@ class FixRenameUserLocalLogs extends Maintenance {
 		return $matchingResults;
 	}
 
-	private function reportNoMatchingEntry( DatabaseLogEntry $globalLogEntry, int $count, array $attachedTimestamps ) {
+	private function reportNoMatchingEntry(
+		DatabaseLogEntry $globalLogEntry, int $count, array $attachedTimestamps
+	): void {
 		if ( $count > 1 ) {
 			$this->output( "More than one matching local log entry for global #{$globalLogEntry->getId()}\n" );
 		} elseif ( $count < 1 ) {

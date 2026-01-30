@@ -22,9 +22,9 @@ class GetCentralAuthDBInfo extends Maintenance {
 	}
 
 	public function execute() {
-		$db = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
-		$host = $db->getServer();
-		$this->output( "$host\n" );
+		$this->output(
+			CentralAuthServices::getDatabaseManager()->getCentralReplicaDB()->getServer() . "\n"
+		);
 	}
 }
 

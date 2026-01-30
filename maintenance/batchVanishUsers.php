@@ -39,16 +39,12 @@ class BatchVanishUsers extends Maintenance {
 	}
 
 	public function execute(): void {
-		$csvPath = $this->getOption( 'data' );
-		$performer = $this->getOption( 'performer' );
-		$isDryRun = $this->getOption( 'dry-run' );
-		$outputPath = $this->getOption( 'output', 'output.csv' );
-
 		$services = $this->getServiceContainer();
 		if ( !$services->getCentralIdLookupFactory()->getNonLocalLookup() ) {
 			$this->fatalError( 'This script cannot be run when CentralAuth is disabled.' );
 		}
 
+		$performer = $this->getOption( 'performer' );
 		$performerUser = CentralAuthUser::getInstanceByName( $performer );
 		if ( $performerUser->getId() === 0 ) {
 			$this->fatalError( "Performer with username {$performer} cannot be found.\n" );
@@ -60,6 +56,8 @@ class BatchVanishUsers extends Maintenance {
 			$this->fatalError( "Performed with username {$performer} cannot be found in UserIdentityLookup. \n" );
 		}
 
+		$csvPath = $this->getOption( 'data' );
+
 		// Load and parse CSV containing vanish requests from file.
 		$handle = fopen( $csvPath, 'r' );
 		if ( !$handle ) {
@@ -68,6 +66,7 @@ class BatchVanishUsers extends Maintenance {
 		$vanishRequests = $this->parseUserVanishRequests( $handle );
 		fclose( $handle );
 
+		$outputPath = $this->getOption( 'output', 'output.csv' );
 		$outputHandle = fopen( $outputPath, 'w' );
 		if ( !$outputHandle ) {
 			$this->fatalError( "Unable to create output file: {$outputPath}" );
@@ -79,7 +78,9 @@ class BatchVanishUsers extends Maintenance {
 		$successCount = 0;
 		$failureCount = 0;
 
-		// Iterate through all of the vanish requests and add them to the queue
+		$isDryRun = $this->getOption( 'dry-run' );
+
+		// Iterate through the requests to vanish and add them to the queue
 		// one-by-one if they're valid.
 		foreach ( $vanishRequests as $index => $request ) {
 			$current = $index + 1;
@@ -186,7 +187,6 @@ class BatchVanishUsers extends Maintenance {
 			return [ "success" => false, "message" => "duplicate" ];
 		}
 
-		$globalRenamersQueryParams = null;
 		$parsedLink = parse_url( $request[ 'globalRenamersLink' ] ?? '', PHP_URL_QUERY );
 		parse_str( $parsedLink, $globalRenamersQueryParams );
 		$reason = urldecode( $globalRenamersQueryParams[ 'reason' ] ?? '' );

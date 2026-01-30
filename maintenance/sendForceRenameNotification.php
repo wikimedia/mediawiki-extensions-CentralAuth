@@ -114,10 +114,7 @@ class SendForceRenameNotification extends Maintenance {
 		}
 	}
 
-	/**
-	 * @return int
-	 */
-	protected function getQueuedCount() {
+	protected function getQueuedCount(): int {
 		$group = $this->getServiceContainer()->getJobQueueGroup();
 		$queue = $group->get( 'MassMessageServerSideJob' );
 		$pending = $queue->getSize();
@@ -128,12 +125,7 @@ class SendForceRenameNotification extends Maintenance {
 		return $active + $pending;
 	}
 
-	/**
-	 * @param string $dir
-	 *
-	 * @return string
-	 */
-	protected function getLocalizedText( $dir ) {
+	protected function getLocalizedText( string $dir ): string {
 		$langCode = $this->getConfig()->get( MainConfigNames::LanguageCode );
 		$fallbacks = $this->getServiceContainer()->getLanguageFallback()->getAll( $langCode );
 		array_unshift( $fallbacks, $langCode );

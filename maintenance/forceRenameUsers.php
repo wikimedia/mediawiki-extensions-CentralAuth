@@ -12,6 +12,7 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
+use Psr\Log\LoggerInterface;
 use stdClass;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IDBAccessObject;
@@ -35,8 +36,7 @@ require_once "$IP/maintenance/Maintenance.php";
  */
 class ForceRenameUsers extends Maintenance {
 
-	/** @var \Psr\Log\LoggerInterface */
-	private $logger;
+	private LoggerInterface $logger;
 
 	public function __construct() {
 		parent::__construct();
@@ -47,10 +47,7 @@ class ForceRenameUsers extends Maintenance {
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
-	/**
-	 * @param string $msg
-	 */
-	private function log( $msg ) {
+	private function log( string $msg ): void {
 		$this->logger->debug( "ForceRenameUsers: $msg" );
 		$this->output( $msg . "\n" );
 	}
@@ -76,10 +73,7 @@ class ForceRenameUsers extends Maintenance {
 		}
 	}
 
-	/**
-	 * @return int
-	 */
-	protected function getCurrentRenameCount( IDatabase $dbw ) {
+	protected function getCurrentRenameCount( IDatabase $dbw ): int {
 		$row = $dbw->newSelectQueryBuilder()
 			->select( 'COUNT(*) as count' )
 			->from( 'renameuser_status' )
@@ -88,11 +82,7 @@ class ForceRenameUsers extends Maintenance {
 		return (int)$row->count;
 	}
 
-	/**
-	 * @param stdClass $row
-	 * @param IDatabase $dbw
-	 */
-	protected function rename( $row, IDatabase $dbw ) {
+	protected function rename( stdClass $row, IDatabase $dbw ): void {
 		$wiki = $row->utr_wiki;
 		$name = $row->utr_name;
 		$services = $this->getServiceContainer();
@@ -161,11 +151,9 @@ class ForceRenameUsers extends Maintenance {
 	}
 
 	/**
-	 * @param string $wiki
-	 * @param IDatabase $dbw
 	 * @return stdClass[]
 	 */
-	protected function findUsers( $wiki, IDatabase $dbw ) {
+	protected function findUsers( string $wiki, IDatabase $dbw ): array {
 		$rowsToRename = [];
 		$updates = new UsersToRenameDatabaseUpdates( $dbw );
 		$rows = $updates->findUsers(

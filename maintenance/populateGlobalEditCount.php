@@ -21,8 +21,7 @@ class PopulateGlobalEditCount extends Maintenance {
 
 	private CentralAuthDatabaseManager $databaseManager;
 
-	/** @var int */
-	private $lastReportTime = 0;
+	private int $lastReportTime = 0;
 
 	public function __construct() {
 		parent::__construct();
@@ -165,11 +164,7 @@ class PopulateGlobalEditCount extends Maintenance {
 		$this->output( "Complete. Updated $numUpdated of $numGlobalAccounts edit counts.\n" );
 	}
 
-	/**
-	 * @param int $position
-	 * @param int $end
-	 */
-	private function showProgress( $position, $end ) {
+	private function showProgress( int $position, int $end ): void {
 		$now = time();
 		if ( !$this->isQuiet() && $now - $this->lastReportTime >= 10 ) {
 			printf(

@@ -49,14 +49,7 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
  */
 class BackfillLocalAccounts extends Maintenance {
 
-	/** @var string */
-	private $startdateTS;
-
-	/** @var UserFactory */
-	private $userFactory;
-
-	/** @var User|null */
-	private $performer;
+	private ?User $performer;
 
 	public function __construct() {
 		parent::__construct();
@@ -68,15 +61,10 @@ class BackfillLocalAccounts extends Maintenance {
 	}
 
 	/**
-	 * get the smallest global uid registered on or after the specified start date
-	 *
-	 * @param IReadableDatabase $cadb
-	 * @param string $startdate
-	 *
-	 * @return int|false global uid
+	 * Get the smallest global uid registered on or after the specified start date
 	 */
-	private function getStartUID( $cadb, $startdate ) {
-		$startid = $cadb->newSelectQueryBuilder()
+	private function getStartUID( IReadableDatabase $cadb, string $startdate ): int|false {
+		return $cadb->newSelectQueryBuilder()
 			->select( 'gu_id' )
 			->from( 'globaluser' )
 			->where( $cadb->expr( 'gu_registration', '>=', $startdate ) )
@@ -84,33 +72,24 @@ class BackfillLocalAccounts extends Maintenance {
 			->limit( 1 )
 			->caller( __METHOD__ )
 			->fetchField();
-		return $startid;
 	}
 
 	/**
-	 * get the maximum global uid in the central auth database
-	 *
-	 * @param IReadableDatabase $cadb
-	 *
-	 * @return int|null global uid
+	 * Get the maximum global uid in the central auth database
 	 */
-	private function getMaxUID( $cadb ) {
-		$maxid = $cadb->newSelectQueryBuilder()
+	private function getMaxUID( IReadableDatabase $cadb ): int|false {
+		return $cadb->newSelectQueryBuilder()
 			->select( 'MAX(gu_id)' )
 			->from( 'globaluser' )
 			->caller( __METHOD__ )
 			->fetchField();
-		return $maxid;
 	}
 
 	/**
-	 * create a local account on the wiki this script is running on,
-	 * for the specific user name
-	 *
-	 * @param string $username
-	 * @param bool $verbose
+	 * Create a local account on the wiki this script is running on,
+	 * for the specific username
 	 */
-	private function createLocalAccount( $username, $verbose ) {
+	private function createLocalAccount( string $username, bool $verbose ): void {
 		$performer = $this->performer ?? new UltimateAuthority(
 			User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] )
 		);
@@ -132,17 +111,13 @@ class BackfillLocalAccounts extends Maintenance {
 	}
 
 	/**
-	 * make sure the user does not already exist locally,
+	 * Make sure the user does not already exist locally,
 	 * and get the home wiki for the user, if possible
 	 *
-	 * @param string $gu_name
-	 * @param UserFactory $userFactory
-	 * @param bool $verbose
-	 *
-	 * @return string|null home wiki of user, or null on error/missing
+	 * @return ?string home wiki of user, or null on error/missing
 	 * @throws RuntimeException
 	 */
-	public function checkUserAndGetHomeWiki( $gu_name, $userFactory, $verbose ) {
+	public function checkUserAndGetHomeWiki( string $gu_name, UserFactory $userFactory ): ?string {
 		$user = $userFactory->newFromName( $gu_name );
 		if ( !$user ) {
 			$this->error( "Bad user name " . $gu_name );
@@ -157,35 +132,38 @@ class BackfillLocalAccounts extends Maintenance {
 	}
 
 	/**
-	 * return session info containing the ip address and user agent for the specified
-	 * user name, if found, or null otherwise
-	 *
-	 * @param AccountCreationDetailsLookup $accountLookup
-	 * @param IReadableDatabase $dbr
-	 * @param string $gu_name
-	 * @param string $gu_registration
-	 * @param bool $verbose
+	 * Return session info containing the ip address and user agent for the specified
+	 * username, if found, or null otherwise
 	 *
 	 * @return array{userId: 0, ip: string, headers: array, sessionId: ''}|null
 	 */
-	private function getFakeSession( $accountLookup, $dbr, $gu_name, $gu_registration, $verbose ) {
+	private function getFakeSession(
+		AccountCreationDetailsLookup $accountLookup,
+		IReadableDatabase $dbr,
+		string $gu_name,
+		string $gu_registration,
+		bool $verbose
+	): ?array {
 		$fakeSession = null;
 
 		$accountInfo = null;
 		if ( ExtensionRegistry::getInstance()->isLoaded( 'CheckUser' ) ) {
 			$accountInfo = $accountLookup->getAccountCreationIPAndUserAgent( $gu_name, $dbr );
-			if ( $accountInfo == null ) {
+			if ( $accountInfo === null ) {
 				// maybe this account was created by someone else; we'll try to get the
 				// performer info instead
 				[ $performer, $logId ] = $accountLookup->findPerformerAndLogId( $dbr, $gu_name, $gu_registration );
 				if ( $performer ) {
 					$accountInfo = $accountLookup->getAccountCreationIPAndUserAgent(
-						$performer, $dbr, $logId );
+						$performer,
+						$dbr,
+						$logId
+					);
 				}
 			}
 		}
 
-		if ( $accountInfo != null ) {
+		if ( $accountInfo !== null ) {
 			$fakeSession = [
 				// no user in the local wiki, no session either
 				'userId' => 0,
@@ -202,14 +180,11 @@ class BackfillLocalAccounts extends Maintenance {
 	}
 
 	/**
-	 * @param IReadableDatabase $cadb
-	 * @param int $batchStartUID
-	 * @param int $maxGlobalUID
-	 * @param string $wikiID
-	 *
 	 * @return array{0:int,1:IResultWrapper}
 	 */
-	protected function getGlobalUserBatch( $cadb, $batchStartUID, $maxGlobalUID, $wikiID ) {
+	protected function getGlobalUserBatch(
+		IReadableDatabase $cadb, int $batchStartUID, int $maxGlobalUID, string $wikiID
+	): array {
 		$subQuery = $cadb->newSelectQueryBuilder()
 			->select( '1' )
 			->from( 'localuser' )
@@ -235,39 +210,35 @@ class BackfillLocalAccounts extends Maintenance {
 				break;
 			}
 		} while ( !$result->numRows() );
-		return [ intval( $batchStartUID ), $result ];
+		return [ (int)$batchStartUID, $result ];
 	}
 
 	/**
-	 * retrieve global users in batches with uid in the specified
+	 * Retrieve global users in batches with uid in the specified
 	 * range, and if we can find their home wiki, create a
 	 * local user on the wiki where this script runs, with the
 	 * user's ip and user agent from account creation on their
 	 * home wiki if available, otherwise skip
-	 *
-	 * @param IReadableDatabase $cadb
-	 * @param UserFactory $userFactory
-	 * @param AccountCreationDetailsLookup $accountLookup
-	 * @param LBFactory $lbFactory
-	 * @param bool $dryrun
-	 * @param bool $verbose
-	 * @param int $startGlobalUID
-	 * @param int $maxGlobalUID
-	 * @param string $wikiID
 	 */
 	public function checkAndCreateAccounts(
-		$cadb, $userFactory, $accountLookup, $lbFactory,
-		$dryrun, $verbose,
-		$startGlobalUID, $maxGlobalUID, $wikiID ) {
+		IReadableDatabase $cadb,
+		UserFactory $userFactory,
+		AccountCreationDetailsLookup $accountLookup,
+		LBFactory $lbFactory,
+		bool $dryrun,
+		bool $verbose,
+		int $startGlobalUID,
+		int $maxGlobalUID,
+		string $wikiID
+	): void {
 		$createdUsers = 0;
-		$currentUID = $startGlobalUID;
 
 		$dbw = $this->getPrimaryDB();
 		do {
 			[ $startGlobalUID, $result ] = $this->getGlobalUserBatch( $cadb, $startGlobalUID, $maxGlobalUID, $wikiID );
 
 			foreach ( $result as $row ) {
-				$homeWiki = $this->checkUserAndGetHomeWiki( $row->gu_name, $userFactory, $verbose );
+				$homeWiki = $this->checkUserAndGetHomeWiki( $row->gu_name, $userFactory );
 				if ( !$homeWiki ) {
 					continue;
 				}
@@ -279,7 +250,7 @@ class BackfillLocalAccounts extends Maintenance {
 
 				if ( $dryrun ) {
 					$this->output( "Would create user $row->gu_name from guid "
-						. strval( $row->gu_id ) . " and home wiki "
+						. $row->gu_id . " and home wiki "
 						. "$homeWiki\n" );
 				} else {
 					$fakeSession = $this->getFakeSession(
@@ -315,17 +286,6 @@ class BackfillLocalAccounts extends Maintenance {
 	}
 
 	public function execute() {
-		$services = $this->getServiceContainer();
-		$this->userFactory = $services->getUserFactory();
-
-		$dryrun = $this->hasOption( 'dryrun' );
-		$verbose = $this->hasOption( 'verbose' );
-
-		$date = new ConvertibleTimestamp( strtotime( $this->getOption( 'startdate' ) ) );
-		$this->startdateTS = $date->getTimestamp( TS_MW );
-		$enddate = new ConvertibleTimestamp( strtotime( 'now' ) );
-		$enddateTS = $enddate->getTimestamp( TS_MW );
-
 		$this->performer = User::newSystemUser( CentralAuthHooks::BACKFILL_ACCOUNT_CREATOR, [ 'steal' => true ] );
 		if ( !$this->performer ) {
 			$this->fatalError(
@@ -335,8 +295,16 @@ class BackfillLocalAccounts extends Maintenance {
 
 		$cadb = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
 
+		$services = $this->getServiceContainer();
+		$userFactory = $services->getUserFactory();
+
+		$verbose = $this->hasOption( 'verbose' );
+
+		$date = new ConvertibleTimestamp( strtotime( $this->getOption( 'startdate' ) ) );
+		$startdateTS = $date->getTimestamp( TS_MW );
+
 		$maxGlobalUID = $this->getMaxUID( $cadb );
-		$startGlobalUID = $this->getStartUID( $cadb, $this->startdateTS );
+		$startGlobalUID = $this->getStartUID( $cadb, $startdateTS );
 		if ( !$maxGlobalUID || !$startGlobalUID ) {
 			$this->output( "No accounts eligible for autocreation\n" );
 			return;
@@ -347,16 +315,17 @@ class BackfillLocalAccounts extends Maintenance {
 			$this->output( "Ending guid: $maxGlobalUID\n" );
 		}
 
-		$lbFactory = $services->getDBLoadBalancerFactory();
-
-		$wikiID = WikiMap::getCurrentWikiId();
 		$this->checkAndCreateAccounts(
 			$cadb,
-			$this->userFactory,
+			$userFactory,
 			$services->get( 'AccountCreationDetailsLookup' ),
-			$lbFactory,
-			$dryrun, $verbose,
-			$startGlobalUID, $maxGlobalUID, $wikiID );
+			$services->getDBLoadBalancerFactory(),
+			$this->hasOption( 'dryrun' ),
+			$verbose,
+			$startGlobalUID,
+			$maxGlobalUID,
+			WikiMap::getCurrentWikiId()
+		);
 	}
 
 }
