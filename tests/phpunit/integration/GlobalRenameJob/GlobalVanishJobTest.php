@@ -19,13 +19,13 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserStatus;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
-use MediaWiki\Status\Status;
 use MediaWiki\Tests\MockDatabase;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
 use PHPUnit\Framework\MockObject\MockObject;
+use StatusValue;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameJob\GlobalVanishJob
@@ -78,7 +78,7 @@ class GlobalVanishJobTest extends MediaWikiIntegrationTestCase {
 		// Expect a rename to be attempted as all of the data being fed into
 		// the job is valid.
 		$this->globalRenameUser->method( 'withLockPerformingUser' )->willReturn( $this->globalRenameUser );
-		$this->globalRenameUser->method( 'rename' )->willReturn( Status::newGood() );
+		$this->globalRenameUser->method( 'rename' )->willReturn( StatusValue::newGood() );
 		$this->globalRenameUser->expects( $this->once() )->method( 'rename' );
 
 		$this->getServiceContainer()->getJobQueueGroup()->push(

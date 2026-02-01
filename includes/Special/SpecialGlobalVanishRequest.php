@@ -24,12 +24,12 @@ use MediaWiki\Json\FormatJson;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Parser\Parser;
 use MediaWiki\SpecialPage\FormSpecialPage;
-use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\WikiMap\WikiMap;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
+use StatusValue;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -65,27 +65,27 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 	}
 
 	/** @inheritDoc */
-	public function onSubmit( array $data ): Status {
+	public function onSubmit( array $data ): StatusValue {
 		$newUsername = $this->generateUsername();
 		if ( !$newUsername ) {
-			return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
+			return StatusValue::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
 		}
 
 		// Verify that the user is a global user.
 		$causer = $this->getGlobalUser();
 		if ( !$causer ) {
-			return Status::newFatal( $this->msg( 'globalvanishrequest-globaluser-error' ) );
+			return StatusValue::newFatal( $this->msg( 'globalvanishrequest-globaluser-error' ) );
 		}
 
 		// Disallow for users that have blocks on any connected wikis.
 		if ( $causer->isBlocked() ) {
-			return Status::newFatal( $this->msg( 'globalvanishrequest-blocked-error' ) );
+			return StatusValue::newFatal( $this->msg( 'globalvanishrequest-blocked-error' ) );
 		}
 
 		// Disallow duplicate rename / vanish requests.
 		$username = $this->getUser()->getName();
 		if ( $this->globalRenameRequestStore->currentNameHasPendingRequest( $username ) ) {
-			return Status::newFatal( $this->msg( 'globalvanishrequest-pending-request-error' ) );
+			return StatusValue::newFatal( $this->msg( 'globalvanishrequest-pending-request-error' ) );
 		}
 
 		$request = $this->globalRenameRequestStore
@@ -121,7 +121,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 
 			// Save the rename request to the queue before initiating the job.
 			if ( !$this->globalRenameRequestStore->save( $request ) ) {
-				return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
+				return StatusValue::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
 			}
 
 			// Determine which wiki to run the job on. If the config var is
@@ -137,11 +137,11 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		} else {
 			// Save the request to the database for it to be processed later.
 			if ( !$this->globalRenameRequestStore->save( $request ) ) {
-				return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
+				return StatusValue::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
 			}
 		}
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/** @inheritDoc */
@@ -406,14 +406,14 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 	/**
 	 * Retrieve entity data from the Wikidata API.
 	 */
-	private function queryWikidata( array $parameters ): Status {
+	private function queryWikidata( array $parameters ): StatusValue {
 		$options = [
 			'method' => 'GET',
 			'userAgent' => "{$this->httpRequestFactory->getUserAgent()} CentralAuth",
 		];
 		$url = $this->getConfig()->get( CAMainConfigNames::CentralAuthWikidataApiUrl );
 		if ( $url === null ) {
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				'Cannot make Wikidata request for entities as $wgCentralAuthWikidataApiUrl is unset.'
 			);
 		}

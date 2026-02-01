@@ -35,7 +35,6 @@ use MediaWiki\Password\PasswordFactory;
 use MediaWiki\RCFeed\FormattedRCFeed;
 use MediaWiki\RCFeed\RCFeed;
 use MediaWiki\Session\SessionManager;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\ExternalUserNames;
 use MediaWiki\User\User;
@@ -46,6 +45,7 @@ use MWCryptHash;
 use MWCryptRand;
 use RevisionDeleteUser;
 use RuntimeException;
+use StatusValue;
 use stdClass;
 use Wikimedia\IPUtils;
 use Wikimedia\NormalizedException\NormalizedException;
@@ -1498,7 +1498,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param array &$attached on success, list of wikis which will be auto-attached
 	 * @param array &$unattached on success, list of wikis which won't be auto-attached
 	 * @param array &$methods on success, associative array of each wiki's attachment method
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function migrationDryRun( $passwords, &$home, &$attached, &$unattached, &$methods ) {
 		// Because it messes with $this->mEmail and so on
@@ -1517,13 +1517,13 @@ class CentralAuthUser implements IDBAccessObject {
 		$selfPassword = $this->getPasswordFromString( $selfRow->user_password, $selfRow->user_id );
 		if ( !$this->matchHashes( $passwords, $selfPassword ) ) {
 			$this->logger->info( 'dry run: failed self-password check' );
-			return Status::newFatal( 'wrongpassword' );
+			return StatusValue::newFatal( 'wrongpassword' );
 		}
 
 		$migrationSet = $this->queryUnattached();
 		if ( !$migrationSet ) {
 			$this->logger->info( 'dry run: no accounts to merge, failed migration' );
-			return Status::newFatal( 'centralauth-merge-no-accounts' );
+			return StatusValue::newFatal( 'centralauth-merge-no-accounts' );
 		}
 		$home = $this->chooseHomeWiki( $migrationSet );
 		$local = $migrationSet[$home];
@@ -1540,7 +1540,7 @@ class CentralAuthUser implements IDBAccessObject {
 				'dry run: failed password match to home {home}',
 				[ 'home' => $home ]
 			);
-			return Status::newFatal( 'centralauth-merge-home-password' );
+			return StatusValue::newFatal( 'centralauth-merge-home-password' );
 		}
 
 		$this->mHomeWiki = $home;
@@ -1557,7 +1557,7 @@ class CentralAuthUser implements IDBAccessObject {
 		sort( $unattached );
 		ksort( $methods );
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/**
@@ -1565,18 +1565,18 @@ class CentralAuthUser implements IDBAccessObject {
 	 * global one, using the provided homewiki
 	 *
 	 * @param string $wiki
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function promoteToGlobal( $wiki ) {
 		$unattached = $this->queryUnattached();
 		if ( !isset( $unattached[$wiki] ) ) {
-			return Status::newFatal( 'promote-not-on-wiki' );
+			return StatusValue::newFatal( 'promote-not-on-wiki' );
 		}
 
 		$info = $unattached[$wiki];
 
 		if ( $this->exists() ) {
-			return Status::newFatal( 'promote-already-exists' );
+			return StatusValue::newFatal( 'promote-already-exists' );
 		}
 
 		$ok = $this->storeGlobalData(
@@ -1586,14 +1586,14 @@ class CentralAuthUser implements IDBAccessObject {
 		);
 		if ( !$ok ) {
 			// Race condition?
-			return Status::newFatal( 'promote-already-exists' );
+			return StatusValue::newFatal( 'promote-already-exists' );
 		}
 
 		$this->attach( $wiki, 'primary' );
 
 		$this->recordAntiSpoof();
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/**
@@ -1826,15 +1826,15 @@ class CentralAuthUser implements IDBAccessObject {
 	 * NOTE: Keep in sync with bulk unattach in GlobalRenameUserDatabaseUpdates.
 	 *
 	 * @param array $list List of wiki names
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function adminUnattach( $list ) {
 		$this->checkWriteMode();
 		if ( !count( $list ) ) {
-			return Status::newFatal( 'centralauth-admin-none-selected' );
+			return StatusValue::newFatal( 'centralauth-admin-none-selected' );
 		}
 
-		$status = new Status;
+		$status = StatusValue::newGood();
 
 		// Get valid and invalid wikis
 		[ 'valid' => $valid, 'invalid' => $invalid ] = $this->validateList( $list );
@@ -1933,7 +1933,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 *
 	 * @param string $reason Reason for the deletion
 	 * @param UserIdentity $deleter User doing the deletion
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function adminDelete( $reason, UserIdentity $deleter ) {
 		$this->checkWriteMode();
@@ -1983,7 +1983,7 @@ class CentralAuthUser implements IDBAccessObject {
 			->execute();
 		if ( !$centralDB->affectedRows() ) {
 			$centralDB->endAtomic( __METHOD__ );
-			return Status::newFatal( 'centralauth-admin-delete-nonexistent', $this->mName );
+			return StatusValue::newFatal( 'centralauth-admin-delete-nonexistent', $this->mName );
 		}
 		# Delete all global user groups for the user
 		$centralDB->newDeleteQueryBuilder()
@@ -2022,13 +2022,13 @@ class CentralAuthUser implements IDBAccessObject {
 		$hookRunner = new CentralAuthHookRunner( MediaWikiServices::getInstance()->getHookContainer() );
 		$hookRunner->onCentralAuthAccountDeleted( $idBeforeDeletion, $nameBeforeDeletion );
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/**
 	 * Lock a global account
 	 *
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function adminLock() {
 		$this->checkWriteMode();
@@ -2036,7 +2036,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$services = MediaWikiServices::getInstance();
 		if ( $services->getTempUserConfig()->isTempName( $this->mName ) ) {
-			return Status::newFatal( 'centralauth-admin-cannot-lock-temporary-account' );
+			return StatusValue::newFatal( 'centralauth-admin-cannot-lock-temporary-account' );
 		}
 
 		$newCasToken = $this->mCasToken + 1;
@@ -2054,7 +2054,7 @@ class CentralAuthUser implements IDBAccessObject {
 			->caller( __METHOD__ )
 			->execute();
 		if ( !$dbw->affectedRows() ) {
-			return Status::newFatal( 'centralauth-state-mismatch' );
+			return StatusValue::newFatal( 'centralauth-state-mismatch' );
 		}
 		$this->mCasToken = $newCasToken;
 
@@ -2067,13 +2067,13 @@ class CentralAuthUser implements IDBAccessObject {
 			->getCounter( 'account_lock' )
 			->increment();
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/**
 	 * Unlock a global account
 	 *
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function adminUnlock() {
 		$this->checkWriteMode();
@@ -2092,20 +2092,20 @@ class CentralAuthUser implements IDBAccessObject {
 			->caller( __METHOD__ )
 			->execute();
 		if ( !$dbw->affectedRows() ) {
-			return Status::newFatal( 'centralauth-state-mismatch' );
+			return StatusValue::newFatal( 'centralauth-state-mismatch' );
 		}
 		$this->mCasToken = $newCasToken;
 
 		$this->invalidateCache();
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/**
 	 * Change account hiding level.
 	 *
 	 * @param int $level CentralAuthUser::HIDDEN_LEVEL_* class constant
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function adminSetHidden( int $level ) {
 		$this->checkWriteMode();
@@ -2126,7 +2126,7 @@ class CentralAuthUser implements IDBAccessObject {
 			->caller( __METHOD__ )
 			->execute();
 		if ( !$dbw->affectedRows() ) {
-			return Status::newFatal( 'centralauth-state-mismatch' );
+			return StatusValue::newFatal( 'centralauth-state-mismatch' );
 		}
 		$this->mCasToken = $newCasToken;
 
@@ -2134,7 +2134,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$hookRunner = new CentralAuthHookRunner( MediaWikiServices::getInstance()->getHookContainer() );
 		$hookRunner->onCentralAuthUserVisibilityChanged( $this, $level );
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/**
@@ -2150,7 +2150,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $reason reason for hiding
 	 * @param IContextSource $context
 	 * @param bool $markAsBot Whether to mark the log entry in RC with the bot flag
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function adminLockHide(
 		?bool $setLocked, ?int $setHidden, string $reason, IContextSource $context, bool $markAsBot = false
@@ -2165,7 +2165,7 @@ class CentralAuthUser implements IDBAccessObject {
 		if ( $setLocked === null ) {
 			$setLocked = $isLocked;
 		} elseif ( !$context->getAuthority()->isAllowed( 'centralauth-lock' ) ) {
-			return Status::newFatal( 'centralauth-admin-not-authorized' );
+			return StatusValue::newFatal( 'centralauth-admin-not-authorized' );
 		}
 
 		if ( $setHidden === null ) {
@@ -2175,16 +2175,16 @@ class CentralAuthUser implements IDBAccessObject {
 			|| $oldHiddenLevel !== self::HIDDEN_LEVEL_NONE
 		) {
 			if ( !$context->getAuthority()->isAllowed( 'centralauth-suppress' ) ) {
-				return Status::newFatal( 'centralauth-admin-not-authorized' );
+				return StatusValue::newFatal( 'centralauth-admin-not-authorized' );
 			} elseif ( $this->getGlobalEditCount() > self::HIDE_CONTRIBLIMIT ) {
-				return Status::newFatal(
+				return StatusValue::newFatal(
 					$context->msg( 'centralauth-admin-too-many-edits', $this->mName )
 						->numParams( self::HIDE_CONTRIBLIMIT )
 				);
 			}
 		}
 
-		$returnStatus = Status::newGood();
+		$returnStatus = StatusValue::newGood();
 
 		$hiddenLevels = [
 			self::HIDDEN_LEVEL_NONE,
@@ -3407,13 +3407,13 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $group The global group
 	 * @param string|null $expiry Timestamp of membership expiry in TS_MW format, or null if no expiry
 	 */
-	public function addToGlobalGroup( string $group, ?string $expiry = null ): Status {
+	public function addToGlobalGroup( string $group, ?string $expiry = null ): StatusValue {
 		$this->checkWriteMode();
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 
 		$services = MediaWikiServices::getInstance();
 		if ( $services->getTempUserConfig()->isTempName( $this->mName ) ) {
-			return Status::newFatal( 'centralauth-admin-cannot-lock-temporary-account' );
+			return StatusValue::newFatal( 'centralauth-admin-cannot-lock-temporary-account' );
 		}
 
 		// Replace into the DB so any updates to the membership expiry take effect.
@@ -3430,7 +3430,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->invalidateCache();
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/**

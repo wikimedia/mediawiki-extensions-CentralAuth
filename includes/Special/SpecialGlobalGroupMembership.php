@@ -22,11 +22,11 @@ use MediaWiki\Linker\Linker;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Message\Message;
 use MediaWiki\SpecialPage\UserGroupsSpecialPage;
-use MediaWiki\Status\Status;
 use MediaWiki\Status\StatusFormatter;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
+use StatusValue;
 
 /**
  * Equivalent of Special:Userrights for global groups.
@@ -188,11 +188,11 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	 * @param string $reason Reason for group change
 	 * @param CentralAuthUser $user Target user object.
 	 */
-	private function saveUserGroups( string $reason, CentralAuthUser $user ): Status {
+	private function saveUserGroups( string $reason, CentralAuthUser $user ): StatusValue {
 		// This conflict check doesn't prevent from a situation when two concurrent DB transactions
 		// update the same user's groups, but that's highly unlikely.
 		if ( $this->conflictOccured() ) {
-			return Status::newFatal( 'userrights-conflict' );
+			return StatusValue::newFatal( 'userrights-conflict' );
 		}
 
 		$newGroupsStatus = $this->readGroupsForm();
@@ -208,12 +208,12 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		$this->globalGroupAssignmentService->saveChangesToUserGroups( $this->getAuthority(), $user, $addgroup,
 			$removegroup, $groupExpiries, $reason );
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/**
 	 * @param string $username
-	 * @return Status<CentralAuthUser>
+	 * @return StatusValue<CentralAuthUser>
 	 */
 	private function fetchUser( $username ) {
 		if ( str_starts_with( $username, '#' ) ) {

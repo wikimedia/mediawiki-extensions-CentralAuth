@@ -13,8 +13,8 @@ use InvalidArgumentException;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Status\Status;
 use MediaWiki\User\UserNameUtils;
+use StatusValue;
 use stdClass;
 use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDBAccessObject;
@@ -335,12 +335,12 @@ class GlobalRenameRequest {
 	 *
 	 * @param string $name
 	 * @param int $flags one of IDBAccessObject::READ_* flags
-	 * @return Status Canonicalized name
+	 * @return StatusValue<string> Canonicalized name
 	 */
 	public static function isNameAvailable( string $name, int $flags = IDBAccessObject::READ_LATEST ) {
 		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 		$safe = $userNameUtils->getCanonical( $name, UserNameUtils::RIGOR_CREATABLE );
-		$status = Status::newGood( $safe );
+		$status = StatusValue::newGood( $safe );
 
 		if ( $safe === false || $safe === '' ) {
 			$status->fatal( 'globalrenamerequest-newname-err-invalid' );

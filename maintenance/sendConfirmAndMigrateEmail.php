@@ -12,10 +12,10 @@ require_once "$IP/maintenance/Maintenance.php";
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
+use StatusValue;
 
 /**
  * This maintenance script is used to resend confirmation emails to users with
@@ -183,7 +183,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 	 *
 	 * @param User $user The user to send the confirmation email to
 	 */
-	private function sendConfirmAndMigrateMail( User $user ): Status {
+	private function sendConfirmAndMigrateMail( User $user ): StatusValue {
 		// we want this token to last a little bit longer (14 days) since we are cold-emailing
 		// users and we really want as many responses as possible
 		$tokenLife = 14 * 24 * 60 * 60;

@@ -33,7 +33,6 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\Parser\ParserOptions;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\SpecialPage;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
@@ -42,6 +41,7 @@ use MediaWiki\WikiMap\WikiMap;
 use OOUI\MessageWidget;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
+use StatusValue;
 use Wikimedia\Rdbms\LBFactory;
 
 /**
@@ -674,7 +674,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$out->addModules( 'ext.centralauth.globalrenamequeue' );
 
 		$status = $htmlForm->show();
-		if ( $status instanceof Status && $status->isOK() ) {
+		if ( $status instanceof StatusValue && $status->isOK() ) {
 			$this->getOutput()->redirect(
 				$this->getPageTitle(
 					self::PAGE_PROCESS_REQUEST . "/{$req->getId()}/{$status->value}"
@@ -684,11 +684,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	}
 
 	/**
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function onProcessSubmit( array $data ) {
 		$request = $this->getContext()->getRequest();
-		$status = new Status;
+		$status = StatusValue::newGood();
 		if ( $request->getCheck( 'approve' ) ) {
 			$status = $this->doResolveRequest( true, $data );
 		} elseif ( $request->getCheck( 'deny' ) ) {
@@ -703,19 +703,19 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @param bool $approved
 	 * @param array $data
 	 *
-	 * @return Status
+	 * @return StatusValue
 	 */
 	protected function doResolveRequest( $approved, $data ) {
 		$request = $this->globalRenameRequestStore->newFromId( $data['rid'] );
 		$oldUser = User::newFromName( $request->getName() );
 
 		$newUser = User::newFromName( $request->getNewName(), 'creatable' );
-		$status = new Status;
+		$status = StatusValue::newGood();
 		$session = $this->getContext()->exportSession();
 		if ( $approved ) {
 			// Disallow self-renaming
 			if ( $request->getName() === $this->getUser()->getName() ) {
-				return Status::newFatal( 'globalrenamerequest-self-error' );
+				return StatusValue::newFatal( 'globalrenamerequest-self-error' );
 			}
 
 			if ( $request->userIsGlobal() ) {
@@ -774,7 +774,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					$newUser->getName(),
 					$data['reason']
 				);
-				$status = Status::newGood();
+				$status = StatusValue::newGood();
 			}
 		}
 
@@ -789,7 +789,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				$requestType === GlobalRenameRequest::VANISH &&
 				trim( $data['comments'] ?? '' ) === ''
 			) {
-				return Status::newFatal( 'globalrenamequeue-request-vanish-no-reason' );
+				return StatusValue::newFatal( 'globalrenamequeue-request-vanish-no-reason' );
 			}
 
 			$request->setStatus(
@@ -923,7 +923,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @param MailAddress $to
 	 * @param string $subject
 	 * @param string $body
-	 * @return Status
+	 * @return StatusValue
 	 */
 	protected function sendNotificationEmail( MailAddress $to, $subject, $body ) {
 		$from = new MailAddress(
@@ -938,12 +938,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 *
 	 * @param GlobalRenameRequest $request
 	 * @param string $recipientUserName
-	 * @return Status
+	 * @return StatusValue
 	 */
 	protected function sendEmailForRejectionOfVanishRequest( GlobalRenameRequest $request, $recipientUserName ) {
 		// Email to legal is only sent when it's a vanish request
 		if ( $request->getType() !== GlobalRenameRequest::VANISH ) {
-			return Status::newGood();
+			return StatusValue::newGood();
 		}
 
 		if ( $request->userIsGlobal() ) {
@@ -1000,12 +1000,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				$bodyMessage,
 			);
 			if ( $userMailerStatus->isGood() ) {
-				return Status::newGood();
+				return StatusValue::newGood();
 			} else {
-				return Status::newFatal( 'globalvanishrequest-rejected-notification-error' );
+				return StatusValue::newFatal( 'globalvanishrequest-rejected-notification-error' );
 			}
 		} catch ( Exception ) {
-			return Status::newFatal( 'globalvanishrequest-rejected-notification-error' );
+			return StatusValue::newFatal( 'globalvanishrequest-rejected-notification-error' );
 		}
 	}
 

@@ -8,9 +8,9 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\Job;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserIdentity;
+use StatusValue;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -141,13 +141,13 @@ class GlobalRenameUser {
 	 *         the $oldUser object passed to the constructor should match the
 	 *         username in the DB exactly.
 	 *
-	 * @return Status
+	 * @return StatusValue
 	 * @see GlobalRenameRequest
 	 * @see SpecialGlobalRenameUser
 	 */
 	public function rename( array $options ) {
 		if ( $this->oldUser->getName() === $this->newUser->getName() ) {
-			return Status::newFatal( 'centralauth-rename-same-name' );
+			return StatusValue::newFatal( 'centralauth-rename-same-name' );
 		}
 
 		static $keepDetails = [ 'attachedMethod' => true, 'attachedTimestamp' => true ];
@@ -216,11 +216,11 @@ class GlobalRenameUser {
 			$options
 		);
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/**
-	 * @return Status
+	 * @return StatusValue
 	 */
 	private function setRenameStatuses( array $wikis ) {
 		$rows = [];
@@ -237,10 +237,10 @@ class GlobalRenameUser {
 		$success = $this->renameuserStatus->setStatuses( $rows );
 		if ( !$success ) {
 			// Race condition: Another admin already started the rename!
-			return Status::newFatal( 'centralauth-rename-alreadyinprogress', $this->newUser->getName() );
+			return StatusValue::newFatal( 'centralauth-rename-alreadyinprogress', $this->newUser->getName() );
 		}
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 
 	/**

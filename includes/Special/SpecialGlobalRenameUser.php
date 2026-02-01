@@ -14,11 +14,11 @@ use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
 use MediaWiki\Message\Message;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\FormSpecialPage;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\User\UserRigorOptions;
+use StatusValue;
 
 class SpecialGlobalRenameUser extends FormSpecialPage {
 
@@ -185,20 +185,20 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * Perform validation on the user submitted data
 	 * and check that we can perform the rename
 	 *
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function validate( array $data ) {
 		$oldUser = $this->userFactory->newFromName( $data['oldname'] );
 		if ( !$oldUser ) {
-			return Status::newFatal( 'centralauth-rename-doesnotexist' );
+			return StatusValue::newFatal( 'centralauth-rename-doesnotexist' );
 		}
 
 		if ( $oldUser->getName() === $this->getUser()->getName() ) {
-			return Status::newFatal( 'centralauth-rename-cannotself' );
+			return StatusValue::newFatal( 'centralauth-rename-cannotself' );
 		}
 
 		if ( $oldUser->isTemp() ) {
-			return Status::newFatal( 'centralauth-rename-badusername' );
+			return StatusValue::newFatal( 'centralauth-rename-badusername' );
 		}
 
 		$newUser = $this->userFactory->newFromName(
@@ -207,11 +207,11 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			UserRigorOptions::RIGOR_CREATABLE
 		);
 		if ( !$newUser ) {
-			return Status::newFatal( 'centralauth-rename-badusername' );
+			return StatusValue::newFatal( 'centralauth-rename-badusername' );
 		}
 
 		if ( $newUser->isTemp() ) {
-			return Status::newFatal( 'centralauth-rename-badusername' );
+			return StatusValue::newFatal( 'centralauth-rename-badusername' );
 		}
 
 		if ( !$this->overrideAntiSpoof ) {
@@ -228,7 +228,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			}
 
 			if ( $conflicts ) {
-				return Status::newFatal(
+				return StatusValue::newFatal(
 					$this->msg( 'centralauth-rename-antispoofconflicts2' )
 						->params( $this->getLanguage()->listToText( $conflicts ) )
 						->numParams( count( $conflicts ) )
@@ -243,7 +243,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		if ( !$this->allowHighEditcount &&
 			$caOldUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD
 		) {
-			return Status::newFatal(
+			return StatusValue::newFatal(
 				$this->msg( 'centralauth-rename-globaleditcount-threshold' )
 					->numParams( self::EDITCOUNT_THRESHOLD )
 			);
@@ -259,7 +259,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				'new-account'
 			);
 			if ( $match instanceof TitleBlacklistEntry ) {
-				return Status::newFatal(
+				return StatusValue::newFatal(
 					$this->msg( 'centralauth-rename-titleblacklist-match' )
 						->params( wfEscapeWikiText( $match->getRegex() ) )
 				);
@@ -268,14 +268,14 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 
 		// Validate rename deny list
 		if ( !$this->globalRenameDenylist->checkUser( $oldUser ) ) {
-			return Status::newFatal( 'centralauth-rename-listed-on-denylist' );
+			return StatusValue::newFatal( 'centralauth-rename-listed-on-denylist' );
 		}
 
 		return $this->globalRenameUserValidator->validate( $oldUser, $newUser );
 	}
 
 	/**
-	 * @return Status
+	 * @return StatusValue
 	 */
 	public function onSubmit( array $data ) {
 		if ( $data['overrideantispoof'] ) {

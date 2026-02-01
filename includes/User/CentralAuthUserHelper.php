@@ -7,7 +7,7 @@
 namespace MediaWiki\Extension\CentralAuth\User;
 
 use MediaWiki\Permissions\Authority;
-use MediaWiki\Status\Status;
+use StatusValue;
 
 /**
  * A thin wrapper around the static methods of CentralAuthUser for looking up users.
@@ -23,9 +23,9 @@ class CentralAuthUserHelper {
 	 * checks if the user is visible to that authority. Uses the primary database.
 	 * @param string $name The username, may be non-canonical
 	 * @param Authority|null $viewer
-	 * @return Status<CentralAuthUser>
+	 * @return StatusValue<CentralAuthUser>
 	 */
-	public function getCentralAuthUserByNameFromPrimary( string $name, ?Authority $viewer = null ): Status {
+	public function getCentralAuthUserByNameFromPrimary( string $name, ?Authority $viewer = null ): StatusValue {
 		return $this->getCentralAuthUserByNameInternal(
 			CentralAuthUser::getPrimaryInstanceByName( ... ),
 			$name,
@@ -38,9 +38,9 @@ class CentralAuthUserHelper {
 	 * checks if the user is visible to that authority.
 	 * @param string $name The username, may be non-canonical
 	 * @param Authority|null $viewer
-	 * @return Status<CentralAuthUser>
+	 * @return StatusValue<CentralAuthUser>
 	 */
-	public function getCentralAuthUserByName( string $name, ?Authority $viewer = null ): Status {
+	public function getCentralAuthUserByName( string $name, ?Authority $viewer = null ): StatusValue {
 		return $this->getCentralAuthUserByNameInternal(
 			CentralAuthUser::getInstanceByName( ... ),
 			$name,
@@ -51,9 +51,9 @@ class CentralAuthUserHelper {
 	/**
 	 * Looks up for a central user with the specified ID. If authority is provided,
 	 * checks if the user is visible to that authority. Uses the primary database.
-	 * @return Status<CentralAuthUser>
+	 * @return StatusValue<CentralAuthUser>
 	 */
-	public function getCentralAuthUserByIdFromPrimary( int $id, ?Authority $viewer = null ): Status {
+	public function getCentralAuthUserByIdFromPrimary( int $id, ?Authority $viewer = null ): StatusValue {
 		return $this->getCentralAuthUserByIdInternal(
 			CentralAuthUser::newPrimaryInstanceFromId( ... ),
 			$id,
@@ -64,9 +64,9 @@ class CentralAuthUserHelper {
 	/**
 	 * Looks up for a central user with the specified ID. If authority is provided,
 	 * checks if the user is visible to that authority.
-	 * @return Status<CentralAuthUser>
+	 * @return StatusValue<CentralAuthUser>
 	 */
-	public function getCentralAuthUserById( int $id, ?Authority $viewer = null ): Status {
+	public function getCentralAuthUserById( int $id, ?Authority $viewer = null ): StatusValue {
 		return $this->getCentralAuthUserByIdInternal(
 			CentralAuthUser::newFromId( ... ),
 			$id,
@@ -78,10 +78,10 @@ class CentralAuthUserHelper {
 		callable $fetchUserByName,
 		string $name,
 		?Authority $viewer
-	): Status {
+	): StatusValue {
 		$name = trim( $name );
 		if ( $name === '' ) {
-			return Status::newFatal( 'nouserspecified' );
+			return StatusValue::newFatal( 'nouserspecified' );
 		}
 
 		$globalUser = $fetchUserByName( $name );
@@ -92,17 +92,17 @@ class CentralAuthUserHelper {
 			!$globalUser->exists() ||
 			( $viewer !== null && !$this->isUserVisibleToAuthority( $globalUser, $viewer ) )
 		) {
-			return Status::newFatal( 'nosuchusershort', $name );
+			return StatusValue::newFatal( 'nosuchusershort', $name );
 		}
 
-		return Status::newGood( $globalUser );
+		return StatusValue::newGood( $globalUser );
 	}
 
 	private function getCentralAuthUserByIdInternal(
 		callable $fetchUserById,
 		int $id,
 		?Authority $viewer
-	): Status {
+	): StatusValue {
 		$globalUser = $fetchUserById( $id );
 
 		// If the user exists, but is hidden from the viewer, pretend that it does
@@ -111,10 +111,10 @@ class CentralAuthUserHelper {
 			!$globalUser ||
 			( $viewer !== null && !$this->isUserVisibleToAuthority( $globalUser, $viewer ) )
 		) {
-			return Status::newFatal( 'noname' );
+			return StatusValue::newFatal( 'noname' );
 		}
 
-		return Status::newGood( $globalUser );
+		return StatusValue::newGood( $globalUser );
 	}
 
 	private function isUserVisibleToAuthority( CentralAuthUser $user, Authority $authority ): bool {

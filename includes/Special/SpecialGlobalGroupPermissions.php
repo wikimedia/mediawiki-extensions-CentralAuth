@@ -26,12 +26,12 @@ use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
-use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\Xml\Xml;
 use MediaWiki\Xml\XmlSelect;
+use StatusValue;
 
 /**
  * Special page to allow managing global groups
@@ -811,12 +811,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		return 'users';
 	}
 
-	private function validateGroupName( string $name ): Status {
+	private function validateGroupName( string $name ): StatusValue {
 		// all new group names should be lowercase (T202095)
 		if ( $name !== strtolower( $name ) ) {
-			return Status::newFatal( 'centralauth-editgroup-invalid-name-lowercase' );
+			return StatusValue::newFatal( 'centralauth-editgroup-invalid-name-lowercase' );
 		}
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 }

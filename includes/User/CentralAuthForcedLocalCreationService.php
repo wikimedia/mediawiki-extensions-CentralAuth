@@ -12,8 +12,8 @@ use MediaWiki\Deferred\SiteStatsUpdate;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Permissions\Authority;
-use MediaWiki\Status\Status;
 use MediaWiki\User\UserFactory;
+use StatusValue;
 
 /**
  * Service for forcing a local account to be created.
@@ -44,36 +44,36 @@ class CentralAuthForcedLocalCreationService {
 		string $username,
 		?Authority $performer = null,
 		$reason = null
-	): Status {
+	): StatusValue {
 		$user = $this->userFactory->newFromName( $username );
 
 		if ( !$user ) {
 			// invalid username
-			return Status::newFatal( 'centralauth-createlocal-no-global-account' );
+			return StatusValue::newFatal( 'centralauth-createlocal-no-global-account' );
 		}
 
 		if ( $user->getId() ) {
-			return Status::newFatal( 'centralauth-createlocal-already-exists' );
+			return StatusValue::newFatal( 'centralauth-createlocal-already-exists' );
 		}
 
 		$performer ??= $user;
 		$centralUser = CentralAuthUser::getInstance( $user );
 
 		if ( !$centralUser->exists() ) {
-			return Status::newFatal( 'centralauth-createlocal-no-global-account' );
+			return StatusValue::newFatal( 'centralauth-createlocal-no-global-account' );
 		}
 
 		if ( $centralUser->isSuppressed() ) {
 			$canSuppress = $performer->isAllowed( 'centralauth-suppress' );
 
-			return Status::newFatal( $canSuppress
+			return StatusValue::newFatal( $canSuppress
 				? 'centralauth-createlocal-suppressed'
 				: 'centralauth-createlocal-no-global-account' );
 		}
 
 		$status = $this->utilityService->autoCreateUser( $user, false, $performer );
 		if ( !$status->isGood() ) {
-			return Status::wrap( $status );
+			return $status;
 		}
 
 		// Add log entry. The following message is generated here:
@@ -94,6 +94,6 @@ class CentralAuthForcedLocalCreationService {
 		// Update user count
 		SiteStatsUpdate::factory( [ 'users' => 1 ] )->doUpdate();
 
-		return Status::newGood();
+		return StatusValue::newGood();
 	}
 }
