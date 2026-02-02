@@ -244,7 +244,7 @@ class SpecialWikiSets extends SpecialPage {
 			$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit' ) );
 
 			$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-			$this->getOutput()->addHTML( "<p>{$edittoken}</p></form></fieldset>" );
+			$this->getOutput()->addHTML( "<p>{$edittoken}</p></form>" );
 		} else {
 			// Give grep a chance to find the usages: centralauth-editset-optin,
 			// centralauth-editset-optout
@@ -262,6 +262,8 @@ class SpecialWikiSets extends SpecialPage {
 			];
 			$this->getOutput()->addHTML( Xml::buildForm( $form ) );
 		}
+
+		$this->getOutput()->addHTML( '</fieldset>' );
 
 		if ( $set ) {
 			$this->showLogFragment( (string)$set->getId() );
