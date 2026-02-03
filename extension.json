@@ -478,7 +478,8 @@
 				"ext.centralauth.noflash.css",
 				"ext.centralauth.globalusers.css",
 				"ext.centralauth.globalgrouppermissions.css",
-				"ext.centralauth.globalrenameuser.css"
+				"ext.centralauth.globalrenameuser.css",
+				"ext.centralauth.wikisets.less"
 			]
 		},
 		"ext.centralauth.globalrenameuser": {

@@ -13,7 +13,6 @@ use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MainConfigNames;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
-use MediaWiki\Xml\Xml;
 
 /**
  * Special page to allow to edit "wikisets" which are used to restrict
@@ -46,7 +45,10 @@ class SpecialWikiSets extends SpecialPage {
 	 * @return void
 	 */
 	public function execute( $subpage ) {
-		$this->getOutput()->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
+		$this->getOutput()->addModuleStyles( [
+			'mediawiki.codex.messagebox.styles',
+			'ext.centralauth.misc.styles',
+		] );
 		$this->mCanEdit = $this->getContext()->getAuthority()->isAllowed( 'globalgrouppermissions' );
 		$req = $this->getRequest();
 		$tokenOk = $req->wasPosted()
@@ -267,25 +269,69 @@ class SpecialWikiSets extends SpecialPage {
 				->prepareForm()
 				->displayForm( false );
 		} else {
-			$this->getOutput()->addHTML( "<fieldset><legend>{$legend->escaped()}</legend>" );
+			$this->getOutput()->enableOOUI();
 
-			// Give grep a chance to find the usages: centralauth-editset-optin,
-			// centralauth-editset-optout
-			$form = [
-				'centralauth-editset-name' => htmlspecialchars( $name ),
-				'centralauth-editset-usage' => $usage,
-				'centralauth-editset-type' => $this->msg( "centralauth-editset-$type" )
-					->escaped(),
-				'centralauth-editset-wikis' => self::buildTableByList( $sortedWikis, 3,
-					[ 'style' => 'width:100%;' ]
-				) . '<hr>',
-				'centralauth-editset-restwikis' => self::buildTableByList( $restWikis, 3,
-					[ 'style' => 'width:100%;' ]
+			$headerItems = [
+				new \OOUI\FieldLayout(
+					new \OOUI\LabelWidget( [
+						'label' => $name,
+					] ),
+					[
+						'label' => $this->msg( 'centralauth-editset-name' )->text(),
+					]
+				),
+				new \OOUI\FieldLayout(
+					new \OOUI\LabelWidget( [
+						'label' => new \OOUI\HtmlSnippet( $usage ),
+					] ),
+					[
+						'label' => $this->msg( 'centralauth-editset-usage' )->text(),
+					]
+				),
+				new \OOUI\FieldLayout(
+					new \OOUI\LabelWidget( [
+						// Give grep a chance to find the usages: centralauth-editset-optin,
+						// centralauth-editset-optout
+						'label' => $this->msg( "centralauth-editset-$type" )->text(),
+					] ),
+					[
+						'label' => $this->msg( 'centralauth-editset-type' )->text(),
+					]
 				),
 			];
-			$this->getOutput()->addHTML( Xml::buildForm( $form ) );
+			$this->getOutput()->addHTML( new \OOUI\PanelLayout( [
+				'expanded' => false,
+				'padded' => true,
+				'framed' => true,
+				'content' => new \OOUI\FieldsetLayout( [
+					'items' => $headerItems,
+					'label' => $legend->text(),
+				] )
+			] ) );
 
-			$this->getOutput()->addHTML( '</fieldset>' );
+			$wikiItems = [
+				new \OOUI\FieldLayout(
+					new \OOUI\LabelWidget( [
+						'label' => new \OOUI\HtmlSnippet( self::buildWikiList( $sortedWikis ) ),
+					] )
+				),
+			];
+			$this->getOutput()->addHTML( new \OOUI\FieldsetLayout( [
+				'items' => $wikiItems,
+				'label' => $this->msg( 'centralauth-editset-wikis' )->text(),
+			] ) );
+
+			$restWikiItems = [
+				new \OOUI\FieldLayout(
+					new \OOUI\LabelWidget( [
+						'label' => new \OOUI\HtmlSnippet( self::buildWikiList( $restWikis ) ),
+					] )
+				),
+			];
+			$this->getOutput()->addHTML( new \OOUI\FieldsetLayout( [
+				'items' => $restWikiItems,
+				'label' => $this->msg( 'centralauth-editset-restwikis' )->text(),
+			] ) );
 		}
 
 		if ( $set ) {
@@ -294,40 +340,20 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/**
-	 * Builds a table of several columns, and divides the items of
-	 * $list equally among each column. All items are escaped.
-	 *
-	 * Could in the future be replaced by CSS column-count.
+	 * Builds a list of several columns with CSS. All items are escaped.
 	 *
 	 * @param string[] $list
-	 * @param int $columns number of columns
-	 * @param array $tableAttribs <table> attributes
-	 * @return string Table
 	 */
-	private function buildTableByList( array $list, int $columns = 2, array $tableAttribs = [] ): string {
-		$count = count( $list );
-		if ( $count === 0 ) {
+	private function buildWikiList( array $list ): string {
+		if ( $list === [] ) {
 			return $this->msg( 'centralauth-editset-nowikis' )->parse();
 		}
 
-		# If there are less items than columns, limit the number of columns
-		$columns = $count < $columns ? $count : $columns;
-		$itemsPerCol = (int)ceil( $count / $columns );
-		$splitLists = array_chunk( $list, $itemsPerCol );
-
 		$body = '';
-		foreach ( $splitLists as $splitList ) {
-			$body .= '<td style="width:' . round( 100 / $columns ) . '%;"><ul>';
-			foreach ( $splitList as $listitem ) {
-				$body .= Html::element( 'li', [], $listitem );
-			}
-			$body .= '</ul></td>';
+		foreach ( $list as $listitem ) {
+			$body .= Html::element( 'li', [], $listitem );
 		}
-		return Html::rawElement( 'table', $tableAttribs,
-			'<tbody>' .
-				Html::rawElement( 'tr', [ 'style' => 'vertical-align:top;' ], $body ) .
-			'</tbody>'
-		);
+		return Html::rawElement( 'ul', [ 'class' => 'mw-centralauth-wikisets-wikis' ], $body );
 	}
 
 	/**
