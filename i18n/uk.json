@@ -556,8 +556,8 @@
 	"right-centralauth-unmerge": "Роз'єднання глобальних облікових записів",
 	"right-globalgroupmembership": "Зміна членства у глобальних групах",
 	"right-globalgrouppermissions": "Керування глобальними групами",
-	"sessionprovider-centralauthsessionprovider": "центральних сесій на основі кук",
-	"sessionprovider-centralauthtokensessionprovider": "сесій centralauthtoken",
+	"sessionprovider-centralauthsessionprovider": "центральних сеансів на основі кукі",
+	"sessionprovider-centralauthtokensessionprovider": "сеансів centralauthtoken",
 	"centralauth-badaccess-blacklisted": "Ви не можете подати запит на глобальне перейменування, оскільки перебуваєте в чорному списку.",
 	"centralauth-blocked-ip-reputation": "IP-адреса, яку ви зараз використовуєте, була заблокована, бо є підстави вважати, що її нещодавно використовували для зловживань."
 }

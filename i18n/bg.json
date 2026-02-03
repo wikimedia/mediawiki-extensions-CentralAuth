@@ -111,6 +111,7 @@
 	"centralauth-admin-username": "Потребителско име:",
 	"centralauth-admin-view": "Преглед на информация за сметката",
 	"centralauth-admin-yes": "да",
+	"centralauth-admin-globalblock-exempt-list-reason-heading": "Причина",
 	"centralauth-attach-list-attached": "Единната сметка на име „$1“ включва следните сметки:",
 	"centralauth-attach-submit": "Мигриране на сметка",
 	"centralauth-attach-success": "Сметката е била прехвърлена към единната сметка.",
