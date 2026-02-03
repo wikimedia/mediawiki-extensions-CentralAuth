@@ -29,7 +29,6 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserGroupMembership;
-use MediaWiki\Xml\Xml;
 use MediaWiki\Xml\XmlSelect;
 use StatusValue;
 
@@ -286,11 +285,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			}
 		}
 
-		$fieldsetClass = $editable
-			? 'mw-centralauth-editgroup'
-			: 'mw-centralauth-editgroup-readonly';
-		$html = Html::openElement( 'fieldset', [ 'class' => $fieldsetClass ] ) . "\n" .
-			Html::element( 'legend', [], $this->msg( 'centralauth-editgroup-fieldset', $group )->text() ) . "\n";
+		$this->getOutput()->enableOOUI();
+		$html = '';
 
 		if ( $editable ) {
 			$html .= Html::openElement( 'form', [
@@ -305,32 +301,56 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$fields = [];
 
 		if ( $editable ) {
-			$fields['centralauth-editgroup-name'] = Html::input(
-				'wpGlobalGroupName', $group, 'text', [ 'size' => 50 ]
-			);
+			$groupNameWidget = new \OOUI\TextInputWidget( [
+				'type' => 'text',
+				'name' => 'wpGlobalGroupName',
+				'value' => $group,
+			] );
 		} else {
-			$fields['centralauth-editgroup-name'] = htmlspecialchars( $group );
+			$groupNameWidget = new \OOUI\LabelWidget( [
+				'label' => $group,
+			] );
 		}
+		$fields[] = new \OOUI\FieldLayout(
+			$groupNameWidget,
+			[
+				'label' => $this->msg( 'centralauth-editgroup-name' )->text(),
+			]
+		);
 
 		$lang = $this->getLanguage();
-		if ( $this->getContext()->getAuthority()->isAllowed( 'editinterface' ) ) {
+		if ( $this->getAuthority()->isAllowed( 'editinterface' ) ) {
 			# Show edit link only to user with the editinterface right
-			$fields['centralauth-editgroup-display'] = $this->msg(
+			$localGroupName = new \OOUI\HtmlSnippet( $this->msg(
 				'centralauth-editgroup-display-edit',
 				$group,
 				$lang->getGroupName( $group )
-			)->parse();
-			$fields['centralauth-editgroup-member'] = $this->msg(
+			)->parse() );
+			$localGroupMember = new \OOUI\HtmlSnippet( $this->msg(
 				'centralauth-editgroup-member-edit',
 				$group,
 				$lang->getGroupMemberName( $group, '#' )
-			)->parse();
+			)->parse() );
 		} else {
-			$fields['centralauth-editgroup-display'] =
-				htmlspecialchars( $lang->getGroupName( $group ) );
-			$fields['centralauth-editgroup-member'] =
-				htmlspecialchars( $lang->getGroupMemberName( $group, '#' ) );
+			$localGroupName = $lang->getGroupName( $group );
+			$localGroupMember = $lang->getGroupMemberName( $group, '#' );
 		}
+		$fields[] = new \OOUI\FieldLayout(
+			new \OOUI\LabelWidget( [
+				'label' => $localGroupName,
+			] ),
+			[
+				'label' => $this->msg( 'centralauth-editgroup-display' )->text(),
+			]
+		);
+		$fields[] = new \OOUI\FieldLayout(
+			new \OOUI\LabelWidget( [
+				'label' => $localGroupMember,
+			] ),
+			[
+				'label' => $this->msg( 'centralauth-editgroup-member' )->text(),
+			]
+		);
 
 		// A group only exists if it has one or more rights assigned to it.
 		// Special:GlobalUsers/<group> will interpret group as a username to
@@ -338,21 +358,66 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		// assigned to it). So only show the link for groups that have rights
 		// assigned to them on page load.
 		if ( $assignedRights ) {
-			$fields['centralauth-editgroup-members'] = $this->msg(
-				'centralauth-editgroup-members-link',
-				$group,
-				$lang->getGroupMemberName( $group, '#' )
-			)->parse();
+			$fields[] = new \OOUI\FieldLayout(
+				new \OOUI\LabelWidget( [
+					'label' => new \OOUI\HtmlSnippet( $this->msg(
+						'centralauth-editgroup-members-link',
+						$group,
+						$lang->getGroupMemberName( $group, '#' )
+					)->parse() ),
+				] ),
+				[
+					'label' => $this->msg( 'centralauth-editgroup-members' )->text(),
+				]
+			);
 		}
 
-		$fields['centralauth-editgroup-restrictions'] = $this->buildWikiSetSelector( $group );
-		$fields['centralauth-editgroup-perms'] = $this->buildCheckboxes( $group );
+		$fields[] = new \OOUI\FieldLayout(
+			new \OOUI\LabelWidget( [
+				'label' => new \OOUI\HtmlSnippet( $this->buildWikiSetSelector( $group ) ),
+			] ),
+			[
+				'label' => $this->msg( 'centralauth-editgroup-restrictions' )->text(),
+			]
+		);
+		$fields[] = new \OOUI\FieldLayout(
+			new \OOUI\LabelWidget( [
+				'label' => new \OOUI\HtmlSnippet( $this->buildCheckboxes( $group ) ),
+			] ),
+			[
+				'label' => $this->msg( 'centralauth-editgroup-perms' )->text(),
+				'align' => 'top',
+			]
+		);
 
 		if ( $editable ) {
-			$fields['centralauth-editgroup-reason'] = Html::input( 'wpReason', '', 'text', [ 'size' => 60 ] );
+			$fields[] = new \OOUI\FieldLayout(
+				new \OOUI\TextInputWidget( [
+					'type' => 'text',
+					'name' => 'wpReason',
+				] ),
+				[
+					'label' => $this->msg( 'centralauth-editgroup-reason' )->text(),
+				]
+			);
+			$fields[] = new \OOUI\ActionFieldLayout(
+				new \OOUI\ButtonInputWidget( [
+					'type' => 'submit',
+					'label' => $this->msg( 'centralauth-editgroup-submit' )->text(),
+					'flags' => [ 'primary', 'progressive' ],
+				] )
+			);
 		}
 
-		$html .= Xml::buildForm( $fields, $editable ? 'centralauth-editgroup-submit' : null );
+		$html .= new \OOUI\PanelLayout( [
+			'expanded' => false,
+			'padded' => true,
+			'framed' => true,
+			'content' => new \OOUI\FieldsetLayout( [
+				'items' => $fields,
+				'label' => $this->msg( 'centralauth-editgroup-fieldset', $group )->text(),
+			] )
+		] );
 
 		if ( $editable ) {
 			$html .= Html::closeElement( 'form' );
