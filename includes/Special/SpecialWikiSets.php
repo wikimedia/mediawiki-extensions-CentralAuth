@@ -14,7 +14,6 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\Xml\Xml;
-use MediaWiki\Xml\XmlSelect;
 
 /**
  * Special page to allow to edit "wikisets" which are used to restrict
@@ -176,12 +175,10 @@ class SpecialWikiSets extends SpecialPage {
 			$legend = $this->msg(
 				'centralauth-editset-legend-' . ( $set ? 'edit' : 'new' ),
 				$name
-			)->escaped();
+			);
 		} else {
-			$legend = $this->msg( 'centralauth-editset-legend-view', $name )->escaped();
+			$legend = $this->msg( 'centralauth-editset-legend-view', $name );
 		}
-
-		$this->getOutput()->addHTML( "<fieldset><legend>{$legend}</legend>" );
 
 		if ( $set ) {
 			$groups = $set->getRestrictedGroups();
@@ -216,36 +213,62 @@ class SpecialWikiSets extends SpecialPage {
 			if ( $error ) {
 				$this->getOutput()->addHTML( Html::errorBox( $error ) );
 			}
-			$this->getOutput()->addHTML(
-				Html::openElement(
-					'form',
-					[ 'action' => $url, 'method' => 'POST' ]
-				)
-			);
-
-			$form = [];
-			$form['centralauth-editset-name'] = Html::input( 'wpName', $name );
+			$formDescriptor = [
+				'Name' => [
+					'type' => 'text',
+					'label-message' => 'centralauth-editset-name',
+					'default' => $name,
+				],
+			];
 			if ( $usage ) {
-				$form['centralauth-editset-usage'] = $usage;
+				$formDescriptor['Usage'] = [
+					'type' => 'info',
+					'label-message' => 'centralauth-editset-usage',
+					'raw' => true,
+					'default' => $usage,
+				];
 			}
-			$form['centralauth-editset-type'] = $this->buildTypeSelector( 'wpType', $type );
-			$form['centralauth-editset-wikis'] = Html::textarea(
-				'wpWikis',
-				$wikis,
-				[ 'cols' => 40, 'rows' => 5 ]
-			);
-			$form['centralauth-editset-restwikis'] = Html::textarea(
-				'wpRestWikis',
-				implode( "\n", $restWikis ),
-				[ 'cols' => 40, 'rows' => 5, 'readonly' => true ]
-			);
-			$form['centralauth-editset-reason'] = Html::input( 'wpReason', $reason ?? '', 'text', [ 'size' => 50 ] );
+			$formDescriptor += [
+				'Type' => [
+					'type' => 'select',
+					'id' => 'set-type',
+					'label-message' => 'centralauth-editset-type',
+					'default' => $type,
+					'options-messages' => [
+						'centralauth-editset-optin' => WikiSet::OPTIN,
+						'centralauth-editset-optout' => WikiSet::OPTOUT,
+					],
+				],
+				'Wikis' => [
+					'type' => 'textarea',
+					'label-message' => 'centralauth-editset-wikis',
+					'rows' => 5,
+					'default' => $wikis,
+				],
+				'RestWikis' => [
+					'type' => 'textarea',
+					'label-message' => 'centralauth-editset-restwikis',
+					'rows' => 5,
+					'default' => implode( "\n", $restWikis ),
+					'readonly' => true,
+				],
+				'Reason' => [
+					'type' => 'text',
+					'label-message' => 'centralauth-editset-reason',
+					'default' => $reason ?? '',
+					'size' => 50,
+				],
+			];
 
-			$this->getOutput()->addHTML( Xml::buildForm( $form, 'centralauth-editset-submit' ) );
-
-			$edittoken = Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() );
-			$this->getOutput()->addHTML( "<p>{$edittoken}</p></form>" );
+			HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
+				->setSubmitText( $this->msg( 'centralauth-editset-submit' )->escaped() )
+				->setWrapperLegend( $legend->text() )
+				->setTitle( $this->getPageTitle( (string)( $set ? $set->getId() : 0 ) ) )
+				->prepareForm()
+				->displayForm( false );
 		} else {
+			$this->getOutput()->addHTML( "<fieldset><legend>{$legend->escaped()}</legend>" );
+
 			// Give grep a chance to find the usages: centralauth-editset-optin,
 			// centralauth-editset-optout
 			$form = [
@@ -261,28 +284,13 @@ class SpecialWikiSets extends SpecialPage {
 				),
 			];
 			$this->getOutput()->addHTML( Xml::buildForm( $form ) );
-		}
 
-		$this->getOutput()->addHTML( '</fieldset>' );
+			$this->getOutput()->addHTML( '</fieldset>' );
+		}
 
 		if ( $set ) {
 			$this->showLogFragment( (string)$set->getId() );
 		}
-	}
-
-	/**
-	 * @param string $name
-	 * @param string $value
-	 * @return string
-	 */
-	private function buildTypeSelector( $name, $value ) {
-		// Give grep a chance to find the usages: centralauth-editset-optin,
-		// centralauth-editset-optout
-		$select = new XmlSelect( $name, 'set-type', $value );
-		foreach ( [ WikiSet::OPTIN, WikiSet::OPTOUT ] as $type ) {
-			$select->addOption( $this->msg( "centralauth-editset-{$type}" )->text(), $type );
-		}
-		return $select->getHTML();
 	}
 
 	/**
