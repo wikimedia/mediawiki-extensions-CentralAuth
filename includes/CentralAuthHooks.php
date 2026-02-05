@@ -719,7 +719,6 @@ class CentralAuthHooks implements
 			$context += [
 				'user_exists_centrally' => $caUser->exists(),
 				'user_is_attached' => $caUser->isAttached(),
-				'user_has_edits_global' => (bool)$caUser->getGlobalEditCount(),
 			];
 		}
 	}
