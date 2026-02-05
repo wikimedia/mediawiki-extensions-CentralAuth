@@ -15,7 +15,6 @@ use MediaWiki\User\UserFactory;
 use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use RuntimeException;
-use Wikimedia\AtEase\AtEase;
 
 class SpecialMergeAccount extends SpecialPage {
 
@@ -178,17 +177,17 @@ class SpecialMergeAccount extends SpecialPage {
 	 * @return string[]
 	 */
 	private function getWorkingPasswords() {
-		AtEase::suppressWarnings();
 		$data = $this->getRequest()->getSessionData( 'wsCentralAuthMigration' );
-		$passwords = unserialize(
-			gzinflate(
+		// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+		$passwords = @unserialize(
+			// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+			@gzinflate(
 				$this->xorString(
 					$data[$this->mSessionToken],
 					$this->mSessionKey
 				)
 			)
 		);
-		AtEase::restoreWarnings();
 		if ( is_array( $passwords ) ) {
 			return $passwords;
 		}

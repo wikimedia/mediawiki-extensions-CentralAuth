@@ -47,7 +47,6 @@ use MWCryptRand;
 use RevisionDeleteUser;
 use RuntimeException;
 use stdClass;
-use Wikimedia\AtEase\AtEase;
 use Wikimedia\IPUtils;
 use Wikimedia\NormalizedException\NormalizedException;
 use Wikimedia\ObjectCache\WANObjectCache;
@@ -2647,9 +2646,8 @@ class CentralAuthUser implements IDBAccessObject {
 		} elseif ( !( $password instanceof AbstractPbkdf2Password ) && function_exists( 'iconv' ) ) {
 			// Some wikis were converted from ISO 8859-1 to UTF-8;
 			// retained hashes may contain non-latin chars.
-			AtEase::suppressWarnings();
-			$latin1 = iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
-			AtEase::restoreWarnings();
+			// phpcs:ignore Generic.PHP.NoSilencedErrors.Discouraged
+			$latin1 = @iconv( 'UTF-8', 'WINDOWS-1252//TRANSLIT', $plaintext );
 			if ( $latin1 !== false && $password->verify( $latin1 ) ) {
 				return true;
 			}
