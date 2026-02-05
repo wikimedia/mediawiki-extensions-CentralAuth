@@ -64,7 +64,8 @@
 			"Toliño",
 			"Translationista",
 			"Tusca",
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"Codename Noreste"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Recuento de ediciones globales del usuario ($1)",
@@ -113,7 +114,7 @@
 	"centralauth-admin-info-groups-manage": "gestionar",
 	"centralauth-admin-info-header": "Información global del usuario",
 	"centralauth-admin-info-hidden": "Nivel de ocultación:",
-	"centralauth-admin-info-locked": "Bloqueada globalmente:",
+	"centralauth-admin-info-locked": "Bloqueado:",
 	"centralauth-admin-info-registered": "Registrado:",
 	"centralauth-admin-info-unattached": "Número de cuentas no unificadas:",
 	"centralauth-admin-info-username": "Nombre de usuario:",
@@ -529,7 +530,7 @@
 	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|modificó}} el estado de la cuenta global «$3»: añadido $4; eliminado $5",
 	"logentry-globalauth-hide": "$1 {{GENDER:$2|ocultó}} la cuenta global «$3»",
 	"logentry-globalauth-lock": "$1 {{GENDER:$2|bloqueó}} la cuenta global «$3»",
-	"logentry-globalauth-lockandhid": "$1 ${{GENDER:$2|bloqueó y ocultó}} la cuenta global «$3»",
+	"logentry-globalauth-lockandhid": "$1 {{GENDER:$2|bloqueó y ocultó}} la cuenta global «$3»",
 	"logentry-globalauth-unhide": "$1 {{GENDER:$2|desocultó}} la cuenta global «$3»",
 	"logentry-globalauth-unlock": "$1 {{GENDER:$2|desbloqueó}} a la cuenta global «$3»",
 	"logentry-newusers-forcecreatelocal": "$1 {{GENDER:$2|creó}} manualmente una cuenta local para «$3»",
