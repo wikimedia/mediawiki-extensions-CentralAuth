@@ -283,13 +283,13 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 				[ 'global-group-2' ],
 			],
 			'Automatic groups are added, reason is updated' => [
-				'Test reason(semicolon-separator)(centralauth-automatic-global-groups-reason-global: )',
+				'Test reason(semicolon-separator)(centralauth-automatic-global-groups-reason-global)',
 				'Test reason',
 				[ 'automatic-group-1', 'automatic-group-2' ],
 				[],
 			],
 			'Automatic groups are removed, reason is updated' => [
-				'Test reason(semicolon-separator)(centralauth-automatic-global-groups-reason-global: )',
+				'Test reason(semicolon-separator)(centralauth-automatic-global-groups-reason-global)',
 				'Test reason',
 				[],
 				[ 'automatic-group-1', 'automatic-group-2' ],

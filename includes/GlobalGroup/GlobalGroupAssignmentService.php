@@ -249,8 +249,7 @@ class GlobalGroupAssignmentService {
 							->inContentLanguage()->text();
 					}
 					$reason .= $this->messageLocalizer
-						// The parameter is unused, but declared for compatibility with old translations
-						->msg( 'centralauth-automatic-global-groups-reason-global', '' )
+						->msg( 'centralauth-automatic-global-groups-reason-global' )
 						->inContentLanguage()->text();
 					break;
 				}
