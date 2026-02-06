@@ -172,10 +172,18 @@ return [
 		MediaWikiServices $services
 	): GlobalGroupAssignmentService {
 		return new GlobalGroupAssignmentService(
+			new ServiceOptions(
+				GlobalGroupAssignmentService::CONSTRUCTOR_OPTIONS,
+				$services->getMainConfig()
+			),
+			$services->getActorStoreFactory(),
+			$services->getContentLanguage(),
 			$services->getUserNameUtils(),
 			$services->getHookContainer(),
+			$services->getSiteLookup(),
 			CentralAuthServices::getGlobalGroupLookup(),
 			CentralAuthServices::getAutomaticGlobalGroupManager(),
+			CentralAuthServices::getDatabaseManager(),
 			RequestContext::getMain()
 		);
 	},

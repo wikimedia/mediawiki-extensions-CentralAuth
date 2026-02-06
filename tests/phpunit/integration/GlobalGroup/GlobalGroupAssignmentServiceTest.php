@@ -263,15 +263,12 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 			'global-group-2' => [ 'automatic-group-2' ],
 		] );
 
-		$this->setUserLang( 'qqx' );
-		$this->setContentLang( 'qqx' );
-
 		$service = CentralAuthServices::getGlobalGroupAssignmentService();
 		$wrappedService = TestingAccessWrapper::newFromObject( $service );
 
 		$this->assertSame(
 			$expected,
-			$wrappedService->getLogReason( $reason, $automaticReason )
+			$wrappedService->getLogReason( $reason, $automaticReason, 'qqx' )
 		);
 	}
 

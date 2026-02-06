@@ -6,17 +6,26 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalGroup;
 
+use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\Language\Language;
 use MediaWiki\Logging\ManualLogEntry;
+use MediaWiki\Page\PageIdentityValue;
 use MediaWiki\Permissions\Authority;
+use MediaWiki\Site\SiteLookup;
 use MediaWiki\Title\Title;
+use MediaWiki\User\ActorStoreFactory;
 use MediaWiki\User\UserGroupAssignmentService;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\User\UserIdentityValue;
 use MediaWiki\User\UserNameUtils;
+use MediaWiki\WikiMap\WikiMap;
 use MessageLocalizer;
 use Wikimedia\Message\MessageSpecifier;
 
@@ -33,13 +42,27 @@ use Wikimedia\Message\MessageSpecifier;
  */
 class GlobalGroupAssignmentService {
 
+	/** @internal Only public for service wiring use. */
+	public const CONSTRUCTOR_OPTIONS = [
+		CAMainConfigNames::CentralAuthCentralWiki,
+	];
+
+	private ServiceOptions $options;
+
 	public function __construct(
+		ServiceOptions $options,
+		private readonly ActorStoreFactory $actorStoreFactory,
+		private readonly Language $contentLanguage,
 		private readonly UserNameUtils $userNameUtils,
 		private readonly HookContainer $hookContainer,
+		private readonly SiteLookup $siteLookup,
 		private readonly GlobalGroupLookup $globalGroupLookup,
 		private readonly CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
+		private readonly CentralAuthDatabaseManager $databaseManager,
 		private readonly MessageLocalizer $messageLocalizer,
 	) {
+		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
+		$this->options = $options;
 	}
 
 	/**
@@ -167,8 +190,6 @@ class GlobalGroupAssignmentService {
 		// Ensure that caches are cleared
 		$target->invalidateCache();
 
-		$reason = $this->getLogReason( $reason, $anyChanged ? $automaticReason : null );
-
 		// Only add a log entry if something actually changed
 		if ( $oldGroups != $newGroups ) {
 			// Allow other extensions to respond to changes in global group membership
@@ -178,6 +199,7 @@ class GlobalGroupAssignmentService {
 				$performer->getUser(),
 				$target,
 				$reason,
+				$anyChanged ? $automaticReason : null,
 				$tags,
 				$oldGroupMemberships,
 				$newGroupMemberships,
@@ -192,11 +214,13 @@ class GlobalGroupAssignmentService {
 	 * @param UserIdentity $performer
 	 * @param CentralAuthUser $target
 	 * @param string $reason
+	 * @param MessageSpecifier|null $automaticReason
 	 * @param string[] $tags Change tags for the log entry
 	 * @param array<string,UserGroupMembership> $oldUGMs Associative array of (group name => UserGroupMembership)
 	 * @param array<string,UserGroupMembership> $newUGMs Associative array of (group name => UserGroupMembership)
 	 */
 	private function addLogEntry( UserIdentity $performer, CentralAuthUser $target, string $reason,
+		?MessageSpecifier $automaticReason,
 		array $tags, array $oldUGMs, array $newUGMs
 	) {
 		ksort( $oldUGMs );
@@ -208,9 +232,41 @@ class GlobalGroupAssignmentService {
 		$newGroups = array_keys( $newUGMs );
 		$newUGMs = array_values( $newUGMs );
 
+		// Global group logs are stored on the central wiki, even if the change was made on another wiki (T416542)
+		$logWikiId = $this->options->get( CAMainConfigNames::CentralAuthCentralWiki )
+			?? WikiMap::getCurrentWikiId();
+		$site = $this->siteLookup->getSite( $logWikiId );
+		$reason = $this->getLogReason( $reason, $automaticReason, $site?->getLanguageCode() );
+
+		if ( $logWikiId === WikiMap::getCurrentWikiId() ) {
+			$logPerformer = $performer;
+			$logTarget = Title::makeTitle( NS_USER, $target->getName() );
+		} else {
+			// This should work if $logWikiId is the current wiki too, but it would require a lot more mocking in tests.
+			// There are no good APIs to do this cross-wiki, so we do manual database queries.
+			$logWikiDbr = $this->databaseManager->getLocalDB( DB_REPLICA, $logWikiId );
+			$logWikiUser = $logWikiDbr->newSelectQueryBuilder()
+				->from( 'user' )
+				->select( 'user_id' )
+				->where( [ 'user_name' => $performer->getName() ] )
+				->fetchField();
+			$targetPage = str_replace( ' ', '_', $target->getName() );
+			$logWikiPage = $logWikiDbr
+				->newSelectQueryBuilder()
+				->from( 'page' )
+				->select( 'page_id' )
+				->where( [
+					'page_namespace' => NS_USER,
+					'page_title' => $targetPage,
+				] )
+				->fetchField();
+			$logPerformer = new UserIdentityValue( $logWikiUser ?: 0, $performer->getName(), $logWikiId );
+			$logTarget = new PageIdentityValue( $logWikiPage ?: 0, NS_USER, $targetPage, $logWikiId );
+		}
+
 		$logEntry = new ManualLogEntry( 'gblrights', 'usergroups' );
-		$logEntry->setPerformer( $performer );
-		$logEntry->setTarget( Title::makeTitle( NS_USER, $target->getName() ) );
+		$logEntry->setPerformer( $logPerformer );
+		$logEntry->setTarget( $logTarget );
 		$logEntry->setComment( $reason );
 		$logEntry->setParameters( [
 			'oldGroups' => $oldGroups,
@@ -218,9 +274,14 @@ class GlobalGroupAssignmentService {
 			'oldMetadata' => $oldUGMs,
 			'newMetadata' => $newUGMs,
 		] );
-		$logId = $logEntry->insert();
-		$logEntry->addTags( $tags );
-		$logEntry->publish( $logId );
+		$logId = $logEntry->insert(
+			$this->databaseManager->getLocalDB( DB_PRIMARY, $logWikiId )
+		);
+		// These methods are only supported when inserting the log entry on the local wiki
+		if ( $logWikiId === WikiMap::getCurrentWikiId() ) {
+			$logEntry->addTags( $tags );
+			$logEntry->publish( $logId );
+		}
 	}
 
 	/**
@@ -232,17 +293,20 @@ class GlobalGroupAssignmentService {
 	 */
 	private function getLogReason(
 		string $reason,
-		?MessageSpecifier $automaticReason
+		?MessageSpecifier $automaticReason,
+		?string $languageCode
 	): string {
 		if ( $automaticReason ) {
 			if ( $reason ) {
 				$reason .= $this->messageLocalizer
 					->msg( 'semicolon-separator' )
-					->inContentLanguage()->text();
+					->inLanguage( $languageCode ?? $this->contentLanguage )
+					->text();
 			}
 			$reason .= $this->messageLocalizer
 				->msg( $automaticReason )
-				->inContentLanguage()->text();
+				->inLanguage( $languageCode ?? $this->contentLanguage )
+				->text();
 		}
 
 		return $reason;
