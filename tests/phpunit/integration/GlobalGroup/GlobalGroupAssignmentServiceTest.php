@@ -14,6 +14,7 @@ use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\WikiMap\WikiMap;
+use Wikimedia\Message\MessageValue;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -256,7 +257,7 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 	}
 
 	/** @dataProvider provideGetLogReason */
-	public function testGetLogReason( $expected, $reason, $added, $removed ) {
+	public function testGetLogReason( $expected, $reason, $automaticReason ) {
 		$this->overrideConfigValue( 'CentralAuthAutomaticGlobalGroups', [
 			'global-group-1' => [ 'automatic-group-1' ],
 			'global-group-2' => [ 'automatic-group-2' ],
@@ -270,7 +271,7 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 
 		$this->assertSame(
 			$expected,
-			$wrappedService->getLogReason( $reason, $added, $removed )
+			$wrappedService->getLogReason( $reason, $automaticReason )
 		);
 	}
 
@@ -279,26 +280,17 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 			'No automatic groups are changed, reason is unchanged' => [
 				'Test reason',
 				'Test reason',
-				[ 'global-group-1' ],
-				[ 'global-group-2' ],
+				null,
 			],
-			'Automatic groups are added, reason is updated' => [
+			'Automatic groups are changed, reason is updated' => [
 				'Test reason(semicolon-separator)(centralauth-automatic-global-groups-reason-global)',
 				'Test reason',
-				[ 'automatic-group-1', 'automatic-group-2' ],
-				[],
+				MessageValue::new( 'centralauth-automatic-global-groups-reason-global' )
 			],
-			'Automatic groups are removed, reason is updated' => [
-				'Test reason(semicolon-separator)(centralauth-automatic-global-groups-reason-global)',
-				'Test reason',
-				[],
-				[ 'automatic-group-1', 'automatic-group-2' ],
-			],
-			'Automatic groups are added after local change, reason unchanged' => [
-				'(centralauth-automatic-global-groups-reason-local)',
-				'(centralauth-automatic-global-groups-reason-local)',
-				[ 'automatic-group-1', 'automatic-group-2' ],
-				[],
+			'Automatic groups are changed, no reason given, so it is created' => [
+				'(centralauth-automatic-global-groups-reason-global)',
+				'',
+				MessageValue::new( 'centralauth-automatic-global-groups-reason-global' )
 			],
 		];
 	}

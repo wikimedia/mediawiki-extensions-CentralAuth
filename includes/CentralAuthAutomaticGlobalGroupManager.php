@@ -75,13 +75,15 @@ class CentralAuthAutomaticGlobalGroupManager {
 	 * @param array<string,?string> &$expiriesToChange Group expiries that will be updated, represented
 	 *  as a map of global user groups to their expiries. An expiry of null indicates that the group
 	 *  does not expire. Expiries may be added to, removed from, or changed in this list.
+	 * @return bool Whether any automatic global group memberships were changed
 	 */
 	public function handleAutomaticGlobalGroups(
 		array $assignedGroups,
 		array &$groupsToAdd,
 		array &$groupsToRemove,
 		array &$expiriesToChange
-	): void {
+	): bool {
+		$anyChanged = false;
 		$automaticGroups = $this->getAutomaticGlobalGroups();
 		foreach ( $automaticGroups as $automaticGroup ) {
 			$shouldHaveAutomaticGroupUntil = $this->shouldHaveAutomaticGroupUntil(
@@ -103,13 +105,16 @@ class CentralAuthAutomaticGlobalGroupManager {
 				if ( !array_key_exists( $automaticGroup, $assignedGroups ) ) {
 					$groupsToAdd[] = $automaticGroup;
 					$expiriesToChange[$automaticGroup] = $expiry;
+					$anyChanged = true;
 				} elseif ( !$this->expiryEquals( $assignedGroups[$automaticGroup], $expiry ) ) {
 					$groupsToAdd[] = $automaticGroup;
 					$expiriesToChange[$automaticGroup] = $expiry;
+					$anyChanged = true;
 				}
 				$key = array_search( $automaticGroup, $groupsToRemove );
 				if ( $key !== false ) {
 					unset( $groupsToRemove[$key] );
+					$anyChanged = true;
 				}
 
 			} else {
@@ -117,14 +122,17 @@ class CentralAuthAutomaticGlobalGroupManager {
 				// Group should not be assigned.
 				if ( array_key_exists( $automaticGroup, $assignedGroups ) ) {
 					$groupsToRemove[] = $automaticGroup;
+					$anyChanged = true;
 				}
 				$key = array_search( $automaticGroup, $groupsToAdd );
 				if ( $key !== false ) {
 					unset( $groupsToAdd[$key] );
+					$anyChanged = true;
 				}
 
 			}
 		}
+		return $anyChanged;
 	}
 
 	/**

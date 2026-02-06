@@ -27,6 +27,7 @@ use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserNamePrefixSearch;
 use MediaWiki\User\UserNameUtils;
 use StatusValue;
+use Wikimedia\Message\MessageValue;
 
 /**
  * Equivalent of Special:Userrights for global groups.
@@ -206,7 +207,8 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		[ $addgroup, $removegroup, $groupExpiries ] = $this->splitGroupsIntoAddRemove(
 			$newGroups, $this->groupMemberships );
 		$this->globalGroupAssignmentService->saveChangesToUserGroups( $this->getAuthority(), $user, $addgroup,
-			$removegroup, $groupExpiries, $reason );
+			$removegroup, $groupExpiries,
+			$reason, MessageValue::new( 'centralauth-automatic-global-groups-reason-global' ) );
 
 		return StatusValue::newGood();
 	}

@@ -21,6 +21,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserHelper;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\User\UserGroupAssignmentService;
+use Wikimedia\Message\MessageValue;
 use Wikimedia\ParamValidator\ParamValidator;
 use Wikimedia\Rdbms\IDBAccessObject;
 
@@ -98,7 +99,8 @@ class ApiGlobalUserRights extends ApiBase {
 		[ $r['added'], $r['removed'] ] = $this->globalGroupAssignmentService->saveChangesToUserGroups(
 			// Don't pass null for array params; cast to empty array
 			$this->getAuthority(), $user, $add, (array)$params['remove'], $groupExpiries,
-			$params['reason'], (array)$tags
+			$params['reason'], MessageValue::new( 'centralauth-automatic-global-groups-reason-global' ),
+			(array)$tags
 		);
 		$result = $this->getResult();
 		ApiResult::setIndexedTagName( $r['added'], 'group' );

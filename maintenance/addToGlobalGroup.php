@@ -8,6 +8,7 @@ use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\User\User;
 use MediaWiki\User\UserGroupAssignmentService;
+use Wikimedia\Message\MessageValue;
 
 // @codeCoverageIgnoreStart
 $IP = getenv( 'MW_INSTALL_PATH' );
@@ -72,6 +73,7 @@ class AddToGlobalGroup extends Maintenance {
 			$groupsToRemove,
 			$expiry,
 			$reason,
+			MessageValue::new( 'centralauth-automatic-global-groups-reason-global' ),
 		);
 
 		if ( $added || $removed ) {

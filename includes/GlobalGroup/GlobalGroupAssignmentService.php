@@ -18,6 +18,7 @@ use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserNameUtils;
 use MessageLocalizer;
+use Wikimedia\Message\MessageSpecifier;
 
 /**
  * This class represents a service that provides high-level operations on user groups.
@@ -122,6 +123,8 @@ class GlobalGroupAssignmentService {
 	 * @param array<string, ?string> $newExpiries Map of group name to new expiry (string timestamp or null
 	 *   for infinite). If a group is in $addGroups but not in this array, it won't expire.
 	 * @param string $reason
+	 * @param ?MessageSpecifier $automaticReason If any global groups are added or removed automatically
+	 *   as a result of the specified group changes, use this as additional reason text.
 	 * @param array $tags
 	 * @return array{0:string[],1:string[]} The groups actually added and removed
 	 */
@@ -132,6 +135,7 @@ class GlobalGroupAssignmentService {
 		array $removeGroups,
 		array $newExpiries,
 		string $reason = '',
+		?MessageSpecifier $automaticReason = null,
 		array $tags = []
 	): array {
 		$oldGroups = $target->getGlobalGroupsWithExpiration();
@@ -143,7 +147,8 @@ class GlobalGroupAssignmentService {
 		UserGroupAssignmentService::enforceChangeGroupPermissions( $addGroups, $removeGroups, $newExpiries,
 			$oldGroupMemberships, $changeable );
 
-		$this->adjustForAutomaticGlobalGroups( $target, $oldGroups, $addGroups, $removeGroups, $newExpiries );
+		$anyChanged =
+			$this->adjustForAutomaticGlobalGroups( $target, $oldGroups, $addGroups, $removeGroups, $newExpiries );
 
 		// Remove groups, then add new ones/update expiries of existing ones
 		foreach ( $removeGroups as $group ) {
@@ -162,7 +167,7 @@ class GlobalGroupAssignmentService {
 		// Ensure that caches are cleared
 		$target->invalidateCache();
 
-		$reason = $this->getLogReason( $reason, $addGroups, $removeGroups );
+		$reason = $this->getLogReason( $reason, $anyChanged ? $automaticReason : null );
 
 		// Only add a log entry if something actually changed
 		if ( $oldGroups != $newGroups ) {
@@ -219,41 +224,25 @@ class GlobalGroupAssignmentService {
 	}
 
 	/**
-	 * Update the reason if any automatic global groups were changed, unless the
-	 * reason already explains an automatic update due to a local group change.
+	 * Update the reason if any automatic global groups were changed.
 	 *
 	 * @param string $reason The given reason
-	 * @param string[] $addedGroups
-	 * @param string[] $removedGroups
+	 * @param ?MessageSpecifier $automaticReason Reason for global group changes, null if nothing changed
 	 * @return string The updated reason
 	 */
 	private function getLogReason(
 		string $reason,
-		array $addedGroups,
-		array $removedGroups
-	) {
-		$automaticGroups = $this->automaticGroupManager->getAutomaticGlobalGroups();
-		$localReason = $this->messageLocalizer->msg( 'centralauth-automatic-global-groups-reason-local' )
-			->inContentLanguage()
-			->text();
-
-		if ( $reason !== $localReason ) {
-			foreach ( $automaticGroups as $automaticGroup ) {
-				if (
-					in_array( $automaticGroup, $addedGroups ) ||
-					in_array( $automaticGroup, $removedGroups )
-				) {
-					if ( $reason ) {
-						$reason .= $this->messageLocalizer
-							->msg( 'semicolon-separator' )
-							->inContentLanguage()->text();
-					}
-					$reason .= $this->messageLocalizer
-						->msg( 'centralauth-automatic-global-groups-reason-global' )
-						->inContentLanguage()->text();
-					break;
-				}
+		?MessageSpecifier $automaticReason
+	): string {
+		if ( $automaticReason ) {
+			if ( $reason ) {
+				$reason .= $this->messageLocalizer
+					->msg( 'semicolon-separator' )
+					->inContentLanguage()->text();
 			}
+			$reason .= $this->messageLocalizer
+				->msg( $automaticReason )
+				->inContentLanguage()->text();
 		}
 
 		return $reason;
@@ -282,6 +271,7 @@ class GlobalGroupAssignmentService {
 	 * @param string[] &$remove Array of groups to remove
 	 * @param array<string,?string> &$groupExpiries Associative array of (group name => expiry),
 	 *   containing only those groups that are to have new expiry values set
+	 * @return bool Whether any automatic global group memberships were changed
 	 */
 	private function adjustForAutomaticGlobalGroups(
 		CentralAuthUser $user,
@@ -289,7 +279,7 @@ class GlobalGroupAssignmentService {
 		array &$add,
 		array &$remove,
 		array &$groupExpiries
-	) {
+	): bool {
 		// Get the user's local groups and their expiries. If the user has the same group on
 		// multiple wikis, add the latest expiry (with null representing no expiry).
 		$userInfo = $user->queryAttached();
@@ -318,7 +308,7 @@ class GlobalGroupAssignmentService {
 			array_fill_keys( $remove, null )
 		);
 
-		$this->automaticGroupManager->handleAutomaticGlobalGroups(
+		return $this->automaticGroupManager->handleAutomaticGlobalGroups(
 			$assignedGroups,
 			$add,
 			$remove,

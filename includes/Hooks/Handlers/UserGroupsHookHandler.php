@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MediaWikiServices;
-use MediaWiki\Message\Message;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\User\Hook\UserGroupsChangedHook;
+use Wikimedia\Message\MessageValue;
 
 class UserGroupsHookHandler implements UserGroupsChangedHook {
 
@@ -26,7 +26,7 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 		$added,
 		$removed,
 		$performer,
-		$reason,
+		$autoReason,
 		$oldUGMs,
 		$newUGMs
 	) {
@@ -51,13 +51,12 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 		// the change is made immediately and the performer who changed the local
 		// group is logged.
 		$authority = new UltimateAuthority( $performer );
-		$reason = Message::newFromKey( 'centralauth-automatic-global-groups-reason-local' )
-			->inContentLanguage()
-			->text();
+		$autoReason = MessageValue::new( 'centralauth-automatic-global-groups-reason-local' );
 
 		// We set add=[] and remove=[] on purpose. This call is made so that the automatic
 		// global groups are recalculated and applied (so that even if we seemingly request
 		// no change to global groups, a change may still occur).
-		$this->globalGroupAssignmentService->saveChangesToUserGroups( $authority, $globalUser, [], [], [], $reason );
+		$this->globalGroupAssignmentService->saveChangesToUserGroups( $authority, $globalUser, [], [], [],
+			'', $autoReason );
 	}
 }
