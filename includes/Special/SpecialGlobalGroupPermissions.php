@@ -398,6 +398,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 				] ),
 				[
 					'label' => $this->msg( 'centralauth-editgroup-reason' )->text(),
+					'align' => 'top',
 				]
 			);
 			$fields[] = new \OOUI\ActionFieldLayout(
