@@ -132,7 +132,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 			HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
 				->setMethod( 'get' )
-				->setSubmitText( $this->msg( 'centralauth-globalgroupperms-creategroup-submit' )->escaped() )
+				->setSubmitTextMsg( 'centralauth-globalgroupperms-creategroup-submit' )
 				->setWrapperLegend( $this->msg( 'centralauth-newgroup-legend' )->text() )
 				->addHeaderHtml( $this->msg( 'centralauth-newgroup-intro' )->parseAsBlock() )
 				->setName( 'centralauth-globalgroups-newgroup' )

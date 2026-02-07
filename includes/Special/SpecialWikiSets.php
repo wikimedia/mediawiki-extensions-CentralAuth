@@ -263,7 +263,7 @@ class SpecialWikiSets extends SpecialPage {
 			];
 
 			HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
-				->setSubmitText( $this->msg( 'centralauth-editset-submit' )->escaped() )
+				->setSubmitTextMsg( 'centralauth-editset-submit' )
 				->setWrapperLegend( $legend->text() )
 				->setTitle( $this->getPageTitle( (string)( $set ? $set->getId() : 0 ) ) )
 				->prepareForm()
@@ -376,7 +376,7 @@ class SpecialWikiSets extends SpecialPage {
 		];
 
 		HTMLForm::factory( 'ooui', $formDescriptor, $this->getContext() )
-			->setSubmitText( $this->msg( 'centralauth-editset-submit-delete' )->escaped() )
+			->setSubmitTextMsg( 'centralauth-editset-submit-delete' )
 			->setSubmitDestructive()
 			->setWrapperLegend( $this->msg( 'centralauth-editset-legend-delete', $set->getName() )->text() )
 			->setTitle( $this->getPageTitle( 'delete/' . $subpage ) )
