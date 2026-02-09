@@ -300,9 +300,14 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		];
 		$sessionInfo = new SessionInfo( $this->priority, $info );
 
-		if ( $this->useJwtCookie() ) {
+		if ( $this->jwtSessionCookieHelper->useJwtCookie() ) {
 			try {
-				$this->verifyJwtCookie( $request, $sessionInfo );
+				$this->jwtSessionCookieHelper->verifyJwtCookie(
+					$request,
+					$sessionInfo,
+					$this->getJwtCookieOptions(),
+					$this->getJwtClaimOverrides( 0 )
+				);
 			} catch ( JwtException $e ) {
 				$this->logger->info( 'JWT validation failed: ' . $e->getNormalizedMessage(),
 					$e->getMessageContext() + [ 'exception' => $e ] );
