@@ -64,7 +64,8 @@
 			"Translationista",
 			"Tusca",
 			"Vivaelcelta",
-			"JorgeElias2302"
+			"JorgeElias2302",
+			"Codename Noreste"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Recuento de ediciones globales del usuario ($1)",
@@ -113,7 +114,7 @@
 	"centralauth-admin-info-groups-manage": "gestionar",
 	"centralauth-admin-info-header": "Información global del usuario",
 	"centralauth-admin-info-hidden": "Nivel de ocultación:",
-	"centralauth-admin-info-locked": "Bloqueada globalmente:",
+	"centralauth-admin-info-locked": "Bloqueado:",
 	"centralauth-admin-info-registered": "Registrado:",
 	"centralauth-admin-info-unattached": "Número de cuentas no unificadas:",
 	"centralauth-admin-info-username": "Nombre de usuario:",
