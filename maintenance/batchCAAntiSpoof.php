@@ -14,6 +14,8 @@ if ( $IP === false ) {
 	$IP = __DIR__ . '/../../..';
 }
 require_once "$IP/extensions/AntiSpoof/maintenance/BatchAntiSpoofClass.php";
+require_once "$IP/extensions/AntiSpoof/includes/SpoofUser.php";
+require_once "$IP/extensions/CentralAuth/includes/User/CentralAuthSpoofUser.php";
 // @codeCoverageIgnoreEnd
 
 class BatchCAAntiSpoof extends BatchAntiSpoof {
