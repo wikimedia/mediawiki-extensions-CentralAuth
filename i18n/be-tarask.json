@@ -304,7 +304,7 @@
 	"centralauth-rename-table-status-failed": "Не атрымалася",
 	"centralauth-rename-table-status-inprogress": "У працэсе",
 	"centralauth-rename-table-status-queued": "У чарзе",
-	"centralauth-renameuser-merged": "{{GENDER:$1|Удзельнік $1 перайшоў|Удзельніца $1 перайшла}} на ґлябальную сыстэму ўваходу.\n{{GENDER:$1|Ягонае|Ейнае}} перайменаваньне выкліча страту сувязі лякальнага рахунку з ґлябальным.",
+	"centralauth-renameuser-merged": "{{GENDER:$1|Удзельнік $1 перайшоў|Удзельніца $1 перайшла}} на ґлябальную сыстэму ўваходу.\n{{GENDER:$1|Ягонае|Ейнае}} перайменаваньне выкліча страту зьвязку лякальнага рахунку з ґлябальным.",
 	"centralauth-renameuser-reserved": "Імя {{GENDER:$2|ўдзельніка|ўдзельніцы}} $2 зарэзэрваванае для глябальнага рахунку.",
 	"centralauth-rightslog-header": "Гэты журнал утрымлівае запісы пра дзеяньні з глябальнымі групамі: зьмены ўдзелаў і правоў",
 	"centralauth-rightslog-name": "Журнал глябальных правоў",
