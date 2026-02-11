@@ -100,9 +100,6 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
 		if ( !empty( $params['group'] ) ) {
 			$this->addTables( 'global_user_groups' );
-			// Request more rows than needed to avoid not getting all rows
-			// that belong to one user, because a user might be in multiple groups
-			$limit += count( $params['group'] ) + 1;
 
 			$this->addJoinConds( [
 				'global_user_groups' =>
@@ -114,6 +111,11 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 				$this->getDB()->expr( 'gug_expiry', '=', null )
 					->or( 'gug_expiry', '>=', $this->getDB()->timestamp() )
 			] );
+
+			// Deduplicate rows, because the gug table has one row per user group;
+			// multiple rows may exist for one user, which would otherwise complicate
+			// LIMIT handling and API continuation (T241940)
+			$this->addOption( 'DISTINCT' );
 		}
 
 		if ( !empty( $params['excludegroup'] ) ) {
@@ -172,13 +174,8 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 		}
 
 		$data = [];
-		$previousName = '';
 		$i = 1;
 		foreach ( $result as $row ) {
-			if ( $row->gu_name === $previousName ) {
-				continue;
-			}
-			$previousName = $row->gu_name;
 			if ( $i > $params['limit'] ) {
 				$this->setContinueEnumParameter( 'from', $row->gu_name );
 				break;
