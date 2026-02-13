@@ -45,13 +45,7 @@ class DeleteEmptyAccounts extends Maintenance {
 	}
 
 	public function execute() {
-		// phpcs:ignore MediaWiki.Usage.DeprecatedGlobalVariables.Deprecated$wgUser
-		global $wgUser;
-
-		$original = $wgUser;
-
 		$user = User::newFromName( User::MAINTENANCE_SCRIPT_USER );
-		$wgUser = $user;
 		RequestContext::getMain()->setUser( $user );
 
 		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
@@ -91,9 +85,6 @@ class DeleteEmptyAccounts extends Maintenance {
 		}
 
 		$this->output( "done.\n" );
-
-		// Restore old $wgUser value
-		$wgUser = $original;
 	}
 
 	private function process( string $username, User $deleter ): void {
