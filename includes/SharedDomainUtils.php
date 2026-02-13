@@ -228,7 +228,9 @@ class SharedDomainUtils {
 			'uselang' => $request->getRawVal( 'uselang' ),
 			'variant' => $request->getRawVal( 'variant' ),
 			// support existing warning messages from anon actions that redirect to auth pages (T416057)
+			'error' => $request->getRawVal( 'error' ),
 			'warning' => $request->getRawVal( 'warning' ),
+			'notice' => $request->getRawVal( 'notice' ),
 			'returnto' => $request->getRawVal( 'sul3-returnto' ) ?? $request->getRawVal( 'returnto' ),
 			'returntoquery' => $request->getRawVal( 'sul3-returntoquery' ) ?? $request->getRawVal( 'returntoquery' ),
 			'returntoanchor' => $request->getRawVal( 'sul3-returntoanchor' ) ?? $request->getRawVal( 'returntoanchor' ),

@@ -99,7 +99,9 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 				'uselang' => $request->getRawVal( 'uselang' ),
 				'variant' => $request->getRawVal( 'variant' ),
 				// support existing warning messages from anon actions that redirect to auth pages (T416057)
+				'error' => $request->getRawVal( 'error' ),
 				'warning' => $request->getRawVal( 'warning' ),
+				'notice' => $request->getRawVal( 'notice' ),
 				// Mask these parameters, so that Userlogin doesn't immediately return if the user is logged in
 				'sul3-returnto' => $request->getRawVal( 'returnto' ),
 				'sul3-returntoquery' => $request->getRawVal( 'returntoquery' ),
