@@ -17,6 +17,8 @@ use stdClass;
 
 class FixRenameUserLocalLogs extends Maintenance {
 
+	private string $logWikiId;
+
 	public function __construct() {
 		parent::__construct();
 
@@ -50,7 +52,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 	 */
 	private function getGlobalLogEntries(): BatchRowIterator {
 		$databaseManager = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() );
-		$metaWikiDbr = $databaseManager->getLocalDB( DB_REPLICA, $this->getOption( 'logwiki' ) );
+		$metaWikiDbr = $databaseManager->getLocalDB( DB_REPLICA, $this->logWikiId );
 		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $metaWikiDbr )
 			->caller( __METHOD__ )
 			->where( [
@@ -85,7 +87,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 		$firstGlobalLogEntry = null;
 		$lastGlobalLogEntry = null;
 		foreach ( $globalLogRows as $row ) {
-			$globalLogEntry = DatabaseLogEntry::newFromRow( $row );
+			$globalLogEntry = DatabaseLogEntry::newFromRow( $row, $this->logWikiId );
 			$firstGlobalLogEntry ??= $globalLogEntry;
 			$lastGlobalLogEntry = $globalLogEntry;
 		}
@@ -139,7 +141,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 		$userNames = [];
 		$attachedTimestamps = [];
 		foreach ( $globalLogRows as $row ) {
-			$globalLogEntry = DatabaseLogEntry::newFromRow( $row );
+			$globalLogEntry = DatabaseLogEntry::newFromRow( $row, $this->logWikiId );
 			$newUserName = $globalLogEntry->getParameters()['5::newuser'];
 			$userNames[] = $newUserName;
 			$attachedTimestamps[$newUserName] = null;
@@ -167,7 +169,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 	 * @return list<stdClass>
 	 */
 	private function findMatchingLogEntries( stdClass $globalRow, array $localLogRowsByOldNewUsername ): array {
-		$globalLogEntry = DatabaseLogEntry::newFromRow( $globalRow );
+		$globalLogEntry = DatabaseLogEntry::newFromRow( $globalRow, $this->logWikiId );
 		$oldUserName = $globalLogEntry->getParameters()['4::olduser'];
 		$newUserName = $globalLogEntry->getParameters()['5::newuser'];
 
@@ -210,6 +212,12 @@ class FixRenameUserLocalLogs extends Maintenance {
 	}
 
 	public function execute() {
+		$this->logWikiId = $this->getOption( 'logwiki' );
+		if ( $this->logWikiId === WikiMap::getCurrentWikiId() ) {
+			$this->output( "No need to run this script on the log wiki.\n" );
+			return;
+		}
+
 		$fix = $this->hasOption( 'fix' );
 		$changed = 0;
 
@@ -221,7 +229,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 
 			$this->beginTransactionRound( __METHOD__ );
 			foreach ( $globalLogRows as $globalRow ) {
-				$globalLogEntry = DatabaseLogEntry::newFromRow( $globalRow );
+				$globalLogEntry = DatabaseLogEntry::newFromRow( $globalRow, $this->logWikiId );
 
 				$matchingResults = $this->findMatchingLogEntries( $globalRow, $localLogRows );
 				if ( count( $matchingResults ) !== 1 ) {
@@ -243,11 +251,10 @@ class FixRenameUserLocalLogs extends Maintenance {
 					continue;
 				}
 				// Find the local account of the user who really performed the rename.
-				// Do not use $globalLogEntry->getPerformerIdentity() on a log entry loaded from a different wiki,
-				// as it will poison global actor cache with actor IDs from that wiki (that's what caused T398177)
-				$newPerformer = $userFactory->newFromName( $globalRow->log_user_text );
+				$newPerformerName = $globalLogEntry->getPerformerIdentity()->getName();
+				$newPerformer = $userFactory->newFromName( $newPerformerName );
 				if ( !$newPerformer || !$newPerformer->isRegistered() ) {
-					$this->output( "Global performer {$globalRow->log_user_text} does not exist locally\n" );
+					$this->output( "Global performer {$newPerformerName} does not exist locally\n" );
 					continue;
 				}
 				if ( $localRow->log_user_text !== null ) {

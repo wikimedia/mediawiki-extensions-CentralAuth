@@ -55,7 +55,10 @@ class FixStuckGlobalRename extends Maintenance {
 
 		$databaseManager = CentralAuthServices::getDatabaseManager();
 
-		$dbr = $databaseManager->getLocalDB( DB_REPLICA, $this->getOption( 'logwiki' ) );
+		$logWikiId = $this->getOption( 'logwiki' );
+		$logWikiIdOrLocal = $logWikiId === WikiMap::getCurrentWikiId() ? false : $logWikiId;
+
+		$dbr = $databaseManager->getLocalDB( DB_REPLICA, $logWikiId );
 		$dbLogEntrySqb = DatabaseLogEntry::newSelectQueryBuilder( $dbr );
 		$row = $dbLogEntrySqb
 			->where( [
@@ -72,10 +75,8 @@ class FixStuckGlobalRename extends Maintenance {
 		$movepages = true;
 		$suppressredirects = false;
 		if ( $row ) {
-			$logEntry = DatabaseLogEntry::newFromRow( $row );
-			// Do not use $logEntry->getPerformerIdentity() on a log entry loaded from a different wiki,
-			// as it will poison global actor cache with actor IDs from that wiki (T398177)
-			$renamer = $row->log_user_text;
+			$logEntry = DatabaseLogEntry::newFromRow( $row, $logWikiIdOrLocal );
+			$renamer = $logEntry->getPerformerIdentity()->getName();
 			$comment = $logEntry->getComment();
 			$logParams = $logEntry->getParameters();
 			if ( isset( $logParams['movepages'] ) ) {

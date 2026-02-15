@@ -105,7 +105,7 @@ class CentralAuthUserStatusLookupService {
 			->fetchResultSet();
 
 		foreach ( $rows as $row ) {
-			$logEntry = DatabaseLogEntry::newFromRow( $row );
+			$logEntry = DatabaseLogEntry::newFromRow( $row, $this->remoteWikiId );
 			[ $added, $removed ] = $this->extractLogParameters( $logEntry );
 
 			if (
