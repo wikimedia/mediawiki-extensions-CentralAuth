@@ -474,6 +474,103 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertTrue( $blocks[0]->getHideName() );
 	}
 
+	public function testAdminLockFiresLockStatusChangedHook(): void {
+		$centralAccountUsername = $this->getTestCentralAuthUserWithExistingLocalWikis();
+		$caUser = CentralAuthUser::getInstanceByName( $centralAccountUsername );
+
+		$hookCalled = false;
+		$this->setTemporaryHook( 'CentralAuthGlobalUserLockStatusChanged', function (
+			CentralAuthUser $user, bool $isLocked
+		) use ( &$hookCalled, $centralAccountUsername ): void {
+			$hookCalled = true;
+			$this->assertSame( $centralAccountUsername, $user->getName() );
+			$this->assertTrue( $isLocked, 'isLocked should be true when locking a user' );
+		} );
+
+		$this->assertStatusGood( $caUser->adminLock() );
+		$this->assertTrue(
+			$hookCalled,
+			'CentralAuthGlobalUserLockStatusChanged hook should fire when locking a user'
+		);
+	}
+
+	public function testAdminUnlockFiresLockStatusChangedHook(): void {
+		$centralAccountUsername = $this->getTestCentralAuthUserWithExistingLocalWikis();
+		$caUser = CentralAuthUser::getInstanceByName( $centralAccountUsername );
+		$caUser->adminLock();
+
+		$hookCalled = false;
+		$this->setTemporaryHook( 'CentralAuthGlobalUserLockStatusChanged', function (
+			CentralAuthUser $user, bool $isLocked
+		) use ( &$hookCalled, $centralAccountUsername ): void {
+			$hookCalled = true;
+			$this->assertSame( $centralAccountUsername, $user->getName() );
+			$this->assertFalse( $isLocked, 'isLocked should be false when unlocking a user' );
+		} );
+
+		$this->assertStatusGood( $caUser->adminUnlock() );
+		$this->assertTrue(
+			$hookCalled,
+			'CentralAuthGlobalUserLockStatusChanged hook should fire when unlocking a user'
+		);
+	}
+
+	/**
+	 * @dataProvider provideAdminLockHideDoesNotFireLockStatusChangedHook
+	 */
+	public function testAdminLockHideDoesNotFireLockStatusChangedHook(
+		bool|null $setLocked, int|null $setHidden, string $assertionMessage
+	): void {
+		$centralAccountUsername = $this->getTestCentralAuthUserWithExistingLocalWikis();
+		$caUser = CentralAuthUser::getInstanceByName( $centralAccountUsername );
+		$context = new DerivativeContext( RequestContext::getMain() );
+		$context->setAuthority( $this->mockRegisteredUltimateAuthority() );
+
+		$hookCalled = false;
+		$this->setTemporaryHook( 'CentralAuthGlobalUserLockStatusChanged', static function () use ( &$hookCalled ): void {
+			$hookCalled = true;
+		} );
+
+		$adminLockHideStatus = $caUser->adminLockHide( $setLocked, $setHidden, 'test', $context );
+
+		$this->assertStatusGood( $adminLockHideStatus );
+		$this->assertFalse( $hookCalled, $assertionMessage );
+	}
+
+	public static function provideAdminLockHideDoesNotFireLockStatusChangedHook(): array {
+		return [
+			'only changing hidden level' => [
+				null, CentralAuthUser::HIDDEN_LEVEL_LISTS,
+				'CentralAuthGlobalUserLockStatusChanged hook should not fire when only changing hidden level',
+			],
+		];
+	}
+
+	public function testAdminLockHideFiresLockStatusChangedHookOnUnlock(): void {
+		$centralAccountUsername = $this->getTestCentralAuthUserWithExistingLocalWikis();
+		$caUser = CentralAuthUser::getInstanceByName( $centralAccountUsername );
+		$caUser->adminLock();
+		$context = new DerivativeContext( RequestContext::getMain() );
+		$context->setAuthority( $this->mockRegisteredUltimateAuthority() );
+
+		$hookCalled = false;
+		$this->setTemporaryHook( 'CentralAuthGlobalUserLockStatusChanged', function (
+			CentralAuthUser $user, bool $isLocked
+		) use ( &$hookCalled, $centralAccountUsername ): void {
+			$hookCalled = true;
+			$this->assertSame( $centralAccountUsername, $user->getName() );
+			$this->assertFalse( $isLocked, 'isLocked should be false when unlocking via adminLockHide' );
+		} );
+
+		$adminLockHideStatus = $caUser->adminLockHide( false, null, 'test', $context );
+
+		$this->assertStatusGood( $adminLockHideStatus );
+		$this->assertTrue(
+			$hookCalled,
+			'CentralAuthGlobalUserLockStatusChanged hook should fire when unlocking via adminLockHide'
+		);
+	}
+
 	/** @dataProvider provideAddToGlobalGroup */
 	public function testAddToGlobalGroup( $group, $expiry ) {
 		ConvertibleTimestamp::setFakeTime( '20240405060708' );

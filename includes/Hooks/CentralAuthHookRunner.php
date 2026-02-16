@@ -21,6 +21,7 @@ class CentralAuthHookRunner implements
 	CentralAuthWikiListHook,
 	CentralAuthInfoFieldsHook,
 	CentralAuthGlobalUserGroupMembershipChangedHook,
+	CentralAuthGlobalUserLockStatusChangedHook,
 	CentralAuthUserVisibilityChangedHook,
 	CentralAuthAccountDeletedHook
 {
@@ -108,6 +109,20 @@ class CentralAuthHookRunner implements
 		$this->hookContainer->run(
 			'CentralAuthGlobalUserGroupMembershipChanged',
 			[ $centralAuthUser, $oldGroups, $newGroups ]
+		);
+	}
+
+	/**
+	 * @inheritDoc
+	 */
+	public function onCentralAuthGlobalUserLockStatusChanged(
+		CentralAuthUser $centralAuthUser,
+		bool $isLocked
+	): void {
+		$this->hookContainer->run(
+			'CentralAuthGlobalUserLockStatusChanged',
+			[ $centralAuthUser, $isLocked ],
+			[ 'abortable' => false ]
 		);
 	}
 

@@ -2027,10 +2027,20 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Lock a global account
-	 *
-	 * @return StatusValue
 	 */
-	public function adminLock() {
+	public function adminLock(): StatusValue {
+		$status = $this->applyLock();
+		if ( $status->isGood() ) {
+			$hookRunner = new CentralAuthHookRunner(
+				MediaWikiServices::getInstance()->getHookContainer()
+			);
+			$hookRunner->onCentralAuthGlobalUserLockStatusChanged( $this, true );
+		}
+
+		return $status;
+	}
+
+	private function applyLock(): StatusValue {
 		$this->checkWriteMode();
 		$this->loadState();
 
@@ -2072,10 +2082,20 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * Unlock a global account
-	 *
-	 * @return StatusValue
 	 */
-	public function adminUnlock() {
+	public function adminUnlock(): StatusValue {
+		$status = $this->applyUnlock();
+		if ( $status->isGood() ) {
+			$hookRunner = new CentralAuthHookRunner(
+				MediaWikiServices::getInstance()->getHookContainer()
+			);
+			$hookRunner->onCentralAuthGlobalUserLockStatusChanged( $this, false );
+		}
+
+		return $status;
+	}
+
+	private function applyUnlock(): StatusValue {
 		$this->checkWriteMode();
 		$this->loadState();
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
@@ -2197,11 +2217,14 @@ class CentralAuthUser implements IDBAccessObject {
 			$setHidden = self::HIDDEN_LEVEL_NONE;
 		}
 
+		// Apply the lock/unlock change without firing the hook, because the hide step below may fail,
+		// causing us to roll back this change.
+		// The hook is fired after all operations succeed.
 		if ( !$isLocked && $setLocked ) {
-			$lockStatus = $this->adminLock();
+			$lockStatus = $this->applyLock();
 			$added[] = 'locked';
 		} elseif ( $isLocked && !$setLocked ) {
-			$lockStatus = $this->adminUnlock();
+			$lockStatus = $this->applyUnlock();
 			$removed[] = 'locked';
 		}
 
@@ -2218,12 +2241,11 @@ class CentralAuthUser implements IDBAccessObject {
 			// as we do not want to perform any status change for the global account if any of the changes fail
 			// (T380421).
 			if ( !$hideStatus->isGood() ) {
-				// Undo any changes to the locked status of the global account if the suppression failed as we won't
-				// be creating a log entry for the change.
+				// Roll back the lock/unlock change if hiding failed
 				if ( !$isLocked && $setLocked ) {
-					$this->adminUnlock();
+					$this->applyUnlock();
 				} elseif ( $isLocked && !$setLocked ) {
-					$this->adminLock();
+					$this->applyLock();
 				}
 
 				return $hideStatus;
@@ -2255,6 +2277,14 @@ class CentralAuthUser implements IDBAccessObject {
 			} elseif ( $oldHiddenLevel === self::HIDDEN_LEVEL_SUPPRESSED ) {
 				$this->unsuppress( $userName, $reason );
 			}
+		}
+
+		// Fire the "lock status changed" hook now that all operations have succeeded.
+		if ( in_array( 'locked', $added, true ) || in_array( 'locked', $removed, true ) ) {
+			$hookRunner = new CentralAuthHookRunner(
+				MediaWikiServices::getInstance()->getHookContainer()
+			);
+			$hookRunner->onCentralAuthGlobalUserLockStatusChanged( $this, $setLocked );
 		}
 
 		// Setup Status object to return all of the information for logging
