@@ -21,7 +21,7 @@ use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\TestingAccessWrapper;
 
 /**
- * @covers CentralAuthTokenSessionProvider
+ * @covers \CentralAuthTokenSessionProvider
  * @group medium
  * @group Database
  */

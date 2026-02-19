@@ -19,7 +19,7 @@ use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
- * @covers CentralAuthSessionProvider
+ * @covers \CentralAuthSessionProvider
  * @group Database
  */
 class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {

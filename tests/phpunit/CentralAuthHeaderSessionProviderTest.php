@@ -7,7 +7,7 @@ use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\Session\SessionProviderTestTrait;
 
 /**
- * @covers CentralAuthHeaderSessionProvider
+ * @covers \CentralAuthHeaderSessionProvider
  * @group medium
  * @group Database
  */

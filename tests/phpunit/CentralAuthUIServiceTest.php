@@ -7,7 +7,7 @@ use MediaWiki\Title\TitleFactory;
 use MediaWiki\WikiMap\WikiMap;
 
 /**
- * @covers MediaWiki\Extension\CentralAuth\CentralAuthUIService
+ * @covers \MediaWiki\Extension\CentralAuth\CentralAuthUIService
  * @group Database
  */
 class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {

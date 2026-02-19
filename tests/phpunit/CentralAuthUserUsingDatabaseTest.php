@@ -22,7 +22,7 @@ use Wikimedia\Timestamp\ConvertibleTimestamp;
 /**
  * Setup database tests for centralauth
  *
- * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser
+ * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthUser
  * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\BlockHookHandler
  * @group CentralAuthDB
  * @group Database

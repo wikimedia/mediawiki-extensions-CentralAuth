@@ -14,7 +14,7 @@ use MediaWiki\Session\SessionInfo;
 use MediaWiki\Tests\Session\SessionProviderTestTrait;
 
 /**
- * @covers CentralAuthApiSessionProvider
+ * @covers \CentralAuthApiSessionProvider
  * @covers \MediaWiki\Extension\CentralAuth\Hooks\Handlers\ApiHookHandler
  * @group medium
  * @group Database

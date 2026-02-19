@@ -10,8 +10,8 @@ use MediaWiki\WikiMap\WikiMap;
 
 /**
  * @author Taavi "Majavah" Väänänen
- * @covers MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount
- * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService::attemptAutoCreateLocalUserFromName
+ * @covers \MediaWiki\Extension\CentralAuth\Special\SpecialCreateLocalAccount
+ * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService::attemptAutoCreateLocalUserFromName
  * @group Database
  */
 class CentralAuthCreateLocalTest extends MediaWikiIntegrationTestCase {

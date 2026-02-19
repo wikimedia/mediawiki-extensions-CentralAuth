@@ -12,7 +12,7 @@ use PHPUnit\Framework\MockObject\MockObject;
  * Only for tests that do not require the database to be
  * set up.
  *
- * @covers MediaWiki\Extension\CentralAuth\User\CentralAuthUser
+ * @covers \MediaWiki\Extension\CentralAuth\User\CentralAuthUser
  * @group CentralAuth
  */
 class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
