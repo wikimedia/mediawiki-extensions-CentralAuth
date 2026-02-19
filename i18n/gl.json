@@ -135,6 +135,7 @@
 	"centralauth-attach-title": "Confirmar a conta",
 	"centralauth-automatic-global-groups-reason-local": "Grupos globais actualizados automaticamente debido ao cambio de grupo local.",
 	"centralauth-automatic-global-groups-reason-global": "Grupos globais actualizados automaticamente debido ao cambio de grupo global.",
+	"centralauth-automatic-global-groups-reason-config": "Grupos globais actualizados automaticamente despois de que se modificase a configuración.",
 	"centralauth-block-already-locked": "A conta [[Special:CentralAuth/$1|$1]] xa está bloqueada globalmente.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|acción|accións}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|páxina|páxinas}}",

@@ -1,8 +1,9 @@
 {
 	"@metadata": {
 		"authors": [
+			"Letra.berdi",
 			"Waldyrious"
 		]
 	},
-	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontributu|kontributus}} na $2"
+	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kuntributu|kuntributus}} na $2"
 }
