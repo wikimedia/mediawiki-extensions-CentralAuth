@@ -39,9 +39,7 @@ class CentralAuthUIServiceTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testFormatHiddenLevelInvalid() {
-		$localizer = $this->createMock( MessageLocalizer::class );
-		$localizer->expects( $this->never() )
-			->method( 'msg' );
+		$localizer = $this->createNoOpMock( MessageLocalizer::class );
 
 		$service = new CentralAuthUIService( $this->createMock( TitleFactory::class ) );
 

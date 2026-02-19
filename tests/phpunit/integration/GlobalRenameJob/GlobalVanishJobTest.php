@@ -165,9 +165,7 @@ class GlobalVanishJobTest extends MediaWikiIntegrationTestCase {
 	private function allValidUserNameUtils() {
 		$userNameUtils = $this->createMock( UserNameUtils::class );
 		$userNameUtils->method( 'getCanonical' )
-			->willReturnCallback( static function ( string $newName, $rigor ) {
-				return $newName;
-			} );
+			->willReturnArgument( 0 );
 
 		return $userNameUtils;
 	}
