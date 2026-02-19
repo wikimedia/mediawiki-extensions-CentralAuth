@@ -120,7 +120,7 @@ class CentralAuthTokenManager {
 	 */
 	private function getCentralAuthDBForSessionKey() {
 		return MediaWikiServices::getInstance()
-			->getDBLoadBalancerFactory()->getPrimaryDatabase( 'virtual-centralauth' )->getDomainID();
+			->getConnectionProvider()->getPrimaryDatabase( 'virtual-centralauth' )->getDomainID();
 	}
 
 }

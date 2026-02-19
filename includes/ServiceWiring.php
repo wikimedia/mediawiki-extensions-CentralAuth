@@ -32,7 +32,7 @@ return [
 		return new CentralAuthAntiSpoofManager(
 			new ServiceOptions( CentralAuthAntiSpoofManager::CONSTRUCTOR_OPTIONS, $services->getMainConfig() ),
 			LoggerFactory::getInstance( 'antispoof' ),
-			$services->getDBLoadBalancerFactory(),
+			$services->getConnectionProvider(),
 			CentralAuthServices::getDatabaseManager( $services )
 		);
 	},

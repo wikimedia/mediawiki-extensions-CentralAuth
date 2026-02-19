@@ -30,9 +30,9 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use MediaWiki\WikiMap\WikiMap;
 use RuntimeException;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\IResultWrapper;
-use Wikimedia\Rdbms\LBFactory;
 use Wikimedia\Rdbms\RawSQLExpression;
 use Wikimedia\Rdbms\SelectQueryBuilder;
 use Wikimedia\ScopedCallback;
@@ -224,7 +224,7 @@ class BackfillLocalAccounts extends Maintenance {
 		IReadableDatabase $cadb,
 		UserFactory $userFactory,
 		AccountCreationDetailsLookup $accountLookup,
-		LBFactory $lbFactory,
+		IConnectionProvider $dbProvider,
 		bool $dryrun,
 		bool $verbose,
 		int $startGlobalUID,
@@ -246,7 +246,7 @@ class BackfillLocalAccounts extends Maintenance {
 				// get the user agent and ip address with which the user account was created on
 				// their home wiki, if available, and create a local account for that user,
 				// with that user agent and ip
-				$dbr = $lbFactory->getReplicaDatabase( $homeWiki );
+				$dbr = $dbProvider->getReplicaDatabase( $homeWiki );
 
 				if ( $dryrun ) {
 					$this->output( "Would create user $row->gu_name from guid "
@@ -319,7 +319,7 @@ class BackfillLocalAccounts extends Maintenance {
 			$cadb,
 			$userFactory,
 			$services->get( 'AccountCreationDetailsLookup' ),
-			$services->getDBLoadBalancerFactory(),
+			$services->getConnectionProvider(),
 			$this->hasOption( 'dryrun' ),
 			$verbose,
 			$startGlobalUID,
