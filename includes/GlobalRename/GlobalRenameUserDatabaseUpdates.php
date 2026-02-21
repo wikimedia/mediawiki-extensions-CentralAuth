@@ -53,7 +53,7 @@ class GlobalRenameUserDatabaseUpdates {
 		$id = $dbw->newSelectQueryBuilder()
 			->select( 'gu_id' )
 			->from( 'globaluser' )
-			->where( [ 'gu_name' => $oldname ] )
+			->where( [ 'gu_name' => $newname ] )
 			->caller( __METHOD__ )
 			->fetchField();
 		$dbw->newUpdateQueryBuilder()
