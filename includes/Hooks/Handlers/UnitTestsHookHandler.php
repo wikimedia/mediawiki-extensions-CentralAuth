@@ -35,7 +35,7 @@ class UnitTestsHookHandler implements
 
 		$dbw = $this->loadBalancer->getMaintenanceConnectionRef( DB_PRIMARY );
 		foreach ( $tables as $table ) {
-			$dbw->dropTable( $table );
+			$dbw->dropTable( $table, __METHOD__ );
 		}
 	}
 
