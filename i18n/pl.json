@@ -155,6 +155,7 @@
 	"centralauth-attach-title": "Potwierdź konto",
 	"centralauth-automatic-global-groups-reason-local": "Automatycznie zmieniono członkostwo w grupach globalnych z powodu zmiany członkostwa w grupach lokalnych.",
 	"centralauth-automatic-global-groups-reason-global": "Automatycznie zmieniono członkostwo w grupach globalnych z powodu zmiany członkostwa w grupach globalnych.",
+	"centralauth-automatic-global-groups-reason-config": "Automatyczna zmiana grup globalnych po zmianie konfiguracji.",
 	"centralauth-block-already-locked": "Konto [[Special:CentralAuth/$1|$1]] zostało już zablokowane globalnie.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|akcja|akcje|akcji}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|strona|strony|stron}}",

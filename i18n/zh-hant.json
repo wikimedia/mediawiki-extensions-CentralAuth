@@ -168,6 +168,7 @@
 	"centralauth-attach-title": "確認帳號",
 	"centralauth-automatic-global-groups-reason-local": "由於本地群組變更，自動更新全域群組。",
 	"centralauth-automatic-global-groups-reason-global": "由於全域群組變更，自動更新全域群組。",
+	"centralauth-automatic-global-groups-reason-config": "在組態變更後自動更新全域群組。",
 	"centralauth-block-already-locked": "帳號 [[Special:CentralAuth/$1|$1]] 已被全域鎖定。",
 	"centralauth-block-editing-action": "$1 個{{PLURAL:$1|操作}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|個頁面}}",

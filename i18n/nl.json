@@ -156,6 +156,7 @@
 	"centralauth-attach-title": "Account bevestigen",
 	"centralauth-automatic-global-groups-reason-local": "De globale groepen zijn automatisch bijgewerkt als gevolg van lokale groepswijzigingen.",
 	"centralauth-automatic-global-groups-reason-global": "De globale groepen zijn automatisch bijgewerkt als gevolg van lokale groepswijzigingen.",
+	"centralauth-automatic-global-groups-reason-config": "Automatisch globale groepen bijgewerkt nadat de configuratie was gewijzigd.",
 	"centralauth-block-already-locked": "De gebruiker [[Special:CentralAuth/$1|$1]] is al globaal geblokkeerd.",
 	"centralauth-block-editing-action": "$1 handeling{{PLURAL:$1||en}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|pagina|pagina's}}",

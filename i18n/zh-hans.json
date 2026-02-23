@@ -192,6 +192,7 @@
 	"centralauth-attach-title": "确认账号",
 	"centralauth-automatic-global-groups-reason-local": "由於本地群組變更，自動更新全域群組。",
 	"centralauth-automatic-global-groups-reason-global": "由于全局群组变更，自动更新全局群组。",
+	"centralauth-automatic-global-groups-reason-config": "配置更改后的全域用户组自动更新。",
 	"centralauth-block-already-locked": "[[Special:CentralAuth/$1|$1]]的账号已被全域锁定。",
 	"centralauth-block-editing-action": "$1个{{PLURAL:$1|操作}}",
 	"centralauth-block-editing-page": "$1{{PLURAL:$1|个页面|个页面}}",
