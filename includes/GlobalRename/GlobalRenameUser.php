@@ -274,6 +274,7 @@ class GlobalRenameUser {
 			'promotetoglobal' => false,
 			'reason' => $options['reason'],
 			'force' => isset( $options['force'] ) && $options['force'],
+			'type' => $options['type'] ?? GlobalRenameRequest::RENAME,
 		];
 		if ( $this->session !== null ) {
 			$params['session'] = $this->session;
