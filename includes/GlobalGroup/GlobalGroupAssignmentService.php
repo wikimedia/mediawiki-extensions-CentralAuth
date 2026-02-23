@@ -249,6 +249,7 @@ class GlobalGroupAssignmentService {
 				->from( 'user' )
 				->select( 'user_id' )
 				->where( [ 'user_name' => $performer->getName() ] )
+				->caller( __METHOD__ )
 				->fetchField();
 			$targetPage = str_replace( ' ', '_', $target->getName() );
 			$logWikiPage = $logWikiDbr
@@ -259,6 +260,7 @@ class GlobalGroupAssignmentService {
 					'page_namespace' => NS_USER,
 					'page_title' => $targetPage,
 				] )
+				->caller( __METHOD__ )
 				->fetchField();
 			$logPerformer = new UserIdentityValue( $logWikiUser ?: 0, $performer->getName(), $logWikiId );
 			$logTarget = new PageIdentityValue( $logWikiPage ?: 0, NS_USER, $targetPage, $logWikiId );

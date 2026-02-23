@@ -39,7 +39,8 @@ class UpdateAutomaticGlobalGroupMembership extends Maintenance {
 			->select( 'user_name' )
 			->from( 'user' )
 			->join( 'user_groups', null, 'ug_user=user_id' )
-			->where( [ 'ug_group' => $localGroupsToCheck ] );
+			->where( [ 'ug_group' => $localGroupsToCheck ] )
+			->caller( __METHOD__ );
 
 		$batches = new BatchRowIterator( $dbr, $sqb, [ 'ug_group', 'ug_user' ], $this->getBatchSize() );
 
