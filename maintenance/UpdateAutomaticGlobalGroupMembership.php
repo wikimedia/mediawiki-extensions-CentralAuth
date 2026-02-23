@@ -53,7 +53,7 @@ class UpdateAutomaticGlobalGroupMembership extends Maintenance {
 		foreach ( $batches as $rows ) {
 			$this->beginTransactionRound( __METHOD__ );
 			foreach ( $rows as $row ) {
-				$caUser = CentralAuthUser::getInstanceByName( $row->user_name );
+				$caUser = CentralAuthUser::getPrimaryInstanceByName( $row->user_name );
 				if ( !( $caUser->exists() && $caUser->isAttached() ) ) {
 					continue;
 				}
