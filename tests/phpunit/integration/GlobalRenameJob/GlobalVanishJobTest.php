@@ -89,10 +89,15 @@ class GlobalVanishJobTest extends MediaWikiIntegrationTestCase {
 		$this->store->method( 'newFromId' )->with( 1000 )->willReturn( $request );
 
 		// Expect a rename to be attempted as all of the data being fed into
-		// the job is valid.
+		// the job is valid. Assert that the 'type' option is forwarded so
+		// LocalRenameUserJob receives it and can execute the vanish code path (T418122).
 		$this->globalRenameUser->method( 'withLockPerformingUser' )->willReturn( $this->globalRenameUser );
 		$this->globalRenameUser->method( 'rename' )->willReturn( Status::newGood() );
-		$this->globalRenameUser->expects( $this->once() )->method( 'rename' );
+		$this->globalRenameUser->expects( $this->once() )->method( 'rename' )
+			->with( $this->callback( static function ( $options ) {
+				return isset( $options['type'] ) &&
+					$options['type'] === GlobalRenameRequest::VANISH;
+			} ) );
 
 		$this->getServiceContainer()->getJobQueueGroup()->push(
 			GlobalVanishJob::newSpec( $request, $performer->getName() )
