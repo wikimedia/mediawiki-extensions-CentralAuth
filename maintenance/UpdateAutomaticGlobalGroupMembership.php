@@ -7,12 +7,12 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use BatchRowIterator;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\User\User;
+use MediaWiki\Utils\BatchRowIterator;
 use Wikimedia\Message\MessageValue;
 
 class UpdateAutomaticGlobalGroupMembership extends Maintenance {

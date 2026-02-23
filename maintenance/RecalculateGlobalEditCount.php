@@ -7,11 +7,11 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use BatchRowIterator;
 use Generator;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
+use MediaWiki\Utils\BatchRowIterator;
 
 /**
  * @author Taavi Väänänen

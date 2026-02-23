@@ -7,10 +7,10 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use BatchRowIterator;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Logging\DatabaseLogEntry;
 use MediaWiki\Maintenance\Maintenance;
+use MediaWiki\Utils\BatchRowIterator;
 use MediaWiki\Utils\MWTimestamp;
 use MediaWiki\WikiMap\WikiMap;
 use stdClass;
