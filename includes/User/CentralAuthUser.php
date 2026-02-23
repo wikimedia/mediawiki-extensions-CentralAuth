@@ -937,11 +937,53 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
+	 * Check if blocks for the corresponding wikis the user is attached to
+	 * have changed since it was last evaluated and cached. Otherwise, signal
+	 * fetching the latest blocks from the database.
+	 *
+	 * @param array|bool &$cachedBlocks Previously cached blocks of a central
+	 *   user on attached wikis.
+	 * @param array $wikis Attached wikis.
+	 *
+	 * @return bool If wikis with the blocks don't match what is in the cache,
+	 *   or no block found, return true. False if there was a cache hit and
+	 *   the wikis with the corresponding blocks match what's in the cache.
+	 */
+	private function shouldFetchFreshBlocks( &$cachedBlocks, array $wikis ): bool {
+		if ( is_array( $cachedBlocks ) ) {
+			$oldWikis = array_keys( $cachedBlocks );
+
+			// Match queryForBlocks() adjustment of local wiki's id before sorting
+			$newWikis = array_keys( $wikis );
+			$localWiki = array_search( WikiMap::getCurrentWikiId(), $newWikis );
+			if ( $localWiki !== false ) {
+				$newWikis[ $localWiki ] = (int)WikiAwareEntity::LOCAL;
+			}
+
+			// If all wikis exist in the cache, indicate to the calling code to use
+			// that value with adjustment to match what a fresh query would return
+			// and reset the expiry.
+			if ( count( array_diff( $oldWikis, $newWikis ) ) === 0 &&
+				count( array_diff( $newWikis, $oldWikis ) ) === 0
+			) {
+				return false;
+			}
+		}
+
+		// If new wikis have been added to the list of wikis that this user has a block
+		// in, consider this a cache-miss and recompute to update the cache.
+		// Also, if we don't have any old blocks in the cache; this is the case where
+		// there is no cache entry. Treat it as a miss as well and get query the DB.
+		return true;
+	}
+
+	/**
 	 * Returns an array of blocks per wiki the user is attached to.
 	 *
-	 * @param array|null $wikis Should conform to the schema of ::queryAttachedBasic() as necessary.
-	 *                          This is useful for testing, where ::queryAttachedBasic() may not work as expected,
-	 *                          and should only be used in those cases. Regular callers shouldn't manually set this.
+	 * @param array|null $wikis Should conform to the schema of ::queryAttachedBasic()
+	 *     as necessary. This is useful for testing, where ::queryAttachedBasic() may
+	 *     not work as expected and should only be used in those cases. Regular callers
+	 *     shouldn't manually set this.
 	 * @return array<array<DatabaseBlock>>
 	 * @throws LocalUserNotFoundException
 	 */
@@ -964,65 +1006,53 @@ class CentralAuthUser implements IDBAccessObject {
 			return $this->queryForBlocks( $wikis );
 		}
 
-		$cacheKey = $this->wanCache->makeGlobalKey(
-			'centralauthuser-getblocks',
-			$centralId
-		);
+		$cacheMiss = false;
+		$cacheKey = $this->wanCache->makeGlobalKey( 'centralauthuser-getblocks', $centralId );
 		$blocksByWikiId = $this->wanCache->getWithSetCallback(
 			$cacheKey,
 			$this->wanCache::TTL_MONTH,
-			function ( $oldValue ) use ( $wikis ) {
-				if ( is_array( $oldValue ) ) {
-					$oldWikis = array_keys( $oldValue );
-
-					// Match queryForBlocks() adjustment of local wiki's id before sorting
-					$newWikis = array_keys( $wikis );
-					$localWiki = array_search( WikiMap::getCurrentWikiId(), $newWikis );
-					if ( $localWiki !== false ) {
-						$newWikis[ $localWiki ] = (int)WikiAwareEntity::LOCAL;
-					}
-
-					// If all wikis exist in the cache, use that value with adjustment
-					// to match what a fresh query would return and reset the expiry.
-					if (
-						!count( array_diff( $oldWikis, $newWikis ) ) &&
-						!count( array_diff( $newWikis, $oldWikis ) )
-					) {
-						// There isn't a hook for blocks expiring. Cached values need to
-						// manually filter out for expired blocks to match with the fresh
-						// value from queryForBlocks()
-						$filteredBlocks = [];
-						foreach ( $oldValue as $wikiId => $blocksOnWiki ) {
-							$filteredBlocks[ $wikiId ] = [];
-
-							foreach ( $blocksOnWiki as $block ) {
-								if ( !$block->isExpired() ) {
-									$filteredBlocks[ $wikiId ][] = $block;
-								}
-							}
-						}
-
-						// Record a cache hit
-						$this->statsFactory->withComponent( 'CentralAuth' )
-							->getCounter( 'centralauthuser_getblocks_cache' )
-							->setLabel( 'interaction', 'hit' )
-							->increment();
-
-						return $filteredBlocks;
-					}
-				}
-				// Record a cache miss
-				$this->statsFactory->withComponent( 'CentralAuth' )
-					->getCounter( 'centralauthuser_getblocks_cache' )
-					->setLabel( 'interaction', 'miss' )
-					->increment();
-
-				// Otherwise cached value doesn't exist or the wikis are mismatched, rerun
+			function () use ( $wikis, &$cacheMiss ) {
+				$cacheMiss = true;
 				return $this->queryForBlocks( $wikis );
 			},
-			// Always run the callback
-			[ 'minAsOf' => INF ]
+			[
+				'touchedCallback' => function ( $oldValue ) use ( $wikis ) {
+					if ( $this->shouldFetchFreshBlocks( $oldValue, $wikis ) ) {
+						return time();
+					} else {
+						return null;
+					}
+				}
+			]
 		);
+
+		// There isn't a hook for blocks expiring. Cached values need to
+		// manually filter out for expired blocks to match with the fresh
+		// value from queryForBlocks()
+		$filteredBlocks = [];
+		foreach ( $blocksByWikiId as $wikiId => $blocksOnWiki ) {
+			$filteredBlocks[ $wikiId ] = [];
+
+			foreach ( $blocksOnWiki as $block ) {
+				if ( !$block->isExpired() ) {
+					$filteredBlocks[ $wikiId ][] = $block;
+				}
+			}
+		}
+
+		if ( $cacheMiss ) {
+			// Record a cache miss
+			$this->statsFactory->withComponent( 'CentralAuth' )
+				->getCounter( 'centralauthuser_getblocks_cache' )
+				->setLabel( 'interaction', 'miss' )
+				->increment();
+		} else {
+			// Record a cache hit
+			$this->statsFactory->withComponent( 'CentralAuth' )
+				->getCounter( 'centralauthuser_getblocks_cache' )
+				->setLabel( 'interaction', 'hit' )
+				->increment();
+		}
 
 		// Time how long it takes to run this function
 		$this->statsFactory->withComponent( 'CentralAuth' )
@@ -1034,7 +1064,7 @@ class CentralAuthUser implements IDBAccessObject {
 			->getGauge( 'centralauthuser_getblocks_wikis_count' )
 			->set( ( count( $wikis ) ) );
 
-		return $blocksByWikiId;
+		return $filteredBlocks;
 	}
 
 	/**
