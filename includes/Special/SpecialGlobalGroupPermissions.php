@@ -15,6 +15,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use Exception;
 use InvalidArgumentException;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
@@ -23,6 +24,7 @@ use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Logging\LogEventsList;
 use MediaWiki\Logging\LogPage;
 use MediaWiki\Logging\ManualLogEntry;
+use MediaWiki\Message\Message;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -202,6 +204,32 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 						Html::element( 'br' ) .
 						$this->msg( 'centralauth-globalgroupperms-group-disabled' )->escaped()
 					)
+				);
+			}
+
+			$automaticGroupsConfig = $this->getConfig()->get( CAMainConfigNames::CentralAuthAutomaticGlobalGroups );
+			$relatedGroups = [];
+			foreach ( $automaticGroupsConfig as $sourceGroup => $targetGroups ) {
+				if ( in_array( $groupName, $targetGroups ) ) {
+					$relatedGroups[] = $sourceGroup;
+				}
+			}
+			if ( $relatedGroups ) {
+				$table .= Html::rawElement( 'p', [],
+					$this->msg( 'centralauth-globalgroupperms-automatic-group-info-reverse' )
+						->params( Message::listParam(
+							array_map(
+								fn ( $automaticGroup ) => Message::rawParam(
+									htmlspecialchars( $this->getLanguage()->getGroupName( $automaticGroup ) ) .
+										$this->msg( 'word-separator' )->escaped() .
+										Html::element( 'code', [],
+											$this->msg( 'parentheses', $automaticGroup )->text()
+										)
+								),
+								$relatedGroups
+							)
+						) )
+						->escaped()
 				);
 			}
 

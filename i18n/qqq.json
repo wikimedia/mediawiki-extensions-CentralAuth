@@ -295,6 +295,7 @@
 	"centralauth-globalgroupperms-rights": "Message used on column header at the table on Special:GlobalGroupPermissions. See also {{msg-mw|centralauth-globalgroupperms-group}}.\n{{Identical|Right}}",
 	"centralauth-globalgroupperms-automatic-group-reason": "Reason explaining why an automatic global group cannot be changed manually, displayed on [[Special:GlobalUserRights]].",
 	"centralauth-globalgroupperms-automatic-group-info": "Explains which global groups will be automatically assigned when assigning a given group, displayed next to the group name on [[Special:GlobalUserRights]].\n\nParameters:\n* $1 List of automatic global groups that will be assigned",
+	"centralauth-globalgroupperms-automatic-group-info-reverse": "Explains which global groups cause this group to be be automatically assigned, displayed next to the group name on [[Special:GlobalGroupPermissions]].\n\nParameters:\n* $1 List of global groups",
 	"centralauth-groupname": "Used within the following messages:\n* {{msg-mw|centralauth-incomplete-text}}\n* {{msg-mw|centralauth-logout-progress}}",
 	"centralauth-hidden-blockreason": "Unused at this time. Parameters:\n* $1 - username\n* $2 - ...\n* $3 - reason",
 	"centralauth-hours-ago": "Parameters:\n* $1 - number of hours\n{{Related|Centralauth-ago}}",
