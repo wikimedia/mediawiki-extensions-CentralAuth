@@ -166,7 +166,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 			$table .= Html::openElement( 'tr' );
 
-			// Column with group name, links and local disabled status
+			// Column with group name, links and other group information (if it behaves differently from
+			// normal local groups)
 			$table .= Html::openElement( 'td' );
 			$table .= $this->getOutput()->parseInlineAsInterface(
 				UserGroupMembership::getLinkWiki( $groupName, $this->getContext() ) ) . '<br />';
@@ -189,29 +190,25 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$table .= $this->msg( 'parentheses' )
 				->rawParams( $this->getLanguage()->pipeList( $links ) )->escaped();
 
-			if ( $wikiset !== null && !$wikiset['enabledHere'] ) {
-				$table .= '<br /><small>';
-				$table .= $this->msg( 'centralauth-globalgroupperms-group-disabled' )->escaped() .
-					'</small>';
-			}
-			$table .= Html::closeElement( 'td' );
-
-			// Column for wikiset info and group rights list
-			$table .= Html::openElement( 'td' );
-			if ( $wikiset === null ) {
-				$table .= $this->msg( 'centralauth-globalgroupperms-wikiset-none' )->escaped();
-			} else {
-				$table .= $this->msg( 'centralauth-globalgroupperms-group-wikiset' )
-					->rawParams(
+			if ( $wikiset !== null ) {
+				$table .= Html::rawElement( 'p', [],
+					$this->msg( 'centralauth-globalgroupperms-group-wikiset' )->rawParams(
 						$linkRenderer->makeKnownLink(
 							SpecialPage::getTitleFor( 'WikiSets', $wikiset['id'] ),
 							$wikiset['name']
 						)
-					)->escaped();
+					)->escaped() .
+					( $wikiset['enabledHere'] ? '' :
+						Html::element( 'br' ) .
+						$this->msg( 'centralauth-globalgroupperms-group-disabled' )->escaped()
+					)
+				);
 			}
 
-			$table .= '<hr />';
+			$table .= Html::closeElement( 'td' );
 
+			// Column for group rights list
+			$table .= Html::openElement( 'td' );
 			$rightsList = '';
 			foreach ( $groupInfo['rights'] as $right ) {
 				$rightsList .= Html::rawElement( 'li', [], $this->formatRight( $right ) );
