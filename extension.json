@@ -576,7 +576,8 @@
 			"services": [
 				"MainConfig",
 				"UserNameUtils",
-				"UserOptionsLookup"
+				"UserOptionsLookup",
+				"CentralAuth.CentralAuthEditCounter"
 			]
 		},
 		"importhandle": {

@@ -87,15 +87,18 @@ class CentralAuthHooks implements
 	private Config $config;
 	private UserNameUtils $userNameUtils;
 	private UserOptionsLookup $userOptionsLookup;
+	private CentralAuthEditCounter $editCounter;
 
 	public function __construct(
 		Config $config,
 		UserNameUtils $userNameUtils,
-		UserOptionsLookup $userOptionsLookup
+		UserOptionsLookup $userOptionsLookup,
+		CentralAuthEditCounter $editCounter
 	) {
 		$this->config = $config;
 		$this->userNameUtils = $userNameUtils;
 		$this->userOptionsLookup = $userOptionsLookup;
+		$this->editCounter = $editCounter;
 	}
 
 	/**
@@ -719,6 +722,7 @@ class CentralAuthHooks implements
 			$context += [
 				'user_exists_centrally' => $caUser->exists(),
 				'user_is_attached' => $caUser->isAttached(),
+				'user_global_edit_count' => $this->editCounter->getCountIfInitialized( $caUser ) ?? -1,
 			];
 		}
 	}
