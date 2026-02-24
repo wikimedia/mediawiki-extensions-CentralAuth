@@ -36,21 +36,12 @@ class CentralAuthEditCounter {
 	 * @stable to call - since 1.46
 	 */
 	public function getCount( CentralAuthUser $centralUser ): int {
-		$userId = $centralUser->getId();
-		if ( !$userId ) {
-			return 0;
-		}
-
-		if ( isset( $this->userEditCountCache[$userId] ) ) {
-			return $this->userEditCountCache[$userId];
-		}
-
-		$dbr = $this->databaseManager->getCentralReplicaDB();
-		$count = $this->getCountFromDB( $dbr, $userId );
-		if ( $count !== false ) {
-			$this->userEditCountCache[$userId] = $count;
+		$count = $this->getCountIfInitialized( $centralUser );
+		if ( $count !== null ) {
 			return $count;
 		}
+
+		$userId = $centralUser->getId();
 
 		if ( $this->databaseManager->isReadOnly() ) {
 			// Don't try DB_PRIMARY since that will throw an exception
@@ -102,6 +93,36 @@ class CentralAuthEditCounter {
 		$dbw->endAtomic( __METHOD__ );
 		$this->userEditCountCache[$userId] = $count;
 		return $count;
+	}
+
+	/**
+	 * Get the global edit count if it has already been initialised.
+	 *
+	 * Unlike {@link self::getCount}, this will not fall back to the primary DB
+	 * to initialise the count. Returns null if the count has not been initialised.
+	 *
+	 * @return int|null The global edit count, or null if not yet initialised.
+	 * @since 1.46
+	 * @stable to call
+	 */
+	public function getCountIfInitialized( CentralAuthUser $centralUser ): ?int {
+		$userId = $centralUser->getId();
+		if ( !$userId ) {
+			return 0;
+		}
+
+		if ( isset( $this->userEditCountCache[$userId] ) ) {
+			return $this->userEditCountCache[$userId];
+		}
+
+		$dbr = $this->databaseManager->getCentralReplicaDB();
+		$count = $this->getCountFromDB( $dbr, $userId );
+		if ( $count !== false ) {
+			$this->userEditCountCache[$userId] = $count;
+			return $count;
+		}
+
+		return null;
 	}
 
 	/**

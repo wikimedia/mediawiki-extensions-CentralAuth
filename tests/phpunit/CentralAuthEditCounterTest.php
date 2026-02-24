@@ -89,6 +89,50 @@ class CentralAuthEditCounterTest extends MediaWikiIntegrationTestCase {
 		);
 	}
 
+	public function testGetCountIfInitializedReturnsZeroForUserWithNoId(): void {
+		$editCounter = CentralAuthServices::getEditCounter();
+		$caUser = CentralAuthUser::getInstance(
+			UserIdentityValue::newRegistered( 123, 'NonExistingUser123' )
+		);
+
+		$this->assertSame(
+			0,
+			$editCounter->getCountIfInitialized( $caUser ),
+			'Non-existing central users should have a global edit count of 0'
+		);
+	}
+
+	public function testGetCountIfInitializedReturnsNullWhenNoRowExists(): void {
+		$user = $this->getTestCentralAuthUser( 100, 'CentralAuthEditCounterTest' );
+		$caUser = CentralAuthUser::getInstance( $user );
+
+		$editCounter = CentralAuthServices::getEditCounter();
+
+		$this->assertNull(
+			$editCounter->getCountIfInitialized( $caUser ),
+			'Should return null when no global_edit_count row exists'
+		);
+	}
+
+	public function testGetCountIfInitializedReturnsCountWhenRowExists(): void {
+		$user = $this->getTestCentralAuthUser( 100, 'CentralAuthEditCounterTest' );
+		$caUser = CentralAuthUser::getInstance( $user );
+
+		$this->getDb()->newInsertQueryBuilder()
+			->insertInto( 'global_edit_count' )
+			->row( [ 'gec_user' => 100, 'gec_count' => 5 ] )
+			->caller( __METHOD__ )
+			->execute();
+
+		$editCounter = CentralAuthServices::getEditCounter();
+
+		$this->assertSame(
+			5,
+			$editCounter->getCountIfInitialized( $caUser ),
+			'Should return the count from the replica when the row exists'
+		);
+	}
+
 	public function testPreloadGetCountCacheActuallyCaches(): void {
 		// Get two test users, one with an edit
 		$firstUser = $this->getTestCentralAuthUser( 100, 'CentralAuthEditCounterTest' );
