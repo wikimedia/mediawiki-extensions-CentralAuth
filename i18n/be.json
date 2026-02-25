@@ -16,7 +16,8 @@
 			"Тест",
 			"Хомелка",
 			"Чаховіч Уладзіслаў",
-			"ZlyiLev"
+			"ZlyiLev",
+			"Ucukor"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Глабальная колькасць правак удзельніка ($1)",
@@ -389,7 +390,7 @@
 	"globalrenamequeue-nav-openqueue": "Адкрытыя запыты",
 	"globalrenamequeue-request-antispoof-conflicts": "<strong>Выбранае імя карыстальніка падобнае на {{PLURAL:$2|існуючае імя ўдзельніка|існуючыя імёны ўдзельнікаў}}, або раней яно было імем карыстальніка, якога перайменавалі:</strong> $1",
 	"globalrenamequeue-request-approve-text": "Прыняць перайменаванне",
-	"globalrenamequeue-request-cancel-text": "Адмена",
+	"globalrenamequeue-request-cancel-text": "Скасаваць",
 	"globalrenamequeue-request-comments-label": "Заўвагі/тлумачэння",
 	"globalrenamequeue-request-deny-text": "Адмовіць перайменаванне",
 	"globalrenamequeue-request-header": "<strong>[$1 $2]</strong> просіць змяніць імя на <strong>$3</strong>.",
