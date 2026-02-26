@@ -135,6 +135,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 		);
 		$config = $this->getConfig();
 		$config->set( MainConfigNames::UseSessionCookieJwt, true );
+		$config->set( MainConfigNames::JwtSessionCookieIssuer, 'http://example.org' );
 		$this->initProvider( $provider, $logger, $config, $services->getSessionManager(),
 			userNameUtils: $services->getUserNameUtils() );
 
@@ -216,6 +217,7 @@ class CentralAuthSessionProviderTest extends MediaWikiIntegrationTestCase {
 		$config = $this->getConfig();
 		$config->set( MainConfigNames::UseSessionCookieJwt, true );
 		$config->set( MainConfigNames::AnonSessionCacheType, false );
+		$config->set( MainConfigNames::JwtSessionCookieIssuer, 'http://example.org' );
 		$this->initProvider( $provider, null, $config, $services->getSessionManager() );
 
 		$jwtCodec = new PlainJsonJwtCodec();
