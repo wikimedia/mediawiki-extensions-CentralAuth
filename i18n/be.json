@@ -228,7 +228,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Назва новай групы:",
 	"centralauth-globalgroupperms-nogroups": "Глабальныя групы не вызначаны.",
 	"centralauth-globalgroupperms-rights": "Правы",
-	"centralauth-globalgroupperms-wikiset-none": "Гэтая група актыўная ва ўсіх вікі.",
 	"centralauth-groupname": "гэтай вікі-гаспадаркі",
 	"centralauth-hidden-blockreason": "глябальна схаваны $1 $2 па наступнай прычыне: $3",
 	"centralauth-hours-ago": "$1 гадзін{{PLURAL:$1|у|ы|}} таму",

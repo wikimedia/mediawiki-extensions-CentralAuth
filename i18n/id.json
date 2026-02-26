@@ -235,7 +235,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Nama kelompok baru:",
 	"centralauth-globalgroupperms-nogroups": "Tidak ada kelompok global didefinisikan.",
 	"centralauth-globalgroupperms-rights": "Hak",
-	"centralauth-globalgroupperms-wikiset-none": "Kelompok ini aktif di semua wiki.",
 	"centralauth-groupname": "ladang wiki ini",
 	"centralauth-hidden-blockreason": "disembunyikan secara global oleh $1 pada $2 dengan alasan berikut: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|jam|jam}} yang lalu",

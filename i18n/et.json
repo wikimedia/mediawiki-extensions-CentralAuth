@@ -216,7 +216,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Uue rühma nimi:",
 	"centralauth-globalgroupperms-nogroups": "Globaalseid rühmi pole määratletud.",
 	"centralauth-globalgroupperms-rights": "Õigused",
-	"centralauth-globalgroupperms-wikiset-none": "See rühm on aktiivne kõigis vikides.",
 	"centralauth-groupname": "selle vikipargi",
 	"centralauth-hours-ago": "{{PLURAL:$1|ühe|$1}} tunni eest",
 	"centralauth-incomplete": "Ühendkonto loomine pole lõpule viidud.",

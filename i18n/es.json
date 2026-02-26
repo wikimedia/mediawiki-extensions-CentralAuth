@@ -285,7 +285,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Nombre de grupo nuevo:",
 	"centralauth-globalgroupperms-nogroups": "Ningún grupo global está definido.",
 	"centralauth-globalgroupperms-rights": "Derechos",
-	"centralauth-globalgroupperms-wikiset-none": "Este grupo está activo en todas las wikis.",
 	"centralauth-groupname": "este servicio de alojamiento de wikis",
 	"centralauth-hidden-blockreason": "ocultada globalmente por $1 a las $2 con la siguiente razón: $3",
 	"centralauth-hours-ago": "hace $1 {{PLURAL:$1|hora|horas}}",

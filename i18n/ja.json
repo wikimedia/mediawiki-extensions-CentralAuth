@@ -275,7 +275,6 @@
 	"centralauth-globalgroupperms-newgroupname": "新規グループ名:",
 	"centralauth-globalgroupperms-nogroups": "グローバルグループが定義されていません。",
 	"centralauth-globalgroupperms-rights": "権限",
-	"centralauth-globalgroupperms-wikiset-none": "このグループはすべてのウィキで有効化されています。",
 	"centralauth-globalgroupperms-automatic-group-reason": "自動割り当て",
 	"centralauth-globalgroupperms-automatic-group-info": "利用者に自動で割り当てられます: $1",
 	"centralauth-groupname": "このウィキファーム",

@@ -201,7 +201,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Numele grupului nou:",
 	"centralauth-globalgroupperms-nogroups": "Niciun grup global nu este definit.",
 	"centralauth-globalgroupperms-rights": "Permisiuni",
-	"centralauth-globalgroupperms-wikiset-none": "Acest grup este activ pe toate wikiurile.",
 	"centralauth-hidden-blockreason": "ascuns global de către $1 la $2 cu motivul următor: $3",
 	"centralauth-hours-ago": "acum $1 {{PLURAL:$1|oră|ore}}",
 	"centralauth-incomplete": "Unificarea conturilor nu este completă!",

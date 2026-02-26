@@ -270,7 +270,6 @@
 	"centralauth-globalgroupperms-newgroupname": "اسم المجموعة الجديدة:",
 	"centralauth-globalgroupperms-nogroups": "لا مجموعات عامة معرفة.",
 	"centralauth-globalgroupperms-rights": "الصلاحيات",
-	"centralauth-globalgroupperms-wikiset-none": "هذه المجموعة نشطة في جميع الويكيات.",
 	"centralauth-globalgroupperms-automatic-group-reason": "عُينت تلقائيًا",
 	"centralauth-globalgroupperms-automatic-group-info": "سيتم تعيين المستخدم تلقائيًا: $1",
 	"centralauth-groupname": "مزرعة الويكي هذه",

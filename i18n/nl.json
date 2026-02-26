@@ -264,7 +264,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Groepsnaam:",
 	"centralauth-globalgroupperms-nogroups": "Er zijn geen globale groepen gedefinieerd.",
 	"centralauth-globalgroupperms-rights": "Rechten",
-	"centralauth-globalgroupperms-wikiset-none": "Deze groep is actief op alle wiki's.",
 	"centralauth-globalgroupperms-automatic-group-reason": "Automatisch toegewezen",
 	"centralauth-globalgroupperms-automatic-group-info": "Gebruiker wordt automatisch toegewezen: $1",
 	"centralauth-groupname": "deze wikifarm",

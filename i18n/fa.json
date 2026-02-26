@@ -261,7 +261,6 @@
 	"centralauth-globalgroupperms-newgroupname": "نام گروه تازه:",
 	"centralauth-globalgroupperms-nogroups": "هیچ گروه سراسری‌ای تعریف نشده است.",
 	"centralauth-globalgroupperms-rights": "اختیارات",
-	"centralauth-globalgroupperms-wikiset-none": "این گروه در تمام ویکی‌ها فعال است.",
 	"centralauth-globalgroupperms-automatic-group-reason": "اختصاص‌یافته به‌صورت خودکار",
 	"centralauth-groupname": "این گروه ویکی‌ها",
 	"centralauth-hidden-blockreason": "پنهان سراسری توسط $1 در $2 به دلیل: $3",

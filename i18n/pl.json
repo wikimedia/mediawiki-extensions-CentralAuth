@@ -263,7 +263,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Nazwa nowej grupy",
 	"centralauth-globalgroupperms-nogroups": "Brak zdefiniowanych grup globalnych.",
 	"centralauth-globalgroupperms-rights": "Uprawnienia",
-	"centralauth-globalgroupperms-wikiset-none": "Ta grupa jest aktywna na wszystkich wiki.",
 	"centralauth-globalgroupperms-automatic-group-reason": "Dodano automatycznie",
 	"centralauth-globalgroupperms-automatic-group-info": "Użytkownik zostanie automatycznie dodany do tych grup: $1",
 	"centralauth-groupname": "tej farmy wiki",

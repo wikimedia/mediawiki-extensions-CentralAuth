@@ -256,7 +256,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Yeni grup adı:",
 	"centralauth-globalgroupperms-nogroups": "Hiç küresel grup tanımlanmadı.",
 	"centralauth-globalgroupperms-rights": "Haklar",
-	"centralauth-globalgroupperms-wikiset-none": "Bu grup tüm vikilerde aktiftir.",
 	"centralauth-groupname": "bu viki çiftliği",
 	"centralauth-hidden-blockreason": "$1 tarafından küresel olarak $2 tarihinde şu sebeple gizlendi: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|saat}} önce",

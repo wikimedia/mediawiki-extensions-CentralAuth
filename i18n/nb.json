@@ -243,7 +243,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Navn på ny gruppe:",
 	"centralauth-globalgroupperms-nogroups": "Ingen globale grupper er definert.",
 	"centralauth-globalgroupperms-rights": "Rettigheter",
-	"centralauth-globalgroupperms-wikiset-none": "Denne gruppa er aktiv på alle wikier.",
 	"centralauth-globalgroupperms-automatic-group-reason": "Automatisk tildelt",
 	"centralauth-globalgroupperms-automatic-group-info": "Brukeren vil automatisk bli tildelt: $1",
 	"centralauth-groupname": "denne wikifarmen",

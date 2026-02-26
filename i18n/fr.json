@@ -301,7 +301,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Nom du nouveau groupe global :",
 	"centralauth-globalgroupperms-nogroups": "Aucun groupe global n’a été défini.",
 	"centralauth-globalgroupperms-rights": "Droits",
-	"centralauth-globalgroupperms-wikiset-none": "Ce groupe est actif sur tous les wikis.",
 	"centralauth-globalgroupperms-automatic-group-reason": "Attribué automatiquement",
 	"centralauth-globalgroupperms-automatic-group-info": "L'utilisateur sera automatiquement attribué: $1",
 	"centralauth-groupname": "cette ferme de wikis",

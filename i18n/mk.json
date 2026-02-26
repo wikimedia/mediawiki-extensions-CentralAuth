@@ -234,7 +234,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Име на новата група:",
 	"centralauth-globalgroupperms-nogroups": "Нема определено глобални групи.",
 	"centralauth-globalgroupperms-rights": "Права",
-	"centralauth-globalgroupperms-wikiset-none": "Групава е активна на сите викија.",
 	"centralauth-globalgroupperms-automatic-group-reason": "Автоматски доделено",
 	"centralauth-globalgroupperms-automatic-group-info": "На корисникот автоматски ќе му биде доделено: $1",
 	"centralauth-groupname": "оваа викифарма",

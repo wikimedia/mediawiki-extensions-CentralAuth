@@ -220,7 +220,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Име нове групе:",
 	"centralauth-globalgroupperms-nogroups": "Ниједна глобална група није дефинисана.",
 	"centralauth-globalgroupperms-rights": "Права",
-	"centralauth-globalgroupperms-wikiset-none": "Ова група је активна на свим викијима.",
 	"centralauth-groupname": "ова фарма викија",
 	"centralauth-hidden-blockreason": "глобално сакривен од $1 у $2 због следећег разлога: $3",
 	"centralauth-hours-ago": "пре $1 {{PLURAL:$1|сат|сата|сати}}",

@@ -242,7 +242,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Tên nhóm mới:",
 	"centralauth-globalgroupperms-nogroups": "Chưa định rõ nhóm toàn hệ thống nào.",
 	"centralauth-globalgroupperms-rights": "Quyền",
-	"centralauth-globalgroupperms-wikiset-none": "Nhóm này áp dụng với mọi wiki.",
 	"centralauth-groupname": "cụm wiki này",
 	"centralauth-hidden-blockreason": "bị $1 ẩn toàn cục vào lúc $2 vì lý sao sau: $3",
 	"centralauth-hours-ago": "$1 giờ trước",

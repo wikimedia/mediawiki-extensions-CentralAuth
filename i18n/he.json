@@ -245,7 +245,6 @@
 	"centralauth-globalgroupperms-newgroupname": "שם הקבוצה החדשה:",
 	"centralauth-globalgroupperms-nogroups": "לא הוגדרו קבוצות גלובליות.",
 	"centralauth-globalgroupperms-rights": "הרשאות",
-	"centralauth-globalgroupperms-wikiset-none": "הקבוצה הזאת פעילה בכל אתרי הוויקי.",
 	"centralauth-globalgroupperms-automatic-group-reason": "מוקצית אוטומטית",
 	"centralauth-globalgroupperms-automatic-group-info": "החשבון יוקצה אוטומטית: $1",
 	"centralauth-groupname": "חוות הוויקי הזאת",

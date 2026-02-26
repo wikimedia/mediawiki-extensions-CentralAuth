@@ -255,7 +255,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Назва нової групи:",
 	"centralauth-globalgroupperms-nogroups": "Не визначено глобальні групи.",
 	"centralauth-globalgroupperms-rights": "Права",
-	"centralauth-globalgroupperms-wikiset-none": "Ця група діє в усіх вікі.",
 	"centralauth-groupname": "цієї вікіферми",
 	"centralauth-hidden-blockreason": "глобально прихований $1 $2 через $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|годину|години|годин}} тому",

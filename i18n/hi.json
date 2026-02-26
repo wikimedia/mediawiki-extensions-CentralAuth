@@ -252,7 +252,6 @@
 	"centralauth-globalgroupperms-newgroupname": "नए समूह का नाम:",
 	"centralauth-globalgroupperms-nogroups": "कोई भी ग्लोबल समूह परिभाषित नहीं है।",
 	"centralauth-globalgroupperms-rights": "अधिकार",
-	"centralauth-globalgroupperms-wikiset-none": "यह समूह सभी विकियों पर सक्रिय है।",
 	"centralauth-globalgroupperms-automatic-group-reason": "स्वचालित रूप से सौंपा गया",
 	"centralauth-globalgroupperms-automatic-group-info": "सदस्य को स्वचालित रूप से सौंपा जाएगा: $1",
 	"centralauth-groupname": "इस विकि फ़ार्म",

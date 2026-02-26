@@ -205,7 +205,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Nuevu nome de grupu:",
 	"centralauth-globalgroupperms-nogroups": "Nun hai grupos globales definios.",
 	"centralauth-globalgroupperms-rights": "Permisos",
-	"centralauth-globalgroupperms-wikiset-none": "Esti grupu ta activu en toles wikis.",
 	"centralauth-hidden-blockreason": "anubríu de mou global por $1 a les $2 col motivu darréu: $3",
 	"centralauth-hours-ago": "hai $1 {{PLURAL:$1|hora|hores}}",
 	"centralauth-incomplete": "¡Fusión de cuentes non completada!",

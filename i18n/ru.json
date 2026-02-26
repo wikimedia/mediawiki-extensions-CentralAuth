@@ -263,7 +263,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Название новой группы:",
 	"centralauth-globalgroupperms-nogroups": "Не определено глобальных групп.",
 	"centralauth-globalgroupperms-rights": "Права",
-	"centralauth-globalgroupperms-wikiset-none": "Эта группа активна во всех вики.",
 	"centralauth-groupname": "эта вики-ферма",
 	"centralauth-hidden-blockreason": "глобально скрыт участником $1 $2 по следующей причине: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|час|часа|часов}} назад",

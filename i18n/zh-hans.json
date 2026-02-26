@@ -301,7 +301,6 @@
 	"centralauth-globalgroupperms-newgroupname": "新用户组名：",
 	"centralauth-globalgroupperms-nogroups": "没有定义全域组。",
 	"centralauth-globalgroupperms-rights": "权限",
-	"centralauth-globalgroupperms-wikiset-none": "此用户组在所有wiki上激活。",
 	"centralauth-globalgroupperms-automatic-group-reason": "自动分配",
 	"centralauth-globalgroupperms-automatic-group-info": "用户将被自动分配：$1",
 	"centralauth-groupname": "此wiki农场",

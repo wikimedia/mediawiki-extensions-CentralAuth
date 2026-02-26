@@ -226,7 +226,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Naujos grupės pavadinimas:",
 	"centralauth-globalgroupperms-nogroups": "Neaprašytos jokios globaliosios grupės.",
 	"centralauth-globalgroupperms-rights": "Teisės",
-	"centralauth-globalgroupperms-wikiset-none": "Ši grupė veikia visuose viki.",
 	"centralauth-groupname": "ši vikiferma",
 	"centralauth-hidden-blockreason": "visuotinai paslėpti naudotojo  $1  projekte  $2  dėl šios priežasties: $3",
 	"centralauth-hours-ago": "prieš $1 {{PLURAL:$1|valandą|valandas|valandų}}",

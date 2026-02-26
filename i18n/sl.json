@@ -234,7 +234,6 @@
 	"centralauth-globalgroupperms-newgroupname": "Novo ime skupine:",
 	"centralauth-globalgroupperms-nogroups": "Opredeljena ni nobena globalna skupina.",
 	"centralauth-globalgroupperms-rights": "Pravice",
-	"centralauth-globalgroupperms-wikiset-none": "Ta skupina je aktivna v vseh vikijih.",
 	"centralauth-globalgroupperms-automatic-group-reason": "Samodejno dodeljeno",
 	"centralauth-globalgroupperms-automatic-group-info": "Uporabnik bo samodejno dodeljen: $1",
 	"centralauth-groupname": "ta vikiskupek",
