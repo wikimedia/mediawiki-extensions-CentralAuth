@@ -576,5 +576,6 @@
 	"sessionprovider-centralauthsessionprovider": "central cookie-based sessions",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken sessions",
 	"centralauth-badaccess-blacklisted": "You can't request a global rename, because you are on a deny list.",
-	"centralauth-action-forbidden-shared-domain": "You are not allowed to perform this action on the shared authentication domain."
+	"centralauth-action-forbidden-shared-domain": "You are not allowed to perform this action on the shared authentication domain.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "User is member of {{PLURAL:$1|global group|all of the global groups}}: $2"
 }

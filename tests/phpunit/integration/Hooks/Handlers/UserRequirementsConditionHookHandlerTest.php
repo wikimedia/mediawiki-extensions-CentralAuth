@@ -7,6 +7,8 @@
 
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Hooks\Handlers;
 
+use MediaWiki\Context\DerivativeContext;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\UserRequirementsConditionHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\User;
@@ -115,5 +117,28 @@ class UserRequirementsConditionHookHandlerTest extends MediaWikiIntegrationTestC
 				'expectedResult' => true,
 			],
 		];
+	}
+
+	public function testDisplayHookIgnoresNonCentralAuthCondition() {
+		$message = null;
+		$this->getObjectUnderTest()->onUserRequirementsConditionDisplay(
+			APCOND_AGE, [ 1234 ], RequestContext::getMain(), $message
+		);
+		$this->assertNull( $message );
+	}
+
+	public function testDisplayHookFormatsGroupList() {
+		$context = new DerivativeContext( RequestContext::getMain() );
+		$context->setLanguage( 'qqx' );
+
+		$message = null;
+		$this->getObjectUnderTest()->onUserRequirementsConditionDisplay(
+			APCOND_CA_INGLOBALGROUPS, [ 'foo', 'bar' ], $context, $message
+		);
+		$this->assertNotNull( $message );
+		$this->assertSame(
+			'(listgrouprights-restrictedgroups-cond-ca-inglobalgroups: 2, (group-foo)(and)(word-separator)(group-bar))',
+			$message->text()
+		);
 	}
 }

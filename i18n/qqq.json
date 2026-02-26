@@ -607,5 +607,6 @@
 	"sessionprovider-centralauthsessionprovider": "Description of the sessions provided by the CentralAuthSessionProvider class, which use HTTP cookies. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}.",
 	"sessionprovider-centralauthtokensessionprovider": "Description of the sessions provided by the CentralAuthTokenSessionProvider class, which uses the 'centralauthtoken' parameter on API requests. Should be phrased to make sense when added to a message such as {{msg-mw|cannotloginnow-text}}.",
 	"centralauth-badaccess-blacklisted": "Message shown to users who can't request to be renamed because they are listed on a deny list.",
-	"centralauth-action-forbidden-shared-domain": "Message shown to users when they try to perform a disallowed action on the shared authentication domain."
+	"centralauth-action-forbidden-shared-domain": "Message shown to users when they try to perform a disallowed action on the shared authentication domain.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "A text representation of APCOND_CA_INGLOBALGROUPS condition, which tests if the user belongs to all the specified global groups.\n\nParameters:\n* $1 - the number of groups that are tested\n* $2 - the list of groups (rendered inline)"
 }

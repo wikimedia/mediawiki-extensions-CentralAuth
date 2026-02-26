@@ -798,6 +798,7 @@
 		"UserLogout": "userlogout",
 		"UserLogoutComplete": "userlogout",
 		"UserRequirementsCondition": "userrequirementscondition",
+		"UserRequirementsConditionDisplay": "userrequirementscondition",
 		"UserSaveSettings": "default",
 		"UserSetEmail": "default",
 		"UserSetEmailAuthenticationTimestamp": "default"
