@@ -201,7 +201,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 						)
 					)->escaped() .
 					( $wikiset['enabledHere'] ? '' :
-						Html::element( 'br' ) .
+						$this->msg( 'word-separator' )->escaped() .
 						$this->msg( 'centralauth-globalgroupperms-group-disabled' )->escaped()
 					)
 				);
