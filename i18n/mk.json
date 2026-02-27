@@ -236,6 +236,7 @@
 	"centralauth-globalgroupperms-rights": "Права",
 	"centralauth-globalgroupperms-automatic-group-reason": "Автоматски доделено",
 	"centralauth-globalgroupperms-automatic-group-info": "На корисникот автоматски ќе му биде доделено: $1",
+	"centralauth-globalgroupperms-automatic-group-info-reverse": "Автоматски доделено на членови на: $1",
 	"centralauth-groupname": "оваа викифарма",
 	"centralauth-hidden-blockreason": "глобално скриен од $1 во $2 од следнава причина: $3",
 	"centralauth-hours-ago": "пред {{PLURAL:$1|еден час|$1 часа}}",

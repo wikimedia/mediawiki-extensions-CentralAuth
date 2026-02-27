@@ -243,6 +243,7 @@
 	"centralauth-globalgroupperms-rights": "Diritti",
 	"centralauth-globalgroupperms-automatic-group-reason": "Assegnato automaticamente",
 	"centralauth-globalgroupperms-automatic-group-info": "All'utente sarà assegnato automaticamente: $1",
+	"centralauth-globalgroupperms-automatic-group-info-reverse": "Assegnato automaticamente ai membri di: $1",
 	"centralauth-groupname": "questa wiki farm",
 	"centralauth-hidden-blockreason": "Globalmente nascosto da $1 su $2 con la ragione: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|ora|ore}} fa",

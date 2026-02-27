@@ -265,6 +265,7 @@
 	"centralauth-globalgroupperms-rights": "Uprawnienia",
 	"centralauth-globalgroupperms-automatic-group-reason": "Dodano automatycznie",
 	"centralauth-globalgroupperms-automatic-group-info": "Użytkownik zostanie automatycznie dodany do tych grup: $1",
+	"centralauth-globalgroupperms-automatic-group-info-reverse": "Automatycznie przypisywana członkom grup: $1",
 	"centralauth-groupname": "tej farmy wiki",
 	"centralauth-hidden-blockreason": "centralnie ukryte przez $1 o $2 ponieważ $3",
 	"centralauth-hours-ago": "{{PLURAL:$1|przed godziną|$1 godziny temu|$1 godzin temu}}",

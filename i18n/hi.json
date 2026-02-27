@@ -254,6 +254,7 @@
 	"centralauth-globalgroupperms-rights": "अधिकार",
 	"centralauth-globalgroupperms-automatic-group-reason": "स्वचालित रूप से सौंपा गया",
 	"centralauth-globalgroupperms-automatic-group-info": "सदस्य को स्वचालित रूप से सौंपा जाएगा: $1",
+	"centralauth-globalgroupperms-automatic-group-info-reverse": "$1 के सदस्यों को स्वचालित रूप से सौंपा जाता है",
 	"centralauth-groupname": "इस विकि फ़ार्म",
 	"centralauth-hidden-blockreason": "$1 द्वारा $2 पर इस कारण से ग्लोबल रूप से छिपाया गया: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|घंटे}} पहले",
