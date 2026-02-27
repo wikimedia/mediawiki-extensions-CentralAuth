@@ -13,7 +13,6 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
-use MediaWiki\WikiMap\WikiMap;
 use MWCryptRand;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\ObjectCache\CachedBagOStuff;
@@ -132,7 +131,6 @@ class CentralAuthSessionManager {
 
 		$this->statsFactory->withComponent( 'CentralAuth' )
 			->getTiming( 'session_read_seconds' )
-			->setLabel( 'wiki', WikiMap::getCurrentWikiId() )
 			->observe( $real * 1000 );
 
 		return $data;
@@ -188,7 +186,6 @@ class CentralAuthSessionManager {
 
 			$this->statsFactory->withComponent( 'CentralAuth' )
 				->getTiming( 'session_write_seconds' )
-				->setLabel( 'wiki', WikiMap::getCurrentWikiId() )
 				->observe( $real * 1000 );
 		}
 
