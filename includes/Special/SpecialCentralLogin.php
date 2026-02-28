@@ -12,6 +12,7 @@ use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
 use MediaWiki\Logger\LoggerFactory;
+use MediaWiki\Profiler\Profiler;
 use MediaWiki\Session\Session;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\SpecialPage\UnlistedSpecialPage;
@@ -24,6 +25,7 @@ use Psr\Log\LoggerInterface;
 use RuntimeException;
 use Wikimedia\Message\MessageSpecifier;
 use Wikimedia\Rdbms\IDBAccessObject;
+use Wikimedia\Rdbms\TransactionProfiler;
 use Wikimedia\ScopedCallback;
 
 /**
@@ -153,10 +155,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		if ( $getException( $centralUser, $user, $info ) ) {
 			// Retry from primary database. Central login is done right after user creation so lag problems
 			// are common.
+			$scope = Profiler::instance()->getTransactionProfiler()
+				->silenceForScope( TransactionProfiler::EXPECTATION_REPLICAS_ONLY );
 			$user = User::newFromName( $info['name'] );
 			$user->load( IDBAccessObject::READ_LATEST );
 			$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 			$e = $getException( $centralUser, $user, $info );
+			ScopedCallback::consume( $scope );
 			if ( $e ) {
 				throw $e;
 			}
@@ -296,10 +301,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$user = User::newFromName( $request->getSessionData( 'wsUserName' ) );
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $getException( $centralUser, $user ) ) {
+			$scope = Profiler::instance()->getTransactionProfiler()
+				->silenceForScope( TransactionProfiler::EXPECTATION_REPLICAS_ONLY );
 			$user = User::newFromName( $request->getSessionData( 'wsUserName' ) );
 			$user->load( IDBAccessObject::READ_LATEST );
 			$centralUser = CentralAuthUser::getPrimaryInstance( $user );
 			$e = $getException( $centralUser, $user );
+			ScopedCallback::consume( $scope );
 			if ( $e ) {
 				throw $e;
 			}
