@@ -561,6 +561,11 @@ class SpecialWikiSets extends SpecialPage {
 	}
 
 	/** @inheritDoc */
+	public function doesWrites() {
+		return true;
+	}
+
+	/** @inheritDoc */
 	protected function getGroupName() {
 		return 'wiki';
 	}
