@@ -895,7 +895,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	private function queryForBlocks( $wikis ) {
 		$mwServices = MediaWikiServices::getInstance();
-		$dbm = CentralAuthServices::getDatabaseManager();
 		$blocksByWikiId = [];
 
 		foreach ( $wikis as $wikiId => $_ ) {
