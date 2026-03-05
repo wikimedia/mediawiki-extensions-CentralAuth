@@ -161,7 +161,7 @@
 	"centralauth-editset-badtype": "Няслушны тып набору.",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|1=Наступная вікі не існуе|Наступныя вікі не існуюць}}: $1.",
 	"centralauth-editset-intro-ro": "Ніжэй пададзены сьпіс існуючых набораў вікі.",
-	"centralauth-editset-intro-rw": "Наступныя наборы вікі ўжо былі створаныя. Вы можаце праглядзець і зьмяніць любы зь іх альбо стварыць новы.",
+	"centralauth-editset-intro-rw": "Наступныя наборы вікі ўжо былі створаныя. Вы можаце праглядзець і зьмяніць кожны зь іх, альбо стварыць новы.",
 	"centralauth-editset-item-rw": "[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|выдаліць]])",
 	"centralauth-editset-legend-delete": "Выдаленьне набору вікі «$1»",
 	"centralauth-editset-legend-edit": "Рэдагаваньне набору вікі «$1»",
