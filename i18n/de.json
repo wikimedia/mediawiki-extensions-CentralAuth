@@ -564,5 +564,6 @@
 	"sessionprovider-centralauthsessionprovider": "zentralen cookiebasierten Sitzungen",
 	"sessionprovider-centralauthtokensessionprovider": "CentralAuth-Token-Sitzungen",
 	"centralauth-badaccess-blacklisted": "{{#FORMAL:Du kannst|Sie können}} keine globale Umbenennung beantragen, weil {{#FORMAL:du|Sie}} auf einer Negativliste {{#FORMAL:stehst|stehen}}.",
-	"centralauth-action-forbidden-shared-domain": "Du bist nicht berechtigt, diese Aktion in der gemeinsam genutzten Authentifizierungsdomäne durchzuführen."
+	"centralauth-action-forbidden-shared-domain": "Du bist nicht berechtigt, diese Aktion in der gemeinsam genutzten Authentifizierungsdomäne durchzuführen.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Der Benutzer ist Mitglied von {{PLURAL:$1|der globalen Gruppe|allen globalen Gruppen}}: $2"
 }

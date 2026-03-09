@@ -554,5 +554,6 @@
 	"sessionprovider-centralauthsessionprovider": "sesións baseadas nas cookies centrais",
 	"sessionprovider-centralauthtokensessionprovider": "sesións centralauthtoken",
 	"centralauth-badaccess-blacklisted": "Non podes solicitar un cambio de nome global xa que estás nunha lista de rexeitamentos.",
-	"centralauth-action-forbidden-shared-domain": "Non tes permiso para realizar esta acción no dominio de autenticación compartido."
+	"centralauth-action-forbidden-shared-domain": "Non tes permiso para realizar esta acción no dominio de autenticación compartido.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "O usuario pertence a {{PLURAL:$1|este grupo global|todos estes grupos globais}}: $2"
 }

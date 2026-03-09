@@ -562,5 +562,6 @@
 	"sessionprovider-centralauthsessionprovider": "järjestelmänlaajuisia evästepohjaisia istuntoja",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-istuntoja",
 	"centralauth-badaccess-blacklisted": "Et voi pyytää järjestelmänlaajuista nimenvaihtoa, koska tunnuksesi on kielletty pyytämästä nimenvaihtoja.",
-	"centralauth-action-forbidden-shared-domain": "Sinulla ei ole oikeutta suorittaa tätä toimintoa jaetulla tunnistautumisverkkotunnuksella."
+	"centralauth-action-forbidden-shared-domain": "Sinulla ei ole oikeutta suorittaa tätä toimintoa jaetulla tunnistautumisverkkotunnuksella.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Käyttäjä kuuluu {{PLURAL:$1|järjestelmänlaajuiseen ryhmään|seuraaviin järjestelmänlaajuisiin ryhmiin}}: $2"
 }

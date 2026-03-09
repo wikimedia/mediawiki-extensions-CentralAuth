@@ -553,5 +553,6 @@
 	"sessionprovider-centralauthsessionprovider": "mərkəzi kuki əsaslı sessiyalar",
 	"sessionprovider-centralauthtokensessionprovider": "centerauthtoken sessiyaları",
 	"centralauth-badaccess-blacklisted": "Qlobal ad dəyişdirilməsini tələb edə bilməzsiniz, çünki siz qara siyahıdasınız.",
-	"centralauth-action-forbidden-shared-domain": "Paylaşılan autentifikasiya domenində bu əməliyyatı yerinə yetirmək icazəniz yoxdur."
+	"centralauth-action-forbidden-shared-domain": "Paylaşılan autentifikasiya domenində bu əməliyyatı yerinə yetirmək icazəniz yoxdur.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "İstifadəçi bu qlobal {{PLURAL:$1|qrupun|qrupların}} üzvüdür: $2"
 }

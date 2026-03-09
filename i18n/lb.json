@@ -436,5 +436,6 @@
 	"right-centralauth-rename": "Global Benotzerkonten ëmbenennen",
 	"right-centralauth-unmerge": "Globale Benotzerkont nees trennen",
 	"right-globalgroupmembership": "Zougehéieregkeet zu lokale Gruppen änneren",
-	"right-globalgrouppermissions": "Gestioun vu globale Gruppen"
+	"right-globalgrouppermissions": "Gestioun vu globale Gruppen",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "De Benotzer ass Member vun {{PLURAL:$1|der globaler Grupp|all de globale Gruppen}}: $2"
 }

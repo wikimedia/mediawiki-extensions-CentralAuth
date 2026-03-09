@@ -303,6 +303,7 @@
 	"centralauth-globalgroupperms-rights": "权限",
 	"centralauth-globalgroupperms-automatic-group-reason": "自动分配",
 	"centralauth-globalgroupperms-automatic-group-info": "用户将被自动分配：$1",
+	"centralauth-globalgroupperms-automatic-group-info-reverse": "自动分配为以下用户组的成员：$1",
 	"centralauth-groupname": "此wiki农场",
 	"centralauth-hidden-blockreason": "已由$1在$2全域隐藏，原因：$3",
 	"centralauth-hours-ago": "$1小时前",
@@ -612,5 +613,6 @@
 	"sessionprovider-centralauthsessionprovider": "基于中心cookie的会话",
 	"sessionprovider-centralauthtokensessionprovider": "中心验证令牌会话",
 	"centralauth-badaccess-blacklisted": "由于您在黑名单上，故无法申请全域更名。",
-	"centralauth-action-forbidden-shared-domain": "您不能在共享身份验证域上执行此操作。"
+	"centralauth-action-forbidden-shared-domain": "您不能在共享身份验证域上执行此操作。",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "用户是{{PLURAL:$1|以下全域用户组|以下所有全域用户组}}的成员：$2"
 }
