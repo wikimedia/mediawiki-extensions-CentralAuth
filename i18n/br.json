@@ -78,7 +78,7 @@
 	"centralauth-admin-reason": "Abeg :",
 	"centralauth-admin-reason-other": "Abeg all/ouzhpenn :",
 	"centralauth-admin-reason-other-select": "Abeg all",
-	"centralauth-admin-setstatus-success": "Kemmet ho peus statud ar gont hollek-mañ.",
+	"centralauth-admin-setstatus-success": "Kemmet ho peus statud ar gont hollek \"$1\".",
 	"centralauth-admin-status": "Kemmañ statud ar gont hollek",
 	"centralauth-admin-status-hidden": "Kuzhet :",
 	"centralauth-admin-status-hidden-list": "Kuzhet eo ar gont e roll an implijerien hollek",

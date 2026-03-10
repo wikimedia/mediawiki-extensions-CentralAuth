@@ -48,7 +48,8 @@
 			"Chqaz",
 			"Shulmj",
 			"Kokage si",
-			"Dragoniez"
+			"Dragoniez",
+			"Ant176"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "利用者のグローバル編集回数 ($1)",
@@ -102,7 +103,7 @@
 	"centralauth-admin-info-unattached": "関連付けられていないアカウントの数:",
 	"centralauth-admin-info-username": "利用者名:",
 	"centralauth-admin-info-username-rename": "改名",
-	"centralauth-admin-info-expired": "仮アカウントの有効期限が切れました。",
+	"centralauth-admin-info-expired": "仮アカウントの有効期限切れ日時:",
 	"centralauth-admin-intro": "このインターフェイスでは、グローバルアカウントを管理できます。",
 	"centralauth-admin-list-attached-on": "統合日時",
 	"centralauth-admin-list-blocked": "ブロック",
