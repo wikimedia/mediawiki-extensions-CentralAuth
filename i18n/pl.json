@@ -573,5 +573,6 @@
 	"sessionprovider-centralauthsessionprovider": "centralnych sesji opartych na ciasteczkach",
 	"sessionprovider-centralauthtokensessionprovider": "sesji opartych o parametr „centralauthtoken”",
 	"centralauth-badaccess-blacklisted": "Nie możesz poprosić o globalną zmianę nazwy, ponieważ znajdujesz się na liście odrzucanych.",
-	"centralauth-action-forbidden-shared-domain": "Nie masz uprawnień do wykonania tej czynności w domenie współdzielonego uwierzytelniania."
+	"centralauth-action-forbidden-shared-domain": "Nie masz uprawnień do wykonania tej czynności w domenie współdzielonego uwierzytelniania.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Użytkownik przynależy do {{PLURAL:$1|grupy globalnej|wszystkich następujących grup globalnych:}} $2"
 }
