@@ -299,7 +299,7 @@ class SpecialWikiSets extends SpecialPage {
 					]
 				),
 			];
-			$this->getOutput()->addHTML( new \OOUI\PanelLayout( [
+			$this->getOutput()->addHTML( (string)new \OOUI\PanelLayout( [
 				'expanded' => false,
 				'padded' => true,
 				'framed' => true,
@@ -316,7 +316,7 @@ class SpecialWikiSets extends SpecialPage {
 					] )
 				),
 			];
-			$this->getOutput()->addHTML( new \OOUI\FieldsetLayout( [
+			$this->getOutput()->addHTML( (string)new \OOUI\FieldsetLayout( [
 				'items' => $wikiItems,
 				'label' => $this->msg( 'centralauth-editset-wikis' )->text(),
 			] ) );
@@ -328,7 +328,7 @@ class SpecialWikiSets extends SpecialPage {
 					] )
 				),
 			];
-			$this->getOutput()->addHTML( new \OOUI\FieldsetLayout( [
+			$this->getOutput()->addHTML( (string)new \OOUI\FieldsetLayout( [
 				'items' => $restWikiItems,
 				'label' => $this->msg( 'centralauth-editset-restwikis' )->text(),
 			] ) );

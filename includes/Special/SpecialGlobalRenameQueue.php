@@ -971,6 +971,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$bodyMessage = $this->msg(
 			'globalvanishrequest-rejected-body-notification',
 			$request->getName(),
+			// @phan-suppress-next-line PhanTypeMismatchArgumentNullable
 			( $homeWikiWiki ? $homeWikiWiki->getDisplayName() : $homeWiki ),
 			$globalEditCount,
 			$isBlockedMsg,

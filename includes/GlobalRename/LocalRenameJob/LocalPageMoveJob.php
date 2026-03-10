@@ -79,7 +79,9 @@ class LocalPageMoveJob extends Job {
 				);
 			}
 		} else {
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 			$oldTitle = Title::makeTitle( $this->params['old'][0], $this->params['old'][1] );
+			// @phan-suppress-next-line PhanTypeArraySuspiciousNullable
 			$newTitle = Title::makeTitle( $this->params['new'][0], $this->params['new'][1] );
 			$this->movePage( $oldTitle, $newTitle );
 		}

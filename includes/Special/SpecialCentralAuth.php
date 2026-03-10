@@ -1224,7 +1224,7 @@ class SpecialCentralAuth extends SpecialPage {
 			],
 			'id' => $fieldsetId,
 		] );
-		return new PanelLayout( [
+		return (string)new PanelLayout( [
 			'classes' => [ 'mw-htmlform-ooui-wrapper' ],
 			'expanded' => false,
 			'padded' => true,
