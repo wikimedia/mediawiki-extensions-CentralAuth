@@ -231,9 +231,9 @@ class SharedDomainUtils {
 			'error' => $request->getRawVal( 'error' ),
 			'warning' => $request->getRawVal( 'warning' ),
 			'notice' => $request->getRawVal( 'notice' ),
-			'returnto' => $request->getRawVal( 'sul3-returnto' ) ?? $request->getRawVal( 'returnto' ),
-			'returntoquery' => $request->getRawVal( 'sul3-returntoquery' ) ?? $request->getRawVal( 'returntoquery' ),
-			'returntoanchor' => $request->getRawVal( 'sul3-returntoanchor' ) ?? $request->getRawVal( 'returntoanchor' ),
+			'returnto' => $request->getRawVal( 'returnto' ),
+			'returntoquery' => $request->getRawVal( 'returntoquery' ),
+			'returntoanchor' => $request->getRawVal( 'returntoanchor' ),
 			'redoLocalAuthentication' => $request->getRawVal( 'redoLocalAuthentication' ),
 		];
 		// already handled in makeUrlDeviceCompliant()
