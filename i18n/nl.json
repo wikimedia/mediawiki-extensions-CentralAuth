@@ -3,6 +3,7 @@
 		"authors": [
 			"Arent",
 			"Bever",
+			"Catrope",
 			"Ciell",
 			"Danieldegroot2",
 			"Dinosaur918",
@@ -267,6 +268,7 @@
 	"centralauth-globalgroupperms-rights": "Rechten",
 	"centralauth-globalgroupperms-automatic-group-reason": "Automatisch toegewezen",
 	"centralauth-globalgroupperms-automatic-group-info": "Gebruiker wordt automatisch toegewezen: $1",
+	"centralauth-globalgroupperms-automatic-group-info-reverse": "Automatisch toegewezen aan leden van: $1",
 	"centralauth-groupname": "deze wikifarm",
 	"centralauth-hidden-blockreason": "globaal verborgen door $1 op $2 met reden: $3",
 	"centralauth-hours-ago": "$1 {{PLURAL:$1|uur|uur}} geleden",
@@ -574,5 +576,6 @@
 	"sessionprovider-centralauthsessionprovider": "centrale op cookies gebaseerde sessies",
 	"sessionprovider-centralauthtokensessionprovider": "op CentralAuthToken gebaseerde sessies",
 	"centralauth-badaccess-blacklisted": "U kunt geen globale hernoeming aanvragen omdat u op een weigeringslijst staat.",
-	"centralauth-action-forbidden-shared-domain": "U mag deze handeling niet verrichten op het gedeelde authenticatiedomein."
+	"centralauth-action-forbidden-shared-domain": "U mag deze handeling niet verrichten op het gedeelde authenticatiedomein.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "De gebruiker is lid van {{PLURAL:$1|de globale groep|de globale groepen}}: $2"
 }
