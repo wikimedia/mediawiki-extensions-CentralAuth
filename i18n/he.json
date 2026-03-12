@@ -117,7 +117,7 @@
 	"centralauth-admin-status-nonexistent": "שגיאה: החשבון הגלובלי \"<nowiki>$1</nowiki>\" אינו קיים.",
 	"centralauth-admin-status-reasons": "* סיבות נעילה נפוצות\n** חשבון ששימש רק להשחתה\n** חשבון ששימש רק לספאם\n* סיבות נעילה והסתרה נפוצות\n** שם משתמש גס\n** מידע אישי בלתי הולם",
 	"centralauth-admin-status-submit": "שינוי המצב",
-	"centralauth-admin-suppressreason": "הסתיר באופן גלובלי את $1 מהסיבה הבאה: $2",
+	"centralauth-admin-suppressreason": "מועלם באופן גלובלי על־ידי $1 מהסיבה הבאה: $2",
 	"centralauth-admin-title": "מנהל החשבונות הגלובלי של $1",
 	"centralauth-admin-title-ro": "מידע על החשבון הגלובלי עבור $1",
 	"centralauth-admin-too-many-edits": "לחשבון הגלובלי \"<nowiki>$1</nowiki>\" יש יותר מ{{PLURAL:$2|עריכה אחת|־$1 עריכות}} ולא ניתן להסתיר אותו.",
