@@ -153,8 +153,8 @@ class BatchVanishUsers extends Maintenance {
 	private function requestUserVanish( array $request, CentralAuthUser $performer, UserIdentity $uiPerformer ): array {
 		$isDryRun = $this->getOption( 'dry-run', false );
 
+		$username = $request['username'];
 		try {
-			$username = $request['username'];
 			$causer = CentralAuthUser::getInstanceByName( $username );
 		} catch ( InvalidArgumentException ) {
 			$errorMessage = "Skipping user {$username} as that username is invalid.";
