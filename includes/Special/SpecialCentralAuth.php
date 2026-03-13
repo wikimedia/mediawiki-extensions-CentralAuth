@@ -48,6 +48,7 @@ use OOUI\Widget;
 use StatusValue;
 use Wikimedia\Message\MessageSpecifier;
 use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IExpression;
 use Wikimedia\Rdbms\LikeValue;
 
@@ -234,8 +235,9 @@ class SpecialCentralAuth extends SpecialPage {
 			return;
 		}
 
-		$this->mAttachedLocalAccounts = $globalUser->queryAttached();
-		$this->mUnattachedLocalAccounts = $globalUser->queryUnattached();
+		// Latest data is not needed for this informational page
+		$this->mAttachedLocalAccounts = $globalUser->queryAttached( IDBAccessObject::READ_NORMAL );
+		$this->mUnattachedLocalAccounts = $globalUser->queryUnattached( IDBAccessObject::READ_NORMAL );
 
 		if ( !$globalUser->exists() && !count( $this->mUnattachedLocalAccounts ) ) {
 			// Nothing to see here

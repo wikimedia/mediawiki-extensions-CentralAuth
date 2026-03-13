@@ -19,6 +19,7 @@ use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\ParamValidator\ParamValidator;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Query module to list global user info and attachments
@@ -104,7 +105,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		}
 
 		if ( $userExists && isset( $prop['merged'] ) ) {
-			$attachedAccounts = $user->queryAttached();
+			// Latest data is not needed for this informational API
+			$attachedAccounts = $user->queryAttached( IDBAccessObject::READ_NORMAL );
 			foreach ( $attachedAccounts as $account ) {
 				$dbname = $account['wiki'];
 				$wiki = WikiMap::getWiki( $dbname );
@@ -139,7 +141,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		}
 
 		if ( isset( $prop['unattached'] ) ) {
-			$accounts = $user->queryUnattached();
+			// Latest data is not needed for this informational API
+			$accounts = $user->queryUnattached( IDBAccessObject::READ_NORMAL );
 			foreach ( $accounts as $account ) {
 				$a = [
 					'wiki' => $account['wiki'],

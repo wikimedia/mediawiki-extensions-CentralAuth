@@ -1633,7 +1633,9 @@ class CentralAuthUser implements IDBAccessObject {
 		$passwords = [], $sendToRC = true, $safe = false, $checkHome = false
 	) {
 		$this->checkWriteMode();
-		$migrationSet = $this->queryUnattached();
+		// T419772: Read attached accounts from replicas to avoid warnings about accounts which are just
+		// being created. Newly created accounts don't need migration anyway.
+		$migrationSet = $this->queryUnattached( IDBAccessObject::READ_NORMAL );
 		$logger = $this->logger;
 		if ( !$migrationSet ) {
 			$logger->info( 'no accounts to merge, failed migration' );
