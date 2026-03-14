@@ -108,7 +108,7 @@ class SpecialContributionsHookHandler implements
 			// we couldn't load the log entry
 			$out->addHTML(
 				Html::warningBox(
-					$out->msg( 'centralauth-contribs-locked', $user )->parse(),
+					$out->msg( 'centralauth-contribs-locked', $user->getName() )->parse(),
 					'mw-warning-with-logexcerpt'
 				)
 			);

@@ -267,7 +267,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		}
 
 		// Validate rename deny list
-		if ( !$this->globalRenameDenylist->checkUser( $oldUser ) ) {
+		if ( !$this->globalRenameDenylist->checkUser( $oldUser->getName() ) ) {
 			return StatusValue::newFatal( 'centralauth-rename-listed-on-denylist' );
 		}
 
