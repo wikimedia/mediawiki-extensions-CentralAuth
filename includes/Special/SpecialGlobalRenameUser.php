@@ -14,6 +14,7 @@ use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
 use MediaWiki\Message\Message;
 use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\SpecialPage\FormSpecialPage;
+use MediaWiki\Status\Status;
 use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNameUtils;
@@ -274,7 +275,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	}
 
 	/**
-	 * @return StatusValue
+	 * @return Status
 	 */
 	public function onSubmit( array $data ) {
 		if ( $data['overrideantispoof'] ) {
@@ -291,7 +292,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 
 		$valid = $this->validate( $data );
 		if ( !$valid->isOK() ) {
-			return $valid;
+			return Status::wrap( $valid );
 		}
 
 		// Turn old username into canonical form as CentralAuthUser:;getInstanceByName
@@ -308,14 +309,14 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			UserRigorOptions::RIGOR_CREATABLE
 		);
 
-		return $this->globalRenameFactory
+		return Status::wrap( $this->globalRenameFactory
 			->newGlobalRenameUser(
 				$this->getUser(),
 				CentralAuthUser::getInstanceByName( $this->oldUsername ),
 				$this->newUsername
 			)
 			->withSession( $this->getContext()->exportSession() )
-			->rename( $data );
+			->rename( $data ) );
 	}
 
 	public function onSuccess() {

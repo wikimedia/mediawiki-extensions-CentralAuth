@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
 use MediaWiki\SpecialPage\FormSpecialPage;
-use StatusValue;
+use MediaWiki\Status\Status;
 
 /**
  * Special page that can be used to manually create a local account for a global account.
@@ -77,14 +77,14 @@ class SpecialCreateLocalAccount extends FormSpecialPage {
 	}
 
 	/**
-	 * @return StatusValue
+	 * @return Status
 	 */
 	public function onSubmit( array $data ) {
 		$username = $data['username'];
 		$reason = $data['reason'];
 
-		return $this->forcedLocalCreationService
-			->attemptAutoCreateLocalUserFromName( $username, $this->getUser(), $reason );
+		return Status::wrap( $this->forcedLocalCreationService
+			->attemptAutoCreateLocalUserFromName( $username, $this->getUser(), $reason ) );
 	}
 
 	public function onSuccess() {

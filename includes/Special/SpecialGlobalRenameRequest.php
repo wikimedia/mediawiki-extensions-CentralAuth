@@ -21,7 +21,6 @@ use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
-use StatusValue;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -283,7 +282,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	}
 
 	/**
-	 * @return StatusValue
+	 * @return Status
 	 */
 	public function onSubmit( array $data ) {
 		$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
@@ -297,7 +296,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 		$request->setReason( $reason );
 
 		if ( $this->globalRenameRequestStore->save( $request ) ) {
-			$status = StatusValue::newGood();
+			$status = Status::newGood();
 
 			if ( isset( $data['email'] ) ) {
 				$user = $this->getUser();
@@ -306,7 +305,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				$status = $user->sendConfirmationMail( 'set' );
 			}
 		} else {
-			$status = StatusValue::newFatal(
+			$status = Status::newFatal(
 				$this->msg( 'globalrenamerequest-save-error' )
 			);
 		}

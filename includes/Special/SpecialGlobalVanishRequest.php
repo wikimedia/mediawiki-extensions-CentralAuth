@@ -24,6 +24,7 @@ use MediaWiki\Json\FormatJson;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Parser\Parser;
 use MediaWiki\SpecialPage\FormSpecialPage;
+use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\WikiMap\WikiMap;
@@ -65,27 +66,27 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 	}
 
 	/** @inheritDoc */
-	public function onSubmit( array $data ): StatusValue {
+	public function onSubmit( array $data ): Status {
 		$newUsername = $this->generateUsername();
 		if ( !$newUsername ) {
-			return StatusValue::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
+			return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
 		}
 
 		// Verify that the user is a global user.
 		$causer = $this->getGlobalUser();
 		if ( !$causer ) {
-			return StatusValue::newFatal( $this->msg( 'globalvanishrequest-globaluser-error' ) );
+			return Status::newFatal( $this->msg( 'globalvanishrequest-globaluser-error' ) );
 		}
 
 		// Disallow for users that have blocks on any connected wikis.
 		if ( $causer->isBlocked() ) {
-			return StatusValue::newFatal( $this->msg( 'globalvanishrequest-blocked-error' ) );
+			return Status::newFatal( $this->msg( 'globalvanishrequest-blocked-error' ) );
 		}
 
 		// Disallow duplicate rename / vanish requests.
 		$username = $this->getUser()->getName();
 		if ( $this->globalRenameRequestStore->currentNameHasPendingRequest( $username ) ) {
-			return StatusValue::newFatal( $this->msg( 'globalvanishrequest-pending-request-error' ) );
+			return Status::newFatal( $this->msg( 'globalvanishrequest-pending-request-error' ) );
 		}
 
 		$request = $this->globalRenameRequestStore
@@ -121,7 +122,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 
 			// Save the rename request to the queue before initiating the job.
 			if ( !$this->globalRenameRequestStore->save( $request ) ) {
-				return StatusValue::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
+				return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
 			}
 
 			// Determine which wiki to run the job on. If the config var is
@@ -137,11 +138,11 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		} else {
 			// Save the request to the database for it to be processed later.
 			if ( !$this->globalRenameRequestStore->save( $request ) ) {
-				return StatusValue::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
+				return Status::newFatal( $this->msg( 'globalvanishrequest-save-error' ) );
 			}
 		}
 
-		return StatusValue::newGood();
+		return Status::newGood();
 	}
 
 	/** @inheritDoc */
