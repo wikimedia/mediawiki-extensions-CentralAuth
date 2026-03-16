@@ -545,5 +545,6 @@
 	"sessionprovider-centralauthsessionprovider": "централни седници со колачиња",
 	"sessionprovider-centralauthtokensessionprovider": "централни седници со овластувачка шифра",
 	"centralauth-badaccess-blacklisted": "Не можете да побарате глобално преименување бидејќи сте на список на одбиени.",
-	"centralauth-action-forbidden-shared-domain": "Не ви е дозволено да го извршите ова дејство на споделениот домен за заверка."
+	"centralauth-action-forbidden-shared-domain": "Не ви е дозволено да го извршите ова дејство на споделениот домен за заверка.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Корисникот членува во {{PLURAL:$1|глобалната група|сите овие глобални групи}}: $2"
 }

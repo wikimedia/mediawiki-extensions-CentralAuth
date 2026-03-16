@@ -543,5 +543,6 @@
 	"sessionprovider-centralauthsessionprovider": "sessiones basate sur cookies central",
 	"sessionprovider-centralauthtokensessionprovider": "sessiones centralauthtoken",
 	"centralauth-badaccess-blacklisted": "Tu non pote requestar un renomination global perque tu es in un lista de refusa.",
-	"centralauth-action-forbidden-shared-domain": "Tu non es autorisate a exequer iste action sur le dominio condividite de authentication."
+	"centralauth-action-forbidden-shared-domain": "Tu non es autorisate a exequer iste action sur le dominio condividite de authentication.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Le usator es membro {{PLURAL:$1|del gruppo|de tote le gruppos}} global $2"
 }

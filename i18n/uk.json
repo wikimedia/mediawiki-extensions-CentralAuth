@@ -554,5 +554,6 @@
 	"sessionprovider-centralauthsessionprovider": "центральних сеансів на основі кукі",
 	"sessionprovider-centralauthtokensessionprovider": "сеансів centralauthtoken",
 	"centralauth-badaccess-blacklisted": "Ви не можете подати запит на глобальне перейменування, оскільки перебуваєте в заборонному списку.",
-	"centralauth-action-forbidden-shared-domain": "Вам не дозволено виконувати цю дію на спільному домені автентифікації."
+	"centralauth-action-forbidden-shared-domain": "Вам не дозволено виконувати цю дію на спільному домені автентифікації.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Користувач є членом {{PLURAL:$1|глобальної групи|усіх глобальних груп}}: $2"
 }
