@@ -58,7 +58,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	/**
 	 * Require confirmation if olduser has more than this many global edits
 	 */
-	private const EDITCOUNT_THRESHOLD = 100000;
+	private const EDITCOUNT_THRESHOLD = 50_000;
 
 	public function __construct(
 		UserFactory $userFactory,
@@ -151,7 +151,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			]
 		];
 
-		// Ask for confirmation if the user has more than 100k edits globally
+		// Ask for confirmation if the user has a lot of edits
 		$oldName = trim( $this->getRequest()->getText( 'oldname' ) );
 		if ( $oldName !== '' ) {
 			$oldUser = $this->userFactory->newFromName( $oldName );
@@ -236,9 +236,8 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			}
 		}
 
-		// Let the performer know that olduser's editcount is more than the
-		// sysadmin-intervention-threshold and do the rename only if we've received
-		// confirmation that they want to do it.
+		// Let the performer know that olduser's editcount is very high and do the rename only
+		// if we've received confirmation that they want to do it.
 		$caOldUser = CentralAuthUser::getInstance( $oldUser );
 		if ( !$this->allowHighEditcount &&
 			$caOldUser->getGlobalEditCount() > self::EDITCOUNT_THRESHOLD
