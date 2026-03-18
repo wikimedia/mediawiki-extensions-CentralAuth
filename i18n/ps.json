@@ -120,6 +120,7 @@
 	"centralauth-complete": "د ننوتلو يوځای‌کول بشپړ شول!",
 	"centralauth-complete-text": "اوس تاسو کولی شئ د {{int:Centralauth-groupname}} هر ويکي وېبځي ته د نوي گڼون جوړولو پرته ننوځئ.",
 	"centralauth-contribs-link": "ټوليز گڼون",
+	"centralauth-createlocal-pretext": "تاسو کولی شئ دا فورمه د ټوليز گڼون لپاره د ځايي گڼون جوړولو لپاره وکاروئ، که چېرې دوی د کوم لامل له کبله په خپله دا کار نشي کولی.",
 	"centralauth-createlocal-reason": "لامل",
 	"centralauth-createlocal-success": "ځايي گڼون جوړ شو.",
 	"centralauth-createlocal-suppressed": "تاسو د يو ځپل‌شوي کارن لپاره ځايي گڼون نشئ جوړولای.",
