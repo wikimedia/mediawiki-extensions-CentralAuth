@@ -345,7 +345,7 @@
 	"centralauth-rename-form-overridetitleblacklist": "TitleBlacklist-i atla",
 	"centralauth-rename-form-reason": "Səbəb",
 	"centralauth-rename-form-suppressredirects": "Yönləndirmələr yaratma",
-	"centralauth-rename-globaleditcount-threshold": "Bu istifadəçinin $1 {{PLURAL:$1|redaktəsi}} var. Zəhmət olmasa bu istifadəçinin adını dəyişmək istədiyinizə əmin olduğunuzu və bu adının dəyişdirilməsinə nəzarət etmək üçün sistem administratorunun mövcud olduğunu təsdiqləyin.",
+	"centralauth-rename-globaleditcount-threshold": "Bu istifadəçinin $1 {{PLURAL:$1|redaktəsi}} var. Zəhmət olmasa bu istifadəçinin adını dəyişmək istədiyinizə əmin olduğunuzu təsdiqləyin.",
 	"centralauth-rename-listed-on-denylist": "Bu istifadəçi \"qlobal adddəyişmə rədd siyahısı\"nda qeyd olunub. Bu istifadəçinin adını dəyişmək üçün əvvəlcə rədd siyahısı dəyişdirilməlidir.",
 	"centralauth-rename-movelog": "\"[[Special:CentralAuth/$1|$1]]\" istifadəçisinin adını \"[[Special:CentralAuth/$2|$2]]\" olaraq dəyişərkən avtomatik olaraq səhifənin adı dəyişdirildi",
 	"centralauth-rename-notinprogress": "$1 üçün davam edən addəyişmə prosesi yoxdur. Ola bilsin ki, artıq tamamlanıb.",

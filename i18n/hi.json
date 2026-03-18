@@ -354,7 +354,7 @@
 	"centralauth-rename-form-overridetitleblacklist": "TitleBlacklist को ओवर्राइड करें",
 	"centralauth-rename-form-reason": "कारण",
 	"centralauth-rename-form-suppressredirects": "अनुप्रेषित कड़ियों के बनने पर रोक लगाएँ",
-	"centralauth-rename-globaleditcount-threshold": "इस सदस्य {{PLURAL:$1|का $1 से अधिक सम्पादन है|के $1 से अधिक सम्पादन हैं}}। कृपया पुष्ट करें कि आप वाकई में इस सदस्य को पुनः नामकृत करना चाहते हैं, और यह कि इस पुनः नामकरण पर निगरानी रखने के लिए एक सिस्टम प्रबंधक उपलब्ध है।",
+	"centralauth-rename-globaleditcount-threshold": "इस सदस्य {{PLURAL:$1|का|के}} $1 से अधिक सम्पादन {{PLURAL:$1|है|हैं}}। कृपया पुष्टि करें कि आप वाकई में इस सदस्य को पुनः नामकृत करना चाहते हैं।",
 	"centralauth-rename-listed-on-denylist": "यह सदस्य ग्लोबल पुनः नामकरण अस्वीकार सूची में सूचीबद्ध है। इस सदस्य को पुनः नामकृत करने के लिए पहले अस्वीकार सूची को संशोधित करना होगा।",
 	"centralauth-rename-movelog": "\"[[Special:CentralAuth/$1|$1]]\" का नाम \"[[Special:CentralAuth/$2|$2]]\" करते समय पृष्ठ स्वतः स्थानांतरित हुआ",
 	"centralauth-rename-notinprogress": "$1 के लिए कोई नामकरण जारी नहीं है। हो सकता है कि यह पूरा हो चुका है।",
@@ -562,5 +562,6 @@
 	"sessionprovider-centralauthsessionprovider": "केंद्रीय कुकी-आधारित सत्र",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken सत्र",
 	"centralauth-badaccess-blacklisted": "आप एक ग्लोबल पुनः नामकरण का अनुरोध नहीं कर सकते क्योंकि आप अस्वीकार की सूची में हैं।",
-	"centralauth-action-forbidden-shared-domain": "आपको साँझित प्रमाणीकरण डोमेन पर यह क्रिया करने की अनुमति नहीं है।"
+	"centralauth-action-forbidden-shared-domain": "आपको साँझित प्रमाणीकरण डोमेन पर यह क्रिया करने की अनुमति नहीं है।",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "सदस्य {{PLURAL:$1|इस समूह|इन सभी समूहों}} का सदस्य है: $2"
 }
