@@ -365,7 +365,7 @@
 	"centralauth-rename-form-overridetitleblacklist": "Obejdź czarną listę tytułów",
 	"centralauth-rename-form-reason": "Powód",
 	"centralauth-rename-form-suppressredirects": "Pomiń tworzenie przekierowań",
-	"centralauth-rename-globaleditcount-threshold": "Ten użytkownik wykonał więcej niż $1 {{PLURAL:$1|edycję|edycje|edycji}}. Proszę potwierdzić, że chcesz zmienić nazwę tego użytkownika i że administrator systemu może monitorować tę zmianę.",
+	"centralauth-rename-globaleditcount-threshold": "Ten użytkownik wykonał więcej niż $1 {{PLURAL:$1|edycję|edycje|edycji}}. Proszę potwierdzić, że chcesz zmienić nazwę tego użytkownika.",
 	"centralauth-rename-listed-on-denylist": "Ten użytkownik znajduje się na globalnej liście odmawiania zmianie nazwy konta. Aby zmienić jego nick, musi zostać wpierw usunięty z tej listy.",
 	"centralauth-rename-movelog": "Automatycznie przeniesiono stronę podczas zmiany nazwy użytkownika z \"[[Special:CentralAuth/$1|$1]]\" na \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Nie ma obecnie zmian nazw dla $1. Zostały już wykonane.",

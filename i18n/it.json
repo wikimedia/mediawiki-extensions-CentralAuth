@@ -14,6 +14,7 @@
 			"Dream Indigo",
 			"Einreiher",
 			"F. Cosoleto",
+			"FL2226",
 			"Gianfranco",
 			"Giromin Cangiaxo",
 			"Gmelfi",
@@ -341,6 +342,7 @@
 	"centralauth-rename-form-overridetitleblacklist": "Ignora TitleBlacklist",
 	"centralauth-rename-form-reason": "Motivo",
 	"centralauth-rename-form-suppressredirects": "Sopprimi la creazione di redirect",
+	"centralauth-rename-globaleditcount-threshold": "Questo utente ha più di $1 {{PLURAL:$1| modifiche}}. Conferma di voler rinominare questo utente.",
 	"centralauth-rename-movelog": "Pagina spostata automaticamente durante la rinomina dell'utente \"[[Special:CentralAuth/$1|$1]]\" a \"[[Special:CentralAuth/$2|$2]]\"",
 	"centralauth-rename-notinprogress": "Non ci sono rinomine di $1 in corso. Potrebbero già essere terminate.",
 	"centralauth-rename-progress-fieldset": "Elenco delle utenze locali",
@@ -503,5 +505,6 @@
 	"right-globalgroupmembership": "Modifica l'appartenenza ai gruppi globali",
 	"right-globalgrouppermissions": "Gestisce i gruppi globali",
 	"sessionprovider-centralauthsessionprovider": "sessioni basate su cookie centrali",
-	"sessionprovider-centralauthtokensessionprovider": "sessioni centralauthtoken"
+	"sessionprovider-centralauthtokensessionprovider": "sessioni centralauthtoken",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "L'utente è membro di {{PLURAL:$1| gruppo globale|tutti i gruppi globali}}: $2"
 }
