@@ -30,15 +30,12 @@ use MediaWiki\WikiMap\WikiMap;
  */
 class ApiCentralAuthToken extends ApiBase {
 
-	private CentralAuthApiTokenManager $tokenGenerator;
-
 	public function __construct(
 		ApiMain $main,
 		string $moduleName,
-		CentralAuthApiTokenManager $tokenGenerator
+		private readonly CentralAuthApiTokenManager $apiTokenManager,
 	) {
 		parent::__construct( $main, $moduleName );
-		$this->tokenGenerator = $tokenGenerator;
 	}
 
 	public function execute() {
@@ -64,7 +61,7 @@ class ApiCentralAuthToken extends ApiBase {
 			$this->dieWithError( 'apierror-centralauth-notattached', 'notattached' );
 		}
 
-		$loginToken = $this->tokenGenerator->getToken( $user, $id, WikiMap::getCurrentWikiId() );
+		$loginToken = $this->apiTokenManager->getToken( $user, $id, WikiMap::getCurrentWikiId() );
 
 		$this->getResult()->addValue( null, $this->getModuleName(), [
 			'centralauthtoken' => $loginToken

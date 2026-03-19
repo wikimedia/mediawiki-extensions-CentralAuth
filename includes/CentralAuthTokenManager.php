@@ -7,9 +7,13 @@ use MWCryptRand;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Wikimedia\Assert\Assert;
+use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\ObjectCache\BagOStuff;
 
 class CentralAuthTokenManager {
+
+	/** Expiration time used for all tokens */
+	public const EXPIRY = ExpirationAwareness::TTL_MINUTE;
 
 	private BagOStuff $tokenStore;
 	private LoggerInterface $logger;
@@ -78,7 +82,7 @@ class CentralAuthTokenManager {
 		Assert::parameter( $data !== false, '$data', 'cannot be boolean false' );
 		$token = $options['token'] ?? MWCryptRand::generateHex( 32 );
 		$key = $this->makeLegacyTokenKey( $keyPrefix, $token );
-		$this->tokenStore->set( $key, $data, BagOStuff::TTL_MINUTE );
+		$this->tokenStore->set( $key, $data, self::EXPIRY );
 		return $token;
 	}
 

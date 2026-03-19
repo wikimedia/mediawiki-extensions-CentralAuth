@@ -35,9 +35,9 @@ class CentralAuthApiSessionProvider extends CentralAuthTokenSessionProvider {
 			// GET/POST request (including the 'centralauthtoken' parameter). Deleting it here would cause
 			// the subsequent real request to fail. There is no way to avoid that.
 			// https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS#preflighted_requests
-			return $this->tokenManager->detokenize( $oneTimeToken, 'api-token' );
+			return $this->apiTokenManager->detokenize( $oneTimeToken, 'api-token' );
 		} else {
-			return $this->tokenManager->detokenizeAndDelete( $oneTimeToken, 'api-token' );
+			return $this->apiTokenManager->detokenizeAndDelete( $oneTimeToken, 'api-token' );
 		}
 	}
 

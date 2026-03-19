@@ -22,7 +22,7 @@ class CentralAuthHeaderSessionProvider extends CentralAuthTokenSessionProvider {
 			return null;
 		}
 
-		if ( !preg_match( '/^CentralAuthToken\s+(\w+)/is', $authHeader, $match ) ) {
+		if ( !preg_match( '/^CentralAuthToken\s+(\S+)/i', $authHeader, $match ) ) {
 			return null;
 		}
 
@@ -31,7 +31,7 @@ class CentralAuthHeaderSessionProvider extends CentralAuthTokenSessionProvider {
 			return null;
 		}
 
-		return $this->tokenManager->detokenizeAndDelete( $oneTimeToken, 'api-token' );
+		return $this->apiTokenManager->detokenizeAndDelete( $oneTimeToken, 'api-token' );
 	}
 
 	/**
