@@ -97,8 +97,8 @@
 			"args": [],
 			"services": [
 				"UserIdentityLookup",
-				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthTokenManager"
+				"CentralAuth.CentralAuthApiTokenManager",
+				"CentralAuth.CentralAuthSessionManager"
 			]
 		},
 		"CentralAuthHeaderSessionProvider": {
@@ -106,8 +106,8 @@
 			"args": [],
 			"services": [
 				"UserIdentityLookup",
-				"CentralAuth.CentralAuthSessionManager",
-				"CentralAuth.CentralAuthTokenManager"
+				"CentralAuth.CentralAuthApiTokenManager",
+				"CentralAuth.CentralAuthSessionManager"
 			]
 		}
 	},
@@ -727,6 +727,7 @@
 		"ApiQueryCheckCanExecute": "shareddomain",
 		"ApiQueryTokensRegisterTypes": "default",
 		"APIGetAllowedParams": "api",
+		"APIGetDescriptionMessages": "api",
 		"AuthChangeFormFields": "loginredirect",
 		"AuthManagerFilterProviders": [
 			"default",

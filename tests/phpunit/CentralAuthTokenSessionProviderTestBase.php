@@ -2,7 +2,9 @@
 
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Json\JwtCodec;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Request\FauxRequest;
@@ -229,6 +231,36 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 		$provider = $this->newSessionProvider();
 
 		$request = $this->makeRequest( $token );
+		$result = $provider->provideSessionInfo( $request );
+		$this->assertSessionInfoOk( $result );
+
+		$this->assertSame( $user->getName(), $result->getUserInfo()->getName() );
+		$this->assertSame( $user->getId(), $result->getUserInfo()->getId() );
+	}
+
+	/** @covers \MediaWiki\Extension\CentralAuth\CentralAuthApiTokenManager::unwrapTokenFromJwt */
+	public function testProvideSessionInfoJwt() {
+		$jwtCodec = $this->createMock( JwtCodec::class );
+		$jwtCodec->expects( $this->once() )->method( 'parse' )
+			->with( 'FAKE.JWT' )->willReturnCallback( static function () use ( &$token ) {
+				return [ 'CAToken' => $token ];
+			} );
+		$jwtCodec->method( 'isEnabled' )->willReturn( true );
+		$this->setService( 'JwtCodec', $jwtCodec );
+
+		$this->overrideConfigValues( [
+			MainConfigNames::UseSessionCookieJwt => true,
+			CAMainConfigNames::CentralAuthCentralWiki => 'examplewiki',
+		] );
+
+		$this->patchStores();
+
+		$user = $this->makeCentralAuthUser( 'Frank' );
+		$token = $this->makeValidToken( [ 'userName' => $user->getName() ] );
+
+		$provider = $this->newSessionProvider();
+
+		$request = $this->makeRequest( 'FAKE.JWT' );
 		$result = $provider->provideSessionInfo( $request );
 		$this->assertSessionInfoOk( $result );
 

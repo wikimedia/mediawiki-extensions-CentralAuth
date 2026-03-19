@@ -1,7 +1,7 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthApiTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
-use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionBackend;
@@ -24,19 +24,12 @@ use Wikimedia\ObjectCache\BagOStuff;
  */
 abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 
-	private UserIdentityLookup $userIdentityLookup;
-	private CentralAuthSessionManager $sessionManager;
-	protected CentralAuthTokenManager $tokenManager;
-
 	public function __construct(
-		UserIdentityLookup $userIdentityLookup,
-		CentralAuthSessionManager $sessionManager,
-		CentralAuthTokenManager $tokenManager
+		private readonly UserIdentityLookup $userIdentityLookup,
+		protected readonly CentralAuthApiTokenManager $apiTokenManager,
+		private readonly CentralAuthSessionManager $sessionManager,
 	) {
 		parent::__construct();
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->sessionManager = $sessionManager;
-		$this->tokenManager = $tokenManager;
 	}
 
 	/**
