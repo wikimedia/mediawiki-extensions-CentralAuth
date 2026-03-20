@@ -506,5 +506,5 @@
 	"right-globalgrouppermissions": "Gestisce i gruppi globali",
 	"sessionprovider-centralauthsessionprovider": "sessioni basate su cookie centrali",
 	"sessionprovider-centralauthtokensessionprovider": "sessioni centralauthtoken",
-	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "L'utente è membro di {{PLURAL:$1| gruppo globale|tutti i gruppi globali}}: $2"
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "L'utente è membro {{PLURAL:$1|del gruppo globale|di tutti i gruppi globali}}: $2"
 }

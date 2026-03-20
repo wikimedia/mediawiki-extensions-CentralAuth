@@ -368,7 +368,7 @@
 	"centralauth-rename-form-overridetitleblacklist": "Negeer de zwarte lijst met paginanamen",
 	"centralauth-rename-form-reason": "Reden",
 	"centralauth-rename-form-suppressredirects": "Geen doorverwijzingen aanmaken",
-	"centralauth-rename-globaleditcount-threshold": "Deze gebruiker heeft meer dan $1 {{PLURAL:$1|bewerking|bewerkingen}}. Bevestig dat u zeker weet dat u deze gebruiker wilt hernoemen en dat een systeembeheerder beschikbaar is om deze gebruikershernoeming te overzien.",
+	"centralauth-rename-globaleditcount-threshold": "Deze gebruiker heeft meer dan $1 {{PLURAL:$1|bewerking|bewerkingen}}. Bevestig dat u zeker weet dat u deze gebruiker wilt hernoemen.",
 	"centralauth-rename-listed-on-denylist": "Deze gebruiker staat op de lijst van gebruikers waarvan hernoemen niet is toegestaan. Om deze gebruiker te hernoemen moet de lijst eerst worden gewijzigd.",
 	"centralauth-rename-movelog": "Automatisch hernoemd bij het hernoemen van gebruiker “[[Special:CentralAuth/$1|$1]]” naar “[[Special:CentralAuth/$2|$2]]”",
 	"centralauth-rename-notinprogress": "Er zijn geen hernoemingen gaande voor $1. Deze kunnen al afgerond zijn.",
