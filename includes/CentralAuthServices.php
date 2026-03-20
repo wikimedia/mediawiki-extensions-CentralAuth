@@ -41,12 +41,24 @@ class CentralAuthServices {
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
 	 * @since 1.44
+	 * @deprecated since 1.46 Use getApiTokenManager() instead
 	 */
 	public static function getApiTokenGenerator(
 		?ContainerInterface $services = null
-	): CentralAuthApiTokenGenerator {
+	): CentralAuthApiTokenManager {
+		return static::getApiTokenManager( $services );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
+	 * @since 1.46
+	 */
+	public static function getApiTokenManager(
+		?ContainerInterface $services = null
+	): CentralAuthApiTokenManager {
 		return ( $services ?: MediaWikiServices::getInstance() )
-			->getService( 'CentralAuth.CentralAuthApiTokenGenerator' );
+			->getService( 'CentralAuth.CentralAuthApiTokenManager' );
 	}
 
 	/**

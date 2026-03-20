@@ -10,7 +10,7 @@ use MWCryptRand;
 /**
  * Generate an authentication token to be used for API calls.
  */
-class CentralAuthApiTokenGenerator {
+class CentralAuthApiTokenManager {
 
 	private CentralAuthTokenManager $tokenManager;
 

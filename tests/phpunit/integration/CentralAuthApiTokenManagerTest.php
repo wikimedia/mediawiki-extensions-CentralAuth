@@ -10,13 +10,13 @@ use MediaWiki\WikiMap\WikiMap;
 use MediaWikiIntegrationTestCase;
 
 /**
- * @covers \MediaWiki\Extension\CentralAuth\CentralAuthApiTokenGenerator
+ * @covers \MediaWiki\Extension\CentralAuth\CentralAuthApiTokenManager
  * @group Database
  */
-class CentralAuthApiTokenGeneratorTest extends MediaWikiIntegrationTestCase {
+class CentralAuthApiTokenManagerTest extends MediaWikiIntegrationTestCase {
 
-	private function getTokenGenerator() {
-		return CentralAuthServices::getApiTokenGenerator();
+	private function getTokenManager() {
+		return CentralAuthServices::getApiTokenManager();
 	}
 
 	public function testGenerateToken() {
@@ -27,7 +27,7 @@ class CentralAuthApiTokenGeneratorTest extends MediaWikiIntegrationTestCase {
 		$centralUser->register( $testUser->getPassword(), null );
 		$centralUser->attach( WikiMap::getCurrentWikiId() );
 
-		$token = $this->getTokenGenerator()->getToken(
+		$token = $this->getTokenManager()->getToken(
 			$user,
 			'someSession',
 			'someWiki',
@@ -40,7 +40,7 @@ class CentralAuthApiTokenGeneratorTest extends MediaWikiIntegrationTestCase {
 		$this->expectException( InvalidArgumentException::class );
 		$this->expectExceptionMessage( 'Cannot get a token for an unregistered user' );
 
-		$this->getTokenGenerator()->getToken(
+		$this->getTokenManager()->getToken(
 			UserIdentityValue::newAnonymous( '127.0.0.1' ),
 			'someSession',
 			'someWiki',
@@ -51,7 +51,7 @@ class CentralAuthApiTokenGeneratorTest extends MediaWikiIntegrationTestCase {
 		$this->expectException( InvalidArgumentException::class );
 		$this->expectExceptionMessage( 'Cannot get a token without an attached global user' );
 
-		$this->getTokenGenerator()->getToken(
+		$this->getTokenManager()->getToken(
 			$this->getTestUser()->getUser(),
 			'someSession',
 			'someWiki',

@@ -14,7 +14,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 use CentralAuthSessionProvider;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
-use MediaWiki\Extension\CentralAuth\CentralAuthApiTokenGenerator;
+use MediaWiki\Extension\CentralAuth\CentralAuthApiTokenManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\WikiMap\WikiMap;
@@ -30,12 +30,12 @@ use MediaWiki\WikiMap\WikiMap;
  */
 class ApiCentralAuthToken extends ApiBase {
 
-	private CentralAuthApiTokenGenerator $tokenGenerator;
+	private CentralAuthApiTokenManager $tokenGenerator;
 
 	public function __construct(
 		ApiMain $main,
 		string $moduleName,
-		CentralAuthApiTokenGenerator $tokenGenerator
+		CentralAuthApiTokenManager $tokenGenerator
 	) {
 		parent::__construct( $main, $moduleName );
 		$this->tokenGenerator = $tokenGenerator;

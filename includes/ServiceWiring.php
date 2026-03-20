@@ -37,10 +37,10 @@ return [
 		);
 	},
 
-	'CentralAuth.CentralAuthApiTokenGenerator' => static function (
+	'CentralAuth.CentralAuthApiTokenManager' => static function (
 		MediaWikiServices $services
-	): CentralAuthApiTokenGenerator {
-		return new CentralAuthApiTokenGenerator(
+	): CentralAuthApiTokenManager {
+		return new CentralAuthApiTokenManager(
 			CentralAuthServices::getTokenManager( $services )
 		);
 	},
