@@ -424,6 +424,7 @@
 		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\CentralAuthExpireTemporaryAccounts": "maintenance/expireTemporaryAccounts.php",
 		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\MigrateGuSalt": "maintenance/migrateGuSalt.php",
 		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\SendConfirmAndMigrateEmail": "maintenance/sendConfirmAndMigrateEmail.php",
+		"MediaWiki\\Extension\\CentralAuth\\Maintenance\\AddToGlobalGroup": "maintenance/addToGlobalGroup.php",
 		"MWCA": "includes/MWCA.php"
 	},
 	"TestAutoloadClasses": {
