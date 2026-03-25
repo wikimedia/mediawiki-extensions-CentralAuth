@@ -6,7 +6,7 @@
 		]
 	},
 	"apierror-centralauth-badsession": "Centralauthtoken se može dobiti samo kada se koriste CentralAuth sesije.",
-	"apierror-centralauth-badtoken": "Centralauthtoken nije važeći.",
+	"apierror-centralauth-badtoken": "Centralauthtoken nije ispravan.",
 	"apierror-centralauth-badusername": "Korisničko ime \"$1\" ne može se koristiti na ovom projektu",
 	"apierror-centralauth-editconflict": "Otkriven sukob izmjena. Prekidanje.",
 	"apierror-centralauth-notattached": "Nije moguće dobiti centralauthtoken bez priloženog globalnog računa.",

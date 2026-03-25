@@ -341,7 +341,7 @@
 	"centralauth-rename-form-suppressredirects": "Prepreči ustvaritev preusmeritev",
 	"centralauth-rename-globaleditcount-threshold": "Ta uporabnik ima več kot $1 {{PLURAL:$1|urejanje|urejanji|urejanja|urejanj}}. Potrdite, da zagotovo želite preimenovati tega uporabnika in da je na voljo sistemski administrstor, ki bo lahko spremljal to preimenovanje.",
 	"centralauth-rename-listed-on-denylist": "Ta uporabnik je naveden na globalnem seznamu zavrnjenih preimenovanj. Če želite preimenovati tega uporabnika, morate najprej spremeniti seznam zavrnjenih preimenovanj.",
-	"centralauth-rename-movelog": "Samodejno preimenovana stran ob preimenovanju uporabnika \"[[Special:CentralAuth/$1|$1]]\" v \"[[Special:CentralAuth/$2|$2]]\"",
+	"centralauth-rename-movelog": "Samodejno preimenovana stran ob preimenovanju uporabnika »[[Special:CentralAuth/$1|$1]]« v »[[Special:CentralAuth/$2|$2]]«",
 	"centralauth-rename-notinprogress": "V teku ni preimenovan za uporabnika $1. Morda so bila že zaključena.",
 	"centralauth-rename-progress-fieldset": "Seznam lokalnih računov",
 	"centralauth-rename-progress-item": "$1 → $2 ([[Special:GlobalRenameProgress/$2|prikaži potek]])",

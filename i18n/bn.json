@@ -22,7 +22,7 @@
 			"খাত্তাব হাসান"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-editcount": "ব্যবহারকারীর বৈশ্বিক সম্পাদনা গণনা",
+	"abusefilter-edit-builder-vars-global-user-editcount": "ব্যবহারকারীর বৈশ্বিক সম্পাদনা গণনা ($1)",
 	"action-centralauth-merge": "তাদের অ্যাকাউন্ট একত্রিকরণ করুন",
 	"action-centralauth-rename": "বৈশ্বিক অ্যাকাউন্ট নামান্তর করার",
 	"centralauth": "বৈশ্বিক অ্যাকাউন্টের ব্যবস্থাপক",
@@ -252,6 +252,7 @@
 	"centralauth-multilock-homewiki": "প্রধান উইকি",
 	"centralauth-newgroup-intro": "আপনি এ ফরমটি নতুন গ্রুপকে অনুমতি প্রদানের কাজে ব্যবহার করতে পারবেন।\nলক্ষ্য করুন একটি গ্রুপের অনুমতিসমূহ প্রদান না করা পর্যন্ত কোন গ্রুপ হবে না।",
 	"centralauth-newgroup-legend": "নতুন গ্রুপ তৈরি করো",
+	"centralauth-non-login-wiki-buttonlabel": "কেন্দ্রীয় প্রবেশ",
 	"centralauth-not-owner-text": "ব্যবহারকারী নাম \"$1\" সয়ংক্রিয়ভাবে $2 তে অ্যাকাউন্টের মালিকের জন্য বরাদ্দ হয়েছে।\n\nযদি আপনিই তিনি হন, তাহলে এখনে দেওয়া মূল/মাস্টার পাসওয়ার্ড দিতে প্রবেশ করে প্রবেশ একীভূতকরণ শেষ করতে পারেন:",
 	"centralauth-notice-dryrun": "ডেমো/পরীক্ষামূলক অবস্থা",
 	"centralauth-prefs-count-attached": "আপনার অ্যাকাউন্ট $1টি {{PLURAL:$1|উইকিতে}} সক্রিয় আছে।",
