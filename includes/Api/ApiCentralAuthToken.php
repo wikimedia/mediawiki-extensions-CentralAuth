@@ -16,7 +16,6 @@ use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiMain;
 use MediaWiki\Extension\CentralAuth\CentralAuthApiTokenManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Session\SessionManager;
 use MediaWiki\WikiMap\WikiMap;
 
 /**
@@ -50,7 +49,7 @@ class ApiCentralAuthToken extends ApiBase {
 			$this->dieWithError( 'apierror-centralauth-notloggedin', 'notloggedin' );
 		}
 
-		$session = SessionManager::getGlobalSession();
+		$session = $this->getRequest()->getSession();
 		if ( !$session->getProvider() instanceof CentralAuthSessionProvider ) {
 			$this->dieWithError( 'apierror-centralauth-badsession', 'badsession' );
 		}
