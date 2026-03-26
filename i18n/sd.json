@@ -51,6 +51,7 @@
 	"centralauth-editset-nouse": "(ڪوبہ نہ)",
 	"centralauth-editset-nowikis": "(ڪوبہ نہ)",
 	"centralauth-editset-submit": "اماڻيو",
+	"centralauth-editset-submit-delete": "ڊاھيو",
 	"centralauth-error-badtoken": "مھيا ڪيل آٿينٽيڪيشن ٽوڪن يا تہ مدي خارج آھي يا ناقابلِڪار آھي.",
 	"centralauth-foreign-contributions": "$2 تي $1 {{PLURAL:$1|ڀاڱيداري|ڀاڱيداريون}}",
 	"centralauth-foreign-link": "$2 تي واپرائيندڙ $1",
