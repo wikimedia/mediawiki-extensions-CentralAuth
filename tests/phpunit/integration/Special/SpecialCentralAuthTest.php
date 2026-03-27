@@ -14,9 +14,11 @@ use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralAuth;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
+use MediaWiki\Logging\LogPage;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
@@ -295,9 +297,6 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		string $targetUsername, bool $userCanSuppress, bool $userCanUnmerge, bool $userCanLock,
 		?WebRequest $request = null
 	): string {
-		// Explicitly set the user's language as qqx as some messages look at the user's language and not the request
-		// language.
-		$this->setUserLang( 'qqx' );
 		// Prevent the content language being used for the reason fields (so that we can assert against the
 		// message key using the qqx language).
 		$this->overrideConfigValue( MainConfigNames::ForceUIMsgAsContentMsg, [
@@ -907,5 +906,92 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$otherWikiLogsWarning = $this->assertAndGetByElementClass( $html, 'centralauth-admin-log-otherwiki' );
 		$this->assertStringContainsString( "(centralauth-admin-log-otherwiki", $otherWikiLogsWarning );
 		$this->assertStringContainsString( $targetUsername, $otherWikiLogsWarning );
+	}
+
+	public function testLogExtractForRenamedUser() {
+		// Create user A; rename A to B; then rename B to C
+		$performer = $this->getTestSysop()->getUser();
+		$renameUserFactory = CentralAuthServices::getGlobalRenameFactory( $this->getServiceContainer() );
+
+		$alice = $this->getMutableTestUser();
+		$aliceCentral = CentralAuthTestUser::newFromTestUser( $alice );
+		$aliceCentral->save( CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )->getCentralPrimaryDB() );
+
+		$secondName = $alice->getUser()->getName() . ' B';
+		$thirdName = $alice->getUser()->getName() . ' C';
+		$firstRename = $renameUserFactory->newGlobalRenameUser(
+			$performer, $aliceCentral->getCentralUser(),
+			$secondName
+		);
+		$this->assertStatusGood( $firstRename->rename( [
+			'movepages' => true,
+			'suppressredirects' => false,
+			'reason' => '',
+			'type' => GlobalRenameRequest::RENAME,
+		] ) );
+		$this->runJobs();
+
+		$secondRename = $renameUserFactory->newGlobalRenameUser(
+			$performer, CentralAuthUser::getPrimaryInstanceByName( $secondName ),
+			$thirdName
+		);
+		$this->assertStatusGood( $secondRename->rename( [
+			'movepages' => true,
+			'suppressredirects' => false,
+			'reason' => '',
+			'type' => GlobalRenameRequest::RENAME,
+		] ) );
+		$this->runJobs();
+
+		CentralAuthServices::getUserCache( $this->getServiceContainer() )->clear();
+
+		// Normal user: verify that only a note is shown
+		$authority = $this->mockRegisteredAuthorityWithPermissions( [] );
+		[ $html ] = $this->executeSpecialPage( $secondName, null, null, $authority );
+		$fromThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-fromthisname' );
+		$this->assertStringContainsString( "(centralauth-admin-renamelogsnippet-fromthisname-omitted)", $fromThisNameLogs );
+		$this->assertStringNotContainsString( $secondName, $fromThisNameLogs );
+		$toThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-tothisname' );
+		$this->assertStringContainsString( "(centralauth-admin-renamelogsnippet-tothisname-omitted)", $toThisNameLogs );
+		$this->assertStringNotContainsString( $secondName, $toThisNameLogs );
+
+		// Renamer user: verify that logs are shown
+		$authority = $this->mockRegisteredAuthorityWithPermissions( [ 'centralauth-rename' ] );
+		[ $html ] = $this->executeSpecialPage( $secondName, null, null, $authority );
+		$fromThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-fromthisname' );
+		$this->assertStringContainsString( "(logentry-gblrename-rename:", $fromThisNameLogs );
+		$this->assertStringContainsString( $secondName, $fromThisNameLogs );
+		$toThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-tothisname' );
+		$this->assertStringContainsString( "(logentry-gblrename-rename:", $toThisNameLogs );
+		$this->assertStringContainsString( $secondName, $toThisNameLogs );
+
+		// Hide the logs
+		$this->getServiceContainer()->getConnectionProvider()->getPrimaryDatabase()->newUpdateQueryBuilder()
+			->table( 'logging' )
+			->where( [ 'log_type' => 'gblrename' ] )
+			->set( [ 'log_deleted' => LogPage::DELETED_ACTION ] )
+			->execute();
+
+		// Normal user: verify that nothing is shown
+		$authority = $this->mockRegisteredAuthorityWithPermissions( [] );
+		[ $html ] = $this->executeSpecialPage( $secondName, null, null, $authority );
+		$this->assertStringNotContainsString( 'mw-centralauth-admin-renamelogsnippet-fromthisname', $html );
+		$this->assertStringNotContainsString( 'mw-centralauth-admin-renamelogsnippet-tothisname', $html );
+
+		// Renamer user: verify that nothing is shown as well
+		$authority = $this->mockRegisteredAuthorityWithPermissions( [ 'centralauth-rename' ] );
+		[ $html ] = $this->executeSpecialPage( $secondName, null, null, $authority );
+		$this->assertStringNotContainsString( 'mw-centralauth-admin-renamelogsnippet-fromthisname', $html );
+		$this->assertStringNotContainsString( 'mw-centralauth-admin-renamelogsnippet-tothisname', $html );
+
+		// Renamer and deleted content viewer: verify that logs are shown redacted
+		$authority = $this->mockRegisteredAuthorityWithPermissions( [ 'centralauth-rename', 'deletedhistory' ] );
+		[ $html ] = $this->executeSpecialPage( $secondName, null, null, $authority );
+		$fromThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-fromthisname' );
+		$this->assertStringContainsString( "(rev-deleted-event)", $fromThisNameLogs );
+		$this->assertStringNotContainsString( $secondName, $fromThisNameLogs );
+		$toThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-tothisname' );
+		$this->assertStringContainsString( "(rev-deleted-event)", $toThisNameLogs );
+		$this->assertStringNotContainsString( $secondName, $toThisNameLogs );
 	}
 }

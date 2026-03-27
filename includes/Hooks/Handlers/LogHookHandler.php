@@ -44,14 +44,14 @@ class LogHookHandler implements
 			if ( $oldname !== '' ) {
 				$qc = [ 'ls_field' => 'oldname', 'ls_value' => $canonicalOldname ];
 
+				// See LogPager::enforceActionRestrictions()
 				$hiddenBits = 0;
 				$user = $request->getSession()->getUser();
 				if ( !$user->isAllowed( 'deletedhistory' ) ) {
 					$hiddenBits = LogPage::DELETED_ACTION;
 				} elseif ( !$user->isAllowedAny( 'suppressrevision', 'viewsuppressed' ) ) {
-					$hiddenBits = LogPage::DELETED_ACTION | LogPage::DELETED_RESTRICTED;
+					$hiddenBits = LogPage::SUPPRESSED_ACTION;
 				}
-
 				if ( $hiddenBits ) {
 					$bitfield = $this->dbProvider->getReplicaDatabase()
 						->bitAnd( 'log_deleted', $hiddenBits );

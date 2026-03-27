@@ -23,6 +23,7 @@ use MediaWiki\Extension\GlobalBlocking\Services\GlobalBlockLookup;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
 use MediaWiki\Logging\LogEventsList;
+use MediaWiki\Logging\LogPage;
 use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Message\Message;
@@ -242,6 +243,7 @@ class SpecialCentralAuth extends SpecialPage {
 		if ( !$globalUser->exists() && !count( $this->mUnattachedLocalAccounts ) ) {
 			// Nothing to see here
 			$this->showNonexistentError();
+			$this->showRenameLog();
 			return;
 		}
 
@@ -256,6 +258,7 @@ class SpecialCentralAuth extends SpecialPage {
 			}
 			$this->showLogExtract();
 			$this->showGlobalBlockingExemptWikisList();
+			$this->showRenameLog();
 			$this->showWikiLists();
 		} elseif ( $continue && !$globalUser->exists() ) {
 			// No global account, but we can still list the local ones
@@ -1307,6 +1310,55 @@ class SpecialCentralAuth extends SpecialPage {
 					)
 				);
 			}
+		}
+	}
+
+	private function showRenameLog() {
+		// For users who are not renamers, only say that the user has been renamed.
+		// Do not display the log or a link to the logs, even though they are publicly accessible,
+		// to avoid broadcasting the old name of users renamed due to privacy concerns.
+		$showLogs = $this->getAuthority()->isAllowed( 'centralauth-rename' );
+
+		$viewRestrictions = [];
+		if ( !$this->getAuthority()->isAllowed( 'deletedhistory' ) ) {
+			$viewRestrictions[] = $this->dbProvider->getReplicaDatabase()
+				->bitAnd( 'log_deleted', LogPage::DELETED_ACTION ) . ' = 0';
+		} elseif ( !$this->getAuthority()->isAllowedAny( 'suppressrevision', 'viewsuppressed' ) ) {
+			$viewRestrictions[] = $this->dbProvider->getReplicaDatabase()
+				->bitAnd( 'log_deleted', LogPage::SUPPRESSED_ACTION ) . ' != ' . LogPage::SUPPRESSED_ACTION;
+		}
+
+		$name = $this->mGlobalUser->getName();
+
+		$logsOldName = '';
+		$countOldName = LogEventsList::showLogExtract( $logsOldName, 'gblrename', '', '', [
+			'conds' => [
+				'ls_field' => 'oldname',
+				'ls_value' => $name,
+				...$viewRestrictions
+			]
+		], $this->getContext() );
+		$logsNewName = '';
+		// View restrictions are added by LogPager::enforceActionRestrictions() when querying by title
+		$countNewName = LogEventsList::showLogExtract( $logsNewName, 'gblrename',
+			Title::makeTitle( NS_SPECIAL, 'CentralAuth/' . $name ), '', [], $this->getContext() );
+
+		if ( $countOldName ) {
+			$this->getOutput()->addHTML( $this->getFramedFieldsetLayout(
+				$showLogs ? $logsOldName :
+					$this->msg( 'centralauth-admin-renamelogsnippet-fromthisname-omitted' )->parse(),
+				'centralauth-admin-renamelogsnippet-fromthisname',
+				'mw-centralauth-admin-renamelogsnippet-fromthisname'
+			) );
+		}
+
+		if ( $countNewName ) {
+			$this->getOutput()->addHTML( $this->getFramedFieldsetLayout(
+				$showLogs ? $logsNewName :
+					$this->msg( 'centralauth-admin-renamelogsnippet-tothisname-omitted' )->parse(),
+				'centralauth-admin-renamelogsnippet-tothisname',
+				'mw-centralauth-admin-renamelogsnippet-tothisname'
+			) );
 		}
 	}
 
