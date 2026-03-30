@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Session\SessionInfo;
@@ -53,7 +54,8 @@ class CentralAuthApiSessionProvider extends CentralAuthTokenSessionProvider {
 		// is ready to catch it.
 		$exception = ApiUsageException::newWithMessage( null, $error, $code );
 		/** @return never */
-		$excepClosure = static function () use ( $exception ) {
+		$excepClosure = static function ( ApiMain &$main ) use ( $exception ) {
+			$main->handleCORS();
 			throw $exception;
 		};
 		$this->getHookContainer()->register( 'ApiBeforeMain', $excepClosure );

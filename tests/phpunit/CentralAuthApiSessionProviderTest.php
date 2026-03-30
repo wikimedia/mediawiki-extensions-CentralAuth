@@ -32,7 +32,7 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 	}
 
 	protected function makeRequest( $token ) {
-		return new FauxRequest( [ 'centralauthtoken' => $token ] );
+		return new FauxRequest( [ 'centralauthtoken' => $token, 'origin' => '*' ] );
 	}
 
 	protected function assertSessionInfoError(
@@ -48,7 +48,7 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 	private function assertErrorFromApiBeforeMain( WebRequest $request, $error ) {
 		$context = new RequestContext();
 		$context->setRequest( $request );
-		$processor = new ApiMain( RequestContext::getMain(), true );
+		$processor = new ApiMain( $request, true );
 
 		try {
 			( new HookRunner( $this->hookContainer ) )->onApiBeforeMain( $processor );
@@ -56,6 +56,10 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		} catch ( ApiUsageException $ex ) {
 			$this->assertStatusError( $error, $ex->getStatusValue() );
 		}
+
+		// Assert headers after ApiBeforeMain hook handler, assuming that '&origin=*' was given in parameters
+		$this->assertSame( '*', $request->response()->getHeader( 'Access-Control-Allow-Origin' ) );
+		$this->assertSame( 'false', $request->response()->getHeader( 'Access-Control-Allow-Credentials' ) );
 	}
 
 	protected function newSessionProvider() {
@@ -99,7 +103,7 @@ class CentralAuthApiSessionProviderTest extends CentralAuthTokenSessionProviderT
 		$token = $this->makeValidToken( [ 'userName' => $user->getName() ] );
 		$provider = $this->newSessionProvider();
 
-		$request = new class( [ 'centralauthtoken' => $token ] ) extends FauxRequest {
+		$request = new class( [ 'centralauthtoken' => $token, 'origin' => '*' ] ) extends FauxRequest {
 
 			public function getMethod() {
 				return 'OPTIONS';
