@@ -11,6 +11,7 @@ use MediaWiki\Session\UserInfo;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\User\UserNameUtils;
+use Wikimedia\Message\MessageSpecifier;
 use Wikimedia\ObjectCache\BagOStuff;
 
 /**
@@ -33,30 +34,14 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 	}
 
 	/**
-	 * Returns a bogus session, which can be used to prevent other SessionProviders
-	 * from attemption to establish a session.
-	 *
-	 * May be overridden by subclasses to somehow cause error handling ot be triggered later.
-	 *
-	 * Per default, it just returns null.
+	 * Wrapper for SessionProvider::makeException() to avoid repetition
 	 *
 	 * @param string $code Error code
-	 * @param string|array $error Error message key, or key+parameters
-	 * @return SessionInfo|null
+	 * @param string|array|MessageSpecifier $error Error message key, or key+parameters
+	 * @return SessionInfo
 	 */
 	protected function makeBogusSessionInfo( $code, $error ) {
-		// Then return an appropriate SessionInfo
-		$id = $this->hashToSessionId( 'bogus' );
-		return new SessionInfo( SessionInfo::MAX_PRIORITY, [
-			'provider' => $this,
-			'id' => $id,
-			'userInfo' => UserInfo::newAnonymous(),
-			'persisted' => false,
-			'metadata' => [
-				'error-code' => $code,
-				'error' => $error,
-			],
-		] );
+		return $this->makeException( ApiMessage::create( $error, $code ) );
 	}
 
 	/**

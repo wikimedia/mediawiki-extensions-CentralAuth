@@ -1,10 +1,15 @@
 <?php
 
-use MediaWiki\Config\HashConfig;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
-use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
-use MediaWiki\Tests\Session\SessionProviderTestTrait;
+use MediaWiki\Request\WebRequest;
+use MediaWiki\Rest\Handler;
+use MediaWiki\Rest\Hook\HookRunner;
+use MediaWiki\Rest\LocalizedHttpException;
+use MediaWiki\Rest\Module\Module;
+use MediaWiki\Rest\RequestInterface;
+use MediaWiki\Session\SessionInfo;
 
 /**
  * @covers \CentralAuthHeaderSessionProvider
@@ -12,31 +17,14 @@ use MediaWiki\Tests\Session\SessionProviderTestTrait;
  * @group Database
  */
 class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProviderTestBase {
-	use SessionProviderTestTrait;
 
-	protected function newSessionProvider() {
-		$config = new HashConfig( [
-			MainConfigNames::SecretKey => 'hunter2',
-		] );
-
+	protected function newSessionProviderClass(): CentralAuthHeaderSessionProvider {
 		$services = $this->getServiceContainer();
-		$hookContainer = $this->createHookContainer();
-
-		$provider = new CentralAuthHeaderSessionProvider(
+		return new CentralAuthHeaderSessionProvider(
 			$services->getUserIdentityLookup(),
 			CentralAuthServices::getApiTokenManager( $services ),
 			CentralAuthServices::getSessionManager( $services ),
 		);
-
-		$this->initProvider(
-			$provider,
-			null,
-			$config,
-			$services->getSessionManager(),
-			$hookContainer,
-			$services->getUserNameUtils()
-		);
-		return $provider;
 	}
 
 	protected function makeRequest( $token ) {
@@ -45,4 +33,31 @@ class CentralAuthHeaderSessionProviderTest extends CentralAuthTokenSessionProvid
 		return $request;
 	}
 
+	protected function assertSessionInfoError(
+		WebRequest $request,
+		?SessionInfo $result,
+		?string $error = null,
+		?string $code = null
+	) {
+		parent::assertSessionInfoError( $request, $result, $error, $code );
+		$this->assertErrorFromRestCheckCanExecute( $request, $error );
+		// $code is currently not used in REST API
+	}
+
+	private function assertErrorFromRestCheckCanExecute( WebRequest $request, $error ) {
+		$context = new RequestContext();
+		$context->setRequest( $request );
+
+		$exception = null;
+		( new HookRunner( $this->hookContainer ) )->onRestCheckCanExecute(
+			$this->createNoOpMock( Module::class ),
+			$this->createNoOpMock( Handler::class ),
+			'/',
+			$this->createNoOpMock( RequestInterface::class ),
+			$exception
+		);
+
+		$this->assertInstanceOf( LocalizedHttpException::class, $exception );
+		$this->assertSame( $error, $exception->getMessageValue()->getKey() );
+	}
 }

@@ -1,18 +1,15 @@
 <?php
 
-use MediaWiki\Api\ApiMain;
-use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Request\WebRequest;
-use MediaWiki\Session\SessionInfo;
 
 /**
- * Session provider for CentralAuth API centralauthtoken
+ * Session provider for action API `centralauthtoken=...` parameter.
  *
  * This session provider looks for the 'centralauthtoken' request parameter,
  * and checks that it corresponds to an existing token set up by
  * ApiCentralAuthToken. If the parameter is present but invalid, it returns a
- * bogus SessionInfo and hooks ApiBeforeMain to throw an appropriate exception
- * later when MediaWiki is ready to handle it.
+ * bogus SessionInfo to prevent other SessionProviders from establishing a session
+ * and throw an appropriate exception later when MediaWiki is ready to handle it.
  *
  * @see \MediaWiki\Extension\CentralAuth\Api\ApiCentralAuthToken
  */
@@ -40,37 +37,6 @@ class CentralAuthApiSessionProvider extends CentralAuthTokenSessionProvider {
 		} else {
 			return $this->apiTokenManager->detokenizeAndDelete( $oneTimeToken, 'api-token' );
 		}
-	}
-
-	/**
-	 * Throw an exception, later
-	 *
-	 * @param string $code Error code
-	 * @param string|array $error Error message key, or key+parameters
-	 * @return SessionInfo
-	 */
-	protected function makeBogusSessionInfo( $code, $error ) {
-		// Schedule the throwing of the exception for later when the API
-		// is ready to catch it.
-		$exception = ApiUsageException::newWithMessage( null, $error, $code );
-		/** @return never */
-		$excepClosure = static function ( ApiMain &$main ) use ( $exception ) {
-			$main->handleCORS();
-			throw $exception;
-		};
-		$this->getHookContainer()->register( 'ApiBeforeMain', $excepClosure );
-
-		return parent::makeBogusSessionInfo( $code, $error );
-	}
-
-	/** @inheritDoc */
-	public function provideSessionInfo( WebRequest $request ) {
-		// Only applied to api.php and unit tests
-		if ( !defined( 'MW_API' ) && !defined( 'MW_PHPUNIT_TEST' ) ) {
-			return null;
-		}
-
-		return parent::provideSessionInfo( $request );
 	}
 
 }

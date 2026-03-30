@@ -1,9 +1,11 @@
 <?php
 
+use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Json\JwtCodec;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Output\OutputPage;
@@ -13,6 +15,7 @@ use MediaWiki\ResourceLoader\Module;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionId;
 use MediaWiki\Session\SessionInfo;
+use MediaWiki\Tests\Session\SessionProviderTestTrait;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
@@ -29,7 +32,11 @@ use Wikimedia\TestingAccessWrapper;
  */
 abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrationTestCase {
 
+	use SessionProviderTestTrait;
+
 	protected BagOStuff $sessionStore;
+
+	protected HookContainer $hookContainer;
 
 	/** @var int */
 	private $idCounter = 0;
@@ -41,6 +48,8 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 
 	public function setUp(): void {
 		parent::setUp();
+
+		$this->hookContainer = $this->createHookContainer();
 
 		$this->setUserLang( 'qqx' );
 
@@ -72,32 +81,40 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 		?string $code = null
 	) {
 		$this->assertNotNull( $result );
-
-		$data = $result->getProviderMetadata();
-		$this->assertIsArray( $data );
-		$this->assertArrayHasKey( 'error', $data );
-		$this->assertArrayHasKey( 'error-code', $data );
-
-		if ( $code ) {
-			$this->assertSame( $code, $data['error-code'] );
-		}
-
-		if ( $error ) {
-			$this->assertSame( $error, $data['error'] );
-		}
+		$this->assertFalse( $result->wasPersisted() );
+		$this->assertTrue( $result->getUserInfo()->isAnon() );
+		// $error, $code used by subclasses
 	}
 
 	protected function assertSessionInfoOk( ?SessionInfo $result ) {
-		$data = $result->getProviderMetadata();
-		if ( $data !== null ) {
-			$this->assertArrayNotHasKey( 'error', $data, $data['error'] ?? '' );
-			$this->assertArrayNotHasKey( 'error-code', $data, $data['error-code'] ?? '' );
-		}
-
+		$this->assertNotNull( $result );
+		$this->assertTrue( $result->wasPersisted() );
 		$this->assertNotNull( $result->getUserInfo() );
+		$this->assertFalse( $result->getUserInfo()->isAnon() );
 	}
 
-	abstract protected function newSessionProvider();
+	protected function newSessionProvider() {
+		$config = new HashConfig( [
+			MainConfigNames::SecretKey => 'hunter2',
+		] );
+
+		$services = $this->getServiceContainer();
+
+		$provider = $this->newSessionProviderClass();
+
+		$this->initProvider(
+			$provider,
+			null,
+			$config,
+			$services->getSessionManager(),
+			$this->hookContainer,
+			$services->getUserNameUtils()
+		);
+
+		return $provider;
+	}
+
+	abstract protected function newSessionProviderClass(): CentralAuthTokenSessionProvider;
 
 	protected function makeValidToken( $data = [] ) {
 		// NOTE: logic stolen from ApiCentralAuthToken
