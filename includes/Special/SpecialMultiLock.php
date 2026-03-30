@@ -104,13 +104,9 @@ class SpecialMultiLock extends SpecialPage {
 			$this->mPrefixSearch = $this->getLanguage()->ucfirst( trim( $this->mPrefixSearch ) );
 		}
 
-		if ( $this->mMethod === '' ) {
-			$out->addWikiMsg( 'centralauth-admin-multi-intro' );
-			$this->showUsernameForm();
-			return;
-		} elseif ( $this->mPosted && $this->mMethod == 'search' && count( $this->mUserNames ) > 0 ) {
+		if ( $this->mMethod != 'set-status' && count( $this->mUserNames ) > 0 ) {
 			$this->showUserTable();
-		} elseif ( $this->mPosted && $this->mMethod == 'search' && $this->mPrefixSearch !== '' ) {
+		} elseif ( $this->mMethod != 'set-status' && $this->mPrefixSearch !== '' ) {
 			$this->searchForUsers();
 			$this->showUserTable();
 		} elseif ( $this->mPosted && $this->mMethod == 'set-status' &&
@@ -121,6 +117,10 @@ class SpecialMultiLock extends SpecialPage {
 			);
 			$this->setStatus();
 			$this->showUserTable();
+		} elseif ( !$this->mPosted ) {
+			$out->addWikiMsg( 'centralauth-admin-multi-intro' );
+			$this->showUsernameForm();
+			return;
 		} else {
 			$this->showError( 'centralauth-admin-multi-username' );
 		}
