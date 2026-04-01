@@ -21,7 +21,7 @@ class UserRequirementsConditionHookHandler implements
 
 	/** @inheritDoc */
 	public function onUserRequirementsCondition(
-		$type,
+		string|int $type,
 		array $args,
 		UserIdentity $user,
 		bool $isPerformingRequest,
@@ -46,7 +46,7 @@ class UserRequirementsConditionHookHandler implements
 
 	/** @inheritDoc */
 	public function onUserRequirementsConditionDisplay(
-		$type,
+		string|int $type,
 		array $args,
 		IContextSource $context,
 		?MessageSpecifier &$message
