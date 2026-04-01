@@ -431,5 +431,6 @@
 	"right-globalgroupmembership": "Muuta globaalsete rühmade liikmesust",
 	"right-globalgrouppermissions": "Hallata globaalseid rühmi",
 	"sessionprovider-centralauthsessionprovider": "kesksed küpsisepõhised seansid",
-	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-tüüpi seansid"
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-tüüpi seansid",
+	"centralauth-action-forbidden-shared-domain": "Sul pole lubatud ühises autentimisdomeenis seda toimingut sooritada."
 }
