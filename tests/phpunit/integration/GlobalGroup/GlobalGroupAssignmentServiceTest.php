@@ -121,6 +121,55 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 		], $groups );
 	}
 
+	public function testGetChangeableGroupsWithRestrictedGroup(): void {
+		$this->overrideConfigValue(
+			MainConfigNames::RestrictedGroups,
+			[ 'steward' => [ 'memberConditions' => [ APCOND_EDITCOUNT, 1000 ] ] ]
+		);
+
+		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock->method( 'getDefinedGroups' )
+			->willReturn( [ 'steward' ] );
+		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+
+		$service = CentralAuthServices::getGlobalGroupAssignmentService();
+
+		$performer = $this->mockAnonUltimateAuthority();
+		// Target has 0 edits by default, which is below the 1000-edit threshold
+		$target = $this->getRegisteredTestUser();
+
+		$groups = $service->getChangeableGroups( $performer, $target );
+
+		$this->assertNotContains( 'steward', $groups['add'] );
+		$this->assertArrayHasKey( 'steward', $groups['restricted'] );
+		$this->assertFalse( $groups['restricted']['steward']['condition-met'] );
+		$this->assertFalse( $groups['restricted']['steward']['ignore-condition'] );
+	}
+
+	public function testSaveChangesFailsForRestrictedGroup(): void {
+		$this->overrideConfigValue(
+			MainConfigNames::RestrictedGroups,
+			[ 'steward' => [ 'memberConditions' => [ APCOND_EDITCOUNT, 1000 ] ] ]
+		);
+
+		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock->method( 'getDefinedGroups' )
+			->willReturn( [ 'steward' ] );
+		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+
+		$service = CentralAuthServices::getGlobalGroupAssignmentService();
+
+		$performer = $this->mockRegisteredUltimateAuthority();
+		// Target has 0 edits by default, which is below the 1000-edit threshold
+		$target = $this->getRegisteredTestUser();
+
+		[ $added ] = $service->saveChangesToUserGroups( $performer, $target, [ 'steward' ], [], [] );
+
+		$this->assertSame( [], $added,
+			'Ineligible user must not be added to a restricted global group' );
+		$this->assertSame( [], $target->getGlobalGroups() );
+	}
+
 	public function testSaveUserGroups(): void {
 		$add = [ 'shortened-group', 'added-group', 'autogroup' ];
 		$remove = [ 'removed-group' ];
@@ -402,7 +451,20 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 				'privateConditions' => [ 'some condition' ],
 				'expectedConditions' => [],
 			],
-			// TODO (T422133) - test restricted global groups once they are supported
+			'Restricted group with only public conditions' => [
+				'groupConditions' => [
+					'memberConditions' => [ APCOND_AGE, 0 ]
+				],
+				'privateConditions' => [ 'some condition' ],
+				'expectedConditions' => [],
+			],
+			'Restricted group with a private condition' => [
+				'groupConditions' => [
+					'memberConditions' => [ APCOND_AGE, 0 ]
+				],
+				'privateConditions' => [ APCOND_AGE ],
+				'expectedConditions' => [ APCOND_AGE ],
+			],
 		];
 	}
 }

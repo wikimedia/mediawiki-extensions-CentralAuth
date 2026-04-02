@@ -49,6 +49,8 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 		CAMainConfigNames::CentralAuthCentralWiki,
 	];
 
+	private array $changeableGroupsCache = [];
+
 	public function __construct(
 		private readonly ServiceOptions $options,
 		private readonly Language $contentLanguage,
@@ -97,6 +99,7 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 
 	/**
 	 * Returns the groups that the performer can add or remove from the target user.
+	 * The result of this function is cached for the duration of the request.
 	 * @return array [
 	 *   'add' => [ addablegroups ],
 	 *   'remove' => [ removablegroups ],
@@ -112,6 +115,29 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 		Authority $performer,
 		UserIdentity|CentralAuthUser $target,
 		bool $evaluatePrivateConditionsForRestrictedGroups = true
+	): array {
+		// Perform condition checks against the local user identity
+		$target = $this->getUserIdentity( $target );
+
+		// In order not to run multiple hooks every time this method is called in a request,
+		// we cache the result based on performer and target.
+		$cacheKey = $performer->getUser()->getName() . ':' . $target->getName() . ':' .
+			( $evaluatePrivateConditionsForRestrictedGroups ? 'private' : 'public' );
+
+		if ( !isset( $this->changeableGroupsCache[$cacheKey] ) ) {
+			$this->changeableGroupsCache[$cacheKey] = $this->computeChangeableGroups(
+				$performer, $target, $evaluatePrivateConditionsForRestrictedGroups );
+		}
+		return $this->changeableGroupsCache[$cacheKey];
+	}
+
+	/**
+	 * Backend for {@see getChangeableGroups}, does actual computation without caching.
+	 */
+	private function computeChangeableGroups(
+		Authority $performer,
+		UserIdentity $target,
+		bool $evaluatePrivateConditionsForRestrictedGroups
 	): array {
 		if ( !$performer->isAllowed( 'globalgroupmembership' ) ) {
 			return [
@@ -132,8 +158,35 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 			'message' => 'centralauth-globalgroupperms-automatic-group-reason',
 		] );
 
+		$restrictedGroupChecker = $this->getRestrictedGroupChecker( $target );
+
+		$cannotAdd = [];
+		foreach ( $manualGroups as $group ) {
+			if ( $restrictedGroupChecker->isGroupRestricted( $group ) ) {
+				$restrictedGroups[$group] = [
+					'condition-met' => $restrictedGroupChecker
+						->doPerformerAndTargetMeetConditionsForAddingToGroup(
+							$performer->getUser(),
+							$target,
+							$group,
+							$evaluatePrivateConditionsForRestrictedGroups
+						),
+					'ignore-condition' => $restrictedGroupChecker
+						->canPerformerIgnoreGroupRestrictions( $performer, $group ),
+				];
+				$canPerformerAdd = $restrictedGroupChecker->canPerformerAddTargetToGroup(
+					$performer, $target, $group, $evaluatePrivateConditionsForRestrictedGroups );
+				// If null was returned, keep the group in addable, as it's potentially addable
+				// Caller will be able to differentiate between true and null through the 'condition-met'
+				// value in $groups['restricted'][$group]
+				if ( $canPerformerAdd === false ) {
+					$cannotAdd[] = $group;
+				}
+			}
+		}
+
 		return [
-			'add' => $manualGroups,
+			'add' => array_values( array_diff( $manualGroups, $cannotAdd ) ),
 			'remove' => $manualGroups,
 			'restricted' => $restrictedGroups,
 		];
@@ -170,6 +223,9 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 		foreach ( $oldGroups as $group => $expiration ) {
 			$oldGroupMemberships[$group] = new UserGroupMembership( $target->getId(), $group, $expiration );
 		}
+
+		$this->logAccessToPrivateConditions( $performer, $target, $addGroups, $newExpiries, $oldGroupMemberships );
+
 		$changeable = $this->getChangeableGroups( $performer, $target );
 		self::enforceChangeGroupPermissions( $addGroups, $removeGroups, $newExpiries,
 			$oldGroupMemberships, $changeable );
@@ -437,6 +493,7 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 
 	/** @inheritDoc */
 	protected function getRestrictedGroupChecker( UserIdentity $target ): RestrictedUserGroupChecker {
+		// Read conditions from the central wiki, so that they are the same across the wiki farm
 		$centralWiki = $this->options->get( CAMainConfigNames::CentralAuthCentralWiki ) ?? false;
 		return $this->restrictedGroupCheckerFactory->getRestrictedUserGroupChecker( $centralWiki );
 	}
