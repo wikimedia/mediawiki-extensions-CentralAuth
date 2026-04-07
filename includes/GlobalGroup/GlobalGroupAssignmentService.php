@@ -13,14 +13,16 @@ use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
+use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Language\Language;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Page\PageIdentityValue;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Site\SiteLookup;
 use MediaWiki\Title\Title;
-use MediaWiki\User\ActorStoreFactory;
-use MediaWiki\User\UserGroupAssignmentService;
+use MediaWiki\User\RestrictedUserGroupChecker;
+use MediaWiki\User\RestrictedUserGroupCheckerFactory;
+use MediaWiki\User\UserGroupAssignmentServiceBase;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
@@ -40,29 +42,27 @@ use Wikimedia\Message\MessageSpecifier;
  *
  * @since 1.45
  */
-class GlobalGroupAssignmentService {
+class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 
 	/** @internal Only public for service wiring use. */
 	public const CONSTRUCTOR_OPTIONS = [
 		CAMainConfigNames::CentralAuthCentralWiki,
 	];
 
-	private ServiceOptions $options;
-
 	public function __construct(
-		ServiceOptions $options,
-		private readonly ActorStoreFactory $actorStoreFactory,
+		private readonly ServiceOptions $options,
 		private readonly Language $contentLanguage,
 		private readonly UserNameUtils $userNameUtils,
 		private readonly HookContainer $hookContainer,
 		private readonly SiteLookup $siteLookup,
+		private readonly RestrictedUserGroupCheckerFactory $restrictedGroupCheckerFactory,
 		private readonly GlobalGroupLookup $globalGroupLookup,
 		private readonly CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
 		private readonly CentralAuthDatabaseManager $databaseManager,
 		private readonly MessageLocalizer $messageLocalizer,
 	) {
-		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
+		parent::__construct( new HookRunner( $this->hookContainer ) );
+		$this->options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 	}
 
 	/**
@@ -108,7 +108,11 @@ class GlobalGroupAssignmentService {
 	 *  ]
 	 * @phan-return array{add:list<string>,remove:list<string>,restricted:array<string,array>}
 	 */
-	public function getChangeableGroups( Authority $performer, CentralAuthUser $target ): array {
+	public function getChangeableGroups(
+		Authority $performer,
+		UserIdentity|CentralAuthUser $target,
+		bool $evaluatePrivateConditionsForRestrictedGroups = true
+	): array {
 		if ( !$performer->isAllowed( 'globalgroupmembership' ) ) {
 			return [
 				'add' => [],
@@ -167,7 +171,7 @@ class GlobalGroupAssignmentService {
 			$oldGroupMemberships[$group] = new UserGroupMembership( $target->getId(), $group, $expiration );
 		}
 		$changeable = $this->getChangeableGroups( $performer, $target );
-		UserGroupAssignmentService::enforceChangeGroupPermissions( $addGroups, $removeGroups, $newExpiries,
+		self::enforceChangeGroupPermissions( $addGroups, $removeGroups, $newExpiries,
 			$oldGroupMemberships, $changeable );
 
 		$anyChanged =
@@ -380,5 +384,73 @@ class GlobalGroupAssignmentService {
 			$remove,
 			$groupExpiries
 		);
+	}
+
+	/**
+	 * @inheritDoc
+	 * @phan-param UserIdentity|CentralAuthUser $target (so that Phan catches the widened type)
+	 */
+	public function validateUserGroups(
+		Authority $performer,
+		UserIdentity|CentralAuthUser $target,
+		array $addGroups,
+		array $removeGroups,
+		array $newExpiries,
+		array $groupMemberships,
+	): array {
+		$target = $this->getUserIdentity( $target );
+		return parent::validateUserGroups(
+			$performer,
+			$target,
+			$addGroups,
+			$removeGroups,
+			$newExpiries,
+			$groupMemberships,
+		);
+	}
+
+	/**
+	 * @inheritDoc
+	 * @phan-param UserIdentity|CentralAuthUser $target (so that Phan catches the widened type)
+	 */
+	public function logAccessToPrivateConditions(
+		Authority $performer,
+		UserIdentity|CentralAuthUser $target,
+		array $addGroups,
+		array $newExpiries,
+		array $existingUGMs,
+	): void {
+		$target = $this->getUserIdentity( $target );
+		parent::logAccessToPrivateConditions(
+			$performer,
+			$target,
+			$addGroups,
+			$newExpiries,
+			$existingUGMs,
+		);
+	}
+
+	/** @inheritDoc */
+	protected function getKnownGroups( UserIdentity $target ): array {
+		return $this->globalGroupLookup->getDefinedGroups();
+	}
+
+	/** @inheritDoc */
+	protected function getRestrictedGroupChecker( UserIdentity $target ): RestrictedUserGroupChecker {
+		$centralWiki = $this->options->get( CAMainConfigNames::CentralAuthCentralWiki ) ?? false;
+		return $this->restrictedGroupCheckerFactory->getRestrictedUserGroupChecker( $centralWiki );
+	}
+
+	/**
+	 * Returns a local identity user corresponding to the passed object.
+	 * If $user is instance of UserIdentity, return it.
+	 * Otherwise, find the local user on the current wiki with the same name. Attachment status is not checked.
+	 */
+	private function getUserIdentity( UserIdentity|CentralAuthUser $user ): UserIdentity {
+		if ( $user instanceof CentralAuthUser ) {
+			$localId = $user->getLocalId( WikiMap::getCurrentWikiId() ) ?? 0;
+			return new UserIdentityValue( $localId, $user->getName() );
+		}
+		return $user;
 	}
 }

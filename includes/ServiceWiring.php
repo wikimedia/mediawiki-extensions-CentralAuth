@@ -178,11 +178,11 @@ return [
 				GlobalGroupAssignmentService::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
 			),
-			$services->getActorStoreFactory(),
 			$services->getContentLanguage(),
 			$services->getUserNameUtils(),
 			$services->getHookContainer(),
 			$services->getSiteLookup(),
+			$services->getRestrictedUserGroupCheckerFactory(),
 			CentralAuthServices::getGlobalGroupLookup(),
 			CentralAuthServices::getAutomaticGlobalGroupManager(),
 			CentralAuthServices::getDatabaseManager(),

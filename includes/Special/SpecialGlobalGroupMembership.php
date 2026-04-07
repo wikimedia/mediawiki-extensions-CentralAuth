@@ -148,8 +148,14 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		$this->groupMemberships = $this->getGlobalGroupMemberships();
 		$this->enableWatchUser = false;
 
+		// Don't evaluate private conditions for restricted groups here, so that we don't leak
+		// information about them through the checkboxes being disabled or enabled
+		// An exception is if a user tries to change their own groups - it doesn't leak anything
+		$performer = $this->getAuthority()->getUser();
+		$evaluatePrivateConditions = $user->getName() === $performer->getName();
+
 		$changeableGroups = $this->globalGroupAssignmentService->getChangeableGroups(
-			$this->getAuthority(), $user );
+			$this->getAuthority(), $user, $evaluatePrivateConditions );
 		$this->setChangeableGroups( $changeableGroups );
 		$this->addAnnotationsForAutomaticGroups();
 	}
@@ -206,6 +212,17 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		// addgroup contains also existing groups with changed expiry
 		[ $addgroup, $removegroup, $groupExpiries ] = $this->splitGroupsIntoAddRemove(
 			$newGroups, $this->groupMemberships );
+
+		$invalidGroups = $this->globalGroupAssignmentService->validateUserGroups(
+			$this->getAuthority(), $user, $addgroup, $removegroup, $groupExpiries, $this->groupMemberships );
+		if ( $invalidGroups ) {
+			// We cannot simply use $invalidGroups for logging, as it doesn't contain groups with satisfied conditions
+			// (and lack of error may be an information itself, which should be logged)
+			$this->globalGroupAssignmentService->logAccessToPrivateConditions(
+				$this->getAuthority(), $user, $addgroup, $groupExpiries, $this->groupMemberships );
+			return $this->formatInvalidGroupsStatus( $invalidGroups, $user->getName() );
+		}
+
 		$this->globalGroupAssignmentService->saveChangesToUserGroups( $this->getAuthority(), $user, $addgroup,
 			$removegroup, $groupExpiries,
 			$reason, MessageValue::new( 'centralauth-automatic-global-groups-reason-global' ) );

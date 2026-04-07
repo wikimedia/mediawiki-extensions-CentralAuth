@@ -6,8 +6,10 @@
 
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\MockWikiMapTrait;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
@@ -25,6 +27,11 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 	use MockAuthorityTrait;
 	use MockWikiMapTrait;
 	use TempUserTestTrait;
+
+	public function setUp(): void {
+		parent::setUp();
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthCentralWiki, null );
+	}
 
 	private function getRegisteredTestUser( ?User $user = null ): CentralAuthUser {
 		$user = $user ?? $this->getMutableTestUser()->getUser();
@@ -289,6 +296,112 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 				'',
 				MessageValue::new( 'centralauth-automatic-global-groups-reason-global' )
 			],
+		];
+	}
+
+	/** @dataProvider provideValidateUserGroups */
+	public function testValidateUserGroups(
+		bool $hasPermission,
+		array $addGroups,
+		array $definedGroups,
+		array $automaticGroups,
+		array $expectedInvalid
+	): void {
+		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock->method( 'getDefinedGroups' )->willReturn( $definedGroups );
+		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+
+		$autoGroupMock = $this->createMock( CentralAuthAutomaticGlobalGroupManager::class );
+		$autoGroupMock->method( 'getAutomaticGlobalGroups' )->willReturn( $automaticGroups );
+		$this->setService( 'CentralAuth.CentralAuthAutomaticGlobalGroupManager', $autoGroupMock );
+
+		$performer = $this->mockRegisteredAuthorityWithPermissions(
+			$hasPermission ? [ 'globalgroupmembership' ] : []
+		);
+		$target = $this->getRegisteredTestUser();
+
+		$service = CentralAuthServices::getGlobalGroupAssignmentService();
+		$result = $service->validateUserGroups( $performer, $target, $addGroups, [], [], [] );
+
+		$this->assertSame( $expectedInvalid, $result );
+	}
+
+	public static function provideValidateUserGroups(): array {
+		return [
+			'Valid group addition returns no errors' => [
+				'hasPermission' => true,
+				'addGroups' => [ 'steward' ],
+				'definedGroups' => [ 'steward' ],
+				'automaticGroups' => [],
+				'expectedInvalid' => [],
+			],
+			'Insufficient rights returns rights reason' => [
+				'hasPermission' => false,
+				'addGroups' => [ 'steward' ],
+				'definedGroups' => [ 'steward' ],
+				'automaticGroups' => [],
+				'expectedInvalid' => [ 'steward' => 'rights' ],
+			],
+			'Adding automatic group returns restricted reason' => [
+				'hasPermission' => true,
+				'addGroups' => [ 'autogroup' ],
+				'definedGroups' => [ 'steward', 'autogroup' ],
+				'automaticGroups' => [ 'autogroup' ],
+				'expectedInvalid' => [ 'autogroup' => 'restricted' ],
+			],
+			'Adding unknown group is silently ignored' => [
+				'hasPermission' => true,
+				'addGroups' => [ 'nonexistent-group' ],
+				'definedGroups' => [ 'steward' ],
+				'automaticGroups' => [],
+				'expectedInvalid' => [],
+			],
+		];
+	}
+
+	/** @dataProvider provideLogAccessToPrivateConditions */
+	public function testLogAccessToPrivateConditions(
+		array $groupConditions,
+		array $privateConditions,
+		array $expectedConditions
+	): void {
+		$this->overrideConfigValue( MainConfigNames::RestrictedGroups, [ 'steward' => $groupConditions ] );
+		$this->overrideConfigValue( MainConfigNames::UserRequirementsPrivateConditions, $privateConditions );
+
+		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock->method( 'getDefinedGroups' )->willReturn( [ 'steward' ] );
+		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+
+		$autoGroupMock = $this->createMock( CentralAuthAutomaticGlobalGroupManager::class );
+		$autoGroupMock->method( 'getAutomaticGlobalGroups' )->willReturn( [] );
+		$this->setService( 'CentralAuth.CentralAuthAutomaticGlobalGroupManager', $autoGroupMock );
+
+		$performer = $this->mockRegisteredAuthorityWithPermissions( [ 'globalgroupmembership' ] );
+		$target = $this->getRegisteredTestUser();
+
+		$hookFired = false;
+		$this->setTemporaryHook(
+			'ReadPrivateUserRequirementsCondition',
+			function ( $performer, $target, $conditions ) use ( &$hookFired, $expectedConditions ) {
+				$this->assertSame( $expectedConditions, $conditions );
+				$hookFired = true;
+			}
+		);
+
+		$service = CentralAuthServices::getGlobalGroupAssignmentService();
+		$service->logAccessToPrivateConditions( $performer, $target, [ 'steward' ], [], [] );
+
+		$this->assertSame( $expectedConditions !== [], $hookFired );
+	}
+
+	public static function provideLogAccessToPrivateConditions(): array {
+		return [
+			'Unrestricted group' => [
+				'groupConditions' => [],
+				'privateConditions' => [ 'some condition' ],
+				'expectedConditions' => [],
+			],
+			// TODO (T422133) - test restricted global groups once they are supported
 		];
 	}
 }
