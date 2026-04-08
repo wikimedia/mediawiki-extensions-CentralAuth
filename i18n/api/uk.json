@@ -4,7 +4,8 @@
 			"Base",
 			"Piramidion",
 			"Vlad5250",
-			"Ата"
+			"Ата",
+			"Movses"
 		]
 	},
 	"apierror-centralauth-badsession": "Centralauthtoken можна отримати тільки при використанні сесій CentralAuth.",
