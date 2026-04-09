@@ -39,6 +39,7 @@
 			"KATRINE1992",
 			"LlamaAl",
 			"Locos epraix",
+			"Luigi Nakano",
 			"Luis Felipe Schenone",
 			"Macofe",
 			"Manuelt15",
@@ -545,5 +546,6 @@
 	"right-globalgrouppermissions": "Gestionar grupos de usuario globales",
 	"sessionprovider-centralauthsessionprovider": "sesiones centrales basadas en cookies",
 	"sessionprovider-centralauthtokensessionprovider": "sesiones centralauthtoken",
-	"centralauth-badaccess-blacklisted": "Tu cuenta figura en una lista que impide que puedas solicitar un cambio de nombre de usuario."
+	"centralauth-badaccess-blacklisted": "Tu cuenta figura en una lista que impide que puedas solicitar un cambio de nombre de usuario.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "El usuario es miembro {{PLURAL:$1|del grupo global|de todos los siguientes grupos globales}}: $2"
 }
