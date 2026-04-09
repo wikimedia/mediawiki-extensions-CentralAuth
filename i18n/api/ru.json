@@ -23,6 +23,7 @@
 	"apierror-centralauth-renameinprogress": "Невозможно использовать, поскольку идёт переименование участника.",
 	"apihelp-centralauthtoken-example-1": "Получить токен CentralAuth",
 	"apihelp-centralauthtoken-summary": "Получить токен CentralAuth для аутентифицированного запроса к связанной вики",
+	"apihelp-createlocalaccount-example-1": "Принудительно создать локальную учётную запись для [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Причина создания локальной учётной записи.",
 	"apihelp-deleteglobalaccount-example-1": "Удалить глобальную учётную запись для [[User:Example]]",
 	"apihelp-deleteglobalaccount-param-reason": "Причина удаления участника.",
