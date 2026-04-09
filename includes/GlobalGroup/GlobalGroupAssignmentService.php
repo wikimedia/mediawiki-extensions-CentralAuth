@@ -49,6 +49,9 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 		CAMainConfigNames::CentralAuthCentralWiki,
 	];
 
+	/** Name of the scope, as used to read from $wgRestrictedGroups */
+	public const RESTRICTION_SCOPE = 'centralauth';
+
 	private array $changeableGroupsCache = [];
 
 	public function __construct(
@@ -495,7 +498,8 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 	protected function getRestrictedGroupChecker( UserIdentity $target ): RestrictedUserGroupChecker {
 		// Read conditions from the central wiki, so that they are the same across the wiki farm
 		$centralWiki = $this->options->get( CAMainConfigNames::CentralAuthCentralWiki ) ?? false;
-		return $this->restrictedGroupCheckerFactory->getRestrictedUserGroupChecker( $centralWiki );
+		return $this->restrictedGroupCheckerFactory
+			->getRestrictedUserGroupChecker( $centralWiki, self::RESTRICTION_SCOPE );
 	}
 
 	/**

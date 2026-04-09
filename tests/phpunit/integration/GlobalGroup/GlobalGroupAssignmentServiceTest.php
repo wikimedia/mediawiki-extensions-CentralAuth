@@ -7,6 +7,7 @@
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MainConfigNames;
@@ -14,6 +15,7 @@ use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\MockWikiMapTrait;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
+use MediaWiki\User\RestrictedUserGroupConfigReader;
 use MediaWiki\User\User;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\WikiMap\WikiMap;
@@ -144,6 +146,44 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 		$this->assertArrayHasKey( 'steward', $groups['restricted'] );
 		$this->assertFalse( $groups['restricted']['steward']['condition-met'] );
 		$this->assertFalse( $groups['restricted']['steward']['ignore-condition'] );
+	}
+
+	public function testUsesCentralAuthScopeForRestrictedGroups(): void {
+		// By condition definitions, none of these should be assignable.
+		// However, group2 is scoped to local group only, so it should be assignable as global group.
+		$this->overrideConfigValue(
+			MainConfigNames::RestrictedGroups,
+			[
+				'group1' => [
+					'memberConditions' => [ APCOND_EDITCOUNT, 1000 ],
+				],
+				'group2' => [
+					'memberConditions' => [ APCOND_EDITCOUNT, 1000 ],
+					'scope' => [ RestrictedUserGroupConfigReader::SCOPE_LOCAL ],
+				],
+				'group3' => [
+					'memberConditions' => [ APCOND_EDITCOUNT, 1000 ],
+					'scope' => [ GlobalGroupAssignmentService::RESTRICTION_SCOPE ],
+				],
+			]
+		);
+
+		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock->method( 'getDefinedGroups' )
+			->willReturn( [ 'group1', 'group2', 'group3' ] );
+		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+
+		$service = CentralAuthServices::getGlobalGroupAssignmentService();
+
+		$performer = $this->mockAnonUltimateAuthority();
+		// Target has 0 edits by default, which is below the 1000-edit threshold
+		$target = $this->getRegisteredTestUser();
+
+		$groups = $service->getChangeableGroups( $performer, $target );
+
+		$this->assertNotContains( 'group1', $groups['add'] );
+		$this->assertContains( 'group2', $groups['add'] );
+		$this->assertNotContains( 'group3', $groups['add'] );
 	}
 
 	public function testSaveChangesFailsForRestrictedGroup(): void {
