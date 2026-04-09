@@ -380,20 +380,6 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 	}
 
 	/** @inheritDoc */
-	protected function sessionDataToExport( $user ) {
-		$data = parent::sessionDataToExport( $user );
-
-		// CentralAuth needs to prevent core login-from-session to
-		// avoid bugs like T124409
-		$centralUser = CentralAuthUser::getInstance( $user );
-		if ( $centralUser->isAttached() ) {
-			unset( $data['wsToken'] );
-		}
-
-		return $data;
-	}
-
-	/** @inheritDoc */
 	protected function cookieDataToExport( $user, $remember ) {
 		// If we're going to set CA cookies, don't remember in core cookies.
 		if ( $this->enable && $remember ) {
@@ -433,15 +419,6 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		$centralUser = CentralAuthUser::getInstance( $user );
 
 		if ( $centralUser->exists() && ( $centralUser->isAttached() || !$user->getId() ) ) {
-			// CentralAuth needs to prevent core login-from-session to
-			// avoid bugs like T124409
-			$data = &$session->getData();
-			if ( array_key_exists( 'wsToken', $data ) ) {
-				unset( $data['wsToken'] );
-				$session->dirty();
-			}
-			unset( $data );
-
 			$metadata = $session->getProviderMetadata();
 			$metadata['CentralAuthSource'] = 'CentralAuth';
 			$session->setProviderMetadata( $metadata );
