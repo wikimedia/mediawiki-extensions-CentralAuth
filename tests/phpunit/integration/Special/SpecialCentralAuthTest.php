@@ -500,6 +500,28 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( 'Test reason for local disable', $rowHtml );
 	}
 
+	public function testViewForGloballyBlockedUserWhenLocalWikiDoesNotApplyGlobalBlocks(): void {
+		$this->markTestSkippedIfExtensionNotLoaded( 'GlobalBlocking' );
+		$targetUsername = $this->getTestCentralAuthUser();
+
+		// Globally block the target user, but set wgApplyGlobalBlocks to false on the wiki
+		$globalBlockingServices = GlobalBlockingServices::wrap( $this->getServiceContainer() );
+		$globalBlockingServices->getGlobalBlockManager()
+			->block(
+				$targetUsername, 'testing', 'indefinite',
+				$this->getTestUser( [ 'steward' ] )->getUserIdentity()
+			);
+		$this->overrideConfigValue( 'ApplyGlobalBlocks', false );
+
+		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
+
+		$this->assertStringNotContainsString(
+			'mw-centralauth-globalblock-exempt-list',
+			$html,
+			'Global block wikis exempt table should not show entries for wikis which disable all global blocks'
+		);
+	}
+
 	private function verifyForExistingGlobalAccountOnFormSubmission(
 		string $targetUsername, array $requestData, bool $userCanSuppress, bool $userCanUnmerge, bool $userCanLock
 	): string {

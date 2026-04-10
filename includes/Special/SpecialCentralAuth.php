@@ -616,14 +616,21 @@ class SpecialCentralAuth extends SpecialPage {
 		$html = '';
 		$queryWikis = array_merge( $this->mAttachedLocalAccounts, $this->mUnattachedLocalAccounts );
 		foreach ( $queryWikis as $wiki ) {
+			$wikiId = $wiki['wiki'];
+
 			// Check if the global block is disabled on the given wiki, and if it is then add it to the table HTML.
-			$localBlockStatus = $globalBlockingServices->getGlobalBlockLocalStatusLookup()
-				->getLocalStatusInfo( $globalBlock->gb_id, $wiki['wiki'] );
+			// We skip showing this info on wikis where global blocks do not apply to not make the page too long
+			$globalBlockLocalStatusLookup = $globalBlockingServices->getGlobalBlockLocalStatusLookup();
+			if ( !$globalBlockLocalStatusLookup->doGlobalBlocksApplyOnWiki( $wikiId ) ) {
+				continue;
+			}
+
+			$localBlockStatus = $globalBlockLocalStatusLookup->getLocalStatusInfo( $globalBlock->gb_id, $wikiId );
 			if ( $localBlockStatus === false ) {
 				continue;
 			}
 
-			$row = Html::rawElement( 'td', [], $this->foreignUserLink( $wiki['wiki'] ) ) .
+			$row = Html::rawElement( 'td', [], $this->foreignUserLink( $wikiId ) ) .
 				Html::element( 'td', [], $localBlockStatus['reason'] );
 			$html .= Html::rawElement( 'tr', [], $row );
 		}
