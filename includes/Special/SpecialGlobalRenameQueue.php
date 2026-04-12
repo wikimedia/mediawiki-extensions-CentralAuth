@@ -622,8 +622,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			);
 		}
 
-		// Show a message if the new username matches the deny list
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'TitleBlacklist' ) ) {
+		// In regular rename requests, show a message if the new username matches the deny list
+		if ( !$isVanishRequest && ExtensionRegistry::getInstance()->isLoaded( 'TitleBlacklist' ) ) {
 			$match = TitleBlacklist::singleton()->isBlacklisted(
 				Title::makeTitleSafe( NS_USER, $req->getNewName() ),
 				'new-account'
