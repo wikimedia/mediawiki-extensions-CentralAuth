@@ -80,10 +80,17 @@ class CentralAuthTestUser {
 
 	public static function newFromTestUser( TestUser $testUser ): self {
 		$user = $testUser->getUser();
+
+		// Get a new gu_id for each CentralAuthTestUser returned on subsequent calls
+		// to this method to avoid errors when attempting to save these users to the DB
+		static $centralId = 2000;
+		$centralId++;
+
 		return new self(
 			username: $user->getName(),
 			password: $testUser->getPassword(),
 			attrs: [
+				'gu_id' => $centralId,
 				'gu_registration' => $user->getRegistration(),
 				'gu_email' => $user->getEmail(),
 				'gu_email_authenticated' => $user->getEmailAuthenticationTimestamp(),
