@@ -60,7 +60,9 @@
 		if ( this.noTokenNeeded ) {
 			tokenPromise = $.Deferred().reject();
 		} else {
-			tokenPromise = this.localApi.getCentralAuthToken( ajaxOptions );
+			// some mw.Api calls modify ajaxOptions, make sure not to reuse it
+			const tokenAjaxOptions = Object.assign( {}, ajaxOptions );
+			tokenPromise = this.localApi.getCentralAuthToken( tokenAjaxOptions );
 		}
 
 		return tokenPromise.then(
