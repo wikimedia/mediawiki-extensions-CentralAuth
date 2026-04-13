@@ -222,6 +222,7 @@
 				"UserFactory",
 				"UserNameUtils",
 				"CentralAuth.CentralAuthAntiSpoofManager",
+				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.CentralAuthUIService",
 				"CentralAuth.GlobalRenameDenylist",
 				"CentralAuth.GlobalRenameFactory",
@@ -1042,6 +1043,14 @@
 			}
 		},
 		"preauth": {
+			"CentralAuthPreviouslyRenamedAccountPreAuthenticationProvider": {
+				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthPreviouslyRenamedAccountPreAuthenticationProvider",
+				"services": [
+					"ConnectionProvider",
+					"UserFactory",
+					"CentralAuth.CentralAuthDatabaseManager"
+				]
+			},
 			"CentralAuthSharedDomainPreAuthenticationProvider": {
 				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthSharedDomainPreAuthenticationProvider",
 				"services": [
