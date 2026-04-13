@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\User\UserIdentity;
+use Wikimedia\Rdbms\IReadableDatabase;
 
 /**
  * Log a global rename into the local log
@@ -74,5 +75,26 @@ class GlobalRenameUserLogger {
 
 		$logid = $logEntry->insert();
 		$logEntry->publish( $logid );
+	}
+
+	/**
+	 * This method does not check log_deleted, and thus will reveal the existence of hidden rename log
+	 * entries. This seems unavoidable: we have to reveal that the username can't be registered when
+	 * someone tries to register it, and there is no other plausible error message we could give.
+	 * Please review whether that's appropriate for your use case when calling it.
+	 */
+	public static function isPreviouslyRenamedAccount( string $username, IReadableDatabase $db ): bool {
+		return (bool)$db->newSelectQueryBuilder()
+			->from( 'logging' )
+			->join( 'log_search', null, 'ls_log_id=log_id' )
+			->where( [
+				'ls_field' => 'oldname',
+				'ls_value' => strtr( $username, '_', ' ' ),
+				'log_type' => 'gblrename',
+				'log_namespace' => NS_SPECIAL,
+			] )
+			->field( '1' )
+			->caller( __METHOD__ )
+			->fetchField();
 	}
 }

@@ -42,6 +42,7 @@ use OOUI\MessageWidget;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use StatusValue;
+use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\LBFactory;
 
 /**
@@ -614,16 +615,27 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$req->getName(),
 			$spoofUser->getConflicts()
 		);
-		$renamedUser = $this->caAntiSpoofManager->getOldRenamedUserName( $req->getNewName() );
-		if ( $renamedUser !== null ) {
-			$conflicts[] = $renamedUser;
-		}
 		if ( $conflicts ) {
 			$htmlForm->addHeaderHtml(
 				$this->msg(
 					'globalrenamequeue-request-antispoof-conflicts',
 					$this->getLanguage()->commaList( $conflicts )
 				)->numParams( count( $conflicts ) )->parseAsBlock()
+			);
+		}
+
+		if (
+			GlobalRenameUserLogger::isPreviouslyRenamedAccount(
+				$req->getNewName(),
+				$this->databaseManager->getLocalDBFromRecency(
+					$this->getConfig()->get( CAMainConfigNames::CentralAuthOldNameAntiSpoofWiki ) ?:
+						WikiMap::getCurrentWikiId(),
+					IDBAccessObject::READ_NORMAL
+				)
+			)
+		) {
+			$htmlForm->addHeaderHtml(
+				$this->msg( 'globalrenamequeue-request-previously-renamed-account' )->parseAsBlock()
 			);
 		}
 

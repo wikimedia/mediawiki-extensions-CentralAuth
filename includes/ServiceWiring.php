@@ -31,7 +31,6 @@ return [
 		MediaWikiServices $services
 	): CentralAuthAntiSpoofManager {
 		return new CentralAuthAntiSpoofManager(
-			new ServiceOptions( CentralAuthAntiSpoofManager::CONSTRUCTOR_OPTIONS, $services->getMainConfig() ),
 			LoggerFactory::getInstance( 'antispoof' ),
 			$services->getConnectionProvider(),
 			CentralAuthServices::getDatabaseManager( $services )

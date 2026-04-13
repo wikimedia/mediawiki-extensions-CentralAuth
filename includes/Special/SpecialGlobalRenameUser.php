@@ -2,9 +2,12 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
+use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
+use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -19,7 +22,9 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\User\UserRigorOptions;
+use MediaWiki\WikiMap\WikiMap;
 use StatusValue;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 class SpecialGlobalRenameUser extends FormSpecialPage {
 
@@ -32,6 +37,11 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @var string
 	 */
 	private $oldUsername;
+
+	/**
+	 * @var bool
+	 */
+	private $allowPreviouslyRenamedAccount = false;
 
 	/**
 	 * @var bool
@@ -51,6 +61,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	private UserFactory $userFactory;
 	private UserNameUtils $userNameUtils;
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
+	private CentralAuthDatabaseManager $databaseManager;
 	private CentralAuthUIService $uiService;
 	private GlobalRenameDenylist $globalRenameDenylist;
 	private GlobalRenameFactory $globalRenameFactory;
@@ -65,6 +76,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		UserFactory $userFactory,
 		UserNameUtils $userNameUtils,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
+		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService,
 		GlobalRenameDenylist $globalRenameDenylist,
 		GlobalRenameFactory $globalRenameFactory,
@@ -74,6 +86,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		$this->userFactory = $userFactory;
 		$this->userNameUtils = $userNameUtils;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
+		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 		$this->globalRenameDenylist = $globalRenameDenylist;
 		$this->globalRenameFactory = $globalRenameFactory;
@@ -137,6 +150,12 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				'name' => 'suppressredirects',
 				'label-message' => 'centralauth-rename-form-suppressredirects',
 				'type' => 'check',
+			],
+			'allowpreviouslyrenamedaccount' => [
+				'id' => 'mw-globalrenameuser-allowpreviouslyrenamedaccount',
+				'name' => 'allowpreviouslyrenamedaccount',
+				'label-message' => 'centralauth-rename-form-allowpreviouslyrenamedaccount',
+				'type' => 'check'
 			],
 			'overrideantispoof' => [
 				'id' => 'mw-globalrenameuser-overrideantispoof',
@@ -220,6 +239,20 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			return StatusValue::newFatal( 'centralauth-rename-badusername' );
 		}
 
+		if (
+			!$this->allowPreviouslyRenamedAccount &&
+			GlobalRenameUserLogger::isPreviouslyRenamedAccount(
+				$newUser->getName(),
+				$this->databaseManager->getLocalDBFromRecency(
+					$this->getConfig()->get( CAMainConfigNames::CentralAuthOldNameAntiSpoofWiki ) ?:
+						WikiMap::getCurrentWikiId(),
+					IDBAccessObject::READ_LATEST
+				)
+			)
+		) {
+			return StatusValue::newFatal( 'centralauth-rename-previously-renamed-account' );
+		}
+
 		if ( !$this->overrideAntiSpoof ) {
 			$spoofUser = $this->caAntiSpoofManager->getSpoofUser( $newUser->getName() );
 			$conflicts = $this->uiService->processAntiSpoofConflicts(
@@ -227,12 +260,6 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 				$oldUser->getName(),
 				$spoofUser->getConflicts()
 			);
-
-			$renamedUser = $this->caAntiSpoofManager->getOldRenamedUserName( $newUser->getName() );
-			if ( $renamedUser !== null ) {
-				$conflicts[] = $renamedUser;
-			}
-
 			if ( $conflicts ) {
 				return StatusValue::newFatal(
 					$this->msg( 'centralauth-rename-antispoofconflicts2' )
@@ -283,6 +310,10 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 * @return Status
 	 */
 	public function onSubmit( array $data ) {
+		if ( $data['allowpreviouslyrenamedaccount'] ) {
+			$this->allowPreviouslyRenamedAccount = true;
+		}
+
 		if ( $data['overrideantispoof'] ) {
 			$this->overrideAntiSpoof = true;
 		}
