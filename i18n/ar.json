@@ -162,6 +162,7 @@
 	"centralauth-attach-title": "تأكيد الحساب",
 	"centralauth-automatic-global-groups-reason-local": "يتم تحديث المجموعات العالمية تلقائيًا بسبب تغيير المجموعة المحلية.",
 	"centralauth-automatic-global-groups-reason-global": "يتم تحديث المجموعات العالمية تلقائيًا بسبب تغيير المجموعة العالمية.",
+	"centralauth-automatic-global-groups-reason-config": "يتم تحديث المجموعات العالمية تلقائيًا بعد تغيير الإعدادات.",
 	"centralauth-block-already-locked": "الحساب [[Special:CentralAuth/$1|$1]] مقفل بالفعل على المستوى العام.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1| عمل | إجراءات}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|صفحة|صفحات}}",
@@ -272,6 +273,7 @@
 	"centralauth-globalgroupperms-rights": "الصلاحيات",
 	"centralauth-globalgroupperms-automatic-group-reason": "عُينت تلقائيًا",
 	"centralauth-globalgroupperms-automatic-group-info": "سيتم تعيين المستخدم تلقائيًا: $1",
+	"centralauth-globalgroupperms-automatic-group-info-reverse": "يتم تخصيصها تلقائيًا لأعضاء فئة: $1",
 	"centralauth-groupname": "مزرعة الويكي هذه",
 	"centralauth-hidden-blockreason": "البيانات الشاملة تم إخفائها بواسطة $1 في $2 نتيجة للسبب التالي:$3",
 	"centralauth-hours-ago": "قبل {{PLURAL:$1|ساعة|ساعتين|$1 ساعات|$1 ساعة}}",
@@ -373,7 +375,7 @@
 	"centralauth-rename-form-overridetitleblacklist": "تجاوز القائمة السوداء للعناوين",
 	"centralauth-rename-form-reason": "السبب",
 	"centralauth-rename-form-suppressredirects": "منع إنشاء التحويلات",
-	"centralauth-rename-globaleditcount-threshold": "هذا المستخدم لديه أكثر من $1 {{PLURAL:$1|تعديل}}، الرجاء تأكيد أنك متأكد من أنك تريد إعادة تسمية هذا المستخدم وأن إداري نظام متاح لمراقبة عملية إعادة التسمية هذه.",
+	"centralauth-rename-globaleditcount-threshold": "يملك هذا المستخدم أكثر من $1 {{PLURAL:$1|تعديل}}. يُرجى التأكيد على رغبتك في تغيير اسم هذا المستخدم.",
 	"centralauth-rename-listed-on-denylist": "تم إدراج هذا المستخدم في قائمة رفض إعادة التسمية العامة. لإعادة تسمية هذا المستخدم ، يجب تغيير قائمة الرفض أولاً.",
 	"centralauth-rename-movelog": "نُقِلت الصفحة آليا عند إعادة تسمية المستخدم «[[Special:CentralAuth/$1|$1]]» إلى «[[Special:CentralAuth/$2|$2]]».",
 	"centralauth-rename-notinprogress": "لا يوجد عمليات إعادة تسمية فيد المعالجة لاسم المستخدم $1. من المحتمل أنها قد أنجزت.",
@@ -581,5 +583,6 @@
 	"sessionprovider-centralauthsessionprovider": "جلسات مركزية قائمة على ملفات تعريف الارتباط (كوكيز)",
 	"sessionprovider-centralauthtokensessionprovider": "جلسات centralauthtoken",
 	"centralauth-badaccess-blacklisted": "لا يمكنك طلب إعادة تسمية عالمية، لأنك موجود في قائمة الرفض.",
-	"centralauth-action-forbidden-shared-domain": "لا يُسمح لك بتنفيذ هذا الإجراء على نطاق المصادقة المشترك."
+	"centralauth-action-forbidden-shared-domain": "لا يُسمح لك بتنفيذ هذا الإجراء على نطاق المصادقة المشترك.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "المستخدم عضو في {{PLURAL:$1|المجموعة العالمية|جميع المجموعات العالمية}}: $2"
 }
