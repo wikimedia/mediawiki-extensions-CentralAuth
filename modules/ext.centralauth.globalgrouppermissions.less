@@ -1,7 +1,7 @@
 /**
  * Styles for Special:GlobalGroupPermissions
  */
-
+@import 'mediawiki.skin.variables.less';
 @import 'mediawiki.mixins.less';
 
 .mw-centralauth-editgroup-readonly .mw-centralauth-editgroup-unchecked {
@@ -26,4 +26,11 @@ table.mw-centralauth-groups-table tr {
 
 table.mw-centralauth-groups-table th:first-child {
 	width: 30%;
+}
+
+table.mw-centralauth-groups-table {
+	& tr:target,
+	& tr:target code {
+		background-color: @background-color-progressive-subtle;
+	}
 }

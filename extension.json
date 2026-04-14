@@ -188,6 +188,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialGlobalGroupPermissions",
 			"services": [
 				"PermissionManager",
+				"RestrictedUserGroupConfigReader",
 				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.GlobalGroupLookup"
 			]

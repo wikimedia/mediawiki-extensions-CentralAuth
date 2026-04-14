@@ -16,6 +16,7 @@ use Exception;
 use InvalidArgumentException;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
@@ -26,9 +27,13 @@ use MediaWiki\Logging\LogPage;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Message\Message;
 use MediaWiki\Output\OutputPage;
+use MediaWiki\Parser\Sanitizer;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Specials\Helpers\UserRequirementsConditionFormatterTrait;
 use MediaWiki\Title\Title;
+use MediaWiki\Title\TitleValue;
+use MediaWiki\User\RestrictedUserGroupConfigReader;
 use MediaWiki\User\User;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\Xml\XmlSelect;
@@ -42,19 +47,18 @@ use StatusValue;
  */
 class SpecialGlobalGroupPermissions extends SpecialPage {
 
-	private PermissionManager $permissionManager;
-	private CentralAuthDatabaseManager $databaseManager;
-	private GlobalGroupLookup $globalGroupLookup;
+	use UserRequirementsConditionFormatterTrait;
+
+	private const RESTRICTED_GROUPS_SECTION_ID = 'restricted_groups';
+	private const RESTRICTED_GROUPS_ID_PREFIX = 'group_restrictions-';
 
 	public function __construct(
-		PermissionManager $permissionManager,
-		CentralAuthDatabaseManager $databaseManager,
-		GlobalGroupLookup $globalGroupLookup
+		private readonly PermissionManager $permissionManager,
+		private readonly RestrictedUserGroupConfigReader $restrictedUserGroupConfigReader,
+		private readonly CentralAuthDatabaseManager $databaseManager,
+		private readonly GlobalGroupLookup $globalGroupLookup
 	) {
 		parent::__construct( 'GlobalGroupPermissions' );
-		$this->permissionManager = $permissionManager;
-		$this->databaseManager = $databaseManager;
-		$this->globalGroupLookup = $globalGroupLookup;
 	}
 
 	/** @inheritDoc */
@@ -142,6 +146,8 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 				->prepareForm()
 				->displayForm( false );
 		}
+
+		$this->outputRestrictedGroupsConfig();
 	}
 
 	/**
@@ -162,11 +168,17 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			)
 		);
 
+		$centralWiki = $this->getConfig()->get( CAMainConfigNames::CentralAuthCentralWiki ) ?? false;
+		$restrictedGroups = $this->restrictedUserGroupConfigReader
+			->getConfig( $centralWiki, GlobalGroupAssignmentService::RESTRICTION_SCOPE );
+
 		foreach ( $groups as $groupName ) {
 			$groupInfo = $this->getGroupInfo( $groupName );
 			$wikiset = $groupInfo['wikiset'];
 
-			$table .= Html::openElement( 'tr' );
+			$table .= Html::openElement( 'tr',
+				[ 'id' => Sanitizer::escapeIdForAttribute( $groupName ) ]
+			);
 
 			// Column with group name, links and other group information (if it behaves differently from
 			// normal local groups)
@@ -230,6 +242,20 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 							)
 						) )
 						->escaped()
+				);
+			}
+
+			if (
+				array_key_exists( $groupName, $restrictedGroups )
+				&& $restrictedGroups[$groupName]->hasAnyConditions()
+			) {
+				$restrictionsSection = Sanitizer::escapeIdForAttribute(
+					self::RESTRICTED_GROUPS_ID_PREFIX . $groupName
+				);
+				$table .= Html::rawElement( 'p', [],
+					$this->msg( 'listgrouprights-restricted' )
+						->params( '#' . $restrictionsSection )
+						->parse()
 				);
 			}
 
@@ -741,6 +767,87 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			->rows( $insertRows )
 			->caller( __METHOD__ )
 			->execute();
+	}
+
+	private function outputRestrictedGroupsConfig(): void {
+		$out = $this->getOutput();
+		$centralWiki = $this->getConfig()->get( CAMainConfigNames::CentralAuthCentralWiki ) ?? false;
+		$restrictedGroups = $this->restrictedUserGroupConfigReader->getConfig(
+			$centralWiki, GlobalGroupAssignmentService::RESTRICTION_SCOPE );
+
+		$definedGroups = $this->globalGroupLookup->getDefinedGroups();
+		$restrictedGroups = array_filter(
+			$restrictedGroups,
+			static fn ( $restriction, $group ) => in_array( $group, $definedGroups )
+				&& $restriction->hasAnyConditions(),
+			ARRAY_FILTER_USE_BOTH
+		);
+
+		if ( !$restrictedGroups ) {
+			return;
+		}
+
+		$header = $this->msg( 'listgrouprights-restrictedgroups-header' )->text();
+		$out->addHTML(
+			Html::element( 'h2', [
+				'id' => Sanitizer::escapeIdForAttribute( self::RESTRICTED_GROUPS_SECTION_ID )
+			], $header ) .
+			Html::openElement( 'table', [ 'class' => 'wikitable mw-centralauth-groups-table' ] ) .
+			Html::rawElement( 'tr', [],
+				Html::element( 'th', [], $this->msg( 'centralauth-globalgroupperms-group' )->text() ) .
+				Html::element( 'th', [], $this->msg( 'listgrouprights-restrictedgroups-config' )->text() )
+			)
+		);
+		ksort( $restrictedGroups );
+
+		foreach ( $restrictedGroups as $group => $groupConfig ) {
+			$out->addHTML(
+				Html::openElement( 'tr', [
+					'id' => Sanitizer::escapeIdForAttribute( self::RESTRICTED_GROUPS_ID_PREFIX . $group )
+				] ) .
+				Html::rawElement( 'td', [],
+					$this->getLinkRenderer()->makeKnownLink(
+						new TitleValue( NS_SPECIAL, $this->getLocalName(), $group ),
+						$this->getLanguage()->getGroupName( $group )
+					)
+				) .
+				Html::openElement( 'td' )
+			);
+
+			$conditionsParts = [];
+			$memberConditions = $groupConfig->getMemberConditions();
+			if ( $memberConditions ) {
+				$memberHtml = $this->msg( 'listgrouprights-restrictedgroups-memberconditions' )->parse();
+				$memberHtml .= Html::rawElement( 'ul', [],
+					Html::rawElement( 'li', [], $this->formatCondition( $memberConditions ) )
+				);
+				$conditionsParts[] = $memberHtml;
+			}
+			$updaterConditions = $groupConfig->getUpdaterConditions();
+			if ( $updaterConditions ) {
+				$updaterHtml = $this->msg( 'listgrouprights-restrictedgroups-updaterconditions' )->parse();
+				$updaterHtml .= Html::rawElement( 'ul', [],
+					Html::rawElement( 'li', [], $this->formatCondition( $updaterConditions ) )
+				);
+				$conditionsParts[] = $updaterHtml;
+			}
+			if ( $groupConfig->canBeIgnored() ) {
+				$conditionsParts[] = $this->msg( 'listgrouprights-restrictedgroups-bypassable' )
+					->params( User::getRightDescription( 'ignore-restricted-groups' ) )
+					->rawParams( Html::element( 'code', [], 'ignore-restricted-groups' ) )
+					->parse();
+			}
+			if ( $groupConfig->allowsAutomaticDemotion() ) {
+				$conditionsParts[] = $this->msg( 'listgrouprights-restrictedgroups-autodemotion' )->parse();
+			}
+			$out->addHTML( implode( '', $conditionsParts ) );
+
+			$out->addHTML(
+				Html::closeElement( 'td' ) .
+				Html::closeElement( 'tr' )
+			);
+		}
+		$out->addHTML( Html::closeElement( 'table' ) );
 	}
 
 	/**
