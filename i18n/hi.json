@@ -556,5 +556,5 @@
 	"right-globalgrouppermissions": "वैश्विक समूह प्रबंधित करना",
 	"sessionprovider-centralauthsessionprovider": "केंद्रीय कुकी-आधारित सत्र",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken सत्र",
-	"centralauth-action-forbidden-shared-domain": "आपको साँझित प्रमाणीकरण डोमेन पर यह क्रिया करने की अनुमति नहीं है।"
+	"centralauth-action-forbidden-shared-domain": "आपको साझा प्रमाणीकरण डोमेन पर यह क्रिया करने की अनुमति नहीं है।"
 }
