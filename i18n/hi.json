@@ -561,5 +561,5 @@
 	"sessionprovider-centralauthsessionprovider": "केंद्रीय कुकी-आधारित सत्र",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken सत्र",
 	"centralauth-badaccess-blacklisted": "आप एक वैश्विक पुनः नामकरण का अनुरोध नहीं कर सकते क्योंकि आप अस्वीकार की सूची में हैं।",
-	"centralauth-action-forbidden-shared-domain": "आपको साँझित प्रमाणीकरण डोमेन पर यह क्रिया करने की अनुमति नहीं है।"
+	"centralauth-action-forbidden-shared-domain": "आपको साझा प्रमाणीकरण डोमेन पर यह क्रिया करने की अनुमति नहीं है।"
 }
