@@ -282,6 +282,16 @@ class SharedDomainHookHandler implements
 	public function onBeforePageDisplay( $out, $skin ): void {
 		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
 			$out->disallowUserJs();
+			// T381096: CentralAuth hides broken search interface on the auth domain
+			$out->addInlineStyle( <<<CSS
+				.minerva-search-form,
+				.vector-sticky-header-search-toggle,
+				.vector-search-box,
+				.mw-centralauth-T381096 {
+					/* T381096: CentralAuth hides broken search interface on the auth domain */
+					visibility: hidden !important;
+				}
+				CSS );
 		}
 	}
 
