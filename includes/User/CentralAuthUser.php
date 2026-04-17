@@ -721,7 +721,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return string
 	 */
 	protected function getCacheKey( WANObjectCache $cache ) {
-		return $cache->makeGlobalKey( 'centralauth-user', md5( $this->mName ) );
+		return $cache->makeGlobalKey( 'centralauth-user', hash( 'sha256', $this->mName ) );
 	}
 
 	/**
