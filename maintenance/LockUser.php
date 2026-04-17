@@ -16,7 +16,7 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 
 /**
- * Locks a specific global account.
+ * Locks a specific global account, or multiple accounts from a file.
  *
  * @author Taavi Väänänen <taavi@wikimedia.org>
  */
@@ -26,7 +26,8 @@ class LockUser extends Maintenance {
 		parent::__construct();
 
 		$this->requireExtension( 'CentralAuth' );
-		$this->addOption( 'username', 'User to act on', true, true );
+		$this->addOption( 'username', 'User to act on', false, true );
+		$this->addOption( 'file', 'File containing usernames to act on (one per line)', false, true );
 		$this->addOption( 'actor', 'Username to log with', false, true );
 		$this->addOption( 'reason', 'Reason to use', false, true );
 		$this->addOption( 'bot', 'Mark as bot in RC', false, false );
@@ -34,25 +35,52 @@ class LockUser extends Maintenance {
 	}
 
 	public function execute() {
+		$username = $this->getOption( 'username' );
+		$file = $this->getOption( 'file' );
+
+		if ( !$username && !$file ) {
+			$this->fatalError( "Either --username or --file must be provided" );
+		}
+
+		if ( $username && $file ) {
+			$this->fatalError( "Cannot use both --username and --file" );
+		}
+
+		$context = $this->makeContext();
+
+		if ( $file ) {
+			$this->lockUsersFromFile( $file, $context );
+		} else {
+			$this->lockUser( $username, $context );
+		}
+	}
+
+	/**
+	 * Lock or unlock a single user.
+	 *
+	 * @param string $username Username to lock/unlock
+	 * @param IContextSource $context
+	 */
+	private function lockUser( string $username, IContextSource $context ): void {
 		$user = CentralAuthUser::getPrimaryInstanceByName(
 			$this->getServiceContainer()
 				->getUserNameUtils()
-				->getCanonical( $this->getOption( 'username' ) )
+				->getCanonical( $username )
 		);
 		$username = $user->getName();
-		$context = $this->getContext();
 
 		if ( !$user->exists() ) {
-			$this->fatalError( "User '$username' does not exist" );
+			$this->error( "User '$username' does not exist" );
+			return;
 		}
 
 		if ( $user->isLocked() && !$this->getOption( 'unlock', false ) ) {
-			$this->output( "User '$username' is already locked" . PHP_EOL );
+			$this->error( "User '$username' is already locked" );
 			return;
 		}
 
 		if ( !$user->isLocked() && $this->getOption( 'unlock', false ) ) {
-			$this->output( "User '$username' is not locked" . PHP_EOL );
+			$this->error( "User '$username' is not locked" );
 			return;
 		}
 
@@ -65,14 +93,48 @@ class LockUser extends Maintenance {
 		);
 
 		if ( $status->isGood() ) {
-			$this->output( "(Un)locked user '$username'" . PHP_EOL );
-			return;
+			$action = $this->getOption( 'unlock', false ) ? 'Unlocked' : 'Locked';
+			$this->output( "$action user '$username'" . PHP_EOL );
+		} else {
+			$this->error( "Failed to " .
+				( $this->getOption( 'unlock', false ) ? 'unlock' : 'lock' ) .
+				" user '$username'"
+			);
+			$this->error( $status );
 		}
-
-		$this->fatalError( $status );
 	}
 
-	private function getContext(): IContextSource {
+	/**
+	 * Lock or unlock multiple users from a file.
+	 *
+	 * @param string $filePath Path to the file containing usernames (one per line)
+	 * @param IContextSource $context
+	 */
+	private function lockUsersFromFile( string $filePath, IContextSource $context ): void {
+		$lines = $this->readUsersFile( $filePath );
+		if ( $lines === false ) {
+			$this->fatalError( "Failed to read file '$filePath'" );
+		}
+
+		$this->output( "Processing " . count( $lines ) . " users" . PHP_EOL );
+
+		foreach ( $lines as $username ) {
+			$username = trim( $username );
+			if ( $username === '' ) {
+				continue;
+			}
+			$this->lockUser( $username, $context );
+		}
+	}
+
+	/**
+	 * Wrapper for the {@link file()} function to allow mocking in tests
+	 */
+	protected function readUsersFile( string $filePath ): array|false {
+		return file( $filePath, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES );
+	}
+
+	private function makeContext(): IContextSource {
 		$context = RequestContext::newExtraneousContext( Title::makeTitleSafe( NS_SPECIAL, 'Badtitle' ) );
 
 		$username = $this->getOption( 'actor' );

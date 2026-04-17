@@ -8,6 +8,7 @@ use MediaWiki\Tests\Maintenance\MaintenanceBaseTestCase;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
+use Wikimedia\TestingAccessWrapper;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\Maintenance\LockUser
@@ -23,7 +24,6 @@ class LockUserTest extends MaintenanceBaseTestCase {
 
 	public function testUserDoesNotExist(): void {
 		$this->maintenance->setOption( 'username', $this->getMutableTestUser()->getUserIdentity()->getName() );
-		$this->expectCallToFatalError();
 		$this->expectOutputRegex( '/does not exist/' );
 		$this->maintenance->execute();
 	}
@@ -80,7 +80,7 @@ class LockUserTest extends MaintenanceBaseTestCase {
 
 		$centralAuthUser->invalidateCache();
 		$this->assertTrue( $centralAuthUser->isLocked(), 'User should be locked after the script runs' );
-		$this->expectOutputRegex( '/\(Un\)locked user/' );
+		$this->expectOutputRegex( '/Locked user/' );
 		$this->commonAssertGlobalStatusChangeLog( $centralAuthUser->getName(), User::MAINTENANCE_SCRIPT_USER );
 	}
 
@@ -96,7 +96,7 @@ class LockUserTest extends MaintenanceBaseTestCase {
 
 		$centralAuthUser->invalidateCache();
 		$this->assertFalse( $centralAuthUser->isLocked(), 'User should be unlocked after the script runs' );
-		$this->expectOutputRegex( '/\(Un\)locked user/' );
+		$this->expectOutputRegex( '/Unlocked user/' );
 		$this->commonAssertGlobalStatusChangeLog( $centralAuthUser->getName(), User::MAINTENANCE_SCRIPT_USER );
 	}
 
@@ -112,7 +112,7 @@ class LockUserTest extends MaintenanceBaseTestCase {
 
 		$centralAuthUser->invalidateCache();
 		$this->assertTrue( $centralAuthUser->isLocked(), 'User should be locked after the script runs' );
-		$this->expectOutputRegex( '/\(Un\)locked user/' );
+		$this->expectOutputRegex( '/Locked user/' );
 		$this->commonAssertGlobalStatusChangeLog( $centralAuthUser->getName(), $actorUser->getName() );
 	}
 
@@ -128,6 +128,66 @@ class LockUserTest extends MaintenanceBaseTestCase {
 		$this->maintenance->execute();
 	}
 
+	public function testLockUsersFromFile(): void {
+		$user1 = CentralAuthTestUser::newFromTestUser( $this->getMutableTestUser() )
+			->save( $this->getDb() )
+			->getCentralUser();
+		$user2 = CentralAuthTestUser::newFromTestUser( $this->getMutableTestUser() )
+			->save( $this->getDb() )
+			->getCentralUser();
+		$this->assertNotSame( $user1->getName(), $user2->getName(), 'Test users should be different' );
+
+		$tempFilePath = $this->getNewTempFile();
+		// Two user names, one on each line, and then a whitespace-only line to test that blank lines are ignored.
+		file_put_contents( $tempFilePath, $user1->getName() . "\n" . $user2->getName() . "\n \n" );
+
+		$this->maintenance->setOption( 'file', $tempFilePath );
+		$this->maintenance->execute();
+
+		$user1->invalidateCache();
+		$this->assertTrue( $user1->isLocked(), 'User1 should be locked after the script runs' );
+		$user2->invalidateCache();
+		$this->assertTrue( $user2->isLocked(), 'User2 should be locked after the script runs' );
+		$this->expectOutputRegex( '/Processing 2 users/' );
+		$this->expectOutputRegex( '/Locked user/' );
+	}
+
+	public function testLockUsersFromFileWhenFileCannotBeRead(): void {
+		// Mock the file() call to return false. Doing it via a mock avoids the
+		// PHP warning created when the method returns false
+		$this->maintenance = $this->getMockBuilder( LockUser::class )
+			->onlyMethods( [ 'readUsersFile' ] )
+			->getMock();
+		$this->maintenance->method( 'readUsersFile' )
+			->willReturn( false );
+		TestingAccessWrapper::newFromObject( $this->maintenance )->isTesting = true;
+
+		$this->maintenance->setOption( 'file', 'bad-file.txt' );
+		$this->expectCallToFatalError();
+		$this->expectOutputRegex( "/Failed to read file 'bad-file\.txt'/" );
+		$this->maintenance->execute();
+	}
+
+	public function testNeitherUsernameNorFileProvided(): void {
+		$this->expectCallToFatalError();
+		$this->expectOutputRegex( '/Either --username or --file must be provided/' );
+		$this->maintenance->execute();
+	}
+
+	public function testBothUsernameAndFileProvided(): void {
+		$centralAuthUser = CentralAuthTestUser::newFromTestUser( $this->getMutableTestUser() )
+			->save( $this->getDb() )
+			->getCentralUser();
+		$tempFilePath = $this->getNewTempFile();
+		file_put_contents( $tempFilePath, $centralAuthUser->getName() );
+
+		$this->maintenance->setOption( 'username', $centralAuthUser->getName() );
+		$this->maintenance->setOption( 'file', $tempFilePath );
+		$this->expectCallToFatalError();
+		$this->expectOutputRegex( '/Cannot use both --username and --file/' );
+		$this->maintenance->execute();
+	}
+
 	public function testLockOfTemporaryAccount(): void {
 		$this->enableAutoCreateTempUser();
 
@@ -138,7 +198,6 @@ class LockUserTest extends MaintenanceBaseTestCase {
 		$centralAuthUser = $centralAuthTestUser->save( $this->getDb() )->getCentralUser();
 
 		$this->maintenance->setOption( 'username', $centralAuthUser->getName() );
-		$this->expectCallToFatalError();
 		$this->expectOutputRegex( '/You cannot lock temporary accounts/' );
 		$this->maintenance->execute();
 	}
