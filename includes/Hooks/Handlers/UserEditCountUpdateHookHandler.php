@@ -2,9 +2,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
+use MediaWiki\Deferred\Hook\UserEditCountUpdateHook;
 use MediaWiki\Extension\CentralAuth\CentralAuthEditCounter;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Hook\UserEditCountUpdateHook;
 
 class UserEditCountUpdateHookHandler implements UserEditCountUpdateHook {
 

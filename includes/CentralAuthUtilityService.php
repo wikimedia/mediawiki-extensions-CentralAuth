@@ -15,10 +15,10 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobFactory;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Permissions\Authority;
+use MediaWiki\Profiler\Profiler;
 use MediaWiki\Title\TitleFactory;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
-use Profiler;
 use RuntimeException;
 use StatusValue;
 

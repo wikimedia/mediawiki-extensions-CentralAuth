@@ -5,9 +5,9 @@ namespace MediaWiki\Extension\CentralAuth;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HTMLForm\HTMLForm;
+use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Logging\LogEventsList;
 use MediaWiki\Title\TitleFactory;
-use MessageLocalizer;
 
 /**
  * Shared utilities for building UIs in CentralAuth

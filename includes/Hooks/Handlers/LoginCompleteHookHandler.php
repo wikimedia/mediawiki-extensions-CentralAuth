@@ -17,15 +17,15 @@ use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\TempUserCreatedRedirectHook;
-use MediaWiki\Hook\UserLoginCompleteHook;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
+use MediaWiki\Specials\Hook\UserLoginCompleteHook;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\Utils\MWCryptRand;
 use MediaWiki\WikiMap\WikiMap;
-use MWCryptRand;
 
 class LoginCompleteHookHandler implements
 	UserLoginCompleteHook,

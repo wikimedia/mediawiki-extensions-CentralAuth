@@ -8,11 +8,11 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Hook\ContributionsToolLinksHook;
-use MediaWiki\Hook\SpecialContributionsBeforeMainOutputHook;
 use MediaWiki\Html\Html;
 use MediaWiki\Logging\LogEventsList;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Specials\Hook\ContributionsToolLinksHook;
+use MediaWiki\Specials\Hook\SpecialContributionsBeforeMainOutputHook;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\Title\Title;
 use MediaWiki\User\User;

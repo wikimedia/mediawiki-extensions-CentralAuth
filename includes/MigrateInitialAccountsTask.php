@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Status\Status;
-use MWCryptRand;
+use MediaWiki\Utils\MWCryptRand;
 
 class MigrateInitialAccountsTask extends \MediaWiki\Installer\Task\Task {
 

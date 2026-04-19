@@ -14,7 +14,7 @@ use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\TemporaryPasswordAuthenticationRequest;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Languages\LanguageNameUtils;
+use MediaWiki\Language\LanguageNameUtils;
 use MediaWiki\Mail\Emailer;
 use MediaWiki\Mail\MailAddress;
 use MediaWiki\MainConfigNames;

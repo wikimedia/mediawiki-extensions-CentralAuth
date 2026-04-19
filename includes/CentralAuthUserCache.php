@@ -2,8 +2,8 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
-use MapCacheLRU;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use Wikimedia\ObjectCache\MapCacheLRU;
 
 /**
  * An in-process cache for CentralAuthUser objects

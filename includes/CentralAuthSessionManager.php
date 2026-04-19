@@ -13,7 +13,7 @@ use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
-use MWCryptRand;
+use MediaWiki\Utils\MWCryptRand;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\ObjectCache\CachedBagOStuff;
 use Wikimedia\Stats\StatsFactory;

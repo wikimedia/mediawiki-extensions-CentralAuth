@@ -16,10 +16,10 @@ use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Tests\MockWikiMapTrait;
+use MediaWiki\Tests\Specials\SpecialPageTestBase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\WikiMap\WikiMap;
-use SpecialPageTestBase;
 use Wikimedia\TestingAccessWrapper;
 
 /**

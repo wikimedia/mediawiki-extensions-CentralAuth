@@ -4,8 +4,8 @@ namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration;
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Utils\MWCryptRand;
 use MediaWikiIntegrationTestCase;
-use MWCryptRand;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 

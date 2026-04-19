@@ -21,9 +21,9 @@ use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Hook\PostLoginRedirectHook;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\SpecialPage\Hook\AuthChangeFormFieldsHook;
+use MediaWiki\Specials\Hook\PostLoginRedirectHook;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;
 

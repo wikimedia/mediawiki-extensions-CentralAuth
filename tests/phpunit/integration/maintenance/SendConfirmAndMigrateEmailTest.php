@@ -2,10 +2,10 @@
 namespace MediaWiki\CentralAuth\Tests\Phpunit\Integration\Maintenance;
 
 use CentralAuthTestUser;
-use MailAddress;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\Maintenance\SendConfirmAndMigrateEmail;
 use MediaWiki\Mail\IEmailer;
+use MediaWiki\Mail\MailAddress;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Site\HashSiteStore;
 use MediaWiki\Site\MediaWikiSite;

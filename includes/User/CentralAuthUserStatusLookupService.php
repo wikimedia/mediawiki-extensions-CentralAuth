@@ -7,9 +7,9 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use LogPage;
 use MediaWiki\Logging\DatabaseLogEntry;
 use MediaWiki\Logging\LogEntry;
+use MediaWiki\Logging\LogPage;
 use MediaWiki\Permissions\Authority;
 use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\SelectQueryBuilder;

@@ -14,7 +14,7 @@ use MediaWiki\Http\HttpRequestFactory;
 use MediaWiki\Page\WikiPageFactory;
 use MediaWiki\Title\Title;
 use Psr\Log\LoggerInterface;
-use StringUtils;
+use Wikimedia\StringUtils\StringUtils;
 
 /**
  * Utility class to deal with global rename denylist.

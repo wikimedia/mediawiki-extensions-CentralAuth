@@ -15,7 +15,7 @@ use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Hook\UserLogoutCompleteHook;
+use MediaWiki\Specials\Hook\UserLogoutCompleteHook;
 use MediaWiki\User\Hook\UserLogoutHook;
 use MediaWiki\User\User;
 use MediaWiki\WikiMap\WikiMap;

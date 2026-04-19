@@ -12,8 +12,8 @@ use MediaWiki\Html\Html;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\NamespaceInfo;
 use MediaWiki\User\UserFactory;
+use MediaWiki\Utils\MWCryptRand;
 use MediaWiki\WikiMap\WikiMap;
-use MWCryptRand;
 use RuntimeException;
 
 class SpecialMergeAccount extends SpecialPage {

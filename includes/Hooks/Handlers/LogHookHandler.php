@@ -7,11 +7,11 @@
 
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
-use MediaWiki\Hook\LogEventsListGetExtraInputsHook;
-use MediaWiki\Hook\SpecialLogAddLogSearchRelationsHook;
+use MediaWiki\Logging\Hook\LogEventsListGetExtraInputsHook;
 use MediaWiki\Logging\LogEventsList;
 use MediaWiki\Logging\LogPage;
 use MediaWiki\Request\WebRequest;
+use MediaWiki\Specials\Hook\SpecialLogAddLogSearchRelationsHook;
 use MediaWiki\User\UserNameUtils;
 use Wikimedia\Rdbms\IConnectionProvider;
 

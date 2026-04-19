@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Tests\Logging\LogFormatterTestCase;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\LBFactory;
 

@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\MediaWikiServices;
-use MWCryptRand;
+use MediaWiki\Utils\MWCryptRand;
 use Psr\Log\LoggerInterface;
 use Psr\Log\NullLogger;
 use Wikimedia\Assert\Assert;

@@ -11,7 +11,7 @@ use Exception;
 use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Hook\PasswordPoliciesForUserHook;
+use MediaWiki\Password\Hook\PasswordPoliciesForUserHook;
 use MediaWiki\Password\UserPasswordPolicy;
 use MediaWiki\User\User;
 

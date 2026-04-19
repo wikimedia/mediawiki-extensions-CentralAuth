@@ -9,8 +9,8 @@ namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Special;
 
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Request\FauxRequest;
+use MediaWiki\Tests\Specials\SpecialPageTestBase;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
-use SpecialPageTestBase;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\Special\SpecialMergeAccount

@@ -11,8 +11,8 @@ use MediaWiki\Json\JwtException;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\User\UserIdentity;
+use MediaWiki\Utils\MWCryptRand;
 use MediaWiki\WikiMap\WikiMap;
-use MWCryptRand;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**

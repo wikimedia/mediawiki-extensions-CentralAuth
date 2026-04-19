@@ -6,6 +6,8 @@
  */
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserStatusLookupService;
+use MediaWiki\Logging\DatabaseLogEntry;
+use MediaWiki\Logging\LogPage;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Title\Title;
