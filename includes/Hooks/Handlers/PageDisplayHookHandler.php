@@ -61,12 +61,10 @@ class PageDisplayHookHandler implements BeforePageDisplayHook {
 			instanceof CentralAuthTokenSessionProvider
 		) {
 			// Prevent user scripts and styles when centralauthtoken is in use
-			$out->reduceAllowedModules(
-				Module::TYPE_SCRIPTS, Module::ORIGIN_USER_SITEWIDE
-			);
-			$out->reduceAllowedModules(
-				Module::TYPE_STYLES, Module::ORIGIN_USER_SITEWIDE
-			);
+			// Also disallow other on-wiki JS/CSS (T422306)
+			$out->disallowUserJs();
+			// And disallow all JS in general (T422306)
+			$out->reduceAllowedModules( Module::TYPE_SCRIPTS, Module::ORIGIN_NONE );
 		}
 
 		if ( !$out->getUser()->isRegistered() ) {
