@@ -388,11 +388,11 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 
 		$out->output( true );
 		$this->assertSame(
-			Module::ORIGIN_USER_SITEWIDE,
+			Module::ORIGIN_NONE,
 			$out->getAllowedModules( Module::TYPE_SCRIPTS )
 		);
 		$this->assertSame(
-			Module::ORIGIN_USER_SITEWIDE,
+			Module::ORIGIN_CORE_INDIVIDUAL,
 			$out->getAllowedModules( Module::TYPE_STYLES )
 		);
 	}

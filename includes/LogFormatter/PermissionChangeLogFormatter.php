@@ -37,11 +37,7 @@ class PermissionChangeLogFormatter extends LogFormatter {
 			$oldRights = $params[3] === '(none)' ? [] : explode( ', ', $params[3] );
 			$newRights = $params[4] === '(none)' ? [] : explode( ', ', $params[4] );
 			return [
-				// False positive
-				// @phan-suppress-next-line SecurityCheck-XSS
 				3 => $this->makeRightsList( $oldRights ),
-				// False positive
-				// @phan-suppress-next-line SecurityCheck-XSS
 				4 => $this->makeRightsList( $newRights ),
 			];
 		}
