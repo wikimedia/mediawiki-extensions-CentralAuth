@@ -11,15 +11,18 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
+ * This class is responsible for managing the global group configuration, such as assigned rights and
+ * wiki sets the group is active on.
+ *
+ * This class doesn't manage what groups a user is assigned to.
+ *
  * @since 1.37
- * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
-class GlobalGroupLookup {
+class GlobalGroupManager {
 
-	private CentralAuthDatabaseManager $dbManager;
-
-	public function __construct( CentralAuthDatabaseManager $dbManager ) {
-		$this->dbManager = $dbManager;
+	public function __construct(
+		private readonly CentralAuthDatabaseManager $dbManager
+	) {
 	}
 
 	/**
@@ -74,3 +77,9 @@ class GlobalGroupLookup {
 			->fetchFieldValues();
 	}
 }
+
+/**
+ * Retain the old class name for backwards compatibility.
+ * @deprecated since 1.46
+ */
+class_alias( GlobalGroupManager::class, 'MediaWiki\\Extension\\CentralAuth\\GlobalGroup\\GlobalGroupLookup' );

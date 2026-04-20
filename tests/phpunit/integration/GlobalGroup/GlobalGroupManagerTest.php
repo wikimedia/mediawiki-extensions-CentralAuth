@@ -6,15 +6,15 @@
  */
 
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
-use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
- * @covers \MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup
+ * @covers \MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager
  * @group Database
  * @author Taavi "Majavah" Väänänen <hi@taavi.wtf>
  */
-class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
+class GlobalGroupManagerTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @dataProvider provideFlags
@@ -23,8 +23,8 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
 		$dbManager->method( 'getCentralDBFromRecency' )->willReturn( $this->getDb() );
 
-		$lookup = new GlobalGroupLookup( $dbManager );
-		$groups = $lookup->getDefinedGroups( $flags );
+		$manager = new GlobalGroupManager( $dbManager );
+		$groups = $manager->getDefinedGroups( $flags );
 
 		$this->assertArrayEquals( [ 'steward', 'global-sysop' ], $groups );
 	}
@@ -36,10 +36,10 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
 		$dbManager->method( 'getCentralDBFromRecency' )->willReturn( $this->getDb() );
 
-		$lookup = new GlobalGroupLookup( $dbManager );
-		$stewardRights = $lookup->getRightsForGroup( 'steward', $flags );
-		$globalSysopRights = $lookup->getRightsForGroup( 'global-sysop', $flags );
-		$nonexistentGroupRights = $lookup->getRightsForGroup( 'does-not-exist', $flags );
+		$manager = new GlobalGroupManager( $dbManager );
+		$stewardRights = $manager->getRightsForGroup( 'steward', $flags );
+		$globalSysopRights = $manager->getRightsForGroup( 'global-sysop', $flags );
+		$nonexistentGroupRights = $manager->getRightsForGroup( 'does-not-exist', $flags );
 
 		$this->assertArrayEquals( [ 'read', 'delete' ], $stewardRights );
 		$this->assertArrayEquals( [ 'read' ], $globalSysopRights );
@@ -53,10 +53,10 @@ class GlobalGroupLookupTest extends MediaWikiIntegrationTestCase {
 			->with( $flags )
 			->willReturn( $this->getDb() );
 
-		$lookup = new GlobalGroupLookup( $dbManager );
-		$groupsWithReadRight = $lookup->getGroupsWithPermission( 'read', $flags );
-		$groupsWithDeleteRight = $lookup->getGroupsWithPermission( 'delete', $flags );
-		$groupsWithNonExistentRight = $lookup->getGroupsWithPermission( 'does-not-exist', $flags );
+		$manager = new GlobalGroupManager( $dbManager );
+		$groupsWithReadRight = $manager->getGroupsWithPermission( 'read', $flags );
+		$groupsWithDeleteRight = $manager->getGroupsWithPermission( 'delete', $flags );
+		$groupsWithNonExistentRight = $manager->getGroupsWithPermission( 'does-not-exist', $flags );
 
 		$this->assertArrayEquals( [ 'steward', 'global-sysop' ], $groupsWithReadRight );
 		$this->assertArrayEquals( [ 'steward' ], $groupsWithDeleteRight );
