@@ -11,7 +11,7 @@ use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Exception\UserBlockedError;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
-use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserHelper;
 use MediaWiki\Extension\CentralAuth\Widget\HTMLGlobalUserTextField;
@@ -49,7 +49,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		private readonly UserNameUtils $userNameUtils,
 		private readonly CentralAuthUserHelper $userHelper,
 		private readonly GlobalGroupAssignmentService $globalGroupAssignmentService,
-		private readonly GlobalGroupLookup $globalGroupLookup
+		private readonly GlobalGroupManager $globalGroupManager
 	) {
 		parent::__construct( 'GlobalGroupMembership' );
 		$this->statusFormatter = $formatterFactory->getStatusFormatter( $this->getContext() );
@@ -144,7 +144,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 		$this->targetUser = $user;
 		$this->setTargetName( $user->getName() );
 
-		$this->explicitGroups = $this->globalGroupLookup->getDefinedGroups();
+		$this->explicitGroups = $this->globalGroupManager->getDefinedGroups();
 		$this->groupMemberships = $this->getGlobalGroupMemberships();
 		$this->enableWatchUser = false;
 

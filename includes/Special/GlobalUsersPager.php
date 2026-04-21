@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
-use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Html\Html;
@@ -27,19 +27,19 @@ class GlobalUsersPager extends AlphabeticPager {
 	/** @var string[] */
 	private $localWikisets = [];
 
-	private GlobalGroupLookup $globalGroupLookup;
+	private GlobalGroupManager $globalGroupManager;
 	private LinkBatchFactory $linkBatchFactory;
 
 	public function __construct(
 		IContextSource $context,
 		CentralAuthDatabaseManager $dbManager,
-		GlobalGroupLookup $globalGroupLookup,
+		GlobalGroupManager $globalGroupManager,
 		LinkBatchFactory $linkBatchFactory
 	) {
 		$this->mDb = $dbManager->getCentralReplicaDB();
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
-		$this->globalGroupLookup = $globalGroupLookup;
+		$this->globalGroupManager = $globalGroupManager;
 		$this->linkBatchFactory = $linkBatchFactory;
 	}
 
@@ -300,7 +300,7 @@ class GlobalUsersPager extends AlphabeticPager {
 	 */
 	public function getAllGroups() {
 		$result = [];
-		foreach ( $this->globalGroupLookup->getDefinedGroups() as $group ) {
+		foreach ( $this->globalGroupManager->getDefinedGroups() as $group ) {
 			$result[$group] = $this->getLanguage()->getGroupName( $group );
 		}
 		asort( $result );

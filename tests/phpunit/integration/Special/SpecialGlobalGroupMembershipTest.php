@@ -63,7 +63,7 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 			$this->getServiceContainer()->getUserNameUtils(),
 			CentralAuthServices::getUserHelper( $this->getServiceContainer() ),
 			CentralAuthServices::getGlobalGroupAssignmentService( $this->getServiceContainer() ),
-			CentralAuthServices::getGlobalGroupLookup( $this->getServiceContainer() )
+			CentralAuthServices::getGlobalGroupManager( $this->getServiceContainer() )
 		);
 	}
 

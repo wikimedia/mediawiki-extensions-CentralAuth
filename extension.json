@@ -181,7 +181,7 @@
 				"UserNameUtils",
 				"CentralAuth.CentralAuthUserHelper",
 				"CentralAuth.GlobalGroupAssignmentService",
-				"CentralAuth.GlobalGroupLookup"
+				"CentralAuth.GlobalGroupManager"
 			]
 		},
 		"GlobalGroupPermissions": {
@@ -190,7 +190,7 @@
 				"PermissionManager",
 				"RestrictedUserGroupConfigReader",
 				"CentralAuth.CentralAuthDatabaseManager",
-				"CentralAuth.GlobalGroupLookup"
+				"CentralAuth.GlobalGroupManager"
 			]
 		},
 		"WikiSets": {
@@ -205,7 +205,7 @@
 				"ContentLanguage",
 				"LinkBatchFactory",
 				"CentralAuth.CentralAuthDatabaseManager",
-				"CentralAuth.GlobalGroupLookup"
+				"CentralAuth.GlobalGroupManager"
 			]
 		},
 		"MultiLock": {
@@ -362,7 +362,7 @@
 			"services": [
 				"CentralAuth.CentralAuthUserHelper",
 				"CentralAuth.GlobalGroupAssignmentService",
-				"CentralAuth.GlobalGroupLookup"
+				"CentralAuth.GlobalGroupManager"
 			]
 		}
 	},
@@ -398,7 +398,7 @@
 			"services": [
 				"TempUserConfig",
 				"CentralAuth.CentralAuthDatabaseManager",
-				"CentralAuth.GlobalGroupLookup"
+				"CentralAuth.GlobalGroupManager"
 			]
 		}
 	},

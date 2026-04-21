@@ -8,7 +8,7 @@ use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
-use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
@@ -71,11 +71,11 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 
 	/** @dataProvider provideUserCanChangeRights */
 	public function testUserCanChangeRights( bool $hasGlobalGroupsRight ): void {
-		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock = $this->createMock( GlobalGroupManager::class );
 		$groupLookupMock->method( 'getDefinedGroups' )
 			->willReturn( [ 'steward' ] );
 
-		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+		$this->setService( 'CentralAuth.GlobalGroupManager', $groupLookupMock );
 		$service = CentralAuthServices::getGlobalGroupAssignmentService();
 
 		$performer = $this->mockRegisteredAuthorityWithPermissions(
@@ -94,10 +94,10 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 	}
 
 	public function testGetChangeableGroupsWithAutomatic(): void {
-		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock = $this->createMock( GlobalGroupManager::class );
 		$groupLookupMock->method( 'getDefinedGroups' )
 			->willReturn( [ 'steward', 'autogroup' ] );
-		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+		$this->setService( 'CentralAuth.GlobalGroupManager', $groupLookupMock );
 
 		$autoGroupMock = $this->createMock( CentralAuthAutomaticGlobalGroupManager::class );
 		$autoGroupMock->method( 'getAutomaticGlobalGroups' )
@@ -129,10 +129,10 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 			[ 'steward' => [ 'memberConditions' => [ APCOND_EDITCOUNT, 1000 ] ] ]
 		);
 
-		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock = $this->createMock( GlobalGroupManager::class );
 		$groupLookupMock->method( 'getDefinedGroups' )
 			->willReturn( [ 'steward' ] );
-		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+		$this->setService( 'CentralAuth.GlobalGroupManager', $groupLookupMock );
 
 		$service = CentralAuthServices::getGlobalGroupAssignmentService();
 
@@ -168,10 +168,10 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 			]
 		);
 
-		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock = $this->createMock( GlobalGroupManager::class );
 		$groupLookupMock->method( 'getDefinedGroups' )
 			->willReturn( [ 'group1', 'group2', 'group3' ] );
-		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+		$this->setService( 'CentralAuth.GlobalGroupManager', $groupLookupMock );
 
 		$service = CentralAuthServices::getGlobalGroupAssignmentService();
 
@@ -192,10 +192,10 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 			[ 'steward' => [ 'memberConditions' => [ APCOND_EDITCOUNT, 1000 ] ] ]
 		);
 
-		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock = $this->createMock( GlobalGroupManager::class );
 		$groupLookupMock->method( 'getDefinedGroups' )
 			->willReturn( [ 'steward' ] );
-		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+		$this->setService( 'CentralAuth.GlobalGroupManager', $groupLookupMock );
 
 		$service = CentralAuthServices::getGlobalGroupAssignmentService();
 
@@ -218,10 +218,10 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 			'added-group' => null,
 		];
 
-		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock = $this->createMock( GlobalGroupManager::class );
 		$groupLookupMock->method( 'getDefinedGroups' )
 			->willReturn( [ 'static-group', 'shortened-group', 'removed-group', 'added-group', 'autogroup' ] );
-		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+		$this->setService( 'CentralAuth.GlobalGroupManager', $groupLookupMock );
 
 		$autoGroupMock = $this->createMock( CentralAuthAutomaticGlobalGroupManager::class );
 		$autoGroupMock->method( 'getAutomaticGlobalGroups' )
@@ -275,10 +275,10 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 		$target = $this->getRegisteredTestUser( $user->getUser() );
 		$performer = $this->mockRegisteredUltimateAuthority();
 
-		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock = $this->createMock( GlobalGroupManager::class );
 		$groupLookupMock->method( 'getDefinedGroups' )
 			->willReturn( [ 'group-one', 'group-two', 'group-three' ] );
-		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+		$this->setService( 'CentralAuth.GlobalGroupManager', $groupLookupMock );
 
 		$service = CentralAuthServices::getGlobalGroupAssignmentService();
 		$service->saveChangesToUserGroups( $performer, $target, [ 'group-two' ], [], [ 'group-two' => null ] );
@@ -397,9 +397,9 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 		array $automaticGroups,
 		array $expectedInvalid
 	): void {
-		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock = $this->createMock( GlobalGroupManager::class );
 		$groupLookupMock->method( 'getDefinedGroups' )->willReturn( $definedGroups );
-		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+		$this->setService( 'CentralAuth.GlobalGroupManager', $groupLookupMock );
 
 		$autoGroupMock = $this->createMock( CentralAuthAutomaticGlobalGroupManager::class );
 		$autoGroupMock->method( 'getAutomaticGlobalGroups' )->willReturn( $automaticGroups );
@@ -458,9 +458,9 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 		$this->overrideConfigValue( MainConfigNames::RestrictedGroups, [ 'steward' => $groupConditions ] );
 		$this->overrideConfigValue( MainConfigNames::UserRequirementsPrivateConditions, $privateConditions );
 
-		$groupLookupMock = $this->createMock( GlobalGroupLookup::class );
+		$groupLookupMock = $this->createMock( GlobalGroupManager::class );
 		$groupLookupMock->method( 'getDefinedGroups' )->willReturn( [ 'steward' ] );
-		$this->setService( 'CentralAuth.GlobalGroupLookup', $groupLookupMock );
+		$this->setService( 'CentralAuth.GlobalGroupManager', $groupLookupMock );
 
 		$autoGroupMock = $this->createMock( CentralAuthAutomaticGlobalGroupManager::class );
 		$autoGroupMock->method( 'getAutomaticGlobalGroups' )->willReturn( [] );

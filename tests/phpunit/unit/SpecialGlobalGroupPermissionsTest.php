@@ -1,7 +1,7 @@
 <?php
 
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
-use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalGroupPermissions;
 use MediaWiki\Permissions\PermissionManager;
 use MediaWiki\User\RestrictedUserGroupConfigReader;
@@ -23,7 +23,7 @@ class SpecialGlobalGroupPermissionsTest extends MediaWikiUnitTestCase {
 				$this->createNoOpMock( PermissionManager::class ),
 				$this->createNoOpMock( RestrictedUserGroupConfigReader::class ),
 				$this->createNoOpMock( CentralAuthDatabaseManager::class ),
-				$this->createNoOpMock( GlobalGroupLookup::class ),
+				$this->createNoOpMock( GlobalGroupManager::class ),
 			)
 		);
 	}

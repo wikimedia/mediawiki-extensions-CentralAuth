@@ -4,7 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
-use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
 use MediaWiki\Page\LinkBatchFactory;
@@ -16,19 +16,19 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 	private Language $contentLanguage;
 	private LinkBatchFactory $linkBatchFactory;
 	private CentralAuthDatabaseManager $dbManager;
-	private GlobalGroupLookup $globalGroupLookup;
+	private GlobalGroupManager $globalGroupManager;
 
 	public function __construct(
 		Language $contentLanguage,
 		LinkBatchFactory $linkBatchFactory,
 		CentralAuthDatabaseManager $dbManager,
-		GlobalGroupLookup $globalGroupLookup
+		GlobalGroupManager $globalGroupManager
 	) {
 		parent::__construct( 'GlobalUsers' );
 		$this->contentLanguage = $contentLanguage;
 		$this->linkBatchFactory = $linkBatchFactory;
 		$this->dbManager = $dbManager;
-		$this->globalGroupLookup = $globalGroupLookup;
+		$this->globalGroupManager = $globalGroupManager;
 	}
 
 	/** @inheritDoc */
@@ -43,13 +43,13 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 		$pg = new GlobalUsersPager(
 			$context,
 			$this->dbManager,
-			$this->globalGroupLookup,
+			$this->globalGroupManager,
 			$this->linkBatchFactory
 		);
 		$req = $this->getRequest();
 
 		if ( $par !== null && $par !== '' ) {
-			if ( in_array( $par, $this->globalGroupLookup->getDefinedGroups() ) ) {
+			if ( in_array( $par, $this->globalGroupManager->getDefinedGroups() ) ) {
 				$pg->setGroup( $par );
 			} else {
 				$pg->setUsername( $par );

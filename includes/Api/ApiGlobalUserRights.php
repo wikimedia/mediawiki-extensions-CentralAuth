@@ -16,7 +16,7 @@ use MediaWiki\Api\ApiMain;
 use MediaWiki\Api\ApiResult;
 use MediaWiki\ChangeTags\ChangeTags;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
-use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserHelper;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
@@ -37,7 +37,7 @@ class ApiGlobalUserRights extends ApiBase {
 		string $moduleName,
 		private readonly CentralAuthUserHelper $userHelper,
 		private readonly GlobalGroupAssignmentService $globalGroupAssignmentService,
-		private readonly GlobalGroupLookup $globalGroupLookup
+		private readonly GlobalGroupManager $globalGroupManager
 	) {
 		parent::__construct( $mainModule, $moduleName );
 	}
@@ -147,7 +147,7 @@ class ApiGlobalUserRights extends ApiBase {
 
 	/** @inheritDoc */
 	public function getAllowedParams( $flags = 0 ) {
-		$allGroups = $this->globalGroupLookup->getDefinedGroups();
+		$allGroups = $this->globalGroupManager->getDefinedGroups();
 		if ( $flags & ApiBase::GET_VALUES_FOR_HELP ) {
 			sort( $allGroups );
 		}

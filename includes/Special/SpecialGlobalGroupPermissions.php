@@ -17,7 +17,7 @@ use InvalidArgumentException;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
-use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Html\Html;
@@ -56,7 +56,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		private readonly PermissionManager $permissionManager,
 		private readonly RestrictedUserGroupConfigReader $restrictedUserGroupConfigReader,
 		private readonly CentralAuthDatabaseManager $databaseManager,
-		private readonly GlobalGroupLookup $globalGroupLookup
+		private readonly GlobalGroupManager $globalGroupManager
 	) {
 		parent::__construct( 'GlobalGroupPermissions' );
 	}
@@ -115,7 +115,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 	private function buildMainView() {
 		$out = $this->getOutput();
-		$groups = $this->globalGroupLookup->getDefinedGroups();
+		$groups = $this->globalGroupManager->getDefinedGroups();
 
 		if ( count( $groups ) ) {
 			$out->addHTML(
@@ -581,7 +581,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	 * @return string[]
 	 */
 	private function getAssignedRights( $group ) {
-		return $this->globalGroupLookup->getRightsForGroup( $group );
+		return $this->globalGroupManager->getRightsForGroup( $group );
 	}
 
 	/**
@@ -617,7 +617,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		// all new group names should be lowercase: check all new and changed group names (T202095)
 		if (
-			!in_array( $group, $this->globalGroupLookup->getDefinedGroups( DB_PRIMARY ) )
+			!in_array( $group, $this->globalGroupManager->getDefinedGroups( DB_PRIMARY ) )
 			|| ( $group !== $newname )
 		) {
 			$nameValidationResult = $this->validateGroupName( $newname );
@@ -675,7 +675,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		// Check if we need to rename the group
 		if ( $group != $newname ) {
-			if ( in_array( $newname, $this->globalGroupLookup->getDefinedGroups( DB_PRIMARY ) ) ) {
+			if ( in_array( $newname, $this->globalGroupManager->getDefinedGroups( DB_PRIMARY ) ) ) {
 				$this->getOutput()->addWikiMsg( 'centralauth-editgroup-rename-taken', $newname );
 				return;
 			}
@@ -775,7 +775,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$restrictedGroups = $this->restrictedUserGroupConfigReader->getConfig(
 			$centralWiki, GlobalGroupAssignmentService::RESTRICTION_SCOPE );
 
-		$definedGroups = $this->globalGroupLookup->getDefinedGroups();
+		$definedGroups = $this->globalGroupManager->getDefinedGroups();
 		$restrictedGroups = array_filter(
 			$restrictedGroups,
 			static fn ( $restriction, $group ) => in_array( $group, $definedGroups )

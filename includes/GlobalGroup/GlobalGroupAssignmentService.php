@@ -61,7 +61,7 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 		private readonly HookContainer $hookContainer,
 		private readonly SiteLookup $siteLookup,
 		private readonly RestrictedUserGroupCheckerFactory $restrictedGroupCheckerFactory,
-		private readonly GlobalGroupLookup $globalGroupLookup,
+		private readonly GlobalGroupManager $globalGroupManager,
 		private readonly CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
 		private readonly CentralAuthDatabaseManager $databaseManager,
 		private readonly MessageLocalizer $messageLocalizer,
@@ -150,7 +150,7 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 			];
 		}
 
-		$allGroups = $this->globalGroupLookup->getDefinedGroups();
+		$allGroups = $this->globalGroupManager->getDefinedGroups();
 		$automaticGroups = $this->automaticGroupManager->getAutomaticGlobalGroups();
 		$manualGroups = array_values( array_diff( $allGroups, $automaticGroups ) );
 
@@ -491,7 +491,7 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 
 	/** @inheritDoc */
 	protected function getKnownGroups( UserIdentity $target ): array {
-		return $this->globalGroupLookup->getDefinedGroups();
+		return $this->globalGroupManager->getDefinedGroups();
 	}
 
 	/** @inheritDoc */

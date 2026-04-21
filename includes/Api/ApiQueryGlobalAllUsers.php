@@ -6,7 +6,7 @@ use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
-use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\WikiMap\WikiMap;
@@ -33,19 +33,19 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
 	private TempUserConfig $tempUserConfig;
 	private CentralAuthDatabaseManager $databaseManager;
-	private GlobalGroupLookup $globalGroupLookup;
+	private GlobalGroupManager $globalGroupManager;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
 		TempUserConfig $tempUserConfig,
 		CentralAuthDatabaseManager $databaseManager,
-		GlobalGroupLookup $globalGroupLookup
+		GlobalGroupManager $globalGroupManager
 	) {
 		parent::__construct( $query, $moduleName, 'agu' );
 		$this->tempUserConfig = $tempUserConfig;
 		$this->databaseManager = $databaseManager;
-		$this->globalGroupLookup = $globalGroupLookup;
+		$this->globalGroupManager = $globalGroupManager;
 	}
 
 	/**
@@ -267,7 +267,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
 	/** @inheritDoc */
 	public function getAllowedParams() {
-		$globalGroups = $this->globalGroupLookup->getDefinedGroups();
+		$globalGroups = $this->globalGroupManager->getDefinedGroups();
 		return [
 			'from' => null,
 			'to' => null,

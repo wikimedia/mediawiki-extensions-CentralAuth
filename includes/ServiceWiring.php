@@ -6,7 +6,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
-use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupLookup;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
@@ -183,15 +183,15 @@ return [
 			$services->getHookContainer(),
 			$services->getSiteLookup(),
 			$services->getRestrictedUserGroupCheckerFactory(),
-			CentralAuthServices::getGlobalGroupLookup(),
+			CentralAuthServices::getGlobalGroupManager(),
 			CentralAuthServices::getAutomaticGlobalGroupManager(),
 			CentralAuthServices::getDatabaseManager(),
 			RequestContext::getMain()
 		);
 	},
 
-	'CentralAuth.GlobalGroupLookup' => static function ( MediaWikiServices $services ): GlobalGroupLookup {
-		return new GlobalGroupLookup(
+	'CentralAuth.GlobalGroupManager' => static function ( MediaWikiServices $services ): GlobalGroupManager {
+		return new GlobalGroupManager(
 			CentralAuthServices::getDatabaseManager( $services )
 		);
 	},
