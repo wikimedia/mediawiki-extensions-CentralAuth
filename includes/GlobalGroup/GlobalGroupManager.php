@@ -8,6 +8,7 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalGroup;
 
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use StatusValue;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -75,6 +76,191 @@ class GlobalGroupManager {
 			->recency( $flags )
 			->caller( __METHOD__ )
 			->fetchFieldValues();
+	}
+
+	/**
+	 * Checks if the specified global group is empty (i.e. has no members)
+	 *
+	 * @since 1.46
+	 */
+	public function isGroupEmpty( string $groupName, int $flags = IDBAccessObject::READ_NORMAL ): bool {
+		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
+		$memberCount = $dbr->newSelectQueryBuilder()
+			->select( 'gug_group' )
+			->from( 'global_user_groups' )
+			->where( [ 'gug_group' => $groupName ] )
+			->caller( __METHOD__ )
+			->fetchRowCount();
+		return $memberCount === 0;
+	}
+
+	/**
+	 * Adds the specified permissions to the group. It's safe to add a right that the group already has,
+	 * as it'll be deduplicated on write.
+	 *
+	 * If the group doesn't exist, it's created.
+	 *
+	 * @since 1.46
+	 * @param string $groupName
+	 * @param list<string> $rights
+	 */
+	public function addRightsToGroup( string $groupName, array $rights ): StatusValue {
+		if ( $rights === [] ) {
+			return StatusValue::newGood();
+		}
+
+		$dbw = $this->dbManager->getCentralPrimaryDB();
+
+		$insertRows = [];
+		foreach ( $rights as $right ) {
+			$insertRows[] = [ 'ggp_group' => $groupName, 'ggp_permission' => $right ];
+		}
+
+		// Replace into the DB, to ensure that a (group, right) pair exists only once in the DB
+		$dbw->newReplaceQueryBuilder()
+			->replaceInto( 'global_group_permissions' )
+			->uniqueIndexFields( [ 'ggp_group', 'ggp_permission' ] )
+			->rows( $insertRows )
+			->caller( __METHOD__ )
+			->execute();
+
+		return StatusValue::newGood();
+	}
+
+	/**
+	 * Removes the specified permissions from the group. If removing all remaining permissions
+	 * from the group, an attempt will be made to remove the group instead ({@see removeGroup}).
+	 *
+	 * It's safe to remove a right that the group doesn't have currently; such rights will be ignored.
+	 *
+	 * @since 1.46
+	 * @param string $groupName
+	 * @param list<string> $rights
+	 */
+	public function removeRightsFromGroup( string $groupName, array $rights ): StatusValue {
+		if ( $rights === [] ) {
+			return StatusValue::newGood();
+		}
+
+		$oldRights = $this->getRightsForGroup( $groupName, IDBAccessObject::READ_LATEST );
+		if ( $oldRights === [] ) {
+			return StatusValue::newGood();
+		}
+
+		$rightsToRemain = array_diff( $oldRights, $rights );
+		if ( count( $rightsToRemain ) === 0 ) {
+			// If we're trying to remove all remaining rights, defer to removeGroup(), which will
+			// check for group members
+			return $this->removeGroup( $groupName );
+		}
+
+		$dbw = $this->dbManager->getCentralPrimaryDB();
+
+		// Delete the rights from DB
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'global_group_permissions' )
+			->where( [ 'ggp_group' => $groupName, 'ggp_permission' => $rights ] )
+			->caller( __METHOD__ )
+			->execute();
+
+		return StatusValue::newGood();
+	}
+
+	/**
+	 * Removes group from the database.
+	 *
+	 * A group can be removed only if it has no members. Otherwise, members have to
+	 * be removed from the group first.
+	 *
+	 * @since 1.46
+	 */
+	public function removeGroup( string $groupName ): StatusValue {
+		$dbw = $this->dbManager->getCentralPrimaryDB();
+
+		// First, ensure that the group has no members
+		if ( !$this->isGroupEmpty( $groupName, IDBAccessObject::READ_LATEST ) ) {
+			return StatusValue::newFatal( 'centralauth-editgroup-delete-removemembers' );
+		}
+
+		// Ensure that we don't leave any stray rows related to wiki sets for this group
+		$this->setWikiSet( $groupName, 0 );
+
+		// Delete all the group's permissions, effectively removing it
+		$dbw->newDeleteQueryBuilder()
+			->deleteFrom( 'global_group_permissions' )
+			->where( [ 'ggp_group' => $groupName ] )
+			->caller( __METHOD__ )
+			->execute();
+
+		return StatusValue::newGood();
+	}
+
+	/**
+	 * Changes the internal name of a group. This operation on itself has no functional impact on the wiki.
+	 * All the group's configuration, as well as its members are retained.
+	 *
+	 * Renaming a group is possible only if the new name is not used by any group.
+	 *
+	 * After calling this method, ensure that you invalidate the cache of users that are members of this group
+	 * ({@see CentralAuthUser::invalidateCache()}). Otherwise, users may not be able to use their rights until
+	 * the cache reloads.
+	 *
+	 * @since 1.46
+	 */
+	public function renameGroup( string $groupName, string $newName ): StatusValue {
+		if ( in_array( $newName, $this->getDefinedGroups( DB_PRIMARY ) ) ) {
+			return StatusValue::newFatal( 'centralauth-editgroup-rename-taken', $newName );
+		}
+
+		$dbw = $this->dbManager->getCentralPrimaryDB();
+		$updates = [
+			'global_group_permissions' => 'ggp_group',
+			'global_group_restrictions' => 'ggr_group',
+			'global_user_groups' => 'gug_group'
+		];
+
+		foreach ( $updates as $table => $field ) {
+			$dbw->newUpdateQueryBuilder()
+				->update( $table )
+				->set( [ $field => $newName ] )
+				->where( [ $field => $groupName ] )
+				->caller( __METHOD__ )
+				->execute();
+		}
+
+		return StatusValue::newGood();
+	}
+
+	/**
+	 * Specifies the wiki set on which the group is active.
+	 *
+	 * If the group is to be active on all wikis, use wiki set id of `0` or `null` (both have the same effect).
+	 *
+	 * @since 1.46
+	 */
+	public function setWikiSet( string $groupName, ?int $wikiSetId ): StatusValue {
+		if ( !in_array( $groupName, $this->getDefinedGroups( DB_PRIMARY ) ) ) {
+			return StatusValue::newFatal( 'centralauth-editgroup-nonexistent', $groupName );
+		}
+
+		$dbw = $this->dbManager->getCentralPrimaryDB();
+
+		if ( $wikiSetId === 0 || $wikiSetId === null ) {
+			$dbw->newDeleteQueryBuilder()
+				->deleteFrom( 'global_group_restrictions' )
+				->where( [ 'ggr_group' => $groupName ] )
+				->caller( __METHOD__ )
+				->execute();
+		} else {
+			$dbw->newReplaceQueryBuilder()
+				->replaceInto( 'global_group_restrictions' )
+				->uniqueIndexFields( 'ggr_group' )
+				->row( [ 'ggr_group' => $groupName, 'ggr_set' => $wikiSetId, ] )
+				->caller( __METHOD__ )
+				->execute();
+		}
+
+		return StatusValue::newGood();
 	}
 }
 
