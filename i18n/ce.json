@@ -488,7 +488,7 @@
 	"globalvanishrequest-autoapprove-public-note": "ХӀара аккаунт дӀайаккхаран дехар автоматикца тӀеэцна ду.",
 	"globalvanishrequest-rejected-subject-notification": "Аккаунт дӀайаккхаран дехар йухатоьхна ($1)",
 	"globalvanishrequest-rejected-notification-error": "Автоматикца юристийн команде хаам бан аьтто бац. Дехар до, электронан поште куьйга хаамбе цаьрга аккаунт дӀайаларан дехар йухатохарх лаьцна. Дехар йухатохар чекхдаьлла.",
-	"globalusers": "Глобалан декъашхойн могIам",
+	"globalusers": "Глобалан декъашхойн могӀам",
 	"grant-createlocalaccount": "Локалал аккаунт кхоллар",
 	"grant-setglobalaccountstatus": "Глобалан декъашхочун агӀонан урхалла дар",
 	"log-action-filter-gblrights": "Хийцамийн тайпа:",

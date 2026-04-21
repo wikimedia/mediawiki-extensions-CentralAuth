@@ -40,7 +40,8 @@
 			"관인생략",
 			"밝은소년",
 			"아라",
-			"콩가루"
+			"콩가루",
+			"Tensama0415"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "사용자의 전역 편집 수 ($1)",
@@ -53,6 +54,7 @@
 	"action-centralauth-suppress": "통합 계정을 숨길",
 	"action-centralauth-rename": "전역 계정 이름 바꾸기",
 	"action-centralauth-unmerge": "통합 계정 분리하기",
+	"action-globalgroupmembership": "전역 그룹 멤버십 편집",
 	"action-globalgrouppermissions": "전역 권한 그룹 관리",
 	"centralauth": "통합 계정 관리",
 	"centralauth-abortlogin-renamed": "당신의 계정 이름은 \"$1\"(으)로 바뀌었습니다. 해당 사용자 이름을 대신 사용해주시기 바랍니다.",
@@ -413,6 +415,7 @@
 	"globalrenamequeue-column-rq-requested-ts": "열린 날짜",
 	"globalrenamequeue-column-rq-status": "상태",
 	"globalrenamequeue-column-rq-wiki": "로컬 위키",
+	"globalrenamequeue-column-rq-type": "유형",
 	"globalrenamequeue-email-body-approved-with-note": "이름을 \"{{GENDER:$1|$1}}\"에서 \"{{GENDER:$1|$2}}\"(으)로 바꾸는 요청이 승인되었습니다.\n\n참고: $3",
 	"globalrenamequeue-email-body-approved": "이름을 \"{{GENDER:$1|$1}}\"에서 \"{{GENDER:$1|$2}}\"(으)로 바꾸는 요청이 승인되었습니다.",
 	"globalrenamequeue-email-body-rejected": "이름을 \"{{GENDER:$1|$1}}\"에서 \"{{GENDER:$1|$2}}\"(으)로 바꾸는 요청이 거부되었습니다.\n\n참고: $3",
@@ -421,6 +424,7 @@
 	"globalrenamequeue-form-newname": "요청된 사용자 이름:",
 	"globalrenamequeue-form-status": "상태:",
 	"globalrenamequeue-form-status-all": "모두",
+	"globalrenamequeue-form-type": "유형",
 	"globalrenamequeue-form-type-all": "모두",
 	"globalrenamequeue-form-type-rename": "이름 바꾸기",
 	"globalrenamequeue-form-username": "사용자 이름:",
@@ -493,6 +497,7 @@
 	"log-action-filter-globalauth-delete": "전역 계정 삭제",
 	"log-action-filter-globalauth-setstatus": "전역 계정 상태 변경",
 	"log-action-filter-newusers-forcecreatelocal": "강제적인 로컬 계정 생성",
+	"log-action-filter-suppress-cadelete": "전역 계정 삭제",
 	"log-action-filter-suppress-setstatus": "전역 계정 상태 변경",
 	"log-description-gblrename": "이 기록은 사용자의 전역 이름 바꾸기를 추적합니다.",
 	"log-name-gblrename": "통합 계정 이름 바꾸기 기록",
