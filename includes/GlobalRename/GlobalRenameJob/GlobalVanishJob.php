@@ -18,6 +18,7 @@ use MediaWiki\JobQueue\JobSpecification;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Mail\MailAddress;
 use MediaWiki\Mail\UserMailer;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\User\UserIdentity;
 use RuntimeException;
@@ -209,7 +210,7 @@ class GlobalVanishJob extends Job {
 			->text();
 
 		$from = new MailAddress(
-			$config->get( 'PasswordSender' ),
+			$config->get( MainConfigNames::PasswordSender ),
 			wfMessage( 'emailsender' )->inContentLanguage()->text()
 		);
 		$to = new MailAddress( $causer->getEmail(), $causer->getName(), '' );

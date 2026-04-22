@@ -2947,7 +2947,7 @@ class CentralAuthUser implements IDBAccessObject {
 		// mAttachedInfo is shared with queryAttachedBasic(); check whether it contains partial data
 		if (
 			$this->mAttachedInfo !== null
-			&& ( !$this->mAttachedInfo || array_key_exists( 'id', reset( $this->mAttachedInfo ) ) )
+			&& ( !$this->mAttachedInfo || array_key_exists( 'id', array_first( $this->mAttachedInfo ) ) )
 		) {
 			return $this->mAttachedInfo;
 		}

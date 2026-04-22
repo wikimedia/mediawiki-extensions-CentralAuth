@@ -79,9 +79,7 @@ class CentralAuthWikiListServiceTest extends MediaWikiUnitTestCase {
 			],
 			'Multiple hooks, with aborting before setting a value' => [
 				[
-					static function ( ?array &$wikiList ) {
-						return false;
-					},
+					static fn ( ?array &$wikiList ) => false,
 					static function ( ?array &$wikiList ) {
 						$wikiList = [ 'bazwiki' ];
 					},

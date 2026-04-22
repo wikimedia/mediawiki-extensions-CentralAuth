@@ -80,17 +80,17 @@ class ResetGlobalUserTokens extends Maintenance {
 
 		do {
 			$result = $dbr->newSelectQueryBuilder()
-				->select( [ 'gu_id', 'gu_name' ] )
+				->select( 'gu_name' )
 				->from( 'globaluser' )
 				->where( [
 					$dbr->expr( 'gu_id', '>', $min ),
 					$dbr->expr( 'gu_id', '<=', $max )
 				] )
 				->caller( __METHOD__ )
-				->fetchResultSet();
+				->fetchFieldValues();
 
-			foreach ( $result as $user ) {
-				$this->updateUser( $user->gu_name );
+			foreach ( $result as $username ) {
+				$this->updateUser( $username );
 			}
 
 			$min = $max;
