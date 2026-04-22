@@ -49,24 +49,20 @@ class SendConfirmAndMigrateEmailTest extends MaintenanceBaseTestCase {
 
 		// Configure CentralAuth and LBFactory to return the test database connection
 		// for the "foreign" wiki as well.
-		$centralAuthDatabaseManager = $this->createMock( CentralAuthDatabaseManager::class );
-		$centralAuthDatabaseManager->method(
-			$this->logicalOr(
-				'getCentralDBFromRecency',
-				'getCentralPrimaryDB',
-				'getCentralReplicaDB',
-				'getLocalDB',
-				'getLocalDBFromRecency',
-			)
-		)->willReturn( $this->getDb() );
+		$db = $this->getDb();
+		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
+		$dbManager->method( 'getCentralDBFromRecency' )->willReturn( $db );
+		$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $db );
+		$dbManager->method( 'getCentralReplicaDB' )->willReturn( $db );
+		$dbManager->method( 'getLocalDBFromRecency' )->willReturn( $db );
 
 		$lbFactory = $this->createMock( LBFactory::class );
-		$lbFactory->method( $this->logicalOr( 'getReplicaDatabase', 'getPrimaryDatabase' ) )
-			->willReturn( $this->getDb() );
+		$lbFactory->method( 'getReplicaDatabase' )->willReturn( $db );
+		$lbFactory->method( 'getPrimaryDatabase' )->willReturn( $db );
 		$lbFactory->method( 'getMainLB' )
 			->willReturn( $this->getServiceContainer()->getDBLoadBalancer() );
 
-		$this->setService( 'CentralAuth.CentralAuthDatabaseManager', $centralAuthDatabaseManager );
+		$this->setService( 'CentralAuth.CentralAuthDatabaseManager', $dbManager );
 		$this->setService( 'DBLoadBalancerFactory', $lbFactory );
 	}
 

@@ -42,8 +42,8 @@ use OOUI\MessageWidget;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use StatusValue;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IDBAccessObject;
-use Wikimedia\Rdbms\LBFactory;
 
 /**
  * Process account rename requests made via [[Special:GlobalRenameRequest]].
@@ -55,7 +55,7 @@ use Wikimedia\Rdbms\LBFactory;
 class SpecialGlobalRenameQueue extends SpecialPage {
 
 	private UserNameUtils $userNameUtils;
-	private LBFactory $lbFactory;
+	private IConnectionProvider $dbProvider;
 	private CentralAuthDatabaseManager $databaseManager;
 	private CentralAuthUIService $uiService;
 	private GlobalRenameRequestStore $globalRenameRequestStore;
@@ -74,7 +74,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 	public function __construct(
 		UserNameUtils $userNameUtils,
-		LBFactory $lbFactory,
+		IConnectionProvider $dbProvider,
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService,
 		GlobalRenameRequestStore $globalRenameRequestStore,
@@ -85,7 +85,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	) {
 		parent::__construct( 'GlobalRenameQueue' );
 		$this->userNameUtils = $userNameUtils;
-		$this->lbFactory = $lbFactory;
+		$this->dbProvider = $dbProvider;
 		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
@@ -914,8 +914,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	 * @return MailAddress|null
 	 */
 	protected function getRemoteUserMailAddress( $wiki, $username ) {
-		$lb = $this->lbFactory->getMainLB( $wiki );
-		$remoteDB = $lb->getConnection( DB_REPLICA, [], $wiki );
+		$remoteDB = $this->dbProvider->getReplicaDatabase( $wiki );
 		$row = $remoteDB->newSelectQueryBuilder()
 			->select( [ 'user_email', 'user_name', 'user_real_name' ] )
 			->from( 'user' )
