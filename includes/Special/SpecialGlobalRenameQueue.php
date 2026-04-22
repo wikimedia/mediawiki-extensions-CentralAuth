@@ -82,7 +82,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		GlobalRenameFactory $globalRenameFactory,
 		UserIdentityLookup $userIdentityLookup
 	) {
-		parent::__construct( 'GlobalRenameQueue', 'centralauth-rename' );
+		parent::__construct( 'GlobalRenameQueue' );
 		$this->userNameUtils = $userNameUtils;
 		$this->lbFactory = $lbFactory;
 		$this->databaseManager = $databaseManager;
@@ -93,6 +93,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$this->globalRenameFactory = $globalRenameFactory;
 		$this->userIdentityLookup = $userIdentityLookup;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'centralauth-rename';
 	}
 
 	/** @inheritDoc */

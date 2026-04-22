@@ -19,8 +19,13 @@ class SpecialCreateLocalAccount extends FormSpecialPage {
 	private CentralAuthForcedLocalCreationService $forcedLocalCreationService;
 
 	public function __construct( CentralAuthForcedLocalCreationService $forcedLocalCreationService ) {
-		parent::__construct( 'CreateLocalAccount', 'centralauth-createlocal' );
+		parent::__construct( 'CreateLocalAccount' );
 		$this->forcedLocalCreationService = $forcedLocalCreationService;
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'centralauth-createlocal';
 	}
 
 	/**

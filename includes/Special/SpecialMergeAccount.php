@@ -42,10 +42,15 @@ class SpecialMergeAccount extends SpecialPage {
 		UserFactory $userFactory,
 		CentralAuthDatabaseManager $databaseManager
 	) {
-		parent::__construct( 'MergeAccount', 'centralauth-merge' );
+		parent::__construct( 'MergeAccount' );
 		$this->namespaceInfo = $namespaceInfo;
 		$this->userFactory = $userFactory;
 		$this->databaseManager = $databaseManager;
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'centralauth-merge';
 	}
 
 	/** @inheritDoc */

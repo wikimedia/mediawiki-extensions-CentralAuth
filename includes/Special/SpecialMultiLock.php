@@ -53,10 +53,15 @@ class SpecialMultiLock extends SpecialPage {
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService
 	) {
-		parent::__construct( 'MultiLock', 'centralauth-lock' );
+		parent::__construct( 'MultiLock' );
 		$this->userNameUtils = $userNameUtils;
 		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'centralauth-lock';
 	}
 
 	/** @inheritDoc */

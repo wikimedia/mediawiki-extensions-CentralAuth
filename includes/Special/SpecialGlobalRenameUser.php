@@ -70,7 +70,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		GlobalRenameFactory $globalRenameFactory,
 		GlobalRenameUserValidator $globalRenameUserValidator
 	) {
-		parent::__construct( 'GlobalRenameUser', 'centralauth-rename' );
+		parent::__construct( 'GlobalRenameUser' );
 		$this->userFactory = $userFactory;
 		$this->userNameUtils = $userNameUtils;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
@@ -78,6 +78,11 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		$this->globalRenameDenylist = $globalRenameDenylist;
 		$this->globalRenameFactory = $globalRenameFactory;
 		$this->globalRenameUserValidator = $globalRenameUserValidator;
+	}
+
+	/** @inheritDoc */
+	public function getRestriction(): string {
+		return 'centralauth-rename';
 	}
 
 	/** @inheritDoc */
