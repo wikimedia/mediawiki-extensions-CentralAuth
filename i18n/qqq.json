@@ -228,7 +228,6 @@
 	"centralauth-editgroup-rename-taken": "Shown in case the renaming of the global group failed because there already is a group with the new name.\n\nParameters:\n* $1 - the name the user wanted to rename the group to",
 	"centralauth-editgroup-restrictions": "Used as label for the wiki set selector or {{msg-mw|centralauth-editgroup-nowikiset}}.",
 	"centralauth-editgroup-submit": "Used as label for the Submit button in Special:GlobalGroupPermissions.",
-	"centralauth-editgroup-success": "Subtitle of Special:GlobalGroupPermissions after a group has successfully been altered",
 	"centralauth-editgroup-success-text": "Text on Special:GlobalGroupPermissions after a group has successfully been altered. $1 is the name of the global group.",
 	"centralauth-editset": "{{doc-special|WikiSets}}",
 	"centralauth-editset-badname": "Used as error message.",

@@ -196,7 +196,6 @@
 	"centralauth-editgroup-rename-taken": "Renaming failed: There already is a group with the name $1.",
 	"centralauth-editgroup-restrictions": "Set of wikis where this group is active:",
 	"centralauth-editgroup-submit": "Save global group changes",
-	"centralauth-editgroup-success": "Global group changed",
 	"centralauth-editgroup-success-text": "The global group $1 was updated.\n[[Special:GlobalGroupPermissions|Return to group management]]",
 	"centralauth-editset": "Wiki sets",
 	"centralauth-editset-badname": "Invalid or empty set name.",

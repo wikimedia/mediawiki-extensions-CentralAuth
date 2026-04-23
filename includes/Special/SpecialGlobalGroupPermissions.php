@@ -14,6 +14,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 
 use Exception;
 use InvalidArgumentException;
+use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
@@ -38,6 +39,7 @@ use MediaWiki\User\User;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\Xml\XmlSelect;
 use StatusValue;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * Special page to allow managing global groups
@@ -96,17 +98,27 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$this->getOutput()->setArticleRelated( false );
 		$this->getOutput()->disableClientCache();
 
-		if ( $subpage == '' ) {
-			$subpage = $this->getRequest()->getVal( 'wpGroup' );
-		}
+		$subpage ??= $this->getRequest()->getText( 'wpGroup' );
 
-		if (
-			$subpage != ''
-			&& $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) )
-			&& $this->getRequest()->wasPosted()
-		) {
-			$this->doSubmit( $subpage );
-		} elseif ( $subpage != '' ) {
+		if ( $subpage !== '' ) {
+			if (
+				$this->getRequest()->wasPosted()
+				&& $this->getUser()->matchEditToken( $this->getRequest()->getVal( 'wpEditToken' ) )
+			) {
+				$submitStatus = $this->doSubmit( $subpage );
+
+				if ( $submitStatus->isGood() ) {
+					$this->getOutput()->addHTML( Html::successBox(
+						$this->msg( 'centralauth-editgroup-success-text', $subpage )->parse()
+					) );
+				} else {
+					foreach ( $submitStatus->getMessages() as $msg ) {
+						$this->getOutput()->addHTML( Html::errorBox(
+							$this->msg( $msg )->parse()
+						) );
+					}
+				}
+			}
 			$this->buildGroupView( $subpage );
 		} else {
 			$this->buildMainView();
@@ -584,14 +596,11 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		return $this->globalGroupManager->getRightsForGroup( $group );
 	}
 
-	/**
-	 * @param string $group
-	 */
-	private function doSubmit( $group ) {
+	private function doSubmit( string $group ): StatusValue {
 		// It is important to check userCanEdit, as otherwise an
 		// unauthorized user could manually construct a POST request.
 		if ( !$this->userCanEdit( $this->getUser() ) ) {
-			return;
+			throw new PermissionsError( 'globalgrouppermissions' );
 		}
 		$reason = $this->getRequest()->getVal( 'wpReason', '' );
 
@@ -600,8 +609,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		// the group name so that the first letter doesn't get uppercased.
 		$group = Title::newFromText( "A/$group" );
 		if ( !$group ) {
-			$this->getOutput()->addWikiMsg( 'centralauth-editgroup-invalid-name' );
-			return;
+			return StatusValue::newFatal( 'centralauth-editgroup-invalid-name' );
 		}
 		$group = ltrim( substr( $group->getDBkey(), 2 ), '_' );
 
@@ -610,8 +618,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		$newname = Title::newFromText( "A/$newname" );
 		if ( !$newname ) {
-			$this->getOutput()->addWikiMsg( 'centralauth-editgroup-invalid-name' );
-			return;
+			return StatusValue::newFatal( 'centralauth-editgroup-invalid-name' );
 		}
 		$newname = ltrim( substr( $newname->getDBkey(), 2 ), '_' );
 
@@ -622,10 +629,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		) {
 			$nameValidationResult = $this->validateGroupName( $newname );
 			if ( !$nameValidationResult->isGood() ) {
-				foreach ( $nameValidationResult->getMessages() as $msg ) {
-					$this->getOutput()->addHTML( Html::errorBox( $this->msg( $msg )->parse() ) );
-				}
-				return;
+				return $nameValidationResult;
 			}
 		}
 
@@ -655,45 +659,18 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 		// Disallow deleting existing groups with members in them
 		if (
-			count( $oldRights ) !== 0
-			&& count( $addRights ) === 0
-			&& count( $removeRights ) === count( $oldRights )
+			$addRights === []
+			&& array_diff( $oldRights, $removeRights ) === []
+			&& !$this->globalGroupManager->isGroupEmpty( $group, IDBAccessObject::READ_LATEST )
 		) {
-			$dbr = $this->databaseManager->getCentralReplicaDB();
-			$memberCount = $dbr->newSelectQueryBuilder()
-				->select( 'gug_group' )
-				->from( 'global_user_groups' )
-				->where( [ 'gug_group' => $group ] )
-				->caller( __METHOD__ )
-				->fetchRow();
-
-			if ( $memberCount ) {
-				$this->getOutput()->addWikiMsg( 'centralauth-editgroup-delete-removemembers' );
-				return;
-			}
+			return StatusValue::newFatal( 'centralauth-editgroup-delete-removemembers' );
 		}
 
 		// Check if we need to rename the group
-		if ( $group != $newname ) {
-			if ( in_array( $newname, $this->globalGroupManager->getDefinedGroups( DB_PRIMARY ) ) ) {
-				$this->getOutput()->addWikiMsg( 'centralauth-editgroup-rename-taken', $newname );
-				return;
-			}
-
-			$dbw = $this->databaseManager->getCentralPrimaryDB();
-			$updates = [
-				'global_group_permissions' => 'ggp_group',
-				'global_group_restrictions' => 'ggr_group',
-				'global_user_groups' => 'gug_group'
-			];
-
-			foreach ( $updates as $table => $field ) {
-				$dbw->newUpdateQueryBuilder()
-					->update( $table )
-					->set( [ $field => $newname ] )
-					->where( [ $field => $group ] )
-					->caller( __METHOD__ )
-					->execute();
+		if ( $group !== $newname ) {
+			$renameStatus = $this->globalGroupManager->renameGroup( $group, $newname );
+			if ( !$renameStatus->isGood() ) {
+				return $renameStatus;
 			}
 			$this->addRenameLog( $group, $newname, $reason );
 
@@ -701,16 +678,21 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$group = $newname;
 		}
 
-		// Assign the rights.
-		if ( count( $addRights ) > 0 ) {
-			$this->grantRightsToGroup( $group, $addRights );
+		// Update the rights. These are unlikely to fail, as we do the necessary checks before starting
+		// any manipulation to groups, but in case it happens, let's be prepared
+		$addStatus = $this->globalGroupManager->addRightsToGroup( $group, $addRights );
+		if ( !$addStatus->isGood() ) {
+			return $addStatus;
 		}
-		if ( count( $removeRights ) > 0 ) {
-			$this->revokeRightsFromGroup( $group, $removeRights );
+		$removeStatus = $this->globalGroupManager->removeRightsFromGroup( $group, $removeRights );
+		if ( !$removeStatus->isGood() ) {
+			// Optimistically undo earlier changes to rights
+			$this->globalGroupManager->removeRightsFromGroup( $group, $addRights );
+			return $removeStatus;
 		}
 
-		// Log it
-		if ( !( count( $addRights ) == 0 && count( $removeRights ) == 0 ) ) {
+		// Log the rights changes
+		if ( $addRights !== [] || $removeRights !== [] ) {
 			$this->addPermissionLog( $group, $addRights, $removeRights, $reason );
 		}
 
@@ -718,55 +700,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$current = WikiSet::getWikiSetForGroup( $group );
 		$new = $this->getRequest()->getInt( 'set' );
 		if ( $current != $new ) {
-			$this->setRestrictions( $group, $new );
+			$this->globalGroupManager->setWikiSet( $group, $new );
 			$this->addWikiSetLog( $group, $current, $new, $reason );
 		}
 
 		$this->invalidateRightsCache( $group );
-
-		// Display success
-		$this->getOutput()->setSubTitle( $this->msg( 'centralauth-editgroup-success' ) );
-		$this->getOutput()->addWikiMsg( 'centralauth-editgroup-success-text', $group );
-	}
-
-	/**
-	 * @param string $group
-	 * @param string[] $rights
-	 */
-	private function revokeRightsFromGroup( $group, $rights ) {
-		$dbw = $this->databaseManager->getCentralPrimaryDB();
-
-		# Delete from the DB
-		$dbw->newDeleteQueryBuilder()
-			->deleteFrom( 'global_group_permissions' )
-			->where( [ 'ggp_group' => $group, 'ggp_permission' => $rights ] )
-			->caller( __METHOD__ )
-			->execute();
-	}
-
-	/**
-	 * @param string $group
-	 * @param string[]|string $rights
-	 */
-	private function grantRightsToGroup( $group, $rights ) {
-		$dbw = $this->databaseManager->getCentralPrimaryDB();
-
-		if ( !is_array( $rights ) ) {
-			$rights = [ $rights ];
-		}
-
-		$insertRows = [];
-		foreach ( $rights as $right ) {
-			$insertRows[] = [ 'ggp_group' => $group, 'ggp_permission' => $right ];
-		}
-
-		# Replace into the DB
-		$dbw->newReplaceQueryBuilder()
-			->replaceInto( 'global_group_permissions' )
-			->uniqueIndexFields( [ 'ggp_group', 'ggp_permission' ] )
-			->rows( $insertRows )
-			->caller( __METHOD__ )
-			->execute();
+		return StatusValue::newGood();
 	}
 
 	private function outputRestrictedGroupsConfig(): void {
@@ -941,30 +880,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		$entry->setParameters( $params );
 		$logid = $entry->insert();
 		$entry->publish( $logid );
-	}
-
-	/**
-	 * @param string $group
-	 * @param int $set
-	 * @return bool
-	 */
-	private function setRestrictions( $group, $set ) {
-		$dbw = $this->databaseManager->getCentralPrimaryDB();
-		if ( $set == 0 ) {
-			$dbw->newDeleteQueryBuilder()
-				->deleteFrom( 'global_group_restrictions' )
-				->where( [ 'ggr_group' => $group ] )
-				->caller( __METHOD__ )
-				->execute();
-		} else {
-			$dbw->newReplaceQueryBuilder()
-				->replaceInto( 'global_group_restrictions' )
-				->uniqueIndexFields( 'ggr_group' )
-				->row( [ 'ggr_group' => $group, 'ggr_set' => $set, ] )
-				->caller( __METHOD__ )
-				->execute();
-		}
-		return (bool)$dbw->affectedRows();
 	}
 
 	/**
