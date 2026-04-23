@@ -298,7 +298,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		// Explicitly set the user's language as qqx as some messages look at the user's language and not the request
 		// language.
 		$this->setUserLang( 'qqx' );
-		// Prevent the content langauge being used for the reason fields (so that we can assert against the
+		// Prevent the content language being used for the reason fields (so that we can assert against the
 		// message key using the qqx language).
 		$this->overrideConfigValue( MainConfigNames::ForceUIMsgAsContentMsg, [
 			'centralauth-admin-status-reasons',
