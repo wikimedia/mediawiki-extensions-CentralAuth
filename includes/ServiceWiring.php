@@ -192,6 +192,7 @@ return [
 
 	'CentralAuth.GlobalGroupManager' => static function ( MediaWikiServices $services ): GlobalGroupManager {
 		return new GlobalGroupManager(
+			$services->getMainWANObjectCache(),
 			CentralAuthServices::getDatabaseManager( $services )
 		);
 	},

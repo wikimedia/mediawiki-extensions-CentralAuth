@@ -120,7 +120,7 @@ class WikiSet {
 			$row->ws_name,
 			$row->ws_type,
 			explode( ',', $row->ws_wikis ),
-			$row->ws_id
+			intval( $row->ws_id )
 		);
 	}
 

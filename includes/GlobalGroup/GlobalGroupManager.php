@@ -8,7 +8,9 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalGroup;
 
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\WikiSet;
 use StatusValue;
+use Wikimedia\ObjectCache\WANObjectCache;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -21,7 +23,15 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class GlobalGroupManager {
 
+	/**
+	 * @var list<string> List of groups that were updated in this instance. They will be read bypassing the
+	 *     WANObjectCache, which is to ensure that after changing group settings, this request won't be bound
+	 *     to reading its data from (now outdated) cache
+	 */
+	private array $updatedGroups = [];
+
 	public function __construct(
+		private readonly WANObjectCache $wanCache,
 		private readonly CentralAuthDatabaseManager $dbManager
 	) {
 	}
@@ -43,12 +53,42 @@ class GlobalGroupManager {
 	}
 
 	/**
-	 * Returns all rights assigned to a specified global group.
+	 * Returns all rights assigned to a specified global group. This method uses cache.
 	 * @param string $group
 	 * @param int $flags One of the IDBAccessObject::READ_* constants
 	 * @return string[]
 	 */
 	public function getRightsForGroup( string $group, int $flags = IDBAccessObject::READ_NORMAL ): array {
+		if ( in_array( $group, $this->updatedGroups ) && $flags === IDBAccessObject::READ_NORMAL ) {
+			$flags = IDBAccessObject::READ_LATEST;
+		}
+		if ( $flags !== IDBAccessObject::READ_NORMAL ) {
+			return $this->getRightsForGroupInternal( $group, $flags );
+		}
+
+		$rights = $this->wanCache->getWithSetCallback(
+			$this->makePermissionsCacheKey( $group ),
+			WANObjectCache::TTL_MONTH,
+			function () use ( $group ) {
+				$rights = $this->getRightsForGroupInternal( $group, IDBAccessObject::READ_NORMAL );
+				if ( $rights === [] ) {
+					// Don't cache inexistent groups
+					return false;
+				}
+				return $rights;
+			},
+			[ 'pcTTL' => WANObjectCache::TTL_PROC_LONG ]
+		);
+		if ( $rights === false ) {
+			return [];
+		}
+		return $rights;
+	}
+
+	/**
+	 * Backend for {@see getRightsForGroup}
+	 */
+	private function getRightsForGroupInternal( string $group, int $flags ): array {
 		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
 		return $dbr->newSelectQueryBuilder()
 			->select( 'ggp_permission' )
@@ -95,6 +135,31 @@ class GlobalGroupManager {
 	}
 
 	/**
+	 * Returns the wiki set associated with the group. This method uses cache
+	 *
+	 * @since 1.46
+	 */
+	public function getGroupWikiSet( string $groupName ): ?WikiSet {
+		if ( !in_array( $groupName, $this->updatedGroups ) ) {
+			$wikiSetId = $this->wanCache->getWithSetCallback(
+				$this->makeWikiSetCacheKey( $groupName ),
+				WANObjectCache::TTL_MONTH,
+				static function () use ( $groupName ) {
+					return WikiSet::getWikiSetForGroup( $groupName );
+				},
+				[ 'pcTTL' => WANObjectCache::TTL_PROC_LONG ]
+			);
+		} else {
+			$wikiSetId = WikiSet::getWikiSetForGroup( $groupName );
+		}
+
+		if ( $wikiSetId === 0 ) {
+			return null;
+		}
+		return WikiSet::newFromID( $wikiSetId );
+	}
+
+	/**
 	 * Adds the specified permissions to the group. It's safe to add a right that the group already has,
 	 * as it'll be deduplicated on write.
 	 *
@@ -124,6 +189,7 @@ class GlobalGroupManager {
 			->caller( __METHOD__ )
 			->execute();
 
+		$this->invalidateGroupCache( $groupName );
 		return StatusValue::newGood();
 	}
 
@@ -163,6 +229,7 @@ class GlobalGroupManager {
 			->caller( __METHOD__ )
 			->execute();
 
+		$this->invalidateGroupCache( $groupName );
 		return StatusValue::newGood();
 	}
 
@@ -192,6 +259,7 @@ class GlobalGroupManager {
 			->caller( __METHOD__ )
 			->execute();
 
+		$this->invalidateGroupCache( $groupName );
 		return StatusValue::newGood();
 	}
 
@@ -228,6 +296,9 @@ class GlobalGroupManager {
 				->execute();
 		}
 
+		// In theory, it's sufficient to invalidate only the cache for old group, but for safety let's do both
+		$this->invalidateGroupCache( $groupName );
+		$this->invalidateGroupCache( $newName );
 		return StatusValue::newGood();
 	}
 
@@ -260,7 +331,22 @@ class GlobalGroupManager {
 				->execute();
 		}
 
+		$this->invalidateGroupCache( $groupName );
 		return StatusValue::newGood();
+	}
+
+	private function invalidateGroupCache( string $groupName ): void {
+		$this->updatedGroups[] = $groupName;
+		$this->wanCache->delete( $this->makePermissionsCacheKey( $groupName ) );
+		$this->wanCache->delete( $this->makeWikiSetCacheKey( $groupName ) );
+	}
+
+	private function makePermissionsCacheKey( string $groupName ): string {
+		return $this->wanCache->makeGlobalKey( 'global_group_permissions', $groupName );
+	}
+
+	private function makeWikiSetCacheKey( string $groupName ): string {
+		return $this->wanCache->makeGlobalKey( 'global_group_wikiset', $groupName );
 	}
 }
 

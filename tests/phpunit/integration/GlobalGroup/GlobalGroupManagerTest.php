@@ -76,6 +76,8 @@ class GlobalGroupManagerTest extends MediaWikiIntegrationTestCase {
 		array $expectedRights
 	): void {
 		$manager = $this->createManager();
+		// Initialize cache with old data
+		$manager->getRightsForGroup( $groupName );
 		$status = $manager->addRightsToGroup( $groupName, $addRights );
 
 		$this->assertStatusGood( $status );
@@ -115,6 +117,8 @@ class GlobalGroupManagerTest extends MediaWikiIntegrationTestCase {
 		array $expectedRights
 	): void {
 		$manager = $this->createManager();
+		// Initialize cache with old data
+		$manager->getRightsForGroup( $groupName );
 		$status = $manager->removeRightsFromGroup( $groupName, $removeRights );
 
 		$this->assertStatusGood( $status );
@@ -166,6 +170,8 @@ class GlobalGroupManagerTest extends MediaWikiIntegrationTestCase {
 		}
 
 		$manager = $this->createManager();
+		// Initialize cache with old data
+		$manager->getRightsForGroup( $groupName );
 		$status = $manager->removeGroup( $groupName );
 		$remainingRights = $manager->getRightsForGroup( $groupName );
 
@@ -274,11 +280,16 @@ class GlobalGroupManagerTest extends MediaWikiIntegrationTestCase {
 		int $expectedWikiSet
 	): void {
 		$manager = $this->createManager();
+
+		// Initialize cache
+		$oldWikiSet = $manager->getGroupWikiSet( $groupName );
+		$this->assertNull( $oldWikiSet );
+
 		$status = $manager->setWikiSet( $groupName, $wikiSetId );
 
 		$this->assertStatusGood( $status );
-		$newWikiSetId = WikiSet::getWikiSetForGroup( $groupName );
-		$this->assertSame( $expectedWikiSet, $newWikiSetId );
+		$newWikiSet = $manager->getGroupWikiSet( $groupName );
+		$this->assertSame( $expectedWikiSet, $newWikiSet?->getId() ?? 0 );
 	}
 
 	public static function provideSetWikiSet(): array {
@@ -318,11 +329,27 @@ class GlobalGroupManagerTest extends MediaWikiIntegrationTestCase {
 		$this->assertStatusError( 'centralauth-editgroup-nonexistent', $status );
 	}
 
+	public function testCachesRead(): void {
+		$manager = $this->createManager();
+		$rightsBefore = $manager->getRightsForGroup( 'steward' );
+		$this->getDb()->newInsertQueryBuilder()
+			->insertInto( 'global_group_permissions' )
+			->row( [ 'ggp_group' => 'steward', 'ggp_permission' => 'block' ] )
+			->caller( __METHOD__ )
+			->execute();
+		$rightsAfter = $manager->getRightsForGroup( 'steward' );
+
+		// These should be the same, because cache keeps old (and purged) entry for a few seconds.
+		// That's why we don't call advanceMockTime here.
+		$this->assertSame( $rightsBefore, $rightsAfter );
+	}
+
 	private function createManager(): GlobalGroupManager {
+		$cache = $this->getServiceContainer()->getMainWANObjectCache();
 		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
 		$dbManager->method( 'getCentralDBFromRecency' )->willReturn( $this->getDb() );
 		$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $this->getDb() );
-		return new GlobalGroupManager( $dbManager );
+		return new GlobalGroupManager( $cache, $dbManager );
 	}
 
 	private function addGroupMember( string $groupName, int $userId = 1 ): void {
@@ -354,6 +381,14 @@ class GlobalGroupManagerTest extends MediaWikiIntegrationTestCase {
 		$this->getDb()->newInsertQueryBuilder()
 			->insertInto( 'global_group_restrictions' )
 			->row( [ 'ggr_group' => 'global-sysop', 'ggr_set' => 42 ] )
+			->caller( __METHOD__ )
+			->execute();
+		$this->getDb()->newInsertQueryBuilder()
+			->insertInto( 'wikiset' )
+			->rows( [
+				[ 'ws_id' => 1, 'ws_name' => 'WS1', 'ws_type' => 'optout', 'ws_wikis' => '' ],
+				[ 'ws_id' => 2, 'ws_name' => 'WS2', 'ws_type' => 'optout', 'ws_wikis' => '' ],
+			] )
 			->caller( __METHOD__ )
 			->execute();
 	}
