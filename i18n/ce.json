@@ -4,6 +4,7 @@
 			"Matma Rex",
 			"McDutchie",
 			"Sasan700",
+			"Shabe",
 			"Исмаил Садуев",
 			"Умар"
 		]
@@ -137,7 +138,7 @@
 	"centralauth-contribs-link": "глобалан аккаунт",
 	"centralauth-contribs-locked": "ХӀара аккаунт дӀайайина йу.\nХьажа [[Special:CentralAuth/$1|глобалан аккаунтан хаам]] кхин а информаци лаха:",
 	"centralauth-contribs-locked-log": "ХӀара аккаунт дӀайайина йу.\nЛахахь ду тӀаьххьара журналан дӀайаздар:",
-	"centralauth-createlocal-already-exists": "ХӀинцале а локалан аккаунтан билгалйаьккхинчу глобалан аккаунт йолуш йу.\n\nДля указанной глобальной учетной записи уже существует локальная учетная запись.",
+	"centralauth-createlocal-already-exists": "ХӀинцале а локалан аккаунтан билгалйаьккхинчу глобалан аккаунт йолуш йу.",
 	"centralauth-createlocal-no-global-account": "Иштта глобалан аккаунт йац.",
 	"centralauth-createlocal-pretext": "Нагахь лелочо цхьаьна бахьнехь шега йан ца лахь, глобалан декъашхочун агӀо кхоллархьама шун таро йу и кеп лело.",
 	"centralauth-createlocal-reason": "Бахьана",
