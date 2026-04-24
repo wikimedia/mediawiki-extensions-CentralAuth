@@ -9,6 +9,7 @@ namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalPermissionManager;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
@@ -182,6 +183,13 @@ class CentralAuthServices {
 	public static function getGlobalGroupManager( ?ContainerInterface $services = null ): GlobalGroupManager {
 		return ( $services ?: MediaWikiServices::getInstance() )
 			->get( 'CentralAuth.GlobalGroupManager' );
+	}
+
+	public static function getGlobalPermissionManager(
+		?ContainerInterface $services = null
+	): GlobalPermissionManager {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->get( 'CentralAuth.GlobalPermissionManager' );
 	}
 
 	/**

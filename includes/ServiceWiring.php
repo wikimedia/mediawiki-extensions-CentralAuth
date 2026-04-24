@@ -7,6 +7,7 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalPermissionManager;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
@@ -194,6 +195,12 @@ return [
 		return new GlobalGroupManager(
 			$services->getMainWANObjectCache(),
 			CentralAuthServices::getDatabaseManager( $services )
+		);
+	},
+
+	'CentralAuth.GlobalPermissionManager' => static function ( MediaWikiServices $services ): GlobalPermissionManager {
+		return new GlobalPermissionManager(
+			CentralAuthServices::getGlobalGroupManager( $services )
 		);
 	},
 
