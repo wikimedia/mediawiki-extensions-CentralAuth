@@ -676,6 +676,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 
 			// The rest of the changes here will be performed on the "new" group
 			$group = $newname;
+			$this->invalidateGroupsCache( $group );
 		}
 
 		// Update the rights. These are unlikely to fail, as we do the necessary checks before starting
@@ -704,7 +705,6 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 			$this->addWikiSetLog( $group, $current, $new, $reason );
 		}
 
-		$this->invalidateRightsCache( $group );
 		return StatusValue::newGood();
 	}
 
@@ -895,12 +895,12 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	}
 
 	/**
-	 * @param string $group
+	 * Invalidates cache for every member of the group. Use this method after renaming group, so that its
+	 * members don't read old group name from cache.
 	 */
-	private function invalidateRightsCache( $group ) {
-		// Figure out all the users in this group.
-		// Use the primary database over here as this could go horribly wrong with newly created or just
-		// renamed groups
+	private function invalidateGroupsCache( string $group ): void {
+		// Use the primary database over here as the group membership data could have not been replicated yet
+		// Given that this is invoked when a group is renamed, we have to be sure the new name exists in the DB
 		$dbr = $this->databaseManager->getCentralPrimaryDB();
 
 		$res = $dbr->newSelectQueryBuilder()
