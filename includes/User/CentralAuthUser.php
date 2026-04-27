@@ -23,7 +23,6 @@ use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\LocalUserNotFoundException;
 use MediaWiki\Extension\CentralAuth\RCFeed\CARCFeedFormatter;
 use MediaWiki\Extension\CentralAuth\ScrambledPassword;
-use MediaWiki\Extension\CentralAuth\WikiSet;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logging\ManualLogEntry;
 use MediaWiki\MediaWikiServices;
@@ -96,11 +95,6 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @phan-var ?list<array{group:string,expiry:?string}>
 	 */
 	private $mGroups;
-	/**
-	 * @var array|null
-	 * @phan-var ?list<array{right:string,set:?int}>
-	 */
-	private $mRights;
 	/** @var string|null Null when uninitialized, or when the central user doesn't exist */
 	private $mPassword;
 	/** @var string|null */
@@ -139,7 +133,6 @@ class CentralAuthUser implements IDBAccessObject {
 		'mEmail',
 		'mAuthenticationTimestamp',
 		'mGroups',
-		'mRights',
 		'mHomeWiki',
 		'mBeingRenamed',
 
@@ -150,7 +143,7 @@ class CentralAuthUser implements IDBAccessObject {
 		'mCasToken'
 	];
 
-	private const VERSION = 13;
+	private const VERSION = 14;
 
 	public const HIDDEN_LEVEL_NONE = 0;
 	public const HIDDEN_LEVEL_LISTS = 1;
@@ -484,7 +477,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Load user groups and rights from the database.
+	 * Load user groups from the database.
 	 *
 	 * @param bool $force Set to true to load even when already loaded.
 	 */
@@ -501,38 +494,21 @@ class CentralAuthUser implements IDBAccessObject {
 		// We need the user id from the database, but this should be checked by the getId accessor.
 		$db = $this->getSafeReadDB();
 
-		// Grab the user's rights/groups.
+		// Grab the user's groups.
 		$userAndExpiryConds = [
 			'gug_user' => $this->getId(),
 			$db->expr( 'gug_expiry', '=', null )->or( 'gug_expiry', '>=', $db->timestamp() ),
 		];
 
 		$resGroups = $db->newSelectQueryBuilder()
-			->select( [ 'gug_group', 'gug_expiry', 'ggr_set' ] )
+			->select( [ 'gug_group', 'gug_expiry' ] )
 			->from( 'global_user_groups' )
-			->leftJoin( 'global_group_restrictions', null, 'ggr_group=gug_group' )
 			->where( $userAndExpiryConds )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 		$this->mGroups = [];
 		foreach ( $resGroups as $row ) {
-			$this->mGroups[] = [ 'group' => $row->gug_group, 'expiry' => $row->gug_expiry, 'set' => $row->ggr_set ];
-		}
-
-		$resRights = $db->newSelectQueryBuilder()
-			->select( [ 'ggp_permission', 'ggr_set' ] )
-			->from( 'global_group_permissions' )
-			->join( 'global_user_groups', null, 'ggp_group=gug_group' )
-			->leftJoin( 'global_group_restrictions', null, 'ggr_group=gug_group' )
-			->where( $userAndExpiryConds )
-			->caller( __METHOD__ )
-			->fetchResultSet();
-		$this->mRights = [];
-		foreach ( $resRights as $row ) {
-			// Only store the set id here, and don't compute effective rights, because
-			// this is stored in a shared cache for all wikis (see loadFromCache()),
-			// which also isn't invalidated if the set is changed.
-			$this->mRights[] = [ 'right' => $row->ggp_permission, 'set' => $row->ggr_set ];
+			$this->mGroups[] = [ 'group' => $row->gug_group, 'expiry' => $row->gug_expiry ];
 		}
 	}
 
@@ -3408,46 +3384,21 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Return the user's groups that are active on the current wiki (according to WikiSet settings).
+	 * Return the user's groups that are currently active.
 	 *
 	 * @return string[]
 	 */
 	public function getActiveGlobalGroups() {
-		$this->loadGroups();
-
-		$groups = [];
-		$sets = [];
-		foreach ( $this->mGroups as [ 'group' => $group, 'set' => $setId ] ) {
-			if ( $setId ) {
-				$sets[$setId] ??= WikiSet::newFromID( $setId );
-				if ( !$sets[$setId]->inSet() ) {
-					continue;
-				}
-			}
-			$groups[] = $group;
-		}
-		sort( $groups );
-		return $groups;
+		$permissionManager = CentralAuthServices::getGlobalPermissionManager();
+		return $permissionManager->getUserEffectiveGroups( $this );
 	}
 
 	/**
 	 * @return string[]
 	 */
 	public function getGlobalRights() {
-		$this->loadGroups();
-
-		$rights = [];
-		$sets = [];
-		foreach ( $this->mRights as [ 'right' => $right, 'set' => $setId ] ) {
-			if ( $setId ) {
-				$sets[$setId] ??= WikiSet::newFromID( $setId );
-				if ( !$sets[$setId]->inSet() ) {
-					continue;
-				}
-			}
-			$rights[] = $right;
-		}
-		return $rights;
+		$permissionManager = CentralAuthServices::getGlobalPermissionManager();
+		return $permissionManager->getUserPermissions( $this );
 	}
 
 	/**
@@ -3526,7 +3477,7 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * For when speed is of the essence (e.g. when batch-purging users after rights changes)
+	 * For when speed is of the essence (e.g. when batch-purging users after renaming global groups)
 	 */
 	public function quickInvalidateCache() {
 		$this->logger->debug(
@@ -3540,6 +3491,9 @@ class CentralAuthUser implements IDBAccessObject {
 				$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 				$cache->delete( $this->getCacheKey( $cache ) );
 			}, __METHOD__ );
+
+		CentralAuthServices::getGlobalPermissionManager()
+			->invalidateUserPermissionCache( $this );
 	}
 
 	/**

@@ -134,6 +134,30 @@ class GlobalPermissionManagerTest extends MediaWikiUnitTestCase {
 		$this->assertArrayEquals( [ 'read', 'block' ], $resultsB );
 	}
 
+	public function testInvalidateUserPermissionCache(): void {
+		$groupManager = $this->createMock( GlobalGroupManager::class );
+		$groupManager->method( 'getRightsForGroup' )
+			->willReturn( [ 'right1' ], [ 'right2' ] );
+		$groupManager->method( 'getGroupWikiSet' )
+			->willReturn( null );
+
+		$permissionManager = new GlobalPermissionManager( $groupManager );
+
+		$user = $this->createUser( 1, [ 'steward' ] );
+
+		// $rights1 and $rights2 should be the same, as cache is used
+		$rights1 = $permissionManager->getUserPermissions( $user );
+		$this->assertSame( [ 'right1' ], $rights1 );
+
+		$rights2 = $permissionManager->getUserPermissions( $user );
+		$this->assertSame( [ 'right1' ], $rights2 );
+
+		// Only now getRightsForGroup should be invoked again, yielding 'right2'
+		$permissionManager->invalidateUserPermissionCache( $user );
+		$rights3 = $permissionManager->getUserPermissions( $user );
+		$this->assertSame( [ 'right2' ], $rights3 );
+	}
+
 	private function createPermissionManager(
 		array $groupRights = [],
 		array $groupWikiSets = []

@@ -13,6 +13,8 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
  * able to use, based on their global group membership and potentially other configurations.
  *
  * This class *does not* manage what permissions are assigned to which groups. For that, see {@see GlobalGroupManager}.
+ *
+ * @since 1.46
  */
 class GlobalPermissionManager {
 
@@ -21,6 +23,13 @@ class GlobalPermissionManager {
 	public function __construct(
 		private readonly GlobalGroupManager $globalGroupManager
 	) {
+	}
+
+	/**
+	 * Clears the in-memory cache for the given user's global permissions.
+	 */
+	public function invalidateUserPermissionCache( CentralAuthUser $user ): void {
+		unset( $this->userPermissionCache[$user->getId()] );
 	}
 
 	/**
