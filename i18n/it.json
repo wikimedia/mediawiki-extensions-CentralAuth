@@ -181,7 +181,6 @@
 	"centralauth-editgroup-rename-taken": "Rinomina non riuscita: esiste già un gruppo con il nome $1.",
 	"centralauth-editgroup-restrictions": "Insieme di wiki dove questo gruppo è attivo:",
 	"centralauth-editgroup-submit": "Salva le modifiche al gruppo globale",
-	"centralauth-editgroup-success": "Gruppo globale modificato",
 	"centralauth-editgroup-success-text": "Il gruppo globale $1 è stato aggiornato.\n[[Special:GlobalGroupPermissions|Torna alla gestione dei gruppi]]",
 	"centralauth-editset": "Insiemi di wiki",
 	"centralauth-editset-badname": "Nome dell'insieme non valido o vuoto.",

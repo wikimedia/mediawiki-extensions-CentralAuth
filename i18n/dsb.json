@@ -115,7 +115,6 @@
 	"centralauth-editgroup-rename-taken": "Pśemjenjenje njejo se raźiło: Jo južo kupka z mjenim $1.",
 	"centralauth-editgroup-restrictions": "Wikikupka, źož toś ta kupka jo aktiwna:",
 	"centralauth-editgroup-submit": "Změny na globalnych kupkach składowaś",
-	"centralauth-editgroup-success": "Globalna kupka změnjona",
 	"centralauth-editgroup-success-text": "Globalna kupka $1 jo se wuspěšnje změniła.\n[[Special:GlobalGroupPermissions|Slědk ku kupkowemu zastojanjeju]]",
 	"centralauth-editset": "Wikikupki",
 	"centralauth-editset-badname": "Njepłaśiwe abi prozne kupkowe mě",

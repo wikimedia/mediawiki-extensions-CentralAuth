@@ -157,7 +157,6 @@
 	"centralauth-editgroup-rename-taken": "El reanomenament ha fallat: Ja hi ha un grup amb el nom $1.",
 	"centralauth-editgroup-restrictions": "Conjunt de wikis on aquest grup és actiu:",
 	"centralauth-editgroup-submit": "Desa els canvis de grup global",
-	"centralauth-editgroup-success": "Grup global modificat",
 	"centralauth-editgroup-success-text": "El grup global $1 s'ha actualitzat.[[Special:GlobalGroupPermissions|Torna a la gestió de grups]]",
 	"centralauth-editset": "Conjunts de wikis",
 	"centralauth-editset-badname": "Conjunt no vàlid o buit.",

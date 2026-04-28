@@ -179,7 +179,6 @@
 	"centralauth-editgroup-rename-taken": "Navnendringen mislyktes: Det finnes allerede en gruppe med navnet $1.",
 	"centralauth-editgroup-restrictions": "Wikisett der denne gruppen er aktiv:",
 	"centralauth-editgroup-submit": "Lagre endringer for globale grupper",
-	"centralauth-editgroup-success": "Globalgruppen er endret",
 	"centralauth-editgroup-success-text": "Den globale gruppa $1 ble oppdatert.\n[[Special:GlobalGroupPermissions|Tilbake til gruppebehandling]]",
 	"centralauth-editset": "Wikisett",
 	"centralauth-editset-badname": "Ugyldig eller tomt settnavn.",

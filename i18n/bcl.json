@@ -114,7 +114,6 @@
 	"centralauth-editgroup-rename-taken": "An pagpapangaran otro nagpalya:Igwa na tabi nin sarong grupo na may pangaran na $1.",
 	"centralauth-editgroup-restrictions": "Kapakat na mga wikis kun saen ining grupo aktibo:",
 	"centralauth-editgroup-submit": "Itagama an mga kaliwatan kan pankinabanong grupo",
-	"centralauth-editgroup-success": "Pinagliwat an pankinabanong grupo",
 	"centralauth-editgroup-success-text": "Matrayumpong pinagsugpunan an pankinabang grupo na $1.\n[[Special:GlobalGroupPermissions|Ibalik sa manihamento kan grupo]]",
 	"centralauth-editset": "Mga pag-iriba kan Wiki",
 	"centralauth-editset-badname": "Imbalido o mayong laog na pangaran nin pag-iriba",

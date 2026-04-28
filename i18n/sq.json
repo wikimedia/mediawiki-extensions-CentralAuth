@@ -154,7 +154,6 @@
 	"centralauth-editgroup-reason": "Arsyeja:",
 	"centralauth-editgroup-restrictions": "Grupet-wiki, në të cilin ky grup është aktiv:",
 	"centralauth-editgroup-submit": "Ruaji ndryshimet te grupi global",
-	"centralauth-editgroup-success": "Grupi global ndryshoi",
 	"centralauth-editgroup-success-text": "Grupi global $1 u përditësua.\n[[Special:GlobalGroupPermissions|Kthehuni te administrim grupesh]]",
 	"centralauth-editset": "Grupet-Wiki",
 	"centralauth-editset-badname": "Ju keni dhënë një emër i pavlefshëm.",

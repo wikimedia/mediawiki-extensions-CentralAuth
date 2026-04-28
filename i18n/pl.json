@@ -199,7 +199,6 @@
 	"centralauth-editgroup-rename-taken": "Zmiana nazwy nie powiodła się: istnieje już grupa o nazwie $1.",
 	"centralauth-editgroup-restrictions": "Zbiór wiki, w których ta grupa jest aktywna",
 	"centralauth-editgroup-submit": "Zapisz zmiany globalnych grup",
-	"centralauth-editgroup-success": "Grupa globalna została zmieniona",
 	"centralauth-editgroup-success-text": "Zaktualizowano grupę globalną $1.\n[[Special:GlobalGroupPermissions|Powrót do zarządzania grupą]]",
 	"centralauth-editset": "Zbiory wiki",
 	"centralauth-editset-badname": "Nieprawidłowa lub pusta nazwa zbioru.",

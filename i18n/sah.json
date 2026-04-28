@@ -106,7 +106,6 @@
 	"centralauth-editgroup-reason": "Төрүөтэ:",
 	"centralauth-editgroup-restrictions": "Бөлөх дьайар биикилэрэ:",
 	"centralauth-editgroup-submit": "Бөлөх бырааптарын уларытыыны бигэргэтии",
-	"centralauth-editgroup-success": "Бөлөхтөр бырааптара уларыйда",
 	"centralauth-editgroup-success-text": "$1 бөлөх быраабын сөпкө уларыттыҥ.\n[[Special:GlobalGroupPermissions|Бөлөхтөрү салайыыга төннүү]]",
 	"centralauth-editset": "Биикилэр чөмөхтөрө",
 	"centralauth-editset-badname": "Чөмөх ааттамматах эбэтэр талбыт аатыҥ сөп түбэспэт.",

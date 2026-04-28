@@ -108,7 +108,6 @@
 	"centralauth-editgroup-reason": "Alesan:",
 	"centralauth-editgroup-restrictions": "Sèt wiki ing ngendi klompok iki aktif:",
 	"centralauth-editgroup-submit": "Simpen owah-owahan ing idin-idin kelompok",
-	"centralauth-editgroup-success": "Idin-idin kelompok diganti",
 	"centralauth-editgroup-success-text": "Panjenengan sacara suksès bisa ngganti idin kelompok kanggo kelompok $1. [[Special:GlobalGroupPermissions|Balia menyang pangurusan kelompok]]",
 	"centralauth-editset": "Sèt-sèt wiki",
 	"centralauth-editset-badname": "Jeneng setèlan kothong utawa ora trep.",

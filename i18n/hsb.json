@@ -129,7 +129,6 @@
 	"centralauth-editgroup-rename-taken": "Přemjenowanje je so njeporadźiło: Je hižo skupina z mjenom $1.",
 	"centralauth-editgroup-restrictions": "Sadźba wikijow, hdźež tuta skupina je aktiwna:",
 	"centralauth-editgroup-submit": "Změny na globalnej skupinje składować",
-	"centralauth-editgroup-success": "Globalna skupina změnjena",
 	"centralauth-editgroup-success-text": "Globalna skupina $1 wuspěšnje zaktualizowana.\n[[Special:GlobalGroupPermissions|Wróco k zrjadowanju skupinow]]",
 	"centralauth-editset": "Wikijowe skupiny",
 	"centralauth-editset-badname": "Njepłaćiwe abo falowace sadźbowe mjeno.",

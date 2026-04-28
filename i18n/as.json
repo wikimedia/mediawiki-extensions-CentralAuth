@@ -95,7 +95,6 @@
 	"centralauth-editgroup-reason": "কাৰণ:",
 	"centralauth-editgroup-restrictions": "এই গোটটো সক্ৰিয় হৈ থকা ৱিকিসমূহৰ ছেট",
 	"centralauth-editgroup-submit": "গোটৰ অনুমতিসমূহৰ সালসলনি সাঁচি ৰাখক",
-	"centralauth-editgroup-success": "গোটৰ অনুমতিসমূহ সলনি কৰা হৈছে",
 	"centralauth-editgroup-success-text": "আপুনি $1 গোটৰ বাবে অনুমতিসমূহ সফলতাৰে সলনি কৰিছে।\n[[Special:GlobalGroupPermissions|গোট ব্যৱস্থাপনালৈ ঘূৰি যাওক]]",
 	"centralauth-editset": "ৱিকি সংহতিসমূহ",
 	"centralauth-editset-badname": "অবৈধ বা খালী সংহতি নাম।",

@@ -80,7 +80,6 @@
 	"centralauth-editgroup-reason": "Sebäp:",
 	"centralauth-editgroup-restrictions": "Şu toparyň işjeň bolan wikiler toplumy:",
 	"centralauth-editgroup-submit": "Topar rugsatlaryny üýtgeşmeleri ýazdyr",
-	"centralauth-editgroup-success": "Topar rugsatlary üýtgedildi",
 	"centralauth-editgroup-success-text": "$1 topary üçin topar rugsatlaryny şowly üýtgetdiňiz.\n[[Special:GlobalGroupPermissions|Topar dolandyryşyna gaýdyp baryň]]",
 	"centralauth-editset": "Wiki toplumlary",
 	"centralauth-editset-badname": "Nädogry ýa-da boş toplum ady.",

@@ -94,7 +94,6 @@
 	"centralauth-editgroup-reason": "Orsøk:",
 	"centralauth-editgroup-restrictions": "Røð av wikium, har hesin bólkur er virkin:",
 	"centralauth-editgroup-submit": "Goym globalar bólkabroytingar",
-	"centralauth-editgroup-success": "Globalur bólkur broyttur",
 	"centralauth-editgroup-success-text": "Tað hevur eydnast tær at dagføra globala bólkin $1 bólkin.\n[[Special:GlobalGroupPermissions|Vend aftur til at stýra bólkinum]]",
 	"centralauth-editset": "Wiki røð",
 	"centralauth-editset-badname": "Ógildað ella tómt navna rað (set name).",

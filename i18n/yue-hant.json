@@ -109,7 +109,6 @@
 	"centralauth-editgroup-perms": "指派咗嘅權限：",
 	"centralauth-editgroup-reason": "原因:",
 	"centralauth-editgroup-submit": "儲存全域用戶組改動",
-	"centralauth-editgroup-success": "改咗全域用戶組",
 	"centralauth-editgroup-success-text": "更新咗全域組$1。\n[[Special:GlobalGroupPermissions|返去組管理]]",
 	"centralauth-editset": "維基集",
 	"centralauth-editset-legend-ro": "維基集清單",

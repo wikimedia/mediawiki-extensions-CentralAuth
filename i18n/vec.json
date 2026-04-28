@@ -111,7 +111,6 @@
 	"centralauth-editgroup-rename-taken": "Rinominassion falìa: Ghe xe de xà un grupo che se ciama $1.",
 	"centralauth-editgroup-restrictions": "Insieme de wiki in do che sto grupo el xe ativo:",
 	"centralauth-editgroup-submit": "Salva i canbiamenti al grupo global",
-	"centralauth-editgroup-success": "Grupo global canbià",
 	"centralauth-editgroup-success-text": "Ti ga ajornà el grupo globale $1. [[Special:GlobalGroupPermissions|Torna a la gestion del grupo]]",
 	"centralauth-editset": "Insiemi de wiki",
 	"centralauth-editset-badname": "Ti gà speçificà un nome de insieme vódo o mia vàlido.",

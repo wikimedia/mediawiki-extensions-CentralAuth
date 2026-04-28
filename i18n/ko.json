@@ -197,7 +197,6 @@
 	"centralauth-editgroup-rename-taken": "이름 바꾸기를 실패했습니다: $1 이름으로 된 그룹이 이미 있습니다.",
 	"centralauth-editgroup-restrictions": "이 그룹을 활성화할 위키의 집합:",
 	"centralauth-editgroup-submit": "전역 권한 그룹 바뀜을 저장",
-	"centralauth-editgroup-success": "공통 그룹이 바뀌었습니다",
 	"centralauth-editgroup-success-text": "$1 전역 권한 그룹을 변경했습니다.\n[[Special:GlobalGroupPermissions|그룹 관리로 돌아갑니다]]",
 	"centralauth-editset": "위키 집합",
 	"centralauth-editset-badname": "설정 이름이 잘못되었거나 비었습니다.",

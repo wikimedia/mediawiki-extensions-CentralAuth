@@ -109,7 +109,6 @@
 	"centralauth-editgroup-reason": "કારણ:",
 	"centralauth-editgroup-restrictions": "વિકિઓનો સમૂહ જ્યાં આ જૂથ સક્રિય છે:",
 	"centralauth-editgroup-submit": "વૈશ્વીક જૂથ ફેરફારો સાચવો",
-	"centralauth-editgroup-success": "વૈશ્વીક જૂથ બદલાયા",
 	"centralauth-editgroup-success-text": "વૈશ્વીક જૂથ $1 સફળતાપૂર્વક અદ્યતન થયું.\n[[Special:GlobalGroupPermissions|જૂથ વ્યવસ્થાપન પર પરત જાઓ]]",
 	"centralauth-editset": "વિકિ જૂથ",
 	"centralauth-editset-badname": "સમૂહનું નામ અવૈધ કે ખાલી",

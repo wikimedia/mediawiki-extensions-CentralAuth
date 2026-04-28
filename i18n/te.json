@@ -140,7 +140,6 @@
 	"centralauth-editgroup-rename-taken": "పేరుమార్పు విఫలమైంది: $1 పేరుతో ఈసరికే ఓ గుంపు ఉంది.",
 	"centralauth-editgroup-restrictions": "ఈ గుంపు చురుగ్గా ఉన్న వికీల సమూహం",
 	"centralauth-editgroup-submit": "భౌగోళిక గుంపు అనుమతులకు చేసిన మార్పులను భద్రపరచు",
-	"centralauth-editgroup-success": "సార్వత్రిక గుంపు అనుమతులను మార్చాం",
 	"centralauth-editgroup-success-text": "సార్వత్రిక గుంపు $1 కి అనుమతులను జయప్రదంగా మార్చాం.\n[[Special:GlobalGroupPermissions|తిరిగి గుంపు నిర్వహణ]]",
 	"centralauth-editset": "వికీ సమితులు",
 	"centralauth-editset-badname": "చెల్లని లేదా ఖాళీ సమితి పేరు.",

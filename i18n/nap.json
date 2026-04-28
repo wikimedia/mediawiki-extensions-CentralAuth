@@ -137,7 +137,6 @@
 	"centralauth-editgroup-rename-taken": "Renommena fallita: Nce stà già nu gruppo c' 'o nomme $1.",
 	"centralauth-editgroup-restrictions": "Nzieme 'e wiki addò stu gruppo è attivo:",
 	"centralauth-editgroup-submit": "Astipa 'e cagnamiente a 'o gruppo globbale",
-	"centralauth-editgroup-success": "Gruppe globbale cagnate",
 	"centralauth-editgroup-success-text": "Agghiurnamento d' 'o gruppo globbale $1 riuscito\n[[Special:GlobalGroupPermissions|Torna a 'a gestiona d' 'o gruppo]]",
 	"centralauth-editset": "Nzieme 'e wiki",
 	"centralauth-editset-badname": "Nomme 'e nzieme invalido o mis'abbacante.",

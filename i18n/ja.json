@@ -212,7 +212,6 @@
 	"centralauth-editgroup-rename-taken": "名前の変更に失敗しました: $1 という名前のグループは既にあります。",
 	"centralauth-editgroup-restrictions": "このグループが有効化されているウィキ集合:",
 	"centralauth-editgroup-submit": "グローバルグループの変更内容を保存",
-	"centralauth-editgroup-success": "グローバルグループを変更しました",
 	"centralauth-editgroup-success-text": "グローバルグループ $1 を更新しました。\n[[Special:GlobalGroupPermissions|グループ操作に戻る]]",
 	"centralauth-editset": "ウィキ集合",
 	"centralauth-editset-badname": "ウィキ集合の名前が無効または空です。",

@@ -236,7 +236,6 @@
 	"centralauth-editgroup-rename-taken": "Le changement de nom a échoué : il existe déjà un groupe portant le nom « $1 ».",
 	"centralauth-editgroup-restrictions": "Ensemble de wikis où ce groupe est actif :",
 	"centralauth-editgroup-submit": "Enregistrer les modifications du groupe global",
-	"centralauth-editgroup-success": "Groupe global modifié",
 	"centralauth-editgroup-success-text": "Le groupe global $1 a été mis à jour.\n[[Special:GlobalGroupPermissions|Revenir à la gestion des groupes]]",
 	"centralauth-editset": "Ensembles de wikis",
 	"centralauth-editset-badname": "Nom d’ensemble incorrect ou non renseigné.",

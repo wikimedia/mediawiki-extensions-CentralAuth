@@ -165,7 +165,6 @@
 	"centralauth-editgroup-rename-taken": "Přejmenování se nezdařilo: Skupina s názvem $1 již existuje.",
 	"centralauth-editgroup-restrictions": "Sada wiki, na kterých je tato skupina aktivní:",
 	"centralauth-editgroup-submit": "Uložit změny globální skupiny",
-	"centralauth-editgroup-success": "Globální skupina byla změněna",
 	"centralauth-editgroup-success-text": "Globální skupina $1 byla změněna.\n[[Special:GlobalGroupPermissions|Návrat na správu skupin]]",
 	"centralauth-editset": "Sady wiki",
 	"centralauth-editset-badname": "Neplatný nebo prázdný název množiny.",

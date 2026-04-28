@@ -140,7 +140,6 @@
 	"centralauth-editgroup-rename-taken": "पुनर्नामाभिधान अपयशी झाले:$1 या नावाचा गट आधीच येथे आहे.",
 	"centralauth-editgroup-restrictions": "विकीगट जेथे हा गट कार्यप्रवण आहे:",
 	"centralauth-editgroup-submit": "वैश्विक गटातले बदल जतन करा",
-	"centralauth-editgroup-success": "वैश्विक गट बदलला",
 	"centralauth-editgroup-success-text": "तुम्ही $1 या वैश्विक गटास अद्ययावत् केले आहे.\n[[Special:GlobalGroupPermissions|गट व्यवस्थापनाकडे परत जा]]",
 	"centralauth-editset": "विकीसंच",
 	"centralauth-editset-badname": "अवैध वा रिकामे संच नाव.",

@@ -102,7 +102,6 @@
 	"centralauth-editgroup-reason": "හේතුව:",
 	"centralauth-editgroup-restrictions": "මෙම කණ්ඩායම සක්‍රීය විකියන්:",
 	"centralauth-editgroup-submit": "ගෝලීය සමූහ වෙනස්කම් සුරකින්න",
-	"centralauth-editgroup-success": "ගෝලීය සමූහය වෙනස් කරන ලදී",
 	"centralauth-editgroup-success-text": "$1 ගෝලීය කණ්ඩායම සාර්ථකව යාවත්කාලීන කර ඇත.\n[[Special:GlobalGroupPermissions|කණ්ඩායම් කළමනාකරණය වෙත නැවත යන්න]]",
 	"centralauth-editset": "විකි කට්ටල",
 	"centralauth-editset-badname": "අවලංගු හෝ හිස් කට්ටල නමකි.",

@@ -132,7 +132,6 @@
 	"centralauth-editgroup-rename-taken": "Et Ömnänne wohr nit müjjelesch, weil et ald en Jropp met däm Nahme $1 jitt.",
 	"centralauth-editgroup-restrictions": "De Wikis, wo et di Jropp jitt:",
 	"centralauth-editgroup-submit": "Don de Änderonge aan dä Jropp ier Rääschte faßhallde",
-	"centralauth-editgroup-success": "De jemeinsamme Jropp es jeänndert",
 	"centralauth-editgroup-success-text": "Do häs de Rääschde för de jemeinsamme Metmaacher_Jropp „$1“ jäz jänndert.\n[[Special:GlobalGroupPermissions|Jangk retuhr, nohm Metmaacher_Jroppe_Rääschde beärrbeide]]",
 	"centralauth-editset": "Wiki-Jroppe",
 	"centralauth-editset-badname": "Do häß keine Jroppe-Name aanjejovve, udder dä Name douch nix.",

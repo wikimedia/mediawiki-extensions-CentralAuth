@@ -197,7 +197,6 @@
 	"centralauth-editgroup-rename-taken": "تغییر نام شکست خورد: از پیش گروهی با نام $1 وجود دارد.",
 	"centralauth-editgroup-restrictions": "مجموعه ویکی‌هایی که این گروه در آن‌ها فعال است:",
 	"centralauth-editgroup-submit": "ذخیره‌سازی تغییرات گروه سراسری",
-	"centralauth-editgroup-success": "گروه سراسری تغییر یافت",
 	"centralauth-editgroup-success-text": "گروه سراسری $1 روزآمد شد.\n[[Special:GlobalGroupPermissions|بازگشت به مدیریت گروه‌ها]]",
 	"centralauth-editset": "مجموعه‌های ویکی",
 	"centralauth-editset-badname": "نام نامجاز یا خالی مجموعه",

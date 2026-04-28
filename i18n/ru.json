@@ -207,7 +207,6 @@
 	"centralauth-editgroup-rename-taken": "Переименование не удалось: уже есть группа с названием $1.",
 	"centralauth-editgroup-restrictions": "Набор вики, в которых группа действует:",
 	"centralauth-editgroup-submit": "Сохранить изменения в правах глобальной группы",
-	"centralauth-editgroup-success": "Глобальная группа изменена",
 	"centralauth-editgroup-success-text": "Глобальная группа $1 была обновлена.\n[[Special:GlobalGroupPermissions|Вернуться к управлению группами]]",
 	"centralauth-editset": "Наборы вики",
 	"centralauth-editset-badname": "Пустое или недопустимое название набора.",

@@ -190,7 +190,6 @@
 	"centralauth-editgroup-rename-taken": "Umbenennung fehlgeschlagen: Es gibt bereits eine Gruppe mit dem Namen „$1“.",
 	"centralauth-editgroup-restrictions": "Wikigruppe, in der diese Gruppe aktiv ist:",
 	"centralauth-editgroup-submit": "Änderungen an globalen Gruppen speichern",
-	"centralauth-editgroup-success": "Die globale Gruppe wurde geändert",
 	"centralauth-editgroup-success-text": "Die globale Gruppe „$1“ wurde erfolgreich aktualisiert.\n[[Special:GlobalGroupPermissions|Zurück zur Verwaltung globaler Benutzergruppen]].",
 	"centralauth-editset": "Wikigruppen",
 	"centralauth-editset-badname": "{{#FORMAL:Du hast|Sie haben}} einen ungültigen oder leeren Gruppennamen angegeben.",

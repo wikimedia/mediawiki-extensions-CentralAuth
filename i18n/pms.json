@@ -131,7 +131,6 @@
 	"centralauth-editgroup-rename-taken": "Ël cangiament ëd nòm a l'ha falì: a-i é già na partìa ch'a pòrta ël nòm $1.",
 	"centralauth-editgroup-restrictions": "Ansema ëd wiki andoa sta partìa-sì a l'é ativa:",
 	"centralauth-editgroup-submit": "Salvé le modìfiche dla partìa global",
-	"centralauth-editgroup-success": "Partìa global modificà",
 	"centralauth-editgroup-success-text": "Partìa global $1 agiornà për da bin.\n[[Special:GlobalGroupPermissions|Torné a la gestion ëd le partìe]]",
 	"centralauth-editset": "Ansema ëd wiki",
 	"centralauth-editset-badname": "Nòm d'ansema pa bon o veuid.",

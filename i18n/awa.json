@@ -97,7 +97,6 @@
 	"centralauth-editgroup-rename-taken": "नाम बदलब विफल रहा: $1 नाँव कय सदस्य-समूह पहलवै से मौजूद है।",
 	"centralauth-editgroup-restrictions": "विकि-समूह जहाँ इ सदस्य-समूह सक्रिय है:",
 	"centralauth-editgroup-submit": "वैश्विक समूह बदलाव सहेजा जाय",
-	"centralauth-editgroup-success": "वैश्विक सदस्य-समूह में बदलाव कै गय",
 	"centralauth-editgroup-success-text": "$1 नामक वैश्विक सदस्य-समूह को सफलतापूर्वक अद्यतित कर दिया गया है।\n[[Special:GlobalGroupPermissions|समूह व्यवस्थापन की ओर वापिस जायें]]",
 	"centralauth-editset": "विकि-समूह",
 	"centralauth-editset-badname": "अमान्य या खाली विकि-समूह नाँव",

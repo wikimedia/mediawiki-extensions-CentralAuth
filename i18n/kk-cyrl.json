@@ -126,7 +126,6 @@
 	"centralauth-editgroup-perms": "Түйістірілген рұқсаттар:",
 	"centralauth-editgroup-reason": "Себебі:",
 	"centralauth-editgroup-submit": "Ғаламдық топ өзгерістерін сақтау",
-	"centralauth-editgroup-success": "Ғаламдық топ өзгертілді",
 	"centralauth-editgroup-success-text": "$1 ғаламдық тобын сәтті жаңарттыңыз. [[Special:GlobalGroupPermissions|Топ реттеуіне қайта келу]]",
 	"centralauth-editset": "Уики жиынтықтары",
 	"centralauth-editset-intro-rw": "Келесі уики жиынтық әлдеқашан басталған. Сіз көре аласыз немесе қайсы бірін өзгерте аласыз, немесе жаңа жиынтық бастай аласыз.",

@@ -45,7 +45,6 @@
 	"centralauth-createlocal-username": "عالمی کاتي جو نالو",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|ڏينھن}} اڳ",
 	"centralauth-editgroup-noset": "(ڪوبہ نہ)",
-	"centralauth-editgroup-success": "عالمي گروھ بدلايو ويو",
 	"centralauth-editset-item-rw": "[[Special:WikiSets/$2|$1]] ([[Special:WikiSets/delete/$2|ڊاھيو]])",
 	"centralauth-editset-name": "نالو:",
 	"centralauth-editset-nouse": "(ڪوبہ نہ)",

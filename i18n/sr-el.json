@@ -151,7 +151,6 @@
 	"centralauth-editgroup-reason": "Razlog:",
 	"centralauth-editgroup-restrictions": "Skup vikija u kojima je ova grupa aktivna:",
 	"centralauth-editgroup-submit": "Sačuvaj izmene globalne grupe",
-	"centralauth-editgroup-success": "Globalna grupa promenjena",
 	"centralauth-editgroup-success-text": "Promenio si prava grupi $1. [[Special:GlobalGroupPermissions|Porvratak na upravljanje grupama]]",
 	"centralauth-editset": "Skupovi Vikija",
 	"centralauth-editset-badname": "Neispravno ili prazno ime skupa.",

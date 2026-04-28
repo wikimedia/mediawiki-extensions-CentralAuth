@@ -113,7 +113,6 @@
 	"centralauth-editgroup-reason": "Kialo:",
 	"centralauth-editgroup-restrictions": "Vikiaro kie ĉi tiu grupo estas aktiva:",
 	"centralauth-editgroup-submit": "Konservi ŝanĝojn de gruprajtoj",
-	"centralauth-editgroup-success": "Malloka grupo estis ŝanĝita",
 	"centralauth-editgroup-success-text": "Vi sukcese ŝanĝis la gruprajtojn por la grupo $1. [[Special:GlobalGroupPermissions|Reiri al Grupadministrado]]",
 	"centralauth-editset": "Vikiaroj",
 	"centralauth-editset-badname": "Nevalida aŭ malplena nomo de vikiaro.",

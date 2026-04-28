@@ -177,7 +177,6 @@
 	"centralauth-editgroup-rename-taken": "Átnevezés sikertelen: Már létezik $1 nevű csoport.",
 	"centralauth-editgroup-restrictions": "Wikicsoportok, ahol ez a csoport aktív:",
 	"centralauth-editgroup-submit": "Globális csoport jogainak megváltoztatása",
-	"centralauth-editgroup-success": "A globális csoporthoz tartozó jogok megváltoztatva",
 	"centralauth-editgroup-success-text": "A(z) $1 globális csoport frissítve.\n[[Special:GlobalGroupPermissions|Vissza a csoportkezelőhöz]]",
 	"centralauth-editset": "Wikicsoportok",
 	"centralauth-editset-badname": "Érvénytelen vagy üres csoportnevet adtál meg.",

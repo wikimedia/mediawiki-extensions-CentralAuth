@@ -167,7 +167,6 @@
 	"centralauth-editgroup-rename-taken": "Не ўдалося перайменаваць: група з назвай «$1» ужо існуе.",
 	"centralauth-editgroup-restrictions": "Набор вікі, дзе гэта група актыўная:",
 	"centralauth-editgroup-submit": "Захаваць змены ў глабальных групах",
-	"centralauth-editgroup-success": "Глабальная група змененая",
 	"centralauth-editgroup-success-text": "Глабальная група «$1» была абноўленая.\n[[Special:GlobalGroupPermissions|Вярнуцца да кіравання групамі]]",
 	"centralauth-editset": "Наборы вікі",
 	"centralauth-editset-badname": "Няслушная ці пустая назва набору.",

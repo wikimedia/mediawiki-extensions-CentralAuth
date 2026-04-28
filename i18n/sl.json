@@ -172,7 +172,6 @@
 	"centralauth-editgroup-rename-taken": "Preimenovanje je spodletelo: Skupina z imenom $1 že obstaja.",
 	"centralauth-editgroup-restrictions": "Skupina vikijev, v katerih je ta skupina dejavna:",
 	"centralauth-editgroup-submit": "Shrani spremembe globalne skupine",
-	"centralauth-editgroup-success": "Globalna skupina je spremenjena",
 	"centralauth-editgroup-success-text": "Posodobili smo globalno skupino $1.\n[[Special:GlobalGroupPermissions|Vrnite se na upravljanje skupin]]",
 	"centralauth-editset": "Skupine vikijev",
 	"centralauth-editset-badname": "Neveljavno ali prazno ime skupine.",

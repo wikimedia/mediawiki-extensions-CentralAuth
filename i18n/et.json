@@ -156,7 +156,6 @@
 	"centralauth-editgroup-rename-taken": "Ümbernimetamine ebaõnnestus: Rühm nimega $1 on juba olemas.",
 	"centralauth-editgroup-restrictions": "Vikide komplekte, kus see rühm on tegev:",
 	"centralauth-editgroup-submit": "Salvesta globaalse rühma muudatused",
-	"centralauth-editgroup-success": "Globaalne rühm muudetud",
 	"centralauth-editgroup-success-text": "Globaalne rühm $1 on uuendatud.\n[[Special:GlobalGroupPermissions|Naase rühma haldamise leheküljele]]",
 	"centralauth-editset": "Vikikomplektid",
 	"centralauth-editset-badname": "Vigane või tühi komplekti nimi.",

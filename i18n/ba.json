@@ -138,7 +138,6 @@
 	"centralauth-editgroup-rename-taken": "Исемен үҙгәртеп булманы: $1 исемле төркөм бар инде.",
 	"centralauth-editgroup-restrictions": "Төркөм әүҙем булған викиҙар:",
 	"centralauth-editgroup-submit": "Глобаль төркөм хоҡуҡтарындағы үҙгәртеүҙәрҙе һаҡларға",
-	"centralauth-editgroup-success": "Глобаль төркөм үҙгәртелде",
 	"centralauth-editgroup-success-text": "Глобаль $1 төркөмө яңыртылды.\n[[Special:GlobalGroupPermissions|Төркөмдәр менән идара итеүгә кире ҡайтырға]].",
 	"centralauth-editset": "викиҙар",
 	"centralauth-editset-badname": "Викиҙың буш йәки мөмкин булмаған тупланмаһы исеме",

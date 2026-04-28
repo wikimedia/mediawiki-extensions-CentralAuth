@@ -87,7 +87,6 @@
 	"centralauth-editgroup-reason": "Grund:",
 	"centralauth-editgroup-restrictions": "Wikigruppe, wu die Gruppe din aktiv isch:",
 	"centralauth-editgroup-submit": "Änderige an dr Grupperächt spychere",
-	"centralauth-editgroup-success": "Grupperächt gänderet",
 	"centralauth-editgroup-success-text": "Du hesch mit Erfolg d Grupperächt fir d $1-Gruppe gänderet. [[Special:GlobalGroupPermissions|Zruck zue dr Verwaltig vu wältwyte Gruppe]].",
 	"centralauth-editset": "Wikigruppe",
 	"centralauth-editset-badname": "Du hesch e nit giltige oder lääre Gruppename aagee.",

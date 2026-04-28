@@ -194,7 +194,6 @@
 	"centralauth-editgroup-rename-taken": "Yeniden adlandırma başarısız oldu: $1 adında bir grup zaten var.",
 	"centralauth-editgroup-restrictions": "Bu grubun etkin olduğu viki setleri:",
 	"centralauth-editgroup-submit": "Küresel grup değişikliklerini kaydet",
-	"centralauth-editgroup-success": "Küresel grup değiştirildi",
 	"centralauth-editgroup-success-text": "$1 küresel grubu güncellendi.\n[[Special:GlobalGroupPermissions|Grup yönetimine geri dönün]]",
 	"centralauth-editset": "Viki kümeleri",
 	"centralauth-editset-badname": "Geçersiz ya da boş set adı.",

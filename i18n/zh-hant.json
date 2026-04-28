@@ -212,7 +212,6 @@
 	"centralauth-editgroup-rename-taken": "重新命名失敗：已存在相同名稱的群組 $1 。",
 	"centralauth-editgroup-restrictions": "此群組可使用於 Wiki 集合：",
 	"centralauth-editgroup-submit": "儲存變更到全域群組",
-	"centralauth-editgroup-success": "已變更全域群組",
 	"centralauth-editgroup-success-text": "已更新全域群組 $1。[[Special:GlobalGroupPermissions|返回群組管理]]",
 	"centralauth-editset": "wiki集",
 	"centralauth-editset-badname": "無效或空的集合名稱。",

@@ -144,7 +144,6 @@
 	"centralauth-editgroup-rename-taken": "C'hwitet eo ar cheñchamant anv : bez' ez eus ur strollad anvet $1 dija.",
 	"centralauth-editgroup-restrictions": "Strobad wikioù eo oberiant ar strollad-mañ enno :",
 	"centralauth-editgroup-submit": "Enrollañ ar c'hemmoù d'ar strollad hollek",
-	"centralauth-editgroup-success": "Cheñchet eo ar strollad hollek",
 	"centralauth-editgroup-success-text": "Kemmet eo bet ar strollad hollek $1.\n[[Special:GlobalGroupPermissions|Distreiñ d'ar merañ strolladoù]]",
 	"centralauth-editset": "Strobadoù wikioù",
 	"centralauth-editset-badname": "Anv strobad wikioù fall pe goullo.",

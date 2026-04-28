@@ -129,7 +129,6 @@
 	"centralauth-editgroup-reason": "Razlog:",
 	"centralauth-editgroup-restrictions": "Set wikija gdje je ova skupina aktivna:",
 	"centralauth-editgroup-submit": "Spremi promjene globalne grupe",
-	"centralauth-editgroup-success": "Globalna grupa je promijenjena",
 	"centralauth-editgroup-success-text": "Uspješno ste promijenili prava za skupinu $1.\n[[Special:GlobalGroupPermissions|Vrati se na upravljanje skupinama]]",
 	"centralauth-editset": "Skupovi wikija",
 	"centralauth-editset-badname": "Neispravno ili prazno ime seta",

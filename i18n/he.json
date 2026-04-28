@@ -182,7 +182,6 @@
 	"centralauth-editgroup-rename-taken": "שינוי הם כשל: כבר יש קבוצה בשם $1.",
 	"centralauth-editgroup-restrictions": "קבוצת אתרי הוויקי בהם הקבוצה פעילה:",
 	"centralauth-editgroup-submit": "שמירת שינויים לקבוצה הגלובלית",
-	"centralauth-editgroup-success": "הקבוצה הגלובלית שונתה",
 	"centralauth-editgroup-success-text": "הקבוצה הגלובלית $1 עודכנה.\n[[Special:GlobalGroupPermissions|חזרה לניהול הקבוצות]]",
 	"centralauth-editset": "קבוצות אתרי ויקי",
 	"centralauth-editset-badname": "שם הקבוצה ריק או בלתי־תקין.",

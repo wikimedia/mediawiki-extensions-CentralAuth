@@ -95,7 +95,6 @@
 	"centralauth-editgroup-reason": "Raġuni:",
 	"centralauth-editgroup-restrictions": "Sett ta' wikis fejn dan il-grupp huwa attiv:",
 	"centralauth-editgroup-submit": "Salva l-bidliet tal-permessi tal-grupp",
-	"centralauth-editgroup-success": "Il-permessi tal-grupp ġew mibdula",
 	"centralauth-editgroup-success-text": "Għadek kif biddilt il-permessi tal-grupp għall-grupp $1.\n[[Special:GlobalGroupPermissions|Irritorna lura lejn il-ġestjoni tal-gruppi]]",
 	"centralauth-editset": "Settijiet ta' wikis",
 	"centralauth-editset-badname": "Isem tas-sett invalidu jew vojt.",

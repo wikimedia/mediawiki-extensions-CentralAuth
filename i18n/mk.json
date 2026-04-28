@@ -169,7 +169,6 @@
 	"centralauth-editgroup-rename-taken": "Преименувањето не успеа: Веќе постои група наречена „$1“.",
 	"centralauth-editgroup-restrictions": "Збир викија кадешто е активна групата:",
 	"centralauth-editgroup-submit": "Зачувај промени во глобалната група",
-	"centralauth-editgroup-success": "Глобалната група е изменета",
 	"centralauth-editgroup-success-text": "Подновена глобалната група $1.\n[[Special:GlobalGroupPermissions|Назад кон раководењето со групи]]",
 	"centralauth-editset": "Збирови викија",
 	"centralauth-editset-badname": "Неважечко или празно име на збирот.",

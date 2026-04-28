@@ -179,7 +179,6 @@
 	"centralauth-editgroup-rename-taken": "Thất bại khi đổi tên: hiện đã có nhóm có tên $1.",
 	"centralauth-editgroup-restrictions": "Các wiki trong phạm vi của nhóm này:",
 	"centralauth-editgroup-submit": "Lưu thay đổi đối với nhóm toàn cục",
-	"centralauth-editgroup-success": "Nhóm toàn cục đã thay đổi",
 	"centralauth-editgroup-success-text": "Đã cập nhật nhóm toàn cục $1.\n[[Special:GlobalGroupPermissions|Quay lại quản lý nhóm]]",
 	"centralauth-editset": "Tập wiki",
 	"centralauth-editset-badname": "Tên phạm vi trống hay không hợp lệ.",

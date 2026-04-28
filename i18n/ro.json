@@ -152,7 +152,6 @@
 	"centralauth-editgroup-rename-taken": "Redenumire eșuată: există deja un grup cu numele $1.",
 	"centralauth-editgroup-restrictions": "Setul de wikiuri unde grupul este activ:",
 	"centralauth-editgroup-submit": "Salvează modificările grupului global",
-	"centralauth-editgroup-success": "Grup global modificat",
 	"centralauth-editgroup-success-text": "Grupul global $1 a fost actualizat cu succes.\n[[Special:GlobalGroupPermissions|Înapoi la gestionarea grupurilor]]",
 	"centralauth-editset": "Wiki seturi",
 	"centralauth-editset-badname": "Numele setului este invalid sau gol.",
