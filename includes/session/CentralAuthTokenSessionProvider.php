@@ -80,7 +80,8 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 			!isset( $data['origin'] ) ||
 			!isset( $data['originSessionId'] )
 		) {
-			$this->logger->info( __METHOD__ . ': centralauthtoken is invalid' );
+			$this->logger->info( __METHOD__ . ': centralauthtoken is invalid',
+				$request->getSecurityLogContext() );
 			return $this->makeBogusSessionInfo( 'badtoken', 'apierror-centralauth-badtoken' );
 		}
 
