@@ -5,10 +5,21 @@
  * @file
  */
 
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalPermissionManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
+use MediaWiki\User\RestrictedUserGroupConfigReader;
+use MediaWiki\User\User;
+use MediaWiki\User\UserFactory;
+use MediaWiki\User\UserGroupManager;
+use MediaWiki\User\UserGroupRestrictions;
+use MediaWiki\User\UserRequirementsConditionChecker;
+use MediaWiki\User\UserRequirementsConditionCheckerFactory;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalPermissionManager
@@ -141,7 +152,17 @@ class GlobalPermissionManagerTest extends MediaWikiUnitTestCase {
 		$groupManager->method( 'getGroupWikiSet' )
 			->willReturn( null );
 
-		$permissionManager = new GlobalPermissionManager( $groupManager );
+		$permissionManager = new GlobalPermissionManager(
+			$this->createStub( UserFactory::class ),
+			new ServiceOptions(
+				GlobalPermissionManager::CONSTRUCTOR_OPTIONS,
+				[ CAMainConfigNames::CentralAuthCentralWiki => WikiMap::getCurrentWikiId() ]
+			),
+			$this->createStub( UserGroupManager::class ),
+			$this->createStub( RestrictedUserGroupConfigReader::class ),
+			$this->createStub( UserRequirementsConditionCheckerFactory::class ),
+			$groupManager
+		);
 
 		$user = $this->createUser( 1, [ 'steward' ] );
 
@@ -158,9 +179,142 @@ class GlobalPermissionManagerTest extends MediaWikiUnitTestCase {
 		$this->assertSame( [ 'right2' ], $rights3 );
 	}
 
+	public function testGetUserDisabledGroups_systemUser(): void {
+		$user = $this->createUser( 1, [ 'steward' ] );
+
+		$localUser = $this->createMock( User::class );
+		$localUser->method( 'isSystemUser' )->willReturn( true );
+		$userFactory = $this->createMock( UserFactory::class );
+		$userFactory->method( 'newFromUserIdentity' )->willReturn( $localUser );
+
+		// System user should never attempt to read restrictions whatever they are
+		$configReader = $this->createMock( RestrictedUserGroupConfigReader::class );
+		$configReader->expects( $this->never() )->method( 'getConfig' );
+
+		$permissionManager = $this->createPermissionManager(
+			userFactory: $userFactory,
+			configReader: $configReader
+		);
+
+		$this->assertSame( [], $permissionManager->getUserDisabledGroups( $user ) );
+	}
+
+	public function testGetUserDisabledGroups_usesCorrectScopeAndWiki(): void {
+		$user = $this->createUser( 1, [] );
+
+		$configReader = $this->createMock( RestrictedUserGroupConfigReader::class );
+		$configReader->expects( $this->once() )
+			->method( 'getConfig' )
+			->with( WikiMap::getCurrentWikiId(), GlobalGroupAssignmentService::RESTRICTION_SCOPE )
+			->willReturn( [] );
+
+		$permissionManager = $this->createPermissionManager(
+			userFactory: $this->createNonSystemUserFactory(),
+			configReader: $configReader
+		);
+
+		$permissionManager->getUserDisabledGroups( $user );
+	}
+
+	/** @dataProvider provideDisabledGroups */
+	public function testGetUserDisabledGroups(
+		array $groups,
+		array $restrictedGroupsConfig,
+		bool $conditionResult,
+		array $expectedDisabledGroups
+	): void {
+		$user = $this->createUser( 1, $groups );
+
+		$checker = $this->createMock( UserRequirementsConditionChecker::class );
+		$checker->method( 'recursivelyCheckCondition' )->willReturn( $conditionResult );
+		$checkerFactory = $this->createMock( UserRequirementsConditionCheckerFactory::class );
+		$checkerFactory->method( 'getUserRequirementsConditionChecker' )->willReturn( $checker );
+
+		$configReader = $this->createMock( RestrictedUserGroupConfigReader::class );
+		$configReader->method( 'getConfig' )->willReturn( $restrictedGroupsConfig );
+
+		$permissionManager = $this->createPermissionManager(
+			userFactory: $this->createNonSystemUserFactory(),
+			configReader: $configReader,
+			checkerFactory: $checkerFactory
+		);
+
+		$this->assertArrayEquals(
+			$expectedDisabledGroups,
+			$permissionManager->getUserDisabledGroups( $user )
+		);
+	}
+
+	public static function provideDisabledGroups(): iterable {
+		$restrictions = new UserGroupRestrictions( [
+			'memberConditions' => [ 'some-condition' ],
+		] );
+		$noConditionsRestriction = new UserGroupRestrictions( [] );
+
+		yield 'No active groups' => [
+			'groups' => [],
+			'restrictedGroupsConfig' => [ 'steward' => $restrictions ],
+			'conditionResult' => false,
+			'expectedDisabledGroups' => [],
+		];
+		yield 'Group not in restricted config' => [
+			'groups' => [ 'steward' ],
+			'restrictedGroupsConfig' => [],
+			'conditionResult' => false,
+			'expectedDisabledGroups' => [],
+		];
+		yield 'Restriction has no member conditions' => [
+			'groups' => [ 'steward' ],
+			'restrictedGroupsConfig' => [ 'steward' => $noConditionsRestriction ],
+			'conditionResult' => false,
+			'expectedDisabledGroups' => [],
+		];
+		yield 'User meets conditions' => [
+			'groups' => [ 'steward' ],
+			'restrictedGroupsConfig' => [ 'steward' => $restrictions ],
+			'conditionResult' => true,
+			'expectedDisabledGroups' => [],
+		];
+		yield 'User fails conditions' => [
+			'groups' => [ 'steward' ],
+			'restrictedGroupsConfig' => [ 'steward' => $restrictions ],
+			'conditionResult' => false,
+			'expectedDisabledGroups' => [ 'steward' ],
+		];
+	}
+
+	public function testGetUserDisabledGroups_multipleGroupsMixed(): void {
+		// steward fails conditions → disabled; global-sysop meets conditions → not disabled
+		$user = $this->createUser( 1, [ 'steward', 'global-sysop' ] );
+
+		$restrictionMet = new UserGroupRestrictions( [ 'memberConditions' => [ 'cond-met' ] ] );
+		$restrictionFailed = new UserGroupRestrictions( [ 'memberConditions' => [ 'cond-failed' ] ] );
+
+		$checker = $this->createMock( UserRequirementsConditionChecker::class );
+		$checker->method( 'recursivelyCheckCondition' )
+			->willReturnCallback( static fn ( $cond, $user ) => $cond[0] === 'cond-met' );
+		$checkerFactory = $this->createMock( UserRequirementsConditionCheckerFactory::class );
+		$checkerFactory->method( 'getUserRequirementsConditionChecker' )->willReturn( $checker );
+
+		$configReader = $this->createMock( RestrictedUserGroupConfigReader::class );
+		$configReader->method( 'getConfig' )
+			->willReturn( [ 'steward' => $restrictionFailed, 'global-sysop' => $restrictionMet ] );
+
+		$permissionManager = $this->createPermissionManager(
+			userFactory: $this->createNonSystemUserFactory(),
+			configReader: $configReader,
+			checkerFactory: $checkerFactory
+		);
+
+		$this->assertArrayEquals( [ 'steward' ], $permissionManager->getUserDisabledGroups( $user ) );
+	}
+
 	private function createPermissionManager(
 		array $groupRights = [],
-		array $groupWikiSets = []
+		array $groupWikiSets = [],
+		?UserFactory $userFactory = null,
+		?RestrictedUserGroupConfigReader $configReader = null,
+		?UserRequirementsConditionCheckerFactory $checkerFactory = null
 	): GlobalPermissionManager {
 		$groupManager = $this->createMock( GlobalGroupManager::class );
 		$groupManager->method( 'getRightsForGroup' )
@@ -169,16 +323,36 @@ class GlobalPermissionManagerTest extends MediaWikiUnitTestCase {
 		$groupManager->method( 'getGroupWikiSet' )
 			->willReturnCallback( static fn ( $group ) => $groupWikiSets[$group] ?? null );
 
-		return new GlobalPermissionManager( $groupManager );
+		return new GlobalPermissionManager(
+			$userFactory ?? $this->createStub( UserFactory::class ),
+			new ServiceOptions(
+				GlobalPermissionManager::CONSTRUCTOR_OPTIONS,
+				[ CAMainConfigNames::CentralAuthCentralWiki => WikiMap::getCurrentWikiId() ]
+			),
+			$this->createStub( UserGroupManager::class ),
+			$configReader ?? $this->createStub( RestrictedUserGroupConfigReader::class ),
+			$checkerFactory ?? $this->createStub( UserRequirementsConditionCheckerFactory::class ),
+			$groupManager
+		);
 	}
 
 	private function createUser( int $id, array $groups, bool $isAttached = true ): CentralAuthUser {
 		$user = $this->createMock( CentralAuthUser::class );
 		$user->method( 'getId' )->willReturn( $id );
+		$user->method( 'getName' )->willReturn( "User $id" );
 		$user->method( 'getGlobalGroups' )->willReturn( $groups );
 		$user->method( 'isAttached' )->willReturn( $isAttached );
 		$user->method( 'exists' )->willReturn( $id > 0 );
+		$user->method( 'getLocalId' )->willReturn( $id );
 		return $user;
+	}
+
+	private function createNonSystemUserFactory(): UserFactory {
+		$localUser = $this->createMock( User::class );
+		$localUser->method( 'isSystemUser' )->willReturn( false );
+		$userFactory = $this->createMock( UserFactory::class );
+		$userFactory->method( 'newFromUserIdentity' )->willReturn( $localUser );
+		return $userFactory;
 	}
 
 	private function createWikiSet( bool $inSet ): WikiSet {

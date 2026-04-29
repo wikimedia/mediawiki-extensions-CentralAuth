@@ -6,7 +6,15 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalGroup;
 
+use MediaWiki\Config\ServiceOptions;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\User\RestrictedUserGroupConfigReader;
+use MediaWiki\User\UserFactory;
+use MediaWiki\User\UserGroupManager;
+use MediaWiki\User\UserIdentityValue;
+use MediaWiki\User\UserRequirementsConditionCheckerFactory;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
  * This class is responsible for resolving a given {@see CentralAuthUser}'s state to permissions that they are
@@ -18,11 +26,22 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
  */
 class GlobalPermissionManager {
 
+	/** @internal For use in ServiceWiring */
+	public const CONSTRUCTOR_OPTIONS = [
+		CAMainConfigNames::CentralAuthCentralWiki
+	];
+
 	private array $userPermissionCache = [];
 
 	public function __construct(
+		private readonly UserFactory $userFactory,
+		private readonly ServiceOptions $options,
+		private readonly UserGroupManager $userGroupManager,
+		private readonly RestrictedUserGroupConfigReader $restrictedUserGroupConfigReader,
+		private readonly UserRequirementsConditionCheckerFactory $userRequirementsConditionCheckerFactory,
 		private readonly GlobalGroupManager $globalGroupManager
 	) {
+		$this->options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 	}
 
 	/**
@@ -37,20 +56,14 @@ class GlobalPermissionManager {
 	 * @return list<string>
 	 */
 	public function getUserEffectiveGroups( CentralAuthUser $user ): array {
-		if ( !$user->exists() || !$user->isAttached() ) {
+		$activeGroups = $this->getUserGroupsActiveOnWiki( $user );
+		if ( $activeGroups === [] ) {
 			return [];
 		}
 
-		$allGroups = $user->getGlobalGroups();
-		$groupsActiveOnWiki = [];
+		$disabledGroups = $this->getUserDisabledGroups( $user );
 
-		foreach ( $allGroups as $group ) {
-			$wikiSet = $this->globalGroupManager->getGroupWikiSet( $group );
-			if ( $wikiSet === null || $wikiSet->inSet() ) {
-				$groupsActiveOnWiki[] = $group;
-			}
-		}
-		return $groupsActiveOnWiki;
+		return array_values( array_diff( $activeGroups, $disabledGroups ) );
 	}
 
 	/**
@@ -84,5 +97,78 @@ class GlobalPermissionManager {
 		}
 
 		return array_values( array_unique( $permissions ) );
+	}
+
+	/**
+	 * Returns a list of the user's global groups that are active on the current wiki. Groups are active,
+	 * if the current wiki is in the wiki set configured for that group.
+	 *
+	 * Some of the groups returned by this method may be disabled for the user depending on additional
+	 * per-user conditions. See {@see getUserDisabledGroups} for more details.
+	 *
+	 * @return list<string>
+	 */
+	public function getUserGroupsActiveOnWiki( CentralAuthUser $user ): array {
+		if ( !$user->exists() || !$user->isAttached() ) {
+			return [];
+		}
+
+		$allGroups = $user->getGlobalGroups();
+		$groupsActiveOnWiki = [];
+
+		foreach ( $allGroups as $group ) {
+			$wikiSet = $this->globalGroupManager->getGroupWikiSet( $group );
+			if ( $wikiSet === null || $wikiSet->inSet() ) {
+				$groupsActiveOnWiki[] = $group;
+			}
+		}
+		return $groupsActiveOnWiki;
+	}
+
+	/**
+	 * Returns a list of global groups that the user is in, but don't affect the user's permissions.
+	 * It's analogous to {@see UserGroupManager::getUserDisabledGroups()}.
+	 *
+	 * Groups returned by this method are disabled on per-user basis (for example because target is ineligible
+	 * for membership, as configured in {@see $wgRestrictedGroups}). Groups from outside of this wiki's wiki sets
+	 * are not included in the result, as they are not disabled per-user, but per-wiki.
+	 *
+	 * @return list<string>
+	 */
+	public function getUserDisabledGroups( CentralAuthUser $user ): array {
+		$localId = $user->getLocalId( WikiMap::getCurrentWikiId() ) ?? 0;
+		$localIdentity = new UserIdentityValue( $localId, $user->getName() );
+
+		// Check if the user is system user. Given that such accounts cannot be logged in to and are controlled by
+		// software, we can keep all their user groups enabled. These accounts may also ignore permission checks,
+		// so in some cases the group membership is only declarative.
+		if ( $this->userFactory->newFromUserIdentity( $localIdentity )->isSystemUser() ) {
+			return [];
+		}
+
+		$groups = $this->getUserGroupsActiveOnWiki( $user );
+
+		$centralWiki = $this->options->get( CAMainConfigNames::CentralAuthCentralWiki ) ?? false;
+		$restrictedGroups = $this->restrictedUserGroupConfigReader
+			->getConfig( $centralWiki, GlobalGroupAssignmentService::RESTRICTION_SCOPE );
+
+		$checker = $this->userRequirementsConditionCheckerFactory
+			->getUserRequirementsConditionChecker( $this->userGroupManager );
+
+		$disabledGroups = [];
+		foreach ( $groups as $group ) {
+			if ( !array_key_exists( $group, $restrictedGroups ) ) {
+				continue;
+			}
+			$restrictions = $restrictedGroups[$group];
+			if ( !$restrictions->continuouslyEnforced() ) {
+				continue;
+			}
+
+			if ( !$checker->recursivelyCheckCondition( $restrictions->getMemberConditions(), $localIdentity ) ) {
+				$disabledGroups[] = $group;
+			}
+		}
+		return $disabledGroups;
 	}
 }

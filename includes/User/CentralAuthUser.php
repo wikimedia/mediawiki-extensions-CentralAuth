@@ -3390,7 +3390,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function getActiveGlobalGroups() {
 		$permissionManager = CentralAuthServices::getGlobalPermissionManager();
-		return $permissionManager->getUserEffectiveGroups( $this );
+		return $permissionManager->getUserGroupsActiveOnWiki( $this );
 	}
 
 	/**

@@ -199,6 +199,11 @@ return [
 
 	'CentralAuth.GlobalPermissionManager' => static function ( MediaWikiServices $services ): GlobalPermissionManager {
 		return new GlobalPermissionManager(
+			$services->getUserFactory(),
+			new ServiceOptions( GlobalPermissionManager::CONSTRUCTOR_OPTIONS, $services->getMainConfig() ),
+			$services->getUserGroupManager(),
+			$services->getRestrictedUserGroupConfigReader(),
+			$services->getUserRequirementsConditionCheckerFactory(),
 			CentralAuthServices::getGlobalGroupManager( $services )
 		);
 	},
