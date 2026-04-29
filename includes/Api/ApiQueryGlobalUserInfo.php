@@ -14,6 +14,8 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
+use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalPermissionManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\ParamValidator\TypeDef\UserDef;
 use MediaWiki\User\UserNameUtils;
@@ -29,21 +31,22 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class ApiQueryGlobalUserInfo extends ApiQueryBase {
 
-	private UserNameUtils $userNameUtils;
-
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		UserNameUtils $userNameUtils
+		private readonly UserNameUtils $userNameUtils,
+		private readonly GlobalGroupManager $globalGroupManager,
+		private readonly GlobalPermissionManager $globalPermissionManager
 	) {
 		parent::__construct( $query, $moduleName, 'gui' );
-		$this->userNameUtils = $userNameUtils;
 	}
 
 	public function execute() {
 		$params = $this->extractRequestParams();
 		$prop = array_flip( (array)$params['prop'] );
+		$userGivenExplicitly = true;
 		if ( $params['user'] === null && $params['id'] === null ) {
+			$userGivenExplicitly = false;
 			$params['user'] = $this->getUser()->getName();
 		}
 
@@ -99,7 +102,20 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		}
 
 		if ( $userExists && isset( $prop['rights'] ) ) {
-			$rights = $user->getGlobalRights();
+			// If this is executed for ourselves, we can list effective rights, otherwise we have to include
+			// the ones from disabled groups as well. (T423686)
+			// Only treat the parameter-less request as "for self", because otherwise we could leak information
+			// about there being a disabled group through the cache mode.
+			if ( !$userGivenExplicitly ) {
+				$rights = $this->globalPermissionManager->getUserPermissions( $user );
+			} else {
+				$groups = $this->globalPermissionManager->getUserGroupsActiveOnWiki( $user );
+				$rights = [];
+				foreach ( $groups as $group ) {
+					$rights = array_merge( $rights, $this->globalGroupManager->getRightsForGroup( $group ) );
+				}
+				$rights = array_values( array_unique( $rights ) );
+			}
 			$result->setIndexedTagName( $rights, 'r' );
 			$result->addValue( [ 'query', $this->getModuleName() ], 'rights', $rights );
 		}

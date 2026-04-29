@@ -371,7 +371,9 @@
 		"globaluserinfo": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalUserInfo",
 			"services": [
-				"UserNameUtils"
+				"UserNameUtils",
+				"CentralAuth.GlobalGroupManager",
+				"CentralAuth.GlobalPermissionManager"
 			]
 		},
 		"globalrenamestatus": {
