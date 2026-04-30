@@ -5,7 +5,8 @@
 			"McDutchie",
 			"Sasan700",
 			"Исмаил Садуев",
-			"Умар"
+			"Умар",
+			"Shabe"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Декъашхочун нисдарийн глобалан дукхалла ($1)",
@@ -137,7 +138,7 @@
 	"centralauth-contribs-link": "глобалан аккаунт",
 	"centralauth-contribs-locked": "ХӀара аккаунт дӀайайина йу.\nХьажа [[Special:CentralAuth/$1|глобалан аккаунтан хаам]] кхин а информаци лаха:",
 	"centralauth-contribs-locked-log": "ХӀара аккаунт дӀайайина йу.\nЛахахь ду тӀаьххьара журналан дӀайаздар:",
-	"centralauth-createlocal-already-exists": "ХӀинцале а локалан аккаунтан билгалйаьккхинчу глобалан аккаунт йолуш йу.\n\nДля указанной глобальной учетной записи уже существует локальная учетная запись.",
+	"centralauth-createlocal-already-exists": "ХӀинцале а локалан аккаунтан билгалйаьккхинчу глобалан аккаунт йолуш йу.",
 	"centralauth-createlocal-no-global-account": "Иштта глобалан аккаунт йац.",
 	"centralauth-createlocal-pretext": "Нагахь лелочо цхьаьна бахьнехь шега йан ца лахь, глобалан декъашхочун агӀо кхоллархьама шун таро йу и кеп лело.",
 	"centralauth-createlocal-reason": "Бахьана",
@@ -494,7 +495,7 @@
 	"globalvanishrequest-rejected-subject-notification": "Аккаунт дӀайаккхаран дехар йухатоьхна ($1)",
 	"globalvanishrequest-rejected-body-notification": "Аккаунт дӀайаккхаран дехар йухатоьхна, мадарра лахахь ду:\n\nДекъашхочун цӀе: $1\nЦӀера вики: $2\nГлобалан хийцамийн дукхалла: $3\nБлоктоьхна: $4\nДӀайаккхар дехаран бахьана: $5\nЙухатоьхна: $6\nДӀа ца эцаран билгалдаккхар: $7\nДехар дина: $8\nЧекхдаьккхина: $9",
 	"globalvanishrequest-rejected-notification-error": "Автоматикца юристийн команде хаам бан аьтто бац. Дехар до, электронан поште куьйга хаамбе цаьрга аккаунт дӀайаларан дехар йухатохарх лаьцна. Дехар йухатохар чекхдаьлла.",
-	"globalusers": "Глобалан декъашхойн могIам",
+	"globalusers": "Глобалан декъашхойн могӀам",
 	"grant-createlocalaccount": "Локалал аккаунт кхоллар",
 	"grant-setglobalaccountstatus": "Глобалан декъашхочун агӀонан урхалла дар",
 	"log-action-filter-gblrights": "Хийцамийн тайпа:",

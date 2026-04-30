@@ -216,6 +216,7 @@
 	"centralauth-globalgroupperms-group-disabled": "(није омогућено на овом викију)",
 	"centralauth-globalgroupperms-group-listmembers": "списак чланова",
 	"centralauth-globalgroupperms-group-wikiset": "Скуп викија у којима је ова група активна: $1",
+	"centralauth-globalgroupperms-groups-intro": "Ово је списак свих глобалних група подешених на овој вики фарми, са њиховим корисничким правима и вики сетовима. Овлашћени корисници могу обрисати групу уклањањем свих њених права.",
 	"centralauth-globalgroupperms-management": "управљање",
 	"centralauth-globalgroupperms-newgroupname": "Име нове групе:",
 	"centralauth-globalgroupperms-nogroups": "Ниједна глобална група није дефинисана.",

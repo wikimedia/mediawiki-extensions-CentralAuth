@@ -40,7 +40,8 @@
 			"관인생략",
 			"밝은소년",
 			"아라",
-			"콩가루"
+			"콩가루",
+			"Tensama0415"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "사용자의 전역 편집 수 ($1)",
@@ -53,6 +54,7 @@
 	"action-centralauth-suppress": "통합 계정을 숨길",
 	"action-centralauth-rename": "전역 계정 이름 바꾸기",
 	"action-centralauth-unmerge": "통합 계정 분리하기",
+	"action-globalgroupmembership": "전역 그룹 멤버십 편집",
 	"action-globalgrouppermissions": "전역 권한 그룹 관리",
 	"centralauth": "통합 계정 관리",
 	"centralauth-abortlogin-renamed": "당신의 계정 이름은 \"$1\"(으)로 바뀌었습니다. 해당 사용자 이름을 대신 사용해주시기 바랍니다.",
@@ -157,7 +159,7 @@
 	"centralauth-block-editing-page": "{{PLURAL:$1|문서}} $1개",
 	"centralauth-block-editing-ns": "{{PLURAL:$1|이름공간}} $1개",
 	"centralauth-centralautologin-desc": "이 특수 문서는 미디어위키 내부에서 사용되고 있습니다.\n로그인되지 않은 연결된 도메인을 방문할 때, 통합 로그인 시스템은 이 문서가 통합 도메인에 로그인되어 있을 때 결정하는 데 사용합니다.\n인증 정보를 제공하지 않고 이 문서를 방문하였습니다. 따라서 이 문서는 아무 역할도 하지 않습니다.",
-	"centralauth-centralautologin-logged-in": "$1 통합 계정으로 로그인되어 있습니다. 사용자 설정을 적용하려면 문서를 새로 고치세요.",
+	"centralauth-centralautologin-logged-in": "$1 통합 계정으로 로그인되어 있습니다. {{GENDER:$2|사용자}} 설정을 적용하려면 문서를 새로 고치세요.",
 	"centralauth-complete": "계정을 통합했습니다!",
 	"centralauth-complete-text": "이제 모든 {{int:Centralauth-groupname}}의 위키 사이트에 새 계정을 만들지 않고 로그인할 수 있습니다.",
 	"centralauth-completelogin-back": "이전 문서로 돌아갑니다.",
@@ -230,6 +232,7 @@
 	"centralauth-editset-wikis": "위키:",
 	"centralauth-editset-zerowikis": "지정된 위키가 없습니다.",
 	"centralauth-error-badtoken": "제공된 인증 토큰이 만료되었거나 잘못되었습니다.",
+	"centralauth-error-badtoken-title": "잘못된 반환 URL 토큰",
 	"centralauth-error-locked": "당신의 계정이 잠겼기 때문에 편집할 수 없습니다.",
 	"centralauth-error-nologinattempt": "당신의 세션에 대해 현재 로그인 시도가 이루어지고 있지 않습니다.",
 	"centralauth-error-token-wrongattempt": "인증 토큰이 현재 로그인 시도에 속하지 않습니다.\n누군가가 악의적 계정으로 로그인하려고 했을 수 있습니다.",
@@ -292,7 +295,7 @@
 	"centralauth-merge-dryrun-or": "'''또는'''",
 	"centralauth-merge-home-password": "아래에 나열된 계정의 주 위키의 비밀번호가 입력한 비밀번호와 다릅니다.\n주 위키의 비밀번호를 입력해주세요.",
 	"centralauth-merge-method-admin": "통합된 계정 관리",
-	"centralauth-merge-method-admin-desc": "사무장에 의해 로컬 계정이 병합되었음을 의미합니다.\n이 기능은 현재는 보안상의 이유로 비활성화되었습니다.",
+	"centralauth-merge-method-admin-desc": "사무장 또는 시스템 관리자에 의해 로컬 계정이 병합되었음을 의미합니다.",
 	"centralauth-merge-method-empty": "기여 없음",
 	"centralauth-merge-method-empty-desc": "로컬 계정의 편집이 없기 때문에 계정이 병합되었음을 의미합니다.",
 	"centralauth-merge-method-login": "로그인으로 만들어짐",
@@ -404,6 +407,7 @@
 	"globalrenamequeue-column-rq-requested-ts": "열린 날짜",
 	"globalrenamequeue-column-rq-status": "상태",
 	"globalrenamequeue-column-rq-wiki": "로컬 위키",
+	"globalrenamequeue-column-rq-type": "유형",
 	"globalrenamequeue-email-body-approved-with-note": "이름을 \"{{GENDER:$1|$1}}\"에서 \"{{GENDER:$1|$2}}\"(으)로 바꾸는 요청이 승인되었습니다.\n\n참고: $3",
 	"globalrenamequeue-email-body-approved": "이름을 \"{{GENDER:$1|$1}}\"에서 \"{{GENDER:$1|$2}}\"(으)로 바꾸는 요청이 승인되었습니다.",
 	"globalrenamequeue-email-body-rejected": "이름을 \"{{GENDER:$1|$1}}\"에서 \"{{GENDER:$1|$2}}\"(으)로 바꾸는 요청이 거부되었습니다.\n\n참고: $3",
@@ -412,6 +416,7 @@
 	"globalrenamequeue-form-newname": "요청된 사용자 이름:",
 	"globalrenamequeue-form-status": "상태:",
 	"globalrenamequeue-form-status-all": "모두",
+	"globalrenamequeue-form-type": "유형",
 	"globalrenamequeue-form-type-all": "모두",
 	"globalrenamequeue-form-type-rename": "이름 바꾸기",
 	"globalrenamequeue-form-username": "사용자 이름:",
@@ -484,6 +489,7 @@
 	"log-action-filter-globalauth-delete": "전역 계정 삭제",
 	"log-action-filter-globalauth-setstatus": "전역 계정 상태 변경",
 	"log-action-filter-newusers-forcecreatelocal": "강제적인 로컬 계정 생성",
+	"log-action-filter-suppress-cadelete": "전역 계정 삭제",
 	"log-action-filter-suppress-setstatus": "전역 계정 상태 변경",
 	"log-description-gblrename": "이 기록은 사용자의 전역 이름 바꾸기를 추적합니다.",
 	"log-name-gblrename": "통합 계정 이름 바꾸기 기록",
@@ -510,5 +516,5 @@
 	"right-globalgrouppermissions": "전역 권한 그룹 관리",
 	"sessionprovider-centralauthsessionprovider": "중앙 쿠키 기반 세션",
 	"sessionprovider-centralauthtokensessionprovider": "중앙인증 토큰 세션",
-	"centralauth-badaccess-blacklisted": "블랙리스트에 있으므로 전역 이름 바꾸기를 요청할 수 없습니다."
+	"centralauth-badaccess-blacklisted": "거부 목록에 있으므로 전역 이름 바꾸기를 요청할 수 없습니다."
 }
