@@ -94,7 +94,6 @@
 	"centralauth-editgroup-reason": "Razón:",
 	"centralauth-editgroup-restrictions": "Conchunto de wikis an que ista colla ye activa:",
 	"centralauth-editgroup-submit": "Alzar cambeos en os premisos d'a colla",
-	"centralauth-editgroup-success": "S'han cambiato os premisos d'a colla",
 	"centralauth-editgroup-success-text": "Ha cambiato con exito os premisos d'a colla $1. [[Special:GlobalGroupPermissions|Torne t'a confeguración de collas]]",
 	"centralauth-editset": "Conchuntos de wikis",
 	"centralauth-editset-badname": "Nombre de conchunto buedo u no conforme.",

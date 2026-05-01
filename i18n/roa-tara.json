@@ -153,7 +153,6 @@
 	"centralauth-editgroup-rename-taken": "Renomine fallite: Stè ggià 'nu gruppe cu 'u nome $1.",
 	"centralauth-editgroup-restrictions": "Totte le uicchi addò quiste gruppe jè attive:",
 	"centralauth-editgroup-submit": "Reggìstre le cangiaminde de le gruppe globbale",
-	"centralauth-editgroup-success": "Gruppe globbale cangiate",
 	"centralauth-editgroup-success-text": "Aggiornamende d'u gruppe globbale $1 fatte.\n[[Special:GlobalGroupPermissions|Tuèrne a 'a gestione d'u gruppe]]",
 	"centralauth-editset": "Apparecchie uicchi",
 	"centralauth-editset-badname": "Nome invalide o le mise vacande.",

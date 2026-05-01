@@ -93,7 +93,6 @@
 	"centralauth-editgroup-reason": "Dahilan:",
 	"centralauth-editgroup-restrictions": "Pangkat ng mga wiki kung saan masigla (aktibo) ang grupong ito:",
 	"centralauth-editgroup-submit": "Sagipin ang mga pagbabago sa kapahintulutang pangkapangkatan",
-	"centralauth-editgroup-success": "Binago ang mga kapahintulutang pampangkat",
 	"centralauth-editgroup-success-text": "Matagumpay mong nabago ang kapahintulutang pampangkat para sa $1 pangkat. [[Special:GlobalGroupPermissions|Magbalik sa pamamahala ng pangkat]]",
 	"centralauth-editset": "Mga pangkat ng wiki",
 	"centralauth-editset-badname": "Hindi tanggap o walang lamang pangalang pampangkat (''set'').",

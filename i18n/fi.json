@@ -196,7 +196,6 @@
 	"centralauth-editgroup-rename-taken": "Uudelleennimeäminen epäonnistui: on jo ryhmä nimellä $1.",
 	"centralauth-editgroup-restrictions": "Wikijoukot, joissa tämä ryhmä on aktiivinen:",
 	"centralauth-editgroup-submit": "Tallenna ryhmän käyttöoikeuksien muutokset",
-	"centralauth-editgroup-success": "Ryhmän käyttöoikeudet vaihdettu",
 	"centralauth-editgroup-success-text": "Järjestelmänlaajuisen ryhmän $1 käyttöoikeudet päivitettiin.\n[[Special:GlobalGroupPermissions|Palaa takaisin ryhmien hallintaan]]",
 	"centralauth-editset": "Wikijoukot",
 	"centralauth-editset-badname": "Virheellinen tai tyhjä nimi joukolle.",

@@ -188,7 +188,6 @@
 	"centralauth-editgroup-rename-taken": "पुनः नामकरण असफल रहा: $1 नामक एक समूह पहले से ही मौजूद है।",
 	"centralauth-editgroup-restrictions": "विकियों का समुच्चय जहाँ यह समूह सक्रिय है:",
 	"centralauth-editgroup-submit": "वैश्विक सदस्य समूहों में बदलाव सहेजें",
-	"centralauth-editgroup-success": "वैश्विक सदस्य समूह बदला गया",
 	"centralauth-editgroup-success-text": "$1 वैश्विक समूह अपडेट किया गया है।\n[[Special:GlobalGroupPermissions|समूह प्रबंधन पर लौटें]]",
 	"centralauth-editset": "विकि समुच्चय",
 	"centralauth-editset-badname": "समुच्चय का नाम अमान्य या खाली है।",

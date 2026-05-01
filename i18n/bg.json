@@ -148,7 +148,6 @@
 	"centralauth-editgroup-reason": "Причина:",
 	"centralauth-editgroup-restrictions": "Набор от уикита, където тази група е активна:",
 	"centralauth-editgroup-submit": "Съхраняване на промените в правата на глобалната група",
-	"centralauth-editgroup-success": "Глобалната група е променена",
 	"centralauth-editgroup-success-text": "Подновена глобалната група $1.\n[[Special:GlobalGroupPermissions|Обратно към управлението на групи]]",
 	"centralauth-editset": "Набори от уикита",
 	"centralauth-editset-badname": "Невалидно или празно име на набор.",

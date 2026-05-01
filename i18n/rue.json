@@ -90,7 +90,6 @@
 	"centralauth-editgroup-reason": "Причіна:",
 	"centralauth-editgroup-restrictions": "Вікі сет, де є тота ґрупа актівна:",
 	"centralauth-editgroup-submit": "Уложыти зміны в ґлобалных ґрупах",
-	"centralauth-editgroup-success": "Ґлобална ґрупа была змінена",
 	"centralauth-editgroup-success-text": "Успішно была змінена ґлобална ґрупа $1.\n[[Special:GlobalGroupPermissions|Навернутя на управлїня ґруп]]",
 	"centralauth-editset": "Сеты вікі",
 	"centralauth-editset-badname": "Неправилна або порожня назва сету.",

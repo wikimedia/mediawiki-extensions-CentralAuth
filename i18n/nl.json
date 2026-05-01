@@ -202,7 +202,6 @@
 	"centralauth-editgroup-rename-taken": "Hernoemen is mislukt: er bestaat al een groep met de naam \"$1\".",
 	"centralauth-editgroup-restrictions": "Groep van wiki's waar deze groep actief is:",
 	"centralauth-editgroup-submit": "Wijzigingen aan globale groep opslaan",
-	"centralauth-editgroup-success": "De globale groep is gewijzigd",
 	"centralauth-editgroup-success-text": "De globale groep \"$1\" is bijgewerkt.\n[[Special:GlobalGroupPermissions|Terug naar groepsbeheer]]",
 	"centralauth-editset": "Wikigroepen",
 	"centralauth-editset-badname": "U hebt een ongeldige of lege groepsnaam opgegeven.",

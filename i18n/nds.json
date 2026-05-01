@@ -71,7 +71,6 @@
 	"centralauth-editgroup-reason": "Grund:",
 	"centralauth-editgroup-restrictions": "Wikigrupp, in de disse Grupp aktiv is:",
 	"centralauth-editgroup-submit": "Ännern an de Gruppenrechten spiekern",
-	"centralauth-editgroup-success": "Gloabale Köppel ännert",
 	"centralauth-editgroup-success-text": "De globale Köppel $1 is nu aktuell.\n[[Special:GlobalGroupPermissions|Trüch na dat Verwalten vun globale Köppels]]",
 	"centralauth-editset": "Wikigruppen ännern",
 	"centralauth-editset-badname": "Ungülligen oder leddigen Naam för de Wikigrupp.",

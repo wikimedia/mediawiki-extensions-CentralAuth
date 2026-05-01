@@ -137,7 +137,6 @@
 	"centralauth-editgroup-rename-taken": "പുനർനാമകരണം പരാജയപ്പെട്ടു: $1 എന്ന പേരിൽ മുമ്പേയൊരു സംഘമുണ്ട്.",
 	"centralauth-editgroup-restrictions": "ഈ സംഘം സജീവമായിട്ടുള്ള വിക്കികളുടെ ഗണം:",
 	"centralauth-editgroup-submit": "ആഗോള സംഘങ്ങളിൽ വരുത്തിയ മാറ്റങ്ങൾ സേവ് ചെയ്യുക",
-	"centralauth-editgroup-success": "ആഗോളസംഘങ്ങളിൽ മാറ്റം വരുത്തിയിരിക്കുന്നു",
 	"centralauth-editgroup-success-text": "ആഗോളസംഘം $1 വിജയകരമായി പുതുക്കിയിരിക്കുന്നു.\n[[Special:GlobalGroupPermissions|സംഘപരിപാലന താളിലേയ്ക്ക് മടങ്ങുക]]",
 	"centralauth-editset": "വിക്കി ഗണങ്ങൾ",
 	"centralauth-editset-badname": "ഗണത്തിന്റെ പേര് അസാധുവോ ശൂന്യമോ ആണ്.",

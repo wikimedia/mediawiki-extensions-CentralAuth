@@ -146,7 +146,6 @@
 	"centralauth-editgroup-rename-taken": "Omdøbning af mislykkedes: der findes allerede en gruppe med navnet  $1 .",
 	"centralauth-editgroup-restrictions": "Wikigruppe hvor denne gruppe er aktiv:",
 	"centralauth-editgroup-submit": "Gem ændringer af gruppetilladelser",
-	"centralauth-editgroup-success": "Gruppetilladelserne er ændret",
 	"centralauth-editgroup-success-text": "Den globale gruppe $1 blev opdateret.\n[[Special:GlobalGroupPermissions|Tilbage til gruppeadministration]]",
 	"centralauth-editset": "Wiki sæt",
 	"centralauth-editset-badname": "Ugyldigt eller tomt gruppenavn.",

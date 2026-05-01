@@ -107,7 +107,6 @@
 	"centralauth-editgroup-reason": "Årsak:",
 	"centralauth-editgroup-restrictions": "Wikisett der denne gruppa er aktiv:",
 	"centralauth-editgroup-submit": "Lagra endringar i gruppeløyve",
-	"centralauth-editgroup-success": "Gruppeløyve endra",
 	"centralauth-editgroup-success-text": "Du har endra gruppeløyva til gruppa $1.\n[[Special:GlobalGroupPermissions|Attende til gruppehandsaming]]",
 	"centralauth-editset": "Wikisett",
 	"centralauth-editset-badname": "Ugyldig eller tomt settnamn.",

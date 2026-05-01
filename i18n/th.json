@@ -162,7 +162,6 @@
 	"centralauth-editgroup-rename-taken": "การเปลี่ยนชื่อล้มเหลว: มีกลุ่มชื่อ $1 อยู่แล้ว",
 	"centralauth-editgroup-restrictions": "ชุดวิกิที่กลุ่มนี้มีความเคลื่อนไหว:",
 	"centralauth-editgroup-submit": "บันทึกการเปลี่ยนแปลงกลุ่มข้ามโครงการ",
-	"centralauth-editgroup-success": "เปลี่ยนแปลงกลุ่มส่วนกลางแล้ว",
 	"centralauth-editset": "วิกิเซต",
 	"centralauth-editset-badname": "ชื่อชุดไม่ถูกต้องหรือว่างเปล่า",
 	"centralauth-editset-badtype": "ประเภทชุดไม่ถูกต้อง",

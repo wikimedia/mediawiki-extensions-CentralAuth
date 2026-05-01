@@ -183,7 +183,6 @@
 	"centralauth-editgroup-rename-taken": "A alteração do nome falhou: Já existe um grupo com o nome $1.",
 	"centralauth-editgroup-restrictions": "Conjunto de wikis onde este grupo está ativo:",
 	"centralauth-editgroup-submit": "Gravar alterações às permissões do grupo",
-	"centralauth-editgroup-success": "Permissões do grupo alteradas",
 	"centralauth-editgroup-success-text": "O grupo global $1 foi atualizado.\n[[Special:GlobalGroupPermissions|Voltar à administração de grupos]]",
 	"centralauth-editset": "Conjuntos de wikis",
 	"centralauth-editset-badname": "Nome de conjunto inválido ou vazio.",

@@ -179,7 +179,6 @@
 	"centralauth-editgroup-rename-taken": "Addəyişmə alınmadı: $1 adlı qrup onsuz da var.",
 	"centralauth-editgroup-restrictions": "Bu qrupun aktiv olduğu vikilər dəsti:",
 	"centralauth-editgroup-submit": "Qlobal qrup dəyişikliklərini yadda saxla",
-	"centralauth-editgroup-success": "Qlobal qrup dəyişdi",
 	"centralauth-editgroup-success-text": "$1 qlobal qrupu yeniləndi.\n[[Special:GlobalGroupPermissions|Qrup idarəetməsinə qayıt]]",
 	"centralauth-editset": "Viki dəstləri",
 	"centralauth-editset-badname": "Yanlış və ya boş dəst adı.",

@@ -167,7 +167,6 @@
 	"centralauth-editgroup-rename-taken": "Nepavyko pervadinti: Jau egzistuoja grupė su pavadinimu $1.",
 	"centralauth-editgroup-restrictions": "Projektų rinkinys, kur ši grupė yra aktyvi:",
 	"centralauth-editgroup-submit": "Išsaugoti visuotinės grupės pakeitimus",
-	"centralauth-editgroup-success": "Visuotinė grupė pakeista",
 	"centralauth-editgroup-success-text": "Visuotinė grupė $1 buvo atnaujinta.\n[[Special:GlobalGroupPermissions|Grįžti į grupių valdymą]]",
 	"centralauth-editset": "Projektų rinkiniai",
 	"centralauth-editset-badname": "Neleistinas arba tuščias rinkinio pavadinimas.",

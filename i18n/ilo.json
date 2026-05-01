@@ -133,7 +133,6 @@
 	"centralauth-editgroup-rename-taken": "Napaay ti pananginagan manen:Adda metten ti grupo a nanaganan iti $1.",
 	"centralauth-editgroup-restrictions": "Disso dagiti wiki a nasiglat iti daytoy a grupo:",
 	"centralauth-editgroup-submit": "Idulin dagiti panagisukat kadagiti pammalubos ti global a grupo",
-	"centralauth-editgroup-success": "Nasukatan dagiti pammalubos ti global a grupo",
 	"centralauth-editgroup-success-text": "Nagballigi ti panagsukat ti global a grupo ti $1.\n[[Special:GlobalGroupPermissions|Agsubli iti panagtaripato ti grupo]]",
 	"centralauth-editset": "Disso dagiti wiki",
 	"centralauth-editset-badname": "Imbalido wenno awan ti linaon a nagan ti disso.",

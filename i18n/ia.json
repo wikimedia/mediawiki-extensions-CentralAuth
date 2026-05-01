@@ -169,7 +169,6 @@
 	"centralauth-editgroup-rename-taken": "Renomination fallite: existe jam un gruppo con le nomine $1.",
 	"centralauth-editgroup-restrictions": "Gruppo de wikis ubi iste gruppo es active:",
 	"centralauth-editgroup-submit": "Confirmar modificationes de gruppo global",
-	"centralauth-editgroup-success": "Gruppo global modificate",
 	"centralauth-editgroup-success-text": "Le gruppo global $1 ha essite actualisate.\n[[Special:GlobalGroupPermissions|Retornar al gestion de gruppos]]",
 	"centralauth-editset": "Gruppos de wikis",
 	"centralauth-editset-badname": "Nomine de gruppo invalide o mancante.",

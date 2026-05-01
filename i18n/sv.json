@@ -182,7 +182,6 @@
 	"centralauth-editgroup-rename-taken": "Namnbytet misslyckades: Det finns redan en grupp med namnet $1.",
 	"centralauth-editgroup-restrictions": "Wikigrupp där den här gruppen är aktiv:",
 	"centralauth-editgroup-submit": "Spara globala gruppändringar",
-	"centralauth-editgroup-success": "Global grupp ändrad",
 	"centralauth-editgroup-success-text": "Den globala gruppen $1 uppdaterades.\n[[Special:GlobalGroupPermissions|Tillbaka till grupphantering]]",
 	"centralauth-editset": "Wikigrupp",
 	"centralauth-editset-badname": "Ogiltigt eller tomt gruppnamn.",

@@ -140,7 +140,6 @@
 	"centralauth-editgroup-rename-taken": "გადარქმევა ვერ მოხერხდა: უკვე არსებობს ჯგუფი სახელად $1.",
 	"centralauth-editgroup-restrictions": "ვიკი-პროექტების ნაკრები, სადაც ეს ჯგუფი მოქმედებს:",
 	"centralauth-editgroup-submit": "გლობალური ჯგუფის ცვლილებების შენახვა",
-	"centralauth-editgroup-success": "გლობალური ჯგუფი შეცვლილია",
 	"centralauth-editgroup-success-text": "გლობალური ჯგუფი „$1“ განახლდა.\n[[Special:GlobalGroupPermissions|ჯგუფების მართვაზე დაბრუნება]]",
 	"centralauth-editset": "ვიკი ნაკრებები",
 	"centralauth-editset-badname": "ცარიელი ან არასწორი სახელი",

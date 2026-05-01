@@ -54,7 +54,6 @@
 	"centralauth-editgroup-reason": "Kod:",
 	"centralauth-editgroup-restrictions": "Vüks, in kels grup at binon jäfedik:",
 	"centralauth-editgroup-submit": "Dakipön votükamis grupadälas",
-	"centralauth-editgroup-success": "Grupadäls pevotükons",
 	"centralauth-editgroup-success-text": "Evotükol benosekiko grupadälis grupa: $1.\n[[Special:GlobalGroupPermissions|Geikön lü grupiguvam]]",
 	"centralauth-editset-badwikis": "{{PLURAL:$2|Vük sököl no dabinon|Vüks sököl no dabinons}}: $1.",
 	"centralauth-editset-name": "Nem:",

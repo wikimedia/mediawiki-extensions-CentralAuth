@@ -179,7 +179,6 @@
 	"centralauth-editgroup-rename-taken": "Erro ao cambiar o nome: Xa hai un grupo co nome \"$1\".",
 	"centralauth-editgroup-restrictions": "Parámetros dos wikis onde este grupo está activo:",
 	"centralauth-editgroup-submit": "Gardar os cambios no grupo global",
-	"centralauth-editgroup-success": "O grupo global cambiou",
 	"centralauth-editgroup-success-text": "O grupo global \"$1\" foi actualizado.\n[[Special:GlobalGroupPermissions|Volver á administración dos grupos]]",
 	"centralauth-editset": "Configuracións do wiki",
 	"centralauth-editset-badname": "Nome de configuración inválido ou baleiro.",

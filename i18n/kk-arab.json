@@ -53,7 +53,6 @@
 	"centralauth-editgroup-perms": "تۇيىستىرىلگەن رۇقساتتار:",
 	"centralauth-editgroup-reason": "سەبەبى:",
 	"centralauth-editgroup-submit": "توپ رۇقساتتارى وزگەرىستەرىن ساقتا",
-	"centralauth-editgroup-success": "توپ رۇقساتتارى وزگەرتىلدى",
 	"centralauth-editgroup-success-text": "$1 توبىنىڭ توپ رۇقساتتارىن ٴساتتى وزگەرتتىڭىز. [[Special:GlobalGroupPermissions|توپ رەتتەۋىنە قايتا كەلۋ]]",
 	"centralauth-finish-incomplete": "بۇل قۇپىييا ٴسوزدى قولدانىپ بىرنەشە تىركەلگى بىرىكتىرىلدى.\nOther accounts are not yet confirmed.",
 	"centralauth-finish-login": "كىرۋ",

@@ -101,7 +101,6 @@
 	"centralauth-editgroup-reason": "Motiu :",
 	"centralauth-editgroup-restrictions": "Paramètres dels wikis ont aqueste grop es actiu",
 	"centralauth-editgroup-submit": "Enregistrar los cambiaments del grop global",
-	"centralauth-editgroup-success": "Grop global modificat",
 	"centralauth-editgroup-success-text": "Lo grop global $1 plan mes a jorn.\n[[Special:GlobalGroupPermissions|Tornar a la gestion dels gropes]]",
 	"centralauth-editset": "Grops de wikis",
 	"centralauth-editset-badname": "Avètz indicat un nom de preferéncia void o incorrècte.",

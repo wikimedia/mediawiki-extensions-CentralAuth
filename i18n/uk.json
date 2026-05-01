@@ -192,7 +192,6 @@
 	"centralauth-editgroup-rename-taken": "Перейменування не вдалося: вже є група з назвою $1.",
 	"centralauth-editgroup-restrictions": "Набір вікі, у яких ця група діє:",
 	"centralauth-editgroup-submit": "Зберегти зміни в глобальній групі",
-	"centralauth-editgroup-success": "Глобальну групу змінено",
 	"centralauth-editgroup-success-text": "Глобальну групу $1 було оновлено.\n[[Special:GlobalGroupPermissions|Повернутися до управління групами]]",
 	"centralauth-editset": "Набори вікі",
 	"centralauth-editset-badname": "Недопустима або порожня назва набору.",

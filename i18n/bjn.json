@@ -158,7 +158,6 @@
 	"centralauth-editgroup-rename-taken": "Panggantian ngaran gagal: Sudah ada grup lawan ngaran $1.",
 	"centralauth-editgroup-restrictions": "Saparangkat wiki wadah grup ini nyala:",
 	"centralauth-editgroup-submit": "Simpan paubahan grup global",
-	"centralauth-editgroup-success": "Grup global diubah",
 	"centralauth-editgroup-success-text": "Grup global $1 sudah dihanyari.\n[[Special:GlobalGroupPermissions|Babulik ka pangaturan grup]]",
 	"centralauth-editset": "Kumpulan wiki",
 	"centralauth-editset-badname": "Ngaran kumpulan kada sah atawa puang.",

@@ -153,7 +153,6 @@
 	"centralauth-editgroup-rename-taken": "Ëmbenennen huet net funktionéiert: Et gëtt schonn e Grupp mam Numm $1.",
 	"centralauth-editgroup-restrictions": "Astellunge vun de Wikien op deenen dës Grupp aktiv ass",
 	"centralauth-editgroup-submit": "Ännerunge vun de globale Gruppe späicheren",
-	"centralauth-editgroup-success": "De globale Grupp gouf geännert",
 	"centralauth-editgroup-success-text": "De globale Grupp $1 gouf geännert.\n[[Special:GlobalGroupPermissions|Zréck op d'Gestioun vu Gruppen]]",
 	"centralauth-editset": "Grupp vu Wikien",
 	"centralauth-editset-badname": "Net valaben der eidele Gruppennumm",

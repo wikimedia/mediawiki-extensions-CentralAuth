@@ -169,7 +169,6 @@
 	"centralauth-editgroup-rename-taken": "ЦӀе хийца тарцаделий: $1 цӀе йолу тоба йолуш йу.",
 	"centralauth-editgroup-restrictions": "Тоба лелаш йолу Википедин гулам:",
 	"centralauth-editgroup-submit": "Глобалан тобанан бакъонан Ӏалашбе хийцам",
-	"centralauth-editgroup-success": "Глобалан тоба хийцина",
 	"centralauth-editgroup-success-text": "Ахьа кхиамца глобалан тобанан бакъо хийцина $1.\n[[Special:GlobalGroupPermissions|ЙухагӀо тобанийн урхалла дечу агӀоне]]",
 	"centralauth-editset": "Вики гӀирсийн гулам",
 	"centralauth-editset-badname": "Йаьсса йа цамагийна гуламан цӀе.",

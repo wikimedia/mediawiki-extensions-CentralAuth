@@ -110,7 +110,6 @@
 	"centralauth-editgroup-reason": "Razlog:",
 	"centralauth-editgroup-restrictions": "Set wikija gdje je ova grupa aktivna:",
 	"centralauth-editgroup-submit": "Sačuvaj izmjene globalne grupe",
-	"centralauth-editgroup-success": "Globalna grupa promijenjena",
 	"centralauth-editgroup-success-text": "Globalna grupa $1 je ažurirana.\n[[Special:GlobalGroupPermissions|Nazad na upravljanje grupama]]",
 	"centralauth-editset": "Wiki setovi",
 	"centralauth-editset-badname": "Prazno ili nevaljano ime seta.",

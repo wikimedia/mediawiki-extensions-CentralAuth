@@ -124,7 +124,6 @@
 	"centralauth-editgroup-reason": "Dôvod:",
 	"centralauth-editgroup-restrictions": "Množina wiki, kde je táto skupina aktívna:",
 	"centralauth-editgroup-submit": "Uložiť zmeny globálnej skupiny",
-	"centralauth-editgroup-success": "Globálna skupina bola zmenená",
 	"centralauth-editgroup-success-text": "Globálna skupina $1 bola zmenená.\n[[Special:GlobalGroupPermissions|Späť na správu skupín]]",
 	"centralauth-editset": "Množiny wiki",
 	"centralauth-editset-badname": "Neplatný alebo prázdny názov množiny.",

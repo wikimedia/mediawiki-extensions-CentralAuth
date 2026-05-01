@@ -86,7 +86,6 @@
 	"centralauth-editgroup-reason": "Rêson :",
 	"centralauth-editgroup-restrictions": "Juè de vouiquis yô que ceta tropa est activa :",
 	"centralauth-editgroup-submit": "Encartar los changements de pèrmissions a la tropa",
-	"centralauth-editgroup-success": "Les pèrmissions a la tropa ont bien étâ changiês",
 	"centralauth-editgroup-success-text": "Vos éd changiê avouéc reusséta les pèrmissions balyês a la tropa $1.\n[[Special:GlobalGroupPermissions|Tornar a l’administracion a les tropes globâles]].",
 	"centralauth-editset": "Juès de vouiquis",
 	"centralauth-editset-badname": "Nom du juè de vouiquis fôx ou ben pas rensègnê.",

@@ -206,7 +206,6 @@
 	"centralauth-editgroup-rename-taken": "فشلت عملية إعادة التسمية: هناك مجموعة أخرى بالإسم $1.",
 	"centralauth-editgroup-restrictions": "مجموعة الويكيات حيث هذه المجموعة نشطة:",
 	"centralauth-editgroup-submit": "حفظ التغييرات على المجموعة العامة",
-	"centralauth-editgroup-success": "المجموعة العامة تم تغييرها",
 	"centralauth-editgroup-success-text": "تم تحديث المجموعة $1.\n[[Special:GlobalGroupPermissions|ارجع إلى صفحة إدارة المجموعة]]",
 	"centralauth-editset": "مجموعات الويكي",
 	"centralauth-editset-badname": "أنت حددت اسم مجموعة غير صالح أو فارغاً.",

@@ -174,7 +174,6 @@
 	"centralauth-editgroup-rename-taken": "Pengubahan nama gagal: Sudah ada kelompok dengan nama $1.",
 	"centralauth-editgroup-restrictions": "Set wiki di mana kelompok ini aktif:",
 	"centralauth-editgroup-submit": "Simpan perubahan hak kelompok",
-	"centralauth-editgroup-success": "Kelompok global telah diubah",
 	"centralauth-editgroup-success-text": "Kelompok global $1 telah diperbarui.\n[[Special:GlobalGroupPermissions|Kembali ke pengaturan kelompok]]",
 	"centralauth-editset": "Sunting kelompok wiki",
 	"centralauth-editset-badname": "Anda meminta nama set yang tidak sah atau kosong.",

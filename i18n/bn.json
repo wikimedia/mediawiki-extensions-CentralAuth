@@ -140,7 +140,6 @@
 	"centralauth-editgroup-reason": "কারণ:",
 	"centralauth-editgroup-restrictions": "এই গ্রুপটি সক্রিয় এমন উইকিসমূহের সেট:",
 	"centralauth-editgroup-submit": "বৈশ্বিক গ্রুপ পরিবর্তন সংরক্ষণ করুন",
-	"centralauth-editgroup-success": "বৈশ্বিক গ্রুপ পরিবর্তন করা হয়েছে",
 	"centralauth-editgroup-success-text": "বৈশ্বিক গ্রুপ $1 পরিবর্তিত হয়েছে।\n[[Special:GlobalGroupPermissions|গ্রুপ ব্যবস্থাপনায় ফিরে যাও]]",
 	"centralauth-editset": "উইকির সেটসমূহ",
 	"centralauth-editset-badname": "আপনি সঠিক নয় অথবা খালি সেট নাম দিয়েছেন।",

@@ -144,7 +144,6 @@
 	"centralauth-editgroup-rename-taken": "Fallu al camudar el nome: Yá esiste un grupu col nome $1.",
 	"centralauth-editgroup-restrictions": "Conxuntu de wikis onde esti grupu ta activu:",
 	"centralauth-editgroup-submit": "Guardar los cambeos a los grupos globales",
-	"centralauth-editgroup-success": "Grupu global camudáu",
 	"centralauth-editgroup-success-text": "Anovóse'l grupu global $1.\n[[Special:GlobalGroupPermissions|Volver a l'alministración de grupos]]",
 	"centralauth-editset": "Conxuntos wiki",
 	"centralauth-editset-badname": "Especificasti un nome de conxuntu non válidu o vaciu.",

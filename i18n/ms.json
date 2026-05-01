@@ -135,7 +135,6 @@
 	"centralauth-editgroup-rename-taken": "Penukaran nama gagal: Sudah ada kumpulan yang bernama $1.",
 	"centralauth-editgroup-restrictions": "Wiki-wiki di mana kumpulan ini aktif:",
 	"centralauth-editgroup-submit": "Simpan perubahan kumpulan sejagat",
-	"centralauth-editgroup-success": "Kumpulan sejagat diubah",
 	"centralauth-editgroup-success-text": "Kumpulan sejagat $1 berjaya dikemaskinikan.\n[[Special:GlobalGroupPermissions|Kembali ke pengurusan kumpulan]]",
 	"centralauth-editset": "Set wiki",
 	"centralauth-editset-badname": "Nama set wiki tidak sah atau kosong.",

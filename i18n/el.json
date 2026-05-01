@@ -150,7 +150,6 @@
 	"centralauth-editgroup-rename-taken": "Μετονομασία απέτυχε: υπάρχει ήδη μια ομάδα με το όνομα  $1.",
 	"centralauth-editgroup-restrictions": "Σύνολο από wiki στα οποία αυτή η ομάδα είναι ενεργή:",
 	"centralauth-editgroup-submit": "Αποθήκευση αλλαγών καθολικής ομάδας",
-	"centralauth-editgroup-success": "Η καθολική ομάδα άλλαξε",
 	"centralauth-editgroup-success-text": "Η καθολική ομάδα $1 ενημερώθηκε.\n[[Special:GlobalGroupPermissions|Επιστροφή στη διαχείριση ομάδων]]",
 	"centralauth-editset": "Σύνολα wiki",
 	"centralauth-editset-badname": "Μη έγκυρο ή κενό όνομα συνόλου.",

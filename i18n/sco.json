@@ -132,7 +132,6 @@
 	"centralauth-editgroup-rename-taken": "Renamin failed: Thaur's awreadie ae groop wi the name $1.",
 	"centralauth-editgroup-restrictions": "Set o wikis whaur this groop is acteeve:",
 	"centralauth-editgroup-submit": "Hain global groop chynges",
-	"centralauth-editgroup-success": "Global groop chynged",
 	"centralauth-editgroup-success-text": "Successfulie updated the global groop $1.\n[[Special:GlobalGroupPermissions|Return til groop management]]",
 	"centralauth-editset": "Wiki sets",
 	"centralauth-editset-badname": "Onvalid or tuim set name.",
