@@ -7,6 +7,7 @@ use MediaWiki\Auth\AbstractPrimaryAuthenticationProvider;
 use MediaWiki\Auth\AuthenticationRequest;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Auth\ElevatedSecurityAuthenticationRequest;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\RedirectingLoginHookHandler;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -111,10 +112,16 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 		$clientPrefsCookieName = ClientHtml::CLIENT_PREFS_COOKIE_NAME;
 		$clientPref = $this->manager->getRequest()->getCookie( $clientPrefsCookieName );
 
+		$securityLevel = AuthenticationRequest::getRequestByClass(
+			$reqs,
+			ElevatedSecurityAuthenticationRequest::class
+		)?->securityLevel;
+
 		$data = [
 			'secret' => $secret,
 			'returnUrl' => $returnToUrl,
 			'clientPref' => $clientPref,
+			'securityLevel' => $securityLevel,
 		];
 		$token = $this->tokenManager->tokenize( $data, self::START_TOKEN_KEY_PREFIX );
 		$isSignup = $this->manager->getRequest()->getRawVal( 'sul3-action' ) === 'signup';
@@ -128,16 +135,13 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 				'warning' => 'centralauth-warning-reauth',
 			];
 		}
-		if ( $this->manager->getRequest()->getRawVal( 'force' ) ) {
+		if ( $securityLevel ) {
 			$queryParams += [
-				'force' => RedirectingLoginHookHandler::SECURITY_OP,
-				// FIXME: This query parameter is currently unused.
-				// The value should be passed to AuthManager::securitySensitiveOperationStatus( ... )
-				// somewhere, to match the default functionality of the 'force' parameter we're clobbering.
-				// In practice it doesn't matter now, because nothing important uses different elevated
-				// security levels, but it could matter in the future if we do e.g. T208667.
-				// For now, passing the parameter is helpful for debugging/understanding the redirects.
-				'forceOriginal' => $this->manager->getRequest()->getRawVal( 'force' ),
+				'force' => $securityLevel,
+				// indicate to the central domain that this is a cross-domain elevated login
+				// (ie. it's triggered by a local page, as opposed to being triggered by some
+				// functionality that lives on the central domain, like credentials change)
+				'sul3-force-crossdomain' => 1,
 			];
 		}
 
@@ -206,6 +210,16 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 				]
 			);
 			return AuthenticationResponse::newFail( wfMessage( 'centralauth-error-badtoken' ) );
+		}
+
+		if ( !$data['securityLevelOk'] ) {
+			LoggerFactory::getInstance( 'security' )->error( __CLASS__ . ': Security level mismatch',
+				[
+					'username' => $data['username'],
+					'securityLevel' => $data['securityLevel'],
+				]
+			);
+			return AuthenticationResponse::newFail( wfMessage( 'centralauth-error-securitylevel' ) );
 		}
 
 		// T388177 - after account creation, we want to avoid any immediate lags, and read

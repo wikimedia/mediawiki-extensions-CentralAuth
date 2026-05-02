@@ -643,6 +643,7 @@
 		"loginredirect": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\RedirectingLoginHookHandler",
 			"services": [
+				"AuthManager",
 				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.CentralDomainUtils",
 				"CentralAuth.SharedDomainUtils"
@@ -785,7 +786,6 @@
 		"ResourceLoaderModifyEmbeddedSourceUrls": "shareddomain",
 		"RestCheckCanExecute": "shareddomain",
 		"SecurePoll_GetUserParams": "securepoll",
-		"SecuritySensitiveOperationStatus": "loginredirect",
 		"SetupAfterCache": "shareddomain",
 		"SessionCheckInfo": "default",
 		"SpecialContributionsBeforeMainOutput": "specialcontributions",

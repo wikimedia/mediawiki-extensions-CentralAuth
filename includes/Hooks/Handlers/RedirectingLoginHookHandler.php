@@ -11,7 +11,6 @@ use LogicException;
 use MediaWiki\Auth\AuthenticationResponse;
 use MediaWiki\Auth\AuthManager;
 use MediaWiki\Auth\Hook\AuthPreserveQueryParamsHook;
-use MediaWiki\Auth\Hook\SecuritySensitiveOperationStatusHook;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Exception\ErrorPageError;
@@ -34,22 +33,17 @@ use MediaWiki\WikiMap\WikiMap;
  */
 class RedirectingLoginHookHandler implements
 	PostLoginRedirectHook,
-	SecuritySensitiveOperationStatusHook,
 	AuthPreserveQueryParamsHook,
 	AuthChangeFormFieldsHook
 {
 
 	public const SUPPRESS_HOOK_SESSION_FLAG = 'CentralAuth-suppressAuthManagerLoginAuthenticateAudit';
-	public const SECURITY_OP = 'local';
-
-	private CentralAuthTokenManager $tokenManager;
-	private CentralDomainUtils $centralDomainUtils;
-	private SharedDomainUtils $sharedDomainUtils;
 
 	public function __construct(
-		CentralAuthTokenManager $tokenManager,
-		CentralDomainUtils $centralDomainUtils,
-		SharedDomainUtils $sharedDomainUtils
+		private AuthManager $authManager,
+		private CentralAuthTokenManager $tokenManager,
+		private CentralDomainUtils $centralDomainUtils,
+		private SharedDomainUtils $sharedDomainUtils
 	) {
 		$this->tokenManager = $tokenManager;
 		$this->centralDomainUtils = $centralDomainUtils;
@@ -106,13 +100,12 @@ class RedirectingLoginHookHandler implements
 			//    core 'returnto' handling.
 			// 2. The user goes to some other page requiring elevated security, gets redirected to
 			//    local login and then the redirecting primary provider sends them to the shared
-			//    domain. They do need to be sent back by this hook. We still need to force the
-			//    login page to appear in this case (because of T389010) so we have
-			//    CentralAuthRedirectingPrimaryAuthenticationProvider set 'force' to a special
-			//    value which we can ignore here.
+			//    domain. They do need to be sent back by this hook.
+			//    CentralAuthRedirectingPrimaryAuthenticationProvider indicates this with the
+			//    'sul3-force-crossdomain' flag.
 			|| (
 				$request->getBool( 'force' )
-				&& $request->getRawVal( 'force' ) !== self::SECURITY_OP
+				&& !$request->getBool( 'sul3-force-crossdomain' )
 			)
 		) {
 			return true;
@@ -152,17 +145,17 @@ class RedirectingLoginHookHandler implements
 			throw new LogicException( 'Unattached user at end of login' );
 		}
 
-		$lastAuthTimestamps = $request->getSession()->get( 'AuthManager:lastAuthTimestamps', [] );
-		$lastAuthTimestamp = $lastAuthTimestamps ? max( $lastAuthTimestamps ) : 0;
+		$securityLevel = $inputData['securityLevel'];
 		$outputData = $inputData + [
 			'username' => $centralUser->getName(),
 			'userId' => $centralUser->getId(),
 			'rememberMe' => $request->getSession()->shouldRememberUser(),
 			'isSignup' => $type === 'signup',
-			// There isn't really a way to tell whether PostLoginRedirect was called after a
-			// successful login or an already-logged-in visit to the login page, but checking for
-			// a recent login is good enough.
-			'loginWasInteractive' => ( time() - $lastAuthTimestamp ) < 10,
+			'securityLevelOk' => !$securityLevel
+				|| $this->authManager->securitySensitiveOperationStatus( $securityLevel ) === AuthManager::SEC_OK,
+			// FIXME not used anymore, the security level check above is more accurate.
+			//   But we still need to set it until it's removed in core, so we just fake it.
+			'loginWasInteractive' => true,
 		];
 		$token = $this->tokenManager->tokenize(
 			$outputData,
@@ -175,16 +168,6 @@ class RedirectingLoginHookHandler implements
 		$type = 'success';
 
 		return true;
-	}
-
-	/** @inheritDoc */
-	public function onSecuritySensitiveOperationStatus( &$status, $operation, $session, $timeSinceAuth ) {
-		if (
-			$operation === self::SECURITY_OP
-			&& $this->sharedDomainUtils->isSharedDomain()
-		) {
-			$status = AuthManager::SEC_REAUTH;
-		}
 	}
 
 	public function onAuthPreserveQueryParams( array &$params, array $options ) {
@@ -200,6 +183,7 @@ class RedirectingLoginHookHandler implements
 			'usesul3' => $request->getRawVal( 'usesul3' ),
 			// keep choice of desktop/mobile view consistent during an authentication flow
 			'useformat' => $request->getRawVal( 'useformat' ),
+			'sul3-force-crossdomain' => $request->getRawVal( 'sul3-force-crossdomain' ),
 		];
 	}
 
