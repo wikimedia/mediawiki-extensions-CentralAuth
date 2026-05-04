@@ -401,6 +401,14 @@
 				"CentralAuth.CentralAuthDatabaseManager",
 				"CentralAuth.GlobalGroupManager"
 			]
+		},
+		"globalusers": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalUsers",
+			"services": [
+				"MainConfig",
+				"UserNameUtils",
+				"CentralAuth.CentralAuthDatabaseManager"
+			]
 		}
 	},
 	"MessagesDirs": {
