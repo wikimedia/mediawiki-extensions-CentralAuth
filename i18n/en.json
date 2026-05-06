@@ -583,5 +583,10 @@
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken sessions",
 	"centralauth-badaccess-blacklisted": "You can't request a global rename, because you are on a deny list.",
 	"centralauth-action-forbidden-shared-domain": "You are not allowed to perform this action on the shared authentication domain.",
-	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "User is member of {{PLURAL:$1|global group|all of the global groups}}: $2"
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "User is member of {{PLURAL:$1|global group|all of the global groups}}: $2",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Your}} global user rights were {{GENDER:$1|changed}}. You have been added to: $2.",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Your}} global user rights were {{GENDER:$1|changed}}. You are no longer a member of: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Your}} global user rights were {{GENDER:$1|changed}}. You have been added to: $2. You are no longer a member of: $4.",
+	"notification-header-centralauth-global-user-rights-expiry-change": "The expiry of {{GENDER:$4|your}} membership in the following global {{PLURAL:$3|group|groups}} has been {{GENDER:$1|changed}}: $2.",
+	"notification-centralauth-global-user-rights-email-subject": "{{GENDER:$3|Your}} global user rights have changed on {{SITENAME}}"
 }

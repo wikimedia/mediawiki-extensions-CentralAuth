@@ -186,7 +186,9 @@ return [
 			CentralAuthServices::getGlobalGroupManager(),
 			CentralAuthServices::getAutomaticGlobalGroupManager(),
 			CentralAuthServices::getDatabaseManager(),
-			RequestContext::getMain()
+			RequestContext::getMain(),
+			$services->getUserFactory(),
+			$services->getNotificationService()
 		);
 	},
 

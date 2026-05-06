@@ -17,12 +17,17 @@ use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Language\Language;
 use MediaWiki\Language\MessageLocalizer;
 use MediaWiki\Logging\ManualLogEntry;
+use MediaWiki\Notification\NotificationService;
+use MediaWiki\Notification\RecipientSet;
+use MediaWiki\Notification\Types\WikiNotification;
 use MediaWiki\Page\PageIdentityValue;
 use MediaWiki\Permissions\Authority;
 use MediaWiki\Site\SiteLookup;
+use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Title\Title;
 use MediaWiki\User\RestrictedUserGroupChecker;
 use MediaWiki\User\RestrictedUserGroupCheckerFactory;
+use MediaWiki\User\UserFactory;
 use MediaWiki\User\UserGroupAssignmentServiceBase;
 use MediaWiki\User\UserGroupMembership;
 use MediaWiki\User\UserIdentity;
@@ -65,6 +70,8 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 		private readonly CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
 		private readonly CentralAuthDatabaseManager $databaseManager,
 		private readonly MessageLocalizer $messageLocalizer,
+		private readonly UserFactory $userFactory,
+		private readonly NotificationService $notificationService,
 	) {
 		parent::__construct( new HookRunner( $this->hookContainer ) );
 		$this->options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
@@ -258,6 +265,15 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 			// Allow other extensions to respond to changes in global group membership
 			$caHookRunner = new CentralAuthHookRunner( $this->hookContainer );
 			$caHookRunner->onCentralAuthGlobalUserGroupMembershipChanged( $target, $oldGroups, $newGroups );
+
+			$this->notifyGlobalUserGroupsChanged(
+				$target,
+				$oldGroupMemberships,
+				$newGroupMemberships,
+				$performer->getUser(),
+				$reason
+			);
+
 			$this->addLogEntry(
 				$performer->getUser(),
 				$target,
@@ -442,6 +458,67 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 			$add,
 			$remove,
 			$groupExpiries
+		);
+	}
+
+	/**
+	 * Sends a notification for changed global group memberships.
+	 *
+	 * @param CentralAuthUser $target
+	 * @param array<string,UserGroupMembership> $oldGroupMemberships
+	 * @param array<string,UserGroupMembership> $newGroupMemberships
+	 * @param UserIdentity $performer
+	 * @param string $reason
+	 */
+	private function notifyGlobalUserGroupsChanged(
+		CentralAuthUser $target,
+		array $oldGroupMemberships,
+		array $newGroupMemberships,
+		UserIdentity $performer,
+		string $reason
+	): void {
+		$oldGroups = array_keys( $oldGroupMemberships );
+		$newGroups = array_keys( $newGroupMemberships );
+		$addedGroups = array_values( array_diff( $newGroups, $oldGroups ) );
+		$removedGroups = array_values( array_diff( $oldGroups, $newGroups ) );
+		$changedGroups = [];
+
+		foreach ( array_intersect( $oldGroups, $newGroups ) as $group ) {
+			if ( $oldGroupMemberships[$group]->getExpiry() !== $newGroupMemberships[$group]->getExpiry() ) {
+				$changedGroups[] = $group;
+			}
+		}
+
+		if ( !$addedGroups && !$removedGroups && !$changedGroups ) {
+			return;
+		}
+		if ( $performer->getName() === $target->getName() ) {
+			return;
+		}
+
+		if ( !$target->isAttached() ) {
+			return;
+		}
+
+		$recipient = $this->userFactory->newFromName( $target->getName() );
+		if ( !$recipient ) {
+			return;
+		}
+
+		$this->notificationService->notify(
+			new WikiNotification(
+				'centralauth-global-user-rights',
+				SpecialPage::getTitleFor( 'CentralAuth', $target->getName() ),
+				$performer,
+				[
+					'target-user' => $target->getName(),
+					'add' => $addedGroups,
+					'remove' => $removedGroups,
+					'expiry-changed' => $changedGroups,
+					'reason' => $reason,
+				]
+			),
+			new RecipientSet( [ $recipient ] )
 		);
 	}
 

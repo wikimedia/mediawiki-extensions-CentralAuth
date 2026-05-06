@@ -17,7 +17,6 @@ use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\User\RestrictedUserGroupConfigReader;
 use MediaWiki\User\User;
-use MediaWiki\User\UserGroupMembership;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Message\MessageValue;
 use Wikimedia\TestingAccessWrapper;
@@ -233,6 +232,13 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 		$target->addToGlobalGroup( 'static-group' );
 		$target->addToGlobalGroup( 'shortened-group' );
 		$target->addToGlobalGroup( 'removed-group' );
+
+		$this->setTemporaryHook(
+			'UserGroupsChanged',
+			function () {
+				$this->fail( 'Global group changes must not call the local UserGroupsChanged hook' );
+			}
+		);
 
 		$hookCalled = false;
 		$this->setTemporaryHook(

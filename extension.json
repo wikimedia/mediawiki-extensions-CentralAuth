@@ -1099,5 +1099,22 @@
 			"profile": "installer"
 		}
 	],
+	"attributes": {
+		"Echo": {
+			"Notifications": {
+				"centralauth-global-user-rights": {
+					"category": "user-rights",
+					"section": "alert",
+					"group": "neutral",
+					"presentation-model": "MediaWiki\\Extension\\CentralAuth\\Notifications\\EchoGlobalUserRightsPresentationModel",
+					"bundle": {
+						"web": true,
+						"email": true,
+						"expandable": true
+					}
+				}
+			}
+		}
+	},
 	"manifest_version": 2
 }

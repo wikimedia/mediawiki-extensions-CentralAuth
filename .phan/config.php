@@ -8,6 +8,7 @@ $cfg['directory_list'] = array_merge(
 		'../../extensions/AbuseFilter',
 		'../../extensions/AntiSpoof',
 		'../../extensions/CheckUser',
+		'../../extensions/Echo',
 		'../../extensions/GlobalBlocking',
 		'../../extensions/GlobalPreferences',
 		'../../extensions/MassMessage',
@@ -23,12 +24,20 @@ $cfg['exclude_analysis_directory_list'] = array_merge(
 		'../../extensions/AbuseFilter',
 		'../../extensions/AntiSpoof',
 		'../../extensions/CheckUser',
+		'../../extensions/Echo',
 		'../../extensions/GlobalBlocking',
 		'../../extensions/GlobalPreferences',
 		'../../extensions/MassMessage',
 		'../../extensions/MobileFrontend',
 		'../../extensions/SecurePoll',
 		'../../extensions/TitleBlacklist',
+	]
+);
+
+$cfg['exclude_file_list'] = array_merge(
+	$cfg['exclude_file_list'],
+	[
+		'../../extensions/MassMessage/.phan/stubs/Event.php',
 	]
 );
 
