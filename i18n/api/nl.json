@@ -8,7 +8,7 @@
 		]
 	},
 	"apierror-centralauth-badsession": "Alleen bij gebruik van CentralAuth-sessies kan een CentralAuthToken worden verkregen.",
-	"apierror-centralauth-badtoken": "Het centralauthtoken is ongeldig.",
+	"apierror-centralauth-badtoken": "Het centralauthtoken is onjuist.",
 	"apierror-centralauth-badusername": "De gebruikersnaam \"$1\" is onbruikbaar op deze wiki",
 	"apierror-centralauth-editconflict": "Er is een bewerkingsconflict ontdekt. De bewerking is afgebroken.",
 	"apierror-centralauth-notattached": "Zonder gekoppeld globaal account kan er geen CentralAuthToken worden verkregen.",
