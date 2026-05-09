@@ -364,7 +364,7 @@ class ApiQueryGlobalUsers extends ApiQueryBase {
 			$seenGroups[$row->gug_group] = true;
 		}
 
-		if ( !$needsRights ) {
+		if ( !$needsRights || $seenGroups === [] ) {
 			return;
 		}
 
