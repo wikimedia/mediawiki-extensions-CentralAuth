@@ -9,7 +9,8 @@
 			"Stryn",
 			"Surjection",
 			"Valtlai",
-			"Valtlait"
+			"Valtlait",
+			"Wikipeedikko"
 		]
 	},
 	"apierror-centralauth-badsession": "centralauthtoken on saatavilla vain CentralAuth-istunnoissa.",
@@ -57,6 +58,8 @@
 	"apihelp-query+globalrenamestatus-example-1": "Hakee tietoja nykyisestä järjestelmänlaajuisesta käyttäjästä",
 	"apihelp-query+globalrenamestatus-param-user": "Käyttäjä, jota ollaan nimeämässä uudelleen. Voi olla joko vanha tai uusi nimi.",
 	"apihelp-query+globalrenamestatus-summary": "Näyttää tietoa meneillään olevista järjestelmänlaajuisista uudelleennimeämisistä.",
+	"apihelp-query+globalusers-paramvalue-prop-localinfo": "Lisää käyttäjän paikallisen tilin tiedot.",
+	"apihelp-query+globalusers-param-localgroups": "Sisällytä ryhmien ja käyttöoikeuksien luetteloihin vain ne, jotka liittyvät nykyiseen wikiin.",
 	"apihelp-query+globaluserinfo-example-1": "Hae tietoja nykyisestä järjestelmänlaajuisesta käyttäjästä",
 	"apihelp-query+globaluserinfo-example-2": "Hae tietoja järjestelmänlaajuisesta käyttäjätunnuksesta [[User:Example|Example]]",
 	"apihelp-query+globaluserinfo-param-id": "Järjestelmänlaajuisen käyttäjän ID, josta hakea tietoa. Jos arvoa <var>$1user</var> tai <var>$1id</var> ei anneta, oletusarvona on nykyinen käyttäjä.",

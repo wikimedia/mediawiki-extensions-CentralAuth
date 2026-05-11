@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"Bisang",
 			"Revi",
 			"Tensama0415",
 			"Ykhwong",
@@ -61,6 +62,20 @@
 	"apihelp-query+globalrenamestatus-example-1": "현재의 통합 사용자에 관한 정보를 가져옵니다",
 	"apihelp-query+globalrenamestatus-param-user": "이름이 바뀌는 사용자입니다. 옛 이름이나 새 이름이 올 수 있습니다.",
 	"apihelp-query+globalrenamestatus-summary": "진행 중인 전역 이름 변경에 대한 정보를 표시합니다.",
+	"apihelp-query+globalusers-example-1": "사용자 <kbd>Example</kbd>의 정보를 반환합니다.",
+	"apihelp-query+globalusers-example-2": "통합 ID가 <kbd>1</kbd>인 사용자에 대한 정보를 반환합니다.",
+	"apihelp-query+globalusers-param-prop": "포함할 정보:",
+	"apihelp-query+globalusers-paramvalue-prop-locked": "사용자가 전역 잠금 상태인지 여부에 대한 정보를 추가합니다.",
+	"apihelp-query+globalusers-paramvalue-prop-editcount": "사용자의 전역 편집 횟수를 추가합니다.",
+	"apihelp-query+globalusers-paramvalue-prop-registration": "사용자의 전역 계정 등록 타임스탬프를 추가합니다.",
+	"apihelp-query+globalusers-paramvalue-prop-localinfo": "사용자의 로컬 계정 정보를 추가합니다.",
+	"apihelp-query+globalusers-paramvalue-prop-groups": "각 사용자가 소속된 모든 전역 그룹을 나열합니다.",
+	"apihelp-query+globalusers-paramvalue-prop-groupmemberships": "각 사용자가 명시적으로 배정된 전역 그룹과 각 그룹 멤버십 만료 날짜를 나열합니다.",
+	"apihelp-query+globalusers-paramvalue-prop-rights": "각 사용자가 가진 모든 전역 권한을 나열합니다.",
+	"apihelp-query+globalusers-param-users": "정보를 얻을 전역 사용자 목록입니다. <var>$1centralids</var>와 함께 사용할 수 없습니다.",
+	"apihelp-query+globalusers-param-centralids": "정보를 얻을 통합 사용자 ID 목록입니다. <var>$1users</var>와 함께 사용할 수 없습니다.",
+	"apihelp-query+globalusers-param-localgroups": "그룹 또는 권한 목록을 작성할 때는 현재 위키에 적용되는 것만 포함하세요.",
+	"apihelp-query+globalusers-summary": "전역 사용자 목록에 대한 정보를 가져옵니다.",
 	"apihelp-query+globaluserinfo-example-1": "현재 통합 사용자의 정보를 가져옵니다",
 	"apihelp-query+globaluserinfo-example-2": "통합 사용자 [[User:Example|Example]]에 관한 정보를 가져옵니다",
 	"apihelp-query+globaluserinfo-param-id": "가져올 통합 계정의 사용자 ID입니다. <var>$1user</var>, <var>$1id</var> 둘 다 생략된 경우 현재 사용자를 기본값으로 합니다.",
