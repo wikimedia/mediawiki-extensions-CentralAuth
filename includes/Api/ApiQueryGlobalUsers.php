@@ -11,11 +11,12 @@ use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Api\ApiResult;
 use MediaWiki\Config\Config;
+use MediaWiki\DAO\WikiAwareEntity;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
-use MediaWiki\Logging\ManualLogEntry;
+use MediaWiki\Logging\DatabaseLogEntry;
 use MediaWiki\User\UserNameUtils;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\ParamValidator\ParamValidator;
@@ -30,6 +31,7 @@ use Wikimedia\Timestamp\TimestampFormat as TS;
  */
 class ApiQueryGlobalUsers extends ApiQueryBase {
 
+	private string $mCurrentWikiId;
 	private IReadableDatabase $mCentralDB;
 	/**
 	 * @var array<int,array{group:string,expiry:string}[]> array<centralid, group memberships>
@@ -52,6 +54,8 @@ class ApiQueryGlobalUsers extends ApiQueryBase {
 		private readonly CentralAuthDatabaseManager $databaseManager
 	) {
 		parent::__construct( $query, $moduleName, 'gus' );
+
+		$this->mCurrentWikiId = Wikimap::getCurrentWikiId();
 	}
 
 	/**
@@ -146,7 +150,7 @@ class ApiQueryGlobalUsers extends ApiQueryBase {
 				'localuser' => [
 					'LEFT JOIN',
 					[
-						'lu_wiki' => WikiMap::getCurrentWikiId(),
+						'lu_wiki' => $this->mCurrentWikiId,
 						'lu_name=gu_name',
 					]
 				]
@@ -394,12 +398,15 @@ class ApiQueryGlobalUsers extends ApiQueryBase {
 		// TODO: This may not work if the users were renamed after being locked.
 
 		$centralWiki = $this->config->get( CAMainConfigNames::CentralAuthCentralWiki );
-		$dbr = $this->databaseManager->getLocalDB( DB_REPLICA, $centralWiki ?? WikiMap::getCurrentWikiId() );
+		$dbr = $this->databaseManager->getLocalDB( DB_REPLICA, $centralWiki ?? $this->mCurrentWikiId );
+		$wikiId = $centralWiki === $this->mCurrentWikiId
+			? WikiAwareEntity::LOCAL
+			: ( $centralWiki ?? WikiAwareEntity::LOCAL );
 
-		$builder = $dbr->newSelectQueryBuilder();
+		// Reuse DatabaseLogEntry's existing parsing/loading logic because old log
+		// entries may use legacy log_params formats like "locked\n(none)"
+		$builder = DatabaseLogEntry::newSelectQueryBuilder( $dbr );
 		$result = $builder
-			->fields( [ 'log_id', 'log_title', 'log_params' ] )
-			->from( 'logging' )
 			->where( [
 				'log_type' => 'globalauth',
 				'log_action' => 'setstatus',
@@ -416,7 +423,7 @@ class ApiQueryGlobalUsers extends ApiQueryBase {
 				continue;
 			}
 
-			$params = ManualLogEntry::extractParams( $row->log_params );
+			$params = DatabaseLogEntry::newFromRow( $row, $wikiId )->getParameters();
 			$isLockLog =
 				in_array( 'locked', $params['added'] ?? [], true ) ||
 				// For old logs

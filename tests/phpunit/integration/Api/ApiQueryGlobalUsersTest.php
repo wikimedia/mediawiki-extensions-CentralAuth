@@ -33,6 +33,16 @@ class ApiQueryGlobalUsersTest extends ApiTestCase {
 	private static array $centralAuthUsers = [];
 
 	public function addDBDataOnce(): void {
+		$lockUser = function ( CentralAuthUser $centralAuthUser ): void {
+			$context = RequestContext::getMain();
+			$context->setAuthority( $this->mockRegisteredUltimateAuthority() );
+
+			$status = $centralAuthUser->adminLockHide( true, null, 'A very good lock reason', $context );
+
+			RequestContext::resetMain();
+			$this->assertStatusGood( $status );
+		};
+
 		$currentWikiId = WikiMap::getCurrentWikiId();
 		$userInfo = [
 			0 => [
@@ -87,17 +97,30 @@ class ApiQueryGlobalUsersTest extends ApiTestCase {
 				'attrs' => [],
 				'wikis' => [],
 				'createLocal' => true,
-				'callback' => function ( CentralAuthUser $centralAuthUser ) {
-					$context = RequestContext::getMain();
-					$context->setAuthority( $this->mockRegisteredUltimateAuthority() );
-
-					$status = $centralAuthUser->adminLockHide( true, null, 'A very good lock reason', $context );
-
-					RequestContext::resetMain();
-					$this->assertStatusGood( $status );
-				},
+				'callback' => $lockUser,
 			],
 			6 => [
+				'username' => 'Locked user (legacy log params)',
+				'password' => self::PASSWORD,
+				'attrs' => [],
+				'wikis' => [],
+				'createLocal' => true,
+				'callback' => function ( CentralAuthUser $centralAuthUser ) use ( $lockUser ) {
+					$lockUser( $centralAuthUser );
+
+					$this->getDb()->newUpdateQueryBuilder()
+						->table( 'logging' )
+						->set( [ 'log_params' => "locked\n(none)" ] )
+						->where( [
+							'log_type' => 'globalauth',
+							'log_action' => 'setstatus',
+							'log_namespace' => NS_USER,
+							'log_title' => $this->getGlobalLockLogTitle( $centralAuthUser ),
+						] )
+						->execute();
+				},
+			],
+			7 => [
 				'username' => 'Global sysop (not opted in)',
 				'password' => self::PASSWORD,
 				'attrs' => [],
@@ -166,6 +189,10 @@ class ApiQueryGlobalUsersTest extends ApiTestCase {
 
 	private function getCentralDB(): IDatabase {
 		return CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )->getCentralPrimaryDB();
+	}
+
+	private static function getGlobalLockLogTitle( CentralAuthUser $lockedUser ): string {
+		return strtr( "{$lockedUser->getName()}@global", ' ', '_' );
 	}
 
 	/**
@@ -371,38 +398,57 @@ class ApiQueryGlobalUsersTest extends ApiTestCase {
 
 	public function testExecuteWithPropLocked() {
 		$lockedUser = $this->getCentralAuthUser( 5 );
+		$legacyLockedUser = $this->getCentralAuthUser( 6 );
 		$unlockedUser = $this->getCentralAuthUser( 1 );
 
 		$data = $this->doQuery( [
 			'gususers' => implode( '|', [
 				$lockedUser->getName(),
+				$legacyLockedUser->getName(),
 				$unlockedUser->getName(),
 			] ),
 			'gusprop' => 'locked',
 		] );
 
+		$titleMap = [
+			$this->getGlobalLockLogTitle( $lockedUser ) => $lockedUser->getName(),
+			$this->getGlobalLockLogTitle( $legacyLockedUser ) => $legacyLockedUser->getName(),
+		];
+
 		$dbr = $this->getDb();
 		$builder = $dbr->newSelectQueryBuilder();
-		$logid = $dbr->newSelectQueryBuilder()
-			->field( 'log_id' )
+		$rows = $dbr->newSelectQueryBuilder()
+			->fields( [ 'log_id', 'log_title' ] )
 			->from( 'logging' )
 			->where( [
 				'log_type' => 'globalauth',
 				'log_action' => 'setstatus',
 				'log_namespace' => NS_USER,
-				'log_title' => strtr( "{$lockedUser->getName()}@global", ' ', '_' ),
+				'log_title' => array_keys( $titleMap ),
 			] )
 			->orderBy( 'log_id', $builder::SORT_DESC )
 			->caller( __METHOD__ )
-			->fetchField();
-		$this->assertNotFalse( $logid );
+			->fetchResultSet();
+
+		$logidMap = [];
+		foreach ( $rows as $row ) {
+			$userName = $titleMap[$row->log_title];
+			$logidMap[$userName] = (int)$row->log_id;
+		}
+		$this->assertCount( 2, $logidMap );
 
 		$expected = [
 			[
 				'centralid' => $lockedUser->getId(),
 				'name' => $lockedUser->getName(),
 				'locked' => true,
-				'locklogid' => (int)$logid,
+				'locklogid' => $logidMap[$lockedUser->getName()],
+			],
+			[
+				'centralid' => $legacyLockedUser->getId(),
+				'name' => $legacyLockedUser->getName(),
+				'locked' => true,
+				'locklogid' => $logidMap[$legacyLockedUser->getName()],
 			],
 			[
 				'centralid' => $unlockedUser->getId(),
@@ -513,7 +559,7 @@ class ApiQueryGlobalUsersTest extends ApiTestCase {
 
 	public function testExecuteWithPropGroupsAndRights() {
 		$steward = $this->getCentralAuthUser( 0 );
-		$globalSysop = $this->getCentralAuthUser( 6 );
+		$globalSysop = $this->getCentralAuthUser( 7 );
 
 		$data = $this->doQuery( [
 			'gususers' => implode( '|', [
