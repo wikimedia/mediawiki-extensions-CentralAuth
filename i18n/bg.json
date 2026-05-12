@@ -88,7 +88,7 @@
 	"centralauth-admin-reason": "Причина:",
 	"centralauth-admin-reason-other": "Друга/допълнителна причина:",
 	"centralauth-admin-reason-other-select": "Друга причина",
-	"centralauth-admin-setstatus-success": "Успешно променихте статуса на тази глобална сметка.",
+	"centralauth-admin-setstatus-success": "Успешно променихте статуса на глобалната сметка „$1“.",
 	"centralauth-admin-status": "Установяване на статус на глобална сметка",
 	"centralauth-admin-status-hidden": "Скрита:",
 	"centralauth-admin-status-hidden-list": "Сметката е скрита от списъка на глобалните потребители",
