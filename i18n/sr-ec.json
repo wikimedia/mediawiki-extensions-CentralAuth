@@ -414,6 +414,7 @@
 	"globalvanishrequest-submit-text": "Захтевај нестанак",
 	"globalvanishrequest-autoapprove-public-note": "Захтев за нестанак овог корисника је аутоматски одобрен.",
 	"globalusers": "Списак глобалних налога",
+	"grant-createlocalaccount": "принудно прављење локалног налога за глобални налог",
 	"grant-setglobalaccountstatus": "управљај стањем глобалног налога",
 	"log-action-filter-gblrights": "Врста измене:",
 	"log-action-filter-gblrights-groupprms": "Промена права глобалне групе",
