@@ -143,6 +143,7 @@
 	"centralauth-editset-usage": "Koristi se u grupama:",
 	"centralauth-editset-wikis": "Wikiji:",
 	"centralauth-error-locked": "Ne možete uređivati jer je Vaš račun zaključan.",
+	"centralauth-warning-reauth": "Istekla je sesija centralne prijave. Ponovo se prijavite da biste nastavili.",
 	"centralauth-finish-incomplete": "Nekoliko računa je spojeno koristeći ovu šifru.\nOstali računi još nisu potvrđeni.",
 	"centralauth-finish-login": "Prijava",
 	"centralauth-finish-noconfirms": "Nijedan račun nije mogao biti potvrđen koristeći ovu šifru.",

@@ -9,7 +9,8 @@
 			"Stryn",
 			"Surjection",
 			"Valtlai",
-			"Valtlait"
+			"Valtlait",
+			"Wikipeedikko"
 		]
 	},
 	"apierror-centralauth-badsession": "centralauthtoken on saatavilla vain CentralAuth-istunnoissa.",
