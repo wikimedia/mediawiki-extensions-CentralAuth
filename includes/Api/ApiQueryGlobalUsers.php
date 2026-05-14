@@ -102,14 +102,18 @@ class ApiQueryGlobalUsers extends ApiQueryBase {
 		// MediaWiki allows numeric usernames, and PHP converts such keys to integers
 		$goodNames = self::getStringifiedKeys( $seenNames );
 
-		if ( $useNames && $goodNames === [] ) {
-			// gususers values are all invalid
-			$this->buildResultFromData( $data, 'users', $users );
-			return;
-		}
-
 		/** @var int[] */
 		$centralIds = $params['centralids'] ?? [];
+
+		if ( $useNames && $goodNames === [] ) {
+			// gususers values are all invalid, or empty input
+			$this->buildResultFromData( $data, 'users', $users );
+			return;
+		} elseif ( !$useNames && $centralIds === [] ) {
+			// empty input
+			$this->buildResultFromData( [], 'centralids', $centralIds );
+			return;
+		}
 
 		$this->addTables( 'globaluser' );
 		$this->addFields( [ 'gu_id', 'gu_name', 'gu_hidden_level' ] );
