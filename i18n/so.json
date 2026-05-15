@@ -2,7 +2,8 @@
 	"@metadata": {
 		"authors": [
 			"Abdullahi",
-			"Abshirdheere"
+			"Abshirdheere",
+			"AhmedG612"
 		]
 	},
 	"centralauth-admin-blocklog": "diiwaanka xanibka",
@@ -14,5 +15,12 @@
 	"centralauth-prefs-count-attached": "Akoonkaada wuxuu ka dhaq-dhaqaaqaa $1 mashruuc {{PLURAL:$1|bog|bogag}}.",
 	"centralauth-prefs-manage": "Maamul akoonkaada guud",
 	"centralauth-prefs-view": "Itus macluumaadka gude galaha",
-	"centralauth-years-ago": "$1 {{PLURAL:$1|sanad|sanadood}} ka hor"
+	"centralauth-years-ago": "$1 {{PLURAL:$1|sanad|sanadood}} ka hor",
+	"globalrenamequeue-vanish-email-subject-approved": "Codsiga baaba'a ee koontada waa la oggolaaday",
+	"globalrenamequeue-vanish-email-subject-rejected": "Codsiga baaba'a ee koontada waa la diiday",
+	"globalvanishrequest": "Codsiga baaba’a ee koontada guud",
+	"globalvanishrequest-text": "'''Dir codsiga baaba'a'''",
+	"globalvanishrequest-pretext": "Baaba'du waa '''miciinka ugu dambeeya''' waana in '''la isticmaalaa oo kaliya marka aad rabto inaad joojiso wax ka beddelka weligaa''' iyo sidoo kale si aad u qariso inta ugu badan ee xiriirradiisii hore. Tirtiridda koontada waxaa lagu sameeyaa iyadoo la beddelayo magaca koontadaada si dadka kale aysan u aqoonsan wax ku darsashadaada nidaamka loo yaqaanno baaba'da koontada. '''Baaba'du ma dammaanad qaadayso qarsoodi buuxda ama ma tirtirto wax ku darsashadii mashaariicda'''.\n\nSi aad u sii waddo bilaabista nidaamka baaba'aya, fadlan buuxi foomka codsiga ee Baaba'da Koontada ee hoos ku qoran.",
+	"globalvanishrequest-blocked-title": "Codsiga baaba’a ee koontada guud waa la diiday sababtoo ah koontadaada waa la xannibay",
+	"globalvanishrequest-autoapprove-public-note": "Codsigan baaba'a ee isticmaalaha si otomaatig ah ayaa loo oggolaaday."
 }
