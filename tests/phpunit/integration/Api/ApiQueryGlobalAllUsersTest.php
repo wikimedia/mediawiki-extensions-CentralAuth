@@ -131,9 +131,9 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 
 	public static function provideExecuteWithRange() {
 		return [
-			'from user 2' => [ 'from' => 2, 'to' => null ],
-			'to user 2' => [ 'from' => null, 'to' => 2 ],
-			'from user 1 to 3' => [ 'from' => 1, 'to' => 3 ],
+			'from user 2' => [ 'fromIndex' => 2, 'toIndex' => null ],
+			'to user 2' => [ 'fromIndex' => null, 'toIndex' => 2 ],
+			'from user 1 to 3' => [ 'fromIndex' => 1, 'toIndex' => 3 ],
 		];
 	}
 
