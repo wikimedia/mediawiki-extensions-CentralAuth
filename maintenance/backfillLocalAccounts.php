@@ -87,18 +87,33 @@ class BackfillLocalAccounts extends Maintenance {
 
 	/**
 	 * Create a local account on the wiki this script is running on,
-	 * for the specific username
+	 * for the specific username.
+	 *
+	 * This calls CentralAuthUtilityService::autoCreateUser() directly rather than going
+	 * through CentralAuthForcedLocalCreationService, to avoid creating a
+	 * 'newusers/forcecreatelocal' log entry. That log entry's publish() call generates a
+	 * RecentChange attributed to the maintenance script's system user, which CheckUser
+	 * then logs against the script's fake-session IP — making the script appear as
+	 * another account sharing the user's IP in CheckUser results (T394732).
 	 */
-	private function createLocalAccount( string $username, bool $verbose ): void {
+	private function createLocalAccount( string $username, UserFactory $userFactory, bool $verbose ): void {
 		$performer = $this->performer ?? new UltimateAuthority(
 			User::newSystemUser( User::MAINTENANCE_SCRIPT_USER, [ 'steal' => true ] )
 		);
-		$status = CentralAuthServices::getForcedLocalCreationService()->attemptAutoCreateLocalUserFromName(
-			$username,
-			$performer,
-			"Backfilled by autocreation script"
-		);
 
+		$user = $userFactory->newFromName( $username );
+		if ( !$user ) {
+			$this->error( "Bad user name $username" );
+			return;
+		}
+
+		$centralUser = CentralAuthUser::getInstance( $user );
+		if ( $centralUser->isSuppressed() ) {
+			$this->error( "Skipping suppressed user $username" );
+			return;
+		}
+
+		$status = CentralAuthServices::getUtilityService()->autoCreateUser( $user, true, $performer );
 		if ( !$status->isGood() ) {
 			$this->error( "autoCreateUser failed for $username:" );
 			$this->error( $status );
@@ -270,7 +285,7 @@ class BackfillLocalAccounts extends Maintenance {
 					// Dig down far enough and this uses User::addToDatabase() which relies on
 					// MediaWikiServices::getInstance()->getConnectionProvider()->getPrimaryDatabase()
 					// which should be the same as our $dbw arg to begin/commitTransaction(). But I don't like it.
-					$this->createLocalAccount( $row->gu_name, $verbose );
+					$this->createLocalAccount( $row->gu_name, $userFactory, $verbose );
 					$this->commitTransaction( $dbw, __METHOD__ );
 					ScopedCallback::consume( $callback );
 					$createdUsers++;
