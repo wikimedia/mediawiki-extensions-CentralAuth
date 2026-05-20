@@ -424,7 +424,7 @@
 	"globalrenamequeue-action-view": "보기",
 	"globalrenamequeue-type-rename": "이름 바꾸기",
 	"globalrenamequeue-type-vanish": "버리기",
-	"globalrenamequeue-column-row-actions": "행위",
+	"globalrenamequeue-column-row-actions": "작업",
 	"globalrenamequeue-column-rq-completed-ts": "닫힌 날짜",
 	"globalrenamequeue-column-rq-name": "사용자 이름",
 	"globalrenamequeue-column-rq-newname": "요청된 사용자 이름",
@@ -583,6 +583,6 @@
 	"sessionprovider-centralauthsessionprovider": "중앙 쿠키 기반 세션",
 	"sessionprovider-centralauthtokensessionprovider": "중앙인증 토큰 세션",
 	"centralauth-badaccess-blacklisted": "거부 목록에 있으므로 전역 이름 바꾸기를 요청할 수 없습니다.",
-	"centralauth-action-forbidden-shared-domain": "공유 인증 도메인에서 이 동작을 수행할 수 없습니다.",
+	"centralauth-action-forbidden-shared-domain": "공유 인증 도메인에서 이 작업을 수행할 수 없습니다.",
 	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "사용자는 {{PLURAL:$1|전역 그룹|모든 전역 그룹}}의 구성원입니다: $2"
 }
