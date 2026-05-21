@@ -30,6 +30,7 @@
 	"globalvanishrequest-pretext": "Baaba'du waa '''miciinka ugu dambeeya''' waana in '''la isticmaalaa oo kaliya marka aad rabto inaad joojiso wax ka beddelka weligaa''' iyo sidoo kale si aad u qariso inta ugu badan ee xiriirradiisii hore. Tirtiridda koontada waxaa lagu sameeyaa iyadoo la beddelayo magaca koontadaada si dadka kale aysan u aqoonsan wax ku darsashadaada nidaamka loo yaqaanno baaba'da koontada. '''Baaba'du ma dammaanad qaadayso qarsoodi buuxda ama ma tirtirto wax ku darsashadii mashaariicda'''.\n\nSi aad u sii waddo bilaabista nidaamka baaba'aya, fadlan buuxi foomka codsiga ee Baaba'da Koontada ee hoos ku qoran.",
 	"globalvanishrequest-blocked-title": "Codsiga baaba’a ee koontada guud waa la diiday sababtoo ah koontadaada waa la xannibay",
 	"globalvanishrequest-autoapprove-public-note": "Codsigan baaba'a ee isticmaalaha si otomaatig ah ayaa loo oggolaaday.",
+	"log-name-gblrename": "Diiwaanka beddelka magaca caalamiga ah",
 	"logentry-gblrename-merge": "$1 ayaa si caalami ah {{GENDER:$2|ugu daray}} $4 gudaha $5",
 	"logentry-gblrename-promote": "$1 ayaa si caalami ah {{GENDER:$2|magaca uga beddelay}} $4 una beddelay $5",
 	"logentry-gblrename-rename": "$1 ayaa si caalami ah {{GENDER:$2|magaca uga beddelay}} $4 una beddelay $5"

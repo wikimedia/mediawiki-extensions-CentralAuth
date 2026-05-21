@@ -532,7 +532,7 @@
 	"globalvanishrequest-autoapprove-note": "사용자 이름 버리기 요청이 성공적으로 처리되었습니다.",
 	"globalvanishrequest-autoapprove-public-note": "이 사용자 버리기 요청은 자동으로 승인되었습니다.",
 	"globalvanishrequest-rejected-subject-notification": "계정 버리기 요청 거부됨 ($1)",
-	"globalvanishrequest-rejected-body-notification": "계정 삭제 요청이 거부되었습니다. 자세한 내용:\n\n사용자 이름: $1\n홈 위키: $2\n전체 편집 횟수: $3\n차단 여부: $4\n계정 버리기 요청 사유: $5\n거부자: $6\n거부 관련 참고: $7\n요청일: $8\n완료일: $9",
+	"globalvanishrequest-rejected-body-notification": "계정 삭제 요청이 거부되었습니다. 자세한 내용:\n\n사용자 이름: $1\n홈 위키: $2\n전체 편집 횟수: $3\n차단 여부: $4\n계정 버리기 요청 이유: $5\n거부자: $6\n거부 관련 참고: $7\n요청일: $8\n완료일: $9",
 	"globalvanishrequest-rejected-notification-error": "법무팀에게 자동으로 알릴 수 없습니다. 계정 버리기 요청 거부에 대해 수동으로 이메일을 보내 주시기 바랍니다. 요청 거부는 완료되었습니다.",
 	"globalusers": "통합 계정 목록",
 	"grant-createlocalaccount": "통합 계정에 대해 로컬 계정을 강제로 생성하기",
