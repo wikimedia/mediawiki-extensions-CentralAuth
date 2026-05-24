@@ -3,12 +3,14 @@
 namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\Config\Config;
+use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
 use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\SpecialPageFactory;
+use MediaWiki\Specials\Helpers\LoginHelper;
 use MediaWiki\WikiMap\WikiMap;
 use MobileContext;
 use RuntimeException;
@@ -220,27 +222,19 @@ class SharedDomainUtils {
 		}
 		$url = $this->makeUrlDeviceCompliant( $sharedDomainPrefix . $localUrl );
 
-		$params = [];
-		$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'request' => $request ] );
-		// replicate the non-hook part of LoginSignupSpecialPage::getPreservedParams()
-		$params += [
-			'display' => $request->getRawVal( 'display' ),
-			'uselang' => $request->getRawVal( 'uselang' ),
-			'variant' => $request->getRawVal( 'variant' ),
+		$params = [
+			'redoLocalAuthentication' => $request->getRawVal( 'redoLocalAuthentication' ),
+			// Make sure SUL3 opt-in state is preserved, e.g. in case of the user changing networks
+			'usesul3' => 1,
 			// support existing warning messages from anon actions that redirect to auth pages (T416057)
 			'error' => $request->getRawVal( 'error' ),
 			'warning' => $request->getRawVal( 'warning' ),
 			'notice' => $request->getRawVal( 'notice' ),
-			'returnto' => $request->getRawVal( 'returnto' ),
-			'returntoquery' => $request->getRawVal( 'returntoquery' ),
-			'returntoanchor' => $request->getRawVal( 'returntoanchor' ),
-			'redoLocalAuthentication' => $request->getRawVal( 'redoLocalAuthentication' ),
 		];
+		$loginHelper = new LoginHelper( RequestContext::getMain() );
+		$params = $loginHelper->getPreservedParams( [ 'request' => $request, 'params' => $params ] );
 		// already handled in makeUrlDeviceCompliant()
 		unset( $params['useformat'] );
-
-		// Make sure SUL3 opt-in state is preserved, e.g. in case of the user changing networks
-		$params['usesul3'] = '1';
 
 		// Skip the login form if the user is logged out on the local domain, but already logged in on the central
 		// domain. See LoginSignupSpecialPage: "In the case where the user is already logged in"...

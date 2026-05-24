@@ -53,11 +53,12 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 		} else {
 			$output->expects( $this->never() )->method( 'redirect' );
 		}
-		$specialPage = $this->createNoOpMock( SpecialPage::class, [ 'getName', 'getOutput', 'getRequest', 'getUser' ] );
+		$specialPage = $this->createNoOpMock( SpecialPage::class, [ 'getName', 'getContext', 'getOutput', 'getRequest', 'getUser' ] );
 		$specialPage->method( 'getName' )->willReturn( $page );
+		$specialPage->method( 'getContext' )->willReturn( $requestContext );
 		$specialPage->method( 'getOutput' )->willReturn( $output );
-		$specialPage->method( 'getRequest' )->willReturn( RequestContext::getMain()->getRequest() );
-		$specialPage->method( 'getUser' )->willReturn( RequestContext::getMain()->getUser() );
+		$specialPage->method( 'getRequest' )->willReturn( $requestContext->getRequest() );
+		$specialPage->method( 'getUser' )->willReturn( $requestContext->getUser() );
 		$handler->onSpecialPageBeforeExecute( $specialPage, '' );
 	}
 

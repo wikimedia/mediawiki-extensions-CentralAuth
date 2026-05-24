@@ -14,6 +14,7 @@ use MediaWiki\Request\WebRequest;
 use MediaWiki\ResourceLoader\ClientHtml;
 use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
+use MediaWiki\Specials\Helpers\LoginHelper;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 
@@ -90,26 +91,21 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			// The isNamed() case is handled in SharedDomainHookHandler::onSpecialPageBeforeExecute()
 			&& !$special->getUser()->isNamed()
 		) {
-			$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
-			$params = [];
-			$this->hookRunner->onAuthPreserveQueryParams( $params, [ 'request' => $request ] );
-			// replicate the non-hook part of LoginSignupSpecialPage::getPreservedParams()
-			$params += [
-				'display' => $request->getRawVal( 'display' ),
-				'uselang' => $request->getRawVal( 'uselang' ),
-				'variant' => $request->getRawVal( 'variant' ),
+			$params = [
+				'sul3-action' => 'signup',
 				// support existing warning messages from anon actions that redirect to auth pages (T416057)
 				'error' => $request->getRawVal( 'error' ),
 				'warning' => $request->getRawVal( 'warning' ),
 				'notice' => $request->getRawVal( 'notice' ),
-				'returnto' => $request->getRawVal( 'returnto' ),
-				'returntoquery' => $request->getRawVal( 'returntoquery' ),
-				'returntoanchor' => $request->getRawVal( 'returntoanchor' ),
+				// replicate the non-hook part of LoginSignupSpecialPage::getPreservedParams()
+				// (except HTTP login which is not supported in CentralAuth)
 				'alwaysShowLogin' => '1',
 			];
-			$params['sul3-action'] = 'signup';
-			$url = wfAppendQuery( $localLoginUrl, $params );
+			$loginHelper = new LoginHelper( $special->getContext() );
+			$params = $loginHelper->getPreservedParams( [ 'params' => $params ] );
 
+			$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
+			$url = wfAppendQuery( $localLoginUrl, $params );
 			$special->getOutput()->redirect( $url );
 			return false;
 		}
