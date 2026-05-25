@@ -10,6 +10,7 @@
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Kooxda|Kooxaha}} caalamiga ah:",
 	"centralauth-admin-setstatus-success": "Waxaad beddeshay xaaladda akoonka caalamiga ah \"$1\".",
 	"centralauth-automatic-global-groups-reason-local": "Kooxaha caalamiga ah si otomaatig ah ayaa loo cusboonaysiiyay sababtoo ah isbeddelka kooxda maxalliga ah.",
+	"centralauth-contribs-link": "Akoon caalami ah",
 	"centralauth-contribs-locked": "Koontadan waa mid caalami ahaan la qufulay.\nEeg [[Special:CentralAuth/$1|faahfaahinta koontada caalamiga ah]] si aad u hesho macluumaad dheeraad ah.",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|maalin|maalmood}} ka hor",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|wax ku biirin|wax ku biirin}} oo ku saabsan $2",
