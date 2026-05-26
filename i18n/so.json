@@ -14,6 +14,8 @@
 	"centralauth-contribs-locked": "Koontadan waa mid caalami ahaan la qufulay.\nEeg [[Special:CentralAuth/$1|faahfaahinta koontada caalamiga ah]] si aad u hesho macluumaad dheeraad ah.",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|maalin|maalmood}} ka hor",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|wax ku biirin|wax ku biirin}} oo ku saabsan $2",
+	"centralauth-listusers-locked": "Qufulan",
+	"centralauth-login-error-locked": "{{GENDER:$1|Adiga}} ma geli kartid sababtoo ah {{GENDER:$1|koontadaada}} waa la xannibay si caalami ah.",
 	"centralauth-merge-method-login": "ku abuuray soo galida",
 	"centralauth-merge-method-new": "Akoon cusub",
 	"centralauth-merge-method-new-desc": "Waxa ay muujinaysaa  in la sameeyey akoon caalami ah si iskeed ah markii la sameeyey akoonkaan maxalliga ah.",
