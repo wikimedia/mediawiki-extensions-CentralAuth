@@ -54,7 +54,7 @@ class GlobalRenameRequestStore {
 				'rq_status'       => $request->getStatus(),
 				'rq_performer'    => $request->getPerformer(),
 				'rq_comments'     => $request->getComments(),
-				'rq_type'         => $request->getType() || GlobalRenameRequest::RENAME,
+				'rq_type'         => $request->getType() ?? GlobalRenameRequest::RENAME,
 			];
 
 			// Ensure there's a completed timestamp if a pre-approved request
@@ -87,7 +87,7 @@ class GlobalRenameRequestStore {
 					'rq_deleted'      => $request->getDeleted(),
 					'rq_performer'    => $request->getPerformer(),
 					'rq_comments'     => $request->getComments(),
-					'rq_type'         => $request->getType() || GlobalRenameRequest::RENAME,
+					'rq_type'         => $request->getType() ?? GlobalRenameRequest::RENAME,
 				] )
 				->where( [
 					'rq_id' => $request->getId()
