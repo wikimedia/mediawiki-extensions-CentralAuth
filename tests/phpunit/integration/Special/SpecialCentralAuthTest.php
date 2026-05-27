@@ -480,6 +480,19 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 				$this->getTestSysop()->getUserIdentity()
 			);
 		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
+
+		// T387016
+		$logSnippetPosition = strpos( $html, 'mw-centralauth-admin-logsnippet' );
+		$globalBlockExemptListPosition = strpos( $html, 'mw-centralauth-globalblock-exempt-list' );
+
+		$this->assertNotFalse( $logSnippetPosition );
+		$this->assertNotFalse( $globalBlockExemptListPosition );
+		$this->assertGreaterThan(
+			$logSnippetPosition,
+			$globalBlockExemptListPosition,
+			'Global block exempt wikis list should be shown after previous global account changes.'
+		);
+
 		// Verify that the global block exempt table is present
 		$globalBlockExemptFieldset = $this->assertAndGetByElementId(
 			$html, 'mw-centralauth-globalblock-exempt-list'

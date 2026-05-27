@@ -248,7 +248,6 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->showUsernameForm();
 		if ( $continue && $globalUser->exists() ) {
 			$this->showInfo();
-			$this->showGlobalBlockingExemptWikisList();
 			if ( $this->mCanLock ) {
 				$this->showStatusForm();
 			}
@@ -256,6 +255,7 @@ class SpecialCentralAuth extends SpecialPage {
 				$this->showDeleteGlobalAccountForm();
 			}
 			$this->showLogExtract();
+			$this->showGlobalBlockingExemptWikisList();
 			$this->showWikiLists();
 		} elseif ( $continue && !$globalUser->exists() ) {
 			// No global account, but we can still list the local ones
