@@ -1060,14 +1060,10 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Returns true if the account has any public logs.
-	 *
-	 * By default this method ignores 'newusers' logs as almost all users will
-	 * have a log record of that type.
-	 *
-	 * @param array $excludeTypes is an array of log types to ignore
+	 * Returns true if the account has any public logs, excluding the log entry for the account's own
+	 * creation (of type 'newusers/create' or 'newusers/autocreate').
 	 */
-	public function hasPublicLogs( $excludeTypes = [ 'newusers' ] ): bool {
+	public function hasPublicLogs(): bool {
 		$services = MediaWikiServices::getInstance();
 		$dbm = CentralAuthServices::getDatabaseManager();
 
@@ -1084,7 +1080,9 @@ class CentralAuthUser implements IDBAccessObject {
 
 			$conds = [
 				'log_actor' => $actorId,
-				$dbr->expr( 'log_type', '!=', $excludeTypes ),
+				// Exclude account's own creation, but not creations of other accounts ('create2' and 'byemail')
+				$dbr->expr( 'log_type', '!=', 'newusers' )->or( 'log_action', '!=', 'create' ),
+				$dbr->expr( 'log_type', '!=', 'newusers' )->or( 'log_action', '!=', 'autocreate' ),
 			];
 			$row = $dbr->newSelectQueryBuilder()
 				->select( [ 'log_id' ] )
