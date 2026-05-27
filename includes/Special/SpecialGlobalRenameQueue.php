@@ -270,6 +270,12 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$formDescriptor = array_merge(
 			$this->getCommonFormFieldsArray(),
 			[
+				'performer' => [
+					'type' => 'user',
+					'name' => 'performer',
+					'size' => 30,
+					'label-message' => 'globalrenamequeue-form-performer',
+				],
 				'status' => [
 					'type' => 'select',
 					'name' => 'status',

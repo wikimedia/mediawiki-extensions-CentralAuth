@@ -448,6 +448,7 @@
 	"globalrenamequeue-form-type-all": "All",
 	"globalrenamequeue-form-type-rename": "Rename",
 	"globalrenamequeue-form-type-vanish": "Vanish",
+	"globalrenamequeue-form-performer": "Performer:",
 	"globalrenamequeue-form-username": "Username:",
 	"globalrenamequeue-nav-closedqueue": "Closed requests",
 	"globalrenamequeue-nav-openqueue": "Open requests",

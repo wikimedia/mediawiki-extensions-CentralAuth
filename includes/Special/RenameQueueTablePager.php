@@ -114,6 +114,17 @@ class RenameQueueTablePager extends TablePager {
 			$conds['rq_type'] = $type;
 		}
 
+		if ( $this->showClosedRequests() ) {
+			$performer = $this->getRequest()->getText( 'performer' );
+			$performer = $this->userNameUtils->getCanonical( $performer );
+			if ( $performer ) {
+				$centralUser = CentralAuthUser::getInstanceByName( $performer );
+				if ( $centralUser->exists() ) {
+					$conds['rq_performer'] = $centralUser->getId();
+				}
+			}
+		}
+
 		if ( $this->showOpenRequests() ) {
 			$conds['rq_status'] = GlobalRenameRequest::PENDING;
 		} else {

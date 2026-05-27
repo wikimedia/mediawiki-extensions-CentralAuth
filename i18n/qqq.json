@@ -480,6 +480,7 @@
 	"globalrenamequeue-form-type-all": "Option in type dropdown on Special:GlobalRenameQueue used for applying no filter for request type. See {{msg-mw|globalrenamequeue-form-type}}\n{{Identical|All}}",
 	"globalrenamequeue-form-type-rename": "Option in type dropdown on Special:GlobalRenameQueue used for filtering requests to show only rename requests. See {{msg-mw|globalrenamequeue-type-rename}}\n{{Identical|Rename}}",
 	"globalrenamequeue-form-type-vanish": "Option in type dropdown on Special:GlobalRenameQueue used for filtering requests to show only vanish requests. See {{msg-mw|globalrenamequeue-type-vanish}}\n{{Identical|Vanish}}",
+	"globalrenamequeue-form-performer": "Label of form field shown on Special:GlobalRenameQueue/closed for filtering by the user who processed the request.\nSee also {{msg-mw|globalrenamequeue-column-rq-performer}}",
 	"globalrenamequeue-form-username": "Label of form field shown on Special:GlobalRenameQueue.\nSee also {{msg-mw|globalrenamequeue-column-rq-name}}\n{{Identical|Username}}",
 	"globalrenamequeue-nav-closedqueue": "Text on a button that opens up the list of closed requests in the global rename queue.",
 	"globalrenamequeue-nav-openqueue": "Text on a button that opens up the list of open requests in the global rename queue.",
