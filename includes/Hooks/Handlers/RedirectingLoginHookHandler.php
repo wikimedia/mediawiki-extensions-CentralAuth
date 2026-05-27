@@ -152,7 +152,8 @@ class RedirectingLoginHookHandler implements
 			throw new LogicException( 'Unattached user at end of login' );
 		}
 
-		$lastAuthTimestamp = $request->getSession()->get( 'AuthManager:lastAuthTimestamp', 0 );
+		$lastAuthTimestamps = $request->getSession()->get( 'AuthManager:lastAuthTimestamps', [] );
+		$lastAuthTimestamp = $lastAuthTimestamps ? max( $lastAuthTimestamps ) : 0;
 		$outputData = $inputData + [
 			'username' => $centralUser->getName(),
 			'userId' => $centralUser->getId(),
