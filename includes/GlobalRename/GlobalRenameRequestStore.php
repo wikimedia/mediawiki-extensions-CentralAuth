@@ -8,6 +8,7 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserNameUtils;
 use stdClass;
 use Wikimedia\Rdbms\IDBAccessObject;
@@ -208,6 +209,87 @@ class GlobalRenameRequestStore {
 			->fetchField();
 
 		return $res !== false;
+	}
+
+	/**
+	 * Query the rename request queue. Used by the globalrenamequeue API list module.
+	 *
+	 * @param string|null $name Filter by requesting user's name (rq_name).
+	 * @param string|null $newname Filter by requested new username (rq_newname).
+	 * @param string|null $performer Filter by the name of who processed the request
+	 * @param string|string[]|null $status
+	 * @param int|null $type GlobalRenameRequest::RENAME or VANISH, or null for both
+	 * @param int $limit
+	 * @param int|null $continueId
+	 * @return GlobalRenameRequest[]
+	 */
+	public function queryRequestQueue(
+		?string $name,
+		?string $newname,
+		?string $performer,
+		$status,
+		?int $type,
+		int $limit,
+		?int $continueId
+	): array {
+		$dbr = $this->dbManager->getCentralReplicaDB();
+
+		$qb = $dbr->newSelectQueryBuilder()
+			->select( [
+				'id'        => 'rq_id',
+				'name'      => 'rq_name',
+				'wiki'      => 'rq_wiki',
+				'newname'   => 'rq_newname',
+				'reason'    => 'rq_reason',
+				'requested' => 'rq_requested_ts',
+				'status'    => 'rq_status',
+				'completed' => 'rq_completed_ts',
+				'deleted'   => 'rq_deleted',
+				'performer' => 'rq_performer',
+				'comments'  => 'rq_comments',
+				'type'      => 'rq_type',
+			] )
+			->from( 'renameuser_queue' )
+			->orderBy( 'rq_id', 'ASC' )
+			->limit( $limit )
+			->caller( __METHOD__ );
+
+		if ( $name !== null ) {
+			$qb->where( [ 'rq_name' => $name ] );
+		}
+
+		if ( $newname !== null ) {
+			$qb->where( [ 'rq_newname' => $newname ] );
+		}
+
+		if ( $status !== null ) {
+			$qb->where( [ 'rq_status' => $status ] );
+		}
+
+		if ( $type !== null ) {
+			$qb->where( [ 'rq_type' => $type ] );
+		}
+
+		if ( $performer !== null ) {
+			$caPerformer = CentralAuthUser::getInstanceByName( $performer );
+			if ( $caPerformer->exists() ) {
+				$qb->where( [ 'rq_performer' => $caPerformer->getId() ] );
+			} else {
+				return [];
+			}
+		}
+
+		if ( $continueId !== null ) {
+			$qb->where( $dbr->expr( 'rq_id', '>=', $continueId ) );
+		}
+
+		$rows = $qb->fetchResultSet();
+
+		$requests = [];
+		foreach ( $rows as $row ) {
+			$requests[] = $this->newFromRow( $row );
+		}
+		return $requests;
 	}
 
 	/**

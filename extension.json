@@ -411,6 +411,12 @@
 				"UserNameUtils",
 				"CentralAuth.CentralAuthDatabaseManager"
 			]
+		},
+		"globalrenamequeue": {
+			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalRenameQueue",
+			"services": [
+				"CentralAuth.GlobalRenameRequestStore"
+			]
 		}
 	},
 	"MessagesDirs": {
