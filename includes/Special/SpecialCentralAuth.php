@@ -710,13 +710,34 @@ class SpecialCentralAuth extends SpecialPage {
 			// centralauth-admin-list-groups
 			"groups",
 		];
-
+		$descendingFirstHeaders = [
+			// These columns are more useful when the first click shows the most significant values first
+			"method" => [
+				"data-sort-order" => "desc",
+			],
+			"blocked" => [
+				"data-sort-type" => "number",
+				"data-sort-order" => "desc",
+			],
+			"editcount" => [
+				"data-sort-type" => "number",
+				"data-sort-order" => "desc",
+			],
+			"groups" => [
+				"data-sort-type" => "number",
+				"data-sort-order" => "desc",
+			],
+		];
 		$header = Html::openElement( 'thead' ) . Html::openElement( 'tr' );
 		if ( $showUnmergeCheckboxes ) {
 			$header .= Html::element( 'th', [ 'class' => 'unsortable' ] );
 		}
 		foreach ( $columns as $c ) {
-			$header .= Html::element( 'th', [], $this->msg( "centralauth-admin-list-$c" )->text() );
+			$header .= Html::element(
+				'th',
+				$descendingFirstHeaders[$c] ?? [],
+				$this->msg( "centralauth-admin-list-$c" )->text()
+			);
 		}
 		$header .= Html::closeElement( 'tr' ) . Html::closeElement( 'thead' );
 
@@ -770,14 +791,34 @@ class SpecialCentralAuth extends SpecialPage {
 
 		if ( empty( $row['attachedMethod'] ) ) {
 			$attachedMethod = $this->msg( 'centralauth-admin-unattached' )->parse();
+			$attachedMethodSortValue = 'unattached';
 		} else {
 			$attachedMethod = $this->formatMergeMethod( $row['attachedMethod'] );
+			$attachedMethodSortValue = $row['attachedMethod'];
 		}
-		$html .= Html::rawElement( 'td', [ 'class' => 'mw-centralauth-wikislist-method' ], $attachedMethod );
-
-		$html .= Html::rawElement( 'td', [ 'style' => 'overflow-wrap: anywhere;' ], $this->formatBlockStatus( $row ) ) .
+		$html .= Html::rawElement(
+			'td',
+			[
+				'class' => 'mw-centralauth-wikislist-method',
+				'data-sort-value' => $attachedMethodSortValue,
+			],
+			$attachedMethod
+		);
+		$html .= Html::rawElement(
+			'td',
+			[
+				'style' => 'overflow-wrap: anywhere;',
+				'data-sort-value' => isset( $row['blocked'] ) && $row['blocked'] ? '1' : '0',
+			],
+			$this->formatBlockStatus( $row )
+		) .
 			Html::rawElement(
-				'td', [ 'class' => 'mw-centralauth-wikislist-editcount' ], $this->formatEditcount( $row )
+				'td',
+				[
+					'class' => 'mw-centralauth-wikislist-editcount',
+					'data-sort-value' => (int)$row['editCount'],
+				],
+				$this->formatEditcount( $row )
 			) .
 			Html::rawElement( 'td',
 				[ 'data-sort-value' => count( $row['groupMemberships'] ) ],
