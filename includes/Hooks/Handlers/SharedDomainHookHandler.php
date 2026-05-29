@@ -133,7 +133,7 @@ class SharedDomainHookHandler implements
 			'Userlogin', 'Userlogout', 'CreateAccount', 'CentralAutoLogin', 'CentralLogin', 'Captcha',
 			// credentials change
 			'PasswordReset', 'ChangePassword', 'ChangeCredentials', 'RemoveCredentials', 'OATHManage',
-			'LinkAccounts', 'UnlinkAccounts',
+			'LinkAccounts', 'UnlinkAccounts', 'AccountRecovery',
 			// debugging
 			'WikimediaDebug',
 		],
@@ -143,7 +143,7 @@ class SharedDomainHookHandler implements
 		],
 		self::CENTRAL_SPECIAL_PAGES_UNAUTHENTICATED => [
 			// credentials change special pages that may not require the user to be authenticated.
-			'PasswordReset',
+			'PasswordReset', 'AccountRecovery',
 		],
 		self::ALLOWED_ACTION_API_MODULES => [
 			// needed for allowing any query API, even if we only want meta modules; it can be
