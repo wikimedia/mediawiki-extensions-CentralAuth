@@ -37,7 +37,7 @@
 	"apihelp-globaluserrights-param-userid": "Globale gebruikers-ID.",
 	"apihelp-globaluserrights-summary": "Een gebruiker toevoegen aan of verwijderen uit globale groepen.",
 	"apihelp-main-param-centralauthtoken": "Bij het aanspreken van de API via een domeinoverbruggend AJAX-verzoek (CORS) gebruikt u dit om u te authenticeren als de huidige SUL-gebruiker. Voordat u het CORS-verzoek indient gebruikt u eerst <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> op deze wiki om het token op te halen. Elk token mag maar één keer worden gebruikt en verloopt na $1 {{PLURAL:$1|seconde|seconden}}. Het moet worden opgenomen in elk preflight-verzoek en moet daarom in de URI van het verzoek staan (en niet in de POST-body).",
-	"apihelp-main-param-centralauthtoken-jwt": "Op deze wiki is de verwachte waarde een JSON Web Token, dat mogelijk wordt gevalideerd door proxyservers voor MediaWiki. Als het token is verlopen of anderszins ongeldig is, kunt u een HTTP-foutmelding van een proxy ontvangen in een andere opmaak dan een normale API-foutmelding.",
+	"apihelp-main-param-centralauthtoken-jwt": "Op deze wiki is de verwachte waarde een JSON Web Token, dat mogelijk wordt gevalideerd door proxyservers voor MediaWiki. Als het token is verlopen of anderszins incorrect is, kunt u een HTTP-foutmelding van een proxy ontvangen in een andere opmaak dan een normale API-foutmelding.",
 	"apihelp-query+globalallusers-example-1": "Globale gebruikers weergeven",
 	"apihelp-query+globalallusers-example-2": "Wat gegevens weergeven van gebruikers vanaf namen die beginnen met \"ABC\"",
 	"apihelp-query+globalallusers-param-dir": "Richting voor sorteren.",
