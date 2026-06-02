@@ -34,7 +34,8 @@
 			"Toadino2",
 			"Wim b",
 			"Gmelfi",
-			"FL2226"
+			"FL2226",
+			"Titore"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Gruppi globali a cui appartiene l'utente ($1)",
@@ -463,7 +464,7 @@
 	"globalrenameuser": "Rinomina globale utente",
 	"globalvanishrequest": "Richiesta di anonimizzazione dell'account utente globale",
 	"globalvanishrequest-text": "'''Invia la richiesta di anonimizzazione'''",
-	"globalvanishrequest-pretext": "L'anonimizzazione è '''l'extrema ratio''' e va richiesta '''solamente quando hai intenzione di smettere di contribuire per sempre''' e anche anche per nascondere il maggior numero possibile di associazioni passate. L'eliminazione dell'account avviene modificando il nome dell'account per far sì che gli altri non possano riconoscere i tuoi contributi tramite un processo chiamato \"anonimizzazione dell'account\". '''Questo processo non garantisce il completo anonimato né rimuove i contributi ai progetti'''.\n\nPer procedere con l'avvio del processo di anonimizzazione compila il seguente modulo di richiesta di anonimizzazione dell'account.",
+	"globalvanishrequest-pretext": "L'anonimizzazione è '''l'extrema ratio''' e va richiesta '''solamente quando hai intenzione di smettere di contribuire per sempre''' e anche per nascondere il maggior numero possibile di associazioni passate. L'eliminazione dell'account avviene modificando il nome dell'account per far sì che gli altri non possano riconoscere i tuoi contributi tramite un processo chiamato \"anonimizzazione dell'account\". '''Questo processo non garantisce il completo anonimato né rimuove i contributi ai progetti'''.\n\nPer procedere con l'avvio del processo di anonimizzazione compila il seguente modulo di richiesta di anonimizzazione dell'account.",
 	"globalvanishrequest-username-label": "Nome utente del richiedente",
 	"globalvanishrequest-status-title": "La richiesta di anonimizzazione è in attesa di approvazione",
 	"globalvanishrequest-status-text": "La tua richiesta di anonimizzazione del nome utente è attualmente in corso in attesa di approvazione da parte di chi è in grado di eseguire questa operazione. Riceverai una notifica via email quando la richiesta verrà elaborata.",
