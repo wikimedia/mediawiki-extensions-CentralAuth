@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"EdoAug",
 			"Jon Harald Søby"
 		]
 	},
@@ -14,6 +15,7 @@
 	"apihelp-centralauthtoken-example-1": "Hent et centralauthtoken",
 	"apihelp-centralauthtoken-extended-description": "Returnerer en nøkkel som kan brukes for å autentisere API-forespørsler på andre wikier. Putt den i GET-parameteren <var>centralauthtoken</var> For handlings-API-forespørsler. Legg til en <code>Authorization: CentralAuthToken {token}</code>-header for REST-API-forespørsler. I MediaWikis frontend-logikk kan du bruker ResourceLoader-modulen <code>mediawiki.ForeignApi</code>.",
 	"apihelp-centralauthtoken-summary": "Hent et centralauthtoken for å utføre en autentisert forespørsel til en tilkoblet wiki.",
+	"apihelp-centralauthtoken-summary-jwt": "Denne wikien er konfigurert for å returnere en JSON-nettnøkkel fra denne API-en.",
 	"apihelp-createlocalaccount-example-1": "Tving opprettelse av lokal konto for [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Årsak til at lokal konto opprettes.",
 	"apihelp-createlocalaccount-param-username": "Bruker lokal konto skal opprettes for.",
@@ -32,7 +34,8 @@
 	"apihelp-globaluserrights-param-user": "Globalt brukernavn.",
 	"apihelp-globaluserrights-param-userid": "Global bruker-ID.",
 	"apihelp-globaluserrights-summary": "Legg til/fjern en bruker til/fra globale grupper.",
-	"apihelp-main-param-centralauthtoken": "Når du aksesserer API-et med en kryssdomene-AJAX-forespørsel (CORS), bruk dette for å autentisere som den nåværende SUL-brukeren. Bruk <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> på denne wikien for å hente tegnet, før du gjennomfører CORS-forespørselen. Hvert tegn kan bare brukes én gang, og utløper etter 10 sekunder. Dette bør inkluderes i enhver forhåndsforespørsel, og bør derfor inkluderes i forespørselens URI (ikke i POST-innholdet).",
+	"apihelp-main-param-centralauthtoken": "Når du aksesserer API-et med en kryssdomene-AJAX-forespørsel (CORS), bruk dette for å autentisere som den nåværende SUL-brukeren. Bruk <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> på denne wikien for å hente tegnet, før du gjennomfører CORS-forespørselen. Hvert tegn kan bare brukes én gang, og utløper etter $1 {{PLURAL:$1|sekund|sekunder}}. Dette bør inkluderes i enhver forhåndsforespørsel, og bør derfor inkluderes i forespørselens URI (ikke i POST-innholdet).",
+	"apihelp-main-param-centralauthtoken-jwt": "På denne wikien er den forventede verdien en JSON-nettnøkkel, som kan valideres av mellomtjenere foran MediaWiki. Dersom nøkkelen er utgått eller er ugyldig på et annet vis, kan det hende du mottar en HTTP-feilmelding fra mellomtjeneren i et format annerledes fra normale API-feilmeldinger.",
 	"apihelp-query+globalallusers-example-1": "List globale brukere",
 	"apihelp-query+globalallusers-example-2": "Vis noe informasjon for globale brukere fra og med «ABC»",
 	"apihelp-query+globalallusers-param-dir": "Retning for sorteringen.",
@@ -56,6 +59,20 @@
 	"apihelp-query+globalrenamestatus-example-1": "Få informasjon om den gjeldende globale brukeren",
 	"apihelp-query+globalrenamestatus-param-user": "Brukeren som endrer navn. Kan være enten det gamle eller det nye navnet.",
 	"apihelp-query+globalrenamestatus-summary": "Vis informasjon om pågående globale navneendringer.",
+	"apihelp-query+globalusers-example-1": "Få informasjon om brukeren <kbd>Eksempel</kbd>.",
+	"apihelp-query+globalusers-example-2": "Få informasjon for brukeren med sentral-ID <kbd>1</kbd>.",
+	"apihelp-query+globalusers-param-prop": "Hvilken informasjon som skal inkluderes:",
+	"apihelp-query+globalusers-paramvalue-prop-locked": "Legger til informasjon om hvorvidt brukeren er låst globalt.",
+	"apihelp-query+globalusers-paramvalue-prop-editcount": "Legger til brukerens teller over redigeringer globalt.",
+	"apihelp-query+globalusers-paramvalue-prop-registration": "Legger til tidsstempelet for brukerens kontoregistrering globalt",
+	"apihelp-query+globalusers-paramvalue-prop-localinfo": "Letter til informasjon om brukerens lokale konto.",
+	"apihelp-query+globalusers-paramvalue-prop-groups": "Lister opp alle gruppene hver bruker tilhører globalt.",
+	"apihelp-query+globalusers-paramvalue-prop-groupmemberships": "Lister opp alle gruppene som hver bruker har eksplisitt blitt tilføyd til globalt, inkludert utløptsdatoen for hvert gruppemedlemskap.",
+	"apihelp-query+globalusers-paramvalue-prop-rights": "Lister opp alle rettighetene hver bruker har globalt.",
+	"apihelp-query+globalusers-param-users": "En liste over brukere å skaffe informasjon om globalt. Kan ikke brukes sammen med <var>$1centralids</var>.",
+	"apihelp-query+globalusers-param-centralids": "En liste over sentrale bruker-ID-er å skaffe informasjon om. Kan ikke brukes sammen med <var>$1users</var>.",
+	"apihelp-query+globalusers-param-localgroups": "Når grupper eller rettigheter listes opp, inkluder kun de som gjelder for den gjeldende wikien.",
+	"apihelp-query+globalusers-summary": "Hent informasjon om en liste over globale brukere.",
 	"apihelp-query+globaluserinfo-example-1": "Hent informasjon om den aktuelle globale brukeren",
 	"apihelp-query+globaluserinfo-example-2": "Hent informasjon om den globale brukeren [[User:Example|Example]]",
 	"apihelp-query+globaluserinfo-param-id": "Global bruker-ID det skal hentes informasjon om. Om verken <var>$1user</var> eller <var>$1id</var> er med er standardresultatet den gjeldende brukeren.",
