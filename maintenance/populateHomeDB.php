@@ -38,14 +38,18 @@ class PopulateHomeDB extends Maintenance {
 				->limit( $this->mBatchSize )
 				->caller( __METHOD__ )
 				->fetchResultSet();
+			$count += $result->numRows();
+			if ( $result->numRows() === 0 ) {
+				break;
+			}
+			$this->output( "$count\n" );
 
 			foreach ( $result as $row ) {
 				$central = new CentralAuthUser( $row->gu_name, IDBAccessObject::READ_LATEST );
 				$central->mStateDirty = true;
 				$central->saveSettings();
-				$count++;
 			}
-			$this->output( "$count\n" );
+
 			$this->waitForReplication();
 			if ( $result->numRows() < $this->mBatchSize ) {
 				break;

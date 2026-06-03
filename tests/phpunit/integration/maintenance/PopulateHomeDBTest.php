@@ -85,7 +85,7 @@ class PopulateHomeDBTest extends MaintenanceBaseTestCase {
 		$this->maintenance->execute();
 
 		$actualOutput = $this->getActualOutputForAssertion();
-		$this->assertStringContainsString( "0\ndone", $actualOutput );
+		$this->assertStringContainsString( "done", $actualOutput );
 	}
 
 	public function testWhenSomeUsersNeedPopulation(): void {
