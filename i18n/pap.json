@@ -6,7 +6,10 @@
 		]
 	},
 	"centralauth-admin-blocklog": "registro di loke a blòkia",
+	"centralauth-admin-list-legend-ro": "Lista di kuenta lokal",
+	"centralauth-editgroup-members-link": "[[Special:GlobalUsers/$1|Lista di usadó ku derechi di $2]]",
 	"centralauth-foreign-contributions": "$1 {{PLURAL:$1|kontribushon}} na $2",
 	"centralauth-foreign-link": "Usadó $1 na $2",
+	"centralauth-globalgroupperms-group-listmembers": "lista di miembro",
 	"centralauth-merge-method-login": "kreá ora a inisiá seshon"
 }
