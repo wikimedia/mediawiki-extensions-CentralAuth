@@ -6,6 +6,7 @@
 			"AhmedG612"
 		]
 	},
+	"centralauth-account-exists-reset": "Magaca isticmaalaha $1 kama diiwaangashana wiki-kan, laakiin waxaad dib uga dejin kartaa erayga sirta ah [[Special:CentralAuth/$1|wiki uu ka diiwaangashan yahay]].",
 	"centralauth-admin-blocklog": "diiwaanka xanibka",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Kooxda|Kooxaha}} caalamiga ah:",
 	"centralauth-admin-setstatus-success": "Waxaad beddeshay xaaladda akoonka caalamiga ah \"$1\".",
