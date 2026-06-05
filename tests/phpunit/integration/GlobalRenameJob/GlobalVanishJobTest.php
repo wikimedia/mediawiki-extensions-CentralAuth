@@ -89,7 +89,7 @@ class GlobalVanishJobTest extends MediaWikiIntegrationTestCase {
 		$this->getServiceContainer()->getJobQueueGroup()->push(
 			GlobalVanishJob::newSpec( $request, $performer->getName() )
 		);
-		$this->runJobs();
+		$this->runJobs( [ 'minJobs' => 1 ], [ 'type' => GlobalVanishJob::TYPE ] );
 	}
 
 	/**
