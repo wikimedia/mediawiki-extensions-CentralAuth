@@ -74,7 +74,8 @@
 			"铁桶",
 			"阿pp",
 			"阿南之人",
-			"飞舞回堂前"
+			"飞舞回堂前",
+			"Peterxy"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "用户的全域编辑数（$1）",
@@ -406,7 +407,7 @@
 	"centralauth-rename-form-overridetitleblacklist": "覆盖标题黑名单",
 	"centralauth-rename-form-reason": "原因",
 	"centralauth-rename-form-suppressredirects": "阻止重定向创建",
-	"centralauth-rename-globaleditcount-threshold": "该用户拥有超过$1次编辑。请确认您确实要重命名此用户。",
+	"centralauth-rename-globaleditcount-threshold": "该用户拥有超过$1次{{PLURAL:$1|编辑}}。请确认您确实要重命名此用户。",
 	"centralauth-rename-listed-on-denylist": "此用户列在全域重命名拒绝列表中。要重命名此用户，必须先更改拒绝列表。",
 	"centralauth-rename-movelog": "当重命名用户“[[Special:CentralAuth/$1|$1]]”至“[[Special:CentralAuth/$2|$2]]”时自动移动页面",
 	"centralauth-rename-notinprogress": "没有对$1的重命名进度。它们可能已经完成。",

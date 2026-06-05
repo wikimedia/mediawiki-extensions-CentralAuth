@@ -1,7 +1,8 @@
 {
 	"@metadata": {
 		"authors": [
-			"Jon Harald Søby"
+			"Jon Harald Søby",
+			"EdoAug"
 		]
 	},
 	"apierror-centralauth-badsession": "Kan bare hente centralauthtoken når man bruker CentralAuth-økter.",
@@ -14,6 +15,7 @@
 	"apihelp-centralauthtoken-example-1": "Hent et centralauthtoken",
 	"apihelp-centralauthtoken-extended-description": "Returnerer en nøkkel som kan brukes for å autentisere API-forespørsler på andre wikier. Putt den i GET-parameteren <var>centralauthtoken</var> For handlings-API-forespørsler. Legg til en <code>Authorization: CentralAuthToken {token}</code>-header for REST-API-forespørsler. I MediaWikis frontend-logikk kan du bruker ResourceLoader-modulen <code>mediawiki.ForeignApi</code>.",
 	"apihelp-centralauthtoken-summary": "Hent et centralauthtoken for å utføre en autentisert forespørsel til en tilkoblet wiki.",
+	"apihelp-centralauthtoken-summary-jwt": "Denne wikien er konfigurert for å returnere en JSON-nettnøkkel fra denne API-en.",
 	"apihelp-createlocalaccount-example-1": "Tving opprettelse av lokal konto for [[User:Example]].",
 	"apihelp-createlocalaccount-param-reason": "Årsak til at lokal konto opprettes.",
 	"apihelp-createlocalaccount-param-username": "Bruker lokal konto skal opprettes for.",
@@ -32,7 +34,8 @@
 	"apihelp-globaluserrights-param-user": "Globalt brukernavn.",
 	"apihelp-globaluserrights-param-userid": "Global bruker-ID.",
 	"apihelp-globaluserrights-summary": "Legg til/fjern en bruker til/fra globale grupper.",
-	"apihelp-main-param-centralauthtoken": "Når du aksesserer API-et med en kryssdomene-AJAX-forespørsel (CORS), bruk dette for å autentisere som den nåværende SUL-brukeren. Bruk <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> på denne wikien for å hente tegnet, før du gjennomfører CORS-forespørselen. Hvert tegn kan bare brukes én gang, og utløper etter 10 sekunder. Dette bør inkluderes i enhver forhåndsforespørsel, og bør derfor inkluderes i forespørselens URI (ikke i POST-innholdet).",
+	"apihelp-main-param-centralauthtoken": "Når du aksesserer API-et med en kryssdomene-AJAX-forespørsel (CORS), bruk dette for å autentisere som den nåværende SUL-brukeren. Bruk <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> på denne wikien for å hente tegnet, før du gjennomfører CORS-forespørselen. Hvert tegn kan bare brukes én gang, og utløper etter $1 {{PLURAL:$1|sekund|sekunder}}. Dette bør inkluderes i enhver forhåndsforespørsel, og bør derfor inkluderes i forespørselens URI (ikke i POST-innholdet).",
+	"apihelp-main-param-centralauthtoken-jwt": "På denne wikien er den forventede verdien en JSON-nettnøkkel, som kan valideres av mellomtjenere foran MediaWiki. Dersom nøkkelen er utgått eller er ugyldig på et annet vis, kan det hende du mottar en HTTP-feilmelding fra mellomtjeneren i et format annerledes fra normale API-feilmeldinger.",
 	"apihelp-query+globalallusers-example-1": "List globale brukere",
 	"apihelp-query+globalallusers-example-2": "Vis noe informasjon for globale brukere fra og med «ABC»",
 	"apihelp-query+globalallusers-param-dir": "Retning for sorteringen.",
