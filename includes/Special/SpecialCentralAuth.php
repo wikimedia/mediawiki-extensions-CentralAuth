@@ -697,46 +697,34 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	private function getWikiListsTable( bool $showUnmergeCheckboxes ): string {
 		$columns = [
-			// centralauth-admin-list-localwiki
-			"localwiki",
-			// centralauth-admin-list-attached-on
-			"attached-on",
-			// centralauth-admin-list-method
-			"method",
-			// centralauth-admin-list-blocked
-			"blocked",
-			// centralauth-admin-list-editcount
-			"editcount",
-			// centralauth-admin-list-groups
-			"groups",
-		];
-		$descendingFirstHeaders = [
-			// These columns are more useful when the first click shows the most significant values first
-			"method" => [
-				"data-sort-order" => "desc",
+			'centralauth-admin-list-localwiki' => [],
+			'centralauth-admin-list-attached-on' => [],
+			'centralauth-admin-list-method' => [
+				'data-sort-order' => 'desc',
 			],
-			"blocked" => [
-				"data-sort-type" => "number",
-				"data-sort-order" => "desc",
+			'centralauth-admin-list-blocked' => [
+				'data-sort-type' => 'number',
+				'data-sort-order' => 'desc',
 			],
-			"editcount" => [
-				"data-sort-type" => "number",
-				"data-sort-order" => "desc",
+			'centralauth-admin-list-editcount' => [
+				// T250124: First click shows the most significant values first
+				'data-sort-type' => 'number',
+				'data-sort-order' => 'desc',
 			],
-			"groups" => [
-				"data-sort-type" => "number",
-				"data-sort-order" => "desc",
+			'centralauth-admin-list-groups' => [
+				'data-sort-type' => 'number',
+				'data-sort-order' => 'desc',
 			],
 		];
 		$header = Html::openElement( 'thead' ) . Html::openElement( 'tr' );
 		if ( $showUnmergeCheckboxes ) {
 			$header .= Html::element( 'th', [ 'class' => 'unsortable' ] );
 		}
-		foreach ( $columns as $c ) {
+		foreach ( $columns as $msgKey => $attribs ) {
 			$header .= Html::element(
 				'th',
-				$descendingFirstHeaders[$c] ?? [],
-				$this->msg( "centralauth-admin-list-$c" )->text()
+				$attribs,
+				$this->msg( $msgKey )->text()
 			);
 		}
 		$header .= Html::closeElement( 'tr' ) . Html::closeElement( 'thead' );
