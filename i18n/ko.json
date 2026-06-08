@@ -111,6 +111,7 @@
 	"centralauth-admin-list-localwiki": "로컬 위키",
 	"centralauth-admin-list-method": "방식",
 	"centralauth-admin-logsnippet": "이전의 통합 계정 기록",
+	"centralauth-admin-renamelogsnippet-fromthisname-omitted": "이 사용자 이름은 이전에 이름을 바꾼 다른 계정에서 사용되었습니다.",
 	"centralauth-admin-lookup-ro": "사용자 정보 보기",
 	"centralauth-admin-lookup-rw": "사용자 계정 관리",
 	"centralauth-admin-manage": "계정 데이터 관리",
