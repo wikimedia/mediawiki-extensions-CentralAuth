@@ -20,7 +20,6 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\GlobalBlocking\GlobalBlockingServices;
 use MediaWiki\Logging\LogPage;
 use MediaWiki\MainConfigNames;
-use MediaWiki\Registration\ExtensionRegistry;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\Site\MediaWikiSite;
@@ -910,10 +909,6 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 	}
 
 	public function testLogExtractForRenamedUser() {
-		if ( ExtensionRegistry::getInstance()->isLoaded( 'WikimediaCustomizations' ) ) {
-			$this->markTestSkipped( 'Test blocking merges in WikimediaCustomizations (T428496)' );
-			return;
-		}
 		// Create user A; rename A to B; then rename B to C
 		$performer = $this->getTestSysop()->getUser();
 		$renameUserFactory = CentralAuthServices::getGlobalRenameFactory( $this->getServiceContainer() );
@@ -935,6 +930,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			'type' => GlobalRenameRequest::RENAME,
 		] ) );
 		$this->runJobs();
+		CentralAuthServices::getUserCache( $this->getServiceContainer() )->clear();
 
 		$secondRename = $renameUserFactory->newGlobalRenameUser(
 			$performer, CentralAuthUser::getPrimaryInstanceByName( $secondName ),
@@ -947,7 +943,6 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			'type' => GlobalRenameRequest::RENAME,
 		] ) );
 		$this->runJobs();
-
 		CentralAuthServices::getUserCache( $this->getServiceContainer() )->clear();
 
 		// Normal user: verify that only a note is shown
