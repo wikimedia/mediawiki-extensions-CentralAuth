@@ -454,7 +454,7 @@
 	"globalrenamequeue-request-previous-renames": "Eerdere {{PLURAL:$1|hernoeming|hernoemingen}}",
 	"globalrenamequeue-request-reason": "<strong>Reden voor het aanvragen van hernoeming</strong>\n$1",
 	"globalrenamequeue-request-reason-label": "Openbare opmerking bij logboekregel (bij acceptatie)",
-	"globalrenamequeue-request-savefailed": "Het opslaan van de verandering van de verzoekstatus is mislukt.",
+	"globalrenamequeue-request-savefailed": "Het opslaan van de wijziging van de verzoekstatus is mislukt.",
 	"globalrenamequeue-request-status-title": "Hernoeming van \"$1\" naar \"$2\"",
 	"globalrenamequeue-request-suppressredirects": "Geen doorverwijzingen aanmaken",
 	"globalrenamequeue-request-title": "\"$1\" hernoemen?",
