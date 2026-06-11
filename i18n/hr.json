@@ -297,7 +297,7 @@
 	"log-action-filter-suppress-cadelete": "Brisanje globalnoga računa",
 	"log-action-filter-suppress-setstatus": "Promjena stanja globalnoga računa",
 	"log-description-gblrename": "Evidencija globalnih preimenovanja suradnika.",
-	"log-name-gblrename": "Evidencija globalnog preimenovanja suradnika",
+	"log-name-gblrename": "Evidencija globalnog preimenovanja",
 	"logentry-gblrename-merge": "$1 globalno je {{GENDER:$2|sjedinio|sjedinila}} $4 u $5",
 	"logentry-gblrename-promote": "$1 globalno {{GENDER:$2|mijenja ime}} $4 u $5",
 	"logentry-gblrename-rename": "$1 globalno {{GENDER:$2|mijenja ime}} $4 u $5",
