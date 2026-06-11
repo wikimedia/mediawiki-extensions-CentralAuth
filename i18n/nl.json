@@ -583,5 +583,7 @@
 	"sessionprovider-centralauthtokensessionprovider": "op CentralAuthToken gebaseerde sessies",
 	"centralauth-badaccess-blacklisted": "U kunt geen globale hernoeming aanvragen omdat u op een weigeringslijst staat.",
 	"centralauth-action-forbidden-shared-domain": "U mag deze handeling niet verrichten op het gedeelde authenticatiedomein.",
-	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "De gebruiker is lid van {{PLURAL:$1|de globale groep|de globale groepen}}: $2"
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "De gebruiker is lid van {{PLURAL:$1|de globale groep|de globale groepen}}: $2",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Uw}} globale gebruikersrechten zijn {{GENDER:$1|gewijzigd}}. U bent toegevoegd aan: $2.",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Uw}} globale gebruikersrechten zijn {{GENDER:$1|gewijzigd}}. U bent niet langer lid van: $2."
 }

@@ -561,5 +561,10 @@
 	"sessionprovider-centralauthtokensessionprovider": "sesións centralauthtoken",
 	"centralauth-badaccess-blacklisted": "Non podes solicitar un cambio de nome global xa que estás nunha lista de rexeitamentos.",
 	"centralauth-action-forbidden-shared-domain": "Non tes permiso para realizar esta acción no dominio de autenticación compartido.",
-	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "O usuario pertence a {{PLURAL:$1|este grupo global|todos estes grupos globais}}: $2"
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "O usuario pertence a {{PLURAL:$1|este grupo global|todos estes grupos globais}}: $2",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$1|Modificáronse}} os teus dereitos de {{GENDER:$4|usuario|usuaria}} globais. Agora tamén pertences a: $2.",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$1|Modificáronse}} os teus dereitos de {{GENDER:$4|usuario|usuaria}} globais. Agora xa non pertences a: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$1|Modificáronse}} os teus dereitos de {{GENDER:$6|usuario|usuaria}} globais. Agora tamén pertences a: $2. Agora xa non pertences a: $4.",
+	"notification-header-centralauth-global-user-rights-expiry-change": "{{GENDER:$1|Modificouse}} a data de caducidade da {{GENDER:$4|túa}} pertenza {{PLURAL:$3|ao seguinte grupo global|aos seguintes grupos globais}}: $2.",
+	"notification-centralauth-global-user-rights-email-subject": "Os teus dereitos de {{GENDER:$3|usuario|usuaria}} globais cambiaron en {{SITENAME}}"
 }
