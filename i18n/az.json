@@ -560,5 +560,10 @@
 	"sessionprovider-centralauthtokensessionprovider": "centerauthtoken sessiyaları",
 	"centralauth-badaccess-blacklisted": "Qlobal ad dəyişdirilməsini tələb edə bilməzsiniz, çünki siz qara siyahıdasınız.",
 	"centralauth-action-forbidden-shared-domain": "Paylaşılan autentifikasiya domenində bu əməliyyatı yerinə yetirmək icazəniz yoxdur.",
-	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "İstifadəçi bu qlobal {{PLURAL:$1|qrupun|qrupların}} üzvüdür: $2"
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "İstifadəçi bu qlobal {{PLURAL:$1|qrupun|qrupların}} üzvüdür: $2",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Sizin}} qlobal istifadəçi hüquqlarınız {{GENDER:$1|dəyişdirilib}}. Siz \"$2\" qrupuna əlavə edilmisiniz.",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Sizin}} qlobal istifadəçi hüquqlarınız {{GENDER:$1|dəyişdirilib}}. Siz artıq \"$2\" qrupunun üzvü deyilsiniz.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Sizin}} qlobal istifadəçi hüquqlarınız {{GENDER:$1|dəyişdirilib}}. Siz \"$2\" qrupuna əlavə edilmisiniz. Siz artıq \"$4\" qrupunun üzvü deyilsiz.",
+	"notification-header-centralauth-global-user-rights-expiry-change": "Aşağıda qeyd olunan qlobal {{PLURAL:$3|istifadəçi qrupuna|istifadəçi qruplarına}} {{GENDER:$4|üzvlüyünüzün}} bitmə müddəti {{GENDER:$1|dəyişdirilib}}: $2",
+	"notification-centralauth-global-user-rights-email-subject": "{{SITENAME}} saytındakı qlobal istifadəçi hüquqlarınız {{GENDER:$3|dəyişdirilib}}"
 }

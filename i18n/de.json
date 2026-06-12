@@ -437,6 +437,7 @@
 	"globalrenamequeue-form-type-all": "Alle",
 	"globalrenamequeue-form-type-rename": "Umbenennen",
 	"globalrenamequeue-form-type-vanish": "Auflösen",
+	"globalrenamequeue-form-performer": "Ausführender Benutzer:",
 	"globalrenamequeue-form-username": "Benutzername:",
 	"globalrenamequeue-nav-closedqueue": "Geschlossene Anfragen",
 	"globalrenamequeue-nav-openqueue": "Offene Anfragen",
