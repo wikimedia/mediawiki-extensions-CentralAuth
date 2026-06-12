@@ -43,30 +43,30 @@ class EchoGlobalUserRightsPresentationModel extends EchoEventPresentationModel {
 			$msg = $this->msg( 'notification-header-centralauth-global-user-rights-expiry-change' );
 			$msg->params( $genderName );
 			$msg->params( $this->language->commaList( $expiryChanged ) );
-			$msg->params( count( $expiryChanged ) );
+			$msg->numParams( count( $expiryChanged ) );
 			$msg->params( $viewingUser );
 			return $msg;
 		} elseif ( $add && !$remove ) {
 			$msg = $this->msg( 'notification-header-centralauth-global-user-rights-add-only' );
 			$msg->params( $genderName );
 			$msg->params( $this->language->commaList( $add ) );
-			$msg->params( count( $add ) );
+			$msg->numParams( count( $add ) );
 			$msg->params( $viewingUser );
 			return $msg;
 		} elseif ( !$add && $remove ) {
 			$msg = $this->msg( 'notification-header-centralauth-global-user-rights-remove-only' );
 			$msg->params( $genderName );
 			$msg->params( $this->language->commaList( $remove ) );
-			$msg->params( count( $remove ) );
+			$msg->numParams( count( $remove ) );
 			$msg->params( $viewingUser );
 			return $msg;
 		} else {
 			$msg = $this->msg( 'notification-header-centralauth-global-user-rights-add-and-remove' );
 			$msg->params( $genderName );
 			$msg->params( $this->language->commaList( $add ) );
-			$msg->params( count( $add ) );
+			$msg->numParams( count( $add ) );
 			$msg->params( $this->language->commaList( $remove ) );
-			$msg->params( count( $remove ) );
+			$msg->numParams( count( $remove ) );
 			$msg->params( $viewingUser );
 			return $msg;
 		}
