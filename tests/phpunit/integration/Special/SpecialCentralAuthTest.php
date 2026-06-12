@@ -26,7 +26,6 @@ use MediaWiki\Site\MediaWikiSite;
 use MediaWiki\Tests\Specials\SpecialPageTestBase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
-use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
 use TestUserRegistry;
 use Wikimedia\Parsoid\Core\DOMCompat;
@@ -884,16 +883,6 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 	}
 
 	public function testLogExtractMissingWhenUserIsLocked() {
-		// Define the MediaWiki:Centralauth-admin-log-otherwiki page to override the associated message.
-		$this->getServiceContainer()->getMessageCache()->enable();
-		$this->editPage(
-			Title::newFromText( 'centralauth-admin-log-otherwiki', NS_MEDIAWIKI ),
-			'Test warning',
-			'test',
-			NS_MEDIAWIKI,
-			$this->getTestSysop()->getAuthority()
-		);
-
 		// Globally lock the target using a method which does not create a log entry
 		$targetUsername = $this->getTestCentralAuthUser();
 		$targetUser = CentralAuthUser::getInstanceByName( $targetUsername );
