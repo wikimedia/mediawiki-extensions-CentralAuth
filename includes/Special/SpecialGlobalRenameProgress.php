@@ -138,7 +138,7 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 		$table .= Html::openElement( 'tr' );
 		$table .= Html::element( 'th', [],
 			$this->msg( 'centralauth-rename-table-domain' )->text() );
-		$table .= Html::element( 'th', [],
+		$table .= Html::element( 'th', [ 'data-sort-order' => 'desc', 'data-sort-type' => 'number' ],
 			$this->msg( 'centralauth-rename-table-status' )->text() );
 		$table .= Html::closeElement( 'tr' );
 		$table .= Html::closeElement( 'thead' );
@@ -155,7 +155,8 @@ class SpecialGlobalRenameProgress extends FormSpecialPage {
 			$table .= Html::element( 'td', [], $wikiReference->getDisplayName() );
 			// Messages used: centralauth-rename-table-status-inprogress
 			// centralauth-rename-table-status-queued, centralauth-rename-table-status-done
-			$table .= Html::rawElement( 'td', [],
+			$statusSortOrder = [ 'failed' => 3, 'inprogress' => 2, 'queued' => 1, 'done' => 0 ];
+			$table .= Html::rawElement( 'td', [ 'data-sort-value' => $statusSortOrder[$status] ?? 0 ],
 				$this->msg( "centralauth-rename-table-status-$status" )->parse() );
 			$table .= Html::closeElement( 'tr' );
 		}
