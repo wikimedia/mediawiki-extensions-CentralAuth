@@ -73,6 +73,10 @@
 	"centralauth-admin-list-localwiki": "Месно вики",
 	"centralauth-admin-list-method": "Начин",
 	"centralauth-admin-logsnippet": "Претходни промени на глобалната сметка",
+	"centralauth-admin-renamelogsnippet-tothisname": "Претходни преименувања на оваа сметка",
+	"centralauth-admin-renamelogsnippet-fromthisname": "Претходни преименувања од ова корисничко име",
+	"centralauth-admin-renamelogsnippet-tothisname-omitted": "Оваа сметка била претходно преименувана.",
+	"centralauth-admin-renamelogsnippet-fromthisname-omitted": "Ова корисничко име било претходно употребувано од сметка која е преименувана.",
 	"centralauth-admin-lookup-ro": "Види кориснички податоци",
 	"centralauth-admin-lookup-rw": "Раководење со корисничка сметка",
 	"centralauth-admin-manage": "Раководење со податоци за сметка",
@@ -414,6 +418,7 @@
 	"globalrenamequeue-form-type-all": "Сите",
 	"globalrenamequeue-form-type-rename": "Преименувај",
 	"globalrenamequeue-form-type-vanish": "Исчезни",
+	"globalrenamequeue-form-performer": "Извршувач:",
 	"globalrenamequeue-form-username": "Корисничко име:",
 	"globalrenamequeue-nav-closedqueue": "Затворени барања",
 	"globalrenamequeue-nav-openqueue": "Отворени барања",
@@ -548,5 +553,10 @@
 	"sessionprovider-centralauthtokensessionprovider": "централни седници со овластувачка шифра",
 	"centralauth-badaccess-blacklisted": "Не можете да побарате глобално преименување бидејќи сте на список на одбиени.",
 	"centralauth-action-forbidden-shared-domain": "Не ви е дозволено да го извршите ова дејство на споделениот домен за заверка.",
-	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Корисникот членува во {{PLURAL:$1|глобалната група|сите овие глобални групи}}: $2"
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Корисникот членува во {{PLURAL:$1|глобалната група|сите овие глобални групи}}: $2",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Вашите}} глобални кориснички права се {{GENDER:$1|изменети}}. Додадени сте во: $2.",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Вашите}} глобални кориснички права се {{GENDER:$1|изменети}}. Повеќе не членувате во: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Вашите}} глобални кориснички права се {{GENDER:$1|изменети}}. Додадени сте во: $2. Повеќе не членувате во: $4.",
+	"notification-header-centralauth-global-user-rights-expiry-change": "{{GENDER:$1|Изменет}} е истекот на {{GENDER:$4|вашето}} членство во {{PLURAL:$3|следнава глобална група|следниве глобални групи}}: $2.",
+	"notification-centralauth-global-user-rights-email-subject": "{{GENDER:$3|Вашите}} глобални кориснички права на {{SITENAME}} се изменети"
 }

@@ -427,6 +427,7 @@
 	"globalrenamequeue-form-type-all": "Todos",
 	"globalrenamequeue-form-type-rename": "Renomear",
 	"globalrenamequeue-form-type-vanish": "Esvaecer",
+	"globalrenamequeue-form-performer": "Executante:",
 	"globalrenamequeue-form-username": "Nome de usuario:",
 	"globalrenamequeue-nav-closedqueue": "Solicitudes pechadas",
 	"globalrenamequeue-nav-openqueue": "Solicitudes en curso",

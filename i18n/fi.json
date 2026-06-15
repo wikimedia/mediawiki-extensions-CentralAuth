@@ -441,6 +441,7 @@
 	"globalrenamequeue-form-type-all": "Kaikki",
 	"globalrenamequeue-form-type-rename": "Uudelleenimeäminen",
 	"globalrenamequeue-form-type-vanish": "Hävittäminen",
+	"globalrenamequeue-form-performer": "Suorittaja:",
 	"globalrenamequeue-form-username": "Käyttäjänimi:",
 	"globalrenamequeue-nav-closedqueue": "Käsitellyt pyynnöt",
 	"globalrenamequeue-nav-openqueue": "Avoinna olevat pyynnöt",
