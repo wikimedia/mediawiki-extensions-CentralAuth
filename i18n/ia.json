@@ -552,9 +552,9 @@
 	"centralauth-badaccess-blacklisted": "Tu non pote requestar un renomination global perque tu es in un lista de refusa.",
 	"centralauth-action-forbidden-shared-domain": "Tu non es autorisate a exequer iste action sur le dominio condividite de authentication.",
 	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Le usator es membro {{PLURAL:$1|del gruppo|de tote le gruppos}} global $2",
-	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Tu}} derectos de usator global ha {{GENDER:$1|cambiate}}. Tu ha essite addite a: $2.",
-	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Tu}} derectos de usator global ha {{GENDER:$1|cambiate}}. Tu non es plus membro de: $2.",
-	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Tu}} derectos de usator global ha {{GENDER:$1|cambiate}}. Tu ha essite addite a: $2. Tu non es plus membro de: $4.",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Tu}} derectos de usator global ha {{GENDER:$1|cambiate}}. Tu ha essite addite al sequente gruppo{{PLURAL:$3||s}} global: $2.",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Tu}} derectos de usator global ha {{GENDER:$1|cambiate}}. Tu non es plus membro del sequente gruppo{{PLURAL:$3||s}} global: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Tu}} derectos de usator global ha {{GENDER:$1|cambiate}}. Tu ha essite addite al sequente gruppo{{PLURAL:$3||s}} global: $2. Tu non es plus membro del sequente gruppo{{PLURAL:$5||s}} global: $4.",
 	"notification-header-centralauth-global-user-rights-expiry-change": "Le expiration de {{GENDER:$4|tu}} appertinentia al sequente gruppo{{PLURAL:$3||s}} global ha {{GENDER:$1|cambiate}}: $2.",
 	"notification-centralauth-global-user-rights-email-subject": "{{GENDER:$3|Tu}} derectos de usator global ha cambiate sur {{SITENAME}}"
 }

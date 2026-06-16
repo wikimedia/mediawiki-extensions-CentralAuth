@@ -572,7 +572,7 @@
 	"centralauth-badaccess-blacklisted": "Et voi pyytää järjestelmänlaajuista nimenvaihtoa, koska tunnuksesi on kielletty pyytämästä nimenvaihtoja.",
 	"centralauth-action-forbidden-shared-domain": "Sinulla ei ole oikeutta suorittaa tätä toimintoa jaetulla tunnistautumisverkkotunnuksella.",
 	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Käyttäjä kuuluu {{PLURAL:$1|järjestelmänlaajuiseen ryhmään|seuraaviin järjestelmänlaajuisiin ryhmiin}}: $2",
-	"notification-header-centralauth-global-user-rights-add-only": "Järjestelmänlaajuisia {{GENDER:$4|käyttöoikeuksiasi}} on {{GENDER:$1|muutettu}}. Sinut on lisätty {{PLURAL:$3|ryhmään|ryhmiin}}: $2.",
+	"notification-header-centralauth-global-user-rights-add-only": "Järjestelmänlaajuisia {{GENDER:$4|käyttöoikeuksiasi}} on {{GENDER:$1|muutettu}}. Sinut on lisätty {{PLURAL:$3|järjestelmänlaajuiseen ryhmään|järjestelmänlaajuisiin ryhmiin}}: $2.",
 	"notification-header-centralauth-global-user-rights-remove-only": "Järjestelmänlaajuisia {{GENDER:$4|käyttöoikeuksiasi}} on {{GENDER:$1|muutettu}}. Sinut on poistettu {{PLURAL:$3|ryhmästä|ryhmistä}}: $2.",
 	"notification-header-centralauth-global-user-rights-add-and-remove": "Järjestelmänlaajuisia {{GENDER:$6|käyttöoikeuksiasi}} on {{GENDER:$1|muutettu}}. Sinut on lisätty {{PLURAL:$3|ryhmään|ryhmiin}}: $2. Sinut on poistettu {{PLURAL:$5|ryhmästä|ryhmistä}}: $4.",
 	"notification-header-centralauth-global-user-rights-expiry-change": "{{GENDER:$4|Jäsenyytesi}} päättymisajankohtaa {{PLURAL:$3|seuraavassa järjestelmänlaajuisessa ryhmässä|seuraavissa järjestelmänlaajuisissa ryhmissä}} on {{GENDER:$1|muutettu}}: $2",

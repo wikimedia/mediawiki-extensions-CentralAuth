@@ -217,5 +217,8 @@
 	"logentry-globalauth-lockandhid": "$1 {{GENDER:$2|qufulay oo qariyey}} akoonka caalamiga ah \"$3\"",
 	"logentry-globalauth-unhide": "$1 {{GENDER:$2|ka saaray qarinta}} akoonka caalamiga ah \"$3\"",
 	"logentry-globalauth-unlock": "$1 {{GENDER:$2|ka qaaday qufulka}} akoonka caalamiga ah \"$3\"",
-	"logentry-newusers-forcecreatelocal": "$1 si khasab ah ayuu u {{GENDER:$2|sameeyay}} akoon maxalli ah oo loogu talagalay $3"
+	"logentry-newusers-forcecreatelocal": "$1 si khasab ah ayuu u {{GENDER:$2|sameeyay}} akoon maxalli ah oo loogu talagalay $3",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Xuquuqdaada}}  isticmaale ee caalamiga ah {{GENDER:$1|waa la beddelay}}. Waxaa lagugu daray {{PLURAL:$3|kooxda caalamiga ah|kooxaha caalamiga ah}} ee soo socda: $2.",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Xuquuqdaada}} isticmaale ee caalamiga ah {{GENDER:$1|waa la beddelay}}. Mar dambe kama tirsnid {{PLURAL:$3|kooxda caalamiga ah|kooxaha caalamiga ah}} ee soo socda: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Xuquuqdaada}}  isticmaale ee caalamiga ah {{GENDER:$1|waa la beddelay}}. Waxaa lagugu daray {{PLURAL:$3|kooxda caalamiga ah|kooxaha caalamiga ah}} ee soo socda: $2. Mar dambe kama tirsnid {{PLURAL:$5|kooxda caalamiga ah|kooxaha caalamiga ah}} ee soo socda: $4."
 }

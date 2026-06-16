@@ -551,5 +551,8 @@
 	"sessionprovider-centralauthsessionprovider": "sentrale informasjonskapselbaserte økter",
 	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken-økter",
 	"centralauth-badaccess-blacklisted": "Du kan ikke be om global navneendring fordi du er på en svarteliste.",
-	"centralauth-action-forbidden-shared-domain": "Du har ikke tillatelse til å utføre denne handlingen på det delte autentiseringsdomenet."
+	"centralauth-action-forbidden-shared-domain": "Du har ikke tillatelse til å utføre denne handlingen på det delte autentiseringsdomenet.",
+	"notification-header-centralauth-global-user-rights-add-only": "De globale brukerrettighetene {{GENDER:$4|dine}} har blitt {{GENDER:$1|endret}}. Du har blitt lagt til i {{PLURAL:$3|den følgende globale gruppa|de følgende globale gruppene}}: $2.",
+	"notification-header-centralauth-global-user-rights-remove-only": "De globale brukerrettighetene {{GENDER:$4|dine}} har blitt endret. Du er ikke lenger medlem av {{PLURAL:$3|den følgende globale gruppa|de følgende globale gruppene}}: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "De globale brukerrettighetene {{GENDER:$6|dine}} har blitt {{GENDER:$1|endret}}. Du har blitt lagt til i {{PLURAL:$3|den følgende globale gruppa|de følgende globale gruppene}}: $2. Du er ikke lenger medlem av {{PLURAL:$5|den følgende globale gruppa|de følgende globale gruppene}}: $4."
 }

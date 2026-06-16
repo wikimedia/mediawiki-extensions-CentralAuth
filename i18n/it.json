@@ -513,5 +513,8 @@
 	"right-globalgrouppermissions": "Gestisce i gruppi globali",
 	"sessionprovider-centralauthsessionprovider": "sessioni basate su cookie centrali",
 	"sessionprovider-centralauthtokensessionprovider": "sessioni centralauthtoken",
-	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "L'utente è membro {{PLURAL:$1|del gruppo globale|di tutti i gruppi globali}}: $2"
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "L'utente è membro {{PLURAL:$1|del gruppo globale|di tutti i gruppi globali}}: $2",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|I tuoi}} diritti utente globali sono stati {{GENDER:$1|modificati}}. Sei {{GENDER:$4|stato aggiunto|stata aggiunta|stato/a aggiunto/a}} {{PLURAL:$3|al seguente gruppo globale|ai seguenti gruppi globali}}: $2.",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|I tuoi}} diritti utente globali sono stati {{GENDER:$1|modificati}}. Non sei più membro {{PLURAL:$3|del seguente gruppo globale|dei seguenti gruppi globali}}: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|I tuoi}} diritti utente globali sono stati {{GENDER:$1|modificati}}. Sei {{GENDER:$6|stato aggiunto|stata aggiunta|stato/a aggiunto/a}} {{PLURAL:$3|al seguente gruppo globale|ai seguenti gruppi globali}}: $2. Non sei più membro {{PLURAL:$5|del seguente gruppo globale|dei seguenti gruppi globali}}: $4."
 }

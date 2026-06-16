@@ -438,5 +438,8 @@
 	"right-centralauth-unmerge": "Globale Benotzerkont nees trennen",
 	"right-globalgroupmembership": "Zougehéieregkeet zu lokale Gruppen änneren",
 	"right-globalgrouppermissions": "Gestioun vu globale Gruppen",
-	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "De Benotzer ass Member vun {{PLURAL:$1|der globaler Grupp|all de globale Gruppen}}: $2"
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "De Benotzer ass Member vun {{PLURAL:$1|der globaler Grupp|all de globale Gruppen}}: $2",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Är}} global Benotzerrechter goufe {{GENDER:$1|geännert}}. Dir gouft an déi follgend global {{PLURAL:$3|Grupp|Gruppen}} derbäigesat: $2.",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Är}} global Benotzerrechter goufe {{GENDER:$1|geännert}}. Dir sidd kee Member méi vun {{PLURAL:$3|der follgender globaler Grupp|de follgende globale Gruppen}}: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Är}} global Benotzerrechter goufe {{GENDER:$1|geännert}}. Dir gouft an déi follgend global {{PLURAL:$3|Grupp|Gruppen}} derbäigesat: $2. Dir sidd kee Member méi vun {{PLURAL:$5|der follgender globaler Grupp|de follgende globale Gruppen}}: $4."
 }
