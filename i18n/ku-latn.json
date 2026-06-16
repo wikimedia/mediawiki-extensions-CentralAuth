@@ -60,13 +60,13 @@
 	"centralauth-rename-table-status-done": "Çêbû",
 	"centralauth-rightslog-name": "Reşahiya mafên global",
 	"centralauth-ro": "Agahiyên hesabê global",
-	"globalrenamequeue-column-rq-newname": "Navê hesabê yê ku tên xwestin",
-	"globalrenamequeue-email-subject-approved": "Daxwaza ji nû ve binavkirina hesabê hat pejirandin",
+	"globalrenamequeue-column-rq-newname": "Navê hesabê ku tê xwestin",
+	"globalrenamequeue-email-subject-approved": "Daxwaza ji nû ve binavkirina hesabê hat qebûlkirin",
 	"globalrenamequeue-request-cancel-text": "Betal bike",
 	"globalrenamequeue-request-title": "Ber navê \"$1\" bê guhartin?",
 	"globalrenamerequest": "Daxwazên ji nû ve binavkirinê ji bo hesabê bikarhêneriyê ya gerdûnî",
 	"globalusers": "Lîsteya bikarhênerên global",
 	"grant-setglobalaccountstatus": "Rewşa hesabê xwe yê global bi rê ve bibe",
-	"log-action-filter-gblrights": "Cureyê guhertinê:",
-	"log-action-filter-globalauth": "Cureyê guhertinê:"
+	"log-action-filter-gblrights": "Cureyê guhartinê:",
+	"log-action-filter-globalauth": "Cureyê guhartinê:"
 }
