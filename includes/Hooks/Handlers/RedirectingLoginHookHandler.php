@@ -72,7 +72,7 @@ class RedirectingLoginHookHandler implements
 			$wikiId, 'Special:Userlogin', $context->getRequest(), [
 				'returnto' => $returnTo,
 				'returntoquery' => wfArrayToCgi( $returnToQuery ),
-				'redoLocalAuthentication' => 1,
+				'redoLocalAuthentication' => ( $type === 'signup' ) ? 'signup' : 'login',
 			]
 		);
 
