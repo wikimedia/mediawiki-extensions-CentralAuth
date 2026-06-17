@@ -238,10 +238,14 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 				 $data['loginWasInteractive'] );
 		}
 
+		$redoFlag = $this->manager->getRequest()->getRawVal( 'redoLocalAuthentication' );
 		// Flag this login session as being the local leg of a SUL3 login, so we can run
 		// CentralAuthPostLoginRedirect afterward.
 		$this->manager->setAuthenticationSessionData( self::SESSION_DATA_FLAG, [
-			'isSignup' => $data['isSignup'],
+			// redoLocalAuthentication=signup means we are in a login that was started to recover
+			// from a signup attempt that was successful at creating the account but failed to
+			// reach here; other extensions will probably want to treat it as a signup.
+			'isSignup' => $redoFlag === 'signup' || $data['isSignup'],
 		] );
 
 		return AuthenticationResponse::newPass( $data['username'] );
