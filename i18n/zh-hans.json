@@ -489,6 +489,7 @@
 	"globalrenamequeue-form-type-all": "全部",
 	"globalrenamequeue-form-type-rename": "重命名",
 	"globalrenamequeue-form-type-vanish": "隐退",
+	"globalrenamequeue-form-performer": "执行者：",
 	"globalrenamequeue-form-username": "用户名：",
 	"globalrenamequeue-nav-closedqueue": "关闭的申请",
 	"globalrenamequeue-nav-openqueue": "开启的申请",
@@ -623,5 +624,10 @@
 	"sessionprovider-centralauthtokensessionprovider": "中心验证令牌会话",
 	"centralauth-badaccess-blacklisted": "由于您在黑名单上，故无法申请全域更名。",
 	"centralauth-action-forbidden-shared-domain": "您不能在共享身份验证域上执行此操作。",
-	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "用户是{{PLURAL:$1|以下全域用户组|以下所有全域用户组}}的成员：$2"
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "用户是{{PLURAL:$1|以下全域用户组|以下所有全域用户组}}的成员：$2",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|您的}}全域用户权限已{{GENDER:$1|更改}}。您已被添加到以下{{PLURAL:$3|全域用户组}}：$2。",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|您的}}全域用户权限已{{GENDER:$1|更改}}。您不再是以下{{PLURAL:$3|全域用户组}}的成员：$2。",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|您的}}全域用户权限已{{GENDER:$1|更改}}。您已被添加到以下{{PLURAL:$3|全域用户组}}：$2。您不再是以下{{PLURAL:$5|全域用户组}}的成员：$4。",
+	"notification-header-centralauth-global-user-rights-expiry-change": "{{GENDER:$4|您}}在以下全域{{PLURAL:$3|用户组}}的成员身份到期时间已{{GENDER:$1|更改}}：$2。",
+	"notification-centralauth-global-user-rights-email-subject": "{{GENDER:$3|您}}在{{SITENAME}}的全域用户权限已更改"
 }

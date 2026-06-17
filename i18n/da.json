@@ -546,7 +546,7 @@
 	"logentry-gblrights-groupprms3": "$1 {{GENDER:$2|ændrede}} gruppens wiki-sæt med begrænsninger for $3 fra $4 til $5",
 	"logentry-gblrights-usergroups": "$1 {{GENDER:$2|ændrede}} det globale gruppemedlemskab for {{GENDER:$6|$3}}: $7",
 	"logentry-globalauth-delete": "$1 {{GENDER:$2|slettede}} den globale konto \"$3\"",
-	"logentry-globalauth-setstatus": "$1 {{GENDER:$2| ændrede}} status for den globale konto \"$3\": tilføjede $4; fjernede $5",
+	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|ændrede}} status for den globale konto \"$3\": tilføjede $4; fjernede $5",
 	"logentry-globalauth-hide": "$1 {{GENDER:$2| skjult}} den global konto \"$3\"",
 	"logentry-globalauth-lock": "$1 {{GENDER:$2|låste}} den globale konto \"$3\"",
 	"logentry-globalauth-lockandhid": "$1 {{GENDER:$2|låste og skjulte}} den globale konto \"$3\"",
@@ -568,9 +568,9 @@
 	"centralauth-badaccess-blacklisted": "Du kan ikke anmode om en global navneændring, fordi du er på en afvisningsliste.",
 	"centralauth-action-forbidden-shared-domain": "Du har ikke tilladelse til at udføre denne handling på det delte godkendelsesdomæne.",
 	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Brugeren er medlem af {{PLURAL:$1|den globale gruppe|alle de globale grupper}}: $2",
-	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Dine}} globale brugerrettigheder blev {{GENDER:$1|ændret}}. Du er blevet tilføjet til: $2.",
-	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Dine}} globale brugerrettigheder blev {{GENDER:$1|ændret}}. Du er ikke længere medlem af: $2.",
-	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Dine}} globale brugerrettigheder blev {{GENDER:$1|ændret}}. Du er blevet tilføjet til: $2. Du er ikke længere medlem af: $4.",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Dine}} globale brugerrettigheder blev {{GENDER:$1|ændret}}. Du er blevet føjet til følgende {{PLURAL:$3|globale gruppe|globale grupper}}: $2",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Dine}} globale brugerrettigheder blev {{GENDER:$1|ændret}}. Du er ikke længere medlem af følgende {{PLURAL:$3| globale gruppe|globale grupper}}: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Dine}} globale brugerrettigheder blev {{GENDER:$1|ændret}}. Du er blevet føjet til følgende {{PLURAL:$3|globale gruppe|globale grupper}}: $2. Du er ikke længere medlem af følgende {{PLURAL:$5|globale gruppe|globale grupper}}: $4.",
 	"notification-header-centralauth-global-user-rights-expiry-change": "Udløbet af {{GENDER:$4|dit}} medlemskab i følgende globale {{PLURAL:$3|gruppe|grupper}} er blevet {{GENDER:$1|ændret}}: $2.",
 	"notification-centralauth-global-user-rights-email-subject": "{{GENDER:$3|Dine}} globale brugerrettigheder er ændret på {{SITENAME}}"
 }

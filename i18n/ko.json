@@ -590,9 +590,9 @@
 	"centralauth-badaccess-blacklisted": "거부 목록에 있으므로 전역 이름 바꾸기를 요청할 수 없습니다.",
 	"centralauth-action-forbidden-shared-domain": "공유 인증 도메인에서 이 작업을 수행할 수 없습니다.",
 	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "사용자는 {{PLURAL:$1|전역 그룹|모든 전역 그룹}}의 구성원입니다: $2",
-	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|당신}}의 전역 사용자 권한이 {{GENDER:$1|변경되었습니다}}. $2 권한을 부여받았습니다.",
-	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|당신}}의 전역 사용자 권한이 {{GENDER:$1|변경되었습니다}}. 더 이상 $2 권한을 갖고 있지 않습니다.",
-	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|당신}}의 전역 사용자 권한이 {{GENDER:$1|변경되었습니다}}. $2 권한을 받았지만, $4 권한은 더 이상 갖고 있지 않습니다.",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|당신}}의 전역 사용자 권한이 {{GENDER:$1|변경되었습니다}}. $2 {{PLURAL:$3|권한}}을 부여받았습니다.",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|당신}}의 전역 사용자 권한이 {{GENDER:$1|변경되었습니다}}. 더 이상 $2 {{PLURAL:$3|권한}}을 갖고 있지 않습니다.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|당신}}의 전역 사용자 권한이 {{GENDER:$1|변경되었습니다}}. $2 {{PLURAL:$3|권한}}을 받았지만, $4 {{PLURAL:$5|권한}}은 더 이상 갖고 있지 않습니다.",
 	"notification-header-centralauth-global-user-rights-expiry-change": "전역 {{PLURAL:$3|그룹|그룹들}}에서의 {{GENDER:$4|당신}}의 멤버십 만료 기간이 {{GENDER:$1|변경되었습니다}}: $2.",
 	"notification-centralauth-global-user-rights-email-subject": "{{SITENAME}}에서 {{GENDER:$3|당신}}의 전역 사용자 권한이 변경되었습니다"
 }
