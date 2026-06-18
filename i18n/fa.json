@@ -564,5 +564,8 @@
 	"right-globalgrouppermissions": "مدیریت گروه‌های سراسری",
 	"sessionprovider-centralauthsessionprovider": "نشست‌های مرکزی مبتنی بر کوکی",
 	"sessionprovider-centralauthtokensessionprovider": "نشست‌های بلیط ورود سراسری",
-	"centralauth-badaccess-blacklisted": "از آنجا که نام شما در فهرست سیاه قرار داد، قادر به درخواست تغییر نام سراسری نیستید."
+	"centralauth-badaccess-blacklisted": "از آنجا که نام شما در فهرست سیاه قرار داد، قادر به درخواست تغییر نام سراسری نیستید.",
+	"notification-header-centralauth-global-user-rights-add-only": "اختیارات کاربری سراسری {{GENDER:$4|شما}} {{GENDER:$1|تغییر یافته است}}. شما به این {{PLURAL:$3|گروه سراسری|گروه‌های سراسری}} اضافه شده‌اید: $2.",
+	"notification-header-centralauth-global-user-rights-remove-only": "اختیارات کاربری سراسری {{GENDER:$4|شما}} {{GENDER:$1|تغییر یافته است}}. شما دیگر عضو این {{PLURAL:$3|گروه سراسری|گروه‌های سراسری}} نیستید: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "اختیارات کاربری سراسری {{GENDER:$6|شما}} {{GENDER:$1|تغییر یافته است}}. شما به این {{PLURAL:$3|گروه سراسری|گروه‌های سراسری}} اضافه شده‌اید: $2. شما دیگر عضو این {{PLURAL:$5|گروه سراسری|گروه‌های سراسری}} نیستید: $4."
 }
