@@ -297,7 +297,7 @@
 	"centralauth-rename-table-domain": "Лякальная вікі",
 	"centralauth-rename-table-status": "Статус",
 	"centralauth-rename-table-status-done": "Зроблена",
-	"centralauth-rename-table-status-failed": "Не атрымалася",
+	"centralauth-rename-table-status-failed": "Не ўдалося",
 	"centralauth-rename-table-status-inprogress": "У працэсе",
 	"centralauth-rename-table-status-queued": "У чарзе",
 	"centralauth-renameuser-merged": "{{GENDER:$1|Удзельнік $1 перайшоў|Удзельніца $1 перайшла}} на глябальную сыстэму ўваходу.\n{{GENDER:$1|Ягонае|Ейнае}} перайменаваньне выкліча страту зьвязку лякальнага рахунку з глябальным.",
