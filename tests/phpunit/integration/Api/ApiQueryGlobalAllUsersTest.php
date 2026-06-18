@@ -4,6 +4,7 @@ namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Api;
 
 use CentralAuthTestUser;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
@@ -25,9 +26,6 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 	private const USER_PREFIX = 'GlobalTestUser ';
 	private const GROUP_PREFIX = 'globalgroup-';
 
-	/** @var list<array{0:CentralAuthUser,1:string}> */
-	private static array $centralUserMap = [];
-
 	private static array $baseParams = [
 		'action' => 'query',
 		'list' => self::MODULE_NAME,
@@ -36,8 +34,14 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 	/** @var list<callable> */
 	private array $tearDownCallbacks = [];
 
+	protected function setUp(): void {
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthCentralWiki, null );
+		parent::setUp();
+	}
+
 	/** @inheritDoc */
 	public function addDBDataOnce() {
+		$this->overrideConfigValue( CAMainConfigNames::CentralAuthCentralWiki, null );
 		$centralDb = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )->getCentralPrimaryDB();
 		$groupAssigner = CentralAuthServices::getGlobalGroupAssignmentService();
 		$authority = new UltimateAuthority( $this->getTestSysop()->getUserIdentity() );
@@ -57,7 +61,7 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 			$group = self::GROUP_PREFIX . $i;
 			$centralDb->newInsertQueryBuilder()
 				->insertInto( 'global_group_permissions' )
-				->rows( [
+				->row( [
 					'ggp_group' => $group,
 					'ggp_permission' => 'autoconfirmed',
 				] )
@@ -72,8 +76,6 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 				[],
 				[ $group => null ]
 			);
-
-			self::$centralUserMap[] = [ $user->getCentralUser(), $group ];
 		}
 	}
 
@@ -91,18 +93,16 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 	 * @return array{0:CentralAuthUser,1:string} [ $user, $group ]
 	 */
 	private static function getCentralUser( int $userId ) {
-		--$userId;
-		if ( !isset( self::$centralUserMap[$userId] ) ) {
-			self::fail( 'Invalid user ID: ' . ( $userId + 1 ) );
-		}
-		return self::$centralUserMap[$userId];
+		$centralAuthUser = CentralAuthUser::newPrimaryInstanceFromId( $userId );
+		$group = self::GROUP_PREFIX . $centralAuthUser->getId();
+		return [ $centralAuthUser, $group ];
 	}
 
 	public function testExecute() {
 		[ $res ] = $this->doApiRequest( self::$baseParams );
 
 		$this->assertArrayHasKey( self::MODULE_NAME, $res['query'] );
-		$this->assertSameSize( self::$centralUserMap, $res['query'][self::MODULE_NAME] );
+		$this->assertCount( 3, $res['query'][self::MODULE_NAME] );
 	}
 
 	/**
@@ -120,11 +120,11 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 		if ( $fromIndex !== null && $toIndex !== null ) {
 			$expectedCount = abs( $fromIndex - $toIndex ) + 1;
 		} elseif ( $fromIndex !== null ) {
-			$expectedCount = count( self::$centralUserMap ) - ( $fromIndex - 1 );
+			$expectedCount = 3 - ( $fromIndex - 1 );
 		} elseif ( $toIndex !== null ) {
 			$expectedCount = $toIndex;
 		} else {
-			$expectedCount = count( self::$centralUserMap );
+			$expectedCount = 3;
 		}
 		$this->assertCount( $expectedCount, $res['query'][self::MODULE_NAME] );
 	}
@@ -145,7 +145,7 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 			'aguprefix' => $prefix,
 		] );
 
-		$expectedCount = $prefix === self::USER_PREFIX ? count( self::$centralUserMap ) : 0;
+		$expectedCount = $prefix === self::USER_PREFIX ? 3 : 0;
 		$this->assertCount( $expectedCount, $res['query'][self::MODULE_NAME] );
 	}
 
