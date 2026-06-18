@@ -219,7 +219,7 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'global_user_groups' )
-			->set( [ 'gug_expiry' => $dbw->timestamp( ( (int)MWTimestamp::now() ) - 1 ) ] )
+			->set( [ 'gug_expiry' => $dbw->timestamp( MWTimestamp::now( TS_UNIX ) - 1 ) ] )
 			->where( [ 'gug_user' => 1 ] )
 			->caller( __METHOD__ )
 			->execute();
