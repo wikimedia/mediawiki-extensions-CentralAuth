@@ -192,6 +192,7 @@ class RedirectingLoginHookHandler implements
 		$request = $context->getRequest();
 
 		$params += [
+			'redoLocalAuthentication' => $request->getRawVal( 'redoLocalAuthentication' ),
 			// used to prevent hijacking attacks when switching between the domains,
 			// needs to round-trip to be verified
 			'centralauthLoginToken' => $request->getRawVal( 'centralauthLoginToken' ),
