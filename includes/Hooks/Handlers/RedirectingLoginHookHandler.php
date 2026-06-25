@@ -153,9 +153,6 @@ class RedirectingLoginHookHandler implements
 			'isSignup' => $type === 'signup',
 			'securityLevelOk' => !$securityLevel
 				|| $this->authManager->securitySensitiveOperationStatus( $securityLevel ) === AuthManager::SEC_OK,
-			// FIXME not used anymore, the security level check above is more accurate.
-			//   But we still need to set it until it's removed in core, so we just fake it.
-			'loginWasInteractive' => true,
 		];
 		$token = $this->tokenManager->tokenize(
 			$outputData,

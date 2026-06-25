@@ -247,11 +247,6 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 			$this->manager->setAuthenticationSessionData( AuthManager::REMEMBER_ME, true );
 		}
 
-		if ( array_key_exists( 'loginWasInteractive', $data ) ) {
-			 $this->manager->setAuthenticationSessionData( AuthManager::LOGIN_WAS_INTERACTIVE,
-				 $data['loginWasInteractive'] );
-		}
-
 		$redoFlag = $this->manager->getRequest()->getRawVal( 'redoLocalAuthentication' );
 		// Flag this login session as being the local leg of a SUL3 login, so we can run
 		// CentralAuthPostLoginRedirect afterward.
