@@ -144,6 +144,13 @@ abstract class CentralAuthTokenSessionProvider extends SessionProvider {
 	}
 
 	/** @inheritDoc */
+	public function allowSecuritySensitiveOperationIfCannotReauthenticate(
+		SessionBackend $session, WebRequest $request
+	) {
+		return false;
+	}
+
+	/** @inheritDoc */
 	public function persistSession(
 		SessionBackend $session, WebRequest $request
 	) {
