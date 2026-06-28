@@ -51,7 +51,7 @@ class RenameQueueTablePager extends TablePager {
 		$this->mDb = $databaseManager->getCentralReplicaDB();
 		$this->userNameUtils = $userNameUtils;
 
-		$limit = $this->getRequest()->getInt( 'limit', 25 );
+		$limit = $this->getRequest()->getInt( 'limit', 100 );
 		// Override default cap of 5000
 		$this->setLimit( min( 100, $limit ) );
 
