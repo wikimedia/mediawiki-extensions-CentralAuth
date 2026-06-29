@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
+use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -78,7 +79,7 @@ class SpecialMultiLock extends SpecialPage {
 		$req = $this->getRequest();
 
 		$this->mCanSuppress = $this->getContext()->getAuthority()->isAllowed( 'centralauth-suppress' );
-		$out->addModuleStyles( 'mediawiki.codex.messagebox.styles' );
+		$out->enableOOUI();
 		$out->addModules( 'ext.centralauth' );
 		$out->addModuleStyles( 'ext.centralauth.noflash' );
 		$this->mMethod = $req->getVal( 'wpMethod', '' );
@@ -202,13 +203,7 @@ class SpecialMultiLock extends SpecialPage {
 	 * Show the Lock and/or Hide form, appropriate for this admin user's rights.
 	 */
 	private function showStatusForm( string $introTable ) {
-		$form = HTMLForm::factory( 'table', [
-			'Intro' => [
-				'type' => 'info',
-				'raw' => true,
-				'rawrow' => true,
-				'default' => Html::rawElement( 'tr', [], Html::rawElement( 'td', [ 'colspan' => 2 ], $introTable ) ),
-			],
+		$form = HTMLForm::factory( 'ooui', [
 			'ActionLock' => [
 				'type' => 'radio',
 				'label-message' => 'centralauth-admin-status-locked',
@@ -234,9 +229,10 @@ class SpecialMultiLock extends SpecialPage {
 			],
 			'ReasonList' => [
 				'type' => 'selectandother',
+				'maxlength' => CommentStore::COMMENT_CHARACTER_LIMIT,
 				'label-message' => 'centralauth-admin-reason',
 				'options-message' => 'centralauth-admin-status-reasons',
-				'other' => $this->msg( 'centralauth-admin-reason-other-select' )->inContentLanguage()->text(),
+				'other-message' => 'centralauth-admin-reason-other-select',
 			],
 			'markasbot' => [
 				'name' => 'markasbot',
@@ -247,7 +243,9 @@ class SpecialMultiLock extends SpecialPage {
 			->setMethod( 'post' )
 			->setTitle( $this->getPageTitle() )
 			->setWrapperLegendMsg( 'centralauth-admin-status' )
+			->addHeaderHtml( $introTable )
 			->setSubmitTextMsg( 'centralauth-admin-status-submit' )
+			->setSubmitID( 'mw-centralauth-multilock-status-submit' )
 			->addHiddenField( 'wpMethod', 'set-status' );
 
 		$searchList = $this->mUserNames;
@@ -255,6 +253,7 @@ class SpecialMultiLock extends SpecialPage {
 			$searchList = implode( "\n", $this->mUserNames );
 		}
 		$form->addHiddenField( 'wpTarget', $searchList );
+		$form->setId( 'mw-centralauth-multilock-status-form' );
 
 		$form->prepareForm()->displayForm( false );
 	}
@@ -285,25 +284,31 @@ class SpecialMultiLock extends SpecialPage {
 
 		$context = $out->getContext();
 		$table .= '<thead><tr>' .
-			'<th></th>' .
+			Html::element( 'th', [ 'class' => 'unsortable' ], '' ) .
 			'<th>' .
 			$context->msg( 'centralauth-admin-username' )->escaped() .
 			'</th>' .
-			'<th>' .
-			$context->msg( 'centralauth-admin-info-registered' )->escaped() .
-			'</th>' .
+			Html::rawElement(
+				'th',
+				[ 'data-sort-order' => 'desc' ],
+				$context->msg( 'centralauth-admin-info-registered' )->escaped()
+			) .
 			'<th>' .
 			$context->msg( 'centralauth-admin-info-locked' )->escaped() .
 			'</th>' .
 			'<th>' .
 			$context->msg( 'centralauth-admin-info-hidden' )->escaped() .
 			'</th>' .
-			'<th>' .
-			$context->msg( 'centralauth-admin-info-editcount' )->escaped() .
-			'</th>' .
-			'<th>' .
-			$context->msg( 'centralauth-admin-info-attached' )->escaped() .
-			'</th>' .
+			Html::rawElement(
+				'th',
+				[ 'data-sort-order' => 'desc' ],
+				$context->msg( 'centralauth-admin-info-editcount' )->escaped()
+			) .
+			Html::rawElement(
+				'th',
+				[ 'data-sort-order' => 'desc' ],
+				$context->msg( 'centralauth-admin-info-attached' )->escaped()
+			) .
 			'<th>' .
 			$context->msg( 'centralauth-multilock-homewiki' )->escaped() .
 			'</th>' .
@@ -347,29 +352,38 @@ class SpecialMultiLock extends SpecialPage {
 		$guHidden = $this->uiService->formatHiddenLevel( $this->getContext(), $globalUser->getHiddenLevelInt() );
 		$accountAge = time() - (int)wfTimestamp( TS_UNIX, $globalUser->getRegistration() );
 		$guRegister = $this->uiService->prettyTimespan( $this->getContext(), $accountAge );
-		$guLocked = $this->msg( 'centralauth-admin-status-locked-no' )->text();
+		$guLocked = $this->msg( 'centralauth-admin-no' )->text();
 		if ( $globalUser->isLocked() ) {
-			$guLocked = $this->msg( 'centralauth-admin-status-locked-yes' )->text();
+			$guLocked = $this->msg( 'centralauth-admin-yes' )->text();
 		}
 		$guEditCount = $this->getLanguage()->formatNum( $globalUser->getGlobalEditCount() );
 		$guAttachedLocalAccounts = $this->getLanguage()
 			->formatNum( count( $globalUser->listAttached() ) );
 		$guHomeWiki = $globalUser->getHomeWiki() ?? '';
 
-		$rowHtml .= Html::rawElement( 'td', [],
-			Html::input(
-				'wpActionTarget[' . $guName . ']',
-				$guName,
-				'checkbox',
-				[ 'checked' => 'checked' ]
-			)
+		$rowHtml .= Html::rawElement(
+			'td',
+			[],
+			(string)new \OOUI\CheckboxInputWidget( [
+				'name' => 'wpActionTarget[' . $guName . ']',
+				'value' => $guName,
+				'selected' => true,
+			] )
 		);
 		$rowHtml .= Html::rawElement( 'td', [], $guLink );
 		$rowHtml .= Html::element( 'td', [ 'data-sort-value' => $accountAge ], $guRegister );
 		$rowHtml .= Html::element( 'td', [], $guLocked );
 		$rowHtml .= Html::rawElement( 'td', [], $guHidden );
-		$rowHtml .= Html::element( 'td', [], $guEditCount );
-		$rowHtml .= Html::element( 'td', [], $guAttachedLocalAccounts );
+		$rowHtml .= Html::element(
+			'td',
+			[ 'data-sort-value' => $globalUser->getGlobalEditCount() ],
+			$guEditCount
+		);
+		$rowHtml .= Html::element(
+			'td',
+			[ 'data-sort-value' => count( $globalUser->listAttached() ) ],
+			$guAttachedLocalAccounts
+		);
 		$rowHtml .= Html::element( 'td', [], $guHomeWiki );
 
 		return $rowHtml;
@@ -401,6 +415,7 @@ class SpecialMultiLock extends SpecialPage {
 
 		$context = $this->getContext();
 		$markAsBot = $this->getRequest()->getCheck( 'markasbot' );
+		$changedUserNames = [];
 		foreach ( $this->mGlobalUsers as $globalUser ) {
 			if ( !$globalUser instanceof CentralAuthUser ) {
 				// Somehow the user submitted a bad username
@@ -419,8 +434,18 @@ class SpecialMultiLock extends SpecialPage {
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status );
 			} elseif ( $status->successCount > 0 ) {
-				$this->showSuccess( 'centralauth-admin-setstatus-success', wfEscapeWikitext( $globalUser->getName() ) );
+				$changedUserNames[] = wfEscapeWikitext( $globalUser->getName() );
 			}
+		}
+
+		if ( count( $changedUserNames ) === 1 ) {
+			$this->showSuccess( 'centralauth-admin-setstatus-success', $changedUserNames[0] );
+		} elseif ( count( $changedUserNames ) > 1 ) {
+			$this->showSuccess(
+				'centralauth-admin-setstatus-success-multi',
+				count( $changedUserNames ),
+				$this->getLanguage()->listToText( $changedUserNames )
+			);
 		}
 	}
 
@@ -435,7 +460,10 @@ class SpecialMultiLock extends SpecialPage {
 	 * @param mixed ...$params
 	 */
 	private function showError( $key, ...$params ) {
-		$this->getOutput()->addHTML( Html::errorBox( $this->msg( $key, ...$params )->parse() ) );
+		$this->getOutput()->addHTML( ( new \OOUI\MessageWidget( [
+			'type' => 'error',
+			'label' => new \OOUI\HtmlSnippet( $this->msg( $key, ...$params )->parse() ),
+		] ) )->toString() );
 	}
 
 	/**
@@ -443,15 +471,17 @@ class SpecialMultiLock extends SpecialPage {
 	 * @param mixed ...$params
 	 */
 	private function showSuccess( $key, ...$params ) {
-		$this->getOutput()->addHTML( Html::successBox( $this->msg( $key, ...$params )->parse() ) );
+		$this->getOutput()->addHTML( ( new \OOUI\MessageWidget( [
+			'type' => 'success',
+			'label' => new \OOUI\HtmlSnippet( $this->msg( $key, ...$params )->parse() ),
+		] ) )->toString() );
 	}
 
 	private function showUsernameForm() {
-		$form = HTMLForm::factory( 'div', [
+		$form = HTMLForm::factory( 'ooui', [
 			'Target' => [
 				'type' => 'textarea',
 				'label-message' => 'centralauth-admin-multi-username',
-				'cols' => 25,
 				'rows' => 20,
 				'default' => $this->mPrefixSearch ? '' : implode( "\n", $this->mUserNames ),
 			],
@@ -465,6 +495,7 @@ class SpecialMultiLock extends SpecialPage {
 			->setTitle( $this->getPageTitle() )
 			->setWrapperLegendMsg( 'centralauth-admin-manage' )
 			->setSubmitTextMsg( 'centralauth-admin-lookup-ro' )
+			->setSubmitID( 'mw-centralauth-multilock-lookup-submit' )
 			->addHiddenField( 'wpMethod', 'search' );
 
 		$form->prepareForm()->displayForm( false );
@@ -489,8 +520,14 @@ class SpecialMultiLock extends SpecialPage {
 			]
 		);
 		if ( $numRows ) {
-			$legend = Html::element( 'legend', [], $this->msg( 'centralauth-admin-logsnippet' )->text() );
-			$this->getOutput()->addHTML( Html::rawElement( 'fieldset', [], $legend . $text ) );
+			$this->getOutput()->addHTML( (string)new \OOUI\FieldsetLayout( [
+				'label' => $this->msg( 'centralauth-admin-logsnippet' )->text(),
+				'items' => [
+					new \OOUI\Widget( [
+						'content' => new \OOUI\HtmlSnippet( $text ),
+					] ),
+				],
+			] ) );
 		}
 	}
 
