@@ -61,6 +61,12 @@ class RecalculateGlobalEditCountForUsers extends Maintenance {
 				continue;
 			}
 
+			if ( !$user->exists() ) {
+				$this->output( "Warning: User '{$name}' does not exist\n" );
+				$skipped++;
+				continue;
+			}
+
 			$oldCount = $editCounter->getCount( $user );
 			$count = $editCounter->recalculate( $user );
 
