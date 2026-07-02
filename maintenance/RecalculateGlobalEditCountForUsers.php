@@ -77,7 +77,8 @@ class RecalculateGlobalEditCountForUsers extends Maintenance {
 			$handled++;
 		}
 
-		$this->output( "Processed all {$handled} users!\n" );
+		$this->output( "Processed {$handled} users!\n" );
+		$this->output( "Skipped {$skipped} users.\n" );
 	}
 
 }
