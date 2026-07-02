@@ -77,6 +77,6 @@ class RecalculateGlobalEditCountForUsers extends Maintenance {
 }
 
 // @codeCoverageIgnoreStart
-$maintClass = RecalculateGlobalEditCount::class;
+$maintClass = RecalculateGlobalEditCountForUsers::class;
 require_once RUN_MAINTENANCE_IF_MAIN;
 // @codeCoverageIgnoreEnd
