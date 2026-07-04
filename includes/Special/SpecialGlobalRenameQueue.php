@@ -210,6 +210,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				'type' => 'limitselect',
 				'name' => 'limit',
 				'label-message' => 'table_pager_limit_label',
+				'default' => 100,
 				'options' => [
 					$lang->formatNum( 25 ) => 25,
 					$lang->formatNum( 50 ) => 50,
