@@ -39,7 +39,7 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			MainConfigNames::LocalDatabases => [ 'foowiki', 'loginwiki', 'enwiktionary', 'metawiki' ],
 			MainConfigNames::CanonicalServer => 'https://foowiki.example.org',
 			MainConfigNames::DBname => 'foowiki',
-			MainConfigNames::DBprefix => null,
+			MainConfigNames::DBprefix => '',
 			CAMainConfigNames::CentralAuthLoginWiki => 'loginwiki',
 			CAMainConfigNames::CentralAuthCentralWiki => 'metawiki',
 			CAMainConfigNames::CentralAuthSharedDomainCallback
