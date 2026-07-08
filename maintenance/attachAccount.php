@@ -58,6 +58,8 @@ class AttachAccount extends Maintenance {
 			'File with the list of usernames to attach, one per line, on every possible wiki', false, true );
 		$this->addOption( 'wiki-user-list',
 			'Tab-separated file of whom/where to attach, wiki ID then username, one per line', false, true );
+		$this->addOption( 'username',
+			'A single username to attach on every possible wiki', false, true );
 		$this->addOption( 'dry-run', 'Do not update database' );
 		$this->addOption( 'quiet',
 			'Only report database changes and final statistics' );
@@ -85,8 +87,11 @@ class AttachAccount extends Maintenance {
 				$this->attach( $username );
 				$this->maybeWaitForReplication();
 			}
+		} elseif ( $this->hasOption( 'username' ) ) {
+			$username = trim( $this->getOption( 'username' ) );
+			$this->attach( $username );
 		} else {
-			$this->fatalError( 'ERROR: Either --userlist or --wiki-user-list is required' );
+			$this->fatalError( 'ERROR: Either --userlist, --wiki-user-list, or --username is required' );
 		}
 
 		$this->report();
