@@ -860,6 +860,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			);
 		} else {
 			header( 'Content-Type: text/javascript; charset=utf-8' );
+			// T244682: Don't allow escaping out of the comment
+			$status = str_replace( [ '*', '/' ], '', $status );
 			echo "/* $status */\n$body";
 		}
 	}
