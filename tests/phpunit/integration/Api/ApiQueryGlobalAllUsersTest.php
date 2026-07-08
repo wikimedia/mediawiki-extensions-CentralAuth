@@ -6,7 +6,6 @@ use CentralAuthTestUser;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Tests\Api\ApiTestCase;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
@@ -43,8 +42,6 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 	public function addDBDataOnce() {
 		$this->overrideConfigValue( CAMainConfigNames::CentralAuthCentralWiki, null );
 		$centralDb = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )->getCentralPrimaryDB();
-		$groupAssigner = CentralAuthServices::getGlobalGroupAssignmentService();
-		$authority = new UltimateAuthority( $this->getTestSysop()->getUserIdentity() );
 
 		// Create 3 global users
 		for ( $i = 1; $i <= 3; $i++ ) {
@@ -69,13 +66,7 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 				->execute();
 
 			// Register the user into the group
-			$groupAssigner->saveChangesToUserGroups(
-				$authority,
-				$user->getCentralUser(),
-				[ $group ],
-				[],
-				[ $group => null ]
-			);
+			$user->getCentralUser()->addToGlobalGroup( $group );
 		}
 	}
 
