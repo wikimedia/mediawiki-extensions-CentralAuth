@@ -482,7 +482,7 @@
 	"globalrenamerequest-email-invalid": "유효하지 않은 이메일 주소가 제공되었습니다.",
 	"globalrenamerequest-email-label": "이메일 주소:",
 	"globalrenamerequest-email-mismatch": "이메일 주소가 다릅니다. <br /> 다시 확인해 주세요.",
-	"globalrenamerequest-email-why-explain": "이메일 계정은 사용자 계정 이름 바꾸기가 진행되는 동안 당신의 계정을 잃지 않도록 하기 위해 필요합니다.<br />계정 이름 바꾸기 절차가 완료된 후에 이메일 주소를 지울 수 있습니다.",
+	"globalrenamerequest-email-why-explain": "이메일 계정은 사용자 계정 이름 바꾸기가 진행되는 동안 당신의 계정을 잃지 않도록 하기 위해 필요합니다.<br />계정 이름 바꾸기 절차가 완료된 후에 이메일 주소를 제거할 수 있습니다.",
 	"globalrenamerequest-email2-help": "위에 입력한 이메일 주소와 같은 이메일을 입력하세요.",
 	"globalrenamerequest-email2-label": "이메일 주소 확인:",
 	"globalrenamerequest-forced": "이 위키 팜은 모든 프로젝트의 사용자 계정 이름을 통합하고 있습니다. 이 계정 이름은 다른 위키에서 사용되고 있는 것으로 인식되었으며, 통합을 완료하기 위해 바꾸어야 합니다. 따라서, 당신은 새로운 계정 이름을 선택하여야 합니다.",
@@ -571,7 +571,7 @@
 	"right-globalgroupmembership": "사용자의 전역 권한 그룹 조정",
 	"right-globalgrouppermissions": "전역 권한 그룹 관리",
 	"sessionprovider-centralauthsessionprovider": "중앙 쿠키 기반 세션",
-	"sessionprovider-centralauthtokensessionprovider": "중앙인증 토큰 세션",
+	"sessionprovider-centralauthtokensessionprovider": "centralauthtoken 토큰 세션",
 	"centralauth-badaccess-blacklisted": "블랙리스트에 있으므로 전역 이름 바꾸기를 요청할 수 없습니다.",
 	"centralauth-action-forbidden-shared-domain": "공유 인증 도메인에서 이 작업을 수행할 수 없습니다."
 }
