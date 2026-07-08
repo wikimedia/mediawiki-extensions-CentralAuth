@@ -225,6 +225,7 @@
 	"centralauth-error-token-wrongattempt": "O pase de autenticación non pertence ao seu intento actual de acceso.\nSe cadra, alguén pode estar intentando que acceda ao sistema baixo unha conta maliciosa.",
 	"centralauth-error-token-wronguser": "O pase non coincide co nome de usuario da súa sesión.\nSe cadra, alguén pode estar intentando que acceda ao sistema baixo unha conta maliciosa.\nSe está intentando acceder como outro usuario, saia primeiro do sistema.",
 	"centralauth-error-wrongprovider": "Esta páxina especial non está dispoñible cando se usa $1.",
+	"centralauth-error-securitylevel": "O nivel de seguridade durante o inicio de sesión central e local non coincidía.",
 	"centralauth-warning-reauth": "A túa sesión central caducou. Inicia sesión de novo para continuar.",
 	"centralauth-finish-incomplete": "Varias contas de usuario foron fusionadas usando este contrasinal.\nOutras contas aínda non están confirmadas.",
 	"centralauth-finish-login": "Rexistro",

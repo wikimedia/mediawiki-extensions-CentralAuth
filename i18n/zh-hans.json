@@ -285,6 +285,7 @@
 	"centralauth-error-token-wrongattempt": "身份验证令牌并不属于你目前的登入尝试。\n有人可能试图利用恶意账号登入。",
 	"centralauth-error-token-wronguser": "令牌与您的会话用户名称不匹配。\n有人可能试图利用恶意账号登入。\n若你只是希望以另一个账号登入，请先登出。",
 	"centralauth-error-wrongprovider": "此特殊页面在使用$1时不可用。",
+	"centralauth-error-securitylevel": "中央和本地登录的安全水平不一致。",
 	"centralauth-warning-reauth": "你的中央登录会话已经过期。请重新登录以继续。",
 	"centralauth-finish-incomplete": "部分账号已经使用此密码合并，其他账号尚未确认。",
 	"centralauth-finish-login": "登录",

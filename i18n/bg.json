@@ -368,6 +368,6 @@
 	"right-centralauth-unmerge": "Разделяне на глобалната сметка",
 	"right-globalgroupmembership": "Промяна на членството в глобални групи",
 	"right-globalgrouppermissions": "Управление на глобалните групи",
-	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4| Вашите}} глобални потребителски права бяха {{GENDER:$1| променени}}. Бяхте добавени към следната {{PLURAL:$3| глобална група|глобални групи}}: $2 .",
-	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6| Вашите}} глобални потребителски права бяха {{GENDER:$1| променени}}. Бяхте добавени към следната {{PLURAL:$3| глобална група|глобални групи}}: $2 . Вече не сте член на следната {{PLURAL:$5| глобална група|глобални групи}}: $4 ."
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Вашите}} глобални потребителски права бяха {{GENDER:$1|променени}}. Бяхте добавени към {{PLURAL:$3|следната глобална група|следните глобални групи}}: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Вашите}} глобални потребителски права бяха {{GENDER:$1|променени}}. Бяхте добавени към {{PLURAL:$3|следната глобална група|следните глобални групи}}: $2. Вече не сте член на {{PLURAL:$5|следната глобална група|следните глобални групи}}: $4."
 }

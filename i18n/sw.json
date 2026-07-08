@@ -2,6 +2,7 @@
 	"@metadata": {
 		"authors": [
 			"Edwingudfriend",
+			"Fredrick Kafuka",
 			"Joeamj",
 			"Killy95",
 			"Kipala",
@@ -80,6 +81,7 @@
 	"centralauth-editset-usage": "Imetumika katika vikundi:",
 	"centralauth-editset-wikis": "Wiki:",
 	"centralauth-error-locked": "Hauwezi kuhariri maana akaunti yako imezuiwa.",
+	"centralauth-error-securitylevel": "Kiwango cha usalama wakati wa kuingia katikati na ndani hakikulingana.",
 	"centralauth-finish-login": "Ingia",
 	"centralauth-finish-noconfirms": "Hakuna akaunti zingethibishwa kwa kutumia nywila hii.",
 	"centralauth-finish-password": "Neno la siri:",

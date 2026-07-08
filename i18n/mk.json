@@ -215,6 +215,7 @@
 	"centralauth-error-token-wrongattempt": "Шифрата за заверка не му припаѓа на вашиот тековен обид за најава.\nНекој можеби сака да ве најави со штетна/злонамерна сметка.",
 	"centralauth-error-token-wronguser": "Шифрата не одговара на корисничкото име во седницата.\nНекој можеби сака да ве најави со штетна/злонамерна сметка.\nАко всушност се обидувте да се најавите како друг корисник, тогаш најпрвин одјавете се.",
 	"centralauth-error-wrongprovider": "Оваа службена страница е недостапна при употреба на $1.",
+	"centralauth-error-securitylevel": "Степенот на безбедност при централната и месната најава не се совпаѓаат.",
 	"centralauth-warning-reauth": "Вашата седница со централна најава истече. Најавете се повторно за да продолжите.",
 	"centralauth-finish-incomplete": "Со оваа лозинка се споени неколку сметки.\nДругите сметки сè уште не се потврдени.",
 	"centralauth-finish-login": "Најава",
@@ -554,9 +555,9 @@
 	"centralauth-badaccess-blacklisted": "Не можете да побарате глобално преименување бидејќи сте на список на одбиени.",
 	"centralauth-action-forbidden-shared-domain": "Не ви е дозволено да го извршите ова дејство на споделениот домен за заверка.",
 	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "Корисникот членува во {{PLURAL:$1|глобалната група|сите овие глобални групи}}: $2",
-	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Вашите}} глобални кориснички права се {{GENDER:$1|изменети}}. Додадени сте во: $2.",
-	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Вашите}} глобални кориснички права се {{GENDER:$1|изменети}}. Повеќе не членувате во: $2.",
-	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Вашите}} глобални кориснички права се {{GENDER:$1|изменети}}. Додадени сте во: $2. Повеќе не членувате во: $4.",
+	"notification-header-centralauth-global-user-rights-add-only": "{{GENDER:$4|Вашите}} глобални кориснички права се {{GENDER:$1|изменети}}. Додадени сте во {{PLURAL:$3|следнава глобална група|следниве глобални групи}}: $2.",
+	"notification-header-centralauth-global-user-rights-remove-only": "{{GENDER:$4|Вашите}} глобални кориснички права се {{GENDER:$1|изменети}}. Повеќе не членувате во {{PLURAL:$3|следнава глобална група|следниве глобални групи}}: $2.",
+	"notification-header-centralauth-global-user-rights-add-and-remove": "{{GENDER:$6|Вашите}} глобални кориснички права се {{GENDER:$1|изменети}}. Додадени сте во {{PLURAL:$3|следнава глобална група|следниве глобални групи}}: $2. Повеќе не членувате во {{PLURAL:$5|следнава глобална група|следниве глобални групи}}: $4.",
 	"notification-header-centralauth-global-user-rights-expiry-change": "{{GENDER:$1|Изменет}} е истекот на {{GENDER:$4|вашето}} членство во {{PLURAL:$3|следнава глобална група|следниве глобални групи}}: $2.",
 	"notification-centralauth-global-user-rights-email-subject": "{{GENDER:$3|Вашите}} глобални кориснички права на {{SITENAME}} се изменети"
 }

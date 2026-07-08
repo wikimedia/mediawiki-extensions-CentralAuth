@@ -224,6 +224,7 @@
 	"centralauth-error-token-wrongattempt": "Təsdiqləmə açarı cari giriş cəhdinizə aid deyil.\nKimsə sizi zərərli hesaba daxil etməyə cəhd edə bilər.",
 	"centralauth-error-token-wronguser": "Açar sessiya istifadəçi adınızla uyğun gəlmir.\nKimsə sizi zərərli hesaba daxil etməyə cəhd edə bilər.\nƏgər siz sadəcə olaraq başqa istifadəçi kimi daxil olmağa çalışırsınızsa, zəhmət olmasa əvvəlcə hesabdan çıxın.",
 	"centralauth-error-wrongprovider": "$1 istifadə edərkən bu xüsusi səhifə mövcud deyil.",
+	"centralauth-error-securitylevel": "Mərkəzi və lokal giriş zamanı təhlükəsizlik səviyyəsi uyğun gəlmədi.",
 	"centralauth-warning-reauth": "Mərkəzi giriş sessiyanızın müddəti bitib. Zəhmət olmasa, davam etmək üçün yenidən daxil olun.",
 	"centralauth-finish-incomplete": "Bu paroldan istifadə etməklə bir neçə hesab birləşdirilib.\nDigər hesablar hələ təsdiqlənməyib.",
 	"centralauth-finish-login": "Daxil ol",
