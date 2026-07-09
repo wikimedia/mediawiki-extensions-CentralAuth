@@ -49,7 +49,8 @@
 			"神樂坂秀吉",
 			"背番号4のエース",
 			"青子守歌",
-			"Ant176"
+			"Ant176",
+			"Tensama0415"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "利用者のグローバル編集回数 ($1)",
@@ -174,7 +175,7 @@
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|ページ}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|名前空間}}",
 	"centralauth-centralautologin-desc": "この特別ページは、MediaWiki が内部的に使用します。\n未ログインの状態でリンク済みドメインを訪れた際に、あなたがログイン済みかどうかを判定するために、中央管理ログインシステムがこのページを使用します。\nあなたは認証データを何も指定せずにこのページに訪れたため、何もしません。",
-	"centralauth-centralautologin-logged-in": "現在、$1 として一元的にログインしています。利用者設定を適用するにはページを再読み込みしてください。",
+	"centralauth-centralautologin-logged-in": "{{GENDER:$2|}}現在、$1 として一元的にログインしています。利用者設定を適用するにはページを再読み込みしてください。",
 	"centralauth-complete": "アカウントの統一が完了しました!",
 	"centralauth-complete-text": "{{int:Centralauth-groupname}}のすべてのウィキサイトに、新しいアカウントを作成することなくログインできるようになりました。",
 	"centralauth-completelogin-back": "前のページに戻る。",
@@ -314,7 +315,7 @@
 	"centralauth-merge-dryrun-incomplete": "次の手順に進む準備ができましたが、自動的に認証できなかったアカウントがいくつかあります。\nこれらのアカウントはそのままでは移行されませんが、あとで統合できます。\n\nあなたのアカウントはまだ何も変更されていません。",
 	"centralauth-merge-dryrun-or": "'''または'''",
 	"centralauth-merge-home-password": "このアカウントのホームウィキ (以下に列挙) のパスワードと入力したパスワードが一致しません。\nホームウィキのパスワードを入力してください。",
-	"centralauth-merge-method-admin": "管理者が統合したアカウント",
+	"centralauth-merge-method-admin": "管理上統合されたアカウント",
 	"centralauth-merge-method-admin-desc": "ローカルアカウントがスチュワードまたはシステム管理者によって手動で統合されたことを示しています。",
 	"centralauth-merge-method-empty": "投稿なし",
 	"centralauth-merge-method-empty-desc": "ローカルアカウントに編集履歴がなかったため、そのアカウントが統合されたことを示しています。",

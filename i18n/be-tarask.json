@@ -273,7 +273,7 @@
 	"centralauth-newgroup-legend": "Стварыць новую групу",
 	"centralauth-not-owner-text": "Імя ўдзельніка «$1» было аўтаматычна перададзенае ўладальніку рахунку $2.\n\nКалі гэта Вы, то для сканчэньня аб'яднаньня рахункаў, увядзіце пароль Вашага асноўнага рахунку тут:",
 	"centralauth-notice-dryrun": "Дэманстрацыйны рэжым",
-	"centralauth-prefs-count-attached": "Ваш рахунак актыўны ў $1 {{PLURAL:$1|праекце|праектах}}.",
+	"centralauth-prefs-count-attached": "Ваш уліковы запіс актыўны ў $1 {{PLURAL:$1|праекце|праектах}}.",
 	"centralauth-prefs-count-unattached": "Непацьверджаныя рахункі з Вашым імем застаюцца ў $1 {{PLURAL:$1|праекце|праектах}}.",
 	"centralauth-prefs-detail-unattached": "Ваш рахунак ня быў пацьверджаны як належны да глябальнага рахунку.",
 	"centralauth-prefs-manage": "Кіраваньне Вашым глябальным рахункам",
