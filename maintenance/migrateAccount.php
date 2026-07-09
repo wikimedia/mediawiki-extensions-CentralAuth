@@ -11,7 +11,6 @@ require_once "$IP/maintenance/Maintenance.php";
 // @codeCoverageIgnoreEnd
 
 use Exception;
-use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
 use Wikimedia\ObjectCache\MapCacheLRU;
@@ -135,22 +134,6 @@ class MigrateAccount extends Maintenance {
 		$this->output( "done.\n" );
 	}
 
-	private function beingRenamed( string $username ): array {
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
-		$rows = $dbw->select(
-			'users_to_rename',
-			[ 'utr_wiki' ],
-			[ 'utr_name' => $username ],
-			__METHOD__
-		);
-		$wikis = [];
-		foreach ( $rows as $row ) {
-			$wikis[] = $row->utr_wiki;
-		}
-
-		return $wikis;
-	}
-
 	private function migrate( string $username, ?string $homewiki = null ): void {
 		$this->total++;
 		$this->output( "CentralAuth account migration for: " . $username . "\n" );
@@ -232,16 +215,8 @@ class MigrateAccount extends Maintenance {
 				$this->output( "INFO: Setting homewiki for '$username' to $homewiki\n" );
 				$central->mHomeWiki = $homewiki;
 			} else {
-				$beingRenamed = $this->beingRenamed( $username );
-				$diff = array_diff( array_keys( $unattached ), $beingRenamed );
-				if ( count( $diff ) === 1 ) {
-					$central->mHomeWiki = $diff[0];
-				} elseif ( !$diff ) {
-					$central->mHomeWiki = $central->chooseHomeWiki( $unattached );
-				} else {
-					$this->output( "Picking a homewiki for $username, possibly randomly!\n" );
-					$central->mHomeWiki = $central->chooseHomeWiki( $unattached );
-				}
+				$this->output( "Picking a homewiki for $username, possibly randomly!\n" );
+				$central->mHomeWiki = $central->chooseHomeWiki( $unattached );
 			}
 
 			// Check that all unattached (i.e. ALL) accounts have a confirmed email

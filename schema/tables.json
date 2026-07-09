@@ -470,54 +470,6 @@
 		"pk": [ "rq_id" ]
 	},
 	{
-		"name": "users_to_rename",
-		"comment": "Table to store a list of users who will be renamed in the glorious finalization.",
-		"columns": [
-			{
-				"name": "utr_id",
-				"comment": "id",
-				"type": "integer",
-				"options": { "autoincrement": true, "notnull": false }
-			},
-			{
-				"name": "utr_name",
-				"comment": "username",
-				"type": "binary",
-				"options": { "notnull": true, "length": 255 }
-			},
-			{
-				"name": "utr_wiki",
-				"comment": "wiki the user is on",
-				"type": "binary",
-				"options": { "notnull": true, "length": 255 }
-			},
-			{
-				"name": "utr_status",
-				"comment": "bitfield of a user's status. Could be: notified via email, talk page, and finally: renamed",
-				"type": "integer",
-				"options": { "notnull": false, "default": 0 }
-			}
-		],
-		"indexes": [
-			{
-				"name": "utr_user",
-				"columns": [ "utr_name", "utr_wiki" ],
-				"unique": true
-			},
-			{
-				"name": "utr_notif",
-				"columns": [ "utr_status" ],
-				"unique": false
-			},
-			{
-				"name": "utr_wiki",
-				"columns": [ "utr_wiki" ],
-				"unique": false
-			}
-		],
-		"pk": [ "utr_id" ]
-	},
-	{
 		"name": "global_edit_count",
 		"comment": "Table for caching the total global edit count",
 		"columns": [

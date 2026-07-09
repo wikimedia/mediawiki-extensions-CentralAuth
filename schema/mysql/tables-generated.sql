@@ -127,18 +127,6 @@ CREATE TABLE /*_*/renameuser_queue (
 ) /*$wgDBTableOptions*/;
 
 
-CREATE TABLE /*_*/users_to_rename (
-  utr_id INT AUTO_INCREMENT NOT NULL,
-  utr_name VARBINARY(255) NOT NULL,
-  utr_wiki VARBINARY(255) NOT NULL,
-  utr_status INT DEFAULT 0,
-  UNIQUE INDEX utr_user (utr_name, utr_wiki),
-  INDEX utr_notif (utr_status),
-  INDEX utr_wiki (utr_wiki),
-  PRIMARY KEY(utr_id)
-) /*$wgDBTableOptions*/;
-
-
 CREATE TABLE /*_*/global_edit_count (
   gec_user INT NOT NULL,
   gec_count INT NOT NULL,

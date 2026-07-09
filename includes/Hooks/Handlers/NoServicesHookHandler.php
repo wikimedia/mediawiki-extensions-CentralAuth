@@ -67,6 +67,14 @@ class NoServicesHookHandler implements
 			"$baseDir/schema/$dbType/patch-add-lu_attachment_method.sql",
 			true
 		] );
+
+		// 1.47
+
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-centralauth',
+			'dropTable',
+			'users_to_rename',
+		] );
 	}
 
 }

@@ -119,19 +119,6 @@ CREATE INDEX rq_newstatus ON /*_*/renameuser_queue (rq_newname, rq_status);
 CREATE INDEX rq_requested_ts ON /*_*/renameuser_queue (rq_requested_ts);
 
 
-CREATE TABLE /*_*/users_to_rename (
-  utr_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
-  utr_name BLOB NOT NULL, utr_wiki BLOB NOT NULL,
-  utr_status INTEGER DEFAULT 0
-);
-
-CREATE UNIQUE INDEX utr_user ON /*_*/users_to_rename (utr_name, utr_wiki);
-
-CREATE INDEX utr_notif ON /*_*/users_to_rename (utr_status);
-
-CREATE INDEX utr_wiki ON /*_*/users_to_rename (utr_wiki);
-
-
 CREATE TABLE /*_*/global_edit_count (
   gec_user INTEGER NOT NULL,
   gec_count INTEGER NOT NULL,
