@@ -20,7 +20,6 @@ use MediaWiki\SpecialPage\FormSpecialPage;
 use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserNameUtils;
-use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -67,14 +66,20 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 		$this->requireNamedUser();
 		$this->addHelpLink( 'Help:Extension:CentralAuth/Global_rename' );
 
+		$user = $this->getUser();
+
+		$caUser = CentralAuthUser::getInstance( $user );
+		if ( !$caUser->exists() || !$caUser->isAttached() ) {
+			$this->getOutput()->addWikiMsg( 'globalvanishrequest-globaluser-error' );
+			return;
+		}
+
 		switch ( $par ) {
 			case 'status':
 				// Render status page
-				$user = $this->getUser();
 				$username = $user->getName();
-				$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
 				$pending = $this->globalRenameRequestStore->newForUser(
-					$username, $wiki
+					$username
 				);
 				if ( !$pending->exists() ) {
 					$this->getOutput()->redirect( $this->getPageTitle()->getFullURL(), 303 );
@@ -96,11 +101,9 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 			default:
 				// Request form
 				$out = $this->getOutput();
-				$user = $this->getUser();
-				$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
 
 				$pending = $this->globalRenameRequestStore->newForUser(
-					$user->getName(), $wiki
+					$user->getName()
 				);
 				if ( $pending->exists() ) {
 					$out->redirect(
@@ -111,16 +114,6 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				parent::execute( $par );
 				break;
 		}
-	}
-
-	/**
-	 * Is the current user a global user?
-	 * @return bool
-	 */
-	protected function isGlobalUser() {
-		$user = $this->getUser();
-		$causer = CentralAuthUser::getInstance( $user );
-		return $causer->exists() && $causer->isAttached();
 	}
 
 	protected function alterForm( HTMLForm $form ) {
@@ -138,11 +131,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @return string
 	 */
 	protected function preHtml() {
-		$msg = $this->msg( 'globalrenamerequest-pretext' )->parse();
-		if ( !$this->isGlobalUser() ) {
-			$msg = $this->msg( 'globalrenamerequest-forced' )->parse() . $msg;
-		}
-		return $msg;
+		return $this->msg( 'globalrenamerequest-pretext' )->parse();
 	}
 
 	/**
@@ -210,18 +199,17 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 			];
 		}
 
-		if ( $this->isGlobalUser() ) {
-			$fields['reason'] = [
-				'cssclass'      => 'mw-globalrenamerequest-field',
-				'default'       => $this->getRequest()->getVal( 'reason', $this->par ),
-				'id'            => 'mw-renamerequest-reason',
-				'label-message' => 'globalrenamerequest-reason-label',
-				'name'          => 'reason',
-				'required'      => true,
-				'rows'          => 5,
-				'type'          => 'textarea',
-			];
-		}
+		$fields['reason'] = [
+			'cssclass'      => 'mw-globalrenamerequest-field',
+			'default'       => $this->getRequest()->getVal( 'reason', $this->par ),
+			'id'            => 'mw-renamerequest-reason',
+			'label-message' => 'globalrenamerequest-reason-label',
+			'name'          => 'reason',
+			'required'      => true,
+			'rows'          => 5,
+			'type'          => 'textarea',
+		];
+
 		return $fields;
 	}
 
@@ -285,13 +273,11 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @return Status
 	 */
 	public function onSubmit( array $data ) {
-		$wiki = $this->isGlobalUser() ? null : WikiMap::getCurrentWikiId();
 		$reason = $data['reason'] ?? null;
 		$safeName = $this->userNameUtils->getCanonical( $data['newname'], UserNameUtils::RIGOR_CREATABLE );
 
 		$request = $this->globalRenameRequestStore->newBlankRequest();
 		$request->setName( $this->getUser()->getName() );
-		$request->setWiki( $wiki );
 		$request->setNewName( $safeName );
 		$request->setReason( $reason );
 

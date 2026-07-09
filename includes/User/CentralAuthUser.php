@@ -1564,42 +1564,6 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * Promote an unattached account to a
-	 * global one, using the provided homewiki
-	 *
-	 * @param string $wiki
-	 * @return StatusValue
-	 */
-	public function promoteToGlobal( $wiki ) {
-		$unattached = $this->queryUnattached();
-		if ( !isset( $unattached[$wiki] ) ) {
-			return StatusValue::newFatal( 'promote-not-on-wiki' );
-		}
-
-		$info = $unattached[$wiki];
-
-		if ( $this->exists() ) {
-			return StatusValue::newFatal( 'promote-already-exists' );
-		}
-
-		$ok = $this->storeGlobalData(
-			$info['password'],
-			$info['email'],
-			$info['emailAuthenticated']
-		);
-		if ( !$ok ) {
-			// Race condition?
-			return StatusValue::newFatal( 'promote-already-exists' );
-		}
-
-		$this->attach( $wiki, 'primary' );
-
-		$this->recordAntiSpoof();
-
-		return StatusValue::newGood();
-	}
-
-	/**
 	 * Choose an email address to use from an array as obtained via self::queryUnattached.
 	 *
 	 * @param array[] $wikisToAttach

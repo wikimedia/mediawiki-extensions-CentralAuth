@@ -110,15 +110,13 @@ class GlobalRenameRequestStore {
 	 * Get the pending rename request for the given user and wiki.
 	 *
 	 * @param string $username
-	 * @param string|null $wiki
 	 * @param int $flags One of the IDBAccessObject::READ_* constants
 	 * @return GlobalRenameRequest
 	 */
-	public function newForUser( string $username, $wiki, int $flags = IDBAccessObject::READ_NORMAL ) {
+	public function newForUser( string $username, int $flags = IDBAccessObject::READ_NORMAL ) {
 		return $this->newFromRow(
 			$this->fetchRowFromDB( [
 				'rq_name'   => $username,
-				'rq_wiki'   => $wiki,
 				'rq_status' => GlobalRenameRequest::PENDING,
 			], $flags )
 		);

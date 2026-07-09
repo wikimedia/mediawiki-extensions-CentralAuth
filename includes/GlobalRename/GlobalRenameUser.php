@@ -274,7 +274,6 @@ class GlobalRenameUser {
 			'reattach' => $wikisAttached,
 			'movepages' => $options['movepages'],
 			'suppressredirects' => $options['suppressredirects'],
-			'promotetoglobal' => false,
 			'reason' => $options['reason'],
 			'force' => isset( $options['force'] ) && $options['force'],
 			'type' => $options['type'] ?? GlobalRenameRequest::RENAME,

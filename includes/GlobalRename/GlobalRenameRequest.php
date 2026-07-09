@@ -278,13 +278,6 @@ class GlobalRenameRequest {
 	}
 
 	/**
-	 * @return bool
-	 */
-	public function userIsGlobal() {
-		return $this->wiki === null;
-	}
-
-	/**
 	 * @internal
 	 * @param stdClass $row Database row
 	 */

@@ -49,35 +49,6 @@ class GlobalRenameUserLogger {
 	}
 
 	/**
-	 * Log the promotion of a local unattached to a global
-	 *
-	 * @param string $oldName
-	 * @param string $wiki
-	 * @param string $newName
-	 * @param string $reason
-	 */
-	public function logPromotion( $oldName, $wiki, $newName, $reason ) {
-		// The following message is generated here:
-		// * logentry-gblrename-promote
-		$logEntry = new ManualLogEntry( 'gblrename', 'promote' );
-		$logEntry->setPerformer( $this->performingUser );
-		$logEntry->setTarget( SpecialPage::getTitleFor( 'CentralAuth', $newName ) );
-		$logEntry->setComment( $reason );
-		$logEntry->setParameters( [
-			'4::olduser' => $oldName,
-			'5::newuser' => $newName,
-			'6::oldwiki' => $wiki,
-		] );
-
-		$logEntry->setRelations( [
-			'oldname' => $oldName,
-		] );
-
-		$logid = $logEntry->insert();
-		$logEntry->publish( $logid );
-	}
-
-	/**
 	 * This method does not check log_deleted, and thus will reveal the existence of hidden rename log
 	 * entries. This seems unavoidable: we have to reveal that the username can't be registered when
 	 * someone tries to register it, and there is no other plausible error message we could give.

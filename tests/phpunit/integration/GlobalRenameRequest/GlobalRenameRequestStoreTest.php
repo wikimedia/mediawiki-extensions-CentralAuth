@@ -24,14 +24,13 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 			$this->allValidUserNameUtils()
 		);
 
-		$request = $this->createSampleRequest( $store, 'abcwiki' );
+		$request = $this->createSampleRequest( $store );
 
 		$id = $this->getDb()->newSelectQueryBuilder()
 			->select( 'rq_id' )
 			->from( 'renameuser_queue' )
 			->where( [
 				'rq_name' => 'Example',
-				'rq_wiki' => 'abcwiki',
 				'rq_newname' => 'Test',
 				'rq_reason' => 'I ate too many bananas.',
 				'rq_status' => GlobalRenameRequest::PENDING,
@@ -71,42 +70,29 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 		$this->assertFalse( $blankRequest->exists() );
 	}
 
-	/**
-	 * @dataProvider provideWiki
-	 */
-	public function testNewForUser( $wiki ) {
+	public function testNewForUser() {
 		$store = new GlobalRenameRequestStore(
 			$this->getMockDbManager(),
 			$this->allValidUserNameUtils()
 		);
 
-		$request = $this->createSampleRequest( $store, $wiki );
+		$request = $this->createSampleRequest( $store );
 
-		$retrieved = $store->newForUser( 'Example', $wiki );
+		$retrieved = $store->newForUser( 'Example' );
 
 		$this->assertEquals( $request->getId(), $retrieved->getId() );
 		$this->assertEquals( $request->getReason(), $retrieved->getReason() );
 	}
 
-	/**
-	 * @dataProvider provideWiki
-	 */
-	public function testNewFromId( $wiki ) {
+	public function testNewFromId() {
 		$store = new GlobalRenameRequestStore(
 			$this->getMockDbManager(),
 			$this->allValidUserNameUtils()
 		);
 
-		$request = $this->createSampleRequest( $store, $wiki );
+		$request = $this->createSampleRequest( $store );
 		$retrieved = $store->newFromId( $request->getId() );
 		$this->assertEquals( $request->getReason(), $retrieved->getReason() );
-	}
-
-	public static function provideWiki(): array {
-		return [
-			'null' => [ null ],
-			'set' => [ 'abcwiki' ],
-		];
 	}
 
 	public function testNameHasPendingRequest() {
@@ -123,13 +109,11 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 
 	/**
 	 * @param GlobalRenameRequestStore $store
-	 * @param string|null $wiki
 	 * @return GlobalRenameRequest
 	 */
-	private function createSampleRequest( GlobalRenameRequestStore $store, $wiki ): GlobalRenameRequest {
+	private function createSampleRequest( GlobalRenameRequestStore $store ): GlobalRenameRequest {
 		$request = $store->newBlankRequest();
 		$request->setName( 'Example' );
-		$request->setWiki( $wiki );
 		$request->setNewName( 'Test' );
 		$request->setReason( 'I ate too many bananas.' );
 		$request->setType( GlobalRenameRequest::RENAME );

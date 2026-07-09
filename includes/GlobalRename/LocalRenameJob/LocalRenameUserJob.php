@@ -32,7 +32,6 @@ class LocalRenameUserJob extends LocalRenameJob {
 	 *   reattach - after rename, attach the local account. When used, should be set to
 	 *     [ wiki ID => [ 'attachedMethod' => method, 'attachedTimestamp' => timestamp ].
 	 *     See CentralAuthUser::queryAttached. (default: false)
-	 *   promotetoglobal - globalize the new user account (default: false)
 	 *   session - session data from RequestContext::exportSession, for checkuser data
 	 *   ignorestatus - ignore update status, run the job even if it seems like another job
 	 *     is already working on it
@@ -41,9 +40,6 @@ class LocalRenameUserJob extends LocalRenameJob {
 		$this->command = 'LocalRenameUserJob';
 
 		// For back-compat
-		if ( !isset( $params['promotetoglobal'] ) ) {
-			$params['promotetoglobal'] = false;
-		}
 		if ( !isset( $params['reason'] ) ) {
 			$params['reason'] = '';
 		}
@@ -127,30 +123,7 @@ class LocalRenameUserJob extends LocalRenameJob {
 			$this->movePages( $oldUser );
 		}
 
-		if ( $this->params['promotetoglobal'] ) {
-			$this->promoteToGlobal();
-		}
-
 		$this->done();
-	}
-
-	private function promoteToGlobal() {
-		$newName = $this->params['to'];
-		$caUser = CentralAuthUser::getPrimaryInstanceByName( $newName );
-		$status = $caUser->promoteToGlobal( WikiMap::getCurrentWikiId() );
-		if ( !$status->isOK() ) {
-			if ( $status->hasMessage( 'promote-not-on-wiki' ) ) {
-				// Eh, what?
-				throw new LogicException( "Tried to promote '$newName' to a global account except it " .
-					"doesn't exist locally" );
-			} elseif ( $status->hasMessage( 'promote-already-exists' ) ) {
-				// Even more wtf.
-				throw new LogicException( "Tried to prommote '$newName' to a global account except it " .
-					"already exists" );
-			}
-		}
-
-		$caUser->quickInvalidateCache();
 	}
 
 	/**

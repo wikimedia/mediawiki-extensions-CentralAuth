@@ -17,7 +17,6 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
-use MediaWiki\Extension\CentralAuth\GlobalRename\LocalRenameJob\LocalRenameUserJob;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
@@ -566,14 +565,9 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			] )
 			->setId( 'mw-globalrenamequeue-request' );
 
-		if ( $req->userIsGlobal() ) {
-			$globalUser = CentralAuthUser::getInstanceByName( $req->getName() );
-			$homeWiki = $globalUser->getHomeWiki();
-			$infoMsgKey = $globalUserInfoMsg;
-		} else {
-			$homeWiki = $req->getWiki();
-			$infoMsgKey = 'globalrenamequeue-request-userinfo-local';
-		}
+		$globalUser = CentralAuthUser::getInstanceByName( $req->getName() );
+		$homeWiki = $globalUser->getHomeWiki();
+		$infoMsgKey = $globalUserInfoMsg;
 
 		if ( $homeWiki === null ) {
 			$homeLink = Title::makeTitleSafe( NS_USER, $req->getName() )->getFullURL();
@@ -602,16 +596,17 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		if ( !$isVanishRequest ) {
 			$infoMsgArgs[] = $req->getNewName();
 		}
-		$infoMsg = $this->msg( ...$infoMsgArgs );
 
-		if ( isset( $globalUser ) ) {
-			$infoMsg->numParams( $globalUser->getGlobalEditCount() );
-			$infoMsg->params( $this->msg(
+		$infoMsg = $this
+			->msg( ...$infoMsgArgs )
+			->numParams( $globalUser->getGlobalEditCount() )
+			->params(
+				$this->msg(
 				$globalUser->isBlocked() ?
 					'globalrenamequeue-request-vanish-user-blocked' :
 					'globalrenamequeue-request-vanish-user-not-blocked'
-			) );
-		}
+				),
+			);
 
 		$htmlForm->addHeaderHtml( $infoMsg->parseAsBlock() );
 
@@ -742,64 +737,35 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 				return StatusValue::newFatal( 'globalrenamerequest-self-error' );
 			}
 
-			if ( $request->userIsGlobal() ) {
-				$data['type'] = $request->getType();
+			$data['type'] = $request->getType();
 
-				$globalRenameUser = $this->globalRenameFactory
-					->newGlobalRenameUser(
-						$this->getUser(),
-						CentralAuthUser::getInstanceByName( $request->getName() ),
-						$request->getNewName()
-					)
-					->withSession( $session );
+			$globalRenameUser = $this->globalRenameFactory
+				->newGlobalRenameUser(
+					$this->getUser(),
+					CentralAuthUser::getInstanceByName( $request->getName() ),
+					$request->getNewName()
+				)
+				->withSession( $session );
 
-				// Credit the vanish performer with account locking logs for
-				// vanish requests. Renamers cannot normally perform locks and
-				// thus should not be associated with them.
-				if ( $request->getType() === GlobalRenameRequest::VANISH ) {
-					$vanishPerformerName = $this->getConfig()
-						->get( CAMainConfigNames::CentralAuthAutomaticVanishPerformer );
+			// Credit the vanish performer with account locking logs for
+			// vanish requests. Renamers cannot normally perform locks and
+			// thus should not be associated with them.
+			if ( $request->getType() === GlobalRenameRequest::VANISH ) {
+				$vanishPerformerName = $this->getConfig()
+					->get( CAMainConfigNames::CentralAuthAutomaticVanishPerformer );
 
-					if ( $vanishPerformerName !== null ) {
-						$localVanishPerformer = $this->userIdentityLookup
-							->getUserIdentityByName( $vanishPerformerName );
+				if ( $vanishPerformerName !== null ) {
+					$localVanishPerformer = $this->userIdentityLookup
+						->getUserIdentityByName( $vanishPerformerName );
 
-						if ( $localVanishPerformer !== null ) {
-							$globalRenameUser = $globalRenameUser->withLockPerformingUser( $localVanishPerformer );
-						}
+					if ( $localVanishPerformer !== null ) {
+						$globalRenameUser = $globalRenameUser->withLockPerformingUser( $localVanishPerformer );
 					}
 				}
-
-				// Trigger a global rename job
-				$status = $globalRenameUser->rename( $data );
-			} else {
-				// If the user is local-only:
-				// * rename the local user using LocalRenameUserJob
-				// * create a global user attached only to the local wiki
-				$job = new LocalRenameUserJob(
-					Title::newFromText( 'Global rename job' ),
-					[
-						'from' => $oldUser->getName(),
-						'to' => $newUser->getName(),
-						'renamer' => $this->getUser()->getName(),
-						'movepages' => true,
-						'suppressredirects' => true,
-						'promotetoglobal' => true,
-						'reason' => $data['reason'],
-						'session' => $session,
-						'type' => $request->getType(),
-					]
-				);
-				$this->jobQueueGroupFactory->makeJobQueueGroup( $request->getWiki() )->push( $job );
-				// Now log it
-				$this->logPromotionRename(
-					$oldUser->getName(),
-					$request->getWiki(),
-					$newUser->getName(),
-					$data['reason']
-				);
-				$status = StatusValue::newGood();
 			}
+
+			// Trigger a global rename job
+			$status = $globalRenameUser->rename( $data );
 		}
 
 		if ( $status->isGood() ) {
@@ -877,15 +843,8 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 					)->inContentLanguage()->text();
 				}
 
-				if ( $request->userIsGlobal() || $request->getWiki() === WikiMap::getCurrentWikiId() ) {
-					$notifyEmail = MailAddress::newFromUser( $oldUser );
-				} else {
-					$notifyEmail = $this->getRemoteUserMailAddress(
-						$request->getWiki(), $request->getName()
-					);
-				}
-
-				if ( $notifyEmail !== null && $notifyEmail->address ) {
+				$notifyEmail = MailAddress::newFromUser( $oldUser );
+				if ( $notifyEmail->address ) {
 					$type = $approved ? 'approval' : 'rejection';
 					$this->logger->info( "Send $type email to User:{oldName}", [
 						'oldName' => $oldUser->getName(),
@@ -898,46 +857,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			}
 		}
 		return $status;
-	}
-
-	/**
-	 * Log a promotion to global rename in the global rename log
-	 *
-	 * @param string $oldName
-	 * @param string $wiki
-	 * @param string $newName
-	 * @param string $reason
-	 */
-	protected function logPromotionRename( $oldName, $wiki, $newName, $reason ) {
-		$logger = new GlobalRenameUserLogger( $this->getUser() );
-		$logger->logPromotion( $oldName, $wiki, $newName, $reason );
-	}
-
-	/**
-	 * Get a MailAddress for a user on a remote wiki
-	 *
-	 * @param string $wiki
-	 * @param string $username
-	 * @return MailAddress|null
-	 */
-	protected function getRemoteUserMailAddress( $wiki, $username ) {
-		$remoteDB = $this->dbProvider->getReplicaDatabase( $wiki );
-		$row = $remoteDB->newSelectQueryBuilder()
-			->select( [ 'user_email', 'user_name', 'user_real_name' ] )
-			->from( 'user' )
-			->where( [
-				'user_name' => $this->userNameUtils->getCanonical( $username ),
-			] )
-			->caller( __METHOD__ )
-			->fetchRow();
-		if ( $row === false ) {
-			$address = null;
-		} else {
-			$address = new MailAddress(
-				$row->user_email, $row->user_name, $row->user_real_name
-			);
-		}
-		return $address;
 	}
 
 	/**
@@ -969,18 +888,13 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			return StatusValue::newGood();
 		}
 
-		if ( $request->userIsGlobal() ) {
-			$globalUser = CentralAuthUser::getInstanceByName( $request->getName() );
-			$homeWiki = $globalUser->getHomeWiki();
-			$globalEditCount = $globalUser->getGlobalEditCount();
-			$isBlocked = $globalUser->isBlocked() ?
-				'globalrenamequeue-request-vanish-user-blocked' :
-				'globalrenamequeue-request-vanish-user-not-blocked';
-		} else {
-			$homeWiki = $request->getWiki();
-			$globalEditCount = '';
-			$isBlocked = 'globalrenamequeue-request-vanish-user-not-blocked';
-		}
+		$globalUser = CentralAuthUser::getInstanceByName( $request->getName() );
+		$homeWiki = $globalUser->getHomeWiki();
+		$globalEditCount = $globalUser->getGlobalEditCount();
+		$isBlocked = $globalUser->isBlocked() ?
+			'globalrenamequeue-request-vanish-user-blocked' :
+			'globalrenamequeue-request-vanish-user-not-blocked';
+
 		// This should never be null except in dev/testing environment.
 		$homeWikiWiki = $homeWiki ? WikiMap::getWiki( $homeWiki ) : null;
 		$rejector = CentralAuthUser::newFromId( $request->getPerformer() );
