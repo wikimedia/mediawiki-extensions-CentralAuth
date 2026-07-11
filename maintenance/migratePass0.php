@@ -1,7 +1,7 @@
 <?php
 // --> disable account creations, password changes
 // pass 0:
-// * generate 'globalnames' and 'localnames' entries for each user on each wiki
+// * generate 'localnames' entries for each user on each wiki
 // --> enable
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
@@ -14,12 +14,13 @@ if ( $IP === false ) {
 require_once "$IP/maintenance/Maintenance.php";
 // @codeCoverageIgnoreEnd
 
-use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Maintenance\Maintenance;
+use MediaWiki\WikiMap\WikiMap;
 
 /**
- * Copy user data for this wiki into the globalnames and localnames table
+ * Copy user data for this wiki into the localnames table
  */
 class MigratePass0 extends Maintenance {
 
@@ -37,13 +38,14 @@ class MigratePass0 extends Maintenance {
 	}
 
 	private function doPassZero() {
-		$databaseName = $this->getConfig()->get( MainConfigNames::DBname );
 		$dbr = $this->getReplicaDB();
 		$chunkSize = 1000;
 
 		$start = microtime( true );
 		$migrated = 0;
 		$users = [];
+
+		$caDbManager = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() );
 
 		// List all user accounts on this wiki in the migration table
 		// on the central authentication server.
@@ -67,18 +69,28 @@ class MigratePass0 extends Maintenance {
 				->fetchResultSet();
 
 			foreach ( $result as $row ) {
-				$users[intval( $row->user_id )] = $row->user_name;
+				$users[] = [
+					'ln_wiki' => WikiMap::getCurrentWikiId(),
+					'ln_name' => $row->user_name,
+				];
 				++$migrated;
 			}
 
-			CentralAuthUser::storeMigrationData( $databaseName, $users );
+			$caDbManager
+				->getCentralPrimaryDB()
+				->newInsertQueryBuilder()
+				->insertInto( 'localnames' )
+				->ignore()
+				->rows( $users )
+				->caller( __METHOD__ )
+				->execute();
+
 			// clear the array for the next pass
 			$users = [];
 
 			$delta = microtime( true ) - $start;
 			$rate = $delta ? $migrated / $delta : 0.0;
-			$this->output( sprintf( "%s %d (%0.1f%%) done in %0.1f secs (%0.3f accounts/sec).\n",
-				$databaseName,
+			$this->output( sprintf( "%d (%0.1f%%) done in %0.1f secs (%0.3f accounts/sec).\n",
 				$migrated,
 				min( $max, $lastUser ) / $lastUser * 100.0,
 				$delta,

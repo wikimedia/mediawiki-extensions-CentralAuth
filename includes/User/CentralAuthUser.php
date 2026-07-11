@@ -1251,42 +1251,6 @@ class CentralAuthUser implements IDBAccessObject {
 	}
 
 	/**
-	 * For use in migration pass zero.
-	 * Store local user data into the auth server's migration table.
-	 * @param string $wiki Source wiki ID
-	 * @param array $users Associative array of ids => names
-	 */
-	public static function storeMigrationData( $wiki, $users ) {
-		if ( !$users ) {
-			return;
-		}
-
-		$globalTuples = [];
-		$tuples = [];
-		foreach ( $users as $name ) {
-			$globalTuples[] = [ 'gn_name' => $name ];
-			$tuples[] = [
-				'ln_wiki' => $wiki,
-				'ln_name' => $name
-			];
-		}
-
-		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
-		$dbw->newInsertQueryBuilder()
-			->insertInto( 'globalnames' )
-			->ignore()
-			->rows( $globalTuples )
-			->caller( __METHOD__ )
-			->execute();
-		$dbw->newInsertQueryBuilder()
-			->insertInto( 'localnames' )
-			->ignore()
-			->rows( $tuples )
-			->caller( __METHOD__ )
-			->execute();
-	}
-
-	/**
 	 * Store global user data in the auth server's main table.
 	 *
 	 * @param string $hash

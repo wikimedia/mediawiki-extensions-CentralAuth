@@ -59,8 +59,8 @@ class MigrateInitialAccountsTask extends \MediaWiki\Installer\Task\Task {
 
 		foreach ( $users as $user ) {
 			$dbw->doAtomicSection( __METHOD__, function ( $dbw, $fname ) use ( $user ) {
-				// Unlike migratePass0/1, we don't need to store anything into globalnames and localnames,
-				// these tables are only used for incomplete migrations and we're doing a complete one.
+				// Unlike migratePass0/1, we don't need to store anything into localnames,
+				// that table is only used for incomplete migrations and we're doing a complete one.
 
 				// See CentralAuthUser::storeGlobalData()
 				$dbw->newInsertQueryBuilder()

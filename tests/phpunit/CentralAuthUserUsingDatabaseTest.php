@@ -121,24 +121,6 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED, $caUser->getHiddenLevelInt() );
 	}
 
-	public function testStoreMigrationData() {
-		$caUsers = [
-			'2001' => 'StoreMigrationDataUser 1',
-			'2002' => 'StoreMigrationDataUser 2',
-			'2003' => 'StoreMigrationDataUser 3',
-		];
-		CentralAuthUser::storeMigrationData( 'smdwiki', $caUsers );
-		$this->newSelectQueryBuilder()
-			->select( 'ln_name' )
-			->from( 'localnames' )
-			->where( [ 'ln_wiki' => 'smdwiki' ] )
-			->assertResultSet( [
-				[ 'StoreMigrationDataUser 1' ],
-				[ 'StoreMigrationDataUser 2' ],
-				[ 'StoreMigrationDataUser 3' ],
-			] );
-	}
-
 	public function testAdminLockAndHide() {
 		$globalAccountUsername = $this->getTestCentralAuthUserWithExistingLocalWikis();
 		$caUser = CentralAuthUser::getPrimaryInstanceByName( $globalAccountUsername );
@@ -261,7 +243,20 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$wikiId = WikiMap::getCurrentWikiId();
 
 		// Pass 0 migration
-		CentralAuthUser::storeMigrationData( $wikiId, $users );
+		CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )
+			->getCentralPrimaryDB()
+			->newInsertQueryBuilder()
+			->insertInto( 'localnames' )
+			->ignore()
+			->rows(
+				array_map(
+					static fn ( UserIdentity $user )
+						=> [ 'ln_wiki' => $wikiId, 'ln_name' => $user->getName() ],
+					$users,
+				),
+			)
+			->caller( __METHOD__ )
+			->execute();
 
 		// Pass 1 migration
 		$results = [];
