@@ -2,12 +2,6 @@
 -- Source: schema/tables.json
 -- Do not modify this file directly.
 -- See https://www.mediawiki.org/wiki/Manual:Schema_changes
-CREATE TABLE /*_*/globalnames (
-  gn_name VARBINARY(255) NOT NULL,
-  PRIMARY KEY(gn_name)
-) /*$wgDBTableOptions*/;
-
-
 CREATE TABLE /*_*/localnames (
   ln_wiki VARBINARY(255) NOT NULL,
   ln_name VARBINARY(255) NOT NULL,

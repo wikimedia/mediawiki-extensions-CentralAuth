@@ -2,12 +2,6 @@
 -- Source: schema/tables.json
 -- Do not modify this file directly.
 -- See https://www.mediawiki.org/wiki/Manual:Schema_changes
-CREATE TABLE /*_*/globalnames (
-  gn_name BLOB NOT NULL,
-  PRIMARY KEY(gn_name)
-);
-
-
 CREATE TABLE /*_*/localnames (
   ln_wiki BLOB NOT NULL,
   ln_name BLOB NOT NULL,

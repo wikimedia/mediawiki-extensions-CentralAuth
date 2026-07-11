@@ -84,6 +84,12 @@ class NoServicesHookHandler implements
 			'runMaintenance',
 			PopulateLuAttachmentMethod::class,
 		] );
+
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-centralauth',
+			'dropTable',
+			'globalnames',
+		] );
 	}
 
 }
