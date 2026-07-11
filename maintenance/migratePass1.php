@@ -1,7 +1,7 @@
 <?php
 // pass 1:
 // * generate 'globaluser' entries for each username
-// * go through all usernames in 'globalnames' and for those
+// * go through all usernames in 'localnames' and for those
 // that can be automatically migrated, go ahead and do it.
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
@@ -17,7 +17,9 @@ require_once "$IP/maintenance/Maintenance.php";
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
+use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Rdbms\IDBAccessObject;
+use Wikimedia\Timestamp\TimestampFormat;
 
 class MigratePass1 extends Maintenance {
 
@@ -45,15 +47,16 @@ class MigratePass1 extends Maintenance {
 
 		$this->start = microtime( true );
 		$result = $dbBackground->newSelectQueryBuilder()
-			->select( 'gn_name' )
-			->from( 'globalnames' )
+			->select( 'ln_name' )
+			->from( 'localnames' )
+			->where( [ 'ln_wiki' => WikiMap::getCurrentWikiId() ] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
 
 		$this->totalRowCount = $result->numRows();
 		foreach ( $result as $row ) {
-			$this->fromPrefix = $row->gn_name;
-			$central = new CentralAuthUser( $row->gn_name, IDBAccessObject::READ_LATEST );
+			$this->fromPrefix = $row->ln_name;
+			$central = new CentralAuthUser( $row->ln_name, IDBAccessObject::READ_LATEST );
 			if ( $central->storeAndMigrate() ) {
 				$this->migrated++;
 			}
@@ -69,7 +72,7 @@ class MigratePass1 extends Maintenance {
 		$delta = microtime( true ) - $this->start;
 		$this->output( sprintf(
 			"%s: processed %d of %d usernames (%.1f%%; %.1f/sec) , %d (%.1f%%) processed fully migrated (@ %s)\n",
-			wfTimestamp( TS_DB ),
+			wfTimestamp( TimestampFormat::DB ),
 			$this->total,
 			$this->totalRowCount,
 			$this->total / $this->totalRowCount * 100.0,
