@@ -211,7 +211,6 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 		// 'wikiid': The wiki where the user is being auto-logged in. (used in checkIsCentralWiki)
 		// 'token': Random store key, used to pass information in a secure manner.
 
-		// phpcs:disable PSR2.ControlStructures.SwitchDeclaration.BreakIndent
 		switch ( strval( $par ) ) {
 			// Extra steps, not part of the login process
 			case 'toolslist':
