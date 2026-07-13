@@ -337,7 +337,6 @@
 	"globalrenamequeue-request-status-title": "\"$1\" থেকে \"$2\"-এ নামান্তর করুন",
 	"globalrenamequeue-request-title": "\"$1\" কে নামান্তর করবেন?",
 	"globalrenamequeue-request-userinfo-global": "* বর্তমান ব্যবহারকারী নাম: [[Special:CentralAuth/$1|$1]]\n* মূল উইকি: $2\n* নতুন ব্যবহারকারী নাম: [[Special:CentralAuth/$3|$3]]\n* বৈশ্বিক সম্পাদনা গণনা: $4",
-	"globalrenamequeue-request-userinfo-local": "* ব্যবহারকারী: [[Special:CentralAuth/$1|$1]]\n* মূল উইকি: $2\n* নতুন নাম: [[Special:CentralAuth/$3|$3]]",
 	"globalrenamequeue-request-vanish-userinfo": "* বর্তমান ব্যবহারকারী নাম: [[Special:CentralAuth/$1|$1]]\n* নীড় উইকি: $2 \n* বৈশ্বিক সম্পাদনার সংখ্যা: $3 \n* ইনি বাধাপ্রাপ্ত: $4",
 	"globalrenamequeue-request-vanish-user-blocked": "হ্যাঁ",
 	"globalrenamequeue-request-vanish-user-not-blocked": "না",

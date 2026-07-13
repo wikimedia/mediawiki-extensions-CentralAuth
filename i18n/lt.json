@@ -395,7 +395,6 @@
 	"globalrenamequeue-request-unknown-body": "Pervadinimo prašymas nerastas.",
 	"globalrenamequeue-request-unknown-title": "Prašymas nerastas",
 	"globalrenamequeue-request-userinfo-global": "* dabartinis naudotojo vardas: [[Special:CentralAuth/$1|$1]]\n* pagrindinė viki: $2\n* naujas naudotojo vardas: [[Special:CentralAuth/$3|$3]]\n* bendras pakeitimų skaičius: $4",
-	"globalrenamequeue-request-userinfo-local": "* naudotojas: [[Special:CentralAuth/$1|$1]]\n* pagrindinė viki: $2\n* naujas vardas: [[Special:CentralAuth/$3|$3]]",
 	"globalrenamequeue-view": ";Iš:\n:[[Special:CentralAuth/$1|$1]]\n;Į:\n:[[Special:CentralAuth/$2|$2]]\n;Priežastis:\n$3\n;Būsena:\n:$4\n;Prašymas pateiktas:\n:$5\n;Baigta:\n:$6\n;Atliko:\n:[$7 $8]\n;Pastabos:\n:$9",
 	"globalrenamequeue-view-approved": "patvirtinta",
 	"globalrenamequeue-view-rejected": "atmesta",

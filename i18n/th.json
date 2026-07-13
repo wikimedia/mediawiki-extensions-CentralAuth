@@ -347,7 +347,6 @@
 	"globalrenamequeue-request-unknown-body": "ไม่พบคำขอเปลี่ยนชื่อ",
 	"globalrenamequeue-request-unknown-title": "ไม่พบคำขอ",
 	"globalrenamequeue-request-userinfo-global": "* ชื่อผู้ใช้ปัจจุบัน: [[Special:CentralAuth/$1|$1]]\n* วิกิเหย้า: $2 \n* ชื่อผู้ใช้ใหม่: [[Special:CentralAuth/$3|$3]]\n* จำนวนการแก้ไขข้ามโครงการ: $4",
-	"globalrenamequeue-request-userinfo-local": "* ผู้ใช้: [[Special:CentralAuth/$1|$1]]\n* วิกิเหย้า: $2 \n* ชื่อใหม่: [[Special:CentralAuth/$3|$3]]",
 	"globalrenamequeue-view": ";จาก:\n:[[Special:CentralAuth/$1|$1]]\n;เป็น:\n:[[Special:CentralAuth/$2|$2]]\n;เหตุผล:\n:$3\n;สถานะ:\n:$4\n;ขอเมื่อ:\n:$5\n;สำเร็จเมื่อ:\n:$6\n;ดำเนินการโดย:\n:[$7 $8]\n;หมายเหตุ:\n:$9",
 	"globalrenamequeue-view-approved": "อนุมัติแล้ว",
 	"globalrenamequeue-view-rejected": "ปฏิเสธแล้ว",

@@ -286,7 +286,6 @@
 	"globalrenamequeue-request-unknown-body": "Есім өзгерту сұранысы табылмады.",
 	"globalrenamequeue-request-unknown-title": "Сұраныстар табылмады",
 	"globalrenamequeue-request-userinfo-global": "* қатысушы: [[Special:CentralAuth/$1|$1]]\n* тіркелген уикиі: $2\n* жаңа есімі: [[Special:CentralAuth/$3|$3]]",
-	"globalrenamequeue-request-userinfo-local": "* қатысушы: [[Special:CentralAuth/$1|$1]]\n* тіркелген уикиі: $2\n* жаңа есімі: [[Special:CentralAuth/$3|$3]]",
 	"globalrenamequeue-view": ";Мына есімнен:\n:[[Special:CentralAuth/$1|$1]]\n;мына есімге:\n:[[Special:CentralAuth/$2|$2]]\n;Себебі:\n$3\n;Статусы:\n:$4\n;Сұраныс жасалған:\n:$5\n;Аяқтаған:\n:$6\n;Істеген:\n:[$7 $8]\n;Ескертулер:\n:$9",
 	"globalrenamequeue-view-approved": "қабылдады",
 	"globalrenamequeue-view-rejected": "қабылдамады",

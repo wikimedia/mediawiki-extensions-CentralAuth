@@ -316,7 +316,6 @@
 	"globalrenamerequest-email-why-explain": "Kami memerlukan alamat e-mel ketika proses ini untuk memastikan agar anda tidak kehilangan akses ke akaun ini.<br />Anda boleh menggugurkan alamat e-mel itu selepas proses penukaran nama selesai.",
 	"globalrenamerequest-email2-help": "Isikan alamat e-mel yang sama seperti yang diisikan untuk pengesahan.",
 	"globalrenamerequest-email2-label": "Sahkan alamat e-mel:",
-	"globalrenamerequest-forced": "Ladang wiki ini sedang menyatukan nama-nama pengguna antara semua projek. Nama pengguna ini telah dikenal pasti sebagai sedang digunakan dalam wiki-wiki lain dan mesti ditukar untuk menyempurnakan penyatuan ini. Oleh itu anda mesti memilih nama pengguna yang baru.",
 	"globalrenamerequest-legend": "Permohonan tukar nama untuk penyatuan",
 	"globalrenamerequest-newname-err-invalid": "Anda belum menyatakan nama pengguna yang sah.",
 	"globalrenamerequest-newname-err-taken": "Nama pengguna yang diberikan sudah dipakai. Sila pilih nama yang lain.",

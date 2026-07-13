@@ -357,7 +357,6 @@
 	"globalrenamerequest-email-why-explain": "E-posti aadressi on vaja veendumaks, et sa ei kaota ümbernimetamise jooksul juurdepääsu sellele kontole.<br />Saad e-posti aadressi eemaldada, kui ümbernimetamine on lõpule viidud.",
 	"globalrenamerequest-email2-help": "Sisesta kinnituseks sama e-posti aadress, mille sisestasid ülal.",
 	"globalrenamerequest-email2-label": "E-posti aadressi kinnitus:",
-	"globalrenamerequest-forced": "See vikipark ühtlustab kasutajanimed kõigis projektides. Tuvastati, et seda kasutajanime kasutatakse teistes vikides ja see tuleb muuta, et ühtlustamine lõpule viia. Seega pead valima uue kasutajanime.",
 	"globalrenamerequest-newname-err-invalid": "Sa pole määranud sobivat kasutajanime.",
 	"globalrenamerequest-newname-err-taken": "Sisestatud kasutajanimi on juba kasutuses. Palun vali erinev nimi.",
 	"globalrenamerequest-newname-help": "Sisesta uus kasutajanimi, mida kasutada soovid, nt \"$1\".",

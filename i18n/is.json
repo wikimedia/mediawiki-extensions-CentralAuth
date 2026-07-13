@@ -298,7 +298,6 @@
 	"globalrenamerequest-email-mismatch": "Tölvupóstföngin eru mismunandi.<br>Vinsamlegast athugaðu bæði og reyndu aftur.",
 	"globalrenamerequest-email2-help": "Ritaðu sama tölvupóstfangið og að ofan til staðfestingar.",
 	"globalrenamerequest-email2-label": "Staðfestu tölvupóstfangið:",
-	"globalrenamerequest-forced": "Þetta wiki-bú er að sameina notandanöfn á öllum verkefnum. Þetta notandanafn greindist í notkun á öðrum wiki og verður að vera breytt til að ljúka þessari sameiningu. Þar af leiðandi verður þú að velja nýtt notandanafn.",
 	"globalrenamerequest-newname-err-invalid": "Þú hefur ekki tilgreint gilt notandanafn.",
 	"globalrenamerequest-newname-err-taken": "Ritað notandanafn er þegar í notkun. Vinsamlegast veldu annað nafn.",
 	"globalrenamerequest-newname-help": "Settu inn nýja notandanafnið sem þú vilt nota, t.d. \"$1\".",
