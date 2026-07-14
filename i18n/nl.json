@@ -495,6 +495,7 @@
 	"globalrenamerequest-email-why-explain": "We hebben tijdens dit proces een e-mailadres nodig om ervoor te zorgen dat u de toegang tot dit account niet verliest.<br />U kunt het e-mailadres weer verwijderen zodra na het hernoemingsproces is afgerond.",
 	"globalrenamerequest-email2-help": "Voer het e-mnailadres ter bevestiging nogmaals in.",
 	"globalrenamerequest-email2-label": "E-mailadres bevestigen:",
+	"globalrenamerequest-error-notglobal": "Om een naamswijziging aan te vragen, moet u uw gebruikersaccount koppelen aan een globaal account.",
 	"globalrenamerequest-legend": "Verzoek om gebruikers eenduidig te hernoemen.",
 	"globalrenamerequest-newname-err-invalid": "U hebt een ongeldige gebruikersnaam opgegeven.",
 	"globalrenamerequest-newname-err-taken": "De gekozen gebruikersnaam is al in gebruik.\nKies een andere naam.",
