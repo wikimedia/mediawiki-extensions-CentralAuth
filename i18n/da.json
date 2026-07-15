@@ -278,7 +278,7 @@
 	"centralauth-merge-denied": "Beklager, du har ikke rettigheder til at bruge denne side.",
 	"centralauth-merge-dryrun-complete": "Alle eksisterende konti kan automatisk slås sammen.\n\nDine konti er ikke blevet ændret endnu.",
 	"centralauth-merge-dryrun-home": "Systemet til kontosammenlægning kunne ikke bekræfte at du er ejeren af kontoen på hjemwikien.\n\nEn anden wiki blev udpeget som hjemwiki for dit brugernavn; følg henvisningen nedenfor og log på der for at fuldføre kontosammenlægningen.",
-	"centralauth-merge-dryrun-incomplete": "Du er klar til at fortsætte, men nogen konti kunne ikke bekræftes automatisk og vil ikke blive slået sammen med det samme.\nDu vil kunne slå disse sammen senere.\n\nDine konti er ikke blevet ændret endnu.",
+	"centralauth-merge-dryrun-incomplete": "Du er klar til at fortsætte, men nogle konti kunne ikke bekræftes automatisk og vil ikke blive slået sammen med det samme.\nDu vil kunne slå disse sammen senere.\n\nDine konti er ikke blevet ændret endnu.",
 	"centralauth-merge-dryrun-or": "'''eller'''",
 	"centralauth-merge-home-password": "Hjemwikien for denne konto (vist nedenfor) har en anden adgangskode end den du skrev.\nSkriv venlgst adgangskoden for hjemwikien.",
 	"centralauth-merge-method-admin": "sammenlagt af en administrator",

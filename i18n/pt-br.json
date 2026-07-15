@@ -41,7 +41,8 @@
 			"Tks4Fish",
 			"Tuliouel",
 			"VasbXBR",
-			"YuriNikolai"
+			"YuriNikolai",
+			"Matěj Suchánek"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Contagem global de edições do usuário ($1)",
@@ -275,7 +276,7 @@
 	"centralauth-list-attached-title": "Contas unificadas",
 	"centralauth-list-home-dryrun": "A senha e endereço de e-mail definidos neste wiki serão os utilizados em sua conta unificada; sua página de usuário terá um link automático nos outros wikis.",
 	"centralauth-list-home-title": "Wiki local",
-	"centralauth-list-unattached": "{{PLURAL:$2|A conta \"$1\" não pôde ser confirmadas automaticamente como sendo tua no seguinte wiki|As contas \"$1\" não puderem ser confirmadas automaticamente como sendo suas nos seguintes wikis}};\né provável que {{PLURAL:2|ela tenha senha diferente|elas tenham senhas diferentes}} da sua conta principal:",
+	"centralauth-list-unattached": "{{PLURAL:$2|A conta \"$1\" não pôde ser confirmadas automaticamente como sendo tua no seguinte wiki|As contas \"$1\" não puderem ser confirmadas automaticamente como sendo suas nos seguintes wikis}};\né provável que {{PLURAL:$2|ela tenha senha diferente|elas tenham senhas diferentes}} da sua conta principal:",
 	"centralauth-list-unattached-title": "Contas não unificadas",
 	"centralauth-listusers-attached": "[[User:$1|existe localmente]]",
 	"centralauth-listusers-item": "[[Special:CentralAuth/$1|$1]] ($2)",
