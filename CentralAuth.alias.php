@@ -383,6 +383,7 @@ $specialPageAliases['he'] = [
 	'GlobalRenameUser' => [ 'שינוי_שם_משתמש_גלובלי' ],
 	'GlobalRenameProgress' => [ 'התקדמות_שינוי_שם_משתמש_גלובלי' ],
 	'GlobalRenameRequest' => [ 'בקשת_שינוי_שם_גלובלית' ],
+	'GlobalVanishRequest' => [ 'בקשת_העלמת_חשבון_גלובלית' ],
 	'GlobalRenameQueue' => [ 'תור_שינויי_שם_גלובלי' ],
 ];
 
