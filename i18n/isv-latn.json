@@ -4,6 +4,8 @@
 			"IJzeren Jan"
 		]
 	},
+	"abusefilter-edit-builder-vars-global-user-editcount": "Globalno čislo pravok koristnika ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Globalne grupy koristnika ($1)",
 	"centralauth": "Menedžer globalnogo koristničskogo konta",
 	"centralauth-admin-lookup-ro": "Pokazati informacije o koristniku",
 	"centralauth-admin-lookup-rw": "Upravjenje koristničskym kontom",
@@ -11,6 +13,7 @@
 	"centralauth-editset": "Sbory viki",
 	"centralauth-prefs-status": "Globalno konto:",
 	"centralauth-prefs-view": "Pokazati informacije o vašem globalnom kontu",
+	"createlocalaccount": "Prinudno stvorjenje lokalnogo koristničskogo konta",
 	"globalgroupmembership": "Členstvo v globalnyh grupah",
 	"globalgrouppermissions": "Upravjenje globalnymi grupami",
 	"globalrenameprogress": "Postup globalnogo prěimenovanja",
@@ -21,5 +24,6 @@
 	"globalrenamerequest-email-mismatch": "E-poštne adresy različajut se.</br> Prosimo, prověrite oba i poprobujte ješče raz.",
 	"globalvanishrequest": "Zapros na izčeznenje globalnogo koristničskogo konta",
 	"globalusers": "Spisok globalnyh koristničskyh kont",
+	"grant-createlocalaccount": "Prinudno stvorjenje lokalnogo koristničskogo konta za globalno koristničsko konto",
 	"mergeaccount": "Status sjedinjenja koristničskyh kont"
 }
