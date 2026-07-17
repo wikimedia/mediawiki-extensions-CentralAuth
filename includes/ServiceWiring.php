@@ -43,6 +43,7 @@ return [
 		return new CentralAuthApiTokenManager(
 			new ServiceOptions( CentralAuthApiTokenManager::CONSTRUCTOR_OPTIONS, $services->getMainConfig() ),
 			$services->getJwtCodec(),
+			$services->getSessionManager(),
 			CentralAuthServices::getTokenManager( $services )
 		);
 	},

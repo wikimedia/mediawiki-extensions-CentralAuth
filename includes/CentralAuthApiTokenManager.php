@@ -9,7 +9,7 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Json\JwtCodec;
 use MediaWiki\Json\JwtException;
 use MediaWiki\MainConfigNames;
-use MediaWiki\Session\SessionManager;
+use MediaWiki\Session\SessionManagerInterface;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\Utils\MWCryptRand;
 use MediaWiki\WikiMap\WikiMap;
@@ -29,6 +29,7 @@ class CentralAuthApiTokenManager {
 	public function __construct(
 		private readonly ServiceOptions $options,
 		private readonly JwtCodec $jwtCodec,
+		private readonly SessionManagerInterface $sessionManager,
 		private readonly CentralAuthTokenManager $tokenManager,
 	) {
 		$this->options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
@@ -81,7 +82,7 @@ class CentralAuthApiTokenManager {
 				// Wrap the token in a custom claim
 				'CAToken' => $token,
 			];
-			$jwtData = $jwtClaimOverrides + SessionManager::singleton()->getJwtData( $user );
+			$jwtData = $jwtClaimOverrides + $this->sessionManager->getJwtData( $user );
 			return $this->jwtCodec->create( $jwtData );
 		} else {
 			return $token;
