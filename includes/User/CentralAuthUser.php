@@ -2039,7 +2039,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->invalidateCache();
 		$user = User::newFromName( $this->mName );
-		SessionManager::singleton()->invalidateSessionsForUser( $user );
+		$services->getSessionManager()->invalidateSessionsForUser( $user );
 
 		// T375870: Track rate of locks for monitoring of anti-abuse tool usage.
 		$services->getStatsFactory()->withComponent( 'CentralAuth' )
