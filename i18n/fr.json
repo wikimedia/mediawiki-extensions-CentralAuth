@@ -73,7 +73,8 @@
 			"Wladek92",
 			"Wyz",
 			"Yasten",
-			"Aquasen"
+			"Aquasen",
+			"Eihel"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Nombre global de modifications de l’utilisateur ($1)",
@@ -303,6 +304,7 @@
 	"centralauth-globalgroupperms-rights": "Droits",
 	"centralauth-globalgroupperms-automatic-group-reason": "Attribué automatiquement",
 	"centralauth-globalgroupperms-automatic-group-info": "L'utilisateur sera automatiquement attribué: $1",
+	"centralauth-globalgroupperms-automatic-group-info-reverse": "Attribué automatiquement aux membres de : $1",
 	"centralauth-groupname": "cette ferme de wikis",
 	"centralauth-hidden-blockreason": "masqué globalement par $1 sur $2 pour le motif suivant : $3",
 	"centralauth-hours-ago": "depuis $1 {{PLURAL:$1|heure|heures}}",
@@ -611,5 +613,6 @@
 	"sessionprovider-centralauthsessionprovider": "sessions basées sur les témoins (''cookies'') centraux",
 	"sessionprovider-centralauthtokensessionprovider": "sessions centralauthtoken",
 	"centralauth-badaccess-blacklisted": "Vous ne pouvez pas demander un renommage global, car vous êtes sur une liste de refus.",
-	"centralauth-action-forbidden-shared-domain": "Vous n'êtes pas autorisé à effectuer cette action sur le domaine d'authentification partagé."
+	"centralauth-action-forbidden-shared-domain": "Vous n'êtes pas autorisé à effectuer cette action sur le domaine d'authentification partagé.",
+	"listgrouprights-restrictedgroups-cond-ca-inglobalgroups": "L’utilisateur est membre d{{PLURAL:$1|u groupe global|e tous les groupes globaux}} : $2"
 }
