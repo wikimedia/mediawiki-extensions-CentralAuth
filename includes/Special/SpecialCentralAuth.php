@@ -844,7 +844,8 @@ class SpecialCentralAuth extends SpecialPage {
 	 */
 	private function formatBlockStatus( $row ) {
 		$additionalHtml = '';
-		if ( isset( $row['blocked'] ) && $row['blocked'] ) {
+		// SECURITY: If the block is oversighted, don't disclose it here (T432789)
+		if ( isset( $row['blocked'] ) && $row['blocked'] && !$row['block-hideblock'] ) {
 			$optionMessage = $this->formatBlockParams( $row );
 			if ( $row['block-expiry'] == 'infinity' ) {
 				$text = $this->msg( 'centralauth-admin-blocked2-indef' )->text();
