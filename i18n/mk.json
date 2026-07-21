@@ -464,6 +464,7 @@
 	"globalrenamerequest-email-why-explain": "Во текот на постапката ќе ни треба е-пошта за да спречиме случаен губиток на пристапот до сметката.<br />Можете да ја отстраните адресата откако ќе завршиме со преименувањето.",
 	"globalrenamerequest-email2-help": "Внесете ја истата е-пошта од погоре за да ја подтврдите.",
 	"globalrenamerequest-email2-label": "Потврдете ја е-поштата:",
+	"globalrenamerequest-error-notglobal": "Ќе мора да ја поврзете вашата корисничка сметка кон глобалната за да побарате преименување.",
 	"globalrenamerequest-legend": "Барање за преименување на обединувањето",
 	"globalrenamerequest-newname-err-invalid": "Немате укажано важечко корисничко име.",
 	"globalrenamerequest-newname-err-taken": "Корисничкото име што го внесовте е зафатено.\nИзберете друго име.",
