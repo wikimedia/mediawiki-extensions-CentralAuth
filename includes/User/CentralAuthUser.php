@@ -2882,6 +2882,10 @@ class CentralAuthUser implements IDBAccessObject {
 	/**
 	 * Get information about each local user attached to this account
 	 *
+	 * WARNING: This method returns oversighted blocks, even if the current user isn't allowed to
+	 * see them. If you're going to present block information to a user, filter out blocks with
+	 * 'block-hideblock' set to true.
+	 *
 	 * @param int $recency Bitfield of IDBAccessObject::READ_* constants
 	 * @return array[] Map of database name to property table with members:
 	 *    wiki                  The wiki ID (database name)
@@ -2975,6 +2979,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 * Find any remaining migration records for this username which haven't gotten attached to
 	 * some global account.
 	 * Formatted as associative array with some data.
+	 *
+	 * WARNING: This method returns oversighted blocks, even if the current user isn't allowed to
+	 * see them. If you're going to present block information to a user, filter out blocks with
+	 * 'block-hideblock' set to true.
 	 *
 	 * @param int $recency Bitfield of IDBAccessObject::READ_* constants
 	 * @throws Exception
@@ -3125,6 +3133,7 @@ class CentralAuthUser implements IDBAccessObject {
 			$data['block-noemail'] = $block->isEmailBlocked();
 			$data['block-sitewide'] = $block->isSitewide();
 			$data['block-restrictions'] = $block->getRestrictions();
+			$data['block-hideblock'] = $block->getHideBlock();
 			$data['blocked'] = true;
 		}
 

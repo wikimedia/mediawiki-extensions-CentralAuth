@@ -140,7 +140,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 					$result->setIndexedTagName( $a['groups'], 'group' );
 				}
 
-				if ( $account['blocked'] ) {
+				// SECURITY: If the block is oversighted, don't disclose it here (T432789)
+				if ( $account['blocked'] && !$account['block-hideblock'] ) {
 					$a['blocked'] = [
 						'expiry' => $this->getLanguage()->formatExpiry(
 							$account['block-expiry'], TS_ISO_8601 ),
@@ -171,7 +172,8 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 					$result->setIndexedTagName( $a['groups'], 'group' );
 				}
 
-				if ( $account['blocked'] ) {
+				// SECURITY: If the block is oversighted, don't disclose it here (T432789)
+				if ( $account['blocked'] && !$account['block-hideblock'] ) {
 					$a['blocked'] = [
 						'expiry' => $this->getLanguage()->formatExpiry(
 							$account['block-expiry'], TS_ISO_8601 ),
