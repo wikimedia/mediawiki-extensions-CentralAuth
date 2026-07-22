@@ -60,7 +60,8 @@
 			"Yekrats",
 			"Zabe",
 			"דולב",
-			"Aca"
+			"Aca",
+			"Woytecr"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Global edit count of the user. Abuse filter syntax option in a dropdown from the group {{msg-mw|Abusefilter-edit-builder-group-vars}}.\n\nParameters:\n* $1 - text that will be inserted into the filter code editor\n\nSee also:\n* {{msg-mw|Abusefilter-edit-builder-vars-user-editcount}}",
@@ -156,7 +157,7 @@
 	"centralauth-admin-status-hidden-no": "Radio button\n*{{msg-mw|Centralauth-admin-status-hidden-no}}\n*{{msg-mw|Centralauth-admin-status-hidden-list}}\n*{{msg-mw|Centralauth-admin-status-hidden-oversight}}",
 	"centralauth-admin-status-hidden-oversight": "Radio button\n*{{msg-mw|Centralauth-admin-status-hidden-no}}\n*{{msg-mw|Centralauth-admin-status-hidden-list}}\n*{{msg-mw|Centralauth-admin-status-hidden-oversight}}",
 	"centralauth-admin-status-intro": "Introduction of the form.",
-	"centralauth-admin-status-locked": "Label of radio button. Options are:\n*{{msg-mw|Centralauth-admin-status-locked-no}}\n*{{msg-mw|Centralauth-admin-status-locked-yes}}",
+	"centralauth-admin-status-locked": "Label of radio button. Options are:\n*{{msg-mw|Centralauth-admin-no}}\n*{{msg-mw|Centralauth-admin-yes}}",
 	"centralauth-admin-status-locked-no": "Radio button\n*{{msg-mw|Centralauth-admin-status-locked-no}}\n*{{msg-mw|Centralauth-admin-status-locked-yes}}",
 	"centralauth-admin-status-locked-yes": "Radio button\n*{{msg-mw|Centralauth-admin-status-locked-no}}\n*{{msg-mw|Centralauth-admin-status-locked-yes}}",
 	"centralauth-admin-status-nonexistent": "Unused error message. Parameters:\n* $1 - global account's name",
