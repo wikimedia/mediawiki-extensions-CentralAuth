@@ -95,7 +95,9 @@ return [
 				CentralAuthSessionManager::CONSTRUCTOR_OPTIONS,
 				$services->getMainConfig()
 			),
-			$services->getStatsFactory()
+			$services->getStatsFactory(),
+			$services->getConnectionProvider(),
+			$services->getObjectCacheFactory()
 		);
 	},
 

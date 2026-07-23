@@ -10,12 +10,13 @@ namespace MediaWiki\Extension\CentralAuth;
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\MainConfigNames;
-use MediaWiki\MediaWikiServices;
+use MediaWiki\ObjectCache\ObjectCacheFactory;
 use MediaWiki\Session\Session;
 use MediaWiki\Session\SessionManager;
 use MediaWiki\Utils\MWCryptRand;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\ObjectCache\CachedBagOStuff;
+use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Stats\StatsFactory;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
@@ -34,14 +35,20 @@ class CentralAuthSessionManager {
 
 	private ServiceOptions $options;
 	private StatsFactory $statsFactory;
+	private IConnectionProvider $connectionProvider;
+	private ObjectCacheFactory $objectCacheFactory;
 
 	public function __construct(
 		ServiceOptions $options,
-		StatsFactory $statsFactory
+		StatsFactory $statsFactory,
+		IConnectionProvider $connectionProvider,
+		ObjectCacheFactory $objectCacheFactory
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
 		$this->statsFactory = $statsFactory;
+		$this->connectionProvider = $connectionProvider;
+		$this->objectCacheFactory = $objectCacheFactory;
 	}
 
 	/**
@@ -51,8 +58,7 @@ class CentralAuthSessionManager {
 	 * MUST be unique.
 	 */
 	private function getCentralAuthDBForSessionKey() {
-		return MediaWikiServices::getInstance()
-			->getConnectionProvider()->getPrimaryDatabase( 'virtual-centralauth' )->getDomainID();
+		return $this->connectionProvider->getPrimaryDatabase( 'virtual-centralauth' )->getDomainID();
 	}
 
 	/**
@@ -73,7 +79,7 @@ class CentralAuthSessionManager {
 		if ( !$this->sessionStore ) {
 			$sessionCacheType = $this->options->get( CAMainConfigNames::CentralAuthSessionCacheType )
 				?? $this->options->get( MainConfigNames::SessionCacheType );
-			$cache = MediaWikiServices::getInstance()->getObjectCacheFactory()->getInstance( $sessionCacheType );
+			$cache = $this->objectCacheFactory->getInstance( $sessionCacheType );
 			$this->sessionStore = $cache instanceof CachedBagOStuff
 				? $cache : new CachedBagOStuff( $cache );
 		}
