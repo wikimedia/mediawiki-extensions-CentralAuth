@@ -49,7 +49,6 @@ use stdClass;
 use Wikimedia\IPUtils;
 use Wikimedia\NormalizedException\NormalizedException;
 use Wikimedia\ObjectCache\WANObjectCache;
-use Wikimedia\Rdbms\Database;
 use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IReadableDatabase;
@@ -611,10 +610,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$data = $this->wanCache->getWithSetCallback(
 			$this->getCacheKey( $this->wanCache ),
 			$this->wanCache::TTL_DAY,
-			function ( $oldValue, &$ttl, array &$setOpts ) {
-				$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
-				$setOpts += Database::getCacheSetOptions( $dbr );
-
+			function ( $oldValue, &$ttl ) {
 				$this->loadFromDatabase();
 				$this->loadAttached();
 				$this->loadGroups();

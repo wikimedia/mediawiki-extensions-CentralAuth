@@ -134,10 +134,8 @@ class WikiSet {
 		$data = $cache->getWithSetCallback(
 			self::getPerNameCacheKey( $cache, $name ),
 			$cache::TTL_INDEFINITE,
-			function ( $oldValue, &$ttl, &$setOpts ) use ( $name, $fname ) {
+			function ( $oldValue, &$ttl ) use ( $name, $fname ) {
 				$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
-				$setOpts += Database::getCacheSetOptions( $dbr );
-
 				$row = $dbr->newSelectQueryBuilder()
 					->select( '*' )
 					->from( 'wikiset' )
