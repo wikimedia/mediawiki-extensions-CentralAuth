@@ -7,11 +7,12 @@
  * @ingroup SpecialPage
  */
 
-namespace MediaWiki\Extension\CentralAuth\Special;
+namespace MediaWiki\Extension\CentralAuth\Special\Pager;
 
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
+use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameQueue;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
 use MediaWiki\Linker\LinkRenderer;

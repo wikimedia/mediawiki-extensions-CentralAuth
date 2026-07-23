@@ -17,13 +17,13 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
+use MediaWiki\Extension\CentralAuth\Special\Pager\RenameQueueTablePager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklist;
 use MediaWiki\Extension\TitleBlacklist\TitleBlacklistEntry;
 use MediaWiki\Html\Html;
 use MediaWiki\HTMLForm\HTMLForm;
-use MediaWiki\JobQueue\JobQueueGroupFactory;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logging\LogEventsList;
 use MediaWiki\Mail\MailAddress;
@@ -41,7 +41,6 @@ use OOUI\MessageWidget;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use StatusValue;
-use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -54,11 +53,9 @@ use Wikimedia\Rdbms\IDBAccessObject;
 class SpecialGlobalRenameQueue extends SpecialPage {
 
 	private UserNameUtils $userNameUtils;
-	private IConnectionProvider $dbProvider;
 	private CentralAuthDatabaseManager $databaseManager;
 	private CentralAuthUIService $uiService;
 	private GlobalRenameRequestStore $globalRenameRequestStore;
-	private JobQueueGroupFactory $jobQueueGroupFactory;
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
 	private GlobalRenameFactory $globalRenameFactory;
 	private UserIdentityLookup $userIdentityLookup;
@@ -73,22 +70,18 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 	public function __construct(
 		UserNameUtils $userNameUtils,
-		IConnectionProvider $dbProvider,
 		CentralAuthDatabaseManager $databaseManager,
 		CentralAuthUIService $uiService,
 		GlobalRenameRequestStore $globalRenameRequestStore,
-		JobQueueGroupFactory $jobQueueGroupFactory,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
 		GlobalRenameFactory $globalRenameFactory,
 		UserIdentityLookup $userIdentityLookup
 	) {
 		parent::__construct( 'GlobalRenameQueue' );
 		$this->userNameUtils = $userNameUtils;
-		$this->dbProvider = $dbProvider;
 		$this->databaseManager = $databaseManager;
 		$this->uiService = $uiService;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
-		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
 		$this->globalRenameFactory = $globalRenameFactory;
 		$this->userIdentityLookup = $userIdentityLookup;

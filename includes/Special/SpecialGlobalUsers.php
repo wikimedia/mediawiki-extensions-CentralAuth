@@ -5,6 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
+use MediaWiki\Extension\CentralAuth\Special\Pager\GlobalUsersPager;
 use MediaWiki\Html\Html;
 use MediaWiki\Language\Language;
 use MediaWiki\Page\LinkBatchFactory;
