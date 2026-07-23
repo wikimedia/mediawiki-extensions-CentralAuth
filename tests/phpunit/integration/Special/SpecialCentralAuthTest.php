@@ -211,21 +211,6 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 	}
 
 	/**
-	 * Calls DOMCompat::getElementById, expects that it returns a valid Element object and then returns
-	 * the HTML of that Element.
-	 *
-	 * @param string $html The HTML to search through
-	 * @param string $id The ID to search for, excluding the "#" character
-	 * @return string
-	 */
-	private function assertAndGetByElementId( string $html, string $id ): string {
-		$specialPageDocument = DOMUtils::parseHTML( $html );
-		$element = DOMCompat::getElementById( $specialPageDocument, $id );
-		$this->assertNotNull( $element, "Could not find element with ID $id in $html" );
-		return DOMCompat::getInnerHTML( $element );
-	}
-
-	/**
 	 * Verifies that the list of local accounts (wiki lists) is present on the Special:CentralAuth page.
 	 *
 	 * @param string $html The HTML of the executed special page
@@ -244,11 +229,11 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$this->assertStringContainsString( '(centralauth-admin-status', $html );
 		$this->assertStringContainsString( '(centralauth-admin-status-intro)', $html );
 		// Check that the "locked" field and radio options are present
-		$lockedField = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-status-locked' );
+		$lockedField = $this->assertSelectorMatchesOneElement( $html, '#mw-centralauth-admin-status-locked' );
 		$this->assertStringContainsString( '(centralauth-admin-status-locked-no', $lockedField );
 		$this->assertStringContainsString( '(centralauth-admin-status-locked-yes', $lockedField );
 		// Check that the "hidden" field and radio options are present
-		$hiddenField = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-status-hidden' );
+		$hiddenField = $this->assertSelectorMatchesOneElement( $html, '#mw-centralauth-admin-status-hidden' );
 		$this->assertStringContainsString( '(centralauth-admin-status-hidden-no', $hiddenField );
 		// The hidden-list and hidden-oversight options should be present only if the user has the suppress right
 		if ( $userCanSuppress ) {
@@ -259,7 +244,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			$this->assertStringNotContainsString( '(centralauth-admin-status-hidden-oversight', $hiddenField );
 		}
 		// Check that the reason field is there
-		$reasonDropdownField = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-reason' );
+		$reasonDropdownField = $this->assertSelectorMatchesOneElement( $html, '#mw-centralauth-admin-reason' );
 		$this->assertStringContainsString( '(centralauth-admin-status-reasons', $reasonDropdownField );
 		$this->assertStringContainsString( '(centralauth-admin-reason-other-select', $reasonDropdownField );
 	}
@@ -278,7 +263,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		// Verify the fieldset header is present if the user does have the centralauth-unmerge right
 		$this->assertStringContainsString( '(centralauth-admin-delete-title', $html );
 		// Verify that the expected form fields are present
-		$deleteForm = $this->assertAndGetByElementId( $html, 'mw-centralauth-delete' );
+		$deleteForm = $this->assertSelectorMatchesOneElement( $html, '#mw-centralauth-delete' );
 		$this->assertStringContainsString( '(centralauth-admin-delete-description', $deleteForm );
 		$this->assertStringContainsString( '(centralauth-admin-reason', $deleteForm );
 		$this->assertStringContainsString( '(centralauth-admin-delete-button', $deleteForm );
@@ -356,7 +341,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 	}
 
 	private function getRowInWikiListTable( string $html ): string {
-		$wikiListHtml = $this->assertAndGetByElementId( $html, 'mw-centralauth-merged' );
+		$wikiListHtml = $this->assertSelectorMatchesOneElement( $html, '#mw-centralauth-merged' );
 		$tbody = DOMCompat::getElementsByTagName( DOMUtils::parseHTML( $wikiListHtml ), 'tbody' )[0];
 		$rowTags = DOMCompat::getElementsByTagName( $tbody, 'tr' );
 		$this->assertCount( 1, $rowTags, 'One row in the wiki list table was expected.' );
@@ -492,8 +477,8 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		);
 
 		// Verify that the global block exempt table is present
-		$globalBlockExemptFieldset = $this->assertAndGetByElementId(
-			$html, 'mw-centralauth-globalblock-exempt-list'
+		$globalBlockExemptFieldset = $this->assertSelectorMatchesOneElement(
+			$html, '#mw-centralauth-globalblock-exempt-list'
 		);
 		$this->assertStringContainsString( '(centralauth-admin-globalblock-exempt-list', $globalBlockExemptFieldset );
 		$this->assertStringContainsString(
@@ -642,7 +627,10 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		// actually perform any status changes.
 		$this->assertStringContainsString( '(centralauth-admin-logsnippet', $htmlForLockSubmission );
 		// Verify that user is actually locked, both by checking the special page information and the user itself
-		$lockedInfoField = $this->assertAndGetByElementId( $htmlForLockSubmission, 'mw-centralauth-admin-info-locked' );
+		$lockedInfoField = $this->assertSelectorMatchesOneElement(
+			$htmlForLockSubmission,
+			'#mw-centralauth-admin-info-locked'
+		);
 		$this->assertStringContainsString( '(centralauth-admin-yes)', $lockedInfoField );
 		$targetUser->invalidateCache();
 		$this->assertTrue( $targetUser->isLocked() );
@@ -679,7 +667,10 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$this->assertSame( 'Testingabc: Unlocking user for test', $reasonForSecondLogEntry );
 		// Check the structure of the log snippet is as expected (contains a log entry for locking and then
 		// unlocking).
-		$logSnippet = $this->assertAndGetByElementId( $htmlForUnlockSubmission, 'mw-centralauth-admin-logsnippet' );
+		$logSnippet = $this->assertSelectorMatchesOneElement(
+			$htmlForUnlockSubmission,
+			'#mw-centralauth-admin-logsnippet'
+		);
 		$this->assertStringContainsString( '(centralauth-admin-logsnippet', $logSnippet );
 		$this->assertStringContainsString( 'Locking user for test', $logSnippet );
 		$this->assertStringContainsString( 'Unlocking user for test', $logSnippet );
@@ -700,7 +691,10 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			'wpUserState' => $targetUser->getStateHash( true ),
 		] );
 		// Verify that user is actually suppressed, both by checking the special page information and the user itself
-		$hiddenFieldInfo = $this->assertAndGetByElementId( $htmlForLockSubmission, 'mw-centralauth-admin-info-hidden' );
+		$hiddenFieldInfo = $this->assertSelectorMatchesOneElement(
+			$htmlForLockSubmission,
+			'#mw-centralauth-admin-info-hidden'
+		);
 		$this->assertStringContainsString( '(centralauth-admin-hidden-oversight)', $hiddenFieldInfo );
 		$targetUser->invalidateCache();
 		$this->assertTrue( $targetUser->isSuppressed() );
@@ -822,7 +816,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
 		// Verify that that the log snippet is present and that is contains the log entries for the lock
 		// and global block.
-		$logSnippet = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-logsnippet' );
+		$logSnippet = $this->assertSelectorMatchesOneElement( $html, '#mw-centralauth-admin-logsnippet' );
 		$this->assertStringContainsString( '(centralauth-admin-logsnippet', $logSnippet );
 		$this->assertStringContainsString( 'Test global block', $logSnippet );
 		$this->assertStringContainsString( 'Test global lock', $logSnippet );
@@ -840,7 +834,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		) );
 		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
 		// Verify that that the log snippet is present and contains the global suppression entry.
-		$logSnippet = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-logsnippet' );
+		$logSnippet = $this->assertSelectorMatchesOneElement( $html, '#mw-centralauth-admin-logsnippet' );
 		$this->assertStringContainsString( 'Test global suppression', $logSnippet );
 		$this->assertStringContainsString( $targetUsername, $logSnippet );
 	}
@@ -867,21 +861,6 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		);
 	}
 
-	/**
-	 * Calls DOMCompat::querySelectorAll, expects that it returns one valid Element object and then returns
-	 * the HTML of that Element.
-	 *
-	 * @param string $html The HTML to search through
-	 * @param string $class The CSS class to search for, excluding the "." character
-	 * @return string
-	 */
-	private function assertAndGetByElementClass( string $html, string $class ): string {
-		$specialPageDocument = DOMUtils::parseHTML( $html );
-		$element = DOMCompat::querySelectorAll( $specialPageDocument, '.' . $class );
-		$this->assertCount( 1, $element, "Could not find only one element with CSS class $class in $html" );
-		return DOMCompat::getOuterHTML( $element[0] );
-	}
-
 	public function testLogExtractMissingWhenUserIsLocked() {
 		// Globally lock the target using a method which does not create a log entry
 		$targetUsername = $this->getTestCentralAuthUser();
@@ -892,7 +871,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		// is shown along with the associated target username in the message.
 		RequestContext::getMain()->setAuthority( $this->mockRegisteredUltimateAuthority() );
 		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
-		$otherWikiLogsWarning = $this->assertAndGetByElementClass( $html, 'centralauth-admin-log-otherwiki' );
+		$otherWikiLogsWarning = $this->assertSelectorMatchesOneElement( $html, '.centralauth-admin-log-otherwiki' );
 		$this->assertStringContainsString( "(centralauth-admin-log-otherwiki", $otherWikiLogsWarning );
 		$this->assertStringContainsString( $targetUsername, $otherWikiLogsWarning );
 	}
@@ -937,20 +916,32 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		// Normal user: verify that only a note is shown
 		$authority = $this->mockRegisteredAuthorityWithPermissions( [] );
 		[ $html ] = $this->executeSpecialPage( $secondName, null, null, $authority );
-		$fromThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-fromthisname' );
+		$fromThisNameLogs = $this->assertSelectorMatchesOneElement(
+			$html,
+			'#mw-centralauth-admin-renamelogsnippet-fromthisname'
+		);
 		$this->assertStringContainsString( "(centralauth-admin-renamelogsnippet-fromthisname-omitted)", $fromThisNameLogs );
 		$this->assertStringNotContainsString( $secondName, $fromThisNameLogs );
-		$toThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-tothisname' );
+		$toThisNameLogs = $this->assertSelectorMatchesOneElement(
+			$html,
+			'#mw-centralauth-admin-renamelogsnippet-tothisname'
+		);
 		$this->assertStringContainsString( "(centralauth-admin-renamelogsnippet-tothisname-omitted)", $toThisNameLogs );
 		$this->assertStringNotContainsString( $secondName, $toThisNameLogs );
 
 		// Renamer user: verify that logs are shown
 		$authority = $this->mockRegisteredAuthorityWithPermissions( [ 'centralauth-rename' ] );
 		[ $html ] = $this->executeSpecialPage( $secondName, null, null, $authority );
-		$fromThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-fromthisname' );
+		$fromThisNameLogs = $this->assertSelectorMatchesOneElement(
+			$html,
+			'#mw-centralauth-admin-renamelogsnippet-fromthisname'
+		);
 		$this->assertStringContainsString( "(logentry-gblrename-rename:", $fromThisNameLogs );
 		$this->assertStringContainsString( $secondName, $fromThisNameLogs );
-		$toThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-tothisname' );
+		$toThisNameLogs = $this->assertSelectorMatchesOneElement(
+			$html,
+			'#mw-centralauth-admin-renamelogsnippet-tothisname'
+		);
 		$this->assertStringContainsString( "(logentry-gblrename-rename:", $toThisNameLogs );
 		$this->assertStringContainsString( $secondName, $toThisNameLogs );
 
@@ -976,10 +967,16 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		// Renamer and deleted content viewer: verify that logs are shown redacted
 		$authority = $this->mockRegisteredAuthorityWithPermissions( [ 'centralauth-rename', 'deletedhistory' ] );
 		[ $html ] = $this->executeSpecialPage( $secondName, null, null, $authority );
-		$fromThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-fromthisname' );
+		$fromThisNameLogs = $this->assertSelectorMatchesOneElement(
+			$html,
+			'#mw-centralauth-admin-renamelogsnippet-fromthisname'
+		);
 		$this->assertStringContainsString( "(rev-deleted-event)", $fromThisNameLogs );
 		$this->assertStringNotContainsString( $secondName, $fromThisNameLogs );
-		$toThisNameLogs = $this->assertAndGetByElementId( $html, 'mw-centralauth-admin-renamelogsnippet-tothisname' );
+		$toThisNameLogs = $this->assertSelectorMatchesOneElement(
+			$html,
+			'#mw-centralauth-admin-renamelogsnippet-tothisname'
+		);
 		$this->assertStringContainsString( "(rev-deleted-event)", $toThisNameLogs );
 		$this->assertStringNotContainsString( $secondName, $toThisNameLogs );
 	}
