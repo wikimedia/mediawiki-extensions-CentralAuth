@@ -5,7 +5,7 @@
  * @file
  */
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use Wikimedia\Rdbms\IDBAccessObject;
@@ -346,10 +346,11 @@ class GlobalGroupManagerTest extends MediaWikiIntegrationTestCase {
 
 	private function createManager(): GlobalGroupManager {
 		$cache = $this->getServiceContainer()->getMainWANObjectCache();
-		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		$dbManager->method( 'getCentralDBFromRecency' )->willReturn( $this->getDb() );
-		$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $this->getDb() );
-		return new GlobalGroupManager( $cache, $dbManager );
+		$caConnectionProvider = $this->createMock( CentralAuthConnectionProvider::class );
+		$caConnectionProvider->method( 'getDBFromRecency' )->with( $this->anything() )
+			->willReturn( $this->getDb() );
+		$caConnectionProvider->method( 'getPrimaryDatabase' )->willReturn( $this->getDb() );
+		return new GlobalGroupManager( $cache, $caConnectionProvider );
 	}
 
 	private function addGroupMember( string $groupName, int $userId = 1 ): void {

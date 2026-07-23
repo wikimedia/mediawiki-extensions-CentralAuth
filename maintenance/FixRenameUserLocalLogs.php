@@ -51,8 +51,8 @@ class FixRenameUserLocalLogs extends Maintenance {
 	 * List the global 'gblrename' log entries, in batches of the specified size.
 	 */
 	private function getGlobalLogEntries(): BatchRowIterator {
-		$databaseManager = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() );
-		$metaWikiDbr = $databaseManager->getLocalDB( DB_REPLICA, $this->logWikiId );
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider( $this->getServiceContainer() );
+		$metaWikiDbr = $caConnectionProvider->getRemoteWikiConnectionProvider( $this->logWikiId )->getReplicaDatabase();
 		$sqb = DatabaseLogEntry::newSelectQueryBuilder( $metaWikiDbr )
 			->caller( __METHOD__ )
 			->where( [
@@ -136,7 +136,7 @@ class FixRenameUserLocalLogs extends Maintenance {
 	 * @return array<string, ?string>
 	 */
 	private function getUserAttachmentTimestamps( iterable $globalLogRows ): array {
-		$db = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+		$db = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 
 		$userNames = [];
 		$attachedTimestamps = [];

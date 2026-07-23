@@ -45,7 +45,7 @@ class CentralAuthPrimaryAuthenticationProviderTest extends MediaWikiIntegrationT
 			$tempUserDetailsLookup,
 			$services->getUserIdentityLookup(),
 			CentralAuthServices::getAntiSpoofManager(),
-			CentralAuthServices::getDatabaseManager(),
+			CentralAuthServices::getConnectionProvider(),
 			CentralAuthServices::getUtilityService(),
 			CentralAuthServices::getGlobalRenameRequestStore(),
 			CentralAuthServices::getSharedDomainUtils()

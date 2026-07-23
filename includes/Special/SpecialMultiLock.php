@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use MediaWiki\CommentStore\CommentStore;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
@@ -46,17 +46,17 @@ class SpecialMultiLock extends SpecialPage {
 	private $mActionUserNames;
 
 	private UserNameUtils $userNameUtils;
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private CentralAuthUIService $uiService;
 
 	public function __construct(
 		UserNameUtils $userNameUtils,
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		CentralAuthUIService $uiService
 	) {
 		parent::__construct( 'MultiLock' );
 		$this->userNameUtils = $userNameUtils;
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->uiService = $uiService;
 	}
 
@@ -176,7 +176,7 @@ class SpecialMultiLock extends SpecialPage {
 	 * Search the CentralAuth db for all usernames prefixed with mPrefixSearch
 	 */
 	private function searchForUsers() {
-		$dbr = $this->databaseManager->getCentralReplicaDB();
+		$dbr = $this->caConnectionProvider->getReplicaDatabase();
 
 		$where = [
 			$dbr->expr( 'gu_name', IExpression::LIKE,

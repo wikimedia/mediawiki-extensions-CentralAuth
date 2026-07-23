@@ -172,7 +172,7 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 
 		$db = $this->getDb();
 
-		$cadb = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$cadb = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 
 		$good_uids = [ 1, 2, 3, 5 ];
 		$homeWikis = [ 'testwiki', 'elwiki', 'testwiki', 'none', 'testwiki' ];
@@ -211,7 +211,7 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 
 		$this->maintenance->mBatchSize = 5;
 
-		$cadb = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$cadb = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 
 		// we don't use these values in this test but the table entries need them
 		$homeWikis = array_fill( 0, 11, 'none' );

@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Permissions\Authority;
@@ -22,19 +22,19 @@ use Wikimedia\Rdbms\IReadableDatabase;
  */
 class GlobalRenameUserStatus {
 
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 
 	private string $name;
 
 	/**
-	 * @param CentralAuthDatabaseManager $databaseManager
+	 * @param CentralAuthConnectionProvider $caConnectionProvider
 	 * @param string $name Either old or new name of the user
 	 */
 	public function __construct(
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		string $name
 	) {
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->name = $name;
 	}
 
@@ -58,7 +58,7 @@ class GlobalRenameUserStatus {
 	 * @return string[] (oldname, newname)
 	 */
 	public function getNames( ?string $wiki = null, int $recency = IDBAccessObject::READ_NORMAL ): array {
-		$db = $this->databaseManager->getCentralDBFromRecency( $recency );
+		$db = $this->caConnectionProvider->getDBFromRecency( $recency );
 
 		$where = [ $this->getNameWhereClause( $db ) ];
 
@@ -93,7 +93,7 @@ class GlobalRenameUserStatus {
 	 * @return string[]
 	 */
 	public function getStatuses( int $recency = IDBAccessObject::READ_NORMAL ): array {
-		$db = $this->databaseManager->getCentralDBFromRecency( $recency );
+		$db = $this->caConnectionProvider->getDBFromRecency( $recency );
 
 		$res = $db->newSelectQueryBuilder()
 			->select( [ 'ru_wiki', 'ru_status' ] )
@@ -131,7 +131,7 @@ class GlobalRenameUserStatus {
 	 * @param string $status
 	 */
 	public function updateStatus( $wiki, $status ) {
-		$dbw = $this->databaseManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 		$fname = __METHOD__;
 
 		$dbw->onTransactionPreCommitOrIdle(
@@ -153,7 +153,7 @@ class GlobalRenameUserStatus {
 			return false;
 		}
 
-		$dbw = $this->databaseManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 
 		$dbw->startAtomic( __METHOD__ );
 		if ( $dbw->getType() === 'mysql' ) {
@@ -203,7 +203,7 @@ class GlobalRenameUserStatus {
 	 * Mark the process as done for a wiki (=> delete the renameuser_status row)
 	 */
 	public function done( string $wiki ): void {
-		$dbw = $this->databaseManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 		$fname = __METHOD__;
 
 		$dbw->onTransactionPreCommitOrIdle(
@@ -225,7 +225,7 @@ class GlobalRenameUserStatus {
 	 * @return string[] old username => new username
 	 */
 	public static function getInProgressRenames( Authority $performer ): array {
-		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+		$dbr = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 
 		$qb = $dbr->newSelectQueryBuilder();
 

@@ -25,7 +25,7 @@ class PopulateHomeDB extends Maintenance {
 	}
 
 	public function execute() {
-		$db = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+		$db = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 		$conds = [];
 		$count = 0;
 		do {

@@ -9,7 +9,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 
 use MediaWiki\Config\Config;
 use MediaWiki\DAO\WikiAwareEntity;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthUserCache;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Permissions\Authority;
@@ -27,7 +27,7 @@ use Wikimedia\Rdbms\IReadableDatabase;
 class CentralAuthIdLookup extends CentralIdLookup {
 
 	private Config $config;
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private CentralAuthUserCache $userCache;
 
 	/** @var array<string,bool> Names that cause a NormalizedException */
@@ -35,11 +35,11 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 	public function __construct(
 		Config $config,
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		CentralAuthUserCache $userCache
 	) {
 		$this->config = $config;
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->userCache = $userCache;
 	}
 
@@ -333,13 +333,13 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 	private function shouldUsePrimary( int $flags ): bool {
 		return DBAccessObjectUtils::hasFlags( $flags, IDBAccessObject::READ_LATEST )
-			|| $this->databaseManager->centralLBHasRecentPrimaryChanges();
+			|| $this->caConnectionProvider->centralLBHasRecentPrimaryChanges();
 	}
 
 	private function getCentralDB( int $flags ): IReadableDatabase {
 		return $this->shouldUsePrimary( $flags )
-			? $this->databaseManager->getCentralPrimaryDB()
-			: $this->databaseManager->getCentralReplicaDB();
+			? $this->caConnectionProvider->getPrimaryDatabase()
+			: $this->caConnectionProvider->getReplicaDatabase();
 	}
 
 	/**

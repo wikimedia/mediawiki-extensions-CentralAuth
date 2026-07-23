@@ -115,8 +115,8 @@ class CentralAuthTokenManager {
 	 * MUST be unique.
 	 */
 	private function getCentralAuthDBForSessionKey() {
-		return MediaWikiServices::getInstance()
-			->getConnectionProvider()->getPrimaryDatabase( 'virtual-centralauth' )->getDomainID();
+		return CentralAuthServices::getConnectionProvider( MediaWikiServices::getInstance() )
+			->getPrimaryDatabase()->getDomainID();
 	}
 
 }

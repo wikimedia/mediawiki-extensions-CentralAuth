@@ -27,9 +27,9 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 	}
 
 	public function execute() {
-		$databaseManager = CentralAuthServices::getDatabaseManager();
-		$dbr = $databaseManager->getCentralReplicaDB();
-		$dbw = $databaseManager->getCentralPrimaryDB();
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
+		$dbr = $caConnectionProvider->getReplicaDatabase();
+		$dbw = $caConnectionProvider->getPrimaryDatabase();
 		$lastlu_name = '';
 		$updated = 0;
 
@@ -41,7 +41,7 @@ class PopulateLocalAndGlobalIds extends Maintenance {
 			->caller( __METHOD__ )
 			->fetchFieldValues();
 
-		$ldbr = $databaseManager->getLocalDB( DB_REPLICA, $wiki );
+		$ldbr = $caConnectionProvider->getRemoteWikiConnectionProvider( $wiki )->getReplicaDatabase();
 
 		$this->output( "Populating fields for wiki $wiki...\n" );
 		do {

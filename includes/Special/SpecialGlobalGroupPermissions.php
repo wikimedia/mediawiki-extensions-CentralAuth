@@ -15,7 +15,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use Exception;
 use InvalidArgumentException;
 use MediaWiki\Exception\PermissionsError;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
@@ -57,7 +57,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	public function __construct(
 		private readonly PermissionManager $permissionManager,
 		private readonly RestrictedUserGroupConfigReader $restrictedUserGroupConfigReader,
-		private readonly CentralAuthDatabaseManager $databaseManager,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
 		private readonly GlobalGroupManager $globalGroupManager
 	) {
 		parent::__construct( 'GlobalGroupPermissions' );
@@ -901,7 +901,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 	private function invalidateGroupsCache( string $group ): void {
 		// Use the primary database over here as the group membership data could have not been replicated yet
 		// Given that this is invoked when a group is renamed, we have to be sure the new name exists in the DB
-		$dbr = $this->databaseManager->getCentralPrimaryDB();
+		$dbr = $this->caConnectionProvider->getPrimaryDatabase();
 
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'gu_name' )

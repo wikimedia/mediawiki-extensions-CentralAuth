@@ -47,7 +47,7 @@ class ScramblePassword extends Maintenance {
 
 		$this->validateOptions();
 
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		foreach ( $this->getUserNameBatch() as $userNameBatch ) {
 			$queryBuilder = CentralAuthServices::getGlobalUserSelectQueryBuilderFactory()
 				->newGlobalUserSelectQueryBuilder();

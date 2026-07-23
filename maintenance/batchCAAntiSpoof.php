@@ -21,7 +21,7 @@ require_once "$IP/extensions/CentralAuth/includes/User/CentralAuthSpoofUser.php"
 class BatchCAAntiSpoof extends BatchAntiSpoof {
 
 	protected function batchRecord( array $items ): void {
-		CentralAuthSpoofUser::batchRecord( CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB(), $items );
+		CentralAuthSpoofUser::batchRecord( CentralAuthServices::getConnectionProvider()->getPrimaryDatabase(), $items );
 	}
 
 	/**
@@ -31,8 +31,8 @@ class BatchCAAntiSpoof extends BatchAntiSpoof {
 	 */
 	protected function getDB( $db, $groups = [], $wiki = false ) {
 		return $db === DB_PRIMARY
-			? CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB()
-			: CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+			? CentralAuthServices::getConnectionProvider()->getPrimaryDatabase()
+			: CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 	}
 
 	protected function getTableName(): string {

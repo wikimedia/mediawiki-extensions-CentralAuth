@@ -7,7 +7,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\UserNameUtils;
 use stdClass;
@@ -20,14 +20,14 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class GlobalRenameRequestStore {
 
-	private CentralAuthDatabaseManager $dbManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private UserNameUtils $userNameUtils;
 
 	public function __construct(
-		CentralAuthDatabaseManager $dbManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		UserNameUtils $userNameUtils
 	) {
-		$this->dbManager = $dbManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->userNameUtils = $userNameUtils;
 	}
 
@@ -35,7 +35,7 @@ class GlobalRenameRequestStore {
 	 * Persists the given global rename request to the central database.
 	 */
 	public function save( GlobalRenameRequest $request ): bool {
-		$dbw = $this->dbManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 		if ( $request->getId() === null ) {
 			$request->setRequested( wfTimestampNow() );
 
@@ -146,7 +146,7 @@ class GlobalRenameRequestStore {
 	 * @return bool
 	 */
 	public function nameHasPendingRequest( string $newname, int $flags = IDBAccessObject::READ_NORMAL ) {
-		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
+		$dbr = $this->caConnectionProvider->getDBFromRecency( $flags );
 
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'rq_id' )
@@ -170,7 +170,7 @@ class GlobalRenameRequestStore {
 	 * @return bool
 	 */
 	public function currentNameHasPendingRequest( string $name, int $flags = IDBAccessObject::READ_NORMAL ) {
-		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
+		$dbr = $this->caConnectionProvider->getDBFromRecency( $flags );
 
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'rq_id' )
@@ -194,7 +194,7 @@ class GlobalRenameRequestStore {
 	 * @return bool
 	 */
 	public function currentNameHasApprovedVanish( string $name, int $flags = IDBAccessObject::READ_NORMAL ) {
-		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
+		$dbr = $this->caConnectionProvider->getDBFromRecency( $flags );
 
 		$res = $dbr->newSelectQueryBuilder()
 			->select( 'rq_id' )
@@ -232,7 +232,7 @@ class GlobalRenameRequestStore {
 		int $limit,
 		?int $continueId
 	): array {
-		$dbr = $this->dbManager->getCentralReplicaDB();
+		$dbr = $this->caConnectionProvider->getReplicaDatabase();
 
 		$qb = $dbr->newSelectQueryBuilder()
 			->select( [
@@ -300,7 +300,7 @@ class GlobalRenameRequestStore {
 	 * @return stdClass|false Row as object or false if not found
 	 */
 	protected function fetchRowFromDB( array $where, int $flags = IDBAccessObject::READ_NORMAL ) {
-		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
+		$dbr = $this->caConnectionProvider->getDBFromRecency( $flags );
 
 		return $dbr->newSelectQueryBuilder()
 			->select( [

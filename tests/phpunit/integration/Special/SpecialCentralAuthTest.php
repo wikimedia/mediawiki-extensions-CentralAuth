@@ -75,7 +75,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			$this->getServiceContainer()->getUserFactory(),
 			$this->getServiceContainer()->getUserNameUtils(),
 			$this->getServiceContainer()->getUserRegistrationLookup(),
-			CentralAuthServices::getDatabaseManager( $this->getServiceContainer() ),
+			CentralAuthServices::getConnectionProvider( $this->getServiceContainer() ),
 			CentralAuthServices::getUIService( $this->getServiceContainer() ),
 			CentralAuthServices::getGlobalRenameFactory( $this->getServiceContainer() )
 		);
@@ -883,7 +883,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 
 		$alice = $this->getMutableTestUser();
 		$aliceCentral = CentralAuthTestUser::newFromTestUser( $alice );
-		$aliceCentral->save( CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )->getCentralPrimaryDB() );
+		$aliceCentral->save( CentralAuthServices::getConnectionProvider( $this->getServiceContainer() )->getPrimaryDatabase() );
 
 		$secondName = $alice->getUser()->getName() . ' B';
 		$thirdName = $alice->getUser()->getName() . ' C';

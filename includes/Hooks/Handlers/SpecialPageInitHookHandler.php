@@ -39,7 +39,7 @@ class SpecialPageInitHookHandler implements SpecialPage_initListHook {
 				'class' => SpecialGlobalRenameQueue::class,
 				'services' => [
 					'UserNameUtils',
-					'CentralAuth.CentralAuthDatabaseManager',
+					'CentralAuth.CentralAuthConnectionProvider',
 					'CentralAuth.CentralAuthUIService',
 					'CentralAuth.GlobalRenameRequestStore',
 					'CentralAuth.CentralAuthAntiSpoofManager',

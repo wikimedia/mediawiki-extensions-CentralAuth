@@ -48,7 +48,7 @@ class DeleteEmptyAccounts extends Maintenance {
 		$user = User::newFromName( User::MAINTENANCE_SCRIPT_USER );
 		RequestContext::getMain()->setUser( $user );
 
-		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+		$dbr = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 
 		$this->fix = $this->hasOption( 'fix' );
 		$this->safe = $this->hasOption( 'safe-migrate' );

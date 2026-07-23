@@ -31,7 +31,7 @@ return [
 	): CentralAuthAntiSpoofManager {
 		return new CentralAuthAntiSpoofManager(
 			LoggerFactory::getInstance( 'antispoof' ),
-			CentralAuthServices::getDatabaseManager( $services )
+			CentralAuthServices::getConnectionProvider( $services )
 		);
 	},
 
@@ -57,21 +57,29 @@ return [
 		);
 	},
 
-	'CentralAuth.CentralAuthDatabaseManager' => static function (
+	'CentralAuth.CentralAuthConnectionProvider' => static function (
 		MediaWikiServices $services
-	): CentralAuthDatabaseManager {
-		return new CentralAuthDatabaseManager(
-			new ServiceOptions( CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS, $services->getMainConfig() ),
+	): CentralAuthConnectionProvider {
+		return new CentralAuthConnectionProvider(
+			new ServiceOptions( CentralAuthConnectionProvider::CONSTRUCTOR_OPTIONS, $services->getMainConfig() ),
+			$services->getConnectionProvider(),
 			$services->getDBLoadBalancerFactory(),
 			$services->getReadOnlyMode()
 		);
+	},
+
+	'CentralAuth.CentralAuthDatabaseManager' => static function (
+		MediaWikiServices $services
+	): CentralAuthConnectionProvider {
+		// TODO Remove this alias once it's no longer used
+		return $services->getService( 'CentralAuth.CentralAuthConnectionProvider' );
 	},
 
 	'CentralAuth.CentralAuthEditCounter' => static function (
 		MediaWikiServices $services
 	): CentralAuthEditCounter {
 		return new CentralAuthEditCounter(
-			CentralAuthServices::getDatabaseManager( $services ),
+			CentralAuthServices::getConnectionProvider( $services ),
 			$services->getMainWANObjectCache()
 		);
 	},
@@ -94,7 +102,7 @@ return [
 				$services->getMainConfig()
 			),
 			$services->getStatsFactory(),
-			$services->getConnectionProvider(),
+			CentralAuthServices::getConnectionProvider( $services ),
 			$services->getObjectCacheFactory()
 		);
 	},
@@ -185,7 +193,7 @@ return [
 			$services->getRestrictedUserGroupCheckerFactory(),
 			CentralAuthServices::getGlobalGroupManager(),
 			CentralAuthServices::getAutomaticGlobalGroupManager(),
-			CentralAuthServices::getDatabaseManager(),
+			CentralAuthServices::getConnectionProvider(),
 			RequestContext::getMain(),
 			$services->getUserFactory(),
 			$services->getNotificationService()
@@ -195,7 +203,7 @@ return [
 	'CentralAuth.GlobalGroupManager' => static function ( MediaWikiServices $services ): GlobalGroupManager {
 		return new GlobalGroupManager(
 			$services->getMainWANObjectCache(),
-			CentralAuthServices::getDatabaseManager( $services )
+			CentralAuthServices::getConnectionProvider( $services )
 		);
 	},
 
@@ -225,7 +233,7 @@ return [
 			$services->getJobQueueGroupFactory(),
 			$services->getUserFactory(),
 			CentralAuthServices::getAntiSpoofManager( $services ),
-			CentralAuthServices::getDatabaseManager( $services )
+			CentralAuthServices::getConnectionProvider( $services )
 		);
 	},
 
@@ -233,7 +241,7 @@ return [
 		MediaWikiServices $services
 	): GlobalRenameRequestStore {
 		return new GlobalRenameRequestStore(
-			CentralAuthServices::getDatabaseManager( $services ),
+			CentralAuthServices::getConnectionProvider( $services ),
 			$services->getUserNameUtils()
 		);
 	},
@@ -250,7 +258,7 @@ return [
 		MediaWikiServices $services
 	): GlobalUserSelectQueryBuilderFactory {
 		return new GlobalUserSelectQueryBuilderFactory(
-			CentralAuthServices::getDatabaseManager( $services ),
+			CentralAuthServices::getConnectionProvider( $services ),
 			$services->getActorStore(),
 			$services->getUserNameUtils(),
 			$services->getTempUserConfig()

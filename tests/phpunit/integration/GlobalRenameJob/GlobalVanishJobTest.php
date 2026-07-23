@@ -9,7 +9,7 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Tests\Unit\GlobalRenameJob;
 
 use CentralAuthTestUser;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameJob\GlobalVanishJob;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
@@ -118,7 +118,7 @@ class GlobalVanishJobTest extends MediaWikiIntegrationTestCase {
 	private function getGlobalRenameUserStatus( string $name ) {
 		return $this->getMockBuilder( GlobalRenameUserStatus::class )
 			->onlyMethods( ( [ 'getNames' ] ) )
-			->setConstructorArgs( [ $this->getMockDbManager(), $name ] )
+			->setConstructorArgs( [ $this->getMockConnectionProvider(), $name ] )
 			->getMock();
 	}
 
@@ -129,7 +129,7 @@ class GlobalVanishJobTest extends MediaWikiIntegrationTestCase {
 		return $this->getMockBuilder( GlobalRenameRequestStore::class )
 			->onlyMethods( [ 'newFromId' ] )
 			->setConstructorArgs( [
-				$this->getMockDbManager(),
+				$this->getMockConnectionProvider(),
 				$this->allValidUserNameUtils(),
 			] )
 			->getMock();
@@ -145,23 +145,24 @@ class GlobalVanishJobTest extends MediaWikiIntegrationTestCase {
 				$this->createMock( JobQueueGroupFactory::class ),
 				$this->createMock( UserFactory::class ),
 				$this->createMock( CentralAuthAntiSpoofManager::class ),
-				$this->createMock( CentralAuthDatabaseManager::class ),
+				$this->createMock( CentralAuthConnectionProvider::class ),
 			] )
 			->getMock();
 	}
 
 	/**
-	 * @return MockObject&CentralAuthDatabaseManager
+	 * @return MockObject&CentralAuthConnectionProvider
 	 */
-	private function getMockDbManager() {
+	private function getMockConnectionProvider() {
 		$mockDb = new MockDatabase();
 
-		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $mockDb );
-		$dbManager->method( 'getCentralReplicaDB' )->willReturn( $mockDb );
-		$dbManager->method( 'getCentralDBFromRecency' )->willReturn( $mockDb );
+		$caConnectionProvider = $this->createMock( CentralAuthConnectionProvider::class );
+		$caConnectionProvider->method( 'getPrimaryDatabase' )->willReturn( $mockDb );
+		$caConnectionProvider->method( 'getReplicaDatabase' )->willReturn( $mockDb );
+		$caConnectionProvider->method( 'getDBFromRecency' )->with( $this->anything() )
+			->willReturn( $mockDb );
 
-		return $dbManager;
+		return $caConnectionProvider;
 	}
 
 	/**

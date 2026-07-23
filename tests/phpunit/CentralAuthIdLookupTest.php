@@ -1,6 +1,6 @@
 <?php
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthIdLookup;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -109,7 +109,7 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 					'class' => CentralAuthIdLookup::class,
 					'services' => [
 						'MainConfig',
-						'CentralAuth.CentralAuthDatabaseManager',
+						'CentralAuth.CentralAuthConnectionProvider',
 						'CentralAuth.CentralAuthUserCache',
 					],
 				],
@@ -128,12 +128,12 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 		if ( !( $lookup instanceof TestingAccessWrapper ) ) {
 			$lookup = TestingAccessWrapper::newFromObject( $lookup );
 		}
-		$mock = $this->createNoOpMock( CentralAuthDatabaseManager::class,
+		$mock = $this->createNoOpMock( CentralAuthConnectionProvider::class,
 			[ 'centralLBHasRecentPrimaryChanges' ] );
 		$mock
 			->method( 'centralLBHasRecentPrimaryChanges' )
 			->willReturn( false );
-		$lookup->databaseManager = $mock;
+		$lookup->caConnectionProvider = $mock;
 	}
 
 	public function testRegistration() {

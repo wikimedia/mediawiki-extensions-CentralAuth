@@ -25,8 +25,8 @@ class GlobalGroupIntegrationTest extends MediaWikiIntegrationTestCase {
 	protected function setUp(): void {
 		parent::setUp();
 
-		$caDbw = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )
-			->getCentralPrimaryDB();
+		$caDbw = CentralAuthServices::getConnectionProvider( $this->getServiceContainer() )
+			->getPrimaryDatabase();
 
 		$caDbw->newInsertQueryBuilder()
 			->insertInto( 'global_group_permissions' )
@@ -62,7 +62,7 @@ class GlobalGroupIntegrationTest extends MediaWikiIntegrationTestCase {
 
 		$expiryFuture = time() + 1800;
 
-		$caDbw = CentralAuthServices::getDatabaseManager( $services )->getCentralPrimaryDB();
+		$caDbw = CentralAuthServices::getConnectionProvider( $services )->getPrimaryDatabase();
 		$caDbw->newInsertQueryBuilder()
 			->insertInto( 'global_user_groups' )
 			->rows( [

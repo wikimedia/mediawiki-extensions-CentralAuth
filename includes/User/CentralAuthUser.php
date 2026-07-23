@@ -311,9 +311,9 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	private function getSafeReadDB() {
 		if ( $this->shouldUsePrimaryDB() ) {
-			return CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+			return CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		} else {
-			return CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+			return CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 		}
 	}
 
@@ -323,12 +323,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	private function shouldUsePrimaryDB() {
-		$dbManager = CentralAuthServices::getDatabaseManager();
-		if ( $dbManager->isReadOnly() ) {
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
+		if ( $caConnectionProvider->isReadOnly() ) {
 			return false;
 		}
 		if ( $this->mFromPrimary === null ) {
-			$this->mFromPrimary = $dbManager->centralLBHasRecentPrimaryChanges();
+			$this->mFromPrimary = $caConnectionProvider->centralLBHasRecentPrimaryChanges();
 		}
 
 		return $this->mFromPrimary;
@@ -369,8 +369,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return self|false false if no user exists with that id
 	 */
 	public static function newFromId( $id ) {
-		$name = CentralAuthServices::getDatabaseManager()
-			->getCentralReplicaDB()
+		$name = CentralAuthServices::getConnectionProvider()
+			->getReplicaDatabase()
 			->newSelectQueryBuilder()
 			->select( 'gu_name' )
 			->from( 'globaluser' )
@@ -389,8 +389,8 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @since 1.37
 	 */
 	public static function newPrimaryInstanceFromId( $id ) {
-		$name = CentralAuthServices::getDatabaseManager()
-			->getCentralPrimaryDB()
+		$name = CentralAuthServices::getConnectionProvider()
+			->getPrimaryDatabase()
 			->newSelectQueryBuilder()
 			->select( 'gu_name' )
 			->from( 'globaluser' )
@@ -694,7 +694,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return stdClass|null Query result. Null if $wikiID is invalid or local user doesn't exist
 	 */
 	public function getLocalUserFields( $wikiId, array $fields, int $recency = IDBAccessObject::READ_NORMAL ) {
-		$db = CentralAuthServices::getDatabaseManager()->getLocalDBFromRecency( $wikiId, $recency );
+		$db = DBAccessObjectUtils::getDBFromRecency(
+			CentralAuthServices::getConnectionProvider()->getRemoteWikiConnectionProvider( $wikiId ),
+			$recency
+		);
 		$row = $db->newSelectQueryBuilder()
 			->select( $fields )
 			->from( 'user' )
@@ -1061,19 +1064,20 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function hasPublicLogs(): bool {
 		$services = MediaWikiServices::getInstance();
-		$dbm = CentralAuthServices::getDatabaseManager();
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
 
 		$wikis = $this->queryAttachedBasic();
 		foreach ( $wikis as $wikiId => $_ ) {
-			$dbr = $dbm->getLocalDB( DB_REPLICA, $wikiId );
+			$dbw = $caConnectionProvider->getRemoteWikiConnectionProvider( $wikiId )->getPrimaryDatabase();
 
 			$actorStore = $services->getActorStoreFactory()->getActorStore( $wikiId );
 			$user = $actorStore->getUserIdentityByName( $this->getName() );
 			if ( !$user ) {
 				continue;
 			}
-			$actorId = $actorStore->acquireActorId( $user, $dbr );
+			$actorId = $actorStore->acquireActorId( $user, $dbw );
 
+			$dbr = $caConnectionProvider->getRemoteWikiConnectionProvider( $wikiId )->getReplicaDatabase();
 			$conds = [
 				'log_actor' => $actorId,
 				// Exclude account's own creation, but not creations of other accounts ('create2' and 'byemail')
@@ -1186,7 +1190,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function register( $password, $email ) {
 		$this->checkWriteMode();
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$hash = $this->saltedPassword( $password );
 		if ( !$this->mAuthToken ) {
 			$this->mAuthToken = MWCryptRand::generateHex( 32 );
@@ -1261,7 +1265,7 @@ class CentralAuthUser implements IDBAccessObject {
 			];
 		}
 
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$dbw->newInsertQueryBuilder()
 			->insertInto( 'globalnames' )
 			->ignore()
@@ -1285,7 +1289,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool Whether we were successful or not.
 	 */
 	private function storeGlobalData( $hash, $email, $emailAuth ) {
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$data = [
 			'gu_name' => $this->mName,
 			'gu_password' => $hash,
@@ -1811,8 +1815,8 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		// Proceed with valid wikis
-		$databaseManager = CentralAuthServices::getDatabaseManager();
-		$dbcw = $databaseManager->getCentralPrimaryDB();
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
+		$dbcw = $caConnectionProvider->getPrimaryDatabase();
 		$password = $this->getPassword();
 
 		foreach ( $valid as $wikiName ) {
@@ -1834,7 +1838,7 @@ class CentralAuthUser implements IDBAccessObject {
 			}
 
 			// Touch the local user row, update the password
-			$dblw = $databaseManager->getLocalDB( DB_PRIMARY, $wikiName );
+			$dblw = $caConnectionProvider->getRemoteWikiConnectionProvider( $wikiName )->getPrimaryDatabase();
 			$dblw->newUpdateQueryBuilder()
 				->update( 'user' )
 				->set( [
@@ -1907,8 +1911,8 @@ class CentralAuthUser implements IDBAccessObject {
 			'Deleting global account for user \'{user}\'',
 			[ 'user' => $this->mName ]
 		);
-		$databaseManager = CentralAuthServices::getDatabaseManager();
-		$centralDB = $databaseManager->getCentralPrimaryDB();
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
+		$centralDB = $caConnectionProvider->getPrimaryDatabase();
 
 		# Synchronise passwords
 		$password = $this->getPassword();
@@ -1920,7 +1924,7 @@ class CentralAuthUser implements IDBAccessObject {
 			->fetchFieldValues();
 		foreach ( $localUserRes as $wiki ) {
 			$this->logger->debug( __METHOD__ . ": Fixing password on $wiki\n" );
-			$localDB = $databaseManager->getLocalDB( DB_PRIMARY, $wiki );
+			$localDB = $caConnectionProvider->getRemoteWikiConnectionProvider( $wiki )->getPrimaryDatabase();
 			$localDB->newUpdateQueryBuilder()
 				->update( 'user' )
 				->set( [ 'user_password' => $password ] )
@@ -2016,7 +2020,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$newCasToken = $this->mCasToken + 1;
 
-		$dbw = CentralAuthServices::getDatabaseManager( $services )->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider( $services )->getPrimaryDatabase();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
 			->set( [ 'gu_locked' => 1, 'gu_cas_token' => $newCasToken ] )
@@ -2063,7 +2067,7 @@ class CentralAuthUser implements IDBAccessObject {
 	private function applyUnlock(): StatusValue {
 		$this->checkWriteMode();
 		$this->loadState();
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$newCasToken = $this->mCasToken + 1;
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
@@ -2097,7 +2101,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$this->loadState();
 		$newCasToken = $this->mCasToken + 1;
 
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
 			->set( [ 'gu_hidden_level' => $level,
@@ -2323,7 +2327,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 			// Push the jobs right before COMMIT (which is likely to succeed).
 			// If the job push fails, then the transaction will roll back.
-			$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+			$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 			$dbw->onTransactionPreCommitOrIdle( static function () use ( $services, $jobs ) {
 				$services->getJobQueueGroup()->push( $jobs );
 			}, __METHOD__ );
@@ -2342,8 +2346,8 @@ class CentralAuthUser implements IDBAccessObject {
 	public function doLocalSuppression( $suppress, $wiki, $by, $reason ) {
 		global $wgConf, $wgCentralAuthGlobalBlockInterwikiPrefix;
 
-		$databaseManager = CentralAuthServices::getDatabaseManager();
-		$dbw = $databaseManager->getLocalDB( DB_PRIMARY, $wiki );
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
+		$dbw = $caConnectionProvider->getRemoteWikiConnectionProvider( $wiki )->getPrimaryDatabase();
 		$localUserId = $this->getLocalId( $wiki, IDBAccessObject::READ_LATEST_IMMUTABLE );
 
 		$wikiId = $wiki === WikiMap::getCurrentWikiId() ? WikiAwareEntity::LOCAL : $wiki;
@@ -2431,7 +2435,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$this->checkWriteMode();
 
-		$dbcw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbcw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$dbcw->newInsertQueryBuilder()
 			->insertInto( 'localuser' )
 			->ignore()
@@ -2581,7 +2585,7 @@ class CentralAuthUser implements IDBAccessObject {
 				$passwordFactory = MediaWikiServices::getInstance()->getPasswordFactory();
 				if ( $passwordFactory->needsUpdate( $passwordObject ) ) {
 					DeferredUpdates::addCallableUpdate( function () use ( $password, $passwordObject ) {
-						if ( CentralAuthServices::getDatabaseManager()->isReadOnly() ) {
+						if ( CentralAuthServices::getConnectionProvider()->isReadOnly() ) {
 							return;
 						}
 
@@ -2725,7 +2729,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $wikiID
 	 */
 	public function addLocalName( $wikiID ) {
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$dbw->newInsertQueryBuilder()
 			->insertInto( 'localnames' )
 			->ignore()
@@ -2741,7 +2745,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $wikiID
 	 */
 	public function removeLocalName( $wikiID ) {
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$dbw->newDeleteQueryBuilder()
 			->deleteFrom( 'localnames' )
 			->where( [
@@ -2758,7 +2762,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @param string $newname
 	 */
 	public function updateLocalName( $wikiID, $newname ) {
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'localnames' )
 			->set( [ 'ln_name' => $newname ] )
@@ -2996,7 +3000,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	private function localUserData( $wikiID, int $recency ) {
 		$mwServices = MediaWikiServices::getInstance();
-		$databaseManager = CentralAuthServices::getDatabaseManager();
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
 
 		$knownDBs = $mwServices->getMainConfig()->get( 'LocalDatabases' );
 		// (T391511) Don't explode if the wiki isn't found, but treat it as "user not found" and warn for clean-up
@@ -3059,7 +3063,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		// Edit count field may not be initialized...
 		if ( $row->user_editcount === null ) {
-			$db = $databaseManager->getLocalDB( DB_REPLICA, $wikiID );
+			$db = $caConnectionProvider->getRemoteWikiConnectionProvider( $wikiID )->getReplicaDatabase();
 			$data['editCount'] = $db->newSelectQueryBuilder()
 				->select( 'COUNT(*)' )
 				->from( 'revision' )
@@ -3171,7 +3175,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		if ( $this->getId() ) {
 			$newCasToken = $this->mCasToken + 1;
-			$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+			$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 			$dbw->newUpdateQueryBuilder()
 				->update( 'globaluser' )
 				->set( [ 'gu_password' => $hash, 'gu_cas_token' => $newCasToken ] )
@@ -3263,8 +3267,8 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 		$this->mStateDirty = false;
 
-		$databaseManager = CentralAuthServices::getDatabaseManager();
-		if ( $databaseManager->isReadOnly() ) {
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
+		if ( $caConnectionProvider->isReadOnly() ) {
 			return;
 		}
 
@@ -3275,7 +3279,7 @@ class CentralAuthUser implements IDBAccessObject {
 
 		$newCasToken = $this->mCasToken + 1;
 
-		$dbw = $databaseManager->getCentralPrimaryDB();
+		$dbw = $caConnectionProvider->getPrimaryDatabase();
 
 		$toSet = [
 			'gu_password' => $this->mPassword,
@@ -3369,7 +3373,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function removeFromGlobalGroups( $groups ) {
 		$this->checkWriteMode();
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 
 		# Delete from the DB
 		$dbw->newDeleteQueryBuilder()
@@ -3389,7 +3393,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function addToGlobalGroup( string $group, ?string $expiry = null ): StatusValue {
 		$this->checkWriteMode();
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 
 		$services = MediaWikiServices::getInstance();
 		if ( $services->getTempUserConfig()->isTempName( $this->mName ) ) {
@@ -3445,8 +3449,8 @@ class CentralAuthUser implements IDBAccessObject {
 			[ 'user' => $this->mName ]
 		);
 
-		CentralAuthServices::getDatabaseManager()
-			->getCentralPrimaryDB()
+		CentralAuthServices::getConnectionProvider()
+			->getPrimaryDatabase()
 			->onTransactionPreCommitOrIdle( function () {
 				$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 				$cache->delete( $this->getCacheKey( $cache ) );
@@ -3622,7 +3626,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$originalPasswordHash = $this->getPasswordObject()->toString();
 		$scrambledPasswordHash = ":scrambled:$reason$originalPasswordHash";
 
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
 			->set( [ 'gu_password' => $scrambledPasswordHash, 'gu_cas_token' => $newCasToken ] )
@@ -3656,7 +3660,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$originalPasswordHash = substr( $scrambledPasswordHash, strlen( ":scrambled:$reason" ) );
 
 		$newCasToken = $this->mCasToken + 1;
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'globaluser' )
 			->set( [ 'gu_password' => $originalPasswordHash, 'gu_cas_token' => $newCasToken ] )

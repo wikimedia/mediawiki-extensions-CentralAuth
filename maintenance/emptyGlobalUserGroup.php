@@ -27,8 +27,8 @@ class EmptyGlobalUserGroup extends Maintenance {
 	}
 
 	public function execute() {
-		$databaseManager = CentralAuthServices::getDatabaseManager();
-		$dbw = $databaseManager->getCentralPrimaryDB();
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
+		$dbw = $caConnectionProvider->getPrimaryDatabase();
 
 		$counter = 0;
 		$group = $this->getArg( 'group' );

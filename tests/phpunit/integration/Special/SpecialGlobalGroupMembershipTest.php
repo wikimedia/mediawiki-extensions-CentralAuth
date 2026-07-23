@@ -39,8 +39,8 @@ class SpecialGlobalGroupMembershipTest extends SpecialPageTestBase {
 		// To avoid complexity related to the use of shared domain
 		$this->overrideConfigValue( CAMainConfigNames::CentralAuthEnableSul3, false );
 
-		$caDbw = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )
-			->getCentralPrimaryDB();
+		$caDbw = CentralAuthServices::getConnectionProvider( $this->getServiceContainer() )
+			->getPrimaryDatabase();
 
 		$caDbw->newInsertQueryBuilder()
 			->insertInto( 'global_group_permissions' )

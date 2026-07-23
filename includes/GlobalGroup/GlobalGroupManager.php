@@ -7,7 +7,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalGroup;
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\WikiSet;
 use StatusValue;
 use Wikimedia\ObjectCache\WANObjectCache;
@@ -32,7 +32,7 @@ class GlobalGroupManager {
 
 	public function __construct(
 		private readonly WANObjectCache $wanCache,
-		private readonly CentralAuthDatabaseManager $dbManager
+		private readonly CentralAuthConnectionProvider $caConnectionProvider
 	) {
 	}
 
@@ -42,7 +42,7 @@ class GlobalGroupManager {
 	 * @return string[]
 	 */
 	public function getDefinedGroups( int $flags = IDBAccessObject::READ_NORMAL ): array {
-		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
+		$dbr = $this->caConnectionProvider->getDBFromRecency( $flags );
 		return $dbr->newSelectQueryBuilder()
 			->select( 'ggp_group' )
 			->distinct()
@@ -89,7 +89,7 @@ class GlobalGroupManager {
 	 * Backend for {@see getRightsForGroup}
 	 */
 	private function getRightsForGroupInternal( string $group, int $flags ): array {
-		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
+		$dbr = $this->caConnectionProvider->getDBFromRecency( $flags );
 		return $dbr->newSelectQueryBuilder()
 			->select( 'ggp_permission' )
 			->from( 'global_group_permissions' )
@@ -108,7 +108,7 @@ class GlobalGroupManager {
 	 * @return string[] internal global group names with the given permission
 	 */
 	public function getGroupsWithPermission( string $permission, int $flags = IDBAccessObject::READ_NORMAL ): array {
-		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
+		$dbr = $this->caConnectionProvider->getDBFromRecency( $flags );
 		return $dbr->newSelectQueryBuilder()
 			->select( 'ggp_group' )
 			->from( 'global_group_permissions' )
@@ -124,7 +124,7 @@ class GlobalGroupManager {
 	 * @since 1.46
 	 */
 	public function isGroupEmpty( string $groupName, int $flags = IDBAccessObject::READ_NORMAL ): bool {
-		$dbr = $this->dbManager->getCentralDBFromRecency( $flags );
+		$dbr = $this->caConnectionProvider->getDBFromRecency( $flags );
 		$memberCount = $dbr->newSelectQueryBuilder()
 			->select( 'gug_group' )
 			->from( 'global_user_groups' )
@@ -174,7 +174,7 @@ class GlobalGroupManager {
 			return StatusValue::newGood();
 		}
 
-		$dbw = $this->dbManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 
 		$insertRows = [];
 		foreach ( $rights as $right ) {
@@ -220,7 +220,7 @@ class GlobalGroupManager {
 			return $this->removeGroup( $groupName );
 		}
 
-		$dbw = $this->dbManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 
 		// Delete the rights from DB
 		$dbw->newDeleteQueryBuilder()
@@ -242,7 +242,7 @@ class GlobalGroupManager {
 	 * @since 1.46
 	 */
 	public function removeGroup( string $groupName ): StatusValue {
-		$dbw = $this->dbManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 
 		// First, ensure that the group has no members
 		if ( !$this->isGroupEmpty( $groupName, IDBAccessObject::READ_LATEST ) ) {
@@ -280,7 +280,7 @@ class GlobalGroupManager {
 			return StatusValue::newFatal( 'centralauth-editgroup-rename-taken', $newName );
 		}
 
-		$dbw = $this->dbManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 		$updates = [
 			'global_group_permissions' => 'ggp_group',
 			'global_group_restrictions' => 'ggr_group',
@@ -314,7 +314,7 @@ class GlobalGroupManager {
 			return StatusValue::newFatal( 'centralauth-editgroup-nonexistent', $groupName );
 		}
 
-		$dbw = $this->dbManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 
 		if ( $wikiSetId === 0 || $wikiSetId === null ) {
 			$dbw->newDeleteQueryBuilder()

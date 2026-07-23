@@ -13,7 +13,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 
 use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use Wikimedia\ParamValidator\ParamValidator;
 
 /**
@@ -24,15 +24,15 @@ use Wikimedia\ParamValidator\ParamValidator;
  */
 class ApiQueryGlobalGroups extends ApiQueryBase {
 
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		CentralAuthDatabaseManager $databaseManager
+		CentralAuthConnectionProvider $caConnectionProvider
 	) {
 		parent::__construct( $query, $moduleName, 'ggp' );
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 	}
 
 	public function execute() {
@@ -43,7 +43,7 @@ class ApiQueryGlobalGroups extends ApiQueryBase {
 		$APIResult = $this->getResult();
 		$data = [];
 
-		$dbr = $this->databaseManager->getCentralReplicaDB();
+		$dbr = $this->caConnectionProvider->getReplicaDatabase();
 
 		$qb = $dbr->newSelectQueryBuilder()
 			->select( 'ggp_group' )

@@ -47,7 +47,7 @@ class CentralAuthTemporaryPasswordPrimaryAuthenticationProvider
 	private Emailer $emailer;
 	private LanguageNameUtils $languageNameUtils;
 	private UserIdentityLookup $userIdentityLookup;
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private CentralAuthUtilityService $utilityService;
 	private SharedDomainUtils $sharedDomainUtils;
 
@@ -57,7 +57,7 @@ class CentralAuthTemporaryPasswordPrimaryAuthenticationProvider
 		LanguageNameUtils $languageNameUtils,
 		UserIdentityLookup $userIdentityLookup,
 		UserOptionsLookup $userOptionsLookup,
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		CentralAuthUtilityService $utilityService,
 		SharedDomainUtils $sharedDomainUtils,
 		array $params = []
@@ -66,7 +66,7 @@ class CentralAuthTemporaryPasswordPrimaryAuthenticationProvider
 		$this->emailer = $emailer;
 		$this->languageNameUtils = $languageNameUtils;
 		$this->userIdentityLookup = $userIdentityLookup;
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->utilityService = $utilityService;
 		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
@@ -106,7 +106,7 @@ class CentralAuthTemporaryPasswordPrimaryAuthenticationProvider
 			return [ null, null ];
 		}
 
-		$db = $this->databaseManager->getCentralDBFromRecency( $flags );
+		$db = $this->caConnectionProvider->getDBFromRecency( $flags );
 		$row = $db->newSelectQueryBuilder()
 			->select( [ 'gu_password_reset_key', 'gu_password_reset_expiration' ] )
 			->from( 'globaluser' )
@@ -126,7 +126,7 @@ class CentralAuthTemporaryPasswordPrimaryAuthenticationProvider
 
 	/** @inheritDoc */
 	protected function setTemporaryPassword( string $username, Password $tempPassHash, $tempPassTime ): void {
-		$db = $this->databaseManager->getCentralPrimaryDB();
+		$db = $this->caConnectionProvider->getPrimaryDatabase();
 		$db->newUpdateQueryBuilder()
 			->update( 'globaluser' )
 			->set( [
@@ -171,7 +171,7 @@ class CentralAuthTemporaryPasswordPrimaryAuthenticationProvider
 		// Do the attach in finishAccountCreation instead of begin because now the user has been
 		// added to database and local ID exists (which is needed in attach)
 		$centralUser->attach( WikiMap::getCurrentWikiId(), 'new' );
-		$this->databaseManager->getCentralPrimaryDB()->onTransactionCommitOrIdle(
+		$this->caConnectionProvider->getPrimaryDatabase()->onTransactionCommitOrIdle(
 			function () use ( $centralUser ) {
 				$this->utilityService->scheduleCreationJobs( $centralUser );
 			},
@@ -184,7 +184,7 @@ class CentralAuthTemporaryPasswordPrimaryAuthenticationProvider
 	/** @inheritDoc */
 	protected function maybeSendPasswordResetEmail( TemporaryPasswordAuthenticationRequest $req ): void {
 		// Send email after DB commit (the callback does not run in case of DB rollback)
-		$this->databaseManager->getCentralPrimaryDB()->onTransactionCommitOrIdle(
+		$this->caConnectionProvider->getPrimaryDatabase()->onTransactionCommitOrIdle(
 			function () use ( $req ) {
 				$this->sendPasswordResetEmail( $req );
 			},

@@ -8,6 +8,7 @@ use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserLogger;
 use MediaWiki\User\UserFactory;
 use MediaWiki\WikiMap\WikiMap;
 use StatusValue;
+use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IConnectionProvider;
 
 class CentralAuthPreviouslyRenamedAccountPreAuthenticationProvider
@@ -17,7 +18,7 @@ class CentralAuthPreviouslyRenamedAccountPreAuthenticationProvider
 	public function __construct(
 		IConnectionProvider $dbProvider,
 		UserFactory $userFactory,
-		private readonly CentralAuthDatabaseManager $centralAuthDatabaseManager,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
 		array $params = []
 	) {
 		parent::__construct( $dbProvider, $userFactory, $params );
@@ -27,9 +28,11 @@ class CentralAuthPreviouslyRenamedAccountPreAuthenticationProvider
 		if (
 			GlobalRenameUserLogger::isPreviouslyRenamedAccount(
 				$username,
-				$this->centralAuthDatabaseManager->getLocalDBFromRecency(
-					$this->config->get( CAMainConfigNames::CentralAuthOldNameAntiSpoofWiki ) ?:
-						WikiMap::getCurrentWikiId(),
+				DBAccessObjectUtils::getDBFromRecency(
+					$this->caConnectionProvider->getRemoteWikiConnectionProvider(
+						$this->config->get( CAMainConfigNames::CentralAuthOldNameAntiSpoofWiki ) ?:
+							WikiMap::getCurrentWikiId()
+					),
 					$flags
 				)
 			)

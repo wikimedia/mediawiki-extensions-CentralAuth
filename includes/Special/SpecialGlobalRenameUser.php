@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
@@ -24,6 +24,7 @@ use MediaWiki\User\UserNameUtils;
 use MediaWiki\User\UserRigorOptions;
 use MediaWiki\WikiMap\WikiMap;
 use StatusValue;
+use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 class SpecialGlobalRenameUser extends FormSpecialPage {
@@ -67,7 +68,7 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 		private UserFactory $userFactory,
 		private UserNameUtils $userNameUtils,
 		private CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		private CentralAuthDatabaseManager $databaseManager,
+		private CentralAuthConnectionProvider $caConnectionProvider,
 		private CentralAuthUIService $uiService,
 		private GlobalRenameDenylist $globalRenameDenylist,
 		private GlobalRenameFactory $globalRenameFactory,
@@ -226,9 +227,11 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 			!$this->allowPreviouslyRenamedAccount &&
 			GlobalRenameUserLogger::isPreviouslyRenamedAccount(
 				$newUser->getName(),
-				$this->databaseManager->getLocalDBFromRecency(
-					$this->getConfig()->get( CAMainConfigNames::CentralAuthOldNameAntiSpoofWiki ) ?:
-						WikiMap::getCurrentWikiId(),
+				DBAccessObjectUtils::getDBFromRecency(
+					$this->caConnectionProvider->getRemoteWikiConnectionProvider(
+						$this->getConfig()->get( CAMainConfigNames::CentralAuthOldNameAntiSpoofWiki ) ?:
+							WikiMap::getCurrentWikiId()
+					),
 					IDBAccessObject::READ_LATEST
 				)
 			)

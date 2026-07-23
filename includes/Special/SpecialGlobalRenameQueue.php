@@ -10,7 +10,7 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use Exception;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
@@ -41,6 +41,7 @@ use OOUI\MessageWidget;
 use Psr\Log\LoggerInterface;
 use RuntimeException;
 use StatusValue;
+use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
@@ -53,7 +54,7 @@ use Wikimedia\Rdbms\IDBAccessObject;
 class SpecialGlobalRenameQueue extends SpecialPage {
 
 	private UserNameUtils $userNameUtils;
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private CentralAuthUIService $uiService;
 	private GlobalRenameRequestStore $globalRenameRequestStore;
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
@@ -70,7 +71,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 
 	public function __construct(
 		UserNameUtils $userNameUtils,
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		CentralAuthUIService $uiService,
 		GlobalRenameRequestStore $globalRenameRequestStore,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
@@ -79,7 +80,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	) {
 		parent::__construct( 'GlobalRenameQueue' );
 		$this->userNameUtils = $userNameUtils;
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->uiService = $uiService;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
@@ -245,7 +246,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$pager = new RenameQueueTablePager(
 			$this->getContext(),
 			$this->getLinkRenderer(),
-			$this->databaseManager,
+			$this->caConnectionProvider,
 			$this->userNameUtils,
 			self::PAGE_OPEN_QUEUE
 		);
@@ -287,7 +288,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		$pager = new RenameQueueTablePager(
 			$this->getContext(),
 			$this->getLinkRenderer(),
-			$this->databaseManager,
+			$this->caConnectionProvider,
 			$this->userNameUtils,
 			self::PAGE_CLOSED_QUEUE
 		);
@@ -622,9 +623,11 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 		if (
 			GlobalRenameUserLogger::isPreviouslyRenamedAccount(
 				$req->getNewName(),
-				$this->databaseManager->getLocalDBFromRecency(
-					$this->getConfig()->get( CAMainConfigNames::CentralAuthOldNameAntiSpoofWiki ) ?:
-						WikiMap::getCurrentWikiId(),
+				DBAccessObjectUtils::getDBFromRecency(
+					$this->caConnectionProvider->getRemoteWikiConnectionProvider(
+						$this->getConfig()->get( CAMainConfigNames::CentralAuthOldNameAntiSpoofWiki ) ?:
+							WikiMap::getCurrentWikiId()
+					),
 					IDBAccessObject::READ_NORMAL
 				)
 			)

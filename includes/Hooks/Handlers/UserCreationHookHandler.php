@@ -8,7 +8,7 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Auth\Hook\LocalUserCreatedHook;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthUtilityService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -18,16 +18,16 @@ use MediaWiki\WikiMap\WikiMap;
 class UserCreationHookHandler implements LocalUserCreatedHook {
 
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private CentralAuthUtilityService $utilityService;
 
 	public function __construct(
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		CentralAuthUtilityService $utilityService
 	) {
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->utilityService = $utilityService;
 	}
 
@@ -47,7 +47,7 @@ class UserCreationHookHandler implements LocalUserCreatedHook {
 		if ( !$centralUser->exists() && !$centralUser->listUnattached() ) {
 			if ( $centralUser->register( null, $user->getEmail() ) ) {
 				$centralUser->attach( WikiMap::getCurrentWikiId(), 'new' );
-				$this->databaseManager->getCentralPrimaryDB()->onTransactionCommitOrIdle(
+				$this->caConnectionProvider->getPrimaryDatabase()->onTransactionCommitOrIdle(
 					function () use ( $centralUser ) {
 						$this->utilityService->scheduleCreationJobs( $centralUser );
 					},

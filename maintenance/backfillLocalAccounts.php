@@ -308,7 +308,7 @@ class BackfillLocalAccounts extends Maintenance {
 			);
 		}
 
-		$cadb = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+		$cadb = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 
 		$services = $this->getServiceContainer();
 		$userFactory = $services->getUserFactory();

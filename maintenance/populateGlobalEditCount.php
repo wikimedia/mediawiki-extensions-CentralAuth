@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Maintenance\Maintenance;
 use RuntimeException;
@@ -19,7 +19,7 @@ class PopulateGlobalEditCount extends Maintenance {
 
 	private const READ_BATCH_SIZE = 1000;
 
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 
 	private int $lastReportTime = 0;
 
@@ -34,13 +34,13 @@ class PopulateGlobalEditCount extends Maintenance {
 
 	private function init() {
 		$services = $this->getServiceContainer();
-		$this->databaseManager = CentralAuthServices::getDatabaseManager( $services );
+		$this->caConnectionProvider = CentralAuthServices::getConnectionProvider( $services );
 	}
 
 	public function execute() {
 		$this->init();
-		$dbcr = $this->databaseManager->getCentralReplicaDB();
-		$dbcw = $this->databaseManager->getCentralPrimaryDB();
+		$dbcr = $this->caConnectionProvider->getReplicaDatabase();
+		$dbcw = $this->caConnectionProvider->getPrimaryDatabase();
 		$lastId = (int)$dbcr->newSelectQueryBuilder()
 			->select( 'MAX(gu_id)' )
 			->from( 'globaluser' )
@@ -98,7 +98,7 @@ class PopulateGlobalEditCount extends Maintenance {
 
 			// Get the edit counts on each wiki using a batch query
 			foreach ( $localIds as $wiki => $ids ) {
-				$dblr = $this->databaseManager->getLocalDB( DB_REPLICA, $wiki );
+				$dblr = $this->caConnectionProvider->getRemoteWikiConnectionProvider( $wiki )->getReplicaDatabase();
 				$res = $dblr->newSelectQueryBuilder()
 					->select( [
 						'user_id',

@@ -62,8 +62,8 @@ class DemoteIneligibleCentralUsers extends Maintenance {
 			return;
 		}
 
-		$databaseManager = CentralAuthServices::getDatabaseManager( $services );
-		$centralDbr = $databaseManager->getCentralReplicaDB();
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider( $services );
+		$centralDbr = $caConnectionProvider->getReplicaDatabase();
 		$groupMembers = $centralDbr->newSelectQueryBuilder()
 			->select( [ 'gu_name', 'gug_group' ] )
 			->from( 'globaluser' )

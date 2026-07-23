@@ -46,7 +46,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	private TempUserDetailsLookup $tempUserDetailsLookup;
 	private UserIdentityLookup $userIdentityLookup;
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private CentralAuthUtilityService $utilityService;
 	private GlobalRenameRequestStore $globalRenameRequestStore;
 	private SharedDomainUtils $sharedDomainUtils;
@@ -64,7 +64,7 @@ class CentralAuthPrimaryAuthenticationProvider
 	 * @param TempUserDetailsLookup $tempUserDetailsLookup
 	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
-	 * @param CentralAuthDatabaseManager $databaseManager
+	 * @param CentralAuthConnectionProvider $caConnectionProvider
 	 * @param CentralAuthUtilityService $utilityService
 	 * @param GlobalRenameRequestStore $globalRenameRequestStore
 	 * @param SharedDomainUtils $sharedDomainUtils
@@ -82,7 +82,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		TempUserDetailsLookup $tempUserDetailsLookup,
 		UserIdentityLookup $userIdentityLookup,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		CentralAuthUtilityService $utilityService,
 		GlobalRenameRequestStore $globalRenameRequestStore,
 		SharedDomainUtils $sharedDomainUtils,
@@ -96,7 +96,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		$this->tempUserDetailsLookup = $tempUserDetailsLookup;
 		$this->userIdentityLookup = $userIdentityLookup;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->utilityService = $utilityService;
 		$this->globalRenameRequestStore = $globalRenameRequestStore;
 		$this->sharedDomainUtils = $sharedDomainUtils;
@@ -569,7 +569,7 @@ class CentralAuthPrimaryAuthenticationProvider
 		// Do the attach in finishAccountCreation instead of begin because now the user has been
 		// added to database and local ID exists (which is needed in attach)
 		$centralUser->attach( WikiMap::getCurrentWikiId(), 'new' );
-		$this->databaseManager->getCentralPrimaryDB()->onTransactionCommitOrIdle(
+		$this->caConnectionProvider->getPrimaryDatabase()->onTransactionCommitOrIdle(
 			function () use ( $centralUser ) {
 				$this->utilityService->scheduleCreationJobs( $centralUser );
 			},

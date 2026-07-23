@@ -41,7 +41,7 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 	/** @inheritDoc */
 	public function addDBDataOnce() {
 		$this->overrideConfigValue( CAMainConfigNames::CentralAuthCentralWiki, null );
-		$centralDb = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )->getCentralPrimaryDB();
+		$centralDb = CentralAuthServices::getConnectionProvider( $this->getServiceContainer() )->getPrimaryDatabase();
 
 		// Create 3 global users
 		for ( $i = 1; $i <= 3; $i++ ) {
@@ -207,7 +207,7 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 		bool $expectContinuation
 	) {
 		// Expire user #1's group
-		$dbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$dbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'global_user_groups' )
 			->set( [ 'gug_expiry' => $dbw->timestamp( MWTimestamp::now( TS_UNIX ) - 1 ) ] )
@@ -389,7 +389,7 @@ class ApiQueryGlobalAllUsersTest extends ApiTestCase {
 
 		// Schedule manual cleanup of the temp user for tables touched in ::addDBDataOnce
 		$this->tearDownCallbacks[] = function () use ( $tempUser ) {
-			$centralDbw = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+			$centralDbw = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 			$centralDbw->newDeleteQueryBuilder()
 				->delete( 'globaluser' )
 				->where( [ 'gu_name' => $tempUser->getName() ] )

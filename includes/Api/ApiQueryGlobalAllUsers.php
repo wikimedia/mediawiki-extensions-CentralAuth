@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\Api;
 use MediaWiki\Api\ApiBase;
 use MediaWiki\Api\ApiQuery;
 use MediaWiki\Api\ApiQueryBase;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\User\TempUser\TempUserConfig;
@@ -32,19 +32,19 @@ use Wikimedia\Rdbms\LikeValue;
 class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
 	private TempUserConfig $tempUserConfig;
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private GlobalGroupManager $globalGroupManager;
 
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
 		TempUserConfig $tempUserConfig,
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		GlobalGroupManager $globalGroupManager
 	) {
 		parent::__construct( $query, $moduleName, 'agu' );
 		$this->tempUserConfig = $tempUserConfig;
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->globalGroupManager = $globalGroupManager;
 	}
 
@@ -56,7 +56,7 @@ class ApiQueryGlobalAllUsers extends ApiQueryBase {
 	 */
 	protected function getDB() {
 		static $db = null;
-		$db ??= $this->databaseManager->getCentralReplicaDB();
+		$db ??= $this->caConnectionProvider->getReplicaDatabase();
 		return $db;
 	}
 

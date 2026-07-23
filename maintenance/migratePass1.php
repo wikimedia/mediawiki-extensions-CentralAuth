@@ -41,7 +41,7 @@ class MigratePass1 extends Maintenance {
 		$this->output( "CentralAuth migration pass 1:\n" );
 		$this->output( "Finding accounts which can be migrated without interaction...\n" );
 
-		$dbBackground = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+		$dbBackground = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 
 		$this->start = microtime( true );
 		$result = $dbBackground->newSelectQueryBuilder()

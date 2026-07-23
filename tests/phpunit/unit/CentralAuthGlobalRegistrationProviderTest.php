@@ -2,7 +2,7 @@
 namespace MediaWiki\Extension\CentralAuth\User\Tests\Unit;
 
 use ArrayIterator;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthGlobalRegistrationProvider;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilder;
@@ -21,7 +21,7 @@ class CentralAuthGlobalRegistrationProviderTest extends MediaWikiUnitTestCase {
 
 	private GlobalUserSelectQueryBuilderFactory $globalUserSelectQueryBuilderFactory;
 
-	private CentralAuthDatabaseManager $centralAuthDatabaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 
 	private UserNameUtils $userNameUtils;
 
@@ -31,11 +31,11 @@ class CentralAuthGlobalRegistrationProviderTest extends MediaWikiUnitTestCase {
 		parent::setUp();
 
 		$this->globalUserSelectQueryBuilderFactory = $this->createMock( GlobalUserSelectQueryBuilderFactory::class );
-		$this->centralAuthDatabaseManager = $this->createMock( CentralAuthDatabaseManager::class );
+		$this->caConnectionProvider = $this->createMock( CentralAuthConnectionProvider::class );
 		$this->userNameUtils = $this->createMock( UserNameUtils::class );
 		$this->provider = new CentralAuthGlobalRegistrationProvider(
 			$this->globalUserSelectQueryBuilderFactory,
-			$this->centralAuthDatabaseManager,
+			$this->caConnectionProvider,
 			$this->userNameUtils
 		);
 	}
@@ -92,7 +92,7 @@ class CentralAuthGlobalRegistrationProviderTest extends MediaWikiUnitTestCase {
 			->with( 'lu_wiki', '!=', null )
 			->willReturn( $localUserAttachedExpr );
 
-		$this->centralAuthDatabaseManager->method( 'getCentralReplicaDB' )
+		$this->caConnectionProvider->method( 'getReplicaDatabase' )
 			->willReturn( $dbr );
 
 		$selectQueryBuilder = $this->createMock( GlobalUserSelectQueryBuilder::class );
@@ -143,7 +143,7 @@ class CentralAuthGlobalRegistrationProviderTest extends MediaWikiUnitTestCase {
 			->with( 'lu_wiki', '!=', null )
 			->willReturn( $localUserAttachedExpr );
 
-		$this->centralAuthDatabaseManager->method( 'getCentralReplicaDB' )
+		$this->caConnectionProvider->method( 'getReplicaDatabase' )
 			->willReturn( $dbr );
 
 		$firstBatchSelectQueryBuilder = $this->createMock( GlobalUserSelectQueryBuilder::class );

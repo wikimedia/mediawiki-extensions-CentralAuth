@@ -23,7 +23,7 @@ class GetCentralAuthDBInfo extends Maintenance {
 
 	public function execute() {
 		$this->output(
-			CentralAuthServices::getDatabaseManager()->getCentralReplicaDB()->getServer() . "\n"
+			CentralAuthServices::getConnectionProvider()->getReplicaDatabase()->getServer() . "\n"
 		);
 	}
 }

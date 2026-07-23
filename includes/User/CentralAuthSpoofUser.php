@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\User;
 
 use MediaWiki\Extension\AntiSpoof\SpoofUser;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IReadableDatabase;
 
@@ -11,17 +11,17 @@ class CentralAuthSpoofUser extends SpoofUser {
 
 	public function __construct(
 		string $name,
-		private readonly CentralAuthDatabaseManager $centralAuthDatabaseManager
+		private readonly CentralAuthConnectionProvider $caConnectionProvider
 	) {
 		parent::__construct( $name );
 	}
 
 	protected function getDBReplica(): IReadableDatabase {
-		return $this->centralAuthDatabaseManager->getCentralReplicaDB();
+		return $this->caConnectionProvider->getReplicaDatabase();
 	}
 
 	protected function getDBPrimary(): IDatabase {
-		return $this->centralAuthDatabaseManager->getCentralPrimaryDB();
+		return $this->caConnectionProvider->getPrimaryDatabase();
 	}
 
 	protected function getTableName(): string {

@@ -10,7 +10,7 @@
 namespace MediaWiki\Extension\CentralAuth\Special\Pager;
 
 use MediaWiki\Context\IContextSource;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\Special\SpecialGlobalRenameQueue;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -43,13 +43,13 @@ class RenameQueueTablePager extends TablePager {
 	public function __construct(
 		IContextSource $context,
 		LinkRenderer $linkRenderer,
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		UserNameUtils $userNameUtils,
 		string $page
 	) {
 		$this->setContext( $context );
 		$this->mPage = $page;
-		$this->mDb = $databaseManager->getCentralReplicaDB();
+		$this->mDb = $caConnectionProvider->getReplicaDatabase();
 		$this->userNameUtils = $userNameUtils;
 
 		$limit = $this->getRequest()->getInt( 'limit', 100 );

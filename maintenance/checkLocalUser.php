@@ -86,7 +86,7 @@ class CheckLocalUser extends Maintenance {
 
 		$this->verbose = $this->hasOption( 'verbose' );
 
-		$centralPrimaryDb = CentralAuthServices::getDatabaseManager()->getCentralPrimaryDB();
+		$centralPrimaryDb = CentralAuthServices::getConnectionProvider()->getPrimaryDatabase();
 
 		$this->start = microtime( true );
 
@@ -122,7 +122,9 @@ class CheckLocalUser extends Maintenance {
 				continue;
 			}
 
-			$localdb = CentralAuthServices::getDatabaseManager()->getLocalDB( DB_REPLICA, $wiki );
+			$localdb = CentralAuthServices::getConnectionProvider()
+				->getRemoteWikiConnectionProvider( $wiki )
+				->getReplicaDatabase();
 
 			// batch query local users from the wiki; iterate through and verify each one
 			foreach ( $this->getUsers( $wiki ) as $username ) {
@@ -175,7 +177,7 @@ class CheckLocalUser extends Maintenance {
 	 * @return array|null[]|string[]
 	 */
 	protected function getWikis(): array {
-		$centralReplica = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+		$centralReplica = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 
 		if ( $this->wiki !== null ) {
 			return [ $this->wiki ];
@@ -203,7 +205,7 @@ class CheckLocalUser extends Maintenance {
 			return;
 		}
 
-		$centralReplica = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+		$centralReplica = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 		$lastUsername = '';
 		while ( true ) {
 			$this->output( "\t ... querying from '$lastUsername'\n" );

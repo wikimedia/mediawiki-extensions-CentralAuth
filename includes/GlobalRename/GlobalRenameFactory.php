@@ -8,7 +8,7 @@
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
 use InvalidArgumentException;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthAntiSpoofManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\JobQueue\JobQueueGroupFactory;
@@ -27,18 +27,18 @@ class GlobalRenameFactory {
 	private UserFactory $userFactory;
 
 	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 
 	public function __construct(
 		JobQueueGroupFactory $jobQueueGroupFactory,
 		UserFactory $userFactory,
 		CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		CentralAuthDatabaseManager $databaseManager
+		CentralAuthConnectionProvider $caConnectionProvider
 	) {
 		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
 		$this->userFactory = $userFactory;
 		$this->caAntiSpoofManager = $caAntiSpoofManager;
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 	}
 
 	public function newGlobalRenameUser(
@@ -70,7 +70,7 @@ class GlobalRenameFactory {
 			CentralAuthUser::getPrimaryInstance( $userNew ),
 			$this->newGlobalRenameUserStatus( $userNew->getName() ),
 			$this->jobQueueGroupFactory,
-			new GlobalRenameUserDatabaseUpdates( $this->databaseManager ),
+			new GlobalRenameUserDatabaseUpdates( $this->caConnectionProvider ),
 			new GlobalRenameUserLogger( $performer ),
 			$this->caAntiSpoofManager
 		);
@@ -78,7 +78,7 @@ class GlobalRenameFactory {
 
 	public function newGlobalRenameUserStatus( string $username ): GlobalRenameUserStatus {
 		return new GlobalRenameUserStatus(
-			$this->databaseManager,
+			$this->caConnectionProvider,
 			$username
 		);
 	}

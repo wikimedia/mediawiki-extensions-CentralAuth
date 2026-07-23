@@ -9,7 +9,7 @@ use Wikimedia\Rdbms\RawSQLValue;
 
 class CentralAuthEditCounter {
 
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private WANObjectCache $wanCache;
 
 	/**
@@ -19,10 +19,10 @@ class CentralAuthEditCounter {
 	private array $userEditCountCache = [];
 
 	public function __construct(
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		WANObjectCache $wanCache
 	) {
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->wanCache = $wanCache;
 	}
 
@@ -43,7 +43,7 @@ class CentralAuthEditCounter {
 
 		$userId = $centralUser->getId();
 
-		if ( $this->databaseManager->isReadOnly() ) {
+		if ( $this->caConnectionProvider->isReadOnly() ) {
 			// Don't try DB_PRIMARY since that will throw an exception
 			return $this->wanCache->getWithSetCallback(
 				$this->wanCache->makeGlobalKey( 'centralauth-editcount', $centralUser->getId() ),
@@ -54,7 +54,7 @@ class CentralAuthEditCounter {
 			);
 		}
 
-		$dbw = $this->databaseManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 		$count = $this->getCountFromDB( $dbw, $userId );
 		if ( $count !== false ) {
 			$this->userEditCountCache[$userId] = $count;
@@ -115,7 +115,7 @@ class CentralAuthEditCounter {
 			return $this->userEditCountCache[$userId];
 		}
 
-		$dbr = $this->databaseManager->getCentralReplicaDB();
+		$dbr = $this->caConnectionProvider->getReplicaDatabase();
 		$count = $this->getCountFromDB( $dbr, $userId );
 		if ( $count !== false ) {
 			$this->userEditCountCache[$userId] = $count;
@@ -152,7 +152,7 @@ class CentralAuthEditCounter {
 
 		$userIds = array_unique( $userIds );
 
-		$dbr = $this->databaseManager->getCentralReplicaDB();
+		$dbr = $this->caConnectionProvider->getReplicaDatabase();
 
 		foreach ( array_chunk( $userIds, 500 ) as $userIdsBatch ) {
 			$rows = $dbr->newSelectQueryBuilder()
@@ -203,10 +203,10 @@ class CentralAuthEditCounter {
 	 * @param int $increment
 	 */
 	public function increment( CentralAuthUser $centralUser, $increment ) {
-		if ( !$increment || $this->databaseManager->isReadOnly() ) {
+		if ( !$increment || $this->caConnectionProvider->isReadOnly() ) {
 			return;
 		}
-		$dbw = $this->databaseManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 		$dbw->newUpdateQueryBuilder()
 			->update( 'global_edit_count' )
 			->set( [ 'gec_count' => new RawSQLValue( 'gec_count + ' . (int)$increment ) ] )
@@ -219,7 +219,7 @@ class CentralAuthEditCounter {
 	}
 
 	public function recalculate( CentralAuthUser $centralUser ): int {
-		$dbw = $this->databaseManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 		$currentCount = $this->getCountFromDB( $dbw, $centralUser->getId() );
 		if ( $currentCount === false ) {
 			// Edit count is not cached, no need to do anything

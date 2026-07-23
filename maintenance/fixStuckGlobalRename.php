@@ -53,12 +53,12 @@ class FixStuckGlobalRename extends Maintenance {
 			$this->fatalError( "{$ca->getName()} does not have a rename in progress on this wiki." );
 		}
 
-		$databaseManager = CentralAuthServices::getDatabaseManager();
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
 
 		$logWikiId = $this->getOption( 'logwiki' );
 		$logWikiIdOrLocal = $logWikiId === WikiMap::getCurrentWikiId() ? false : $logWikiId;
 
-		$dbr = $databaseManager->getLocalDB( DB_REPLICA, $logWikiId );
+		$dbr = $caConnectionProvider->getRemoteWikiConnectionProvider( $logWikiId )->getReplicaDatabase();
 		$dbLogEntrySqb = DatabaseLogEntry::newSelectQueryBuilder( $dbr );
 		$row = $dbLogEntrySqb
 			->where( [

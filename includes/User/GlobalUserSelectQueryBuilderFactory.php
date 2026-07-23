@@ -2,14 +2,14 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\User\ActorStore;
 use MediaWiki\User\TempUser\TempUserConfig;
 use MediaWiki\User\UserNameUtils;
 
 class GlobalUserSelectQueryBuilderFactory {
 
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 
 	private ActorStore $actorStore;
 
@@ -18,12 +18,12 @@ class GlobalUserSelectQueryBuilderFactory {
 	private TempUserConfig $tempUserConfig;
 
 	public function __construct(
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		ActorStore $actorStore,
 		UserNameUtils $userNameUtils,
 		TempUserConfig $tempUserConfig
 	) {
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->actorStore = $actorStore;
 		$this->userNameUtils = $userNameUtils;
 		$this->tempUserConfig = $tempUserConfig;
@@ -31,7 +31,7 @@ class GlobalUserSelectQueryBuilderFactory {
 
 	public function newGlobalUserSelectQueryBuilder(): GlobalUserSelectQueryBuilder {
 		return new GlobalUserSelectQueryBuilder(
-			$this->databaseManager->getCentralReplicaDB(),
+			$this->caConnectionProvider->getReplicaDatabase(),
 			$this->actorStore,
 			$this->userNameUtils,
 			$this->tempUserConfig

@@ -34,7 +34,7 @@ class CentralAuthUserArrayFromResult extends UserArrayFromResult {
 		}
 		$res->rewind();
 
-		$dbr = CentralAuthServices::getDatabaseManager()->getCentralReplicaDB();
+		$dbr = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 		$caRes = $dbr->newSelectQueryBuilder()
 			->select( '*' )
 			->from( 'localuser' )

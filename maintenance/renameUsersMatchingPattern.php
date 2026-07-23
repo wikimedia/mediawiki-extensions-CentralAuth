@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\Maintenance;
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameUserValidator;
@@ -25,7 +25,7 @@ require_once "$IP/maintenance/Maintenance.php";
 
 class RenameUsersMatchingPattern extends Maintenance {
 
-	private CentralAuthDatabaseManager $dbManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private UserFactory $userFactory;
 	private GlobalRenameFactory $globalRenameFactory;
 	private GlobalRenameUserValidator $validator;
@@ -61,7 +61,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 
 	private function initServices() {
 		$services = $this->getServiceContainer();
-		$this->dbManager = CentralAuthServices::getDatabaseManager();
+		$this->caConnectionProvider = CentralAuthServices::getConnectionProvider();
 		$this->userFactory = $services->getUserFactory();
 		$this->globalRenameFactory = $services->get( 'CentralAuth.GlobalRenameFactory' );
 		$this->validator = $services->get( 'CentralAuth.GlobalRenameUserValidator' );
@@ -93,7 +93,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 		$this->skipPageMoves = $this->getOption( 'skip-page-moves' );
 		$this->dryRun = $this->getOption( 'dry-run' );
 
-		$dbr = $this->dbManager->getCentralReplicaDB();
+		$dbr = $this->caConnectionProvider->getReplicaDatabase();
 		$batchConds = [];
 		$numRenamed = 0;
 
@@ -185,7 +185,7 @@ class RenameUsersMatchingPattern extends Maintenance {
 	 */
 	private function waitForJobs(): void {
 		while ( true ) {
-			$count = $this->dbManager->getCentralPrimaryDB()->newSelectQueryBuilder()
+			$count = $this->caConnectionProvider->getPrimaryDatabase()->newSelectQueryBuilder()
 				->from( 'renameuser_status' )
 				->limit( 15 )
 				->caller( __METHOD__ )

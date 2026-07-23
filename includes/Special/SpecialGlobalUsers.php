@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\Special;
 
 use MediaWiki\Context\DerivativeContext;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\Special\Pager\GlobalUsersPager;
 use MediaWiki\Html\Html;
@@ -16,19 +16,19 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 
 	private Language $contentLanguage;
 	private LinkBatchFactory $linkBatchFactory;
-	private CentralAuthDatabaseManager $dbManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private GlobalGroupManager $globalGroupManager;
 
 	public function __construct(
 		Language $contentLanguage,
 		LinkBatchFactory $linkBatchFactory,
-		CentralAuthDatabaseManager $dbManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		GlobalGroupManager $globalGroupManager
 	) {
 		parent::__construct( 'GlobalUsers' );
 		$this->contentLanguage = $contentLanguage;
 		$this->linkBatchFactory = $linkBatchFactory;
-		$this->dbManager = $dbManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->globalGroupManager = $globalGroupManager;
 	}
 
@@ -43,7 +43,7 @@ class SpecialGlobalUsers extends IncludableSpecialPage {
 
 		$pg = new GlobalUsersPager(
 			$context,
-			$this->dbManager,
+			$this->caConnectionProvider,
 			$this->globalGroupManager,
 			$this->linkBatchFactory
 		);

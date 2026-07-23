@@ -5,7 +5,7 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use Exception;
 use InvalidArgumentException;
 use MediaWiki\Exception\ErrorPageError;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Html\Html;
@@ -35,17 +35,17 @@ class SpecialMergeAccount extends SpecialPage {
 
 	private NamespaceInfo $namespaceInfo;
 	private UserFactory $userFactory;
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 
 	public function __construct(
 		NamespaceInfo $namespaceInfo,
 		UserFactory $userFactory,
-		CentralAuthDatabaseManager $databaseManager
+		CentralAuthConnectionProvider $caConnectionProvider
 	) {
 		parent::__construct( 'MergeAccount' );
 		$this->namespaceInfo = $namespaceInfo;
 		$this->userFactory = $userFactory;
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 	}
 
 	/** @inheritDoc */
@@ -94,7 +94,7 @@ class SpecialMergeAccount extends SpecialPage {
 			return;
 		}
 
-		$this->databaseManager->assertNotReadOnly();
+		$this->caConnectionProvider->assertNotReadOnly();
 		$request = $this->getRequest();
 
 		$this->mUserName = $this->getUser()->getName();

@@ -63,10 +63,10 @@ class WrapOldPasswordHashes extends Maintenance {
 
 		$update = $this->hasOption( 'update' );
 
-		$databaseManager = CentralAuthServices::getDatabaseManager();
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
 
 		// Get a list of password types that are applicable
-		$dbw = $databaseManager->getCentralPrimaryDB();
+		$dbw = $caConnectionProvider->getPrimaryDatabase();
 		$typeCond = $dbw->expr( 'gu_password', IExpression::LIKE, new LikeValue( ":$firstType:", $dbw->anyString() ) );
 		$batchSize = $this->getBatchSize();
 

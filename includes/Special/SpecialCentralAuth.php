@@ -11,7 +11,7 @@ use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\CommentFormatter\CommentFormatter;
 use MediaWiki\CommentStore\CommentStore;
 use MediaWiki\Context\DerivativeContext;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
@@ -99,7 +99,7 @@ class SpecialCentralAuth extends SpecialPage {
 	private UserFactory $userFactory;
 	private UserNameUtils $userNameUtils;
 	private UserRegistrationLookup $userRegistrationLookup;
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private CentralAuthUIService $uiService;
 	private GlobalRenameFactory $globalRenameFactory;
 
@@ -111,7 +111,7 @@ class SpecialCentralAuth extends SpecialPage {
 		UserFactory $userFactory,
 		UserNameUtils $userNameUtils,
 		UserRegistrationLookup $userRegistrationLookup,
-		CentralAuthDatabaseManager $databaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		CentralAuthUIService $uiService,
 		GlobalRenameFactory $globalRenameFactory
 	) {
@@ -123,7 +123,7 @@ class SpecialCentralAuth extends SpecialPage {
 		$this->userFactory = $userFactory;
 		$this->userNameUtils = $userNameUtils;
 		$this->userRegistrationLookup = $userRegistrationLookup;
-		$this->databaseManager = $databaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->uiService = $uiService;
 		$this->globalRenameFactory = $globalRenameFactory;
 	}
@@ -226,7 +226,7 @@ class SpecialCentralAuth extends SpecialPage {
 
 		$continue = true;
 		if ( $this->mCanEdit && $this->mPosted ) {
-			$this->databaseManager->assertNotReadOnly();
+			$this->caConnectionProvider->assertNotReadOnly();
 			$continue = $this->doSubmit();
 		}
 
@@ -1443,7 +1443,7 @@ class SpecialCentralAuth extends SpecialPage {
 			return [];
 		}
 
-		$dbr = $this->databaseManager->getCentralReplicaDB();
+		$dbr = $this->caConnectionProvider->getReplicaDatabase();
 
 		// Autocomplete subpage as user list - non-hidden users to allow caching
 		return $dbr->newSelectQueryBuilder()

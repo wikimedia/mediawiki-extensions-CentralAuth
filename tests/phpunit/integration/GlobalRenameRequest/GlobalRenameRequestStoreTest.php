@@ -5,7 +5,7 @@
  * @file
  */
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
 use MediaWiki\User\UserNameUtils;
@@ -20,7 +20,7 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 
 	public function testSave(): void {
 		$store = new GlobalRenameRequestStore(
-			$this->getMockDbManager(),
+			$this->getMockConnectionProvider(),
 			$this->allValidUserNameUtils()
 		);
 
@@ -59,7 +59,7 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 	public function testGetBlankRequest() {
 		$userNameUtils = $this->createMock( UserNameUtils::class );
 		$store = new GlobalRenameRequestStore(
-			$this->createMock( CentralAuthDatabaseManager::class ),
+			$this->createMock( CentralAuthConnectionProvider::class ),
 			$userNameUtils
 		);
 
@@ -72,7 +72,7 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 
 	public function testNewForUser() {
 		$store = new GlobalRenameRequestStore(
-			$this->getMockDbManager(),
+			$this->getMockConnectionProvider(),
 			$this->allValidUserNameUtils()
 		);
 
@@ -86,7 +86,7 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 
 	public function testNewFromId() {
 		$store = new GlobalRenameRequestStore(
-			$this->getMockDbManager(),
+			$this->getMockConnectionProvider(),
 			$this->allValidUserNameUtils()
 		);
 
@@ -97,7 +97,7 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 
 	public function testNameHasPendingRequest() {
 		$store = new GlobalRenameRequestStore(
-			$this->getMockDbManager(),
+			$this->getMockConnectionProvider(),
 			$this->allValidUserNameUtils()
 		);
 
@@ -121,15 +121,16 @@ class GlobalRenameRequestStoreTest extends MediaWikiIntegrationTestCase {
 		return $request;
 	}
 
-	private function getMockDbManager(): CentralAuthDatabaseManager {
-		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		$dbManager->method( 'getCentralPrimaryDB' )
+	private function getMockConnectionProvider(): CentralAuthConnectionProvider {
+		$caConnectionProvider = $this->createMock( CentralAuthConnectionProvider::class );
+		$caConnectionProvider->method( 'getPrimaryDatabase' )
 			->willReturn( $this->getDb() );
-		$dbManager->method( 'getCentralReplicaDB' )
+		$caConnectionProvider->method( 'getReplicaDatabase' )
 			->willReturn( $this->getDb() );
-		$dbManager->method( 'getCentralDBFromRecency' )
+		$caConnectionProvider->method( 'getDBFromRecency' )
+			->with( $this->anything() )
 			->willReturn( $this->getDb() );
-		return $dbManager;
+		return $caConnectionProvider;
 	}
 
 	private function allValidUserNameUtils(): UserNameUtils {

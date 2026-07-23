@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\User\Registration\IUserRegistrationProvider;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserNameUtils;
@@ -12,16 +12,16 @@ class CentralAuthGlobalRegistrationProvider implements IUserRegistrationProvider
 	public const TYPE = 'centralauth';
 
 	private GlobalUserSelectQueryBuilderFactory $globalUserSelectQueryBuilderFactory;
-	private CentralAuthDatabaseManager $centralAuthDatabaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private UserNameUtils $userNameUtils;
 
 	public function __construct(
 		GlobalUserSelectQueryBuilderFactory $globalUserSelectQueryBuilderFactory,
-		CentralAuthDatabaseManager $centralAuthDatabaseManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		UserNameUtils $userNameUtils
 	) {
 		$this->globalUserSelectQueryBuilderFactory = $globalUserSelectQueryBuilderFactory;
-		$this->centralAuthDatabaseManager = $centralAuthDatabaseManager;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->userNameUtils = $userNameUtils;
 	}
 
@@ -66,7 +66,7 @@ class CentralAuthGlobalRegistrationProvider implements IUserRegistrationProvider
 
 		$batches = array_chunk( array_keys( $localIdsByName ), 1_000 );
 
-		$dbr = $this->centralAuthDatabaseManager->getCentralReplicaDB();
+		$dbr = $this->caConnectionProvider->getReplicaDatabase();
 
 		foreach ( $batches as $userNameBatch ) {
 			$centralUsers = $this->globalUserSelectQueryBuilderFactory

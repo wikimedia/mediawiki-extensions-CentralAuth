@@ -16,7 +16,6 @@ use MediaWiki\Session\SessionManager;
 use MediaWiki\Utils\MWCryptRand;
 use Wikimedia\ObjectCache\BagOStuff;
 use Wikimedia\ObjectCache\CachedBagOStuff;
-use Wikimedia\Rdbms\IConnectionProvider;
 use Wikimedia\Stats\StatsFactory;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
@@ -35,19 +34,19 @@ class CentralAuthSessionManager {
 
 	private ServiceOptions $options;
 	private StatsFactory $statsFactory;
-	private IConnectionProvider $connectionProvider;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 	private ObjectCacheFactory $objectCacheFactory;
 
 	public function __construct(
 		ServiceOptions $options,
 		StatsFactory $statsFactory,
-		IConnectionProvider $connectionProvider,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		ObjectCacheFactory $objectCacheFactory
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 		$this->options = $options;
 		$this->statsFactory = $statsFactory;
-		$this->connectionProvider = $connectionProvider;
+		$this->caConnectionProvider = $caConnectionProvider;
 		$this->objectCacheFactory = $objectCacheFactory;
 	}
 
@@ -58,7 +57,7 @@ class CentralAuthSessionManager {
 	 * MUST be unique.
 	 */
 	private function getCentralAuthDBForSessionKey() {
-		return $this->connectionProvider->getPrimaryDatabase( 'virtual-centralauth' )->getDomainID();
+		return $this->caConnectionProvider->getPrimaryDatabase()->getDomainID();
 	}
 
 	/**

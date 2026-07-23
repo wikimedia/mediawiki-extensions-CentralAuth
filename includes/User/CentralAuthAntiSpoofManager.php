@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\User;
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Language\RawMessage;
 use MediaWiki\Message\Message;
 use MediaWiki\User\User;
@@ -13,14 +13,14 @@ class CentralAuthAntiSpoofManager {
 
 	public function __construct(
 		private readonly LoggerInterface $logger,
-		private readonly CentralAuthDatabaseManager $databaseManager
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
 	) {
 	}
 
 	public function getSpoofUser( string $name ): CentralAuthSpoofUser {
 		return new CentralAuthSpoofUser(
 			$name,
-			$this->databaseManager
+			$this->caConnectionProvider
 		);
 	}
 

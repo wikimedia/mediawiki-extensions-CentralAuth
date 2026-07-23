@@ -12,7 +12,7 @@ use MediaWiki\Api\ApiQueryBase;
 use MediaWiki\Api\ApiResult;
 use MediaWiki\Config\Config;
 use MediaWiki\DAO\WikiAwareEntity;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
@@ -51,7 +51,7 @@ class ApiQueryGlobalUsers extends ApiQueryBase {
 		string $moduleName,
 		private readonly Config $config,
 		private readonly UserNameUtils $userNameUtils,
-		private readonly CentralAuthDatabaseManager $databaseManager
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
 	) {
 		parent::__construct( $query, $moduleName, 'gus' );
 
@@ -65,7 +65,7 @@ class ApiQueryGlobalUsers extends ApiQueryBase {
 	 * @return IReadableDatabase
 	 */
 	protected function getDB() {
-		$this->mCentralDB ??= $this->databaseManager->getCentralReplicaDB();
+		$this->mCentralDB ??= $this->caConnectionProvider->getReplicaDatabase();
 		return $this->mCentralDB;
 	}
 
@@ -402,7 +402,9 @@ class ApiQueryGlobalUsers extends ApiQueryBase {
 		// TODO: This may not work if the users were renamed after being locked.
 
 		$centralWiki = $this->config->get( CAMainConfigNames::CentralAuthCentralWiki );
-		$dbr = $this->databaseManager->getLocalDB( DB_REPLICA, $centralWiki ?? $this->mCurrentWikiId );
+		$dbr = $this->caConnectionProvider
+			->getRemoteWikiConnectionProvider( $centralWiki ?? $this->mCurrentWikiId )
+			->getReplicaDatabase();
 		$wikiId = $centralWiki === $this->mCurrentWikiId
 			? WikiAwareEntity::LOCAL
 			: ( $centralWiki ?? WikiAwareEntity::LOCAL );

@@ -72,11 +72,24 @@ class CentralAuthServices {
 	/**
 	 * @param ContainerInterface|null $services Service container to use. If null, global
 	 * MediaWikiServices::getInstance() will be used instead.
+	 * @since 1.47
+	 */
+	public static function getConnectionProvider(
+		?ContainerInterface $services = null
+	): CentralAuthConnectionProvider {
+		return ( $services ?: MediaWikiServices::getInstance() )
+			->getService( 'CentralAuth.CentralAuthConnectionProvider' );
+	}
+
+	/**
+	 * @param ContainerInterface|null $services Service container to use. If null, global
+	 * MediaWikiServices::getInstance() will be used instead.
 	 * @since 1.37
 	 */
-	public static function getDatabaseManager( ?ContainerInterface $services = null ): CentralAuthDatabaseManager {
-		return ( $services ?: MediaWikiServices::getInstance() )
-			->getService( 'CentralAuth.CentralAuthDatabaseManager' );
+	public static function getDatabaseManager(
+		?ContainerInterface $services = null
+	): CentralAuthConnectionProvider {
+		return self::getConnectionProvider( $services );
 	}
 
 	public static function getEditCounter(

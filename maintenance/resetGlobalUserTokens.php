@@ -63,9 +63,9 @@ class ResetGlobalUserTokens extends Maintenance {
 			$this->countDown( 5 );
 		}
 
-		$databaseManager = CentralAuthServices::getDatabaseManager();
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
 		// We list user by user_id from one of the replica databases
-		$dbr = $databaseManager->getCentralReplicaDB();
+		$dbr = $caConnectionProvider->getReplicaDatabase();
 		$maxid = $this->getOption( 'maxid', -1 );
 
 		if ( $maxid === -1 ) {

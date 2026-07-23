@@ -188,7 +188,7 @@ class ApiQueryGlobalUsersTest extends ApiTestCase {
 	}
 
 	private function getCentralDB(): IDatabase {
-		return CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )->getCentralPrimaryDB();
+		return CentralAuthServices::getConnectionProvider( $this->getServiceContainer() )->getPrimaryDatabase();
 	}
 
 	private static function getGlobalLockLogTitle( CentralAuthUser $lockedUser ): string {

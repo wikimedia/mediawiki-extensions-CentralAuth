@@ -116,7 +116,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthIdLookup",
 			"services": [
 				"MainConfig",
-				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthConnectionProvider",
 				"CentralAuth.CentralAuthUserCache"
 			]
 		}
@@ -132,7 +132,7 @@
 				"UserFactory",
 				"UserNameUtils",
 				"UserRegistrationLookup",
-				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthConnectionProvider",
 				"CentralAuth.CentralAuthUIService",
 				"CentralAuth.GlobalRenameFactory"
 			]
@@ -169,7 +169,7 @@
 			"services": [
 				"NamespaceInfo",
 				"UserFactory",
-				"CentralAuth.CentralAuthDatabaseManager"
+				"CentralAuth.CentralAuthConnectionProvider"
 			]
 		},
 		"GlobalGroupMembership": {
@@ -188,7 +188,7 @@
 			"services": [
 				"PermissionManager",
 				"RestrictedUserGroupConfigReader",
-				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthConnectionProvider",
 				"CentralAuth.GlobalGroupManager"
 			]
 		},
@@ -203,7 +203,7 @@
 			"services": [
 				"ContentLanguage",
 				"LinkBatchFactory",
-				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthConnectionProvider",
 				"CentralAuth.GlobalGroupManager"
 			]
 		},
@@ -211,7 +211,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Special\\SpecialMultiLock",
 			"services": [
 				"UserNameUtils",
-				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthConnectionProvider",
 				"CentralAuth.CentralAuthUIService"
 			]
 		},
@@ -221,7 +221,7 @@
 				"UserFactory",
 				"UserNameUtils",
 				"CentralAuth.CentralAuthAntiSpoofManager",
-				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthConnectionProvider",
 				"CentralAuth.CentralAuthUIService",
 				"CentralAuth.GlobalRenameDenylist",
 				"CentralAuth.GlobalRenameFactory",
@@ -386,7 +386,7 @@
 		"globalgroups": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalGroups",
 			"services": [
-				"CentralAuth.CentralAuthDatabaseManager"
+				"CentralAuth.CentralAuthConnectionProvider"
 			]
 		},
 		"wikisets": {
@@ -399,7 +399,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Api\\ApiQueryGlobalAllUsers",
 			"services": [
 				"TempUserConfig",
-				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthConnectionProvider",
 				"CentralAuth.GlobalGroupManager"
 			]
 		},
@@ -408,7 +408,7 @@
 			"services": [
 				"MainConfig",
 				"UserNameUtils",
-				"CentralAuth.CentralAuthDatabaseManager"
+				"CentralAuth.CentralAuthConnectionProvider"
 			]
 		},
 		"globalrenamequeue": {
@@ -717,7 +717,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserCreationHookHandler",
 			"services": [
 				"CentralAuth.CentralAuthAntiSpoofManager",
-				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthConnectionProvider",
 				"CentralAuth.CentralAuthUtilityService"
 			]
 		},
@@ -1018,7 +1018,7 @@
 					"LanguageNameUtils",
 					"UserIdentityLookup",
 					"UserOptionsLookup",
-					"CentralAuth.CentralAuthDatabaseManager",
+					"CentralAuth.CentralAuthConnectionProvider",
 					"CentralAuth.CentralAuthUtilityService",
 					"CentralAuth.SharedDomainUtils"
 				]
@@ -1031,7 +1031,7 @@
 					"TempUserDetailsLookup",
 					"UserIdentityLookup",
 					"CentralAuth.CentralAuthAntiSpoofManager",
-					"CentralAuth.CentralAuthDatabaseManager",
+					"CentralAuth.CentralAuthConnectionProvider",
 					"CentralAuth.CentralAuthUtilityService",
 					"CentralAuth.GlobalRenameRequestStore",
 					"CentralAuth.SharedDomainUtils"
@@ -1062,7 +1062,7 @@
 				"services": [
 					"ConnectionProvider",
 					"UserFactory",
-					"CentralAuth.CentralAuthDatabaseManager"
+					"CentralAuth.CentralAuthConnectionProvider"
 				]
 			},
 			"CentralAuthSharedDomainPreAuthenticationProvider": {
@@ -1077,7 +1077,7 @@
 		"centralauth": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthTempUserSerialProvider",
 			"services": [
-				"CentralAuth.CentralAuthDatabaseManager"
+				"CentralAuth.CentralAuthConnectionProvider"
 			]
 		}
 	},
@@ -1086,7 +1086,7 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\User\\CentralAuthGlobalRegistrationProvider",
 			"services": [
 				"CentralAuth.GlobalUserSelectQueryBuilderFactory",
-				"CentralAuth.CentralAuthDatabaseManager",
+				"CentralAuth.CentralAuthConnectionProvider",
 				"UserNameUtils"
 			]
 		}

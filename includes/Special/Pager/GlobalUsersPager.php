@@ -3,7 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\Special\Pager;
 
 use MediaWiki\Context\IContextSource;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupManager;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Extension\CentralAuth\WikiSet;
@@ -32,11 +32,11 @@ class GlobalUsersPager extends AlphabeticPager {
 
 	public function __construct(
 		IContextSource $context,
-		CentralAuthDatabaseManager $dbManager,
+		CentralAuthConnectionProvider $caConnectionProvider,
 		GlobalGroupManager $globalGroupManager,
 		LinkBatchFactory $linkBatchFactory
 	) {
-		$this->mDb = $dbManager->getCentralReplicaDB();
+		$this->mDb = $caConnectionProvider->getReplicaDatabase();
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
 		$this->globalGroupManager = $globalGroupManager;

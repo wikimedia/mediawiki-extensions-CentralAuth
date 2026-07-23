@@ -165,8 +165,8 @@ class ApiGlobalUserRightsTest extends ApiTestCase {
 	}
 
 	public function addDBDataOnce() {
-		$caDbw = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() )
-			->getCentralPrimaryDB();
+		$caDbw = CentralAuthServices::getConnectionProvider( $this->getServiceContainer() )
+			->getPrimaryDatabase();
 
 		$caDbw->newInsertQueryBuilder()
 			->insertInto( 'global_group_permissions' )

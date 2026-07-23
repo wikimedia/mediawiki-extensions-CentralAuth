@@ -2,7 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth\GlobalRename;
 
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 
 /**
  * Update the rows in the CentralAuth tables during a rename
@@ -12,10 +12,10 @@ use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
  */
 class GlobalRenameUserDatabaseUpdates {
 
-	private CentralAuthDatabaseManager $databaseManager;
+	private CentralAuthConnectionProvider $caConnectionProvider;
 
-	public function __construct( CentralAuthDatabaseManager $databaseManager ) {
-		$this->databaseManager = $databaseManager;
+	public function __construct( CentralAuthConnectionProvider $caConnectionProvider ) {
+		$this->caConnectionProvider = $caConnectionProvider;
 	}
 
 	/**
@@ -24,7 +24,7 @@ class GlobalRenameUserDatabaseUpdates {
 	 * @param int|null $type
 	 */
 	public function update( $oldname, $newname, $type = GlobalRenameRequest::RENAME ) {
-		$dbw = $this->databaseManager->getCentralPrimaryDB();
+		$dbw = $this->caConnectionProvider->getPrimaryDatabase();
 
 		$data = [ 'gu_name' => $newname ];
 		if ( $type === GlobalRenameRequest::VANISH ) {

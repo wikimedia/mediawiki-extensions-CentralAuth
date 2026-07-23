@@ -55,8 +55,8 @@ class RecalculateGlobalEditCount extends Maintenance {
 			$this->fatalError( '--wiki must be specified' );
 		}
 
-		$caDbm = CentralAuthServices::getDatabaseManager( $this->getServiceContainer() );
-		$dbr = $caDbm->getCentralReplicaDB();
+		$caConnectionProvider = CentralAuthServices::getConnectionProvider( $this->getServiceContainer() );
+		$dbr = $caConnectionProvider->getReplicaDatabase();
 
 		$iterator = new BatchRowIterator(
 			$dbr,

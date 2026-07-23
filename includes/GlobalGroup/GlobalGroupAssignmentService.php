@@ -8,7 +8,7 @@ namespace MediaWiki\Extension\CentralAuth\GlobalGroup;
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthAutomaticGlobalGroupManager;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
@@ -68,7 +68,7 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 		private readonly RestrictedUserGroupCheckerFactory $restrictedGroupCheckerFactory,
 		private readonly GlobalGroupManager $globalGroupManager,
 		private readonly CentralAuthAutomaticGlobalGroupManager $automaticGroupManager,
-		private readonly CentralAuthDatabaseManager $databaseManager,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
 		private readonly MessageLocalizer $messageLocalizer,
 		private readonly UserFactory $userFactory,
 		private readonly NotificationService $notificationService,
@@ -323,7 +323,9 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 		} else {
 			// This should work if $logWikiId is the current wiki too, but it would require a lot more mocking in tests.
 			// There are no good APIs to do this cross-wiki, so we do manual database queries.
-			$logWikiDbr = $this->databaseManager->getLocalDB( DB_REPLICA, $logWikiId );
+			$logWikiDbr = $this->caConnectionProvider
+				->getRemoteWikiConnectionProvider( $logWikiId )
+				->getReplicaDatabase();
 			$logWikiUser = $logWikiDbr->newSelectQueryBuilder()
 				->from( 'user' )
 				->select( 'user_id' )
@@ -356,7 +358,7 @@ class GlobalGroupAssignmentService extends UserGroupAssignmentServiceBase {
 			'newMetadata' => $newUGMs,
 		] );
 		$logId = $logEntry->insert(
-			$this->databaseManager->getLocalDB( DB_PRIMARY, $logWikiId )
+			$this->caConnectionProvider->getRemoteWikiConnectionProvider( $logWikiId )->getPrimaryDatabase()
 		);
 		// These methods are only supported when inserting the log entry on the local wiki
 		if ( $logWikiId === WikiMap::getCurrentWikiId() ) {
