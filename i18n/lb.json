@@ -325,7 +325,7 @@
 	"centralauth-ro": "Informatioun vum globale Benotzerkont",
 	"centralauth-seconds-ago": "{{PLURAL:$1|virun 1 Sekonn|viru(n) $1 Sekonnen}}",
 	"centralauth-state-mismatch": "Feeler: De Status vun dësem Benotzerkont huet sech an Tëschenzäit geännert. Iwwerpréift wgl. den aktuelle Status a probéiert nach eng Kéier, falls néideg.",
-	"centralauth-token-mismatch": "Pardon, mir konnten d'Donnéeë vun ärer Demande (Formulaire) net verschaffe wëll Date vun ärer Sessioun verluer gi sinn.",
+	"centralauth-token-mismatch": "Pardon, mir konnten d'Angabe vun Ärem Formulaire net verschaffen, well Sessiounsdonnéeë verluer gaange sinn.",
 	"centralauth-years-ago": "{{PLURAL:$1|virun|viru(n)}} $1 Joer",
 	"centralauth-scrambled-cannotusesame": "Benotzt wgl. en anert Passwuert.",
 	"centralautologin": "Zentrale Login",
