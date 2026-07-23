@@ -118,8 +118,6 @@
 	"centralauth-admin-status-hidden-oversight": "खाता पूरी तरह से छिपा हुआ है",
 	"centralauth-admin-status-intro": "आप इस वैश्विक खाते की स्थिति को बदलने के लिए इस फ़ॉर्म का उपयोग कर सकते हैं।",
 	"centralauth-admin-status-locked": "लॉक किया गया है:",
-	"centralauth-admin-status-locked-no": "खाता लॉक नहीं किया गया है",
-	"centralauth-admin-status-locked-yes": "खाते को लॉग-इन करने से लॉक किया गया है",
 	"centralauth-admin-status-nonexistent": "त्रुटि: \"<nowiki>$1</nowiki>\" नामक वैश्विक खाता मौजूद नहीं है।",
 	"centralauth-admin-status-reasons": "* लॉक करने के सामान्य कारण\n** केवल-बर्बरता खाता\n** केवल-स्पैम खाता\n* लॉक करने और छिपाने के सामान्य कारण\n** अपशब्दीय सदस्यनाम\n** अनुचित व्यक्तिगत जानकारी",
 	"centralauth-admin-status-submit": "स्थिति सेट करें",

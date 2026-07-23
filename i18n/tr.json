@@ -137,8 +137,6 @@
 	"centralauth-admin-status-hidden-oversight": "Hesap tamamen gizlendi",
 	"centralauth-admin-status-intro": "Bu küresel hesabın durumunu değiştirmek için bu formu kullanabilirsiniz",
 	"centralauth-admin-status-locked": "Kilitli:",
-	"centralauth-admin-status-locked-no": "Hesap kilitli değil",
-	"centralauth-admin-status-locked-yes": "Hesabın değişiklik yapması kilitlendi",
 	"centralauth-admin-status-nonexistent": "Hata: küresel hesap \"<nowiki>$1</nowiki>\" mevcut değil.",
 	"centralauth-admin-status-reasons": "* Genel kilitleme sebepleri\n** sırf vandalizm amaçlı hesap\n** sırf spam amaçlı hesap\n* Genel kilitleme-ve-gizleme sebepleri\n** uygunsuz kullanıcı adı\n** uygunsuz kişisel bilgiler",
 	"centralauth-admin-status-submit": "Durumu ayarla",

@@ -105,8 +105,6 @@
 	"centralauth-admin-status-hidden-oversight": "Paskyra yra visiškai paslėpta",
 	"centralauth-admin-status-intro": "Galite pasinaudoti šia forma, norėdami pakeisti šios bendrosios paskyros būseną",
 	"centralauth-admin-status-locked": "Užrakinta:",
-	"centralauth-admin-status-locked-no": "Paskyra neužrakinta",
-	"centralauth-admin-status-locked-yes": "Paskyra užrakinta nuo redagavimo",
 	"centralauth-admin-status-nonexistent": "Klaida: bendroji paskyra „<nowiki>$1</nowiki>“ neegzistuoja.",
 	"centralauth-admin-status-reasons": "* Dažniausios užrakinimo priežastys\n** vandalizmui tenaudojama paskyra\n** tik reklamoms/„spamui“ naudojama paskyra\n* Dažniausios užrakinimo ir paslėpimo priežastys\n** įžeidžiamas naudotojo vardas\n** netinkama asmeninė informacija",
 	"centralauth-admin-status-submit": "Nustatykite būseną",

@@ -67,8 +67,6 @@
 	"centralauth-admin-status-hidden-oversight": "ଖାତାଟି ପୁରାପୁରି ଲୁଚାଇ ଦିଆଗଲା",
 	"centralauth-admin-status-intro": "ଏହି ବିଶ୍ଵ ଖାତାର ସ୍ଥିତିକୁ ଥୟ କରିବା ନିମନ୍ତେ ଆପଣ ଏହି ଫର୍ମଟି ବ୍ୟବହାର କରିପାରିବେ ।",
 	"centralauth-admin-status-locked": "କିଳାଯାଇଅଛି:",
-	"centralauth-admin-status-locked-no": "ଖାତାଟି କିଳାଯାଇନାହିଁ",
-	"centralauth-admin-status-locked-yes": "ଖାତାଟି ସମ୍ପାଦନା କରିବାରୁ କିଳାଯାଇଅଛି",
 	"centralauth-admin-status-nonexistent": "ଭୁଲ: \"<nowiki>$1</nowiki>\" ବିଶ୍ଵ ଖାତାଟି ନାହିଁ ।",
 	"centralauth-admin-status-reasons": "* ସାଧାରଣ କିଳାଯିବା କାରଣସବୁ\n** କେବଳ ଗଣ୍ଡଗୋଳ ଖାତା\n** କେବଳ ସ୍ପାମ ଖାତା\n* ସାଧାରଣ କିଳିବା ଓ ଲୁଚାଇବା କାରଣମାନ\n** ଅପମାନଜନକ ଇଉଜର ନାମ\n** ଅନୁପଯୋଗୀ ବ୍ୟକ୍ତିଗତ ତଥ୍ୟ",
 	"centralauth-admin-status-submit": "ସ୍ଥିତି ଥୟ କରିବେ ।",

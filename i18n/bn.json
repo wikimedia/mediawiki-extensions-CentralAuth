@@ -85,8 +85,6 @@
 	"centralauth-admin-status-hidden-oversight": "অ্যাকাউন্ট সম্পূর্ণভাবে লুকানো",
 	"centralauth-admin-status-intro": "এই ফর্মটি ব্যবহার করে আপনি বৈশ্বিক অ্যাকাউন্টের অবস্থা পরিবর্তন করতে পারবেন।",
 	"centralauth-admin-status-locked": "বন্ধ:",
-	"centralauth-admin-status-locked-no": "অ্যাকাউন্ট তালাবদ্ধ নয়",
-	"centralauth-admin-status-locked-yes": "এই অ্যাকাউন্ট থেকে সম্পাদনার অনুমতি নেই",
 	"centralauth-admin-status-nonexistent": "ত্রুটি: \"<nowiki>$1</nowiki>\" নামে কোন বৈশ্বিক অ্যাকাউন্ট নাই।",
 	"centralauth-admin-status-reasons": "* সাধারণ বাধাদানের কারণ\n** ধ্বংসপ্রবণ অ্যাকাউন্ট\n** স্প্যামের জন্য ব্যবহৃত অ্যাকাউন্ট\n* সাধারণ বাধা-ও-লুকানোর কারণ\n** আপত্তিজনক ব্যবহারকারী নাম\n** অনুপযুক্ত ব্যক্তিগত তথ্য",
 	"centralauth-admin-status-submit": "অবস্থা সেট কর",

@@ -172,8 +172,6 @@
 	"centralauth-admin-status-hidden-oversight": "Le compte est complètement masqué",
 	"centralauth-admin-status-intro": "Vous pouvez utiliser ce formulaire pour changer le statut de ce compte global",
 	"centralauth-admin-status-locked": "Verrouillé :",
-	"centralauth-admin-status-locked-no": "Le compte n’est pas verrouillé",
-	"centralauth-admin-status-locked-yes": "Le compte est verrouillé à la connexion",
 	"centralauth-admin-status-nonexistent": "Erreur : le compte global « <nowiki>$1</nowiki> » n’existe pas.",
 	"centralauth-admin-status-reasons": "* Motifs fréquents de verrouillage :\n** compte servant uniquement à vandaliser ;\n** compte servant uniquement au pollupostage .\n* Motifs fréquents de verrouillage avec masquage :\n** nom d’utilisateur abusif ;\n** informations personnelles inappropriées.",
 	"centralauth-admin-status-submit": "Changer le statut",

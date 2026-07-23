@@ -56,8 +56,6 @@
 	"centralauth-admin-status-hidden-oversight": "Lubos na nakatago ang account",
 	"centralauth-admin-status-intro": "Magagamit mo ang form na ito upang baguhin ang kalagayan ng pandaigdigang account na ito",
 	"centralauth-admin-status-locked": "Nakakandado:",
-	"centralauth-admin-status-locked-no": "Hindi nakakandado ang account",
-	"centralauth-admin-status-locked-yes": "Ikinandado mula sa pamamatnugot ang account",
 	"centralauth-admin-status-nonexistent": "Kamalian: hindi umiiral ang pandaigdigang account na \"<nowiki>$1</nowiki>\".",
 	"centralauth-admin-status-reasons": "* Karaniwang dahilan ng pagkando\n** account na pangbandalismo lang\n** account na pang-spam lang\n* Karaniwang dahilan ng pagkandado at pagtago\n** mapang-abusong pangalan ng tagagamit\n** hindi angkop na kabatirang pangsarili",
 	"centralauth-admin-status-submit": "Itakda ang kalagayan",

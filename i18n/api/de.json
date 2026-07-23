@@ -67,6 +67,8 @@
 	"apihelp-query+globalrenamestatus-example-1": "Ruft Informationen über den aktuellen globalen Benutzer ab",
 	"apihelp-query+globalrenamestatus-param-user": "Benutzer, der umbenannt wird. Kann entweder der alte oder neue Name sein.",
 	"apihelp-query+globalrenamestatus-summary": "Zeigt Informationen über globale Umbenennungen an, die sich in Bearbeitung befinden.",
+	"apihelp-query+globalrenamequeue-summary": "Anfragen in der globalen Umbenennungswarteschlange auflisten.",
+	"apihelp-query+globalrenamequeue-param-type": "Nach Anfragetyp filtern.",
 	"apihelp-query+globalusers-example-1": "Gibt Informationen für den Benutzer <kbd>Example</kbd> zurück.",
 	"apihelp-query+globalusers-example-2": "Informationen für den Benutzer mit der zentralen ID <kbd>1</kbd> zurückgeben.",
 	"apihelp-query+globalusers-param-prop": "Welche Informationsteile einbinden:",

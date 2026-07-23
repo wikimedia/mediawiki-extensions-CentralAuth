@@ -140,8 +140,6 @@
 	"centralauth-admin-status-hidden-oversight": "الحساب مخفي تمامًا",
 	"centralauth-admin-status-intro": "يمكنك استخدام هذه الاستمارة لتغيير حالة هذا الحساب العام",
 	"centralauth-admin-status-locked": "مغلق:",
-	"centralauth-admin-status-locked-no": "الحساب ليس مغلقاً",
-	"centralauth-admin-status-locked-yes": "الحساب ممنوع من تسجيل الدخول",
 	"centralauth-admin-status-nonexistent": "خطأ: الحساب العام «<nowiki>$1</nowiki>» غير موجود.",
 	"centralauth-admin-status-reasons": "* أسباب المنع المعتادة\n** حساب للتخريب فقط\n** حساب لوضع وصلات السخام فقط.\n* أسباب المنع والإخفاء معا المعتادة\n** اسم مستخدم مسئ\n** معلومات شخصية غير مناسبة",
 	"centralauth-admin-status-submit": "ضبط الحالة",

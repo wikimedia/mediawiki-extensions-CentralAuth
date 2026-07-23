@@ -69,8 +69,6 @@
 	"centralauth-admin-status-hidden-oversight": "L'utensa la xe conpletamente sconta",
 	"centralauth-admin-status-intro": "Te pol doparar sto modulo par canbiar el stato de sto utente globale",
 	"centralauth-admin-status-locked": "Blocà:",
-	"centralauth-admin-status-locked-no": "L'utensa no la xe blocà",
-	"centralauth-admin-status-locked-yes": "L'account el xe blocà",
 	"centralauth-admin-status-nonexistent": "Eròr: l'utente globale \"<nowiki>$1</nowiki>\" no l'esiste mia.",
 	"centralauth-admin-status-reasons": "* Rason comuni de bloco\n** account usà solo par vandalismo\n** account usà solo par spam\n* Rason comuni de bloco e scondimento\n** nome utente abusivo\n** informassion personali inaproprià",
 	"centralauth-admin-status-submit": "Inposta stato",

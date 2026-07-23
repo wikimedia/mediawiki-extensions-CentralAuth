@@ -81,8 +81,6 @@
 	"centralauth-admin-status-hidden-oversight": "Dä Zohjang es övverall vershtoche",
 	"centralauth-admin-status-intro": "Hee kann De dä Schtattos för di jemeinsamme Aanmäldong änndere",
 	"centralauth-admin-status-locked": "Jesperrt:",
-	"centralauth-admin-status-locked-no": "Dä Zohjang es nit jeshperrt",
-	"centralauth-admin-status-locked-yes": "Et Sigge Ändere es jeshperrt för dä Zohjang",
 	"centralauth-admin-status-nonexistent": "Fähler: En jemeinsamme Aanmeldung för dä Name „<nowiki>$1</nowiki>“ kenne mer nit.",
 	"centralauth-admin-status-reasons": "* Jemeinsam Jrönd för et Sperre\n** bloß aam Kapottmaache\n** bloß aam SPAMme\n* Alljemein Jrönd för et Sperre un Versteiche\n** ene Metmaachername, dä esu nit jeiht\n** persönlesch Daate, di mer esu nit lohße dörve",
 	"centralauth-admin-status-submit": "Loß Jonn!",

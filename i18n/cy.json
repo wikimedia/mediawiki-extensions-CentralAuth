@@ -92,8 +92,6 @@
 	"centralauth-admin-status-hidden-oversight": "Mae'r cyfrif wedi'i guddio'n llwyr",
 	"centralauth-admin-status-intro": "Gallwch ddefnyddio'r ffurflen hon i newid statws y cyfrif byd-eang hwn.",
 	"centralauth-admin-status-locked": "Dan glo:",
-	"centralauth-admin-status-locked-no": "Nid yw'r cyfrif ar glo",
-	"centralauth-admin-status-locked-yes": "Mae'r cyfrif ar glo o ran golygu",
 	"centralauth-admin-status-nonexistent": "Gwall: Nid yw'r cyfrif cydwici \"<nowiki>$1</nowiki>\" ar gael.",
 	"centralauth-admin-status-reasons": "*Rhesymau cyffredin dros gloi\n** cyfrif fandaliaeth\n** cyfrif spam\n* Rhesymau Cloi a Chuddio cyffredin\n** enw defnyddiwr bygythiol\n** gwybodaeth bersonol amhriodol",
 	"centralauth-admin-status-submit": "Gosod statws",

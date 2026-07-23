@@ -142,8 +142,6 @@
 	"centralauth-admin-status-hidden-oversight": "帳號已禁止顯示",
 	"centralauth-admin-status-intro": "您可以使用這個表單來更改此全域帳號的狀態。",
 	"centralauth-admin-status-locked": "已鎖定：",
-	"centralauth-admin-status-locked-no": "帳號未鎖定",
-	"centralauth-admin-status-locked-yes": "帳號已鎖定，不得登入",
 	"centralauth-admin-status-nonexistent": "錯誤：全域帳號 \"<nowiki>$1</nowiki>\" 不存在。",
 	"centralauth-admin-status-reasons": "* 常見封鎖的原因\n** 純破壞的帳號\n** 濫發電子郵件的帳號\n* 常見封鎖並隱藏的原因\n** 不當的使用者名稱\n** 不恰當的個人資訊",
 	"centralauth-admin-status-submit": "設定狀態",

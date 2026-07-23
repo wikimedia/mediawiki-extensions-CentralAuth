@@ -120,8 +120,6 @@
 	"centralauth-admin-status-hidden-oversight": "Akun disembunyikan sepenuhnya",
 	"centralauth-admin-status-intro": "Anda dapat menggunakan formulir berikut untuk mengubah status akun global ini",
 	"centralauth-admin-status-locked": "Terkunci:",
-	"centralauth-admin-status-locked-no": "Akun tidak diblokir",
-	"centralauth-admin-status-locked-yes": "Akun diblokir dari penyuntingan",
 	"centralauth-admin-status-nonexistent": "Kesalahan: akun global \"<nowiki>$1</nowiki>\" tidak ditemukan.",
 	"centralauth-admin-status-reasons": "* Alasan kunci\n** akun vandalisme\n** akun spam\n* Alasan kunci-dan-sembunyikan\n** penyalahgunaan nama pengguna\n** informasi pribadi yang tidak pantas",
 	"centralauth-admin-status-submit": "Atur status",

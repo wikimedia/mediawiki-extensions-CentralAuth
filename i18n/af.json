@@ -60,8 +60,6 @@
 	"centralauth-admin-status-hidden-oversight": "Rekening is heeltemal weggesteek",
 	"centralauth-admin-status-intro": "U kan hierdie vorm gebruik om die status van hierdie globale rekening te verander.",
 	"centralauth-admin-status-locked": "Gesluit:",
-	"centralauth-admin-status-locked-no": "Gebruiker is nie geblokkeer nie",
-	"centralauth-admin-status-locked-yes": "Die rekening is gesluit die wysiging van",
 	"centralauth-admin-status-submit": "Stel status",
 	"centralauth-admin-unattached": "nie aangeheg",
 	"centralauth-admin-unmerge": "uninstallen gekies",

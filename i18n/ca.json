@@ -107,8 +107,6 @@
 	"centralauth-admin-status-hidden-oversight": "El compte és amagat completament",
 	"centralauth-admin-status-intro": "Podeu usar aquest formulari per canviar l'estat d'aquest compte global",
 	"centralauth-admin-status-locked": "Blocat:",
-	"centralauth-admin-status-locked-no": "El compte no està blocat",
-	"centralauth-admin-status-locked-yes": "El compte es troba blocat per a l'inici de sessió",
 	"centralauth-admin-status-nonexistent": "Error: el compte global \"<nowiki>$1</nowiki>\" no existeix.",
 	"centralauth-admin-status-reasons": "* Motius habituals de blocatge \n** Compte per a fer vandalisme únicament\n** Compte per a fer publicitat únicament\n* Motius habituals per a blocar i ocultar\n** Nom d'usuari abusiu\n** Informació personal inapropiada",
 	"centralauth-admin-status-submit": "Fixa estat",

@@ -101,8 +101,6 @@
 	"centralauth-admin-status-hidden-oversight": "Účet je zcela skrytý",
 	"centralauth-admin-status-intro": "Pomocí tohoto formuláře můžete změnit stav tohoto globálního účtu.",
 	"centralauth-admin-status-locked": "Zamčeno:",
-	"centralauth-admin-status-locked-no": "Účet není uzamčen",
-	"centralauth-admin-status-locked-yes": "Účet má uzamčenu možnost přihlásit se",
 	"centralauth-admin-status-nonexistent": "Chyba: globální účet „<nowiki>$1</nowiki>“ neexistuje.",
 	"centralauth-admin-status-reasons": "* Běžné důvody zamčení\n** pouze vandalský účet\n** pouze spamující účet\n* Běžné důvody zamčení a skrytí\n** nepřijatelné uživatelské jméno\n** nevhodné osobní údaje",
 	"centralauth-admin-status-submit": "Změnit stav",

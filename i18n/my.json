@@ -51,8 +51,6 @@
 	"centralauth-admin-status-hidden-no": "အကောင့်ကို ဝှက်မထားပါ",
 	"centralauth-admin-status-hidden-oversight": "အကောင့်ကို အပြီးတိုင်ဝှက်ထားသည်",
 	"centralauth-admin-status-locked": "သော့ခတ်:",
-	"centralauth-admin-status-locked-no": "အကောင့်ကို သော့ခတ်မထားပါ",
-	"centralauth-admin-status-locked-yes": "အကောင့်ဝင်ခြင်းအား သော့ခတ်ထားသည်",
 	"centralauth-admin-status-reasons": "* ယေဘုယျ သော့ခတ်ခြင်း အကြောင်းပြချက်များ\n** ဖျက်လိုဖျက်ဆီးလုပ်ဆောင်သော အကောင့်တစ်ခုတည်းသာ\n** လိုက်ဖွသည့် အကောင့်တစ်ခုတည်းသာ\n* ယေဘုယျ သော့ခတ်ပြီးဝှက်ရသည့် အကြောင်းပြချက်များ\n** အသုံးပြုသူအမည်ကို အလွဲသုံးစား လုပ်ဆောင်ခြင်း\n** မသင့်လျော်သော ပုဂ္ဂိုလ်ရေး သတင်းအချက်အလက်",
 	"centralauth-admin-status-submit": "အခြေအနေ သတ်မှတ်ရန်",
 	"centralauth-admin-title": "$1 အတွက် ဂလိုဘယ်အကောင့် စီမံသူ",

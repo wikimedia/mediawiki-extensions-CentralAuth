@@ -36,8 +36,6 @@
 	"centralauth-admin-status-hidden-no": "Akaunti haijafichwa",
 	"centralauth-admin-status-hidden-oversight": "Akaunti imefichwa kikamilifu",
 	"centralauth-admin-status-locked": "Imefungwa:",
-	"centralauth-admin-status-locked-no": "Akaunti haijafugwa",
-	"centralauth-admin-status-locked-yes": "Akaunti imefungwa kutoka kuhariri",
 	"centralauth-admin-status-submit": "Weka hali",
 	"centralauth-admin-username": "Jina la mtumiaji:",
 	"centralauth-admin-yes": "ndiyo",

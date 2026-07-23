@@ -112,8 +112,6 @@
 	"centralauth-admin-status-hidden-oversight": "החשבון מוסתר לגמרי",
 	"centralauth-admin-status-intro": "באפשרותך להשתמש בטופס הזה כדי לשנות את מצב החשבון הגלובלי.",
 	"centralauth-admin-status-locked": "נעול:",
-	"centralauth-admin-status-locked-no": "החשבון אינו נעול",
-	"centralauth-admin-status-locked-yes": "החשבון נעול מעריכה",
 	"centralauth-admin-status-nonexistent": "שגיאה: החשבון הגלובלי \"<nowiki>$1</nowiki>\" אינו קיים.",
 	"centralauth-admin-status-reasons": "* סיבות נעילה נפוצות\n** חשבון ששימש רק להשחתה\n** חשבון ששימש רק לספאם\n* סיבות נעילה והסתרה נפוצות\n** שם משתמש גס\n** מידע אישי בלתי הולם",
 	"centralauth-admin-status-submit": "שינוי המצב",

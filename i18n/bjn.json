@@ -94,8 +94,6 @@
 	"centralauth-admin-status-hidden-oversight": "Akun basuhuk sabarataannya",
 	"centralauth-admin-status-intro": "Pian kawa mamakai borang ngini gasan maubah status akun global ngini.",
 	"centralauth-admin-status-locked": "Basunduk:",
-	"centralauth-admin-status-locked-no": "Akun kada diblukir",
-	"centralauth-admin-status-locked-yes": "Akun diblukir mambabak",
 	"centralauth-admin-status-nonexistent": "Kasalahan: akun global \"<nowiki>$1</nowiki>\" kadada.",
 	"centralauth-admin-status-reasons": "* Alasan umum panguncian\n** akun khusus vandalisme\n** akun khusus spam\n* Alasan umum panguncian wan panyuhukan\n** ngaran pamakai nang kada pantas\n** maklumat paribadi nang kada pantas",
 	"centralauth-admin-status-submit": "Atur status",

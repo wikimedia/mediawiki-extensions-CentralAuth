@@ -42,8 +42,6 @@
 	"centralauth-admin-status-hidden-oversight": "Akun diumpetna sekumplite",
 	"centralauth-admin-status-intro": "Rika teyeng nganggo formulir kiye kanggo ngganti statuse akun global kiye.",
 	"centralauth-admin-status-locked": "Dekunci:",
-	"centralauth-admin-status-locked-no": "Akun ora dekunci",
-	"centralauth-admin-status-locked-yes": "Akun dekunci sekang panyuntingan",
 	"centralauth-admin-status-nonexistent": "Error: akun global \"<nowiki>$1</nowiki>\" ora ana.",
 	"centralauth-admin-status-reasons": "* Alesan kanggo ngunci sing umum\n** akun nggo pranti vandalisme thok\n** akun spam\n* Alesan kanggo ngunci-lan-ngumpetna sing umum\n** jeneng panganggo sing nglanggar aturan\n** informasi personal sing ora patut",
 	"centralauth-admin-status-submit": "Ngatur status",

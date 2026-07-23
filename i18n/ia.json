@@ -103,8 +103,6 @@
 	"centralauth-admin-status-hidden-oversight": "Le conto es completemente celate",
 	"centralauth-admin-status-intro": "Con iste formulario, tu pote cambiar le stato de iste conto global.",
 	"centralauth-admin-status-locked": "Serrate:",
-	"centralauth-admin-status-locked-no": "Le conto non es serrate",
-	"centralauth-admin-status-locked-yes": "Le conto es serrate pro modification",
 	"centralauth-admin-status-nonexistent": "Error: le conto global \"<nowiki>$1</nowiki>\"  non existe.",
 	"centralauth-admin-status-reasons": "* Motivos commun de serramento\n** conto usate solmente pro vandalismo\n** conto usate solmente pro spam\n* Motivos commun de serramento e celamento\n** nomine de usator abusive\n** information personal inappropriate",
 	"centralauth-admin-status-submit": "Configurar stato",

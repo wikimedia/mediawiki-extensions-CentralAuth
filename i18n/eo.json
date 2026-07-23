@@ -71,8 +71,6 @@
 	"centralauth-admin-status-hidden-oversight": "Konto estas tute kaŝita",
 	"centralauth-admin-status-intro": "Vi povas uzi ĉi tiun formularon por ŝanĝi la statuson de ĉi tiu ĝenerala konto",
 	"centralauth-admin-status-locked": "Ŝlosita:",
-	"centralauth-admin-status-locked-no": "Konto ne estas forbarita",
-	"centralauth-admin-status-locked-yes": "Konto estas ŝlosita de redaktado",
 	"centralauth-admin-status-nonexistent": "Eraro: La ĝenerala konto \"<nowiki>$1</nowiki>\" ne ekzistas.",
 	"centralauth-admin-status-reasons": "* Oftaj kialoj por ŝlosado\n** konto uzata nur por vandalismo\n** konto uzata nur por spamado\n* Oftaj kialoj por ŝlosado kaj kaŝado\n** maltaŭga uzantnomo\n** maltaŭga persona informo",
 	"centralauth-admin-status-submit": "Agordi statuson",

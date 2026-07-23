@@ -90,8 +90,6 @@
 	"centralauth-admin-status-hidden-oversight": "Račun je potpuno sakriven",
 	"centralauth-admin-status-intro": "Možete uporabiti ovaj obrazac da biste promijenili status ovog globalnog računa",
 	"centralauth-admin-status-locked": "Zaključan:",
-	"centralauth-admin-status-locked-no": "Račun nije zaključan",
-	"centralauth-admin-status-locked-yes": "Račun je zaključan za uređivanje",
 	"centralauth-admin-status-nonexistent": "Greška: globalni račun \"<nowiki>$1</nowiki>\" ne postoji.",
 	"centralauth-admin-status-reasons": "* Uobičajeni razlozi zaključavanja\n** račun samo za vandalizam\n** račun samo za spam\n* Uobičajeni razlozi za zaključavanje i sakrivanje\n** nepristojno korisničko ime\n** neprikladni lični podaci",
 	"centralauth-admin-status-submit": "Postavi status",

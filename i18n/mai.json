@@ -61,8 +61,6 @@
 	"centralauth-admin-status-hidden-oversight": "खाता पूर्ण रुप सँ नुकाएल गेल अछि",
 	"centralauth-admin-status-intro": "अहाँ ई विश्वव्यापी खाताक स्थिति परिवर्तन करिक लेल ई फारम के उपयोग कऽ सकैत छी।",
 	"centralauth-admin-status-locked": "अवरोधित:",
-	"centralauth-admin-status-locked-no": "खाता अवरोधित नै केल गेल",
-	"centralauth-admin-status-locked-yes": "खाता सँ संपादन करए के लेल अवरोधित केल गेल अछि",
 	"centralauth-admin-status-nonexistent": "त्रुटि: \"<nowiki>$1</nowiki>\" नामक वैश्विक खाता नै अछि।",
 	"centralauth-admin-status-reasons": "* अवरोध बन्द करए के सामान्य कारण\n** मात्र-बर्बरता खाता\n** मात्र-स्प्याम खाता\n* अवरोध बन्द करए के आर नुकाबए के सामान्य कारण\n** अपशब्दीय प्रयोक्तानाम\n** अनुचित व्यक्तिगत जानकारी",
 	"centralauth-admin-status-submit": "स्थिति सेट करी",

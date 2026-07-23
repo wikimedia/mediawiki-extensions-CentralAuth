@@ -99,8 +99,6 @@
 	"centralauth-admin-status-hidden-oversight": "Contul este ascuns complet",
 	"centralauth-admin-status-intro": "Puteți folosi acest formular pentru a schimba starea acestui cont global.",
 	"centralauth-admin-status-locked": "Blocat:",
-	"centralauth-admin-status-locked-no": "Contul nu este blocat",
-	"centralauth-admin-status-locked-yes": "Contul este blocat de la modificare",
 	"centralauth-admin-status-nonexistent": "Eroare: contul global „<nowiki>$1</nowiki>” nu există.",
 	"centralauth-admin-status-reasons": "* Motive frecvente de blocare:\n** cont folosit pentru vandalism\n** cont folosit pentru spam\n* Motive frecvente de blocare și ascundere:\n** nume de utilizator abuziv\n** informații personale inadecvate",
 	"centralauth-admin-status-submit": "Stabilește statut",

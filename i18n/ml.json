@@ -89,8 +89,6 @@
 	"centralauth-admin-status-hidden-oversight": "അംഗത്വം പൂർണ്ണമായും മറയ്ക്കപ്പെട്ടിരിക്കുന്നു",
 	"centralauth-admin-status-intro": "ആഗോള അംഗത്വത്തിന്റെ സ്ഥിതിയിൽ മാറ്റം വരുത്താൻ താങ്കൾക്ക് ഈ ഫോം ഉപയോഗിക്കാവുന്നതാണ്",
 	"centralauth-admin-status-locked": "പൂട്ടിയിരിക്കുന്നവ:",
-	"centralauth-admin-status-locked-no": "അംഗത്വം ബന്ധിച്ചിട്ടില്ല",
-	"centralauth-admin-status-locked-yes": "തിരുത്തുന്നതിൽ നിന്നും അംഗത്വം ബന്ധിച്ചിരിക്കുന്നു",
 	"centralauth-admin-status-nonexistent": "പിഴവ്: \"<nowiki>$1</nowiki>\" എന്ന ആഗോള അംഗത്വം നിലവിലില്ല.",
 	"centralauth-admin-status-reasons": "*ബന്ധിക്കാനുള്ള സാധാരണ കാരണങ്ങൾ\n**നശീകരണ ലക്ഷ്യം മാത്രമുള്ള അംഗത്വം\n**സ്പാം ലക്ഷ്യം മാത്രമുള്ള അംഗത്വം\n*ബന്ധിക്കാനും മറയ്ക്കാനുമുള്ള സാധാരണ കാരണങ്ങൾ\n**മോശപ്പെട്ട ഉപയോക്തൃനാമം\n**അനുചിതമായ വ്യക്തി വിവരങ്ങൾ",
 	"centralauth-admin-status-submit": "സ്ഥിതി കുറിക്കുക",

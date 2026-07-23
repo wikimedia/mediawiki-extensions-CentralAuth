@@ -119,8 +119,6 @@
 	"centralauth-admin-status-hidden-oversight": "A conta está completamente oculta",
 	"centralauth-admin-status-intro": "Pode usar este formulário para alterar o estado desta conta global.",
 	"centralauth-admin-status-locked": "Bloqueada:",
-	"centralauth-admin-status-locked-no": "A conta não tem bloqueios",
-	"centralauth-admin-status-locked-yes": "A conta está impedida de editar",
 	"centralauth-admin-status-nonexistent": "Erro: a conta global \"<nowiki>$1</nowiki>\" não existe.",
 	"centralauth-admin-status-reasons": "* Razões comuns para bloqueio\n** conta usada só para vandalismo\n** conta usada só para spam\n* Razões comuns para bloqueio e ocultação\n** nome de utilizador abusivo\n** informação pessoal não apropriada",
 	"centralauth-admin-status-submit": "Definir estado",

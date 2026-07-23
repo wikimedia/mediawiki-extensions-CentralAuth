@@ -59,8 +59,6 @@
 	"centralauth-admin-status-hidden-oversight": "Il-kont huwa moħbi kompletament",
 	"centralauth-admin-status-intro": "Tista' tuża din il-formola sabiex tbiddel l-istat ta' dan il-kont globali.",
 	"centralauth-admin-status-locked": "Imblukkat:",
-	"centralauth-admin-status-locked-no": "Il-kont mhuwiex imblukkat",
-	"centralauth-admin-status-locked-yes": "Il-kont huwa mblukkat mill-immodifikar",
 	"centralauth-admin-status-nonexistent": "Żball: il-kont globali \"<nowiki>$1</nowiki>\" ma jeżistix.",
 	"centralauth-admin-status-reasons": "* Raġunijiet komuni għall-imblukkar\n** kont użat biss għall-vandaliżmi\n** kont użat biss għal spam\n* Raġunijiet komuni għall-imblukkar u għall-ħabi\n** isem tal-utent offensiv\n** informazzjoni personali mhux xierqa",
 	"centralauth-admin-status-submit": "Biddel l-istat",

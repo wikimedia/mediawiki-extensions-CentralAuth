@@ -56,8 +56,6 @@
 	"centralauth-admin-status-hidden-oversight": "अयम् अभिलेखः सम्पूर्णतया विलोपितः",
 	"centralauth-admin-status-intro": "अस्य वैश्विकाभिलेखस्य स्थितेः परिवर्तनाय इदं रूपम् उपयोक्तुम् अर्हति ।",
 	"centralauth-admin-status-locked": "कीलितम्",
-	"centralauth-admin-status-locked-no": "अभिलेखः कीलितः नास्ति",
-	"centralauth-admin-status-locked-yes": "अभिलेखस्य संयोजनं कीलितम्",
 	"centralauth-admin-status-nonexistent": "दोषः: \"<nowiki>$1</nowiki>\" अयं वैश्विकाभिलेखः न विद्यते ।",
 	"centralauth-admin-status-reasons": "* अवरोधस्य साधारणानि कारणानि\n ** नाशनार्थमेव लेखा\n ** अनिष्टसन्देशायैव लेखा\n * सामान्याः गुहीतानि कारणानि\n ** साधारणानि कीलनोद्घाटनकारणानि\n ** कुत्सितं सदस्यनाम\n ** अनुचितं वैयक्तिकविवरणम्",
 	"centralauth-admin-status-submit": "स्थितिः नियोज्यताम्",

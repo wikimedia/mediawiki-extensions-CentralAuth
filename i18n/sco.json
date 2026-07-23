@@ -83,8 +83,6 @@
 	"centralauth-admin-status-hidden-oversight": "Account is compleatelie skaukt",
 	"centralauth-admin-status-intro": "Ye can uise this form tae chynge the status o this global accoont.",
 	"centralauth-admin-status-locked": "Lockt:",
-	"centralauth-admin-status-locked-no": "Accoont isna lockt",
-	"centralauth-admin-status-locked-yes": "Accoont is lockt fae loggin in",
 	"centralauth-admin-status-nonexistent": "Mistak: the global accoont \"<nowiki>$1</nowiki>\" disna exeest.",
 	"centralauth-admin-status-reasons": "* Common lock raisons\n** vandalism-anely accoont\n** spam-anely accoont\n* Common lock-an-hide raisons\n** abuisiv uiser name\n** inappropriate personal information",
 	"centralauth-admin-status-submit": "Set status",

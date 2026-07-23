@@ -90,8 +90,6 @@
 	"centralauth-admin-status-hidden-oversight": "Иҫәп яҙмаһы тулыһынса йәшерелгән",
 	"centralauth-admin-status-intro": "Глобаль иҫәп яҙмаһы статусын билдәләү өсөн ошо форманы ҡуллана алаһығыҙ.",
 	"centralauth-admin-status-locked": "Бикләнгән:",
-	"centralauth-admin-status-locked-no": "Иҫәп яҙмаһы бикләнмәгән",
-	"centralauth-admin-status-locked-yes": "Иҫәп яҙмаһы бикләнгән, үҙгәртеүҙәр тыйылған",
 	"centralauth-admin-status-nonexistent": "Хата: \"<nowiki>$1</nowiki>\" глобаль иҫәп яҙмаһы юҡ.",
 	"centralauth-admin-status-reasons": "* Ғәҙәттәге бикләү сәбәптәре\n** вандаллыҡ өсөн генә булдырылған иҫәп яҙмаһы\n** спам таратыу өсөн генә булдырылған иҫәп яҙмаһы\n* Ғәҙәттәге бикләү һәм йәшереү сәбәптәре\n** ҡатнашыусының әҙәпһеҙ исеме\n** урынһыҙ шәхси мәғлүмәт",
 	"centralauth-admin-status-submit": "Статус ҡуйырға",

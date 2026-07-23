@@ -51,8 +51,6 @@
 	"centralauth-admin-status-hidden-oversight": "Benutzerkonto isch ganz versteckt",
 	"centralauth-admin-status-intro": "Du chasch des Formular neh go dr Status vu däm wältwyte Benutzerkonto ändere",
 	"centralauth-admin-status-locked": "Gsperrt:",
-	"centralauth-admin-status-locked-no": "Benutzerkonto isch nit gsperrt",
-	"centralauth-admin-status-locked-yes": "Benutzer isch fir s Bearbeite gsperrt",
 	"centralauth-admin-status-nonexistent": "Fähler: s wältwyt Benutzerkonto \"<nowiki>$1</nowiki>\" git s nit.",
 	"centralauth-admin-status-reasons": "* Gängigi Sperrgrind\n** Vandalismus-Konto\n** Spam-Konto\n* Gängigi Grind fir s Sperre un Uusblände\n** uugeignete Benutzername\n** uugeigneti persenligi Information",
 	"centralauth-admin-status-submit": "Set-Status",

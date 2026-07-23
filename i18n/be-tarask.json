@@ -101,8 +101,6 @@
 	"centralauth-admin-status-hidden-oversight": "Рахунак схаваны цалкам",
 	"centralauth-admin-status-intro": "Вы можаце выкарыстоўваць форму для зьмены статусу гэтага глябальнага рахунку",
 	"centralauth-admin-status-locked": "Заблякаваны:",
-	"centralauth-admin-status-locked-no": "Рахунак не заблякаваны",
-	"centralauth-admin-status-locked-yes": "Рахунак заблякаваны для рэдагаваньняў",
 	"centralauth-admin-status-nonexistent": "Памылка: глябальны рахунак «<nowiki>$1</nowiki>» не існуе.",
 	"centralauth-admin-status-reasons": "* Агульныя прычыны блякаваньняў\n** рахунак выключна для вандалізму\n** рахунак выключна для спаму\n* Агульныя прычыны блякаваньняў і хаваньняў\n** абразьлівая назва рахунку\n** неадпаведныя асабістыя зьвесткі",
 	"centralauth-admin-status-submit": "Устанавіць статус",

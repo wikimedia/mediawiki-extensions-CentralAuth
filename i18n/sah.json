@@ -69,8 +69,6 @@
 	"centralauth-admin-status-hidden-oversight": "Аат отой кистэммит",
 	"centralauth-admin-status-intro": "Бу ааты уларытарга бу форманы туттуоххун сөп.",
 	"centralauth-admin-status-locked": "Хааччахтаммыт/бобуллубут",
-	"centralauth-admin-status-locked-no": "Аат хааччахтамматах",
-	"centralauth-admin-status-locked-yes": "Аат хааччахтаммыт, уларытар көҥүллэммэт",
 	"centralauth-admin-status-nonexistent": "Алҕас: Маннык биирдэһиллибит аан аат \"<nowiki>$1</nowiki>\" суох.",
 	"centralauth-admin-status-reasons": "* Хааччах төрүөттэрэ\n** омсону оҥороору эрэ оҥоһуллубут аат\n** спаам ыытаары эрэ оҥоһуллубут аат\n* Хааччахтааһын уонна ааты кистээһин төрүөттэрэ\n** өһүргэтэр аат\n** табыгаһа суох тус сибидиэнньэлэр",
 	"centralauth-admin-status-submit": "Стаатуһун туруоруу",

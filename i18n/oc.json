@@ -61,8 +61,6 @@
 	"centralauth-admin-status-hidden-oversight": "Lo compte es complètament escondut",
 	"centralauth-admin-status-intro": "Podètz utilizar aqueste formulari per cambiar l'estatut d'aqueste compte global",
 	"centralauth-admin-status-locked": "Blocat:",
-	"centralauth-admin-status-locked-no": "Lo compte es pas blocat",
-	"centralauth-admin-status-locked-yes": "Lo compte es blocat per editar pas",
 	"centralauth-admin-status-nonexistent": "Error : lo compte global « <nowiki>$1</nowiki> » existís pas.",
 	"centralauth-admin-status-reasons": "* Rasons frequentas de blocatge** compte creat per vandalizar** compte creat per espam* Rasons comunas de blocatge e amagat** nom d'utilizaire abusiu** informacion personala abusiva",
 	"centralauth-admin-status-submit": "Cambiar l'estatut",

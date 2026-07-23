@@ -102,8 +102,6 @@
 	"centralauth-admin-status-hidden-oversight": "Ο λογαριασμός είναι εντελώς κρυμμένος",
 	"centralauth-admin-status-intro": "Μπορείς να χρησιμοποιήσεις αυτή τη φόρμα για να αλλάξεις την κατάσταση αυτού του παγκόσμιου λογαριασμού",
 	"centralauth-admin-status-locked": "Κλειδωμένο:",
-	"centralauth-admin-status-locked-no": "Ο λογαριασμός δεν είναι κλειδωμένος",
-	"centralauth-admin-status-locked-yes": "Ο λογαριασμός είναι κλειδωμένος, δεν μπορεί να κάνει επεξεργασίες",
 	"centralauth-admin-status-nonexistent": "Σφάλμα: ο παγκόσμιος λογαριασμός \"<nowiki>$1</nowiki>\" δεν υπάρχει.",
 	"centralauth-admin-status-reasons": "* Συνήθεις λόγοι κλειδώματος\n** βανδαλιστικός μόνο λογαριασμός\n** λογαριασμό που μόνο τοποθετεί σπαμ\n* Συνήθεις λόγοι κλειδώματος και απόκρυψης\n** κατάχρηση ονόματος χρήστη\n** ακατάλληλες προσωπικές πληροφορίες",
 	"centralauth-admin-status-submit": "Ρύθμιση κατάστασης",

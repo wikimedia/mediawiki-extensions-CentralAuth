@@ -91,8 +91,6 @@
 	"centralauth-admin-status-hidden-oversight": "ანგარიში სრულად დამალულია",
 	"centralauth-admin-status-intro": "თქვენ შეგიძლიათ ამ ფორმის გამოენება გლობალური ანგარიშის სტატუსის შესაცვლელად.",
 	"centralauth-admin-status-locked": "დაიბლოკა:",
-	"centralauth-admin-status-locked-no": "ანგარიში არ არის დაბლოკილი",
-	"centralauth-admin-status-locked-yes": "ანგარიში დაბლოკილია რედაქტირებისაგან",
 	"centralauth-admin-status-nonexistent": "შეცდომა. გლობალური ანგარიში „<nowiki>$1</nowiki>“ არ არსებობს",
 	"centralauth-admin-status-reasons": "* ბლოკირების სტანდარტული მიზეზები\n** შექმნილია ვანდალიზმისათვის\n** შექმნილია სპამირებისათვის\n* ბლოკირებისა და დამალვის სტანდარტული მიზეზები\n** შეურაცმყოფელი მომხმარებლისა სახელი\n** უადგილო პირადი ინფორმაცია",
 	"centralauth-admin-status-submit": "სტატუსის დაყენება",

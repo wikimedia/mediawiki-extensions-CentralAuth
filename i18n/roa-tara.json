@@ -92,8 +92,6 @@
 	"centralauth-admin-status-hidden-oversight": "'U cunde de l'utende jè scunnute combletamende",
 	"centralauth-admin-status-intro": "Tu puè ausà stu module pe cangià le 'mbostaziune de quiste cunde utinde globale.",
 	"centralauth-admin-status-locked": "Bloccate:",
-	"centralauth-admin-status-locked-no": "'U cunde de l'utende non g'è bloccate",
-	"centralauth-admin-status-locked-yes": "'U cunde de l'utende ha state bloccate da le cangiaminde",
 	"centralauth-admin-status-nonexistent": "Errore: 'u cunde utende globbale \"<nowiki>$1</nowiki>\" non g'esiste.",
 	"centralauth-admin-status-reasons": "* Mutive comune de blocche\n** cunde de utinde ca fanne vandalisme\n** cunde de utinde de spam\n* Mutive comune de blocche e scunnemende\n** nome utende abbusive\n** 'mbormaziune personale inapproppriate",
 	"centralauth-admin-status-submit": "'Mboste 'u state",

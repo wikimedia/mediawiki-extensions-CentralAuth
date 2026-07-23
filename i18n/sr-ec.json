@@ -103,8 +103,6 @@
 	"centralauth-admin-status-hidden-oversight": "Налог је потпуно сакривен",
 	"centralauth-admin-status-intro": "Овим обрасцем можете да промените стање овог глобалног налога.",
 	"centralauth-admin-status-locked": "Закључано:",
-	"centralauth-admin-status-locked-no": "Налог није закључан",
-	"centralauth-admin-status-locked-yes": "Налог је закључан за уређивање",
 	"centralauth-admin-status-nonexistent": "Грешка: глобални налог „<nowiki>$1</nowiki>“ не постоји.",
 	"centralauth-admin-status-reasons": "* Уобичајени разлоги за закључавање\n** налог се користи само за вандализовање\n** налог се користи само за спамовање\n* Уобичајени разлози за закључавање и сакривање\n** непристојно корисничко име\n** неприкладни лични подаци",
 	"centralauth-admin-status-submit": "Постави статус",

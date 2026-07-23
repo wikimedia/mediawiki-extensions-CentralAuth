@@ -89,8 +89,6 @@
 	"centralauth-admin-status-hidden-oversight": "ఖాతా పూర్తిగా దాచబడింది",
 	"centralauth-admin-status-intro": "ఈ సార్వత్రిక ఖాతా యొక్క స్థితిని మార్చడానికి మీరు ఈ ఫారాన్ని ఉపయోగించవచ్చు",
 	"centralauth-admin-status-locked": "సంరక్షించబడినవి:",
-	"centralauth-admin-status-locked-no": "ఖాతా సంరక్షించబడలేదు",
-	"centralauth-admin-status-locked-yes": "మార్పు చేర్పులు చెయ్యకుండా ఖాతాకు తాళం వేసాం",
 	"centralauth-admin-status-nonexistent": "లోపం: \"<nowiki>$1</nowiki>\" అనే సార్వత్రిక ఖాతా లేదు.",
 	"centralauth-admin-status-reasons": "* తాళం వేసేందుకు సాధారణ కారణాలు\n** దుశ్చర్య-కోసం మాత్రమే ఖాతా\n** స్పాము కోసం-మాత్రమే ఖాతా\n* తాళం వేసేందుకు, దాచేందుకు సాధారణ కారణాలు\n** బూతులాంటి లాంటి వాడుకరిపేరు\n** అనుచితమైన వ్యక్తిగత సమాచారం",
 	"centralauth-admin-status-submit": "స్థితిని అమర్చు",

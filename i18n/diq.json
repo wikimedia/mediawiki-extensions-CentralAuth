@@ -97,8 +97,6 @@
 	"centralauth-admin-status-hidden-oversight": "Hesab temamen nımiyayo",
 	"centralauth-admin-status-intro": "Ti ser ena form ra statuyê globalî eşkeno bivurne",
 	"centralauth-admin-status-locked": "Kilit biyo:",
-	"centralauth-admin-status-locked-no": "Hesab kilid nibiya",
-	"centralauth-admin-status-locked-yes": "Hesab vurnayiş ra kilid biye",
 	"centralauth-admin-status-nonexistent": "Ğelet: hesabê globalî \"<nowiki>$1</nowiki>\" çini yo.",
 	"centralauth-admin-status-reasons": "* Sebebê kilit kerden\n** Hesabo kê qandê vandalizmiyo\n** spam-teyna hesab\n* Sebebanê kilit kerdışi-u-sebabê nımtışi\n** karberê ke hewl niyê\n** melumatê ke hewl niyê",
 	"centralauth-admin-status-submit": "Statu rone",

@@ -82,8 +82,6 @@
 	"centralauth-admin-status-hidden-oversight": "Ti pakabilangan ket kompleto a nailemmeng",
 	"centralauth-admin-status-intro": "Mausarmo daytoy a porma tapno masukatan ti kasasaad iti daytoy a global a pakabilangan.",
 	"centralauth-admin-status-locked": "Napengdan:",
-	"centralauth-admin-status-locked-no": "Ti pakabilangan ket saan a napengdan",
-	"centralauth-admin-status-locked-yes": "Ti pakabilangan ket napengdan iti panagurnos",
 	"centralauth-admin-status-nonexistent": "Biddut: awan ti global a pakabilangan iti \"<nowiki>$1</nowiki>\".",
 	"centralauth-admin-status-reasons": "* Dagiti kadawyan a rason ti panagserra\n** bandalismo laeng a pakabilangan\n** spam laeng a pakabilangan\n* Kadawyan a panagserra ken panagilemmeng a rasrason\n** abusado a nagan ti agar-aramat\n** di maiparbeng a bukod a pakaammo",
 	"centralauth-admin-status-submit": "Isaad ti kasasaad",

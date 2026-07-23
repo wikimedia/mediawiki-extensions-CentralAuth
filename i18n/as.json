@@ -57,8 +57,6 @@
 	"centralauth-admin-status-hidden-oversight": "একাউণ্ট সম্পূৰ্ণভাৱে গোপন কৰা হ'ল",
 	"centralauth-admin-status-intro": "আপুনি এই প্ৰপত্ৰ ব্যৱহাৰ কৰি এই গোলকীয় একাউণ্টৰ অৱস্থা সলাব পাৰে।",
 	"centralauth-admin-status-locked": "বন্ধ:",
-	"centralauth-admin-status-locked-no": "একাউণ্ট বন্ধ কৰা নাই",
-	"centralauth-admin-status-locked-yes": "একাউণ্টটোৰ পৰা সম্পাদনা বন্ধ কৰি ৰখা হৈছে",
 	"centralauth-admin-status-nonexistent": "ত্ৰুটি: গোলকীয় একাউণ্ট \"<nowiki>$1</nowiki>\"ৰ কোনো অস্তিত্ব নাই।",
 	"centralauth-admin-status-reasons": "* বন্ধ কৰাৰ সাধাৰণ কাৰণসমূহ\n** ধ্বংসপ্ৰৱণতা থকা একাউণ্ট\n** স্পাম বিয়পোৱা একাউণ্ট\n* বন্ধ আৰু লুকুৱাৰ সাধাৰণ কাৰণসমূহ\n** অনুপযুক্ত সদস্যনাম\n** অনুপযুক্ত ব্যক্তিগত তথ্য",
 	"centralauth-admin-status-submit": "অৱস্থা ছেট কৰক",

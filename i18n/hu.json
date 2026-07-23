@@ -114,8 +114,6 @@
 	"centralauth-admin-status-hidden-oversight": "A felhasználói fiók teljesen elrejtve",
 	"centralauth-admin-status-intro": "Ezen az űrlapon megváltoztathatod a globális fiók állapotát",
 	"centralauth-admin-status-locked": "Lezárva:",
-	"centralauth-admin-status-locked-no": "A felhasználói fiók nincs lezárva",
-	"centralauth-admin-status-locked-yes": "A felhasználói fiók zárva van a szerkesztésekre",
 	"centralauth-admin-status-nonexistent": "Hiba: nem létezik „<nowiki>$1</nowiki>” nevű globális fiók.",
 	"centralauth-admin-status-reasons": "* Szokásos zárolási okok\n** csak vandál szerkesztés\n** csak spam\n* Szokásos zárolási és elrejtési okok\n** sértő felhasználói név\n** nem megfelelő felhasználói információ",
 	"centralauth-admin-status-submit": "Állapot módosítása",

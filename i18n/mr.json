@@ -92,8 +92,6 @@
 	"centralauth-admin-status-hidden-oversight": "पूर्णतः अदृश्य खाते",
 	"centralauth-admin-status-intro": "आपण हा आवेदन-नमुना वैश्विक खात्याची स्थिती बदलविण्यासाठी वापरू शकता.",
 	"centralauth-admin-status-locked": "कुलुपबंद:",
-	"centralauth-admin-status-locked-no": "खाते कुलूपबंद केलेले नाही",
-	"centralauth-admin-status-locked-yes": "सनोंद प्रवेशास कुलुपबंद केलेले खाते",
 	"centralauth-admin-status-nonexistent": "त्रुटी: \"<nowiki>$1</nowiki>\" हे वैश्विक खाते अस्तित्वात नाही.",
 	"centralauth-admin-status-reasons": "* प्रतिबंधनाची सामान्य कारणे\n‌**केवळ-उपद्रवकारक  खाते\n**केवळ-उत्पात खाते\n*सामान्य प्रतिबंधन-आणि-लपविण्याची कारणे\n**उत्पाती सदस्याचे सदस्यनाव\n**अयोग्य व्यक्तिगत माहिती",
 	"centralauth-admin-status-submit": "स्थिती स्थापा",

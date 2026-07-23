@@ -144,8 +144,6 @@
 	"centralauth-admin-status-hidden-oversight": "アカウントは完全に秘匿されています",
 	"centralauth-admin-status-intro": "このフォームでは、このグローバルアカウントの状態を変更できます。",
 	"centralauth-admin-status-locked": "ロック:",
-	"centralauth-admin-status-locked-no": "アカウントはロックされていません",
-	"centralauth-admin-status-locked-yes": "アカウントはログインを禁止されています",
 	"centralauth-admin-status-nonexistent": "エラー: グローバルアカウント「<nowiki>$1</nowiki>」は存在しません。",
 	"centralauth-admin-status-reasons": "* よくあるロック理由\n** 荒らし専用アカウント\n** スパム専用アカウント\n* よくあるロックと秘匿の理由\n** 不適切な利用者名\n** 不適切な個人情報",
 	"centralauth-admin-status-submit": "状態を設定",

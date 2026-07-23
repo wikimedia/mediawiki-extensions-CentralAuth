@@ -69,8 +69,6 @@
 	"centralauth-admin-status-hidden-oversight": "Akun kadhelikaké babar blas",
 	"centralauth-admin-status-intro": "Panjenengan bisa nganggo pormulir iki kanggo ngganti status akun global iki.",
 	"centralauth-admin-status-locked": "Kagembok:",
-	"centralauth-admin-status-locked-no": "Akun ora kagembok",
-	"centralauth-admin-status-locked-yes": "Akun dikunci lan ora bisa mlebu",
 	"centralauth-admin-status-nonexistent": "Kasalahan: akun global \"<nowiki>$1</nowiki>\" ora ana.",
 	"centralauth-admin-status-reasons": "* Alesan kanggo ngunci kang umum\n** akun vandhalisme\n** akun spam\n* Alesan kanggo ngunci lan ndhelikaké kang umum\n** jeneng naraguna nglanggar\n** informasi personal kang ora patut",
 	"centralauth-admin-status-submit": "Atur status",

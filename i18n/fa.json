@@ -128,8 +128,6 @@
 	"centralauth-admin-status-hidden-oversight": "حساب به طور کامل پنهان است",
 	"centralauth-admin-status-intro": "شما می‌توانید فرم زیر را برای تغییر وضعیت این حساب سراسری استفاده کنید.",
 	"centralauth-admin-status-locked": "قفل‌شده:",
-	"centralauth-admin-status-locked-no": "حساب قفل نشده است",
-	"centralauth-admin-status-locked-yes": "حساب از ویرایش کردن مسدود شده است.",
 	"centralauth-admin-status-nonexistent": "خطا: حساب سراسری «<nowiki>$1</nowiki>» وجود ندارد.",
 	"centralauth-admin-status-reasons": "* دلایل رایج مسدودی\n** حساب فقط‌خرابکار\n** حساب فقط‌هرزنامه\n* دلایل متداول قفل و پنهان‌سازی\n** نام کاربری توهین‌آمیز\n** اطلاعات شخصی نامناسب",
 	"centralauth-admin-status-submit": "تنظیم وضعیت",

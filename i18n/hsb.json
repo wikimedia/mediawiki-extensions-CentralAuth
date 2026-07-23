@@ -84,8 +84,6 @@
 	"centralauth-admin-status-hidden-oversight": "Konto je dospołnje schowane",
 	"centralauth-admin-status-intro": "Móžeš tutón formular wužiwać, zo by status tutoho globalneho konta změnił.",
 	"centralauth-admin-status-locked": "Zawrjeny:",
-	"centralauth-admin-status-locked-no": "Konto njeje zawrjene",
-	"centralauth-admin-status-locked-yes": "Konto je přećiwo wobdźěłowanju zawrjene",
 	"centralauth-admin-status-nonexistent": "Zmylk: globalne konto \"<nowiki>$1</nowiki>\" njeeksistuje.",
 	"centralauth-admin-status-reasons": "* Powšitkowne zawrjenske přičiny\n** Wandalizmowe konto\n** Spamowe konto\n* Powšitkowne zawrjenske a schowanske přičiny\n** znjewužiwane wužiwarske mjeno\n** njepřiměrjene wosobinske informacije",
 	"centralauth-admin-status-submit": "Status stajić",

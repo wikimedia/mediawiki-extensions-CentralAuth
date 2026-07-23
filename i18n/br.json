@@ -88,8 +88,6 @@
 	"centralauth-admin-status-hidden-oversight": "Kuzhet eo penn-da-benn ar gont",
 	"centralauth-admin-status-intro": "Gellout a rit implijout ar furmskrid-mañ evit kemmañ statud ar gont hollek-se",
 	"centralauth-admin-status-locked": "Prennet :",
-	"centralauth-admin-status-locked-no": "N'eo ket stanket ar gont",
-	"centralauth-admin-status-locked-yes": "Stanket eo ar gont evit ar c'hemmañ",
 	"centralauth-admin-status-nonexistent": "Fazi : N'eus ket eus ar gont hollek \"<nowiki>$1</nowiki>\".",
 	"centralauth-admin-status-reasons": "* Abegoù stankañ kavet al liesañ\n** kont a servij d'ar vandalerezh nemetken\n** kont a servij da spamañ\n* Abegoù stankañ ha kuzhat kavet al liesañ\n** anv implijer gwallimplijet\n** titouroù personnel ha n'o deus ket ho flas",
 	"centralauth-admin-status-submit": "Lakaat ar statud",

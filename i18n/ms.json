@@ -86,8 +86,6 @@
 	"centralauth-admin-status-hidden-oversight": "Akaun disembunyikan sepenuhnya",
 	"centralauth-admin-status-intro": "Anda boleh guna borang ini untuk tukar status akaun sejagat ini",
 	"centralauth-admin-status-locked": "Dikunci:",
-	"centralauth-admin-status-locked-no": "Akaun tidak dikunci",
-	"centralauth-admin-status-locked-yes": "Akaun dikunci daripada suntingan",
 	"centralauth-admin-status-nonexistent": "Ralat: akaun sejagat \"<nowiki>$1</nowiki>\" tidak wujud.",
 	"centralauth-admin-status-reasons": "* Sebab penguncian utama\n** akaun laku musnah sahaja\n** akaun spam sahaja\n* Sebab kunci dan sembunyi utama\n** nama pengguna yang carut\n** maklumat peribadi yang tidak elok",
 	"centralauth-admin-status-submit": "Tetapkan status",

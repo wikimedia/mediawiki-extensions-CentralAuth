@@ -65,8 +65,6 @@
 	"centralauth-admin-status-hidden-oversight": "完全收埋戶口",
 	"centralauth-admin-status-intro": "你可以用呢個表格去改呢個全域戶口嘅狀態。",
 	"centralauth-admin-status-locked": "鎖咗：",
-	"centralauth-admin-status-locked-no": "戶口無鎖到",
-	"centralauth-admin-status-locked-yes": "戶口鎖咗唔畀簽到",
 	"centralauth-admin-status-nonexistent": "出錯：「<nowiki>$1</nowiki>」呢個全域戶口唔存在。",
 	"centralauth-admin-status-reasons": "* 常見封鎖原因\n** 齋搞亂檔嘅戶口\n** 齋賣告白嘅戶口\n* 常見封鎖兼隱藏嘅原因\n** 唔恰當嘅用戶名\n** 唔恰當嘅個人資料",
 	"centralauth-admin-status-submit": "設狀態",

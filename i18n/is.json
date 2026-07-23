@@ -77,8 +77,6 @@
 	"centralauth-admin-status-hidden-oversight": "Aðgangurinn er falinn allstaðar",
 	"centralauth-admin-status-intro": "Þú getur notað þetta eyðublað til að breyta stöðu þessa altæks aðgangs.",
 	"centralauth-admin-status-locked": "Læstur:",
-	"centralauth-admin-status-locked-no": "Aðgangurinn er ólæstur",
-	"centralauth-admin-status-locked-yes": "Aðgangurinn er læstur",
 	"centralauth-admin-status-nonexistent": "Villa: altæki aðgangurinn „<nowiki>$1</nowiki>“ er ekki til.",
 	"centralauth-admin-status-reasons": "* Algengar ástæður fyrir læsingu\n** Skemmdarverks aðgangur\n** Amasendinga aðgangur\n*Algengar læsa-og-fela ástæður\n** Móðgandi notandanafn\n** Óviðeigandi persónulegar upplýsingar",
 	"centralauth-admin-status-submit": "Setja stöðu",

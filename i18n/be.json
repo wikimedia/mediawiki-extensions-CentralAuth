@@ -104,8 +104,6 @@
 	"centralauth-admin-status-hidden-oversight": "Уліковы запіс схаваны цалкам",
 	"centralauth-admin-status-intro": "Вы можаце выкарыстоўваць гэтую форму для змены статусу гэтага глабальнага ўліковага запісу.",
 	"centralauth-admin-status-locked": "Замкнуты:",
-	"centralauth-admin-status-locked-no": "Уліковы запіс не заблакіраваны",
-	"centralauth-admin-status-locked-yes": "Уліковы запіс заблакіраваны ад уваходу ў сістэму",
 	"centralauth-admin-status-nonexistent": "Памылка: глабальны ўліковы запіс «<nowiki>$1</nowiki>» не існуе.",
 	"centralauth-admin-status-reasons": "* Распаўсюджаныя прычыны блакіравання\n** уліковы запіс толькі для вандалізму\n** уліковы запіс толькі для спаму\n* Агульныя прычыны блакіравання і хавання\n** абразлівая назва ўліковага запісу\n** недарэчныя асабістыя звесткі",
 	"centralauth-admin-status-submit": "Устанавіць статус",

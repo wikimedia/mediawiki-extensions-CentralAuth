@@ -77,8 +77,6 @@
 	"centralauth-admin-status-hidden-oversight": "ساب بودیگ اندݔم کنگ بیت",
 	"centralauth-admin-status-intro": "شما توان ات چیریگین فرمء پر تغییر وضعیت ائ سرجمین حساب کارمرز بکن ات.",
 	"centralauth-admin-status-locked": "کبل بیتگین:",
-	"centralauth-admin-status-locked-no": "اکانت کبل نه بیتگ انت",
-	"centralauth-admin-status-locked-yes": "اکانت چه لاگین کتنء کبل بیتگ انت",
 	"centralauth-admin-status-nonexistent": "ارور: سرجمین اکانت «<nowiki>$1</nowiki>» موجوت نه انت.",
 	"centralauth-admin-status-reasons": "*مالومین کبل کنگء دلایل\n**اکانتء هرابکار\n**اکانتء اسپم\n*مالومین کبل ءُ پناه کنگء دلایل\n**نالؤتین یوزرنام\n**نالؤتین وتیگین انفارمیشن",
 	"centralauth-admin-status-submit": "تنظیم وضعیت",

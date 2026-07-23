@@ -64,8 +64,6 @@
 	"centralauth-admin-status-hidden-oversight": "Kontan er fullkomuliga fjald",
 	"centralauth-admin-status-intro": "Tú kanst nýta hetta oyðublaðið fyri at broyta støðuna hjá hesi globalu kontuni.",
 	"centralauth-admin-status-locked": "Stongd:",
-	"centralauth-admin-status-locked-no": "Kontan er ikki stongd",
-	"centralauth-admin-status-locked-yes": "Kontan er stongd fyri rættingum",
 	"centralauth-admin-status-nonexistent": "Feilur: alheimskontan \"<nowiki>$1</nowiki>\" finst ikki.",
 	"centralauth-admin-status-reasons": "*Vanligar orsøkir fyri sperring\n** kontur sum bert verða brúktar til vandalismu\n** kontur sum bert verða brúktar til spamm\n* Vanligar stong- og fjalorsøkir\n** ópassandi brúkaranavn\n** ópassandi persónlig kunning",
 	"centralauth-admin-too-many-edits": "Globala kontan \"<nowiki>$1</nowiki>\" hevur meira enn $2 {{PLURAL:$2|rætting|rættingar}} og kann ikki verða fjald.",

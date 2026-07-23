@@ -70,8 +70,6 @@
 	"centralauth-admin-status-hidden-oversight": "ખાતું સંપૂર્ણ રીતે છુપાયેલ છે",
 	"centralauth-admin-status-intro": "તમે આ ફોર્મનો ઉપયોગ કરીને આ વૈશ્વિક ખાતાની સ્થિતિ બદલી શકો છો.",
 	"centralauth-admin-status-locked": "તાળું મરાયેલું છે:",
-	"centralauth-admin-status-locked-no": "ખાતા પર તાળું મરાયું નથી.",
-	"centralauth-admin-status-locked-yes": "આ ખાતા દ્વારા ફેરફાર કરવા પર પ્રતિબંધ છે.",
 	"centralauth-admin-status-nonexistent": "ક્ષતિ: વૈશ્વિક ખાતું \"<nowiki>$1</nowiki>\" અસ્તિત્વ ધરાવતું નથી.",
 	"centralauth-admin-status-reasons": "* પ્રતિબંધનાં સામાન્ય કારણો\n** ફક્ત ભાંગફોડ માટેનું ખાતું\n** ફક્ત સ્પામ ખાતું\n* 'પ્રતિબંધ અને છુપાવો' માટેના સામાન્ય કારણો\n** અપમાનજનક સભ્યનામ\n** અનુચિત વ્યક્તિગત માહિતી",
 	"centralauth-admin-status-submit": "સ્થિતિ ગોઠવો",

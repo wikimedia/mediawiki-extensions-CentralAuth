@@ -100,8 +100,6 @@
 	"centralauth-admin-status-hidden-oversight": "گڼون په بشپړه توگه پټ دی",
 	"centralauth-admin-status-intro": "د دې فورمې په کارولو سره تاسې د دې ټوليز گڼون دريځ بدلولی شئ.",
 	"centralauth-admin-status-locked": "تړل شوي:",
-	"centralauth-admin-status-locked-no": "گڼون تړلی نه دی",
-	"centralauth-admin-status-locked-yes": "گڼون د سمون له چارې بې برخې دی",
 	"centralauth-admin-status-nonexistent": "تېروتنه: د \"<nowiki>$1</nowiki>\" په نوم ټوليز گڼون نشته.",
 	"centralauth-admin-status-reasons": "* د بنديز ټولگړي لاملونه\n** يوازې ورانکاری گڼون\n** يوازې بې‌کارليک گڼون\n* د تړلو او پټولو ټولگړي لاملونه\n** ښکنځونکی کارن‌نوم\n** ناسم شخصي مالومات",
 	"centralauth-admin-status-submit": "دريځ غوره کول",

@@ -82,8 +82,6 @@
 	"centralauth-admin-status-hidden-oversight": "Účet je kompletne skrytý",
 	"centralauth-admin-status-intro": "Tento formulár môžete použiť na zmenu stavu tohto globálneho účtu.",
 	"centralauth-admin-status-locked": "Zamknutý:",
-	"centralauth-admin-status-locked-no": "Účet nie je zamknutý",
-	"centralauth-admin-status-locked-yes": "Úpravy účtu sú zamknuté",
 	"centralauth-admin-status-nonexistent": "Chyba: globálny účet „<nowiki>$1</nowiki>“ neexistuje.",
 	"centralauth-admin-status-reasons": "* Časté dôvody blokovania\n ** účet len na vandalizmus\n ** účet len na spam\n * Časté dôvody na zamknutie a skrytie\n ** zneužívajúce používateľské meno\n ** nevhodné osobné údaje",
 	"centralauth-admin-status-submit": "Nastaviť stav",

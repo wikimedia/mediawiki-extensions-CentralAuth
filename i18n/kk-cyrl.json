@@ -80,8 +80,6 @@
 	"centralauth-admin-status-hidden-oversight": "Тіркелім тұтастай жасырылған",
 	"centralauth-admin-status-intro": "Бұл пішінді бұл ғаламдық тіркелгі күйін өзгерту үшін қолдана аласыз.",
 	"centralauth-admin-status-locked": "Құлыпталған:",
-	"centralauth-admin-status-locked-no": "Тіркелім құлыпталған",
-	"centralauth-admin-status-locked-yes": "Өңдеу үшін тіркелім құлыпталған",
 	"centralauth-admin-status-nonexistent": "Қате: «<nowiki>$1</nowiki>» деген ғаламдық тіркелгі жоқ.",
 	"centralauth-admin-status-reasons": "* Ортақ құлыпталу себептері\n** тек бұзақы тіркелім\n** тек спам тіркелім\n* Ортақ құлыпталу және жасырылған себептері\n** өрескел қатысушы есімі\n** орынсыз жеке ақпараттары",
 	"centralauth-admin-status-submit": "Күйді орнату",

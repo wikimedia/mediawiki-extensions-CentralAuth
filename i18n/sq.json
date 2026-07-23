@@ -106,8 +106,6 @@
 	"centralauth-admin-status-hidden-oversight": "Llogaria është e fshehur plotësisht",
 	"centralauth-admin-status-intro": "Ti mund ta përdorësh këtë formular për të ndryshuar statusin e kësaj llogarie globale.",
 	"centralauth-admin-status-locked": "Kyçur:",
-	"centralauth-admin-status-locked-no": "Llogaria nuk është e kyçur",
-	"centralauth-admin-status-locked-yes": "Llogaria është e kyçur nga hyrjet",
 	"centralauth-admin-status-nonexistent": "Gabim: llogaria globale \"<nowiki>$1</nowiki>\" nuk ekziston.",
 	"centralauth-admin-status-reasons": "* Arsye të përgjithshme kyçjeje\n** llogari vetëm për vandalizëm\n** llogari vetëm për spam\n* Arsye të përgjithshme kyçjeje dhe fshehjeje\n** emër përdoruesi abuziv\n** informacion personal i papërshtatshëm",
 	"centralauth-admin-status-submit": "Vendos statusin",

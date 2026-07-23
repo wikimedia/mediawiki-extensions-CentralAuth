@@ -53,8 +53,6 @@
 	"centralauth-admin-status-hidden-no": "Konts nav paslēpts",
 	"centralauth-admin-status-hidden-oversight": "Konts ir pilnīgi paslēpts",
 	"centralauth-admin-status-locked": "Bloķēts:",
-	"centralauth-admin-status-locked-no": "Konts nav slēgts",
-	"centralauth-admin-status-locked-yes": "Konts rediģēšanai ir slēgts",
 	"centralauth-admin-status-nonexistent": "Kļūda: globālais konts \"<nowiki>$1</nowiki>\" nepastāv.",
 	"centralauth-admin-status-submit": "Uzstādīt statusu",
 	"centralauth-admin-unattached": "nav pievienots",

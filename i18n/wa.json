@@ -20,8 +20,6 @@
 	"centralauth-admin-no": "neni",
 	"centralauth-admin-reason": "Råjhon:",
 	"centralauth-admin-status-locked": "Bloké:",
-	"centralauth-admin-status-locked-no": "Li conte n' est nén bloké",
-	"centralauth-admin-status-locked-yes": "Li conte est bloké po l' elodjaedje",
 	"centralauth-admin-unmerge-success": "$1 {{PLURAL:$1|conte|contes}} ont stî rschåyîs",
 	"centralauth-admin-username": "No d' elodjaedje:",
 	"centralauth-admin-yes": "oyi",

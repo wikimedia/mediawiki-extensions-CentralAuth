@@ -87,8 +87,6 @@
 	"centralauth-admin-status-hidden-oversight": "ანგარიში რსულას რე ტყობინაფილი",
 	"centralauth-admin-status-intro": "თქვა შეილებჷნა თე ფორმაშ გჷმორინაფა გლობალური ანგარიშიშ სტატუსიშ ოთირალო.",
 	"centralauth-admin-status-locked": "დიბლოკჷ:",
-	"centralauth-admin-status-locked-no": "ანგარიში ვა რე ბლოკირი",
-	"centralauth-admin-status-locked-yes": "ანგარიში ბლოკირი რე, მიშულა ვემიხუჯინე",
 	"centralauth-admin-status-nonexistent": "ჩილათა. გლობალური ანგარიში „<nowiki>$1</nowiki>“ ვა რე",
 	"centralauth-admin-status-reasons": "* ბლოკუაშ სტანდარტული სამანჯელეფი\n** გოჭყაფილი რე ვანდალიზმიშო\n** გოჭყაფილი რე სპამირებაშო\n* ბლოკუაშ დო ტყობინაფაშ სტანდარტული სამანჯელეფი\n** ამარდებული მახვარებუშ ჯოხო\n** უაბანე პიჯული ინფორმაცია",
 	"centralauth-admin-status-submit": "სტატუსიშ გენწყალა",

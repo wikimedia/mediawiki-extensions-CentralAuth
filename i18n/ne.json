@@ -73,8 +73,6 @@
 	"centralauth-admin-status-hidden-oversight": "खाता पूर्ण रुपले गुप्त छ",
 	"centralauth-admin-status-intro": "तपाईंले विश्वव्यापी खाताको स्थिति परिवर्तन गर्न यो फारम प्रयोग गर्नसक्नुहुन्छ।",
 	"centralauth-admin-status-locked": "प्रतिबन्धित:",
-	"centralauth-admin-status-locked-no": "खाता प्रतिबन्धित",
-	"centralauth-admin-status-locked-yes": "सम्पादन गर्नलाई यो खाता प्रतिबन्धित छ",
 	"centralauth-admin-status-nonexistent": "त्रुटि: यो विश्वव्यापी खाता \"<nowiki>$1</nowiki>\" छैन।",
 	"centralauth-admin-status-reasons": "* सामान्य प्रतिबन्धका कारणहरू\n** बर्बरता-मात्र खाता\n** स्प्याम-मात्र खाता\n* सामान्य प्रतिबन्ध-र-गुप्तिका कारणहरू\n** अपमानजनक प्रयोगकर्ता नाम\n** अनुचित व्यक्तिगत जानकारी",
 	"centralauth-admin-status-submit": "स्थिति तय गर्ने",

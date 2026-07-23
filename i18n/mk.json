@@ -103,8 +103,6 @@
 	"centralauth-admin-status-hidden-oversight": "Сметката е сосема скриена",
 	"centralauth-admin-status-intro": "Можете да го употребите овој образец за да го промените статусот на оваа глобална сметка",
 	"centralauth-admin-status-locked": "Заклучена:",
-	"centralauth-admin-status-locked-no": "Сметката не е заклучена",
-	"centralauth-admin-status-locked-yes": "Сметката е заклучена за уредување",
 	"centralauth-admin-status-nonexistent": "Грешка: глобалната сметка „<nowiki>$1</nowiki>“ не постои.",
 	"centralauth-admin-status-reasons": "* Чести причини за заклучување\n** сметката се употребува само за вандализирање\n** сметка создадена само за спамирање\n* Чести причини за заклучување и скривање\n** непристојно корисничко име\n** непристојни лични податоци",
 	"centralauth-admin-status-submit": "Постави статус",

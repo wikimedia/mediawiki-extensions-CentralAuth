@@ -81,8 +81,6 @@
 	"centralauth-admin-status-hidden-oversight": "Ël cont a l'é stërmà completament",
 	"centralauth-admin-status-intro": "A peul dovré sto formolari-sì për cangé lë statù d'ës cont global.",
 	"centralauth-admin-status-locked": "Blocà:",
-	"centralauth-admin-status-locked-no": "Ël cont a l'é pa blocà",
-	"centralauth-admin-status-locked-yes": "Ël cont a peul pa modifiché",
 	"centralauth-admin-status-nonexistent": "Eror: ël cont global \"<nowiki>$1</nowiki>\" a esist pa.",
 	"centralauth-admin-status-reasons": "* Rason comun-e ëd blocagi\n** cont mach ëd vandalism\n** cont mach ëd rumenta\n* Rason comun-e për bloché e stërmé\n** nòm utent abusiv\n** anformassion përsonaj pa aproprià",
 	"centralauth-admin-status-submit": "Ampòsta stat",

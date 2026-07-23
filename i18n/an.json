@@ -58,8 +58,6 @@
 	"centralauth-admin-status-hidden-oversight": "A cuenta se troba amagada de tot",
 	"centralauth-admin-status-intro": "Puet usar iste formulario ta cambiar o estau d'ista cuenta global",
 	"centralauth-admin-status-locked": "Trancato:",
-	"centralauth-admin-status-locked-no": "A cuenta no ye bloqueyada globalment",
-	"centralauth-admin-status-locked-yes": "A cuenta se troba bloqueyada globalment",
 	"centralauth-admin-status-nonexistent": "Error: a cuenta global \"<nowiki>$1</nowiki>\" no existe.",
 	"centralauth-admin-status-reasons": "* Razons comunas de bloqueyo\n** cuenta creyada ta vandalizar\n** cuenta creyada ta spam\n* Razons comunas para bloqueo y amagamiento\n** nombre d'usuario abusivo\n** información personal inadequada",
 	"centralauth-admin-status-submit": "Configurar status",

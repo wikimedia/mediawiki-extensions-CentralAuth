@@ -54,8 +54,6 @@
 	"centralauth-admin-status-hidden-oversight": "Конто є цілком сховане",
 	"centralauth-admin-status-intro": "За помочі того формуларя можете змінити статус того ґлобалного конта.",
 	"centralauth-admin-status-locked": "Заблокованый:",
-	"centralauth-admin-status-locked-no": "Конто не є блоковане",
-	"centralauth-admin-status-locked-yes": "Конто має блоковану можность едітованя",
 	"centralauth-admin-status-nonexistent": "Хыба: ґлобалне конто „<nowiki>$1</nowiki>“ не єствує.",
 	"centralauth-admin-status-reasons": "* Звычайны причіны блокованя\n** лем вандалізм\n** лем спам\n* Звычайны причіны блокованя і схованя\n** неприятельне імя хоснователя\n** невгодны особны дата",
 	"centralauth-admin-status-submit": "Змінити став",

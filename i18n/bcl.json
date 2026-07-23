@@ -70,8 +70,6 @@
 	"centralauth-admin-status-hidden-oversight": "An panindog kumpleto nang pinagtago",
 	"centralauth-admin-status-intro": "Ika makakagamit kaining porma tanganing liwaton an estado kaining pankinaban na panindog.",
 	"centralauth-admin-status-locked": "Nakakandado:",
-	"centralauth-admin-status-locked-no": "An panindog dae kinandado",
-	"centralauth-admin-status-locked-yes": "An panindog kinandado sa pagliliwat",
 	"centralauth-admin-status-nonexistent": "Kasalaan:an pankinaban na panindog ni \"<nowiki>$1</nowiki>\" dae tabi eksistido.",
 	"centralauth-admin-status-reasons": "*Pirmehang mga rason nin pagkandado\n**bandalismo-panindog sana\n**espam-panindog sana\n*Pirmehang mga rason sa pagkandado-asin-pagtago\n**abusadong pangaran nin paragamit\n**bakong uyon na impormasyon personal",
 	"centralauth-admin-status-submit": "Ikaag an kamugtakan",

@@ -141,8 +141,6 @@
 	"centralauth-admin-status-hidden-oversight": "Учётная запись полностью скрыта",
 	"centralauth-admin-status-intro": "Вы можете использовать эту форму для изменения статуса этой глобальной учётной записи",
 	"centralauth-admin-status-locked": "Отключён:",
-	"centralauth-admin-status-locked-no": "Учётная запись не отключена",
-	"centralauth-admin-status-locked-yes": "Учётная запись отключена, вход запрещён",
 	"centralauth-admin-status-nonexistent": "Ошибка. Глобальной учётной записи «<nowiki>$1</nowiki>» не существует.",
 	"centralauth-admin-status-reasons": "* Стандартные причина блокировки\n** учётная запись, созданная исключительно для вандализма\n** учётная запись, созданная исключительно для спама\n* Стандартные причина блокировки и сокрытия\n** оскорбительное имя участника\n** неуместные личные сведения",
 	"centralauth-admin-status-submit": "Установить статус",

@@ -61,8 +61,6 @@
 	"centralauth-admin-status-hidden-oversight": "حساپ تامامن گیزلندی",
 	"centralauth-admin-status-intro": "بو سراسری حسابین وضعیتینی دییش‌دیرمک اوچون بو فورمو ایستیفاده ائده بیلرسینیز",
 	"centralauth-admin-status-locked": "کیلیدلنمیش",
-	"centralauth-admin-status-locked-no": "حساب باغلانمیشدی",
-	"centralauth-admin-status-locked-yes": "حسابین دییشیک‌لیک ائتمه‌سی کیلیدلندی",
 	"centralauth-admin-status-nonexistent": "خطا: \"<nowiki> $1 </ nowiki>\" سراسری حسابی مؤوجود دئییل.",
 	"centralauth-admin-status-reasons": "عمومی کیلیدلمه سبب‌لری\n** صرف واندالیزم مقصدلی حساب\n** صرف ایسپام مقصدلی حساب\n* عمومی کیلیدلمه-و-گیزلمه سبب‌لری\n** توهین جه ایستیفاده‌چی آدی\n** مناسیب سیز فردی معلومات‌لار",
 	"centralauth-admin-status-submit": "وضعیت تنظیم لمه سی",

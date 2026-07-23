@@ -102,8 +102,6 @@
 	"centralauth-admin-status-hidden-oversight": "Račun je povsem skrit",
 	"centralauth-admin-status-intro": "Obrazec lahko uporabite za spreminjanje stanja tega globalnega računa.",
 	"centralauth-admin-status-locked": "Zaklenjen:",
-	"centralauth-admin-status-locked-no": "Račun ni zaklenjen",
-	"centralauth-admin-status-locked-yes": "Račun je zaklenjen pred urejanjem",
 	"centralauth-admin-status-nonexistent": "Napaka: Globalni račun »<nowiki>$1</nowiki>« ne obstaja.",
 	"centralauth-admin-status-reasons": "* Pogosti razlogi za zaklenitev:\n** račun za vandaliziranje\n** račun za smetenje\n* Pogosti razlogi za zaklenitev in skritje:\n** neprimerno uporabniško ime\n** neprimerni osebni podatki",
 	"centralauth-admin-status-submit": "Nastavi stanje",

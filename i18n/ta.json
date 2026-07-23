@@ -65,8 +65,6 @@
 	"centralauth-admin-status-hidden-oversight": "இந்த கணக்கானது முழுதுமாக மறைக்கப்பட்டுள்ளது",
 	"centralauth-admin-status-intro": "நீங்கள் இந்த படிவத்தை உலகளாவிய கணக்கின் நிலையை மாற்ற பயன்படுத்தலாம்.",
 	"centralauth-admin-status-locked": "மூடப்பட்டது:",
-	"centralauth-admin-status-locked-no": "இந்த கணக்கு முடக்கப்படவில்லை",
-	"centralauth-admin-status-locked-yes": "இந்த கணக்குக்கு தொகுப்பதற்கு தடைவிதிக்கப்பட்டிருக்கிறது",
 	"centralauth-admin-status-nonexistent": "பிழை: உலகலாவிய கணக்கு \"<nowiki> $1 </nowiki>\" என எதுவும் இல்லை.",
 	"centralauth-admin-status-reasons": "* பொதுவான பூட்டு காரணங்கள்\n ** காழ்ப்புணர்ச்சி மட்டும் உள்ள  கணக்கு\n ** spam-மட்டும் கணக்கு\n * பொதுவான பூட்டு-மற்றும்-மறை காரணங்கள்\n ** வசவு பயனீட்டாளர் பெயர்\n ** தகாத தனிப்பட்ட விவரம்",
 	"centralauth-admin-status-submit": " நிலைமை அமை",

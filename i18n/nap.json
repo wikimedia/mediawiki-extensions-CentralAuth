@@ -86,8 +86,6 @@
 	"centralauth-admin-status-hidden-oversight": "'O cunto è tutt'annascunnuto",
 	"centralauth-admin-status-intro": "Putite ausà stu modulo pe putè cagnà 'e mpustaziune 'e stu cunto utente globale.",
 	"centralauth-admin-status-locked": "Bloccato:",
-	"centralauth-admin-status-locked-no": "'O cunto utente nun è bloccato",
-	"centralauth-admin-status-locked-yes": "'O cunto utente è bloccato pe' nun 'o fà trasì",
 	"centralauth-admin-status-nonexistent": "Errore: 'o cunto utente globbale \"<nowiki>$1</nowiki>\" nun esiste.",
 	"centralauth-admin-status-reasons": "* Mutive comune 'e blocche\n** cunte utente ca fanno vandalisme\n** cunte utente ca fanno spam\n* Mutive comune 'e bluccà e annasconnere\n** nomme utende abbusivo\n** nfurmaziune perzunale inappruppriate",
 	"centralauth-admin-status-submit": "Mposta 'o stato",

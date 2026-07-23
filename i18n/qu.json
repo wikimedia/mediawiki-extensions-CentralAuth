@@ -45,8 +45,6 @@
 	"centralauth-admin-status-hidden-oversight": "Rakiqunaqa lliwta pakasqam",
 	"centralauth-admin-status-intro": "Kay hunt'ana p'anqatam llamk'achiyta atinki kay sapsi rakiqunap kachkayninta churanaykipaq.",
 	"centralauth-admin-status-locked": "Wichq'asqa:",
-	"centralauth-admin-status-locked-no": "Rakiqunaqa manam wichq'asqachu",
-	"centralauth-admin-status-locked-yes": "Rakiqunaqa llamk'apuymanta wichq'asqam",
 	"centralauth-admin-status-nonexistent": "Pantasqa: Manam kanchu \"<nowiki>$1</nowiki>\" sutiyuq sapsi rakiquna.",
 	"centralauth-admin-status-reasons": "* Hark'aypaq sapsi raykukuna\n** wandalismullapaq rakiquna\n** spam nisqallapaq rakiquna\n* Hark'asqata pakaypaq sapsi raykukuna\n** ruraqpa millay sutin\n** ruraqmanta mana allin willasqakuna",
 	"centralauth-admin-status-submit": "Kachkayta allichay",

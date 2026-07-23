@@ -48,8 +48,6 @@
 	"centralauth-admin-status-hidden-oversight": "Hasap doly gizlenilgi",
 	"centralauth-admin-status-intro": "Bu global hasabyň statusyny üýtgetmek üçin üçin şu formy ulanyp bilersiňiz",
 	"centralauth-admin-status-locked": "Gulply:",
-	"centralauth-admin-status-locked-no": "Hasap gulply däl",
-	"centralauth-admin-status-locked-yes": "Hasap redaktirlenmez ýaly gulplanypdyr",
 	"centralauth-admin-status-nonexistent": "Säwlik: \"<nowiki>$1</nowiki>\" global hasaby ýok.",
 	"centralauth-admin-status-reasons": "* Umumy blokirleme sebäpleri\n** diňe wandalizm maksatly hasap\n** diňe spam maksatly hasap\n* Umumy gulplama-we-gizleme sebäpleri\n** betniýetli ulanyjy ady\n** gelşiksiz şahsy maglumatlar",
 	"centralauth-admin-status-submit": "Statusy belle",

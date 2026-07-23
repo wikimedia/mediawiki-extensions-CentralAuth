@@ -134,8 +134,6 @@
 	"centralauth-admin-status-hidden-oversight": "Konto ukryte jest całkowicie",
 	"centralauth-admin-status-intro": "Użyj formularza, aby zmienić status konta uniwersalnego",
 	"centralauth-admin-status-locked": "Blokada",
-	"centralauth-admin-status-locked-no": "Konto nie jest zablokowane",
-	"centralauth-admin-status-locked-yes": "Konto ma zablokowaną możliwość edytowania",
 	"centralauth-admin-status-nonexistent": "Błąd: konto uniwersalne „<nowiki>$1</nowiki>“ nie istnieje.",
 	"centralauth-admin-status-reasons": "* Typowe przyczyny blokad\n** konto stworzone do wandalizmów\n** konto stworzone do spamowania\n* Typowe przyczyny blokowania i ukrywania\n** zabroniona nazwa użytkownika\n** niewłaściwe dane osobowe",
 	"centralauth-admin-status-submit": "Ustaw status",

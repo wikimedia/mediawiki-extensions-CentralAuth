@@ -95,8 +95,6 @@
 	"centralauth-admin-status-hidden-oversight": "Konto on täielikult peidetud",
 	"centralauth-admin-status-intro": "Selle vormiga saad globaalse konto seisundit muuta.",
 	"centralauth-admin-status-locked": "Lukustatud:",
-	"centralauth-admin-status-locked-no": "Konto pole lukus",
-	"centralauth-admin-status-locked-yes": "Konto on lukus (redigeerimisõiguseta)",
 	"centralauth-admin-status-nonexistent": "Tõrge: Globaalset kontot \"<nowiki>$1</nowiki>\" pole olemas.",
 	"centralauth-admin-status-reasons": "* Tavalised lukustamispõhjused\n** Konto ainult vandaalitsemiseks\n** Konto ainult rämpspostitusteks\n* Tavalised lukustamis- ja peitmispõhjused\n** Solvav kasutajanimi\n** Sobimatud isikuandmed",
 	"centralauth-admin-status-submit": "Määra seisund",

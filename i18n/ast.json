@@ -91,8 +91,6 @@
 	"centralauth-admin-status-hidden-oversight": "La cuenta ta anubrida ensembre",
 	"centralauth-admin-status-intro": "Pues usar esti formulariu pa camudar l'estáu d'esta cuenta global.",
 	"centralauth-admin-status-locked": "Candáu:",
-	"centralauth-admin-status-locked-no": "La cuenta nun ta candada",
-	"centralauth-admin-status-locked-yes": "La cuenta ta candada pa edición",
 	"centralauth-admin-status-nonexistent": "Error: la cuenta global \"<nowiki>$1</nowiki>\" nun esiste.",
 	"centralauth-admin-status-reasons": "* Motivos normales de bloquéu\n** cuenta sólo pa vandalismu\n** cuenta sólo pa spam\n* Motivos normales pa bloquiar y anubrir\n** nome d'usuariu abusivu\n** información personal non apropiada",
 	"centralauth-admin-status-submit": "Configurar estáu",

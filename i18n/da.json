@@ -119,8 +119,6 @@
 	"centralauth-admin-status-hidden-oversight": "Kontoen er skjult fuldstændigt",
 	"centralauth-admin-status-intro": "Du kan bruge denne formular til at ændre denne globale kontos status",
 	"centralauth-admin-status-locked": "Låst:",
-	"centralauth-admin-status-locked-no": "Kontoen er ikke låst",
-	"centralauth-admin-status-locked-yes": "Kontoen er låst, så der ikke kan redigeres fra den",
 	"centralauth-admin-status-nonexistent": "Fejl: Den globale konto \"<nowiki>$1</nowiki>\" findes ikke.",
 	"centralauth-admin-status-reasons": "* Normale låsningsgrunde\n** Konto, der kun bruges til hærværk\n** Konto, der kun bruges til spam\n* Normale låsnings-og skjulningsgrunde\n** Upassende brugernavn\n** Upassende personlig information",
 	"centralauth-admin-status-submit": "Sæt status",

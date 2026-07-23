@@ -54,8 +54,6 @@
 	"centralauth-admin-status-hidden-oversight": "اکاؤنٹ پورا لکیا اے",
 	"centralauth-admin-status-intro": "تسی ایس فارم نوں ایس گلوبل اکاؤنٹ دا سٹیٹس بدلن لئی ورت سکدے او۔",
 	"centralauth-admin-status-locked": "تالا لکیا:",
-	"centralauth-admin-status-locked-no": "اکاؤنٹ نوں تالا نئیں لگیا",
-	"centralauth-admin-status-locked-yes": "اکاؤنٹ تے تبدیلی کردن دا تالا لگیا اے۔",
 	"centralauth-admin-status-nonexistent": "مسئلہ: \"<nowiki>$1</nowiki>\" ناں دا گلوبل کھاتا نئیں اے۔",
 	"centralauth-admin-status-reasons": "* روک دیاں عام وجہاں\n** صرف خراب کرن والا کھاتہ\n** غلط چیزاں والا کھاتہ\n* عام تالا تے لکان وجہاں\n** گندا ورتن ناں\n** غلط اپنے بارے جانکاری",
 	"centralauth-admin-status-submit": "سٹیٹس سیٹ کرو",

@@ -62,7 +62,6 @@
 	"centralauth-admin-status-hidden-no": "खाता लुकान नाई है",
 	"centralauth-admin-status-hidden-oversight": "खाता पूरा लुकुआवा है",
 	"centralauth-admin-status-locked": "लॉक करा है:",
-	"centralauth-admin-status-locked-no": "खाता लॉक नाई किहा है",
 	"centralauth-admin-status-nonexistent": "त्रुटि: \"<nowiki>$1</nowiki>\" नाँव कय वैश्विक खाता मौजूद नाई है।",
 	"centralauth-admin-status-submit": "स्थिति सेट करा जाय",
 	"centralauth-admin-title": "$1 कय लिए वैश्विक खाता प्रबंधन",

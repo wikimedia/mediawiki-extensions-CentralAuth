@@ -71,8 +71,6 @@
 	"centralauth-admin-status-hidden-oversight": "Konto jo dopołnje schowane",
 	"centralauth-admin-status-intro": "Móžoš toś ten formular wužywaś, aby změnił status toś togo globalnego konta",
 	"centralauth-admin-status-locked": "Zastajony:",
-	"centralauth-admin-status-locked-no": "Konto njejo zastajone",
-	"centralauth-admin-status-locked-yes": "Konto jo pśeśiwo wobźěłowanjeju zastajone",
 	"centralauth-admin-status-nonexistent": "Zmólka: globalne konto \"<nowiki>$1</nowiki>\" njeeksistěrujo.",
 	"centralauth-admin-status-reasons": "* Zwucone zastajeńske pśicyny\n** konto za wandalizm\n** konto za spamowanje\n* Zwucone pśicyny za zastajenje a schowanje\n** znjewužywane wužywarske mě\n** njepśiměrjone wósobinske informacije",
 	"centralauth-admin-status-submit": "Status stajiś",

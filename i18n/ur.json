@@ -58,8 +58,6 @@
 	"centralauth-admin-status-hidden-no": "اکاؤنٹ نہیں پوشیدہ ہے",
 	"centralauth-admin-status-hidden-oversight": "اکاؤنٹ مکمل طور پر پوشیدہ ہے",
 	"centralauth-admin-status-locked": "بند:",
-	"centralauth-admin-status-locked-no": "اکاؤنٹ بند نہیں ہے",
-	"centralauth-admin-status-locked-yes": "اکاؤنٹ کی ترمیم سے بند ہے",
 	"centralauth-admin-status-submit": "سیٹ کا درجہ",
 	"centralauth-admin-unattached": "منسلک نہیں",
 	"centralauth-admin-unmerge": "منتخب کو الگ کریں",

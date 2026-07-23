@@ -12,8 +12,6 @@
 	"centralauth-admin-status-hidden-no": "Llogaria nuk është i fshehur",
 	"centralauth-admin-status-hidden-oversight": "Llogaria është fshehur plotësisht",
 	"centralauth-admin-status-locked": "Locked:",
-	"centralauth-admin-status-locked-no": "Llogaria nuk është i bllokuar",
-	"centralauth-admin-status-locked-yes": "Llogaria është e bllokuar nga redaktimi",
 	"centralauth-admin-status-nonexistent": "Gabim: llogari globale \" <nowiki> $1 </nowiki> \"Nuk ekziston.",
 	"centralauth-admin-status-reasons": "* Lock arsye të përbashkëta vetëm për llogari\n** vandalizëm vetëm për llogari spam\n* përbashkëta bllokohet-dhe-fshehin arsyet\n** emrin e përdoruesit abuzive personale informacion të papërshtatshme",
 	"centralauth-admin-status-submit": "Gjendja Set",

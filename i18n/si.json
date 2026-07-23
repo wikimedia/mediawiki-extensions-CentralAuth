@@ -64,8 +64,6 @@
 	"centralauth-admin-status-hidden-oversight": "ගිණුම සම්පූර්ණයෙන් සඟවා ඇත",
 	"centralauth-admin-status-intro": "මෙම ගෝලීය ගිණුමේ තත්වය වෙනස් කෙරුමට මෙම ෆෝරමය භාවිතා කළ හැක.",
 	"centralauth-admin-status-locked": "අගුලුලා ඇත:",
-	"centralauth-admin-status-locked-no": "ගිණුම අගුලුලා නැත",
-	"centralauth-admin-status-locked-yes": "ගිණුම සංස්කරණය කිරීමෙන් අගුලුලා ඇත",
 	"centralauth-admin-status-nonexistent": "දෝෂය: \"<nowiki>$1</nowiki>\" ගෝලීය ගිණුම නොපවතී.",
 	"centralauth-admin-status-reasons": "* පොදු අගුලුලෑම් හේතු\n** විනාශකාරී ක්‍රියා පමණක් කළ ගිණුමකි\n** අයථා ප්‍රචාරන පමණක් කළ ගිණුමකි\n* පොදු අගුලුලෑම් හා සැඟවුම් හේතු\n** නොගැළපෙන පරිශීලක නාම\n** නොගැළපෙන පෞද්ගලික තොරතුරු",
 	"centralauth-admin-status-submit": "තත්වය සකසන්න",

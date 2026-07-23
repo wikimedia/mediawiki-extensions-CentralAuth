@@ -106,8 +106,6 @@
 	"centralauth-admin-status-hidden-oversight": "บัญชีถูกซ่อนโดยสมบูรณ์",
 	"centralauth-admin-status-intro": "คุณสามารถใช้ฟอร์มนี้เพื่อเปลี่ยนสถานะของบัญชีกลางนี้ได้",
 	"centralauth-admin-status-locked": "ถูกล็อก:",
-	"centralauth-admin-status-locked-no": "บัญชีไม่ได้ถูกล็อก",
-	"centralauth-admin-status-locked-yes": "บัญชีถูกล็อกไม่ให้เข้าสู่ระบบ",
 	"centralauth-admin-status-nonexistent": "ข้อผิดพลาด: ไม่มีบัญชีกลาง \"<nowiki>$1</nowiki>\" อยู่",
 	"centralauth-admin-status-reasons": "* เหตุผลในการล็อกทั่วไป\n** บัญชีที่สร้างขึ้นสำหรับก่อกวน\n** บัญชีที่สร้างขึ้นสำหรับสแปม\n* เหตุผลในการล็อกและซ่อนทั่วไป\n** ชื่อผู้ใช้ไม่เหมาะสม\n** มีสารสนเทศส่วนบุคคลไม่ควรเปิดเผย",
 	"centralauth-admin-status-submit": "ตั้งสถานะ",

@@ -66,8 +66,6 @@
 	"centralauth-admin-status-hidden-oversight": "Kontoen er heilt løynd",
 	"centralauth-admin-status-intro": "Du kan nytta dette skjemaet til å endra status for denne globale kontoen",
 	"centralauth-admin-status-locked": "Låst:",
-	"centralauth-admin-status-locked-no": "Kontoen er ikkje låst",
-	"centralauth-admin-status-locked-yes": "Kontoen er låst for endring",
 	"centralauth-admin-status-nonexistent": "Feil: den globale kontoen «<nowiki>$1</nowiki>» finst ikkje.",
 	"centralauth-admin-status-reasons": "* Vanlege låseårsaker\n** rein vandalismekonto\n** rein spamkonto\n* Vanlege årsaker for låsing og løyning\n** støytande brukarnamn\n** upassande personleg informasjon",
 	"centralauth-admin-status-submit": "Set status",

@@ -77,8 +77,6 @@
 	"centralauth-admin-status-hidden-oversight": "L'utença a l'è completamente ascosa",
 	"centralauth-admin-status-intro": "L'è poscibbile doeuviâ sto moddulo pe modificâ o stato de questo utente globâ",
 	"centralauth-admin-status-locked": "Bloccou:",
-	"centralauth-admin-status-locked-no": "L'utença a no l'è blocâ",
-	"centralauth-admin-status-locked-yes": "L'utença a l'è blocâ",
 	"centralauth-admin-status-nonexistent": "Errô: l'utença globâ \"<nowiki>$1</nowiki>\" a no l'existe.",
 	"centralauth-admin-status-reasons": "*Raxoin comun-e de blocco\n** utença doeuviâ solo pe vandalismi\n** utença doeuviâ solo pe spam\n*Raxoin comun-e pe blocâ e asconde\n** nomme utente offenscivo\n** informaçioin personale inappropiæ",
 	"centralauth-admin-status-submit": "Imposta stato",

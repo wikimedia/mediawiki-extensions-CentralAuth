@@ -50,8 +50,6 @@
 	"centralauth-admin-status-hidden-oversight": "קאנטע איז אינגאנצן באהאלטן",
 	"centralauth-admin-status-intro": "איר קענט ניצן די פארעם צו ענדערן דעם סטאטוס פון דער גלאבאלער קאנטע.",
 	"centralauth-admin-status-locked": "פֿארשפארט:",
-	"centralauth-admin-status-locked-no": "קאנטע נישט פֿארשפארט",
-	"centralauth-admin-status-locked-yes": "קאנטע איז פארשלאסן פאר רעדאקטירן",
 	"centralauth-admin-status-nonexistent": "גרײַז: די גלאבאלע קאנטע \"<nowiki>$1</nowiki>\" עקזיסטירט נישט.",
 	"centralauth-admin-status-submit": "ענדערן שטעלונג",
 	"centralauth-admin-unattached": "נישט פארבונדן",

@@ -132,8 +132,6 @@
 	"centralauth-admin-status-hidden-oversight": "Tunnus on piilotettu kokonaan",
 	"centralauth-admin-status-intro": "Voit käyttää tätä lomaketta muuttaaksesi tämän järjestelmänlaajuisen tunnuksen tilaa.",
 	"centralauth-admin-status-locked": "Lukittu:",
-	"centralauth-admin-status-locked-no": "Tunnusta ei ole lukittu",
-	"centralauth-admin-status-locked-yes": "Tunnus on lukittu eikä sillä voi kirjautua sisään",
 	"centralauth-admin-status-nonexistent": "Virhe: Järjestelmänlaajuista käyttäjätunnusta ”<nowiki>$1</nowiki>” ei ole olemassa.",
 	"centralauth-admin-status-reasons": "* Yleiset lukitsemisen syyt\n** Vain vandalismitarkoituksiin luotu tunnus\n** Vain roskapostitarkoituksiin luotu tunnus\n* Yleiset lukitsemisen ja piilotuksen syyt\n** Loukkaava käyttäjänimi\n** Sopimattomat henkilötiedot",
 	"centralauth-admin-status-submit": "Aseta tila",

@@ -100,8 +100,6 @@
 	"centralauth-admin-status-hidden-oversight": "Аккаунт йуьззина къайлайаьккхина",
 	"centralauth-admin-status-intro": "Ахьа лело мега хӀара форма хӀокху глобалан аккаунтан статус хийцош.",
 	"centralauth-admin-status-locked": "Блоктоьхна:",
-	"centralauth-admin-status-locked-no": "Аккаунт дӀадаьккхина дац",
-	"centralauth-admin-status-locked-yes": "Аккаунтан блоктоьхна, чудовлар дихкина ду",
 	"centralauth-admin-status-nonexistent": "ГӀалат. Глобалан аккаунт «<nowiki>$1</nowiki>» йац.",
 	"centralauth-admin-status-reasons": "* Белхан некъ дӀакъовлар бахьанаш:\n** Харца хаам бар\n** АгӀонан чуьраниг дӀайаккхар\n** Спам-хьажоргаш арахьара сайташна\n** МаьӀна доцу текст тӀетохар\n** Декъашхой хьийзабар, кхерамаш тиссар\n** Масийтта лараман йаздар зуламан лелайар\n** Магийтина йоцу декъашхочун цӀе",
 	"centralauth-admin-status-submit": "ДӀахӀоттайе статус",

@@ -45,8 +45,6 @@
 	"centralauth-admin-status-hidden-oversight": "ھېسابات يوشۇرۇش مەشغۇلاتى تاماملاندى",
 	"centralauth-admin-status-intro": "بۇ جەدۋەل ئارقىلىق مەزكۇر ئومۇمىيەت ھېساباتىنىڭ ھالىتىنى ئۆزگەرتەلەيسىز.",
 	"centralauth-admin-status-locked": "قۇلۇپلانغان:",
-	"centralauth-admin-status-locked-no": "ھېسابات قۇلۇپلانمىغان",
-	"centralauth-admin-status-locked-yes": "ھېسابات قۇلۇپلاندى، تەھرىرلىگىلى بولمايدۇ",
 	"centralauth-admin-status-nonexistent": "خاتالىق: ئومۇمىيەت ھېساباتى \"<nowiki>$1</nowiki>\" مەۋجۇت ئەمەس.",
 	"centralauth-admin-status-submit": "ھالەتنى تەڭشەش",
 	"centralauth-admin-unhide-nonexistent": "خاتالىق: ئومۇمىيەت ھېساباتى \"<nowiki>$1</nowiki>\" مەۋجۇت ئەمەس.",

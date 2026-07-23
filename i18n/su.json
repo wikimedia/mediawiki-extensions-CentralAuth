@@ -51,8 +51,6 @@
 	"centralauth-admin-status-hidden-oversight": "Akun sagemblengna nyumput",
 	"centralauth-admin-status-intro": "Anjeun bids maké ieu formulir pikeun ngarobah status ieu akun global.",
 	"centralauth-admin-status-locked": "Dikonci:",
-	"centralauth-admin-status-locked-no": "Akun teu dikonci",
-	"centralauth-admin-status-locked-yes": "Akun dikonci tina ngédit",
 	"centralauth-admin-status-nonexistent": "Kasalahan: akun global \"<nowiki>$1</nowiki>\" teu kapanggih.",
 	"centralauth-admin-status-reasons": "* Alésan ngonci nu ilahar\n** akun ukur-vandalismeu\n** akun ukur-spam\n* Alesan konci-jeung-sumputkeun nu ilahar\n** sandiasma anu ngalécéhkeun\n** émbaran pribadi anu teu pantes",
 	"centralauth-admin-status-submit": "Setél status",

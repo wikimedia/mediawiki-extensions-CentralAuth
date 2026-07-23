@@ -76,8 +76,6 @@
 	"centralauth-admin-status-hidden-oversight": "Gebroeker is gans verbórge",
 	"centralauth-admin-status-intro": "De kins dit form gebroeke om de staat ven de globaal gebroeker te angere",
 	"centralauth-admin-status-locked": "Aafgeslaote:",
-	"centralauth-admin-status-locked-no": "Gebroeker is neet geblok",
-	"centralauth-admin-status-locked-yes": "Gebroeker kèn neet bewèrke",
 	"centralauth-admin-status-nonexistent": "Fówt: de globale gebroeker \"<nowiki>$1</nowiki>\" besteit neet.",
 	"centralauth-admin-status-reasons": "* Väöl veurkómmendje blokkaasjreje\n** vandalis\n** spammer\n* Väöl veurkómmendje blok-en-verbèrgreje\n** óngepasdje gebroekersnaam\n** óngepasdje persuuenlike informatie",
 	"centralauth-admin-status-submit": "Zit staat",

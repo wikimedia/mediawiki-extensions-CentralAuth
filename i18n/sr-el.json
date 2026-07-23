@@ -95,8 +95,6 @@
 	"centralauth-admin-status-hidden-oversight": "Nalog je potpuno sakriven",
 	"centralauth-admin-status-intro": "Ovim obrascem možete da promenite stanje ovog globalnog naloga.",
 	"centralauth-admin-status-locked": "Zaključano:",
-	"centralauth-admin-status-locked-no": "Nalog nije zaključan",
-	"centralauth-admin-status-locked-yes": "Nalog je zaključan za uređivanje",
 	"centralauth-admin-status-nonexistent": "Greška: globalni nalog „<nowiki>$1</nowiki>“ ne postoji.",
 	"centralauth-admin-status-reasons": "* Uobičajeni razlogi za zaključavanje\n** nalog se koristi samo za vandalizovanje\n** nalog se koristi samo za spamovanje\n* Uobičajeni razlozi za zaključavanje i sakrivanje\n** nepristojno korisničko ime\n** neprikladni lični podaci",
 	"centralauth-admin-status-submit": "Postavi status",
