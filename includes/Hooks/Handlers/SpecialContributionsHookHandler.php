@@ -101,6 +101,7 @@ class SpecialContributionsHookHandler implements
 					$user->getName()
 				],
 				'offset' => '',
+				'wrap' => Html::rawElement( 'div', [ 'class' => 'mw-centralauth-contribs-locked-notice' ], '$1' ),
 			]
 		);
 
@@ -109,7 +110,7 @@ class SpecialContributionsHookHandler implements
 			$out->addHTML(
 				Html::warningBox(
 					$out->msg( 'centralauth-contribs-locked', $user->getName() )->parse(),
-					'mw-warning-with-logexcerpt'
+					'mw-warning-with-logexcerpt mw-centralauth-contribs-locked-notice'
 				)
 			);
 		}
