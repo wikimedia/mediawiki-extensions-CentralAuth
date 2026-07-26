@@ -243,4 +243,19 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 		}
 		$this->assertEquals( $expectedRows, $rows );
 	}
+
+	public function testCreateLocalAccountForExistingUser() {
+		$user = $this->getMutableTestUser()->getUser();
+
+		$this->maintenance->createLocalAccount(
+			$user->getName(),
+			$this->getServiceContainer()->getUserFactory(),
+			true
+		);
+
+		$this->assertSame(
+			"User '{$user->getName()}' created\n",
+			$this->getActualOutputForAssertion()
+		);
+	}
 }

@@ -114,7 +114,7 @@ class BackfillLocalAccounts extends Maintenance {
 		}
 
 		$status = CentralAuthServices::getUtilityService()->autoCreateUser( $user, true, $performer );
-		if ( !$status->isGood() ) {
+		if ( !$status->isOK() ) {
 			$this->error( "autoCreateUser failed for $username:" );
 			$this->error( $status );
 			return;
