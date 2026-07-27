@@ -21,89 +21,23 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class GlobalRenameUser {
 
-	/**
-	 * @var UserIdentity
-	 */
-	private $performingUser;
-
-	/**
-	 * @var UserIdentity
-	 */
-	private $oldUser;
-
-	/**
-	 * @var CentralAuthUser
-	 */
-	private $oldCAUser;
-
-	/**
-	 * @var UserIdentity
-	 */
-	private $newUser;
-
-	/**
-	 * @var CentralAuthUser
-	 */
-	private $newCAUser;
-
-	/**
-	 * @var GlobalRenameUserStatus
-	 */
-	private $renameuserStatus;
-
-	/** @var JobQueueGroupFactory */
-	private $jobQueueGroupFactory;
-
-	/**
-	 * @var GlobalRenameUserDatabaseUpdates
-	 */
-	private $databaseUpdates;
-
-	/**
-	 * @var GlobalRenameUserLogger
-	 */
-	private $logger;
-
-	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-
 	private ?array $session = null;
 
 	private ?UserIdentity $lockPerformingUser;
 
-	/**
-	 * @param UserIdentity $performingUser
-	 * @param UserIdentity $oldUser
-	 * @param CentralAuthUser $oldCAUser
-	 * @param UserIdentity $newUser Validated (creatable!) new user
-	 * @param CentralAuthUser $newCAUser
-	 * @param GlobalRenameUserStatus $renameuserStatus
-	 * @param JobQueueGroupFactory $jobQueueGroupFactory
-	 * @param GlobalRenameUserDatabaseUpdates $databaseUpdates
-	 * @param GlobalRenameUserLogger $logger
-	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
-	 */
 	public function __construct(
-		UserIdentity $performingUser,
-		UserIdentity $oldUser,
-		CentralAuthUser $oldCAUser,
-		UserIdentity $newUser,
-		CentralAuthUser $newCAUser,
-		GlobalRenameUserStatus $renameuserStatus,
-		JobQueueGroupFactory $jobQueueGroupFactory,
-		GlobalRenameUserDatabaseUpdates $databaseUpdates,
-		GlobalRenameUserLogger $logger,
-		CentralAuthAntiSpoofManager $caAntiSpoofManager
+		private UserIdentity $performingUser,
+		private UserIdentity $oldUser,
+		private CentralAuthUser $oldCAUser,
+		// Validated (creatable!) new user
+		private UserIdentity $newUser,
+		private CentralAuthUser $newCAUser,
+		private GlobalRenameUserStatus $renameuserStatus,
+		private JobQueueGroupFactory $jobQueueGroupFactory,
+		private GlobalRenameUserDatabaseUpdates $databaseUpdates,
+		private GlobalRenameUserLogger $logger,
+		private CentralAuthAntiSpoofManager $caAntiSpoofManager
 	) {
-		$this->performingUser = $performingUser;
-		$this->oldUser = $oldUser;
-		$this->oldCAUser = $oldCAUser;
-		$this->newUser = $newUser;
-		$this->newCAUser = $newCAUser;
-		$this->renameuserStatus = $renameuserStatus;
-		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
-		$this->databaseUpdates = $databaseUpdates;
-		$this->logger = $logger;
-		$this->caAntiSpoofManager = $caAntiSpoofManager;
 	}
 
 	/**
