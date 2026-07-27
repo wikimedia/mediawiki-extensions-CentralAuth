@@ -310,6 +310,21 @@ class CentralAuthUserUsingDatabaseTest extends MediaWikiIntegrationTestCase {
 		$this->assertStatusError( 'centralauth-admin-not-authorized', $adminLockHideStatus );
 	}
 
+	public function testAdminLockHideForLockWhenAuthorityIsTargetUser() {
+		$performer = $this->getTestUser( [ 'steward' ] );
+		CentralAuthTestUser::newFromTestUser( $performer )->save( $this->getDb() );
+
+		$caUser = CentralAuthUser::getPrimaryInstance( $performer->getUser() );
+		$context = new DerivativeContext( RequestContext::getMain() );
+		$context->setAuthority( $performer->getUser() );
+
+		$adminLockHideStatus = $caUser->adminLockHide( true, null, 'test', $context );
+
+		$this->assertStatusError( 'centralauth-admin-cannot-lock-self', $adminLockHideStatus );
+		$caUser->invalidateCache();
+		$this->assertFalse( $caUser->isLocked() );
+	}
+
 	public function testAdminLockHideForSuppressWhenGlobalUserHasTooManyEdits() {
 		// Mock that the central user has too many edits to be suppressed.
 		$mockCentralAuthEditCounter = $this->createMock( CentralAuthEditCounter::class );
