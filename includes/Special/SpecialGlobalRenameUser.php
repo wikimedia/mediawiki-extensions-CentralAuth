@@ -58,39 +58,22 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	 */
 	private $overrideTitleBlacklist = false;
 
-	private UserFactory $userFactory;
-	private UserNameUtils $userNameUtils;
-	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-	private CentralAuthDatabaseManager $databaseManager;
-	private CentralAuthUIService $uiService;
-	private GlobalRenameDenylist $globalRenameDenylist;
-	private GlobalRenameFactory $globalRenameFactory;
-	private GlobalRenameUserValidator $globalRenameUserValidator;
-
 	/**
 	 * Require confirmation if olduser has more than this many global edits
 	 */
 	private const EDITCOUNT_THRESHOLD = 50_000;
 
 	public function __construct(
-		UserFactory $userFactory,
-		UserNameUtils $userNameUtils,
-		CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		CentralAuthDatabaseManager $databaseManager,
-		CentralAuthUIService $uiService,
-		GlobalRenameDenylist $globalRenameDenylist,
-		GlobalRenameFactory $globalRenameFactory,
-		GlobalRenameUserValidator $globalRenameUserValidator
+		private UserFactory $userFactory,
+		private UserNameUtils $userNameUtils,
+		private CentralAuthAntiSpoofManager $caAntiSpoofManager,
+		private CentralAuthDatabaseManager $databaseManager,
+		private CentralAuthUIService $uiService,
+		private GlobalRenameDenylist $globalRenameDenylist,
+		private GlobalRenameFactory $globalRenameFactory,
+		private GlobalRenameUserValidator $globalRenameUserValidator
 	) {
 		parent::__construct( 'GlobalRenameUser' );
-		$this->userFactory = $userFactory;
-		$this->userNameUtils = $userNameUtils;
-		$this->caAntiSpoofManager = $caAntiSpoofManager;
-		$this->databaseManager = $databaseManager;
-		$this->uiService = $uiService;
-		$this->globalRenameDenylist = $globalRenameDenylist;
-		$this->globalRenameFactory = $globalRenameFactory;
-		$this->globalRenameUserValidator = $globalRenameUserValidator;
 	}
 
 	/** @inheritDoc */

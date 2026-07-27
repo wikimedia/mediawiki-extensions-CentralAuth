@@ -6,7 +6,6 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
-use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Output\OutputPage;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\SpecialPage\SpecialPage;
@@ -109,17 +108,14 @@ class SpecialPageBeforeExecuteHookHandlerTest extends MediaWikiIntegrationTestCa
 			->setConstructorArgs( [
 				$services->getMainConfig(),
 				$services->getSpecialPageFactory(),
-				new HookRunner( $services->getHookContainer() ),
 				null,
-				false,
-				$services->getTempUserConfig()
+				false
 			] )
 			->getMock();
 		$sharedDomainUtils->method( 'isSharedDomain' )->willReturn( $config['isSharedDomain'] );
 		$sharedDomainUtils->method( 'isSul3Enabled' )->willReturn( $config['isSul3Enabled'] );
 		return new SpecialPageBeforeExecuteHookHandler(
 			$services->getAuthManager(),
-			$services->getHookContainer(),
 			CentralAuthServices::getTokenManager( $services ),
 			$services->get( 'CentralAuth.CentralDomainUtils' ),
 			$sharedDomainUtils

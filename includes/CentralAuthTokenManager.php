@@ -4,8 +4,6 @@ namespace MediaWiki\Extension\CentralAuth;
 
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Utils\MWCryptRand;
-use Psr\Log\LoggerInterface;
-use Psr\Log\NullLogger;
 use Wikimedia\Assert\Assert;
 use Wikimedia\LightweightObjectStore\ExpirationAwareness;
 use Wikimedia\ObjectCache\BagOStuff;
@@ -15,19 +13,13 @@ class CentralAuthTokenManager {
 	/** Expiration time used for all tokens */
 	public const EXPIRY = ExpirationAwareness::TTL_MINUTE;
 
-	private BagOStuff $tokenStore;
-	private LoggerInterface $logger;
-
 	/**
 	 * @param BagOStuff $tokenStore Store for short-lived tokens used during authentication.
 	 *   Typically {@see MediaWikiServices::getMicroStash()}.
 	 */
 	public function __construct(
-		BagOStuff $tokenStore,
-		?LoggerInterface $logger = null
+		private BagOStuff $tokenStore
 	) {
-		$this->tokenStore = $tokenStore;
-		$this->logger = $logger ?? new NullLogger();
 	}
 
 	/**

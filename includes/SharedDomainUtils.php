@@ -6,7 +6,6 @@ use MediaWiki\Config\Config;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
-use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\SpecialPage\SpecialPageFactory;
@@ -22,25 +21,14 @@ use Wikimedia\Assert\Assert;
  */
 class SharedDomainUtils {
 
-	private Config $config;
-	private SpecialPageFactory $specialPageFactory;
-	private HookRunner $hookRunner;
 	private ?bool $isSharedDomain = null;
-	private ?MobileContext $mobileContext;
-	private bool $isApiRequest;
 
 	public function __construct(
-		Config $config,
-		SpecialPageFactory $specialPageFactory,
-		HookRunner $hookRunner,
-		?MobileContext $mobileContext,
-		bool $isApiRequest
+		private Config $config,
+		private SpecialPageFactory $specialPageFactory,
+		private ?MobileContext $mobileContext,
+		private bool $isApiRequest
 	) {
-		$this->config = $config;
-		$this->specialPageFactory = $specialPageFactory;
-		$this->hookRunner = $hookRunner;
-		$this->mobileContext = $mobileContext;
-		$this->isApiRequest = $isApiRequest;
 	}
 
 	/**

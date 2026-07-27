@@ -8,13 +8,11 @@ use MediaWiki\Message\Message;
 use MediaWiki\User\User;
 use Psr\Log\LoggerInterface;
 use StatusValue;
-use Wikimedia\Rdbms\IConnectionProvider;
 
 class CentralAuthAntiSpoofManager {
 
 	public function __construct(
 		private readonly LoggerInterface $logger,
-		private readonly IConnectionProvider $connectionProvider,
 		private readonly CentralAuthDatabaseManager $databaseManager
 	) {
 	}

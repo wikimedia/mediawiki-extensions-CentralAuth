@@ -147,8 +147,7 @@
 				"CentralAuth.CentralAuthSessionManager",
 				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.CentralAuthUtilityService",
-				"CentralAuth.CentralDomainUtils",
-				"CentralAuth.SharedDomainUtils"
+				"CentralAuth.CentralDomainUtils"
 			]
 		},
 		"CentralLogin": {
@@ -679,7 +678,6 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SpecialPageBeforeExecuteHookHandler",
 			"services": [
 				"AuthManager",
-				"HookContainer",
 				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.CentralDomainUtils",
 				"CentralAuth.SharedDomainUtils"

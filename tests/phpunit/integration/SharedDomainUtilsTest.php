@@ -5,7 +5,6 @@ namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
-use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\WikiMap\WikiMap;
@@ -26,7 +25,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 					CAMainConfigNames::CentralAuthSharedDomainCallback => $sharedDomainCallback
 				] ),
 				$services->getSpecialPageFactory(),
-				new HookRunner( $services->getHookContainer() ),
 				null,
 				false
 			);
@@ -53,7 +51,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getSpecialPageFactory(),
-			new HookRunner( $services->getHookContainer() ),
 			null,
 			false
 		);
@@ -70,7 +67,6 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 		$sharedDomainUtils = new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getSpecialPageFactory(),
-			new HookRunner( $services->getHookContainer() ),
 			null,
 			false
 		);
@@ -143,10 +139,8 @@ class SharedDomainUtilsTest extends MediaWikiIntegrationTestCase {
 			->setConstructorArgs( [
 				$this->getServiceContainer()->getMainConfig(),
 				$this->getServiceContainer()->getSpecialPageFactory(),
-				new HookRunner( $this->getServiceContainer()->getHookContainer() ),
 				null,
 				$isApiRequest,
-				$this->getServiceContainer()->getTempUserConfig(),
 			] )
 			->onlyMethods( [ 'isSharedDomain' ] )
 			->getMock();

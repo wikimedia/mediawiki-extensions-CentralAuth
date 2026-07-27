@@ -17,7 +17,6 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthForcedLocalCreationService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserHelper;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUserStatusLookupFactory;
 use MediaWiki\Extension\CentralAuth\User\GlobalUserSelectQueryBuilderFactory;
-use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\MediaWikiServices;
 
@@ -32,7 +31,6 @@ return [
 	): CentralAuthAntiSpoofManager {
 		return new CentralAuthAntiSpoofManager(
 			LoggerFactory::getInstance( 'antispoof' ),
-			$services->getConnectionProvider(),
 			CentralAuthServices::getDatabaseManager( $services )
 		);
 	},
@@ -105,8 +103,7 @@ return [
 		MediaWikiServices $services
 	): CentralAuthTokenManager {
 		return new CentralAuthTokenManager(
-			$services->getMicroStash(),
-			LoggerFactory::getInstance( 'CentralAuth' )
+			$services->getMicroStash()
 		);
 	},
 
@@ -264,7 +261,6 @@ return [
 		return new SharedDomainUtils(
 			$services->getMainConfig(),
 			$services->getSpecialPageFactory(),
-			new HookRunner( $services->getHookContainer() ),
 			$services->has( "MobileFrontend.Context" ) ? $services->get( "MobileFrontend.Context" ) : null,
 			defined( 'MW_API' ) || defined( 'MW_REST_API' )
 		);

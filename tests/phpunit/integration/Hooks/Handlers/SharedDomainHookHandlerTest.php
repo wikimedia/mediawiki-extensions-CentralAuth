@@ -18,7 +18,6 @@ use MediaWiki\Extension\CentralAuth\CentralAuthSharedDomainPreAuthenticationProv
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SharedDomainHookHandler;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
-use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logger\Spi;
 use MediaWiki\MainConfigNames;
@@ -429,10 +428,8 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 			->setConstructorArgs( [
 				$this->getServiceContainer()->getMainConfig(),
 				$this->getServiceContainer()->getSpecialPageFactory(),
-				new HookRunner( $this->getServiceContainer()->getHookContainer() ),
 				null,
-				false,
-				$this->getServiceContainer()->getTempUserConfig()
+				false
 			] )
 			->onlyMethods( [ 'isSharedDomain', 'isSul3Enabled' ] )
 			->getMock();

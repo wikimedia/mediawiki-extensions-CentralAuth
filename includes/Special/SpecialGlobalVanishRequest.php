@@ -11,7 +11,6 @@ namespace MediaWiki\Extension\CentralAuth\Special;
 use MediaWiki\Exception\PermissionsError;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameDenylist;
-use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameFactory;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameJob\GlobalVanishJob;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequest;
 use MediaWiki\Extension\CentralAuth\GlobalRename\GlobalRenameRequestStore;
@@ -28,7 +27,6 @@ use MediaWiki\Status\Status;
 use MediaWiki\User\User;
 use MediaWiki\User\UserIdentityLookup;
 use MediaWiki\WikiMap\WikiMap;
-use Psr\Log\LoggerInterface;
 use RuntimeException;
 use StatusValue;
 use Wikimedia\Rdbms\IDBAccessObject;
@@ -38,31 +36,14 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class SpecialGlobalVanishRequest extends FormSpecialPage {
 
-	private LoggerInterface $logger;
-	private GlobalRenameDenylist $globalRenameDenylist;
-	private GlobalRenameRequestStore $globalRenameRequestStore;
-	private GlobalRenameFactory $globalRenameFactory;
-	private JobQueueGroupFactory $jobQueueGroupFactory;
-	private HttpRequestFactory $httpRequestFactory;
-	private UserIdentityLookup $userIdentityLookup;
-
 	public function __construct(
-		GlobalRenameDenylist $globalRenameDenylist,
-		GlobalRenameRequestStore $globalRenameRequestStore,
-		GlobalRenameFactory $globalRenameFactory,
-		JobQueueGroupFactory $jobQueueGroupFactory,
-		HttpRequestFactory $httpRequestFactory,
-		UserIdentityLookup $userIdentityLookup
+		private readonly GlobalRenameDenylist $globalRenameDenylist,
+		private readonly GlobalRenameRequestStore $globalRenameRequestStore,
+		private readonly JobQueueGroupFactory $jobQueueGroupFactory,
+		private readonly HttpRequestFactory $httpRequestFactory,
+		private readonly UserIdentityLookup $userIdentityLookup
 	) {
 		parent::__construct( 'GlobalVanishRequest' );
-
-		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
-		$this->globalRenameDenylist = $globalRenameDenylist;
-		$this->globalRenameRequestStore = $globalRenameRequestStore;
-		$this->globalRenameFactory = $globalRenameFactory;
-		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
-		$this->httpRequestFactory = $httpRequestFactory;
-		$this->userIdentityLookup = $userIdentityLookup;
 	}
 
 	/** @inheritDoc */

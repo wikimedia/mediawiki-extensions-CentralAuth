@@ -7,8 +7,6 @@ use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationP
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
-use MediaWiki\HookContainer\HookContainer;
-use MediaWiki\HookContainer\HookRunner;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Request\WebRequest;
 use MediaWiki\ResourceLoader\ClientHtml;
@@ -41,24 +39,12 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	/** Query parameter used to return error messages from SpecialCentralAutoLogin. */
 	public const AUTOLOGIN_ERROR_QUERY_PARAM = 'centralAuthError';
 
-	private AuthManager $authManager;
-	private HookRunner $hookRunner;
-	private CentralAuthTokenManager $tokenManager;
-	private CentralDomainUtils $centralDomainUtils;
-	private SharedDomainUtils $sharedDomainUtils;
-
 	public function __construct(
-		AuthManager $authManager,
-		HookContainer $hookContainer,
-		CentralAuthTokenManager $tokenManager,
-		CentralDomainUtils $centralDomainUtils,
-		SharedDomainUtils $sharedDomainUtils
+		private AuthManager $authManager,
+		private CentralAuthTokenManager $tokenManager,
+		private CentralDomainUtils $centralDomainUtils,
+		private SharedDomainUtils $sharedDomainUtils
 	) {
-		$this->authManager = $authManager;
-		$this->hookRunner = new HookRunner( $hookContainer );
-		$this->tokenManager = $tokenManager;
-		$this->centralDomainUtils = $centralDomainUtils;
-		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/**

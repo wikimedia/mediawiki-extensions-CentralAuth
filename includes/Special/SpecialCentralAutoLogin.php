@@ -14,7 +14,6 @@ use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
-use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
@@ -60,41 +59,21 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 	/** @var Session|null */
 	protected $session = null;
-
-	private HookContainer $hookContainer;
-	private LanguageFactory $languageFactory;
-	private UserFactory $userFactory;
-	private UserOptionsLookup $userOptionsLookup;
-	private CentralAuthSessionManager $sessionManager;
-	private CentralAuthTokenManager $tokenManager;
-	private CentralAuthUtilityService $centralAuthUtilityService;
-	private CentralDomainUtils $centralDomainUtils;
-	private SharedDomainUtils $sharedDomainUtils;
 	private LoggerInterface $logger;
 	private string $subpage;
 
 	public function __construct(
-		HookContainer $hookContainer,
-		LanguageFactory $languageFactory,
-		UserFactory $userFactory,
-		UserOptionsLookup $userOptionsLookup,
-		CentralAuthSessionManager $sessionManager,
-		CentralAuthTokenManager $tokenManager,
-		CentralAuthUtilityService $centralAuthUtilityService,
-		CentralDomainUtils $centralDomainUtils,
-		SharedDomainUtils $sharedDomainUtils
+		private HookContainer $hookContainer,
+		private LanguageFactory $languageFactory,
+		private UserFactory $userFactory,
+		private UserOptionsLookup $userOptionsLookup,
+		private CentralAuthSessionManager $sessionManager,
+		private CentralAuthTokenManager $tokenManager,
+		private CentralAuthUtilityService $centralAuthUtilityService,
+		private CentralDomainUtils $centralDomainUtils
 	) {
 		parent::__construct( 'CentralAutoLogin' );
 
-		$this->hookContainer = $hookContainer;
-		$this->languageFactory = $languageFactory;
-		$this->userFactory = $userFactory;
-		$this->userOptionsLookup = $userOptionsLookup;
-		$this->sessionManager = $sessionManager;
-		$this->tokenManager = $tokenManager;
-		$this->centralAuthUtilityService = $centralAuthUtilityService;
-		$this->centralDomainUtils = $centralDomainUtils;
-		$this->sharedDomainUtils = $sharedDomainUtils;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 
