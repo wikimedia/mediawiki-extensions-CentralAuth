@@ -119,7 +119,7 @@
 	"centralauth-admin-lookup-rw": "사용자 계정 관리",
 	"centralauth-admin-manage": "계정 데이터 관리",
 	"centralauth-admin-merge": "선택한 계정 통합하기",
-	"centralauth-admin-multi-botcheck": "봇 항목으로 [[Special:RecentChanges|{{int:recentchanges}}]]에 항목을 표시합니다.",
+	"centralauth-admin-multi-botcheck": "봇 항목으로 [[Special:RecentChanges|{{int:recentchanges}}]]에 항목을 표시합니다",
 	"centralauth-admin-multi-intro": "한 번에 여러 통합 계정을 업데이트합니다",
 	"centralauth-admin-multi-notfound": "검색이 해당 사용자 이름을 반환할 수 없습니다.",
 	"centralauth-admin-multi-searchprefix": "또는 접두어로 사용자 이름 검색",
