@@ -24,7 +24,7 @@ class CentralAuthDatabaseManager {
 
 	/** @internal Only public for service wiring use */
 	public const CONSTRUCTOR_OPTIONS = [
-		'CentralAuthReadOnly',
+		CAMainConfigNames::CentralAuthReadOnly,
 	];
 
 	private ServiceOptions $options;

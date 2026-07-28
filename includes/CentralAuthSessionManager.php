@@ -26,8 +26,8 @@ class CentralAuthSessionManager {
 	 * @internal Only public for service wiring use
 	 */
 	public const CONSTRUCTOR_OPTIONS = [
-		'CentralAuthSessionCacheType',
-		'SessionCacheType',
+		CAMainConfigNames::CentralAuthSessionCacheType,
+		MainConfigNames::SessionCacheType,
 	];
 
 	/** @var BagOStuff|null Session cache */

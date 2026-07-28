@@ -4,6 +4,7 @@ use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Exception\ReadOnlyError;
 use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\CentralAuthReadOnlyError;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use Wikimedia\Rdbms\IDatabase;
 use Wikimedia\Rdbms\IReadableDatabase;
 use Wikimedia\Rdbms\LBFactory;
@@ -36,7 +37,7 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			new ServiceOptions(
 				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 				[
-					'CentralAuthReadOnly' => false,
+					CAMainConfigNames::CentralAuthReadOnly => false,
 				]
 			),
 			$this->createMock( LBFactory::class ),
@@ -62,7 +63,7 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			new ServiceOptions(
 				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 				[
-					'CentralAuthReadOnly' => false,
+					CAMainConfigNames::CentralAuthReadOnly => false,
 				]
 			),
 			$lbFactory,
@@ -86,7 +87,7 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			new ServiceOptions(
 				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 				[
-					'CentralAuthReadOnly' => false,
+					CAMainConfigNames::CentralAuthReadOnly => false,
 				]
 			),
 			$lbFactory,
@@ -110,7 +111,7 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			new ServiceOptions(
 				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 				[
-					'CentralAuthReadOnly' => true,
+					CAMainConfigNames::CentralAuthReadOnly => true,
 				]
 			),
 			$lbFactory,
@@ -134,7 +135,7 @@ class CentralAuthDatabaseManagerTest extends MediaWikiIntegrationTestCase {
 			new ServiceOptions(
 				CentralAuthDatabaseManager::CONSTRUCTOR_OPTIONS,
 				[
-					'CentralAuthReadOnly' => true,
+					CAMainConfigNames::CentralAuthReadOnly => true,
 				]
 			),
 			$lbFactory,

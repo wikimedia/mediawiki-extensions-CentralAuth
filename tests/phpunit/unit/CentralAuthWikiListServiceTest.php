@@ -2,6 +2,7 @@
 
 use MediaWiki\Config\ServiceOptions;
 use MediaWiki\Extension\CentralAuth\CentralAuthWikiListService;
+use MediaWiki\MainConfigNames;
 
 /**
  * @covers \MediaWiki\Extension\CentralAuth\CentralAuthWikiListService
@@ -15,7 +16,7 @@ class CentralAuthWikiListServiceTest extends MediaWikiUnitTestCase {
 		$wikiListService = new CentralAuthWikiListService(
 			new ServiceOptions(
 				CentralAuthWikiListService::CONSTRUCTOR_OPTIONS,
-				[ 'LocalDatabases' => $configValue ]
+				[ MainConfigNames::LocalDatabases => $configValue ]
 			),
 			$this->createHookContainer()
 		);
@@ -43,7 +44,7 @@ class CentralAuthWikiListServiceTest extends MediaWikiUnitTestCase {
 		$wikiListService = new CentralAuthWikiListService(
 			new ServiceOptions(
 				CentralAuthWikiListService::CONSTRUCTOR_OPTIONS,
-				[ 'LocalDatabases' => [ 'configuredwiki' ] ]
+				[ MainConfigNames::LocalDatabases => [ 'configuredwiki' ] ]
 			),
 			$hookContainer
 		);
