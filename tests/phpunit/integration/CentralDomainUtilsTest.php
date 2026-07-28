@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration;
 
 use MediaWiki\Config\SiteConfiguration;
+use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\MainConfigNames;
@@ -49,11 +50,7 @@ class CentralDomainUtilsTest extends MediaWikiIntegrationTestCase {
 
 	private function getCentralDomainUtils(): CentralDomainUtils {
 		$services = $this->getServiceContainer();
-		return new CentralDomainUtils(
-			$services->getMainConfig(),
-			$services->getTitleFactory(),
-			$services->get( 'CentralAuth.SharedDomainUtils' )
-		);
+		return CentralAuthServices::getCentralDomainUtils( $services );
 	}
 
 	/**
