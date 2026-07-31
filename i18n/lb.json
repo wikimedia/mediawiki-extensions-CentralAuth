@@ -404,7 +404,7 @@
 	"globalrenamerequest-newname-help-basic": "Gitt den neie Benotzernumm an, deen Dir benotze wëllt.",
 	"globalrenamerequest-newname-label": "Ugefrote Benotzernumm:",
 	"globalrenamerequest-reason-label": "Grond fir d'Ufro",
-	"globalrenamerequest-save-error": "Ufro konnt net gespäichert ginn. Probéiert wgl. nach eng Kéier.",
+	"globalrenamerequest-save-error": "D'Ufro konnt net gespäichert ginn. Probéiert wgl. nach eng Kéier.",
 	"globalrenamerequest-status-text": "Är Ufro fir d'Ännerung vum Benotzernumm gëtt am Moment traitéiert a waart op den Accord vun deenen, déi dës Ännerung duerchféiere kënnen. Dir gitt per E-Mail informéiert, wann d'Ufro ofgeschloss ass.\n\n;Aktuelle Benotzernumm:\n:$1\n;Ugefrote Benotzernumm:\n:$2",
 	"globalrenamerequest-submit-text": "Ännerung vum Numm ufroen",
 	"globalrenamerequest-username-label": "Aktuelle Benotzernumm:",
