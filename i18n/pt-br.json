@@ -42,7 +42,8 @@
 			"Tuliouel",
 			"VasbXBR",
 			"YuriNikolai",
-			"Matěj Suchánek"
+			"Matěj Suchánek",
+			"NenhumaFênix"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Contagem global de edições do usuário ($1)",
@@ -382,7 +383,7 @@
 	"centralauth-rename-unattached-intheway": "Existem contas não associadas utilizando o nome de usuário solicitado.",
 	"centralauth-rename-viewprogress": "Ver progresso",
 	"centralauth-renameuser-global-inprogress": "A renomeação global da conta {{GENDER:$1|$1}} já está em andamento. [[Special:GlobalRenameProgress/$1|Verificar estado]].",
-	"centralauth-renameuser-merged": "O usuário {{GENDER:$1|$1}} foi migrado para o sistema de login unificado.\nRenomear o usuário irá desunificar esta conta local da conta global.",
+	"centralauth-renameuser-merged": "{{GENDER:$1|O usuário $1 foi migrado|A usuária $1 foi migrada|Usuário(a) $1 migrou-se}} para o sistema de login unificado.\nRenomear {{GENDER:$1|o usuário|a usuária|usuário(a)}} irá desunificar esta conta local da conta global.",
 	"centralauth-renameuser-reserved": "O nome de usuário {{GENDER:$2|$2}} está reservado para uma conta global.",
 	"centralauth-vanish-confirm": "Você realmente quer fazer sua conta desaparecer? Esta ação é irreversível.",
 	"centralauth-return-username-token": "Token de nome de usuário que faz parte do URL de retorno.",
