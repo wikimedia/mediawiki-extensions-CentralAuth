@@ -131,6 +131,8 @@
 	"centralauth-admin-status-hidden-oversight": "Account is hidden completely",
 	"centralauth-admin-status-intro": "You can use this form to change the status of this global account.",
 	"centralauth-admin-status-locked": "Locked:",
+	"centralauth-admin-status-locked-no": "Account is not locked",
+	"centralauth-admin-status-locked-yes": "Account is locked from logging in",
 	"centralauth-admin-status-nonexistent": "Error: the global account \"<nowiki>$1</nowiki>\" does not exist.",
 	"centralauth-admin-status-reasons": "* Common lock reasons\n** vandalism-only account\n** spam-only account\n* Common lock-and-hide reasons\n** abusive username\n** inappropriate personal information",
 	"centralauth-admin-status-submit": "Set status",
