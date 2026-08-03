@@ -114,6 +114,8 @@
 	"centralauth-admin-status-hidden-oversight": "Hesab tamamilə gizlədilib",
 	"centralauth-admin-status-intro": "Bu qlobal hesabın statusunu dəyişmək üçün bu formadan istifadə edə bilərsiniz.",
 	"centralauth-admin-status-locked": "Kilidlənib?:",
+	"centralauth-admin-status-locked-no": "Hesab bloklanmadı",
+	"centralauth-admin-status-locked-yes": "Hesabın daxil olması kilidlənib",
 	"centralauth-admin-status-nonexistent": "Xəta: \"<nowiki>$1</nowiki>\" qlobal hesabı mövcud deyil.",
 	"centralauth-admin-status-reasons": "* Ümumi kilid səbəbləri\n** vandalizm məqsədli hesab\n** spam məqsədli hesab\n* Ümumi kilidləmə və gizlətmə səbəbləri\n** təhqiramiz istifadəçi adı\n** uyğun olmayan şəxsi məlumat",
 	"centralauth-admin-status-submit": "Set status",

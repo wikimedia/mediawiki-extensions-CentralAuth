@@ -125,6 +125,8 @@
 	"centralauth-admin-status-hidden-oversight": "Konto ist vollständig versteckt",
 	"centralauth-admin-status-intro": "{{#FORMAL:Du kannst|Sie können}} dieses Formular nutzen, um den Status für dieses globale Benutzerkonto zu ändern.",
 	"centralauth-admin-status-locked": "Geschlossen:",
+	"centralauth-admin-status-locked-no": "Benutzerkonto ist nicht gesperrt",
+	"centralauth-admin-status-locked-yes": "Konto ist für die Anmeldung gesperrt",
 	"centralauth-admin-status-nonexistent": "Fehler: Das globale Benutzerkonto „<nowiki>$1</nowiki>“ existiert nicht.",
 	"centralauth-admin-status-reasons": "* Allgemeine Sperrgründe\n** Vandalismuskonto\n** Spamkonto\n* Allgemeine Sperr- und Versteckgründe\n** missbräuchlicher Benutzername\n** unangemessene persönliche Daten",
 	"centralauth-admin-status-submit": "Status ändern",

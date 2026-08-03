@@ -137,6 +137,8 @@
 	"centralauth-admin-status-hidden-oversight": "Account is volledig verborgen",
 	"centralauth-admin-status-intro": "U kunt dit formulier gebruiken om de status van deze globale gebruiker te wijzigen.",
 	"centralauth-admin-status-locked": "Vergrendeld:",
+	"centralauth-admin-status-locked-no": "Account is niet vergrendeld",
+	"centralauth-admin-status-locked-yes": "Gebruiker mag niet bewerken",
 	"centralauth-admin-status-nonexistent": "Fout: de globale gebruiker \"<nowiki>$1</nowiki>\" bestaat niet.",
 	"centralauth-admin-status-reasons": "* Veel voorkomende blokkaderedenen\n** gebruiker voor vandalisme\n** gebruiker voor spam\n* Veel voorkomende redenen voor blokkeren-en-verbergen\n** ongepaste gebruikersnaam\n** ongepaste persoonlijke informatie",
 	"centralauth-admin-status-submit": "Status instellen",

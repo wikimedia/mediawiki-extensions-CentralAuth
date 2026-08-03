@@ -40,6 +40,8 @@
 	"centralauth-admin-status-hidden-list": "គណនីត្រូវបានលាក់ពីបញ្ជីសាធារណៈ",
 	"centralauth-admin-status-hidden-no": "ទិន្នន័យមិនត្រូវបានលាក់",
 	"centralauth-admin-status-locked": "ត្រូវបានចាក់សោ៖",
+	"centralauth-admin-status-locked-no": "ទិន្នន័យមិនជាប់សោ",
+	"centralauth-admin-status-locked-yes": "ទិន្នន័យត្រូវបានចាក់សោមិនអោយធ្វើការកែប្រែ",
 	"centralauth-admin-status-nonexistent": "កំហុស​៖ គណនី​សកល \"<nowiki>$1</nowiki>\" មិន​មាន​ទេ​។",
 	"centralauth-admin-title-ro": "ព័ត៌មានគណនីសាកលរបស់$1",
 	"centralauth-admin-unattached": "មិនបានភ្ជាប់",

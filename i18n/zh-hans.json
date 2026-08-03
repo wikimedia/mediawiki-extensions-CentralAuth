@@ -174,6 +174,8 @@
 	"centralauth-admin-status-hidden-oversight": "账号已完全隐藏",
 	"centralauth-admin-status-intro": "你可以使用这个表单来更改这个全域账号的状态",
 	"centralauth-admin-status-locked": "锁定：",
+	"centralauth-admin-status-locked-no": "账号未锁定",
+	"centralauth-admin-status-locked-yes": "账号已被锁定，不得登录",
 	"centralauth-admin-status-nonexistent": "错误：全域账号“<nowiki>$1</nowiki>”不存在。",
 	"centralauth-admin-status-reasons": "* 一般锁定的原因\n** 纯粹破坏的账号\n** 纯粹滥发垃圾广告的账号\n* 一般锁定和隐藏用户名的原因\n** 不当用户名\n** 不当滥用个人信息",
 	"centralauth-admin-status-submit": "设置状态",

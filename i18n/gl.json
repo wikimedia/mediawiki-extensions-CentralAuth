@@ -114,6 +114,8 @@
 	"centralauth-admin-status-hidden-oversight": "A conta está completamente agochada",
 	"centralauth-admin-status-intro": "Pode usar este formulario para cambiar o estado desta conta global",
 	"centralauth-admin-status-locked": "Bloqueado:",
+	"centralauth-admin-status-locked-no": "A conta non está bloqueada",
+	"centralauth-admin-status-locked-yes": "A conta está bloqueada fronte á edición",
 	"centralauth-admin-status-nonexistent": "Erro: A conta global \"<nowiki>$1</nowiki>\" non existe.",
 	"centralauth-admin-status-reasons": "* Motivos frecuentes para borrar\n** conta que só realizou vandalismos\n** conta que só realizou spam\n* Motivos frecuentes para bloquear e agochar\n** nome de usuario abusivo\n** información persoal inapropiada",
 	"centralauth-admin-status-submit": "Establecer o estado",

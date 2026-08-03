@@ -124,6 +124,8 @@
 	"centralauth-admin-status-hidden-oversight": "L'account è completamente nascosto",
 	"centralauth-admin-status-intro": "È possibile utilizzare questo modulo per modificare lo stato di quest'utenza globale",
 	"centralauth-admin-status-locked": "Bloccato:",
+	"centralauth-admin-status-locked-no": "L'account non è bloccato",
+	"centralauth-admin-status-locked-yes": "L'account è bloccato",
 	"centralauth-admin-status-nonexistent": "Errore: l'utente globale \"<nowiki>$1</nowiki>\" non esiste.",
 	"centralauth-admin-status-reasons": "*Comuni motivi di blocco\n** utenza usata solo per vandalismi\n** utenza usata solo per spam\n*Comuni motivi per bloccare e nascondere\n** nome utente offensivo\n** informazioni personali non appropriate",
 	"centralauth-admin-status-submit": "Imposta stato",
