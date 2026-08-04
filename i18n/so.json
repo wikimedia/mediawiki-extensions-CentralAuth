@@ -43,6 +43,7 @@
 	"centralauth-admin-delete-description": "Tirtiridda akoonka caalamiga ah waxay kala fogeyn doontaa dhammaan akoonnada maxalliga ah, waxayna ka dhigaysaa magaca caalamiga ah mid u furan in isticmaale kale qaato.  \nDhammaan akoonnada maxalliga ah way sii jiri doonaan.",
 	"centralauth-admin-delete-nonexistent": "Khalad: akoonka caalamiga ah \"<nowiki>$1</nowiki>\" ma jiro.",
 	"centralauth-admin-cannot-lock-temporary-account": "Lama qufuli karo akoonnada ku meelgaarka ah, sababtoo ah haddii la qufulo waxay si fudud u heli karaan akoon ku meelgaar cusub marka ay sameeyaan wax ka beddelka xiga.",
+	"centralauth-admin-cannot-lock-self": "Ma qufuli kartid akoonkaaga caalamiga ah.",
 	"centralauth-admin-delete-success": "Akoonka caalamiga ah ee \"<nowiki>$1</nowiki>\" waa la tirtiray",
 	"centralauth-admin-delete-title": "Tirtir akoonka",
 	"centralauth-admin-group-temporary": "$1 ''(ku meel gaar)''",
