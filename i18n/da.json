@@ -61,6 +61,7 @@
 	"centralauth-admin-delete-description": "Sletning af den globale konto vil fjerne alle lokale konti, og det globale navn vil være frit for en anden bruger at bruge.\nAlle lokale konti vil fortsat eksistere.",
 	"centralauth-admin-delete-nonexistent": "Fejl: den globale konto \"<nowiki>$1</nowiki>\" findes ikke.",
 	"centralauth-admin-cannot-lock-temporary-account": "Du kan ikke låse midlertidige konti, da låsning af dem blot giver dem mulighed for at få en ny midlertidig konto ved deres næste redigering.",
+	"centralauth-admin-cannot-lock-self": "Du kan ikke låse din egen globale konto.",
 	"centralauth-admin-delete-success": "Gennemførte sletning af den globale konto for \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-delete-title": "Slet konto",
 	"centralauth-admin-group-temporary": "$1 ''(midlertidig)''",

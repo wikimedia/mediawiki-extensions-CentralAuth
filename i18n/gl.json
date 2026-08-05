@@ -55,6 +55,7 @@
 	"centralauth-admin-delete-description": "Ao eliminar unha conta global sepáranse todas as contas locais, e deixa libre o nome da conta global para que outro usuario o use.\nTodas as contas locais continuarán existindo.",
 	"centralauth-admin-delete-nonexistent": "Erro: A conta global \"<nowiki>$1</nowiki>\" non existe.",
 	"centralauth-admin-cannot-lock-temporary-account": "Non se poden bloquear as contas temporais, xa que bloquealas simplemente fará que se cree unha nova conta temporal na seguinte edición.",
+	"centralauth-admin-cannot-lock-self": "Non podes bloquear a túa propia conta global.",
 	"centralauth-admin-delete-success": "Borrouse a conta global de \"<nowiki>$1</nowiki>\"",
 	"centralauth-admin-delete-title": "Borrar a conta",
 	"centralauth-admin-group-temporary": "$1 ''(temporal)''",
