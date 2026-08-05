@@ -2,6 +2,7 @@
 
 namespace MediaWiki\CentralAuth\Tests\Phpunit\Integration\Maintenance;
 
+use CentralAuthTestUser;
 use MediaWiki\CheckUser\Services\AccountCreationDetailsLookup;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
@@ -255,6 +256,34 @@ class BackfillLocalAccountsTest extends MaintenanceBaseTestCase {
 
 		$this->assertSame(
 			"User '{$user->getName()}' created\n",
+			$this->getActualOutputForAssertion()
+		);
+	}
+
+	public function testCreateLocalAccountForSuppressedUserWithIgnoreOption(): void {
+		$u = new CentralAuthTestUser(
+			'SuppressedTestUser',
+			'GUP@ssword',
+			[
+				'gu_id' => '1002',
+				'gu_hidden_level' => CentralAuthUser::HIDDEN_LEVEL_SUPPRESSED,
+			],
+			[
+				[ WikiMap::getCurrentWikiId(), 'primary' ],
+			]
+		);
+		$u->save( $this->getDb() );
+
+		$this->maintenance->setOption( 'ignore-autocreate-errors', 1 );
+
+		$this->maintenance->createLocalAccount(
+			'SuppressedTestUser',
+			$this->getServiceContainer()->getUserFactory(),
+			true
+		);
+
+		$this->assertStringContainsString(
+			'Skipping suppressed user SuppressedTestUser',
 			$this->getActualOutputForAssertion()
 		);
 	}

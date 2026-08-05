@@ -57,6 +57,11 @@ class BackfillLocalAccounts extends Maintenance {
 		$this->addOption( 'startdate', 'Backfill for global users created later than this date', true, true );
 		$this->addOption( 'dryrun', 'Display commands that would be run instead of running them', false, false );
 		$this->addOption( 'verbose', 'Display extra progress information while running', false, false );
+		$this->addOption(
+			'ignore-autocreate-errors',
+			'Do not report expected account creation failures such as blocks or suppression as errors',
+			false, false
+		);
 		$this->setBatchSize( $this->getOption( 'batch-size', 1000 ) );
 	}
 
@@ -109,14 +114,22 @@ class BackfillLocalAccounts extends Maintenance {
 
 		$centralUser = CentralAuthUser::getInstance( $user );
 		if ( $centralUser->isSuppressed() ) {
-			$this->error( "Skipping suppressed user $username" );
+			if ( $this->hasOption( 'ignore-autocreate-errors' ) ) {
+				$this->output( "Skipping suppressed user $username\n" );
+			} else {
+				$this->error( "Skipping suppressed user $username" );
+			}
 			return;
 		}
 
 		$status = CentralAuthServices::getUtilityService()->autoCreateUser( $user, true, $performer );
 		if ( !$status->isOK() ) {
-			$this->error( "autoCreateUser failed for $username:" );
-			$this->error( $status );
+			if ( $this->hasOption( 'ignore-autocreate-errors' ) ) {
+				$this->output( "autoCreateUser failed for $username, ignoring\n" );
+			} else {
+				$this->error( "autoCreateUser failed for $username:" );
+				$this->error( $status );
+			}
 			return;
 		}
 
