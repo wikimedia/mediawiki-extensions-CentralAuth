@@ -83,6 +83,7 @@
 	"centralauth-admin-delete-description": "통합 계정 삭제는 모든 로컬 계정을 분리하여 다른 사람이 사용할 수 있도록 할 것입니다.\n모든 로컬의 계정은 계속 존재할 것입니다.",
 	"centralauth-admin-delete-nonexistent": "오류: \"<nowiki>$1</nowiki>\" 통합 계정이 존재하지 않습니다.",
 	"centralauth-admin-cannot-lock-temporary-account": "임시 계정은 잠글 수 없습니다. 잠그더라도 다음 편집 시 새 임시 계정을 얻게 됩니다.",
+	"centralauth-admin-cannot-lock-self": "자기 자신의 전역 계정은 잠글 수 없습니다.",
 	"centralauth-admin-delete-success": "\"<nowiki>$1</nowiki>\" 통합 계정이 삭제되었습니다",
 	"centralauth-admin-delete-title": "계정 삭제",
 	"centralauth-admin-group-temporary": "$1 (임시)",
