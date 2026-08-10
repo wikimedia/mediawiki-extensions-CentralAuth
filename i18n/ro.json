@@ -19,6 +19,7 @@
 			"Strainu",
 			"Trotinel Iftode",
 			"Valentin JJ.",
+			"Vellion Eagle",
 			"WebSourceContentRO",
 			"XXN"
 		]
@@ -222,7 +223,7 @@
 	"centralauth-log-status-locked": "blocat",
 	"centralauth-log-status-none": "(nimic)",
 	"centralauth-log-status-oversighted": "suprimat",
-	"centralauth-login-error-locked": "Nu {{GENDER:$1|vă puteți}} autentifica, deoarece contul {{GENDER:$1|dumnevoastră}} este blocat la nivel global.",
+	"centralauth-login-error-locked": "Nu {{GENDER:$1|vă puteți}} autentifica, deoarece contul {{GENDER:$1|dumneavoastră}} este blocat la nivel global.",
 	"centralauth-logout-no-others": "Ați fost deconectat în mod automat din alte proiecte ale {{int:Centralauth-groupname}}.",
 	"centralauth-logout-progress": "Sunteți în curs de deconectare de la {{PLURAL:$2|alt wiki|alte wiki-uri}} ale {{int:Centralauth-groupname}}:",
 	"centralauth-merge-attempt": "'''Se verifică parola introdusă pentru conturile rămase neunite...'''",
