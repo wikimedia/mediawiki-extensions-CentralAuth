@@ -155,7 +155,7 @@ class SendConfirmAndMigrateEmail extends Maintenance {
 			return;
 		}
 
-		$unattached = $central->queryUnattached();
+		$unattached = $central->listUnattached();
 		if ( count( $unattached ) == 0 ) {
 			$this->output( "ERROR: No unattached accounts for '$username'\n" );
 			return;

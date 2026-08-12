@@ -2,7 +2,6 @@
 namespace MediaWiki\CentralAuth\Tests\Phpunit\Integration\Maintenance;
 
 use CentralAuthTestUser;
-use MediaWiki\Extension\CentralAuth\CentralAuthDatabaseManager;
 use MediaWiki\Extension\CentralAuth\Maintenance\SendConfirmAndMigrateEmail;
 use MediaWiki\Mail\IEmailer;
 use MediaWiki\Mail\MailAddress;
@@ -11,7 +10,6 @@ use MediaWiki\Site\HashSiteStore;
 use MediaWiki\Site\MediaWikiSite;
 use MediaWiki\Tests\Maintenance\MaintenanceBaseTestCase;
 use MediaWiki\WikiMap\WikiMap;
-use Wikimedia\Rdbms\LBFactory;
 use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
@@ -46,24 +44,6 @@ class SendConfirmAndMigrateEmailTest extends MaintenanceBaseTestCase {
 			WikiMap::getCurrentWikiId(),
 			self::OTHER_WIKI_ID,
 		] );
-
-		// Configure CentralAuth and LBFactory to return the test database connection
-		// for the "foreign" wiki as well.
-		$db = $this->getDb();
-		$dbManager = $this->createMock( CentralAuthDatabaseManager::class );
-		$dbManager->method( 'getCentralDBFromRecency' )->willReturn( $db );
-		$dbManager->method( 'getCentralPrimaryDB' )->willReturn( $db );
-		$dbManager->method( 'getCentralReplicaDB' )->willReturn( $db );
-		$dbManager->method( 'getLocalDBFromRecency' )->willReturn( $db );
-
-		$lbFactory = $this->createMock( LBFactory::class );
-		$lbFactory->method( 'getReplicaDatabase' )->willReturn( $db );
-		$lbFactory->method( 'getPrimaryDatabase' )->willReturn( $db );
-		$lbFactory->method( 'getMainLB' )
-			->willReturn( $this->getServiceContainer()->getDBLoadBalancer() );
-
-		$this->setService( 'CentralAuth.CentralAuthDatabaseManager', $dbManager );
-		$this->setService( 'DBLoadBalancerFactory', $lbFactory );
 	}
 
 	protected function getMaintenanceClass() {
