@@ -11,7 +11,6 @@ use MediaWiki\MediaWikiServices;
 use MediaWiki\WikiMap\WikiMap;
 use stdClass;
 use Wikimedia\ObjectCache\WANObjectCache;
-use Wikimedia\Rdbms\Database;
 
 class WikiSet {
 
@@ -177,10 +176,8 @@ class WikiSet {
 		$data = $cache->getWithSetCallback(
 			self::getPerIdCacheKey( $cache, $id ),
 			$cache::TTL_INDEFINITE,
-			function ( $oldValue, &$ttl, &$setOpts ) use ( $id, $fname ) {
+			function ( $oldValue, &$ttl ) use ( $id, $fname ) {
 				$dbr = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
-				$setOpts += Database::getCacheSetOptions( $dbr );
-
 				$row = $dbr->newSelectQueryBuilder()
 					->select( '*' )
 					->from( 'wikiset' )
