@@ -9,7 +9,6 @@
 
 namespace MediaWiki\Extension\CentralAuth\Special;
 
-use Exception;
 use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthUIService;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
@@ -825,12 +824,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 						$msgKey, $emailBodyMsgArgs
 					)->inContentLanguage()->text();
 				} else {
-					$recipientConfig = $this->getConfig()
-						->get( CAMainConfigNames::CentralAuthRejectVanishUserNotification );
-					if ( $recipientConfig ) {
-						$status = $this->sendEmailForRejectionOfVanishRequest( $request, $recipientConfig );
-					}
-
 					$subject = $this->msg(
 						$emailSubjectRejectedMsg
 					)->inContentLanguage()->text();
@@ -869,78 +862,6 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$this->msg( 'emailsender' )->inContentLanguage()->text()
 		);
 		return UserMailer::send( $to, $from, $subject, $body );
-	}
-
-	/**
-	 * Send an email on account vanishing rejection to the provided recipient.
-	 *
-	 * @param GlobalRenameRequest $request
-	 * @param string $recipientUserName
-	 * @return StatusValue
-	 */
-	protected function sendEmailForRejectionOfVanishRequest( GlobalRenameRequest $request, $recipientUserName ) {
-		// Email to legal is only sent when it's a vanish request
-		if ( $request->getType() !== GlobalRenameRequest::VANISH ) {
-			return StatusValue::newGood();
-		}
-
-		$globalUser = CentralAuthUser::getInstanceByName( $request->getName() );
-		$homeWiki = $globalUser->getHomeWiki();
-		$globalEditCount = $globalUser->getGlobalEditCount();
-		$isBlocked = $globalUser->isBlocked() ?
-			'globalrenamequeue-request-vanish-user-blocked' :
-			'globalrenamequeue-request-vanish-user-not-blocked';
-
-		// This should never be null except in dev/testing environment.
-		$homeWikiWiki = $homeWiki ? WikiMap::getWiki( $homeWiki ) : null;
-		$rejector = CentralAuthUser::newFromId( $request->getPerformer() );
-		$rejectorName = $rejector ? $rejector->getName() : $request->getPerformer();
-
-		$subject = $this->msg(
-			'globalvanishrequest-rejected-subject-notification',
-			$request->getName(),
-		)->inContentLanguage()->text();
-		$isBlockedMsg = $this->msg( $isBlocked )->inContentLanguage()->text();
-		$bodyMessage = $this->msg(
-			'globalvanishrequest-rejected-body-notification',
-			$request->getName(),
-			// @phan-suppress-next-line PhanTypeMismatchArgumentNullable
-			( $homeWikiWiki ? $homeWikiWiki->getDisplayName() : $homeWiki ),
-			$globalEditCount,
-			$isBlockedMsg,
-			$request->getReason(),
-			$rejectorName,
-			$request->getComments(),
-			$this->getLanguage()->userTimeAndDate(
-				$request->getRequested(), $this->getUser()
-			),
-			$this->getLanguage()->userTimeAndDate(
-				$request->getCompleted(), $this->getUser()
-			),
-		)->inContentLanguage()->text();
-
-		try {
-			$contactRecipientUser = User::newFromName( $recipientUserName );
-			$contactRecipientAddress = MailAddress::newFromUser( $contactRecipientUser );
-			$contactSenderAddress = new MailAddress(
-				$this->getConfig()->get( MainConfigNames::PasswordSender ),
-				$this->msg( 'emailsender' )->inContentLanguage()->text()
-			);
-
-			$userMailerStatus = UserMailer::send(
-				$contactRecipientAddress,
-				$contactSenderAddress,
-				$subject,
-				$bodyMessage,
-			);
-			if ( $userMailerStatus->isGood() ) {
-				return StatusValue::newGood();
-			} else {
-				return StatusValue::newFatal( 'globalvanishrequest-rejected-notification-error' );
-			}
-		} catch ( Exception ) {
-			return StatusValue::newFatal( 'globalvanishrequest-rejected-notification-error' );
-		}
 	}
 
 	/** @inheritDoc */

@@ -945,10 +945,6 @@
 			"description": "If set, this will be used instead of $wgSessionCacheType for session storage",
 			"value": null
 		},
-		"CentralAuthRejectVanishUserNotification": {
-			"description": "User name to be notified when a global vanish request is rejected.",
-			"value": ""
-		},
 		"CentralAuthAutomaticVanishPerformer": {
 			"description": "Username of a global user to set as the performer for vanish requests that get fulfilled automatically. If this is left unset, then automatic vanishing will be disabled.",
 			"value": null
