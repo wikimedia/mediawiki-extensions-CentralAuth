@@ -37,7 +37,7 @@ class MigratePass0 extends Maintenance {
 
 	private function doPassZero() {
 		global $wgDBname;
-		$dbr = $this->getDB( DB_REPLICA );
+		$dbr = $this->getReplicaDB();
 		$chunkSize = 1000;
 
 		$start = microtime( true );
