@@ -89,7 +89,7 @@
 	"centralauth-admin-lookup-ro": "Se brugeroplysninger",
 	"centralauth-admin-lookup-rw": "Administrér brugerkonto",
 	"centralauth-admin-manage": "Administrér brugerkontoinformation",
-	"centralauth-admin-merge": "Tilknyt de valgte",
+	"centralauth-admin-merge": "Flet de valgte",
 	"centralauth-admin-multi-bot": "Seneste ændringer",
 	"centralauth-admin-multi-botcheck": "Markér ændringer i listen over [[Special:RecentChanges|{{int:recentchanges}}]] som robotændringer.",
 	"centralauth-admin-multi-intro": "Opdater flere globale brugerkonti på én gang",
