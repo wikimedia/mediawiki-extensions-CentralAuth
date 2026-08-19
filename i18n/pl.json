@@ -76,6 +76,7 @@
 	"centralauth-admin-delete-description": "Usunięcie konta uniwersalnego spowoduje odłączenie wszystkich kont lokalnych oraz zwolnienie nazwy konta uniwersalnego do wykorzystania przez innego użytkownika.\nLokalne konta nadal będą istniały.",
 	"centralauth-admin-delete-nonexistent": "Błąd: nie istnieje konto uniwersalne „<nowiki>$1</nowiki>”.",
 	"centralauth-admin-cannot-lock-temporary-account": "Nie możesz zablokować kont tymczasowych, ponieważ ich zablokowanie spowodowałoby jedynie, że użytkownicy będą mogli założyć nowe konto tymczasowe przy następnej edycji.",
+	"centralauth-admin-cannot-lock-self": "Nie możesz zablokować swojego konta globalnego.",
 	"centralauth-admin-delete-success": "Usunięto konto uniwersalne „<nowiki>$1</nowiki>”",
 	"centralauth-admin-delete-title": "Usuwanie konta",
 	"centralauth-admin-group-temporary": "$1 ''(tymczasowo)''",
