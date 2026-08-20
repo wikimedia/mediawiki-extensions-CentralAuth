@@ -30,6 +30,7 @@ use PHPUnit\Framework\MockObject\MockObject;
 use Psr\Log\LogLevel;
 use StatusValue;
 use TestLogger;
+use Wikimedia\ScopedCallback;
 use Wikimedia\TestingAccessWrapper;
 
 /**
@@ -255,8 +256,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 			'shared' => false,
 			'sul3' => true,
 		] ) );
-		$logProvider = $this->getLogProvider();
-		LoggerFactory::registerProvider( $logProvider );
+		[ $logProvider, $scope ] = $this->overrideLogProvider();
 
 		$authManager = $this->getServiceContainer()->getAuthManager();
 		$response = $authManager->beginAuthentication( [], 'http://example.com' );
@@ -298,8 +298,7 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 			'sul3' => true,
 		] );
 		$this->setService( 'CentralAuth.SharedDomainUtils', $sharedDomainUtils );
-		$logProvider = $this->getLogProvider();
-		LoggerFactory::registerProvider( $logProvider );
+		[ $logProvider, $scope ] = $this->overrideLogProvider();
 
 		$authManager = $this->getServiceContainer()->getAuthManager();
 		$response = $authManager->beginAuthentication( [], 'http://example.com' );
@@ -438,8 +437,11 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 		return $sharedDomainUtils;
 	}
 
-	private function getLogProvider(): Spi {
-		return new class() implements Spi {
+	/**
+	 * @return array{Spi,ScopedCallback}
+	 */
+	private function overrideLogProvider(): array {
+		$logProvider = new class() implements Spi {
 
 			public array $logs = [];
 
@@ -448,6 +450,12 @@ class SharedDomainHookHandlerTest extends ApiTestCase {
 				return $this->logs[$channel];
 			}
 		};
+		$oldProvider = LoggerFactory::getProvider();
+		LoggerFactory::registerProvider( $logProvider );
+		$scope = new ScopedCallback( static function () use ( $oldProvider ) {
+			LoggerFactory::registerProvider( $oldProvider );
+		} );
+		return [ $logProvider, $scope ];
 	}
 
 	private function assertLogged(
