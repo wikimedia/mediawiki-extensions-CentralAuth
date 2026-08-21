@@ -15,7 +15,6 @@ use MediaWiki\WikiMap\WikiMap;
 use MediaWiki\Xml\Xml;
 use MWCryptRand;
 use RuntimeException;
-use Wikimedia\AtEase\AtEase;
 
 class SpecialMergeAccount extends SpecialPage {
 
@@ -31,8 +30,6 @@ class SpecialMergeAccount extends SpecialPage {
 	protected $mWikiIDs;
 	/** @var string */
 	protected $mSessionToken;
-	/** @var string */
-	protected $mSessionKey;
 
 	private NamespaceInfo $namespaceInfo;
 	private UserFactory $userFactory;
@@ -99,7 +96,6 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->mPassword = $request->getVal( 'wpPassword' );
 		$this->mWikiIDs = $request->getArray( 'wpWikis' );
 		$this->mSessionToken = $request->getVal( 'wpMergeSessionToken' );
-		$this->mSessionKey = pack( "H*", $request->getVal( 'wpMergeSessionKey' ) );
 
 		// Possible demo states
 
@@ -163,36 +159,18 @@ class SpecialMergeAccount extends SpecialPage {
 	 * To pass potentially multiple passwords from one form submission
 	 * to another while previewing the merge behavior, we can store them
 	 * in the server-side session information.
-	 *
-	 * We'd rather not have plaintext passwords floating about on disk
-	 * or memcached, so the session store is obfuscated with simple XOR
-	 * encryption. The key is passed in the form instead of the session
-	 * data, so they won't be found floating in the same place.
 	 */
 	private function initSession() {
 		$this->mSessionToken = MWCryptRand::generateHex( 32 );
-		$this->mSessionKey = random_bytes( 128 );
 	}
 
 	/**
 	 * @return string[]
 	 */
 	private function getWorkingPasswords() {
-		AtEase::suppressWarnings();
-		$data = $this->getRequest()->getSessionData( 'wsCentralAuthMigration' );
-		$passwords = unserialize(
-			gzinflate(
-				$this->xorString(
-					$data[$this->mSessionToken],
-					$this->mSessionKey
-				)
-			)
-		);
-		AtEase::restoreWarnings();
-		if ( is_array( $passwords ) ) {
-			return $passwords;
-		}
-		return [];
+		$data = $this->getRequest()->getSession()->getSecret( 'wsCentralAuthMigration', [] );
+		$passwords = $data[$this->mSessionToken] ?? [];
+		return $passwords;
 	}
 
 	/**
@@ -203,25 +181,15 @@ class SpecialMergeAccount extends SpecialPage {
 		if ( !in_array( $password, $passwords ) ) {
 			$passwords[] = $password;
 		}
-
-		// Lightly obfuscate the passwords while we're storing them,
-		// just to make us feel better about them floating around.
-		$request = $this->getRequest();
-		$data = $request->getSessionData( 'wsCentralAuthMigration' );
-		$data[$this->mSessionToken] =
-			$this->xorString(
-				gzdeflate(
-					serialize(
-						$passwords ) ),
-				$this->mSessionKey );
-		$request->setSessionData( 'wsCentralAuthMigration', $data );
+		$data = $this->getRequest()->getSession()->getSecret( 'wsCentralAuthMigration', [] );
+		$data[$this->mSessionToken] = $passwords;
+		$this->getRequest()->getSession()->setSecret( 'wsCentralAuthMigration', $data );
 	}
 
 	private function clearWorkingPasswords() {
-		$request = $this->getRequest();
-		$data = $request->getSessionData( 'wsCentralAuthMigration' );
+		$data = $this->getRequest()->getSession()->getSecret( 'wsCentralAuthMigration', [] );
 		unset( $data[$this->mSessionToken] );
-		$request->setSessionData( 'wsCentralAuthMigration', $data );
+		$this->getRequest()->getSession()->setSecret( 'wsCentralAuthMigration', $data );
 	}
 
 	/**
@@ -592,7 +560,6 @@ class SpecialMergeAccount extends SpecialPage {
 			Html::hidden( 'wpEditToken', $this->getUser()->getEditToken() ) .
 			Html::hidden( 'wpMergeAction', $action ) .
 			Html::hidden( 'wpMergeSessionToken', $this->mSessionToken ) .
-			Html::hidden( 'wpMergeSessionKey', bin2hex( $this->mSessionKey ) ) .
 
 			$text .
 
