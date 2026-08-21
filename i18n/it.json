@@ -479,8 +479,6 @@
 	"globalvanishrequest-save-error": "Impossibile salvare la richiesta. Ti preghiamo di riprovare.",
 	"globalvanishrequest-autoapprove-note": "La tua richiesta di anonimizzazione del nome utente è stata processata con successo.",
 	"globalvanishrequest-autoapprove-public-note": "Questa richiesta di anonimizzazione dell'utente è stata approvata automaticamente.",
-	"globalvanishrequest-rejected-subject-notification": "Richiesta di anonimizzazione dell'account rifiutata ($1)",
-	"globalvanishrequest-rejected-body-notification": "Una richiesta di anonimizzazione dell'account è stata rifiutata, vedi i dettagli di seguito:\n\nNome utente: $1\nWiki principale: $2\nNumero delle modifiche globali: $3\nÈ bloccato: $4\nMotivo della richiesta di anonimizzazione: $5\nRifiutata da: $6\nNote del rifiuto: $7\nRichiesta: $8\nCompletata: $9",
 	"globalusers": "Elenco degli utenti globali",
 	"grant-setglobalaccountstatus": "Gestire lo stato dell'utenza globale",
 	"log-action-filter-gblrights": "Tipo di modifica:",

@@ -472,7 +472,6 @@
 	"globalvanishrequest-blocked-error": "Tài khoản của bạn đã bị cấm, và do đó, bạn không thể yêu cầu quyền biến mất.",
 	"globalvanishrequest-pending-request-error": "Bạn đã mở yêu cầu biến mất tài khoản rồi. Truy cập [[Special:GlobalVanishRequest/status|trang trạng thái yêu cầu]] để biết thêm thông tin.",
 	"globalvanishrequest-autoapprove-note": "Yêu cầu biến mất tài khoản đã được xử lý.",
-	"globalvanishrequest-rejected-body-notification": "Một yêu cầu biến mất tài khoản đã bị từ chối với các thông tin dưới đây\n\nTên người dùng: $1\nWiki nhà: $2\nSố sửa đổi toàn cục: $3\nBị cấm: $4\nLý do yêu cầu: $5\nBị từ chối bởi: $6\nLý do từ chối: $7\nNgày yêu cầu: $8\nHoàn thành vào lúc: $9",
 	"globalusers": "Danh sách tài khoản toàn cục",
 	"grant-createlocalaccount": "Ép buộc mở một tài khoản cục bộ cho một tài khoản toàn cục",
 	"grant-setglobalaccountstatus": "Quản lý tình trạng tài khoản toàn cục",

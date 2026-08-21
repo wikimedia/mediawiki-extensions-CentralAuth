@@ -157,7 +157,6 @@
 	"globalvanishrequest-reason-label": "درخواست کی وجہ",
 	"globalvanishrequest-submit-text": "معدومیت کی درخواست دیں",
 	"globalvanishrequest-autoapprove-public-note": "اس صارف کی معدومی کی درخواست خودکار طور پر قبول کی گئی ہے۔",
-	"globalvanishrequest-rejected-subject-notification": "کھاتہ معدومی کی درخواست رد کردی گئی ہے ($1)",
 	"globalusers": "عالمی کھاتوں کی فہرست",
 	"log-action-filter-gblrights-usergroups": "عالمی صارف حقوق تبدیل",
 	"log-name-gblrename": "نوشتہ عالمی تبدیلی نام",
