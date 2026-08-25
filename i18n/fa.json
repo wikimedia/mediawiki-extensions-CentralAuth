@@ -126,7 +126,7 @@
 	"centralauth-admin-status": "تنظیم وضعیت حساب سراسری",
 	"centralauth-admin-status-hidden": "پنهان:",
 	"centralauth-admin-status-hidden-list": "حساب از فهرست‌ سراسری کاربران پنهان است",
-	"centralauth-admin-status-hidden-no": "حساب مخفی نیست.",
+	"centralauth-admin-status-hidden-no": "حساب پنهان نیست",
 	"centralauth-admin-status-hidden-oversight": "حساب به طور کامل پنهان است",
 	"centralauth-admin-status-intro": "شما می‌توانید فرم زیر را برای تغییر وضعیت این حساب سراسری استفاده کنید.",
 	"centralauth-admin-status-locked": "قفل‌شده:",
