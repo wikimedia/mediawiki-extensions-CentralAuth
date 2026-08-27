@@ -558,7 +558,8 @@ class CentralAuthHooks implements
 				$params = [
 					'type' => 'script',
 					// Can't depend on the user in a ResourceLoader callback.
-					'usesul3' => $sharedDomainUtils->getSharedDomainPrefix() ? 1 : 0,
+					'usesul3' => $sharedDomainUtils->getSharedDomainPrefix()
+						? SharedDomainUtils::SUL3_ENABLED : SharedDomainUtils::SUL3_DISABLED,
 				];
 				$startUrl = $sharedDomainUtils->makeUrlDeviceCompliant( $startUrl );
 				$data['startURL'] = wfAppendQuery( $startUrl, $params );
@@ -598,7 +599,7 @@ class CentralAuthHooks implements
 		$context = RequestContext::getMain();
 		$sharedDomainUtils = self::getSharedDomainUtils();
 		$sul3Enabled = $sharedDomainUtils->isSul3Enabled( $context->getRequest() );
-		$useSul3 = $sul3Enabled ? 1 : 0;
+		$useSul3 = $sul3Enabled ? SharedDomainUtils::SUL3_ENABLED : SharedDomainUtils::SUL3_DISABLED;
 
 		$html = '';
 		foreach ( self::getAutoLoginWikis() as $wikiID ) {

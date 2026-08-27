@@ -73,7 +73,8 @@ class PageDisplayHookHandler implements BeforePageDisplayHook {
 				// For non-JS clients.
 				$params = [
 					'type' => '1x1',
-					'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $out->getRequest() ) ? 1 : 0,
+					'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $out->getRequest() )
+						? SharedDomainUtils::SUL3_ENABLED : SharedDomainUtils::SUL3_DISABLED,
 				];
 				$out->addHTML( '<noscript>' . CentralAuthHooks::getAuthIconHtml(
 					WikiMap::getCurrentWikiId(),

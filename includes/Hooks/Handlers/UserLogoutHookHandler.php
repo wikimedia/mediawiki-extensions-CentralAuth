@@ -94,7 +94,8 @@ class UserLogoutHookHandler implements
 			foreach ( $wikis as $wikiID ) {
 				$params = [
 					'type' => 'icon',
-					'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $request ) ? 1 : 0,
+					'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $request )
+						? SharedDomainUtils::SUL3_ENABLED : SharedDomainUtils::SUL3_DISABLED,
 				];
 				$inject_html .= CentralAuthHooks::getAuthIconHtml(
 					$wikiID, 'Special:CentralAutoLogin/deleteCookies', $params, $csp

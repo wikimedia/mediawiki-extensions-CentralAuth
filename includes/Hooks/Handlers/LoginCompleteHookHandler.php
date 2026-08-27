@@ -215,7 +215,8 @@ class LoginCompleteHookHandler implements
 
 		$query = [
 			'token' => $token,
-			'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $session->getRequest(), $excludeApiRequest ) ? 1 : 0,
+			'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $session->getRequest(), $excludeApiRequest )
+				? SharedDomainUtils::SUL3_ENABLED : SharedDomainUtils::SUL3_DISABLED,
 		];
 		$url = $this->centralDomainUtils->getUrl(
 			CentralDomainUtils::CENTRAL_DOMAIN_ID,

@@ -21,6 +21,9 @@ use Wikimedia\Assert\Assert;
  */
 class SharedDomainUtils {
 
+	public const SUL3_ENABLED = 1;
+	public const SUL3_DISABLED = 0;
+
 	private ?bool $isSharedDomain = null;
 
 	public function __construct(

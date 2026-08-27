@@ -14,6 +14,7 @@ use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\PageDisplayHookHandler;
 use MediaWiki\Extension\CentralAuth\Hooks\Handlers\SpecialPageBeforeExecuteHookHandler;
+use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Html\Html;
@@ -311,7 +312,8 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// want it to depend on the user. In practice, it would probably be fine since at
 				// this point we should have an explicit 'usesul3' URL parameter which splits the
 				// cache, but it's better to be safe.
-				$useSul3 = $request->getBool( 'usesul3' ) ? 1 : 0;
+				$useSul3 = $request->getBool( 'usesul3' )
+					? SharedDomainUtils::SUL3_ENABLED : SharedDomainUtils::SUL3_DISABLED;
 				$domain = $useSul3
 					? CentralDomainUtils::SUL3_CENTRAL_DOMAIN_ID
 					: $this->getConfig()->get( CAMainConfigNames::CentralAuthLoginWiki );

@@ -227,7 +227,8 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 		$query = [
 			'token' => $token,
-			'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $this->getRequest() ) ? 1 : 0,
+			'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $this->getRequest() )
+				? SharedDomainUtils::SUL3_ENABLED : SharedDomainUtils::SUL3_DISABLED,
 		];
 
 		$wiki = WikiMap::getWiki( $info['wikiId'] );

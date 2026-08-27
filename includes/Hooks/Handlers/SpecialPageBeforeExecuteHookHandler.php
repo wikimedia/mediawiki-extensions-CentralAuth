@@ -154,7 +154,8 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 				'type' => 'redirect',
 				'returnUrlToken' => $returnUrlToken,
 				'wikiid' => WikiMap::getCurrentWikiId(),
-				'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $request ) ? 1 : 0,
+				'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $request )
+					? SharedDomainUtils::SUL3_ENABLED : SharedDomainUtils::SUL3_DISABLED,
 			] );
 
 			$special->getOutput()->redirect( $this->sharedDomainUtils->makeUrlDeviceCompliant( $url ) );
