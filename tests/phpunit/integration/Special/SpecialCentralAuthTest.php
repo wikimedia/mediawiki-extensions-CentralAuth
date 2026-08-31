@@ -8,7 +8,6 @@
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Special;
 
 use CentralAuthTestUser;
-use MediaWiki\Config\SiteConfiguration;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
@@ -22,6 +21,7 @@ use MediaWiki\Logging\LogPage;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
+use MediaWiki\Site\HashSiteStore;
 use MediaWiki\Site\MediaWikiSite;
 use MediaWiki\Tests\Specials\SpecialPageTestBase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
@@ -54,16 +54,11 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			// To avoid complexity related to the use of shared domain
 			CAMainConfigNames::CentralAuthEnableSul3 => false,
 		] );
-		// Clear $wgConf so that the sites table changes below have an effect
-		$this->setMwGlobals( 'wgConf', new SiteConfiguration() );
 
-		// Add the current site to the SiteStore to allow it to appear in the attached local accounts list.
-		$sitesTable = $this->getServiceContainer()->getSiteStore();
-		$site = $sitesTable->getSite( WikiMap::getCurrentWikiId() ) ?? new MediaWikiSite();
-		$site->setGlobalId( WikiMap::getCurrentWikiId() );
-		// We need to set a page path, otherwise this is not considered a valid site. Use enwiki's path as a mock value.
-		$site->setPath( MediaWikiSite::PATH_PAGE, "https://en.wikipedia.org/wiki/$1" );
-		$sitesTable->saveSite( $site );
+		$currentSite = new MediaWikiSite();
+		$currentSite->setGlobalId( WikiMap::getCurrentWikiId() );
+		$currentSite->setPath( MediaWikiSite::PATH_PAGE, 'https://en.wikipedia.org/wiki/$1' );
+		$this->setService( 'SiteLookup', new HashSiteStore( [ $currentSite ] ) );
 	}
 
 	protected function newSpecialPage(): SpecialCentralAuth {
