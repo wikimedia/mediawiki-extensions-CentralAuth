@@ -298,7 +298,7 @@
 	"centralauth-merge-denied": "U hebt geen toegang tot deze pagina.",
 	"centralauth-merge-dryrun-complete": "Alle bestaande accounts kunnen automatisch samengevoegd worden!\n\nEr zijn nog geen wijzigingen aan uw accounts gemaakt.",
 	"centralauth-merge-dryrun-home": "Het migratiesysteem kon niet bevestigen dat u de eigenaar bent van het account op de thuiswiki voor uw gebruikersnaam.\n\nEr is een andere wiki vastgesteld als thuiswiki voor uw gebruikersnaam; volg onderstaande koppeling en meld u daar aan om uw accountmigratie te voltooien.",
-	"centralauth-merge-dryrun-incomplete": "U bent nu klaar om verder te gaan, maar een aantal accounts konden niet automatisch bevestigd worden en worden dus niet meteen gemigreerd. Deze kunt u op een later moment samenvoegen.\n\nEr zijn nog geen wijzigingen aan uw accounts gemaakt.",
+	"centralauth-merge-dryrun-incomplete": "U bent nu klaar om verder te gaan, maar een aantal accounts konden niet automatisch bevestigd worden en worden dus niet direct gemigreerd. Deze kunt u op een later moment samenvoegen.\n\nEr zijn nog geen wijzigingen aan uw accounts gemaakt.",
 	"centralauth-merge-dryrun-or": "'''of'''",
 	"centralauth-merge-home-password": "De hieronder opgegeven thuiswiki voor deze gebruiker heeft een ander wachtwoord dan u hebt opgegeven.\nVoer het wachtwoord voor de thuiswiki in.",
 	"centralauth-merge-method-admin": "door beheerder samengevoegd",
