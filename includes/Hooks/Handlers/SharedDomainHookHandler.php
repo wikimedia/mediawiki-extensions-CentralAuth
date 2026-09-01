@@ -154,6 +154,8 @@ class SharedDomainHookHandler implements
 			'clientlogin', 'logout', 'createaccount', 'query+authmanagerinfo', 'paraminfo', 'help',
 			// APIs used during web login
 			'validatepassword', 'query+users', 'webauthn', 'fancycaptchareload',
+			// CSP reports
+			'cspreport',
 			// generic meta APIs, there's a good chance something somewhere will use them
 			'query+tokens', 'query+siteinfo', 'query+globaluserinfo',
 		],
