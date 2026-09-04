@@ -74,7 +74,8 @@
 			"Wyz",
 			"Yasten",
 			"Aquasen",
-			"Eihel"
+			"Eihel",
+			"Pamputt"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Nombre global de modifications de l’utilisateur ($1)",
@@ -544,7 +545,7 @@
 	"globalrenameuser": "Renommer un utilisateur global",
 	"globalvanishrequest": "Demande pour faire disparaître un compte utilisateur global",
 	"globalvanishrequest-text": "'''Envoyer une demande pour faire disparaître mon compte'''",
-	"globalvanishrequest-pretext": "Demander à disparaître est une solution de '''dernier recours''' qui est à envisager uniquement si '''vous souhaitez arrêter définitivement de contribuer''' et si vous souhaitez cacher au maximum vos collaborations passées.\n\nFaire disparaître un compte consiste à le renommer afin que les autres ne puissent plus associer le nom du compte aux contributions passées. Cette méthode '''ne garantit pas''' un anonymat complet et '''ne supprime pas''' les contributions aux projets.\n\nPour procéder à l'initiation du processus de disparition, veuillez remplir le formulaire de demande de disparition de compte ci-dessous.",
+	"globalvanishrequest-pretext": "Demander à disparaître est une solution de '''dernier recours''' qui est à envisager uniquement si '''vous souhaitez arrêter définitivement de contribuer''' et si vous souhaitez cacher au maximum vos collaborations passées.\n\nFaire disparaître un compte consiste à le renommer afin que les autres ne puissent plus associer le nom du compte aux contributions passées. Cette méthode '''ne garantit pas''' un anonymat complet et '''ne supprime pas''' les contributions aux projets.\n\nPour procéder à l’initiation du processus de disparition, veuillez remplir le formulaire de demande de disparition de compte ci-dessous.",
 	"globalvanishrequest-username-label": "Nom d’utilisateur du demandeur",
 	"globalvanishrequest-status-title": "La demande de disparition en attente d'approbation",
 	"globalvanishrequest-status-text": "Votre demande pour faire disparaitre votre nom d’utilisateur est actuellement en cours de traitement et attend une approbation par ceux autorisés à effectuer cette opération. Vous serez informé par courriel quand la demande sera traitée.",
