@@ -5,6 +5,7 @@
 			"Cwlin0416",
 			"Kly",
 			"LNDDYL",
+			"LowensteinYang",
 			"SunAfterRain",
 			"Umherirrender",
 			"Winston Sung"
@@ -38,7 +39,7 @@
 	"apihelp-globaluserrights-param-user": "全域使用者名稱。",
 	"apihelp-globaluserrights-param-userid": "全域使用者 ID。",
 	"apihelp-globaluserrights-summary": "加入/移除一位使用者至/從全域群組。",
-	"apihelp-main-param-centralauthtoken": "當使用跨網域 AJAX 請求（cross-domain AJAX request、CORS）來存取 API 時，使用此來認證目前的 SUL 使用者。在建立 CORS 請求前，於此 wiki 使用 <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> 來索取權杖。任一令牌每次只可使用一次，並且會在 10 秒後逾期。此僅可包含在任何預先請求，並也應該包含所請求的 URI 裡（而不是 POST 主體）。",
+	"apihelp-main-param-centralauthtoken": "當使用跨\"網域AJAX請求\"（CORS）來存取API時，使用此來認證目前的SUL使用者。在建立CORS請求前，於此wiki使用 <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> 來索取權杖。任一權杖每次只可使用一次，並且會在$1{{PLURAL:$1|秒}}後逾期。此僅可包含在任何預先請求，並也應該包含所請求的URI裡（而不是POST主體）。",
 	"apihelp-query+globalallusers-example-1": "全域使用者清單",
 	"apihelp-query+globalallusers-example-2": "顯示以\"ABC\"為開頭全域使用者的一些訊息",
 	"apihelp-query+globalallusers-param-dir": "排序的方向。",
