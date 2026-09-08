@@ -32,7 +32,8 @@
 			"Stefan2",
 			"Sturban",
 			"WikiPhoenix",
-			"Stefan2255"
+			"Stefan2255",
+			"Nirmos (Wikimedia)"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Globalt antal redigeringar för användaren ($1)",
@@ -40,7 +41,7 @@
 	"abusefilter-edit-builder-vars-global-account-editcount": "Antal redigeringar globalt för användaren vid kontoskapandet ($1)",
 	"abusefilter-edit-builder-vars-global-account-groups": "Globala grupper som användaren är med i vid kontoskapandet ($1)",
 	"action-centralauth-createlocal": "tvinga skapande av lokalt konto",
-	"action-centralauth-lock": "lås eller lås upp globala konton",
+	"action-centralauth-lock": "låsa eller låsa upp globala konton",
 	"action-centralauth-merge": "slå samman deras konton",
 	"action-centralauth-suppress": "censurera eller dölja globalt konto",
 	"action-centralauth-rename": "byta namn på globala konton",
