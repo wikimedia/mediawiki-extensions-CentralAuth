@@ -57,7 +57,7 @@ class CentralAuthSessionManager {
 	 * MUST be unique.
 	 */
 	private function getCentralAuthDBForSessionKey() {
-		return $this->caConnectionProvider->getPrimaryDatabase()->getDomainID();
+		return $this->caConnectionProvider->getPrimaryDatabase( forWrite: false )->getDomainID();
 	}
 
 	/**

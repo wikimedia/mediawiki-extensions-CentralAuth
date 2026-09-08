@@ -79,8 +79,10 @@ class CentralAuthConnectionProvider {
 		);
 	}
 
-	public function getPrimaryDatabase(): IDatabase {
-		$this->assertNotReadOnly();
+	public function getPrimaryDatabase( bool $forWrite = true ): IDatabase {
+		if ( $forWrite ) {
+			$this->assertNotReadOnly();
+		}
 		return $this->connectionProvider->getPrimaryDatabase( self::VIRTUAL_DOMAIN );
 	}
 
