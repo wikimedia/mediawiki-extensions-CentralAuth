@@ -3,6 +3,7 @@
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration;
 
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Utils\MWCryptRand;
 use MediaWikiIntegrationTestCase;
@@ -24,7 +25,12 @@ class CentralAuthSessionManagerTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( [], $centralSession );
 	}
 
-	public function testCentralSession() {
+	/**
+	 * @dataProvider provideReadOnly
+	 */
+	public function testCentralSession( bool $readOnly ) {
+		$this->overrideConfigValue( MainConfigNames::ReadOnly, $readOnly ? 'Test' : null );
+
 		ConvertibleTimestamp::setFakeTime( '2025-01-01 00:00:00' );
 		$request = new FauxRequest();
 		$session = $this->getServiceContainer()->getSessionManager()->getEmptySession( $request );
@@ -56,7 +62,12 @@ class CentralAuthSessionManagerTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $newId, $centralSessionId3 );
 	}
 
-	public function testCentralSession_refresh() {
+	/**
+	 * @dataProvider provideReadOnly
+	 */
+	public function testCentralSession_refresh( bool $readOnly ) {
+		$this->overrideConfigValue( MainConfigNames::ReadOnly, $readOnly ? 'Test' : null );
+
 		ConvertibleTimestamp::setFakeTime( '2025-01-01 00:00:00' );
 		$sessionCreationTime = ConvertibleTimestamp::time();
 		$request = new FauxRequest();
@@ -79,6 +90,10 @@ class CentralAuthSessionManagerTest extends MediaWikiIntegrationTestCase {
 		$centralSession = $centralSessionManager->getCentralSessionById( $centralSessionId );
 		$this->assertNotSame( $sessionCreationTime + BagOStuff::TTL_DAY, $centralSession['expiry'] );
 		$this->assertSame( ConvertibleTimestamp::time() + BagOStuff::TTL_DAY, $centralSession['expiry'] );
+	}
+
+	public static function provideReadOnly(): array {
+		return [ [ true ], [ false ] ];
 	}
 
 }
