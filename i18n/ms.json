@@ -14,7 +14,8 @@
 			"Tofeiku"
 		]
 	},
-	"abusefilter-edit-builder-vars-global-user-groups": "Kumpulan sejagat yang disertai oleh pengguna ini",
+	"abusefilter-edit-builder-vars-global-user-editcount": "Kiraan suntingan sejagat pengguna ($1)",
+	"abusefilter-edit-builder-vars-global-user-groups": "Kumpulan sejagat yang pengguna sedang berada ($1)",
 	"action-centralauth-lock": "mengunci atau membuka kunci akaun sejagat",
 	"centralauth": "Pengurus akaun sejagat",
 	"centralauth-abortlogin-renamed": "Akaun anda telah ditukar nama kepada \"$1\". Sila gunakan nama baru ini.",
