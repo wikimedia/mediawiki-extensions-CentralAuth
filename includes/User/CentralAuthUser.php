@@ -214,19 +214,22 @@ class CentralAuthUser implements IDBAccessObject {
 
 	/**
 	 * @param string $username A valid username, or an IP address/range in a format understood
-	 *   by IPUtils.
+	 *   by IPUtils, or a legacy usemod IP.
 	 * @throws NormalizedException on invalid usernames.
 	 */
 	private static function normalizeUsername( string $username ): string {
+		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
 		if ( IPUtils::isValid( $username ) ) {
 			$canonUsername = IPUtils::sanitizeIP( $username );
+		} elseif ( $userNameUtils->isIP( $username ) ) {
+			// 1.2.3.xxx style usemod IP
+			$canonUsername = $username;
 		} elseif ( IPUtils::isValidRange( $username ) ) {
 			$canonUsername = IPUtils::sanitizeRange( $username );
 		} elseif ( ExternalUserNames::isExternal( $username ) ) {
 			$canonUsername = $username;
 		} else {
-			$canonUsername = MediaWikiServices::getInstance()->getUserNameUtils()
-				->getCanonical( $username );
+			$canonUsername = $userNameUtils->getCanonical( $username );
 		}
 
 		if ( $canonUsername === false || $canonUsername === null ) {
