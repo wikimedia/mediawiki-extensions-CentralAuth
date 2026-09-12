@@ -7,7 +7,6 @@ use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\ScrambledPassword;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Maintenance\Maintenance;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Password\InvalidPassword;
 
 /**
@@ -141,7 +140,7 @@ class ScramblePassword extends Maintenance {
 		}
 
 		if ( $success && $this->hasOption( 'email-body' ) && !$this->hasOption( 'dry-run' ) ) {
-			$userFactory = MediaWikiServices::getInstance()->getUserFactory();
+			$userFactory = $this->getServiceContainer()->getUserFactory();
 			$user = $userFactory->newFromName( $userName );
 			$sender = $this->hasOption( 'email-sender' )
 				? $userFactory->newFromName( $this->getOption( 'email-sender' ) )
@@ -165,8 +164,8 @@ class ScramblePassword extends Maintenance {
 		$taskId = $this->getOption( 'task' );
 		$success = $centralUser->scramblePassword( $taskId );
 
-		$userFactory = MediaWikiServices::getInstance()->getUserFactory();
-		$sessionManager = MediaWikiServices::getInstance()->getSessionManager();
+		$userFactory = $this->getServiceContainer()->getUserFactory();
+		$sessionManager = $this->getServiceContainer()->getSessionManager();
 		$user = $userFactory->newFromName( $centralUser->getName() );
 		if ( $user ) {
 			$sessionManager->invalidateSessionsForUser( $user );
@@ -216,7 +215,7 @@ class ScramblePassword extends Maintenance {
 	}
 
 	private function normalizeUserNameBatch( array $batch ): array {
-		$userNameUtils = MediaWikiServices::getInstance()->getUserNameUtils();
+		$userNameUtils = $this->getServiceContainer()->getUserNameUtils();
 		$normalizedBatch = [];
 		foreach ( $batch as $userName ) {
 			$normalizedUserName = $userNameUtils->getCanonical( $userName );
