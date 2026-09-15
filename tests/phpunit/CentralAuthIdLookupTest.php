@@ -165,6 +165,20 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expect, $lookup->lookupCentralIds( $arg, CentralIdLookup::AUDIENCE_RAW ) );
 		$this->assertSame( $expect, $lookup->lookupCentralIds( $arg, $permitted ) );
 		$this->assertSame( $expect2, $lookup->lookupCentralIds( $arg, $nonPermitted ) );
+
+		// The lookups have caching, so it should be possible to load single IDs
+		// (and batches) again without accessing the database
+		$this->disableDatabase( $lookup );
+		foreach ( $arg as $id => $val ) {
+			$this->assertSame( [ $id => $expect2[$id] ], $lookup->lookupCentralIds( [ $id => 'X' ] ) );
+			$this->assertSame( [ $id => $expect[$id] ],
+				$lookup->lookupCentralIds( [ $id => 'X' ], CentralIdLookup::AUDIENCE_RAW ) );
+			$this->assertSame( [ $id => $expect[$id] ],
+				$lookup->lookupCentralIds( [ $id => 'X' ], $permitted ) );
+			$this->assertSame( [ $id => $expect2[$id] ],
+				$lookup->lookupCentralIds( [ $id => 'X' ], $nonPermitted ) );
+		}
+		$this->assertSame( $expect2, $lookup->lookupCentralIds( $arg ) );
 	}
 
 	public function testLookupUserNames() {
@@ -364,6 +378,23 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 		$this->assertSame( $expectedId, $id );
 		$result = $lookup->lookupUserNames( [ 'GlobalUser' => 'X' ] );
 		$this->assertSame( [ 'GlobalUser' => $expectedId ], $result );
+	}
+
+	/**
+	 * Confirm that lookupCentralIds shares its cache with lookupUserNames
+	 */
+	public function testLookupCentralIdsCacheSharing() {
+		$lookup = $this->newLookup();
+
+		$expectedId = self::$centralIds['GlobalUser'];
+		$result = $lookup->lookupCentralIds( [ $expectedId => 'X' ] );
+		$this->assertSame( [ $expectedId => 'GlobalUser' ], $result );
+
+		$this->disableDatabase( $lookup );
+		$this->assertSame( [ $expectedId => 'GlobalUser' ],
+			$lookup->lookupCentralIds( [ $expectedId => 'X' ] ) );
+		$this->assertSame( [ 'GlobalUser' => $expectedId ],
+			$lookup->lookupUserNames( [ 'GlobalUser' => 'X' ] ) );
 	}
 
 	public static function provideLocalUsers() {

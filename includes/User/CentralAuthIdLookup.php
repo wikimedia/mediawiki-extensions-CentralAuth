@@ -17,6 +17,7 @@ use MediaWiki\User\CentralId\CentralIdLookup;
 use MediaWiki\User\UserIdentity;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\NormalizedException\NormalizedException;
+use Wikimedia\ObjectCache\MapCacheLRU;
 use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\Rdbms\IReadableDatabase;
@@ -29,6 +30,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 	private Config $config;
 	private CentralAuthConnectionProvider $caConnectionProvider;
 	private CentralAuthUserCache $userCache;
+	private MapCacheLRU $idCache;
 
 	/** @var array<string,bool> Names that cause a NormalizedException */
 	private $badNameCache = [];
@@ -41,6 +43,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		$this->config = $config;
 		$this->caConnectionProvider = $caConnectionProvider;
 		$this->userCache = $userCache;
+		$this->idCache = new MapCacheLRU( 100 );
 	}
 
 	/** @inheritDoc */
@@ -53,22 +56,53 @@ class CentralAuthIdLookup extends CentralIdLookup {
 
 		$audience = $this->checkAudience( $audience );
 		$fromPrimaryDb = $this->shouldUsePrimary( $flags );
+
+		$idsToLoad = [];
+		foreach ( $idToName as $id => $_ ) {
+			$intId = (int)$id;
+			if ( $this->idCache->has( $intId ) ) {
+				[ $cachedUser, $cachedFromPrimary ] = $this->idCache->get( $intId );
+				if ( !$fromPrimaryDb || $cachedFromPrimary ) {
+					if ( $cachedUser instanceof CentralAuthUser ) {
+						if ( $this->canView( $audience, $cachedUser->getHiddenLevelInt() ) ) {
+							$idToName[$id] = $cachedUser->getName();
+						} else {
+							$idToName[$id] = '';
+						}
+					}
+					continue;
+				}
+			}
+			$idsToLoad[] = $intId;
+		}
+
+		if ( !$idsToLoad ) {
+			return $idToName;
+		}
+
 		$db = $this->getCentralDB( $flags );
 
 		$res = $db->newSelectQueryBuilder()
 			->queryInfo( CentralAuthUser::selectQueryInfo() )
-			->where( [ 'gu_id' => array_map( 'intval', array_keys( $idToName ) ) ] )
+			->where( [ 'gu_id' => $idsToLoad ] )
 			->caller( __METHOD__ )
 			->fetchResultSet();
+		$loadedIds = [];
 		foreach ( $res as $row ) {
 			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
-			if ( $centralUser->getHiddenLevelInt() === CentralAuthUser::HIDDEN_LEVEL_NONE
-				|| $audience === null || $audience->isAllowed( 'centralauth-suppress' )
-			) {
+			$this->userCache->set( $centralUser );
+			$this->idCache->set( $centralUser->getId(), [ $centralUser, $centralUser->isFromPrimary() ] );
+			if ( $this->canView( $audience, $centralUser->getHiddenLevelInt() ) ) {
 				$idToName[$centralUser->getId()] = $centralUser->getName();
 			} else {
 				$idToName[$centralUser->getId()] = '';
 			}
+			$loadedIds[] = $centralUser->getId();
+		}
+
+		$missingIds = array_diff( $idsToLoad, $loadedIds );
+		foreach ( $missingIds as $id ) {
+			$this->idCache->set( $id, [ null, $fromPrimaryDb ] );
 		}
 
 		return $idToName;
@@ -194,6 +228,9 @@ class CentralAuthIdLookup extends CentralIdLookup {
 				} else {
 					$filterPass = true;
 				}
+				if ( $centralUser->getId() ) {
+					$this->idCache->set( $centralUser->getId(), [ $centralUser, $centralUser->isFromPrimary() ] );
+				}
 				if ( $filterPass && $this->canView( $audience, $centralUser->getHiddenLevelInt() ) ) {
 					if ( $centralUser->getId() ) {
 						$nameToId[$name] = $centralUser->getId();
@@ -220,6 +257,9 @@ class CentralAuthIdLookup extends CentralIdLookup {
 		foreach ( $res as $row ) {
 			$centralUser = CentralAuthUser::newFromRow( $row, [], $fromPrimaryDb );
 			$this->userCache->set( $centralUser );
+			if ( $centralUser->getId() ) {
+				$this->idCache->set( $centralUser->getId(), [ $centralUser, $fromPrimaryDb ] );
+			}
 			if ( $filter === self::FILTER_ATTACHED ) {
 				$filterPass = $centralUser->isAttached();
 			} elseif ( $filter === self::FILTER_OWNED ) {
