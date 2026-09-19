@@ -1,5 +1,6 @@
 <?php
 
+use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Password\Password;
@@ -7,6 +8,11 @@ use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\User\User;
 use MediaWiki\User\UserGroupMembership;
 use PHPUnit\Framework\MockObject\MockObject;
+use Wikimedia\Rdbms\IConnectionProvider;
+use Wikimedia\Rdbms\IDatabase;
+use Wikimedia\Rdbms\IDBAccessObject;
+use Wikimedia\Rdbms\IReadableDatabase;
+use Wikimedia\Rdbms\SelectQueryBuilder;
 
 /**
  * Only for tests that do not require the database to be
@@ -331,6 +337,60 @@ class CentralAuthUserTest extends MediaWikiIntegrationTestCase {
 				],
 				[ 'bureaucrat' ]
 			],
+		];
+	}
+
+	/**
+	 * @dataProvider provideGetLocalUserFieldsRecency
+	 */
+	public function testGetLocalUserFieldsRecency(
+		int $recency,
+		bool $replicaHasRow,
+		int $expectedPrimaryReads,
+		bool $expectRow
+	) {
+		$row = (object)[ 'user_id' => '1234' ];
+
+		$replica = $this->createMock( IReadableDatabase::class );
+		$replica->method( 'newSelectQueryBuilder' )
+			->willReturnCallback( static fn () => new SelectQueryBuilder( $replica ) );
+		$replica->method( 'selectRow' )->willReturn( $replicaHasRow ? $row : false );
+
+		$primary = $this->createMock( IDatabase::class );
+		$primary->method( 'newSelectQueryBuilder' )
+			->willReturnCallback( static fn () => new SelectQueryBuilder( $primary ) );
+		$primary->method( 'selectRow' )->willReturn( $row );
+
+		$remoteConnectionProvider = $this->createMock( IConnectionProvider::class );
+		$remoteConnectionProvider->expects( $this->once() )
+			->method( 'getReplicaDatabase' )
+			->willReturn( $replica );
+		$remoteConnectionProvider->expects( $this->exactly( $expectedPrimaryReads ) )
+			->method( 'getPrimaryDatabase' )
+			->willReturn( $primary );
+
+		$caConnectionProvider = $this->createMock( CentralAuthConnectionProvider::class );
+		$caConnectionProvider->method( 'getRemoteWikiConnectionProvider' )
+			->with( 'enwiki' )
+			->willReturn( $remoteConnectionProvider );
+		$this->setService( 'CentralAuth.CentralAuthConnectionProvider', $caConnectionProvider );
+
+		$centralUser = new CentralAuthUser( 'Example user' );
+
+		$this->assertSame(
+			$expectRow ? $row : null,
+			$centralUser->getLocalUserFields( 'enwiki', [ 'user_id' ], $recency )
+		);
+	}
+
+	public static function provideGetLocalUserFieldsRecency() {
+		return [
+			'READ_NORMAL, row in replica' => [ IDBAccessObject::READ_NORMAL, true, 0, true ],
+			// READ_NORMAL must not read the primary, even when the replica has no row
+			'READ_NORMAL, no row in replica' => [ IDBAccessObject::READ_NORMAL, false, 0, false ],
+			'READ_LATEST_IMMUTABLE, row in replica' => [ IDBAccessObject::READ_LATEST_IMMUTABLE, true, 0, true ],
+			// T438591: the replica is behind, so read the primary once and return the row from there
+			'READ_LATEST_IMMUTABLE, no row in replica' => [ IDBAccessObject::READ_LATEST_IMMUTABLE, false, 1, true ],
 		];
 	}
 }

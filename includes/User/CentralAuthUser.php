@@ -710,8 +710,11 @@ class CentralAuthUser implements IDBAccessObject {
 			->fetchRow();
 
 		if ( !$row && DBAccessObjectUtils::hasFlags( $recency, IDBAccessObject::READ_LATEST_IMMUTABLE ) ) {
-			// If not found in replica, and a fallback to primary was requested, try again
-			$row = $this->getLocalUserFields( $wikiId, $fields, $recency & IDBAccessObject::READ_LATEST );
+			// If not found in replica, and a fallback to primary was requested, try again.
+			// Do not mask $recency with READ_LATEST here. READ_LATEST_IMMUTABLE and READ_LATEST are
+			// different bits, so the mask gives READ_NORMAL, which reads a replica a second time.
+			// (T438591)
+			$row = $this->getLocalUserFields( $wikiId, $fields, IDBAccessObject::READ_LATEST );
 		}
 
 		return $row ?: null;
