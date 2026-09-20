@@ -114,14 +114,20 @@ class GlobalPermissionManager {
 		}
 
 		$allGroups = $user->getGlobalGroups();
-		$groupsActiveOnWiki = [];
+		$wikiSetIds = $this->globalGroupManager->getWikiSetIdsForWiki( WikiMap::getCurrentWikiId() );
+		$restrictions = $this->globalGroupManager->getAllGroupWikiSetRestrictions();
 
+		$groupsActiveOnWiki = [];
 		foreach ( $allGroups as $group ) {
-			$wikiSet = $this->globalGroupManager->getGroupWikiSet( $group );
-			if ( $wikiSet === null || $wikiSet->inSet() ) {
+			if ( !isset( $restrictions[$group] ) ) {
+				// No WikiSet restriction: group is active on all wikis
+				$groupsActiveOnWiki[] = $group;
+			} elseif ( in_array( $restrictions[$group], $wikiSetIds ) ) {
+				// Group's WikiSet includes this wiki
 				$groupsActiveOnWiki[] = $group;
 			}
 		}
+
 		return $groupsActiveOnWiki;
 	}
 

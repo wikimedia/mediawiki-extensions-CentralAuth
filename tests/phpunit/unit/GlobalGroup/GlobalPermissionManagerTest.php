@@ -149,8 +149,10 @@ class GlobalPermissionManagerTest extends MediaWikiUnitTestCase {
 		$groupManager = $this->createMock( GlobalGroupManager::class );
 		$groupManager->method( 'getRightsForGroup' )
 			->willReturn( [ 'right1' ], [ 'right2' ] );
-		$groupManager->method( 'getGroupWikiSet' )
-			->willReturn( null );
+		$groupManager->method( 'getAllGroupWikiSetRestrictions' )
+			->willReturn( [] );
+		$groupManager->method( 'getWikiSetIdsForWiki' )
+			->willReturn( [] );
 
 		$permissionManager = new GlobalPermissionManager(
 			$this->createStub( UserFactory::class ),
@@ -319,9 +321,28 @@ class GlobalPermissionManagerTest extends MediaWikiUnitTestCase {
 		$groupManager = $this->createMock( GlobalGroupManager::class );
 		$groupManager->method( 'getRightsForGroup' )
 			->willReturnCallback( static fn ( $group ) => $groupRights[$group] ?? [] );
-		// ?? null seems unneeded, but it silences warnings about key not present
-		$groupManager->method( 'getGroupWikiSet' )
-			->willReturnCallback( static fn ( $group ) => $groupWikiSets[$group] ?? null );
+
+		$restrictionsMap = [];
+		$activeWikiSetIds = [];
+		$fakeId = 1;
+
+		foreach ( $groupWikiSets as $group => $wikiSet ) {
+			if ( $wikiSet !== null ) {
+				// Assign a unique fake restriction ID
+				$restrictionsMap[$group] = $fakeId;
+
+				if ( $wikiSet->inSet() ) {
+					$activeWikiSetIds[] = $fakeId;
+				}
+
+				$fakeId++;
+			}
+		}
+
+		$groupManager->method( 'getAllGroupWikiSetRestrictions' )
+			->willReturn( $restrictionsMap );
+		$groupManager->method( 'getWikiSetIdsForWiki' )
+			->willReturn( $activeWikiSetIds );
 
 		return new GlobalPermissionManager(
 			$userFactory ?? $this->createStub( UserFactory::class ),

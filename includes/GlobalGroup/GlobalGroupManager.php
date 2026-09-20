@@ -135,28 +135,55 @@ class GlobalGroupManager {
 	}
 
 	/**
-	 * Returns the wiki set associated with the group. This method uses cache
+	 * Returns a mapping of all global groups to their WikiSet restriction IDs.
+	 * Groups without a WikiSet restriction will not be included in the result.
 	 *
 	 * @since 1.46
+	 * @return array<string,int> Map of group name => WikiSet ID
 	 */
-	public function getGroupWikiSet( string $groupName ): ?WikiSet {
-		if ( !in_array( $groupName, $this->updatedGroups ) ) {
-			$wikiSetId = $this->wanCache->buildGetWithSetCallback()
-				->globalKey( 'global_group_wikiset', $groupName )
-				->keepForAMonth()
-				->longProcessCache()
-				->callback( static function () use ( $groupName ) {
-					return WikiSet::getWikiSetForGroup( $groupName );
-				} )
-				->fetch();
-		} else {
-			$wikiSetId = WikiSet::getWikiSetForGroup( $groupName );
+	public function getAllGroupWikiSetRestrictions(): array {
+		if ( $this->updatedGroups ) {
+			return $this->fetchAllGroupWikiSetRestrictions();
 		}
 
-		if ( $wikiSetId === 0 ) {
-			return null;
+		return $this->wanCache->buildGetWithSetCallback()
+			->rawKey( $this->makeAllRestrictionsCacheKey() )
+			->keepForAMonth()
+			->longProcessCache()
+			->callback( function () {
+				return $this->fetchAllGroupWikiSetRestrictions();
+			} )
+			->fetch();
+	}
+
+	/**
+	 * Backend for {@see getAllGroupWikiSetRestrictions}
+	 * @return array<string,int>
+	 */
+	private function fetchAllGroupWikiSetRestrictions(): array {
+		$dbr = $this->caConnectionProvider->getReplicaDatabase();
+		$res = $dbr->newSelectQueryBuilder()
+			->select( [ 'ggr_group', 'ggr_set' ] )
+			->from( 'global_group_restrictions' )
+			->caller( __METHOD__ )
+			->fetchResultSet();
+
+		$map = [];
+		foreach ( $res as $row ) {
+			$map[$row->ggr_group] = (int)$row->ggr_set;
 		}
-		return WikiSet::newFromID( $wikiSetId );
+
+		return $map;
+	}
+
+	/**
+	 * Wrapper for WikiSet::getWikiSetIdsForWiki to allow mocking in unit tests.
+	 *
+	 * @since 1.46
+	 * @return int[]
+	 */
+	public function getWikiSetIdsForWiki( string $wiki ): array {
+		return WikiSet::getWikiSetIdsForWiki( $wiki );
 	}
 
 	/**
@@ -338,15 +365,15 @@ class GlobalGroupManager {
 	private function invalidateGroupCache( string $groupName ): void {
 		$this->updatedGroups[] = $groupName;
 		$this->wanCache->delete( $this->makePermissionsCacheKey( $groupName ) );
-		$this->wanCache->delete( $this->makeWikiSetCacheKey( $groupName ) );
+		$this->wanCache->delete( $this->makeAllRestrictionsCacheKey() );
 	}
 
 	private function makePermissionsCacheKey( string $groupName ): string {
 		return $this->wanCache->makeGlobalKey( 'global_group_permissions', $groupName );
 	}
 
-	private function makeWikiSetCacheKey( string $groupName ): string {
-		return $this->wanCache->makeGlobalKey( 'global_group_wikiset', $groupName );
+	private function makeAllRestrictionsCacheKey(): string {
+		return $this->wanCache->makeGlobalKey( 'centralauth-globalgrouprestrictions' );
 	}
 }
 

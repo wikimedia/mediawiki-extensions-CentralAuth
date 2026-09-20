@@ -282,14 +282,13 @@ class GlobalGroupManagerTest extends MediaWikiIntegrationTestCase {
 		$manager = $this->createManager();
 
 		// Initialize cache
-		$oldWikiSet = $manager->getGroupWikiSet( $groupName );
-		$this->assertNull( $oldWikiSet );
+		$manager->getAllGroupWikiSetRestrictions();
 
 		$status = $manager->setWikiSet( $groupName, $wikiSetId );
 
 		$this->assertStatusGood( $status );
-		$newWikiSet = $manager->getGroupWikiSet( $groupName );
-		$this->assertSame( $expectedWikiSet, $newWikiSet?->getId() ?? 0 );
+		$newRestrictions = $manager->getAllGroupWikiSetRestrictions();
+		$this->assertSame( $expectedWikiSet, $newRestrictions[$groupName] ?? 0 );
 	}
 
 	public static function provideSetWikiSet(): array {
@@ -350,6 +349,7 @@ class GlobalGroupManagerTest extends MediaWikiIntegrationTestCase {
 		$caConnectionProvider->method( 'getDBFromRecency' )->with( $this->anything() )
 			->willReturn( $this->getDb() );
 		$caConnectionProvider->method( 'getPrimaryDatabase' )->willReturn( $this->getDb() );
+		$caConnectionProvider->method( 'getReplicaDatabase' )->willReturn( $this->getDb() );
 		return new GlobalGroupManager( $cache, $caConnectionProvider );
 	}
 
