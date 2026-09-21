@@ -3,6 +3,7 @@
 		"authors": [
 			"Chrumps",
 			"Msz2001",
+			"PanWor",
 			"Rail",
 			"Woytecr"
 		]
@@ -64,7 +65,7 @@
 	"apihelp-query+globaluserinfo-param-id": "Globalny identyfikator konta, dla którego pobrać informacje. Jeśli nie podano ani <var>$1user</var> ani <var>$1id</var>, uwzględniony zostanie bieżący użytkownik.",
 	"apihelp-query+globaluserinfo-param-prop": "Które właściwości zwrócić:",
 	"apihelp-query+globaluserinfo-paramvalue-prop-groups": "Pobierz listę grup globalnych, do których należy ten użytkownik.",
-	"apihelp-query+globaluserinfo-paramvalue-prop-rights": "Pobierz listę globalnych uprawnień, jakie posiada ten użytkownik.",
+	"apihelp-query+globaluserinfo-paramvalue-prop-rights": "Pobierz listę globalnych uprawnień, jakie ma ten użytkownik.",
 	"apihelp-query+globaluserinfo-paramvalue-prop-merged": "Pobierz listę połączonych kont.",
 	"apihelp-query+globaluserinfo-paramvalue-prop-unattached": "Pobierz listę niełączonych kont.",
 	"apihelp-query+globaluserinfo-paramvalue-prop-editcount": "Pobierz globalną liczbę edycji użytkownika.",

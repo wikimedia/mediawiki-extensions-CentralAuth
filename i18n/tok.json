@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"PrinceAzuka134",
 			"Tamzin"
 		]
 	},
@@ -10,6 +11,7 @@
 	"centralauth-rightslog-name": "lawa pi wawa jan lon ma ale la pini",
 	"centralauth-token-mismatch": "pakala a. sona pi awen sina li weka la, mi ken ala kepeken pali sina.",
 	"log-name-gblrename": "ante pi nimi jan lon ma ale la pini",
+	"logentry-globalauth-setstatus": "jan $1 li {{GENDER:$2|ante}} e sijelo te $3 to: o ante $4; o ante ala $5",
 	"right-centralauth-createlocal": "sijelo pi ma ale la ona li ken pali e sijelo pi ma ni",
 	"right-centralauth-lock": "sijelo pi ma ale la ona li ken weka anu sin e ken kepeken",
 	"right-centralauth-merge": "ona li ken wan e sijelo ona",
