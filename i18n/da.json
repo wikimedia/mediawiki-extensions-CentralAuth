@@ -308,7 +308,7 @@
 	"centralauth-merge-step3-detail": "Du er klar til at oprette din globale konto med følgende wikier tilknyttet:",
 	"centralauth-merge-step3-submit": "Sammenlæg konti",
 	"centralauth-merge-step3-title": "Opret en global konto",
-	"centralauth-merge-welcome": "'''Din brugerkonto er endnu ikke blevet overført til {{int:Centralauth-groupname}}s fælles loginsystem.'''\n\nHvis du vælger at flytte dine kontoer, kan du bruge samme brugernavn og adgangskode til at logge på med på alle {{int:Centralauth-groupname}}s wikier på alle sprog.\n\nHvis der er nogen der allerede har taget dit brugernavn på et andet projekt, vil det ikke påvirke dem, men give dig mulighed for at finde en løsning med dem eller med en administrator senere.",
+	"centralauth-merge-welcome": "'''Din brugerkonto er endnu ikke blevet overført til {{int:Centralauth-groupname}}s fælles loginsystem.'''\n\nHvis du vælger at flytte dine konti, kan du bruge samme brugernavn og adgangskode til at logge på med på alle {{int:Centralauth-groupname}}s wikier på alle sprog.\n\nHvis der er nogen der allerede har taget dit brugernavn på et andet projekt, vil det ikke påvirke dem, men give dig mulighed for at finde en løsning med dem eller med en administrator senere.",
 	"centralauth-mergeaccount-desc": "[[Special:MergeAccount|Sammenlæg flere konti]] til fælles indlogning",
 	"centralauth-minutes-ago": "$1 {{PLURAL:$1|minut|minutter}} siden",
 	"centralauth-months-ago": "$1 {{PLURAL:$1|måned|måneder}} siden",
