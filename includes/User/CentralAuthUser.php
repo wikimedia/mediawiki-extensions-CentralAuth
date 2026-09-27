@@ -884,7 +884,8 @@ class CentralAuthUser implements IDBAccessObject {
 			if ( !$localUserId ) {
 				$ex = new LocalUserNotFoundException(
 					'Could not find local user data for {username}@{wikiId}',
-					[ 'username' => $this->mName, 'wikiId' => $wikiId ]
+					[ 'username' => $this->mName, 'wikiId' => $wikiId ],
+					fromPrimary: true
 				);
 				$this->logger->warning(
 					'Could not find local user data for {username}@{wikiId}',
@@ -2904,13 +2905,16 @@ class CentralAuthUser implements IDBAccessObject {
 			try {
 				$localUser = $this->localUserData( $wikiId, $recency );
 				$wikis[$wikiId] = array_merge( $wikis[$wikiId], $localUser );
-			} catch ( LocalUserNotFoundException ) {
+			} catch ( LocalUserNotFoundException $e ) {
 				// T119736: localuser table told us that the user was attached
 				// from $wikiId but there is no data in the primary database or replicas
 				// that corroborates that.
 				unset( $wikis[$wikiId] );
-				// Queue a job to delete the bogus attachment record.
-				$this->queueAdminUnattachJob( $wikiId );
+				// T438591: Queue a job to delete the bogus attachment record, but ignore errors
+				// which might be due to replica lag on a freshly created or renamed account.
+				if ( $e->isFromPrimary() ) {
+					$this->queueAdminUnattachJob( $wikiId );
+				}
 			}
 		}
 
@@ -2980,12 +2984,15 @@ class CentralAuthUser implements IDBAccessObject {
 		foreach ( $wikiIDs as $wikiID ) {
 			try {
 				$items[$wikiID] = $this->localUserData( $wikiID, $recency );
-			} catch ( LocalUserNotFoundException ) {
+			} catch ( LocalUserNotFoundException $e ) {
 				// T119736: localnames table told us that the name was
 				// unattached on $wikiId but there is no data in the primary database
 				// or replicas that corroborates that.
-				// Queue a job to delete the bogus record.
-				$this->queueAdminUnattachJob( $wikiID );
+				// T438591: Queue a job to delete the bogus attachment record, but ignore errors
+				// which might be due to replica lag on a freshly created or renamed account.
+				if ( $e->isFromPrimary() ) {
+					$this->queueAdminUnattachJob( $wikiID );
+				}
 			}
 		}
 
@@ -3018,7 +3025,12 @@ class CentralAuthUser implements IDBAccessObject {
 					'wikiId' => $wikiID
 				]
 			);
-			throw new LocalUserNotFoundException( 'Could not find {wikiId}', [ 'wikiId' => $wikiID ] );
+			throw new LocalUserNotFoundException(
+				'Could not find {wikiId}',
+				[ 'wikiId' => $wikiID ],
+				// local DB config is always up to date
+				fromPrimary: true,
+			);
 		}
 
 		$fields = [
@@ -3032,15 +3044,15 @@ class CentralAuthUser implements IDBAccessObject {
 		];
 		$row = $this->getLocalUserFields( $wikiID, $fields, $recency );
 		if ( !$row ) {
+			$fromPrimary = DBAccessObjectUtils::hasFlags( $recency, IDBAccessObject::READ_LATEST ) ||
+				DBAccessObjectUtils::hasFlags( $recency, IDBAccessObject::READ_LATEST_IMMUTABLE );
 			$ex = new LocalUserNotFoundException(
 				'Could not find local user data for {username}@{wikiId}',
-				[ 'username' => $this->mName, 'wikiId' => $wikiID ]
+				[ 'username' => $this->mName, 'wikiId' => $wikiID ],
+				$fromPrimary,
 			);
 			// (T385310) Only log a warning if we queried the primary database
-			if (
-				DBAccessObjectUtils::hasFlags( $recency, IDBAccessObject::READ_LATEST ) ||
-				DBAccessObjectUtils::hasFlags( $recency, IDBAccessObject::READ_LATEST_IMMUTABLE )
-			) {
+			if ( $fromPrimary ) {
 				$this->logger->warning(
 					'Could not find local user data for {username}@{wikiId}',
 					[

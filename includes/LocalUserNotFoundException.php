@@ -20,10 +20,15 @@ class LocalUserNotFoundException extends Exception implements INormalizedExcepti
 
 	public function __construct(
 		string $normalizedMessage = '',
-		array $messageContext = []
+		array $messageContext = [],
+		private bool $fromPrimary = false,
 	) {
 		$this->normalizedMessage = $normalizedMessage;
 		$this->messageContext = $messageContext;
 		parent::__construct( self::getMessageFromNormalizedMessage( $normalizedMessage, $messageContext ) );
+	}
+
+	public function isFromPrimary(): bool {
+		return $this->fromPrimary;
 	}
 }
