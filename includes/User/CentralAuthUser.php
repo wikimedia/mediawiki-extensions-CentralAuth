@@ -2912,7 +2912,10 @@ class CentralAuthUser implements IDBAccessObject {
 				unset( $wikis[$wikiId] );
 				// T438591: Queue a job to delete the bogus attachment record, but ignore errors
 				// which might be due to replica lag on a freshly created or renamed account.
-				if ( $e->isFromPrimary() ) {
+				// T438591: Do not queue the job during a global rename. The rename makes
+				// localnames and localuser disagree with the local user table on purpose
+				// until the LocalRenameUserJob for each wiki is complete.
+				if ( $e->isFromPrimary() && !$this->renameInProgress() ) {
 					$this->queueAdminUnattachJob( $wikiId );
 				}
 			}
@@ -2990,7 +2993,10 @@ class CentralAuthUser implements IDBAccessObject {
 				// or replicas that corroborates that.
 				// T438591: Queue a job to delete the bogus attachment record, but ignore errors
 				// which might be due to replica lag on a freshly created or renamed account.
-				if ( $e->isFromPrimary() ) {
+				// T438591: Do not queue the job during a global rename. The rename makes
+				// localnames and localuser disagree with the local user table on purpose
+				// until the LocalRenameUserJob for each wiki is complete.
+				if ( $e->isFromPrimary() && !$this->renameInProgress() ) {
 					$this->queueAdminUnattachJob( $wikiID );
 				}
 			}

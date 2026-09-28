@@ -48,6 +48,12 @@ class CentralAuthUnattachUserJob extends Job {
 			return true;
 		}
 		$causer = CentralAuthUser::getPrimaryInstanceByName( $username );
+		if ( $causer->renameInProgress() ) {
+			// Do not unattach mid-rename. The only input we have is username, and it is possible
+			// the names are not yet fixed. See T438591.
+			return true;
+		}
+
 		$causer->removeLocalName( $wiki );
 		if ( $causer->exists() ) {
 			$causer->adminUnattach( [ $wiki ] );
