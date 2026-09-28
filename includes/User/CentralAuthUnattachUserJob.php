@@ -10,6 +10,7 @@ namespace MediaWiki\Extension\CentralAuth\User;
 
 use MediaWiki\JobQueue\Job;
 use MediaWiki\User\User;
+use Wikimedia\Rdbms\IDBAccessObject;
 
 /**
  * A job to unattach a user.
@@ -35,7 +36,13 @@ class CentralAuthUnattachUserJob extends Job {
 		$username = $this->params['username'];
 		$wiki = $this->params['wiki'];
 		$user = User::newFromName( $username );
-		if ( $user->getId() !== 0 ) {
+
+		$userId = $user->getId();
+		if ( !$userId ) {
+			$user->load( IDBAccessObject::READ_LATEST );
+			$userId = $user->getId();
+		}
+		if ( $userId !== 0 ) {
 			// User has been created since this job was queued.
 			// Races are fun!
 			return true;
