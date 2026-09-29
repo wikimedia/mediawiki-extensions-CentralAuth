@@ -1,6 +1,7 @@
 {
 	"@metadata": {
 		"authors": [
+			"A.jalate",
 			"Alan",
 			"AlvaroMolina",
 			"Dgstranz",
@@ -51,7 +52,7 @@
 	"apihelp-query+globalallusers-param-group": "Limitar usuarios a los grupos globales.",
 	"apihelp-query+globalallusers-param-limit": "Cuántos nombres de usuarios en total se devolverán.",
 	"apihelp-query+globalallusers-param-prefix": "Buscar todos los usuarios que empiecen con este valor.",
-	"apihelp-query+globalallusers-param-prop": "Qué piezas de información incluir:",
+	"apihelp-query+globalallusers-param-prop": "Qué piezas de información debe incluir:",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "Si la cuenta de usuario está bloqueada.",
 	"apihelp-query+globalallusers-paramvalue-prop-groups": "Enumera los grupos globales en los que se encuentra el usuario. Esto utiliza más recursos del servidor y puede devolver menos resultados que los fijados en el límite.",
 	"apihelp-query+globalallusers-paramvalue-prop-existslocally": "Agrega la información si el usuario existe localmente.",
@@ -59,7 +60,7 @@
 	"apihelp-query+globalallusers-summary": "Enumerar todos los usuarios globales.",
 	"apihelp-query+globalgroups-example-1": "Lista de grupos globales",
 	"apihelp-query+globalgroups-example-2": "Mostrar grupos globales con los derechos que conceden",
-	"apihelp-query+globalgroups-param-prop": "Qué piezas de información incluir.",
+	"apihelp-query+globalgroups-param-prop": "Qué piezas de información debe incluir.",
 	"apihelp-query+globalgroups-summary": "Enumerar todos los grupos globales.",
 	"apihelp-query+globalrenamestatus-example-1": "Obtener información acerca de la cuenta global actual",
 	"apihelp-query+globalrenamestatus-param-user": "Usuario que está siendo renombrado. Puede ser tanto el nombre antiguo o el nuevo.",
@@ -80,7 +81,7 @@
 	"apihelp-query+wikisets-param-from": "El nombre del conjunto de wikis desde el cual iniciar.",
 	"apihelp-query+wikisets-param-limit": "Cuántos conjuntos de wiki se devolverán.",
 	"apihelp-query+wikisets-param-orderbyname": "Ordenar los resultados por nombre.",
-	"apihelp-query+wikisets-param-prop": "Qué piezas de información incluir:",
+	"apihelp-query+wikisets-param-prop": "Qué piezas de información debe incluir:",
 	"apihelp-query+wikisets-paramvalue-prop-type": "Basado en la inclusión (incluye solo las wikis especificadas) o basado en la exclusión (incluye todas las wikis excepto las especificados).",
 	"apihelp-query+wikisets-paramvalue-prop-wikisincluded": "Las wikis incluidas en este conjunto.",
 	"apihelp-query+wikisets-paramvalue-prop-wikisnotincluded": "Las wikis que no están incluidas en este conjunto.",

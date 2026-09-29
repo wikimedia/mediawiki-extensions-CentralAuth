@@ -4,6 +4,7 @@
 			"Abanima",
 			"Alshamiri1",
 			"Meno25",
+			"Mohammed Qays",
 			"ديفيد",
 			"محمد أحمد عبد الفتاح"
 		]
@@ -57,7 +58,7 @@
 	"apihelp-query+globalallusers-summary": "تعداد جميع المستخدمين العالميين.",
 	"apihelp-query+globalgroups-example-1": "إدراج المجموعات العالمية",
 	"apihelp-query+globalgroups-example-2": "عرض المجموعات العالمية بالصلاحيات التي تمنحها",
-	"apihelp-query+globalgroups-param-prop": "أي قطعة من المعلومات يجب تضمينها:",
+	"apihelp-query+globalgroups-param-prop": "ما هي المعلومات التي يجب تضمينها:",
 	"apihelp-query+globalgroups-summary": "تعداد جميع المجموعات العالمية.",
 	"apihelp-query+globalrenamestatus-example-1": "الحصول على معلومات حول المستخدم العالمي الحالي",
 	"apihelp-query+globalrenamestatus-param-user": "المستخدم الذي تتم إعادة تسميته، يمكن أن يكون إما اسمهم القديم أو اسمهم الجديد.",

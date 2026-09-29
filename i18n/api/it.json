@@ -32,7 +32,7 @@
 	"apihelp-query+globalallusers-param-prefix": "Ricerca per tutti gli utenti che iniziano con questo valore.",
 	"apihelp-query+globalallusers-param-to": "Il nome utente al quale interrompere l'elenco.",
 	"apihelp-query+globalgroups-example-1": "Elenco gruppi globali",
-	"apihelp-query+globalgroups-param-prop": "Che tipo di informazioni includere.",
+	"apihelp-query+globalgroups-param-prop": "Quali informazioni includere.",
 	"apihelp-query+globalrenamestatus-example-1": "Ottieni informazioni sull'utente globale attuale",
 	"apihelp-query+globalrenamestatus-summary": "Mostra le informazioni sulle ridenominazioni globali in corso.",
 	"apihelp-query+globaluserinfo-example-1": "Ottieni informazioni sull'utente globale attuale",
