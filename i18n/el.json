@@ -130,7 +130,7 @@
 	"centralauth-completelogin-back": "Επιστροφή στην προηγούμενη σελίδα.",
 	"centralauth-contribs-link": "καθολικός λογαριασμός",
 	"centralauth-contribs-locked": "Αυτός ο λογαριασμός είναι καθολικά κλειδωμένος. \nΔείτε τις [[Special:CentralAuth/$1|καθολικές λεπτομέρειες λογαριασμού]] για περισσότερες πληροφορίες.",
-	"centralauth-contribs-locked-log": "Αυτός ο λογαριασμός είναι καθολικά κλειδωμένος.\n Η πιο πρόσφατη καταχώρηση αρχείου καταγραφής κλειδώματος παρέχεται παρακάτω για αναφορά:",
+	"centralauth-contribs-locked-log": "Αυτός ο λογαριασμός είναι καθολικά κλειδωμένος.\nΗ πιο πρόσφατη καταχώρηση αρχείου καταγραφής κλειδώματος παρέχεται παρακάτω για αναφορά:",
 	"centralauth-days-ago": "$1 {{PLURAL:$1|μέρα|μέρες}} πριν",
 	"centralauth-delete-empty-account": "Άδειος λογαριασμός",
 	"centralauth-desc": "[[Special:MergeAccount|Συγχώνευση λογαριασμών]] σε όλα τα wiki της ομάδας {{int:Centralauth-groupname}}",
