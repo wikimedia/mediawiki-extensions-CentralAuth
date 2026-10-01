@@ -12,7 +12,8 @@
 			"Macofe",
 			"MarcoAurelio",
 			"McDutchie",
-			"Ryo567"
+			"Ryo567",
+			"A.jalate"
 		]
 	},
 	"apierror-centralauth-badsession": "Solo se puede obtener una centralauthtoken cuando se utilizan en sesiones de CentralAuth.",
