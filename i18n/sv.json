@@ -66,7 +66,7 @@
 	"centralauth-admin-bad-input": "Ogiltigt val för sammanslagning.",
 	"centralauth-admin-blocked-reason": "Orsak: $1",
 	"centralauth-admin-blocked2": "Blockerad, upphör den $2, kl. $3.",
-	"centralauth-admin-blocked2-indef": "Blockerade på obestämd tid.",
+	"centralauth-admin-blocked2-indef": "Blockerad på obestämd tid.",
 	"centralauth-admin-blocklog": "blockeringslogg",
 	"centralauth-admin-delete-button": "Radera detta konto",
 	"centralauth-admin-delete-confirm": "Vill du verkligen radera detta konto?",
