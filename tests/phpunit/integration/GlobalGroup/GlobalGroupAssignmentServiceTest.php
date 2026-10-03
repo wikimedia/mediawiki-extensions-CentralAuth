@@ -17,6 +17,7 @@ use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
 use MediaWiki\User\RestrictedUserGroupConfigReader;
 use MediaWiki\User\User;
+use MediaWiki\User\UserGroupMembership;
 use MediaWiki\WikiMap\WikiMap;
 use Wikimedia\Message\MessageValue;
 use Wikimedia\TestingAccessWrapper;
