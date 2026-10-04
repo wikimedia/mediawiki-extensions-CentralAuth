@@ -66,19 +66,19 @@ class GlobalGroupManager {
 			return $this->getRightsForGroupInternal( $group, $flags );
 		}
 
-		$rights = $this->wanCache->getWithSetCallback(
-			$this->makePermissionsCacheKey( $group ),
-			WANObjectCache::TTL_MONTH,
-			function () use ( $group ) {
+		$rights = $this->wanCache->buildGetWithSetCallback()
+			->globalKey( 'global_group_permissions', $group )
+			->keepForAMonth()
+			->longProcessCache()
+			->callback( function () use ( $group ) {
 				$rights = $this->getRightsForGroupInternal( $group, IDBAccessObject::READ_NORMAL );
 				if ( $rights === [] ) {
 					// Don't cache inexistent groups
 					return false;
 				}
 				return $rights;
-			},
-			[ 'pcTTL' => WANObjectCache::TTL_PROC_LONG ]
-		);
+			} )
+			->fetch();
 		if ( $rights === false ) {
 			return [];
 		}
@@ -141,14 +141,14 @@ class GlobalGroupManager {
 	 */
 	public function getGroupWikiSet( string $groupName ): ?WikiSet {
 		if ( !in_array( $groupName, $this->updatedGroups ) ) {
-			$wikiSetId = $this->wanCache->getWithSetCallback(
-				$this->makeWikiSetCacheKey( $groupName ),
-				WANObjectCache::TTL_MONTH,
-				static function () use ( $groupName ) {
+			$wikiSetId = $this->wanCache->buildGetWithSetCallback()
+				->globalKey( 'global_group_wikiset', $groupName )
+				->keepForAMonth()
+				->longProcessCache()
+				->callback( static function () use ( $groupName ) {
 					return WikiSet::getWikiSetForGroup( $groupName );
-				},
-				[ 'pcTTL' => WANObjectCache::TTL_PROC_LONG ]
-			);
+				} )
+				->fetch();
 		} else {
 			$wikiSetId = WikiSet::getWikiSetForGroup( $groupName );
 		}

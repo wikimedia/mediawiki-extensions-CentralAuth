@@ -45,13 +45,13 @@ class CentralAuthEditCounter {
 
 		if ( $this->caConnectionProvider->isReadOnly() ) {
 			// Don't try DB_PRIMARY since that will throw an exception
-			return $this->wanCache->getWithSetCallback(
-				$this->wanCache->makeGlobalKey( 'centralauth-editcount', $centralUser->getId() ),
-				5 * $this->wanCache::TTL_MINUTE,
-				function () use ( $centralUser ) {
+			return $this->wanCache->buildGetWithSetCallback()
+				->globalKey( 'centralauth-editcount', $centralUser->getId() )
+				->lifetime( 5 * $this->wanCache::TTL_MINUTE )
+				->callback( function () use ( $centralUser ) {
 					return $this->getCountFromWikis( $centralUser );
-				}
-			);
+				} )
+				->fetch();
 		}
 
 		$dbw = $this->caConnectionProvider->getPrimaryDatabase();

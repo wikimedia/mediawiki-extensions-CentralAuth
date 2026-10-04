@@ -610,10 +610,12 @@ class CentralAuthUser implements IDBAccessObject {
 	 * @return bool
 	 */
 	private function loadFromCache() {
-		$data = $this->wanCache->getWithSetCallback(
-			$this->getCacheKey( $this->wanCache ),
-			$this->wanCache::TTL_DAY,
-			function ( $oldValue, &$ttl ) {
+		$data = $this->wanCache->buildGetWithSetCallback()
+			->globalKey( 'centralauth-user', hash( 'sha256', $this->mName ) )
+			->keepForADay()
+			->longProcessCache()
+			->valueVersion( self::VERSION )
+			->callback( function ( $oldValue, &$ttl ) {
 				$this->loadFromDatabase();
 				$this->loadAttached();
 				$this->loadGroups();
@@ -631,9 +633,8 @@ class CentralAuthUser implements IDBAccessObject {
 				}
 
 				return $data;
-			},
-			[ 'pcTTL' => $this->wanCache::TTL_PROC_LONG, 'version' => self::VERSION ]
-		);
+			} )
+			->fetch();
 
 		$this->loadFromCacheObject( $data );
 
@@ -989,24 +990,21 @@ class CentralAuthUser implements IDBAccessObject {
 		}
 
 		$cacheMiss = false;
-		$cacheKey = $this->wanCache->makeGlobalKey( 'centralauthuser-getblocks', $centralId );
-		$blocksByWikiId = $this->wanCache->getWithSetCallback(
-			$cacheKey,
-			$this->wanCache::TTL_MONTH,
-			function () use ( $wikis, &$cacheMiss ) {
+		$blocksByWikiId = $this->wanCache->buildGetWithSetCallback()
+			->globalKey( 'centralauthuser-getblocks', $centralId )
+			->keepForAMonth()
+			->callback( function () use ( $wikis, &$cacheMiss ) {
 				$cacheMiss = true;
 				return $this->queryForBlocks( $wikis );
-			},
-			[
-				'touchedCallback' => function ( $oldValue ) use ( $wikis ) {
-					if ( $this->shouldFetchFreshBlocks( $oldValue, $wikis ) ) {
-						return time();
-					} else {
-						return null;
-					}
+			} )
+			->lastModifiedCallback( function ( $oldValue ) use ( $wikis ) {
+				if ( $this->shouldFetchFreshBlocks( $oldValue, $wikis ) ) {
+					return time();
+				} else {
+					return null;
 				}
-			]
-		);
+			} )
+			->fetch();
 
 		// There isn't a hook for blocks expiring. Cached values need to
 		// manually filter out for expired blocks to match with the fresh
@@ -2861,10 +2859,10 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	public function getLocalGroups() {
 		// Cache is invalidated in onUserGroupsChanged() hook handler, so we can use long TTL
-		return $this->wanCache->getWithSetCallback(
-			$this->wanCache->makeGlobalKey( 'centralauthuser-getlocalgroups', $this->getId() ),
-			$this->wanCache::TTL_MONTH,
-			function () {
+		return $this->wanCache->buildGetWithSetCallback()
+			->globalKey( 'centralauthuser-getlocalgroups', $this->getId() )
+			->keepForAMonth()
+			->callback( function () {
 				$localgroups = [];
 				// T385310: Read attached accounts from replicas to avoid warnings about accounts
 				// which are just being created. Any newly created accounts are probably not in any
@@ -2875,8 +2873,8 @@ class CentralAuthUser implements IDBAccessObject {
 					) );
 				}
 				return $localgroups;
-			}
-		);
+			} )
+			->fetch();
 	}
 
 	/**

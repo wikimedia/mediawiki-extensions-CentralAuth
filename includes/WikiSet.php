@@ -130,10 +130,11 @@ class WikiSet {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$fname = __METHOD__;
 
-		$data = $cache->getWithSetCallback(
-			self::getPerNameCacheKey( $cache, $name ),
-			$cache::TTL_INDEFINITE,
-			function ( $oldValue, &$ttl ) use ( $name, $fname ) {
+		$data = $cache->buildGetWithSetCallback()
+			->globalKey( __CLASS__, 'name', md5( $name ) )
+			->keepIndefinitely()
+			->valueVersion( self::VERSION )
+			->callback( function ( $oldValue, &$ttl ) use ( $name, $fname ) {
 				$dbr = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 				$row = $dbr->newSelectQueryBuilder()
 					->select( '*' )
@@ -152,9 +153,8 @@ class WikiSet {
 				}
 
 				return $value;
-			},
-			[ 'version' => self::VERSION ]
-		);
+			} )
+			->fetch();
 
 		if ( !$data ) {
 			return null;
@@ -173,10 +173,11 @@ class WikiSet {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$fname = __METHOD__;
 
-		$data = $cache->getWithSetCallback(
-			self::getPerIdCacheKey( $cache, $id ),
-			$cache::TTL_INDEFINITE,
-			function ( $oldValue, &$ttl ) use ( $id, $fname ) {
+		$data = $cache->buildGetWithSetCallback()
+			->globalKey( __CLASS__, 'id', $id )
+			->keepIndefinitely()
+			->valueVersion( self::VERSION )
+			->callback( function ( $oldValue, &$ttl ) use ( $id, $fname ) {
 				$dbr = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 				$row = $dbr->newSelectQueryBuilder()
 					->select( '*' )
@@ -195,9 +196,8 @@ class WikiSet {
 				}
 
 				return $value;
-			},
-			[ 'version' => self::VERSION ]
-		);
+			} )
+			->fetch();
 
 		if ( !$data ) {
 			return null;
