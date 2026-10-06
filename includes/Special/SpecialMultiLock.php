@@ -367,7 +367,9 @@ class SpecialMultiLock extends SpecialPage {
 			(string)new \OOUI\CheckboxInputWidget( [
 				'name' => 'wpActionTarget[' . $guName . ']',
 				'value' => $guName,
-				'selected' => true,
+				'selected' => $this->mMethod === 'set-status' && is_array( $this->mActionUserNames )
+					? in_array( $guName, $this->mActionUserNames, true )
+					: true,
 			] )
 		);
 		$rowHtml .= Html::rawElement( 'td', [], $guLink );
