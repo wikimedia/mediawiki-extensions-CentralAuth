@@ -612,7 +612,7 @@ class CentralAuthUser implements IDBAccessObject {
 	 */
 	private function loadFromCache() {
 		$data = $this->wanCache->buildGetWithSetCallback()
-			->globalKey( 'centralauth-user', hash( 'sha256', $this->mName ) )
+			->rawKey( $this->getCacheKey( $this->wanCache ) )
 			->keepForADay()
 			->longProcessCache()
 			->valueVersion( self::VERSION )

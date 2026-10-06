@@ -67,7 +67,7 @@ class GlobalGroupManager {
 		}
 
 		$rights = $this->wanCache->buildGetWithSetCallback()
-			->globalKey( 'global_group_permissions', $group )
+			->rawKey( $this->makePermissionsCacheKey( $group ) )
 			->keepForAMonth()
 			->longProcessCache()
 			->callback( function () use ( $group ) {
