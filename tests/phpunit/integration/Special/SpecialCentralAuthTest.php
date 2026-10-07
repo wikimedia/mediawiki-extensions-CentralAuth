@@ -21,8 +21,6 @@ use MediaWiki\Logging\LogPage;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Request\FauxRequest;
 use MediaWiki\Request\WebRequest;
-use MediaWiki\Site\HashSiteStore;
-use MediaWiki\Site\MediaWikiSite;
 use MediaWiki\Tests\Specials\SpecialPageTestBase;
 use MediaWiki\Tests\Unit\Permissions\MockAuthorityTrait;
 use MediaWiki\Tests\User\TempUser\TempUserTestTrait;
@@ -53,12 +51,11 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 			MainConfigNames::CentralIdLookupProvider => 'CentralAuth',
 			// To avoid complexity related to the use of shared domain
 			CAMainConfigNames::CentralAuthEnableSul3 => false,
+			// WikiMap::getWiki uses these for the current wiki
+			MainConfigNames::CanonicalServer => 'https://en.wikipedia.org',
+			MainConfigNames::Server => 'https://en.wikipedia.org',
+			MainConfigNames::ArticlePath => '/wiki/$1',
 		] );
-
-		$currentSite = new MediaWikiSite();
-		$currentSite->setGlobalId( WikiMap::getCurrentWikiId() );
-		$currentSite->setPath( MediaWikiSite::PATH_PAGE, 'https://en.wikipedia.org/wiki/$1' );
-		$this->setService( 'SiteLookup', new HashSiteStore( [ $currentSite ] ) );
 	}
 
 	protected function newSpecialPage(): SpecialCentralAuth {
