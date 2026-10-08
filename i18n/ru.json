@@ -56,7 +56,8 @@
 			"Умар",
 			"Ядерный Трамвай",
 			"Vonavy",
-			"Shabe"
+			"Shabe",
+			"Mitte27"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-groups": "Глобальные группы участника ($1)",
@@ -98,6 +99,7 @@
 	"centralauth-admin-hidden-oversight": "полностью скрыто",
 	"centralauth-admin-info-attached": "Количество присоединённых учётных записей:",
 	"centralauth-admin-info-editcount": "Общий счётчик правок:",
+	"centralauth-admin-info-editcountsum": "Общее число локальных правок:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|1=Глобальная группа|Глобальные группы}}:",
 	"centralauth-admin-info-header": "Информация о глобальной учётной записи",
 	"centralauth-admin-info-hidden": "Сокрытие:",
@@ -353,6 +355,7 @@
 	"centralauth-rename-badusername": "Запрошено недопустимое имя учётной записи.",
 	"centralauth-rename-cannotself": "Вы не можете переименовать сами себя.",
 	"centralauth-rename-confirm": "Вы действительно хотите глобально переименовать участника?",
+	"centralauth-rename-confirm-vanish": "Вы действительно хотите выполнить глобальное скрытие этого пользователя?",
 	"centralauth-rename-conflict-hidden": "имя участника скрыто",
 	"centralauth-rename-deny": "Вы действительно хотите удалить этот запрос?",
 	"centralauth-rename-doesnotexist": "Предоставленная учётная запись не существует.",
