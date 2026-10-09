@@ -64,6 +64,8 @@
 	"apihelp-query+globalrenamestatus-param-user": "المستخدم الذي تتم إعادة تسميته، يمكن أن يكون إما اسمهم القديم أو اسمهم الجديد.",
 	"apihelp-query+globalrenamestatus-summary": "عرض معلومات حول عمليات إعادة التسمية العالمية قيد التقدم.",
 	"apihelp-query+globalrenamequeue-summary": "عرض قائمة الطلبات في قائمة إعادة التسمية العامة.",
+	"apihelp-query+globalrenamequeue-param-queue": "أي طابور تود الاستعلام عنه: <kbd>open</kbd> للطلبات المعلقة التي تنتظر المراجعة، أو <kbd>closed</kbd> للطلبات التي تمت الموافقة عليها أو رفضها.",
+	"apihelp-query+globalrenamequeue-param-status": "تصفية الطلبات المغلقة حسب الحالة. يُستخدم فقط عندما تكون <var>$1queue</var> مضبوطة على <kbd>closed</kbd>.",
 	"apihelp-query+globalrenamequeue-param-type": "قم بالتصفية حسب نوع الطلب.",
 	"apihelp-query+globalrenamequeue-paramvalue-type-rename": "طلبات إعادة التسمية المنتظمة.",
 	"apihelp-query+globalrenamequeue-paramvalue-type-vanish": "طلبات اختفاء الحساب.",
