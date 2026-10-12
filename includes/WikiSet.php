@@ -137,7 +137,7 @@ class WikiSet {
 			->callback( function ( $oldValue, &$ttl ) use ( $name, $fname ) {
 				$dbr = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 				$row = $dbr->newSelectQueryBuilder()
-					->select( '*' )
+					->select( [ 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ] )
 					->from( 'wikiset' )
 					->where( [ 'ws_name' => $name ] )
 					->caller( $fname )
@@ -180,7 +180,7 @@ class WikiSet {
 			->callback( function ( $oldValue, &$ttl ) use ( $id, $fname ) {
 				$dbr = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 				$row = $dbr->newSelectQueryBuilder()
-					->select( '*' )
+					->select( [ 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ] )
 					->from( 'wikiset' )
 					->where( [ 'ws_id' => $id ] )
 					->caller( $fname )
@@ -376,7 +376,7 @@ class WikiSet {
 		$dbr = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 
 		$qb = $dbr->newSelectQueryBuilder()
-			->select( '*' )
+			->select( [ 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ] )
 			->from( 'wikiset' )
 			->caller( __METHOD__ );
 
