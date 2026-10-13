@@ -4,15 +4,16 @@ namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Extension\CentralAuth\GlobalGroup\GlobalGroupAssignmentService;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
-use MediaWiki\MediaWikiServices;
 use MediaWiki\Permissions\UltimateAuthority;
 use MediaWiki\User\Hook\UserGroupsChangedHook;
 use Wikimedia\Message\MessageValue;
+use Wikimedia\ObjectCache\WANObjectCache;
 
 class UserGroupsHookHandler implements UserGroupsChangedHook {
 
 	public function __construct(
-		private readonly GlobalGroupAssignmentService $globalGroupAssignmentService
+		private readonly WANObjectCache $cache,
+		private readonly GlobalGroupAssignmentService $globalGroupAssignmentService,
 	) {
 	}
 
@@ -36,8 +37,7 @@ class UserGroupsHookHandler implements UserGroupsChangedHook {
 		}
 
 		// Clear cache for CentralAuthUser::getLocalGroups()
-		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
-		$cache->delete( $cache->makeGlobalKey( 'centralauthuser-getlocalgroups', $globalUser->getId() ) );
+		$this->cache->delete( $this->cache->makeGlobalKey( 'centralauthuser-getlocalgroups', $globalUser->getId() ) );
 
 		// T387523: Return if no performer is set to avoid throwing an exception, which occurs when
 		// the user is autopromoted into a group through $wgAutopromoteOnce. Updating automatic

@@ -32,6 +32,7 @@ class UserGroupsHookHandlerTest extends MediaWikiIntegrationTestCase {
 
 	private function getHandler() {
 		return new UserGroupsHookHandler(
+			$this->getServiceContainer()->getWANObjectCache(),
 			CentralAuthServices::getGlobalGroupAssignmentService( $this->getServiceContainer() )
 		);
 	}

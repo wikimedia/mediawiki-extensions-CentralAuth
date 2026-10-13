@@ -710,6 +710,7 @@
 		"usergroups": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\UserGroupsHookHandler",
 			"services": [
+				"WANObjectCache",
 				"CentralAuth.GlobalGroupAssignmentService"
 			]
 		},
