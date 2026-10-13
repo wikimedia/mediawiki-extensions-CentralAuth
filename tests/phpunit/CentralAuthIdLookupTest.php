@@ -113,7 +113,7 @@ class CentralAuthIdLookupTest extends MediaWikiIntegrationTestCase {
 						'CentralAuth.CentralAuthUserCache',
 					],
 				],
-			],
+			] + $this->getConfVar( MainConfigNames::CentralIdLookupProviders ),
 			MainConfigNames::CentralIdLookupProvider => 'central',
 		] );
 		return $this->getServiceContainer()->getCentralIdLookupFactory()->getLookup();
