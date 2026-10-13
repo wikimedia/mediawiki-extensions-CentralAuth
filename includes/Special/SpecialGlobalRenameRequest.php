@@ -166,7 +166,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				'required'      => true,
 				'type'          => 'text',
 				'help-message'  => $suggestedHelp,
-				'validation-callback' => [ $this, 'validateNewname' ],
+				'validation-callback' => $this->validateNewname( ... ),
 			],
 		];
 
@@ -195,7 +195,7 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 				'required'      => true,
 				'type'          => 'email',
 				'help-message'  => 'globalrenamerequest-email2-help',
-				'validation-callback' => [ $this, 'validateEmail' ],
+				'validation-callback' => $this->validateEmail( ... ),
 			];
 		}
 
@@ -243,8 +243,9 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @param HTMLForm $form
 	 * @return bool|Message True on success, or String error to display, or
 	 *   false to fail validation without displaying an error.
+	 * @suppress PhanUnusedPrivateMethodParameter Used as callback with fix signature
 	 */
-	public function validateNewname( $value, $alldata, HTMLForm $form ) {
+	private function validateNewname( $value, $alldata, HTMLForm $form ) {
 		if ( $value === null ) {
 			// Not submitted yet
 			return true;
@@ -259,8 +260,9 @@ class SpecialGlobalRenameRequest extends FormSpecialPage {
 	 * @param HTMLForm $form
 	 * @return bool|Message True on success, or String error to display, or
 	 *   false to fail validation without displaying an error.
+	 * @suppress PhanUnusedPrivateMethodParameter Used as callback with fix signature
 	 */
-	public function validateEmail( $value, $alldata, HTMLForm $form ) {
+	private function validateEmail( $value, $alldata, HTMLForm $form ) {
 		if ( $alldata['email'] !== $alldata['email2'] ) {
 			return $this->msg( 'globalrenamerequest-email-mismatch' );
 		} elseif ( !Sanitizer::validateEmail( $alldata['email'] ) ) {

@@ -124,7 +124,7 @@ abstract class LocalRenameJob extends Job {
 		}
 		try {
 			$this->doRun( $fnameTrxOwner );
-			$this->addTeardownCallback( [ $this, 'scheduleNextWiki' ] );
+			$this->addTeardownCallback( $this->scheduleNextWiki( ... ) );
 		} catch ( Exception $e ) {
 			// This will lock the user out of their account until a sysadmin intervenes
 			$factory->rollbackPrimaryChanges( $fnameTrxOwner );

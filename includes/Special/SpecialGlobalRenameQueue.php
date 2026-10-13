@@ -681,7 +681,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 			$htmlForm->addHeaderHtml( $message->toString() );
 		}
 
-		$htmlForm->setSubmitCallback( [ $this, 'onProcessSubmit' ] );
+		$htmlForm->setSubmitCallback( $this->onProcessSubmit( ... ) );
 
 		$out = $this->getOutput();
 		$out->addModuleStyles( 'ext.centralauth.globalrenamequeue.styles' );
@@ -700,7 +700,7 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	/**
 	 * @return StatusValue
 	 */
-	public function onProcessSubmit( array $data ) {
+	private function onProcessSubmit( array $data ) {
 		$request = $this->getContext()->getRequest();
 		$status = StatusValue::newGood();
 		if ( $request->getCheck( 'approve' ) ) {

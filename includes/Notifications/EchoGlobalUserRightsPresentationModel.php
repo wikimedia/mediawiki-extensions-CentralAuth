@@ -27,15 +27,15 @@ class EchoGlobalUserRightsPresentationModel extends EchoEventPresentationModel {
 		[ , $genderName ] = $this->getAgentForOutput();
 		$viewingUser = $this->getViewingUserForGender();
 		$add = array_map(
-			[ $this->language, 'embedBidi' ],
+			$this->language->embedBidi( ... ),
 			$this->getLocalizedGroupNames( $this->event->getExtraParam( 'add', [] ), $viewingUser )
 		);
 		$remove = array_map(
-			[ $this->language, 'embedBidi' ],
+			$this->language->embedBidi( ... ),
 			$this->getLocalizedGroupNames( $this->event->getExtraParam( 'remove', [] ), $viewingUser )
 		);
 		$expiryChanged = array_map(
-			[ $this->language, 'embedBidi' ],
+			$this->language->embedBidi( ... ),
 			$this->getLocalizedGroupNames( $this->event->getExtraParam( 'expiry-changed', [] ), $viewingUser )
 		);
 

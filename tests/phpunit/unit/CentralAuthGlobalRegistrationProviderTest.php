@@ -153,7 +153,7 @@ class CentralAuthGlobalRegistrationProviderTest extends MediaWikiUnitTestCase {
 			->with( $localUserAttachedExpr )
 			->willReturnSelf();
 		$firstBatchSelectQueryBuilder->method( 'fetchCentralAuthUsers' )
-			->willReturn( new ArrayIterator( array_map( [ $this, 'makeMockCentralUser' ], $firstNameBatch ) ) );
+			->willReturn( new ArrayIterator( array_map( $this->makeMockCentralUser( ... ), $firstNameBatch ) ) );
 
 		$secondBatchSelectQueryBuilder = $this->createMock( GlobalUserSelectQueryBuilder::class );
 		$secondBatchSelectQueryBuilder->method( $this->anythingBut( 'andWhere', 'fetchCentralAuthUsers' ) )
@@ -162,7 +162,7 @@ class CentralAuthGlobalRegistrationProviderTest extends MediaWikiUnitTestCase {
 			->with( $localUserAttachedExpr )
 			->willReturnSelf();
 		$secondBatchSelectQueryBuilder->method( 'fetchCentralAuthUsers' )
-			->willReturn( new ArrayIterator( array_map( [ $this, 'makeMockCentralUser' ], $secondNameBatch ) ) );
+			->willReturn( new ArrayIterator( array_map( $this->makeMockCentralUser( ... ), $secondNameBatch ) ) );
 
 		$selectQueryBuilder = $this->createMock( GlobalUserSelectQueryBuilder::class );
 		$selectQueryBuilder->method( $this->anythingBut( 'whereUserNames' ) )
