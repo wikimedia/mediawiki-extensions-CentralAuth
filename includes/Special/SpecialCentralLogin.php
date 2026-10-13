@@ -108,16 +108,13 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 	 *   doesn't require a valid session and so would ignore stubbing. It will be updated later
 	 *   via Special:CentralAutoLogin/refreshCookies.
 	 * - Redirects to /complete, and uses the token store and a GET parameter to pass the session
-	 *   ID and the login secret from getRedirectUrl() in a secure way. It uses the
-	 *   CentralAuthSilentLoginRedirect hook so the redirect can take into account URL modifications
-	 *   not understood by WikiMap, such as a mobile domain.
+	 *   ID and the login secret from getRedirectUrl() in a secure way.
 	 *
 	 * @param string $token
 	 * @throws Exception
 	 *
 	 * @see LoginCompleteHookHandler::getRedirectUrl()
 	 * @see CentralAuthSessionProvider
-	 * @see CentralAuthSilentLoginRedirect
 	 * @see SpecialCentralAutoLogin
 	 */
 	protected function doLoginStart( $token ) {
@@ -228,10 +225,6 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		$wiki = WikiMap::getWiki( $info['wikiId'] );
 		$url = $wiki->getCanonicalUrl( 'Special:CentralLogin/complete' );
 		$url = wfAppendQuery( $url, $query );
-
-		$caHookRunner = new CentralAuthHookRunner( $this->getHookContainer() );
-		$caHookRunner->onCentralAuthSilentLoginRedirect( $centralUser, $url, $info );
-
 		$this->getOutput()->redirect( $url );
 	}
 

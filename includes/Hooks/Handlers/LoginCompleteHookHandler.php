@@ -12,12 +12,10 @@ use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
-use MediaWiki\Extension\CentralAuth\Hooks\CentralAuthHookRunner;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Extension\CentralAuth\Special\SpecialCentralLogin;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Hook\TempUserCreatedRedirectHook;
-use MediaWiki\HookContainer\HookContainer;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Session\Session;
 use MediaWiki\Specials\Hook\UserLoginCompleteHook;
@@ -32,16 +30,12 @@ class LoginCompleteHookHandler implements
 	TempUserCreatedRedirectHook
 {
 
-	private readonly CentralAuthHookRunner $caHookRunner;
-
 	public function __construct(
-		HookContainer $hookContainer,
 		private readonly Config $config,
 		private readonly CentralAuthTokenManager $tokenManager,
 		private readonly CentralDomainUtils $centralDomainUtils,
 		private readonly SharedDomainUtils $sharedDomainUtils,
 	) {
-		$this->caHookRunner = new CentralAuthHookRunner( $hookContainer );
 	}
 
 	/**
@@ -202,7 +196,6 @@ class LoginCompleteHookHandler implements
 			'guid' => $centralUser->getId(),
 			'wikiId' => WikiMap::getCurrentWikiId(),
 		];
-		$this->caHookRunner->onCentralAuthLoginRedirectData( $centralUser, $data );
 		$token = $this->tokenManager->tokenize( $data, 'central-login-start-token' );
 
 		$query = [

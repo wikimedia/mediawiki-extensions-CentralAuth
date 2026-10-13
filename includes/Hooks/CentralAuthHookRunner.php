@@ -16,8 +16,6 @@ use MediaWiki\User\User;
 class CentralAuthHookRunner implements
 	CentralAuthIsUIReloadRecommendedHook,
 	CentralAuthPostLoginRedirectHook,
-	CentralAuthLoginRedirectDataHook,
-	CentralAuthSilentLoginRedirectHook,
 	CentralAuthWikiListHook,
 	CentralAuthInfoFieldsHook,
 	CentralAuthGlobalUserGroupMembershipChangedHook,
@@ -54,26 +52,6 @@ class CentralAuthHookRunner implements
 		return $this->hookContainer->run(
 			'CentralAuthPostLoginRedirect',
 			[ &$returnTo, &$returnToQuery, $unused, $type, &$unused2 ]
-		);
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function onCentralAuthLoginRedirectData( CentralAuthUser $centralAuthUser, array &$data ) {
-		$this->hookContainer->run(
-			'CentralAuthLoginRedirectData',
-			[ $centralAuthUser, &$data ]
-		);
-	}
-
-	/**
-	 * @inheritDoc
-	 */
-	public function onCentralAuthSilentLoginRedirect( CentralAuthUser $centralAuthUser, string &$url, array $data ) {
-		$this->hookContainer->run(
-			'CentralAuthSilentLoginRedirect',
-			[ $centralAuthUser, &$url, $data ]
 		);
 	}
 

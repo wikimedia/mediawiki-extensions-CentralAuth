@@ -620,7 +620,6 @@
 		"logincomplete": {
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\LoginCompleteHookHandler",
 			"services": [
-				"HookContainer",
 				"MainConfig",
 				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.CentralDomainUtils",
