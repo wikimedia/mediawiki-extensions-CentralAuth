@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
+use MediaWiki\MainConfigNames;
 use MediaWiki\Status\Status;
 use MediaWiki\Utils\MWCryptRand;
 
@@ -57,9 +58,7 @@ class MigrateInitialAccountsTask extends \MediaWiki\Installer\Task\Task {
 		// Migrate the users manually using custom database queries.
 
 		foreach ( $users as $user ) {
-			$dbw->doAtomicSection( __METHOD__, static function ( $dbw, $fname ) use ( $user ) {
-				global $wgDBname;
-
+			$dbw->doAtomicSection( __METHOD__, function ( $dbw, $fname ) use ( $user ) {
 				// Unlike migratePass0/1, we don't need to store anything into globalnames and localnames,
 				// these tables are only used for incomplete migrations and we're doing a complete one.
 
@@ -68,7 +67,7 @@ class MigrateInitialAccountsTask extends \MediaWiki\Installer\Task\Task {
 					->insertInto( 'globaluser' )
 					->row( [
 						'gu_name' => $user->user_name,
-						'gu_home_db' => $wgDBname,
+						'gu_home_db' => $this->getConfigVar( MainConfigNames::DBname ),
 						'gu_email' => $user->user_email,
 						'gu_email_authenticated' => $user->user_email_authenticated,
 						'gu_password' => $user->user_password,
@@ -85,7 +84,7 @@ class MigrateInitialAccountsTask extends \MediaWiki\Installer\Task\Task {
 				$dbw->newInsertQueryBuilder()
 					->insertInto( 'localuser' )
 					->row( [
-						'lu_wiki' => $wgDBname,
+						'lu_wiki' => $this->getConfigVar( MainConfigNames::DBname ),
 						'lu_name' => $user->user_name,
 						'lu_attached_timestamp' => $user->user_registration,
 						'lu_attached_method' => 'new',

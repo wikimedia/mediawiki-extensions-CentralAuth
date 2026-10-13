@@ -15,6 +15,7 @@ require_once "$IP/maintenance/Maintenance.php";
 // @codeCoverageIgnoreEnd
 
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
+use MediaWiki\MainConfigNames;
 use MediaWiki\Maintenance\Maintenance;
 
 /**
@@ -28,15 +29,15 @@ class MigratePass0 extends Maintenance {
 	}
 
 	public function execute() {
-		global $wgDBname;
+		$databaseName = $this->getConfig()->get( MainConfigNames::DBname );
 		$this->output( "CentralAuth migration pass 0:\n" );
-		$this->output( "$wgDBname preparing migration data...\n" );
+		$this->output( "$databaseName preparing migration data...\n" );
 		$this->doPassZero();
 		$this->output( "done.\n" );
 	}
 
 	private function doPassZero() {
-		global $wgDBname;
+		$databaseName = $this->getConfig()->get( MainConfigNames::DBname );
 		$dbr = $this->getReplicaDB();
 		$chunkSize = 1000;
 
@@ -70,14 +71,14 @@ class MigratePass0 extends Maintenance {
 				++$migrated;
 			}
 
-			CentralAuthUser::storeMigrationData( $wgDBname, $users );
+			CentralAuthUser::storeMigrationData( $databaseName, $users );
 			// clear the array for the next pass
 			$users = [];
 
 			$delta = microtime( true ) - $start;
 			$rate = $delta ? $migrated / $delta : 0.0;
 			$this->output( sprintf( "%s %d (%0.1f%%) done in %0.1f secs (%0.3f accounts/sec).\n",
-				$wgDBname,
+				$databaseName,
 				$migrated,
 				min( $max, $lastUser ) / $lastUser * 100.0,
 				$delta,
