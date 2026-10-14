@@ -9,9 +9,6 @@ use Wikimedia\Rdbms\RawSQLValue;
 
 class CentralAuthEditCounter {
 
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private WANObjectCache $wanCache;
-
 	/**
 	 * @var int[] Mapping of central user id to global edit count for instance caching to avoid
 	 *   repeated calls to to read rows from the global_edit_count table
@@ -19,11 +16,9 @@ class CentralAuthEditCounter {
 	private array $userEditCountCache = [];
 
 	public function __construct(
-		CentralAuthConnectionProvider $caConnectionProvider,
-		WANObjectCache $wanCache
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly WANObjectCache $wanCache,
 	) {
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->wanCache = $wanCache;
 	}
 
 	/**

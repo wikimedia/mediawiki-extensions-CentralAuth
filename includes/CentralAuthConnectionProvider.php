@@ -31,7 +31,7 @@ class CentralAuthConnectionProvider {
 		private readonly ServiceOptions $options,
 		private readonly IConnectionProvider $connectionProvider,
 		private readonly LBFactory $lbFactory,
-		private readonly ReadOnlyMode $readOnlyMode
+		private readonly ReadOnlyMode $readOnlyMode,
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 	}

@@ -15,10 +15,9 @@ use Wikimedia\Rdbms\IReadableDatabase;
  */
 class GlobalRenameUserLogger {
 
-	private UserIdentity $performingUser;
-
-	public function __construct( UserIdentity $performingUser ) {
-		$this->performingUser = $performingUser;
+	public function __construct(
+		private readonly UserIdentity $performingUser,
+	) {
 	}
 
 	/**

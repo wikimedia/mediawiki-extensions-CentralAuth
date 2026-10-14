@@ -43,6 +43,7 @@ use MediaWiki\User\UserIdentity;
 use MediaWiki\User\UserIdentityValue;
 use MediaWiki\Utils\MWCryptRand;
 use MediaWiki\WikiMap\WikiMap;
+use Psr\Log\LoggerInterface;
 use RuntimeException;
 use StatusValue;
 use stdClass;
@@ -117,10 +118,9 @@ class CentralAuthUser implements IDBAccessObject {
 	private $mAttachedInfo;
 	/** @var int */
 	private $mCasToken = 0;
-	/** @var \Psr\Log\LoggerInterface */
-	private $logger;
-	private StatsFactory $statsFactory;
-	private WANObjectCache $wanCache;
+	private readonly LoggerInterface $logger;
+	private readonly StatsFactory $statsFactory;
+	private readonly WANObjectCache $wanCache;
 
 	/** @var string[] */
 	private static $mCacheVars = [

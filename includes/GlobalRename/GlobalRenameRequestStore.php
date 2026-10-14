@@ -20,15 +20,10 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class GlobalRenameRequestStore {
 
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private UserNameUtils $userNameUtils;
-
 	public function __construct(
-		CentralAuthConnectionProvider $caConnectionProvider,
-		UserNameUtils $userNameUtils
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly UserNameUtils $userNameUtils,
 	) {
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->userNameUtils = $userNameUtils;
 	}
 
 	/**

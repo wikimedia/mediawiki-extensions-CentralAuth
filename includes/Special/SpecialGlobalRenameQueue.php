@@ -52,14 +52,7 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class SpecialGlobalRenameQueue extends SpecialPage {
 
-	private UserNameUtils $userNameUtils;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private CentralAuthUIService $uiService;
-	private GlobalRenameRequestStore $globalRenameRequestStore;
-	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-	private GlobalRenameFactory $globalRenameFactory;
-	private UserIdentityLookup $userIdentityLookup;
-	private LoggerInterface $logger;
+	private readonly LoggerInterface $logger;
 
 	public const PAGE_OPEN_QUEUE = 'open';
 	public const PAGE_PROCESS_REQUEST = 'request';
@@ -69,22 +62,15 @@ class SpecialGlobalRenameQueue extends SpecialPage {
 	public const ACTION_VIEW = 'view';
 
 	public function __construct(
-		UserNameUtils $userNameUtils,
-		CentralAuthConnectionProvider $caConnectionProvider,
-		CentralAuthUIService $uiService,
-		GlobalRenameRequestStore $globalRenameRequestStore,
-		CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		GlobalRenameFactory $globalRenameFactory,
-		UserIdentityLookup $userIdentityLookup
+		private readonly UserNameUtils $userNameUtils,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly CentralAuthUIService $uiService,
+		private readonly GlobalRenameRequestStore $globalRenameRequestStore,
+		private readonly CentralAuthAntiSpoofManager $caAntiSpoofManager,
+		private readonly GlobalRenameFactory $globalRenameFactory,
+		private readonly UserIdentityLookup $userIdentityLookup,
 	) {
 		parent::__construct( 'GlobalRenameQueue' );
-		$this->userNameUtils = $userNameUtils;
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->uiService = $uiService;
-		$this->globalRenameRequestStore = $globalRenameRequestStore;
-		$this->caAntiSpoofManager = $caAntiSpoofManager;
-		$this->globalRenameFactory = $globalRenameFactory;
-		$this->userIdentityLookup = $userIdentityLookup;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 

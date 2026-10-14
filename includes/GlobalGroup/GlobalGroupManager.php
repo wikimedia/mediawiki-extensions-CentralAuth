@@ -32,7 +32,7 @@ class GlobalGroupManager {
 
 	public function __construct(
 		private readonly WANObjectCache $wanCache,
-		private readonly CentralAuthConnectionProvider $caConnectionProvider
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
 	) {
 	}
 

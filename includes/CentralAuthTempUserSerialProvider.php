@@ -6,15 +6,11 @@ use MediaWiki\User\TempUser\DBSerialProvider;
 
 class CentralAuthTempUserSerialProvider extends DBSerialProvider {
 
-	private CentralAuthConnectionProvider $caConnectionProvider;
-
-	/**
-	 * @param array $config
-	 * @param CentralAuthConnectionProvider $caConnectionProvider
-	 */
-	public function __construct( $config, CentralAuthConnectionProvider $caConnectionProvider ) {
+	public function __construct(
+		array $config,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+	) {
 		parent::__construct( $config );
-		$this->caConnectionProvider = $caConnectionProvider;
 	}
 
 	/** @inheritDoc */

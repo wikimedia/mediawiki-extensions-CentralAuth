@@ -19,7 +19,7 @@ class CentralAuthUserStatusLookupService {
 	/** @internal Create using CentralAuthUserStatusLookupFactory */
 	public function __construct(
 		private readonly IConnectionProvider $connectionProvider,
-		private readonly string|false $remoteWikiId = false
+		private readonly string|false $remoteWikiId = false,
 	) {
 	}
 

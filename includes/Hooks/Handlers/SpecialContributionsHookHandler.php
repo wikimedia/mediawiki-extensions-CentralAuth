@@ -24,18 +24,11 @@ class SpecialContributionsHookHandler implements
 	SpecialContributionsBeforeMainOutputHook
 {
 
-	private NamespaceInfo $namespaceInfo;
-	private UserFactory $userFactory;
-	private UserNameUtils $userNameUtils;
-
 	public function __construct(
-		NamespaceInfo $namespaceInfo,
-		UserFactory $userFactory,
-		UserNameUtils $userNameUtils
+		private readonly NamespaceInfo $namespaceInfo,
+		private readonly UserFactory $userFactory,
+		private readonly UserNameUtils $userNameUtils,
 	) {
-		$this->namespaceInfo = $namespaceInfo;
-		$this->userFactory = $userFactory;
-		$this->userNameUtils = $userNameUtils;
 	}
 
 	/**

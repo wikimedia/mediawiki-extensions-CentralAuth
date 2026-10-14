@@ -11,7 +11,7 @@ class CentralAuthSpoofUser extends SpoofUser {
 
 	public function __construct(
 		string $name,
-		private readonly CentralAuthConnectionProvider $caConnectionProvider
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
 	) {
 		parent::__construct( $name );
 	}

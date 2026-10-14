@@ -18,24 +18,15 @@ use Wikimedia\Rdbms\SelectQueryBuilder;
  */
 class GlobalUserSelectQueryBuilder extends SelectQueryBuilder {
 
-	/** @var ActorStore for the local wiki */
-	private ActorStore $actorStore;
-
-	private UserNameUtils $userNameUtils;
-	private TempUserConfig $tempUserConfig;
-
 	private bool $initRan = false;
 
 	public function __construct(
 		IReadableDatabase $db,
-		ActorStore $actorStore,
-		UserNameUtils $userNameUtils,
-		TempUserConfig $tempUserConfig
+		private readonly ActorStore $actorStore,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly TempUserConfig $tempUserConfig,
 	) {
 		parent::__construct( $db );
-		$this->actorStore = $actorStore;
-		$this->userNameUtils = $userNameUtils;
-		$this->tempUserConfig = $tempUserConfig;
 	}
 
 	/**

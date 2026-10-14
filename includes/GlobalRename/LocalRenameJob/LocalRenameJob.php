@@ -37,7 +37,7 @@ abstract class LocalRenameJob extends Job {
 	 */
 	private $renameuserStatus;
 
-	private LoggerInterface $logger;
+	private readonly LoggerInterface $logger;
 
 	private bool $markedAsDone = false;
 

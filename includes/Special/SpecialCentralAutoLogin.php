@@ -60,18 +60,18 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 
 	/** @var Session|null */
 	protected $session = null;
-	private LoggerInterface $logger;
+	private readonly LoggerInterface $logger;
 	private string $subpage;
 
 	public function __construct(
-		private HookContainer $hookContainer,
-		private LanguageFactory $languageFactory,
-		private UserFactory $userFactory,
-		private UserOptionsLookup $userOptionsLookup,
-		private CentralAuthSessionManager $sessionManager,
-		private CentralAuthTokenManager $tokenManager,
-		private CentralAuthUtilityService $centralAuthUtilityService,
-		private CentralDomainUtils $centralDomainUtils
+		private readonly HookContainer $hookContainer,
+		private readonly LanguageFactory $languageFactory,
+		private readonly UserFactory $userFactory,
+		private readonly UserOptionsLookup $userOptionsLookup,
+		private readonly CentralAuthSessionManager $sessionManager,
+		private readonly CentralAuthTokenManager $tokenManager,
+		private readonly CentralAuthUtilityService $centralAuthUtilityService,
+		private CentralDomainUtils $centralDomainUtils,
 	) {
 		parent::__construct( 'CentralAutoLogin' );
 

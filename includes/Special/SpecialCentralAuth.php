@@ -92,40 +92,19 @@ class SpecialCentralAuth extends SpecialPage {
 	/** @var string[] */
 	private $mWikis;
 
-	private CommentFormatter $commentFormatter;
-	private IConnectionProvider $dbProvider;
-	private NamespaceInfo $namespaceInfo;
-	private TempUserConfig $tempUserConfig;
-	private UserFactory $userFactory;
-	private UserNameUtils $userNameUtils;
-	private UserRegistrationLookup $userRegistrationLookup;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private CentralAuthUIService $uiService;
-	private GlobalRenameFactory $globalRenameFactory;
-
 	public function __construct(
-		CommentFormatter $commentFormatter,
-		IConnectionProvider $dbProvider,
-		NamespaceInfo $namespaceInfo,
-		TempUserConfig $tempUserConfig,
-		UserFactory $userFactory,
-		UserNameUtils $userNameUtils,
-		UserRegistrationLookup $userRegistrationLookup,
-		CentralAuthConnectionProvider $caConnectionProvider,
-		CentralAuthUIService $uiService,
-		GlobalRenameFactory $globalRenameFactory
+		private readonly CommentFormatter $commentFormatter,
+		private readonly IConnectionProvider $dbProvider,
+		private readonly NamespaceInfo $namespaceInfo,
+		private readonly TempUserConfig $tempUserConfig,
+		private readonly UserFactory $userFactory,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly UserRegistrationLookup $userRegistrationLookup,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly CentralAuthUIService $uiService,
+		private readonly GlobalRenameFactory $globalRenameFactory,
 	) {
 		parent::__construct( 'CentralAuth' );
-		$this->commentFormatter = $commentFormatter;
-		$this->dbProvider = $dbProvider;
-		$this->namespaceInfo = $namespaceInfo;
-		$this->tempUserConfig = $tempUserConfig;
-		$this->userFactory = $userFactory;
-		$this->userNameUtils = $userNameUtils;
-		$this->userRegistrationLookup = $userRegistrationLookup;
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->uiService = $uiService;
-		$this->globalRenameFactory = $globalRenameFactory;
 	}
 
 	/** @inheritDoc */

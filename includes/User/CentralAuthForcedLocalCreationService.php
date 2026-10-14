@@ -23,15 +23,10 @@ use StatusValue;
  */
 class CentralAuthForcedLocalCreationService {
 
-	private UserFactory $userFactory;
-	private CentralAuthUtilityService $utilityService;
-
 	public function __construct(
-		UserFactory $userFactory,
-		CentralAuthUtilityService $utilityService
+		private readonly UserFactory $userFactory,
+		private readonly CentralAuthUtilityService $utilityService,
 	) {
-		$this->userFactory = $userFactory;
-		$this->utilityService = $utilityService;
 	}
 
 	/**

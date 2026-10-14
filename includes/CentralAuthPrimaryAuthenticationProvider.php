@@ -42,15 +42,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	/** @var string The internal ID of this provider. */
 	public const ID = 'CentralAuthPrimaryAuthenticationProvider';
 
-	private ReadOnlyMode $readOnlyMode;
-	private TempUserDetailsLookup $tempUserDetailsLookup;
-	private UserIdentityLookup $userIdentityLookup;
-	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private CentralAuthUtilityService $utilityService;
-	private GlobalRenameRequestStore $globalRenameRequestStore;
-	private SharedDomainUtils $sharedDomainUtils;
-
 	/** @var bool Whether to auto-migrate non-merged accounts on login */
 	protected $autoMigrate = null;
 
@@ -78,28 +69,19 @@ class CentralAuthPrimaryAuthenticationProvider
 	 *    AntiSpoof extension isn't installed or the extension is outdated.
 	 */
 	public function __construct(
-		ReadOnlyMode $readOnlyMode,
-		TempUserDetailsLookup $tempUserDetailsLookup,
-		UserIdentityLookup $userIdentityLookup,
-		CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		CentralAuthConnectionProvider $caConnectionProvider,
-		CentralAuthUtilityService $utilityService,
-		GlobalRenameRequestStore $globalRenameRequestStore,
-		SharedDomainUtils $sharedDomainUtils,
-		$params = []
+		private readonly ReadOnlyMode $readOnlyMode,
+		private readonly TempUserDetailsLookup $tempUserDetailsLookup,
+		private readonly UserIdentityLookup $userIdentityLookup,
+		private readonly CentralAuthAntiSpoofManager $caAntiSpoofManager,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly CentralAuthUtilityService $utilityService,
+		private readonly GlobalRenameRequestStore $globalRenameRequestStore,
+		private readonly SharedDomainUtils $sharedDomainUtils,
+		array $params = [],
 	) {
 		global $wgCentralAuthAutoMigrate,
 			$wgCentralAuthAutoMigrateNonGlobalAccounts,
 			$wgCentralAuthStrict, $wgAntiSpoofAccounts;
-
-		$this->readOnlyMode = $readOnlyMode;
-		$this->tempUserDetailsLookup = $tempUserDetailsLookup;
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->caAntiSpoofManager = $caAntiSpoofManager;
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->utilityService = $utilityService;
-		$this->globalRenameRequestStore = $globalRenameRequestStore;
-		$this->sharedDomainUtils = $sharedDomainUtils;
 
 		$params += [
 			'autoMigrate' => $wgCentralAuthAutoMigrate,

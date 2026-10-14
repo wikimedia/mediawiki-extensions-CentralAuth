@@ -44,21 +44,14 @@ class CentralDomainUtils {
 	 */
 	public const SUL3_CENTRAL_DOMAIN_ID = '#sul3-central#';
 
-	private Config $config;
-	private TitleFactory $titleFactory;
-	private SharedDomainUtils $sharedDomainUtils;
-
 	/** Wiki where the user has a logged-in session. Only used when loginwiki isn't configured. */
 	private ?string $fallbackLoginWikiId = null;
 
 	public function __construct(
-		Config $config,
-		TitleFactory $titleFactory,
-		SharedDomainUtils $sharedDomainUtils
+		private readonly Config $config,
+		private readonly TitleFactory $titleFactory,
+		private readonly SharedDomainUtils $sharedDomainUtils,
 	) {
-		$this->config = $config;
-		$this->titleFactory = $titleFactory;
-		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/**

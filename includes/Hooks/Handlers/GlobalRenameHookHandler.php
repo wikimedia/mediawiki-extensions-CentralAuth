@@ -21,10 +21,9 @@ class GlobalRenameHookHandler implements
 	RenameUserWarningHook
 {
 
-	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-
-	public function __construct( CentralAuthAntiSpoofManager $caAntiSpoofManager ) {
-		$this->caAntiSpoofManager = $caAntiSpoofManager;
+	public function __construct(
+		private readonly CentralAuthAntiSpoofManager $caAntiSpoofManager,
+	) {
 	}
 
 	/**

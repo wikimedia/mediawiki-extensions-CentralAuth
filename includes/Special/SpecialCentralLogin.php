@@ -45,20 +45,14 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 
 	protected ?Session $session = null;
 
-	private CentralAuthSessionManager $sessionManager;
-	private CentralAuthTokenManager $tokenManager;
-	private LoggerInterface $logger;
-	private SharedDomainUtils $sharedDomainUtils;
+	private readonly LoggerInterface $logger;
 
 	public function __construct(
-		CentralAuthSessionManager $sessionManager,
-		CentralAuthTokenManager $tokenManager,
-		SharedDomainUtils $sharedDomainUtils
+		private readonly CentralAuthSessionManager $sessionManager,
+		private readonly CentralAuthTokenManager $tokenManager,
+		private readonly SharedDomainUtils $sharedDomainUtils,
 	) {
 		parent::__construct( 'CentralLogin' );
-		$this->sessionManager = $sessionManager;
-		$this->tokenManager = $tokenManager;
-		$this->sharedDomainUtils = $sharedDomainUtils;
 		$this->logger = LoggerFactory::getInstance( 'CentralAuth' );
 	}
 

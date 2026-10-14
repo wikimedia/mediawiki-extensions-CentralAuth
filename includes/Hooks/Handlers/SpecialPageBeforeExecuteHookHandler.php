@@ -40,10 +40,10 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	public const AUTOLOGIN_ERROR_QUERY_PARAM = 'centralAuthError';
 
 	public function __construct(
-		private AuthManager $authManager,
-		private CentralAuthTokenManager $tokenManager,
-		private CentralDomainUtils $centralDomainUtils,
-		private SharedDomainUtils $sharedDomainUtils
+		private readonly AuthManager $authManager,
+		private readonly CentralAuthTokenManager $tokenManager,
+		private readonly CentralDomainUtils $centralDomainUtils,
+		private readonly SharedDomainUtils $sharedDomainUtils,
 	) {
 	}
 

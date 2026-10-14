@@ -19,7 +19,7 @@ class RemoteWikiConnectionProvider implements IConnectionProvider {
 	 */
 	public function __construct(
 		private readonly IConnectionProvider $connectionProvider,
-		private string $wikiId,
+		private readonly string $wikiId,
 	) {
 	}
 

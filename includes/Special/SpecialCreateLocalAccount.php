@@ -16,11 +16,10 @@ use MediaWiki\Status\Status;
  */
 class SpecialCreateLocalAccount extends FormSpecialPage {
 
-	private CentralAuthForcedLocalCreationService $forcedLocalCreationService;
-
-	public function __construct( CentralAuthForcedLocalCreationService $forcedLocalCreationService ) {
+	public function __construct(
+		private readonly CentralAuthForcedLocalCreationService $forcedLocalCreationService,
+	) {
 		parent::__construct( 'CreateLocalAccount' );
-		$this->forcedLocalCreationService = $forcedLocalCreationService;
 	}
 
 	/** @inheritDoc */

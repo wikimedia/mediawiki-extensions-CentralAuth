@@ -15,10 +15,9 @@ use StatusValue;
  */
 class GlobalRenameUserValidator {
 
-	private UserNameUtils $userNameUtils;
-
-	public function __construct( UserNameUtils $userNameUtils ) {
-		$this->userNameUtils = $userNameUtils;
+	public function __construct(
+		private readonly UserNameUtils $userNameUtils,
+	) {
 	}
 
 	/**

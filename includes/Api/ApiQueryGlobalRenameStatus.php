@@ -19,15 +19,12 @@ use Wikimedia\ParamValidator\ParamValidator;
  */
 class ApiQueryGlobalRenameStatus extends ApiQueryBase {
 
-	private GlobalRenameFactory $globalRenameFactory;
-
 	public function __construct(
 		ApiQuery $queryModule,
 		string $moduleName,
-		GlobalRenameFactory $globalRenameFactory
+		private readonly GlobalRenameFactory $globalRenameFactory,
 	) {
 		parent::__construct( $queryModule, $moduleName, 'grs' );
-		$this->globalRenameFactory = $globalRenameFactory;
 	}
 
 	/**

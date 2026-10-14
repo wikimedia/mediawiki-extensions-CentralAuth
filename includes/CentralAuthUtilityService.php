@@ -29,24 +29,13 @@ use StatusValue;
  */
 class CentralAuthUtilityService {
 
-	private Config $config;
-	private AuthManager $authManager;
-	private TitleFactory $titleFactory;
-	private JobQueueGroupFactory $jobQueueGroupFactory;
-	private JobFactory $jobFactory;
-
 	public function __construct(
-		Config $config,
-		AuthManager $authManager,
-		TitleFactory $titleFactory,
-		JobQueueGroupFactory $jobQueueGroupFactory,
-		JobFactory $jobFactory
+		private readonly Config $config,
+		private readonly AuthManager $authManager,
+		private readonly TitleFactory $titleFactory,
+		private readonly JobQueueGroupFactory $jobQueueGroupFactory,
+		private readonly JobFactory $jobFactory,
 	) {
-		$this->config = $config;
-		$this->authManager = $authManager;
-		$this->titleFactory = $titleFactory;
-		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
-		$this->jobFactory = $jobFactory;
 	}
 
 	/**

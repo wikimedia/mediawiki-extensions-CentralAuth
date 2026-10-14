@@ -15,7 +15,7 @@ use Wikimedia\ObjectCache\MapCacheLRU;
  */
 class CentralAuthUserCache {
 
-	private MapCacheLRU $map;
+	private readonly MapCacheLRU $map;
 
 	public function __construct() {
 		$this->map = new MapCacheLRU( 100 );

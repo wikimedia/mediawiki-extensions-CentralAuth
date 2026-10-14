@@ -36,7 +36,7 @@ class ApiQueryGlobalUserInfo extends ApiQueryBase {
 		string $moduleName,
 		private readonly UserNameUtils $userNameUtils,
 		private readonly GlobalGroupManager $globalGroupManager,
-		private readonly GlobalPermissionManager $globalPermissionManager
+		private readonly GlobalPermissionManager $globalPermissionManager,
 	) {
 		parent::__construct( $query, $moduleName, 'gui' );
 	}

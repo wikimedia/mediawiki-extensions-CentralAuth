@@ -9,24 +9,12 @@ use MediaWiki\User\UserNameUtils;
 
 class GlobalUserSelectQueryBuilderFactory {
 
-	private CentralAuthConnectionProvider $caConnectionProvider;
-
-	private ActorStore $actorStore;
-
-	private UserNameUtils $userNameUtils;
-
-	private TempUserConfig $tempUserConfig;
-
 	public function __construct(
-		CentralAuthConnectionProvider $caConnectionProvider,
-		ActorStore $actorStore,
-		UserNameUtils $userNameUtils,
-		TempUserConfig $tempUserConfig
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly ActorStore $actorStore,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly TempUserConfig $tempUserConfig,
 	) {
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->actorStore = $actorStore;
-		$this->userNameUtils = $userNameUtils;
-		$this->tempUserConfig = $tempUserConfig;
 	}
 
 	public function newGlobalUserSelectQueryBuilder(): GlobalUserSelectQueryBuilder {

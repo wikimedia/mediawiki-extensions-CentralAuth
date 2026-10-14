@@ -38,21 +38,12 @@ class CentralAuthRedirectingPrimaryAuthenticationProvider
 
 	private const SESSION_DATA_FLAG = 'centralauth-login-method-was-sul3';
 
-	private HookContainer $hookContainer;
-	private CentralAuthTokenManager $tokenManager;
-	private SharedDomainUtils $sharedDomainUtils;
-	private ?MobileContext $mobileContext;
-
 	public function __construct(
-		HookContainer $hookContainer,
-		CentralAuthTokenManager $tokenManager,
-		SharedDomainUtils $sharedDomainUtils,
-		?MobileContext $mobileContext
+		private readonly HookContainer $hookContainer,
+		private readonly CentralAuthTokenManager $tokenManager,
+		private readonly SharedDomainUtils $sharedDomainUtils,
+		private readonly ?MobileContext $mobileContext,
 	) {
-		$this->hookContainer = $hookContainer;
-		$this->tokenManager = $tokenManager;
-		$this->sharedDomainUtils = $sharedDomainUtils;
-		$this->mobileContext = $mobileContext;
 	}
 
 	/** @inheritDoc */

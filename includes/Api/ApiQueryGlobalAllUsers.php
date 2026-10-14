@@ -31,21 +31,14 @@ use Wikimedia\Rdbms\LikeValue;
  */
 class ApiQueryGlobalAllUsers extends ApiQueryBase {
 
-	private TempUserConfig $tempUserConfig;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private GlobalGroupManager $globalGroupManager;
-
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		TempUserConfig $tempUserConfig,
-		CentralAuthConnectionProvider $caConnectionProvider,
-		GlobalGroupManager $globalGroupManager
+		private readonly TempUserConfig $tempUserConfig,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly GlobalGroupManager $globalGroupManager,
 	) {
 		parent::__construct( $query, $moduleName, 'agu' );
-		$this->tempUserConfig = $tempUserConfig;
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->globalGroupManager = $globalGroupManager;
 	}
 
 	/**

@@ -30,19 +30,12 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class SpecialGlobalRenameRequest extends FormSpecialPage {
 
-	private GlobalRenameDenylist $globalRenameDenylist;
-	private UserNameUtils $userNameUtils;
-	private GlobalRenameRequestStore $globalRenameRequestStore;
-
 	public function __construct(
-		GlobalRenameDenylist $globalRenameDenylist,
-		UserNameUtils $userNameUtils,
-		GlobalRenameRequestStore $globalRenameRequestStore
+		private readonly GlobalRenameDenylist $globalRenameDenylist,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly GlobalRenameRequestStore $globalRenameRequestStore,
 	) {
 		parent::__construct( 'GlobalRenameRequest' );
-		$this->globalRenameDenylist = $globalRenameDenylist;
-		$this->userNameUtils = $userNameUtils;
-		$this->globalRenameRequestStore = $globalRenameRequestStore;
 	}
 
 	/** @inheritDoc */

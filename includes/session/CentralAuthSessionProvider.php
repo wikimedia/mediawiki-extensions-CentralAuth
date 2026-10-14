@@ -69,7 +69,7 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		UrlUtils $urlUtils,
 		private readonly UserIdentityLookup $userIdentityLookup,
 		private readonly CentralAuthSessionManager $sessionManager,
-		array $params = []
+		array $params = [],
 	) {
 		$params += [
 			'centralCookieOptions' => [],

@@ -44,31 +44,18 @@ class CentralAuthTemporaryPasswordPrimaryAuthenticationProvider
 	extends AbstractTemporaryPasswordPrimaryAuthenticationProvider
 {
 
-	private Emailer $emailer;
-	private LanguageNameUtils $languageNameUtils;
-	private UserIdentityLookup $userIdentityLookup;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private CentralAuthUtilityService $utilityService;
-	private SharedDomainUtils $sharedDomainUtils;
-
 	public function __construct(
 		IConnectionProvider $dbProvider,
-		Emailer $emailer,
-		LanguageNameUtils $languageNameUtils,
-		UserIdentityLookup $userIdentityLookup,
+		private readonly Emailer $emailer,
+		private readonly LanguageNameUtils $languageNameUtils,
+		private readonly UserIdentityLookup $userIdentityLookup,
 		UserOptionsLookup $userOptionsLookup,
-		CentralAuthConnectionProvider $caConnectionProvider,
-		CentralAuthUtilityService $utilityService,
-		SharedDomainUtils $sharedDomainUtils,
-		array $params = []
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly CentralAuthUtilityService $utilityService,
+		private readonly SharedDomainUtils $sharedDomainUtils,
+		array $params = [],
 	) {
 		parent::__construct( $dbProvider, $userOptionsLookup, $params );
-		$this->emailer = $emailer;
-		$this->languageNameUtils = $languageNameUtils;
-		$this->userIdentityLookup = $userIdentityLookup;
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->utilityService = $utilityService;
-		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/** @inheritDoc */

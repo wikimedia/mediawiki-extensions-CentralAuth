@@ -32,24 +32,16 @@ class LoginCompleteHookHandler implements
 	TempUserCreatedRedirectHook
 {
 
-	private Config $config;
-	private CentralAuthTokenManager $tokenManager;
-	private CentralAuthHookRunner $caHookRunner;
-	private CentralDomainUtils $centralDomainUtils;
-	private SharedDomainUtils $sharedDomainUtils;
+	private readonly CentralAuthHookRunner $caHookRunner;
 
 	public function __construct(
 		HookContainer $hookContainer,
-		Config $config,
-		CentralAuthTokenManager $tokenManager,
-		CentralDomainUtils $centralDomainUtils,
-		SharedDomainUtils $sharedDomainUtils
+		private readonly Config $config,
+		private readonly CentralAuthTokenManager $tokenManager,
+		private readonly CentralDomainUtils $centralDomainUtils,
+		private readonly SharedDomainUtils $sharedDomainUtils,
 	) {
 		$this->caHookRunner = new CentralAuthHookRunner( $hookContainer );
-		$this->config = $config;
-		$this->tokenManager = $tokenManager;
-		$this->centralDomainUtils = $centralDomainUtils;
-		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/**

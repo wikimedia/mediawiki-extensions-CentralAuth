@@ -58,7 +58,7 @@ class SpecialGlobalGroupPermissions extends SpecialPage {
 		private readonly PermissionManager $permissionManager,
 		private readonly RestrictedUserGroupConfigReader $restrictedUserGroupConfigReader,
 		private readonly CentralAuthConnectionProvider $caConnectionProvider,
-		private readonly GlobalGroupManager $globalGroupManager
+		private readonly GlobalGroupManager $globalGroupManager,
 	) {
 		parent::__construct( 'GlobalGroupPermissions' );
 	}

@@ -28,12 +28,7 @@ use stdClass;
  */
 class RenameQueueTablePager extends TablePager {
 
-	private UserNameUtils $userNameUtils;
-
-	/**
-	 * @var string
-	 */
-	protected $mPage;
+	protected readonly string $mPage;
 
 	/**
 	 * @var string[]|null
@@ -44,13 +39,12 @@ class RenameQueueTablePager extends TablePager {
 		IContextSource $context,
 		LinkRenderer $linkRenderer,
 		CentralAuthConnectionProvider $caConnectionProvider,
-		UserNameUtils $userNameUtils,
+		private readonly UserNameUtils $userNameUtils,
 		string $page
 	) {
 		$this->setContext( $context );
 		$this->mPage = $page;
 		$this->mDb = $caConnectionProvider->getReplicaDatabase();
-		$this->userNameUtils = $userNameUtils;
 
 		$limit = $this->getRequest()->getInt( 'limit', 100 );
 		// Override default cap of 5000

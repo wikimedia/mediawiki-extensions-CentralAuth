@@ -14,22 +14,13 @@ use MediaWiki\Title\Title;
 
 class SpecialGlobalUsers extends IncludableSpecialPage {
 
-	private Language $contentLanguage;
-	private LinkBatchFactory $linkBatchFactory;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private GlobalGroupManager $globalGroupManager;
-
 	public function __construct(
-		Language $contentLanguage,
-		LinkBatchFactory $linkBatchFactory,
-		CentralAuthConnectionProvider $caConnectionProvider,
-		GlobalGroupManager $globalGroupManager
+		private readonly Language $contentLanguage,
+		private readonly LinkBatchFactory $linkBatchFactory,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly GlobalGroupManager $globalGroupManager,
 	) {
 		parent::__construct( 'GlobalUsers' );
-		$this->contentLanguage = $contentLanguage;
-		$this->linkBatchFactory = $linkBatchFactory;
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->globalGroupManager = $globalGroupManager;
 	}
 
 	/** @inheritDoc */

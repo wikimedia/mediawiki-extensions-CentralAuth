@@ -84,21 +84,12 @@ class CentralAuthHooks implements
 
 	public const BACKFILL_ACCOUNT_CREATOR = "MediaWikiAccountBackfiller";
 
-	private Config $config;
-	private UserNameUtils $userNameUtils;
-	private UserOptionsLookup $userOptionsLookup;
-	private CentralAuthEditCounter $editCounter;
-
 	public function __construct(
-		Config $config,
-		UserNameUtils $userNameUtils,
-		UserOptionsLookup $userOptionsLookup,
-		CentralAuthEditCounter $editCounter
+		private readonly Config $config,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly UserOptionsLookup $userOptionsLookup,
+		private readonly CentralAuthEditCounter $editCounter,
 	) {
-		$this->config = $config;
-		$this->userNameUtils = $userNameUtils;
-		$this->userOptionsLookup = $userOptionsLookup;
-		$this->editCounter = $editCounter;
 	}
 
 	/**

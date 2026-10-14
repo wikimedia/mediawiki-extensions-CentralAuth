@@ -8,10 +8,9 @@ use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 
 class UserEditCountUpdateHookHandler implements UserEditCountUpdateHook {
 
-	private CentralAuthEditCounter $editCounter;
-
-	public function __construct( CentralAuthEditCounter $editCounter ) {
-		$this->editCounter = $editCounter;
+	public function __construct(
+		private readonly CentralAuthEditCounter $editCounter,
+	) {
 	}
 
 	/** @inheritDoc */

@@ -39,7 +39,7 @@ class GlobalPermissionManager {
 		private readonly UserGroupManager $userGroupManager,
 		private readonly RestrictedUserGroupConfigReader $restrictedUserGroupConfigReader,
 		private readonly UserRequirementsConditionCheckerFactory $userRequirementsConditionCheckerFactory,
-		private readonly GlobalGroupManager $globalGroupManager
+		private readonly GlobalGroupManager $globalGroupManager,
 	) {
 		$this->options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
 	}

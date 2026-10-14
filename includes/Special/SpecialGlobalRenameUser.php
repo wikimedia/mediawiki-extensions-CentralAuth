@@ -65,14 +65,14 @@ class SpecialGlobalRenameUser extends FormSpecialPage {
 	private const EDITCOUNT_THRESHOLD = 50_000;
 
 	public function __construct(
-		private UserFactory $userFactory,
-		private UserNameUtils $userNameUtils,
-		private CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		private CentralAuthConnectionProvider $caConnectionProvider,
-		private CentralAuthUIService $uiService,
-		private GlobalRenameDenylist $globalRenameDenylist,
-		private GlobalRenameFactory $globalRenameFactory,
-		private GlobalRenameUserValidator $globalRenameUserValidator
+		private readonly UserFactory $userFactory,
+		private readonly UserNameUtils $userNameUtils,
+		private readonly CentralAuthAntiSpoofManager $caAntiSpoofManager,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly CentralAuthUIService $uiService,
+		private readonly GlobalRenameDenylist $globalRenameDenylist,
+		private readonly GlobalRenameFactory $globalRenameFactory,
+		private readonly GlobalRenameUserValidator $globalRenameUserValidator,
 	) {
 		parent::__construct( 'GlobalRenameUser' );
 	}

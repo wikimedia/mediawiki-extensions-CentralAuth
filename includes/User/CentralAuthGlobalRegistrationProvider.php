@@ -11,18 +11,11 @@ class CentralAuthGlobalRegistrationProvider implements IUserRegistrationProvider
 
 	public const TYPE = 'centralauth';
 
-	private GlobalUserSelectQueryBuilderFactory $globalUserSelectQueryBuilderFactory;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private UserNameUtils $userNameUtils;
-
 	public function __construct(
-		GlobalUserSelectQueryBuilderFactory $globalUserSelectQueryBuilderFactory,
-		CentralAuthConnectionProvider $caConnectionProvider,
-		UserNameUtils $userNameUtils
+		private readonly GlobalUserSelectQueryBuilderFactory $globalUserSelectQueryBuilderFactory,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly UserNameUtils $userNameUtils,
 	) {
-		$this->globalUserSelectQueryBuilderFactory = $globalUserSelectQueryBuilderFactory;
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->userNameUtils = $userNameUtils;
 	}
 
 	/**

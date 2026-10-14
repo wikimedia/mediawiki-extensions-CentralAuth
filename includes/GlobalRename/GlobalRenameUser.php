@@ -36,7 +36,7 @@ class GlobalRenameUser {
 		private JobQueueGroupFactory $jobQueueGroupFactory,
 		private GlobalRenameUserDatabaseUpdates $databaseUpdates,
 		private GlobalRenameUserLogger $logger,
-		private CentralAuthAntiSpoofManager $caAntiSpoofManager
+		private CentralAuthAntiSpoofManager $caAntiSpoofManager,
 	) {
 	}
 

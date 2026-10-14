@@ -27,8 +27,6 @@ use Wikimedia\Rdbms\IDBAccessObject;
  */
 class GlobalRenameRequest {
 
-	private UserNameUtils $userNameUtils;
-
 	public const PENDING = 'pending';
 	public const APPROVED = 'approved';
 	public const REJECTED = 'rejected';
@@ -64,8 +62,9 @@ class GlobalRenameRequest {
 	/**
 	 * @internal Use GlobalRenameRequestStore::newBlankRequest instead
 	 */
-	public function __construct( UserNameUtils $userNameUtils ) {
-		$this->userNameUtils = $userNameUtils;
+	public function __construct(
+		private readonly UserNameUtils $userNameUtils,
+	) {
 	}
 
 	/**

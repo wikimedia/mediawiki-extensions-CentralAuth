@@ -27,10 +27,10 @@ class SharedDomainUtils {
 	private ?bool $isSharedDomain = null;
 
 	public function __construct(
-		private Config $config,
-		private SpecialPageFactory $specialPageFactory,
-		private ?MobileContext $mobileContext,
-		private bool $isApiRequest
+		private readonly Config $config,
+		private readonly SpecialPageFactory $specialPageFactory,
+		private readonly ?MobileContext $mobileContext,
+		private readonly bool $isApiRequest,
 	) {
 	}
 

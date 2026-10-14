@@ -37,7 +37,7 @@ class ApiGlobalUserRights extends ApiBase {
 		string $moduleName,
 		private readonly CentralAuthUserHelper $userHelper,
 		private readonly GlobalGroupAssignmentService $globalGroupAssignmentService,
-		private readonly GlobalGroupManager $globalGroupManager
+		private readonly GlobalGroupManager $globalGroupManager,
 	) {
 		parent::__construct( $mainModule, $moduleName );
 	}

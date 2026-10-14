@@ -40,14 +40,11 @@ class RedirectingLoginHookHandler implements
 	public const SUPPRESS_HOOK_SESSION_FLAG = 'CentralAuth-suppressAuthManagerLoginAuthenticateAudit';
 
 	public function __construct(
-		private AuthManager $authManager,
-		private CentralAuthTokenManager $tokenManager,
-		private CentralDomainUtils $centralDomainUtils,
-		private SharedDomainUtils $sharedDomainUtils
+		private readonly AuthManager $authManager,
+		private readonly CentralAuthTokenManager $tokenManager,
+		private readonly CentralDomainUtils $centralDomainUtils,
+		private readonly SharedDomainUtils $sharedDomainUtils,
 	) {
-		$this->tokenManager = $tokenManager;
-		$this->centralDomainUtils = $centralDomainUtils;
-		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/**

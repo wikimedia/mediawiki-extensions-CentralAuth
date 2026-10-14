@@ -17,18 +17,11 @@ use MediaWiki\WikiMap\WikiMap;
 
 class UserCreationHookHandler implements LocalUserCreatedHook {
 
-	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private CentralAuthUtilityService $utilityService;
-
 	public function __construct(
-		CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		CentralAuthConnectionProvider $caConnectionProvider,
-		CentralAuthUtilityService $utilityService
+		private readonly CentralAuthAntiSpoofManager $caAntiSpoofManager,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly CentralAuthUtilityService $utilityService,
 	) {
-		$this->caAntiSpoofManager = $caAntiSpoofManager;
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->utilityService = $utilityService;
 	}
 
 	/**

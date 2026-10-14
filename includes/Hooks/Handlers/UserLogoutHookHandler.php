@@ -25,15 +25,10 @@ class UserLogoutHookHandler implements
 	UserLogoutHook
 {
 
-	private Config $config;
-	private SharedDomainUtils $sharedDomainUtils;
-
 	public function __construct(
-		Config $config,
-		SharedDomainUtils $sharedDomainUtils
+		private readonly Config $config,
+		private readonly SharedDomainUtils $sharedDomainUtils,
 	) {
-		$this->config = $config;
-		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/**

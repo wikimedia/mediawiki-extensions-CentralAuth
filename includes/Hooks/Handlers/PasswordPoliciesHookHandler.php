@@ -17,10 +17,9 @@ use MediaWiki\User\User;
 
 class PasswordPoliciesHookHandler implements PasswordPoliciesForUserHook {
 
-	private Config $config;
-
-	public function __construct( Config $config ) {
-		$this->config = $config;
+	public function __construct(
+		private readonly Config $config,
+	) {
 	}
 
 	/**

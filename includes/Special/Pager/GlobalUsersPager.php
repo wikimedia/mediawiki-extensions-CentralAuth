@@ -27,20 +27,15 @@ class GlobalUsersPager extends AlphabeticPager {
 	/** @var string[] */
 	private $localWikisets = [];
 
-	private GlobalGroupManager $globalGroupManager;
-	private LinkBatchFactory $linkBatchFactory;
-
 	public function __construct(
 		IContextSource $context,
 		CentralAuthConnectionProvider $caConnectionProvider,
-		GlobalGroupManager $globalGroupManager,
-		LinkBatchFactory $linkBatchFactory
+		private readonly GlobalGroupManager $globalGroupManager,
+		private readonly LinkBatchFactory $linkBatchFactory,
 	) {
 		$this->mDb = $caConnectionProvider->getReplicaDatabase();
 		parent::__construct( $context );
 		$this->mDefaultDirection = $this->getRequest()->getBool( 'desc' );
-		$this->globalGroupManager = $globalGroupManager;
-		$this->linkBatchFactory = $linkBatchFactory;
 	}
 
 	public function setGroup( string $group = '' ) {

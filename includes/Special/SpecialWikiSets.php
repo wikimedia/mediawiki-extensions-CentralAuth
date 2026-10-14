@@ -25,12 +25,10 @@ class SpecialWikiSets extends SpecialPage {
 	/** @var bool */
 	private $mCanEdit;
 
-	private CentralAuthWikiListService $wikiListService;
-
-	public function __construct( CentralAuthWikiListService $wikiListService ) {
+	public function __construct(
+		private readonly CentralAuthWikiListService $wikiListService,
+	) {
 		parent::__construct( 'WikiSets' );
-
-		$this->wikiListService = $wikiListService;
 	}
 
 	/**

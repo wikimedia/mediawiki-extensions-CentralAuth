@@ -16,10 +16,9 @@ use MediaWiki\Title\TitleFactory;
  */
 class CentralAuthUIService {
 
-	private TitleFactory $titleFactory;
-
-	public function __construct( TitleFactory $titleFactory ) {
-		$this->titleFactory = $titleFactory;
+	public function __construct(
+		private readonly TitleFactory $titleFactory,
+	) {
 	}
 
 	/**

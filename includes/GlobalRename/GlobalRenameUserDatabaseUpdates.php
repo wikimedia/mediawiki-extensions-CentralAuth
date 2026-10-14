@@ -12,10 +12,9 @@ use MediaWiki\Extension\CentralAuth\CentralAuthConnectionProvider;
  */
 class GlobalRenameUserDatabaseUpdates {
 
-	private CentralAuthConnectionProvider $caConnectionProvider;
-
-	public function __construct( CentralAuthConnectionProvider $caConnectionProvider ) {
-		$this->caConnectionProvider = $caConnectionProvider;
+	public function __construct(
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+	) {
 	}
 
 	/**

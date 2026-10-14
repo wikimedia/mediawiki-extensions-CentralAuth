@@ -23,15 +23,10 @@ use MediaWiki\WikiMap\WikiMap;
 
 class PageDisplayHookHandler implements BeforePageDisplayHook {
 
-	private CentralDomainUtils $centralDomainUtils;
-	private SharedDomainUtils $sharedDomainUtils;
-
 	public function __construct(
-		CentralDomainUtils $centralDomainUtils,
-		SharedDomainUtils $sharedDomainUtils
+		private readonly CentralDomainUtils $centralDomainUtils,
+		private readonly SharedDomainUtils $sharedDomainUtils,
 	) {
-		$this->centralDomainUtils = $centralDomainUtils;
-		$this->sharedDomainUtils = $sharedDomainUtils;
 	}
 
 	/**

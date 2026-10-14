@@ -45,19 +45,12 @@ class SpecialMultiLock extends SpecialPage {
 	/** @var string[] */
 	private $mActionUserNames;
 
-	private UserNameUtils $userNameUtils;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private CentralAuthUIService $uiService;
-
 	public function __construct(
-		UserNameUtils $userNameUtils,
-		CentralAuthConnectionProvider $caConnectionProvider,
-		CentralAuthUIService $uiService
+		private readonly UserNameUtils $userNameUtils,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly CentralAuthUIService $uiService,
 	) {
 		parent::__construct( 'MultiLock' );
-		$this->userNameUtils = $userNameUtils;
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->uiService = $uiService;
 	}
 
 	/** @inheritDoc */

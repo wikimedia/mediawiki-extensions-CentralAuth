@@ -31,7 +31,7 @@ use Wikimedia\Timestamp\TimestampFormat as TS;
  */
 class ApiQueryGlobalUsers extends ApiQueryBase {
 
-	private string $mCurrentWikiId;
+	private readonly string $mCurrentWikiId;
 	private IReadableDatabase $mCentralDB;
 	/**
 	 * @var array<int,array{group:string,expiry:string}[]> array<centralid, group memberships>

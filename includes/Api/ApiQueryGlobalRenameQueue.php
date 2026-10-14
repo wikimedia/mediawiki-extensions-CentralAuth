@@ -21,15 +21,12 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
  */
 class ApiQueryGlobalRenameQueue extends ApiQueryBase {
 
-	private GlobalRenameRequestStore $globalRenameRequestStore;
-
 	public function __construct(
 		ApiQuery $queryModule,
 		string $moduleName,
-		GlobalRenameRequestStore $globalRenameRequestStore
+		private readonly GlobalRenameRequestStore $globalRenameRequestStore,
 	) {
 		parent::__construct( $queryModule, $moduleName, 'grq' );
-		$this->globalRenameRequestStore = $globalRenameRequestStore;
 	}
 
 	/** @inheritDoc */

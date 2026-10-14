@@ -37,10 +37,10 @@ class BlockHookHandler implements
 {
 
 	public function __construct(
-		private BlockTargetFactory $blockTargetFactory,
-		private WANObjectCache $wanCache,
-		private StatsFactory $statsFactory,
-		private UserNameUtils $userNameUtils
+		private readonly BlockTargetFactory $blockTargetFactory,
+		private readonly WANObjectCache $wanCache,
+		private readonly StatsFactory $statsFactory,
+		private readonly UserNameUtils $userNameUtils,
 	) {
 	}
 

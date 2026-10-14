@@ -14,12 +14,9 @@ use StatusValue;
  */
 class CentralAuthSharedDomainPreAuthenticationProvider extends AbstractPreAuthenticationProvider {
 
-	private FilteredRequestTracker $filteredRequestTracker;
-
 	public function __construct(
-		FilteredRequestTracker $filteredRequestTracker
+		private readonly FilteredRequestTracker $filteredRequestTracker,
 	) {
-		$this->filteredRequestTracker = $filteredRequestTracker;
 	}
 
 	/** @inheritDoc */

@@ -183,24 +183,13 @@ class SharedDomainHookHandler implements
 		],
 	];
 
-	private Config $config;
-	private UrlUtils $urlUtils;
-	private FilteredRequestTracker $filteredRequestTracker;
-	private SharedDomainUtils $sharedDomainUtils;
-	private ?MobileContext $mobileContext;
-
 	public function __construct(
-		Config $config,
-		UrlUtils $urlUtils,
-		FilteredRequestTracker $filteredRequestTracker,
-		SharedDomainUtils $sharedDomainUtils,
-		?MobileContext $mobileContext = null
+		private readonly Config $config,
+		private readonly UrlUtils $urlUtils,
+		private readonly FilteredRequestTracker $filteredRequestTracker,
+		private readonly SharedDomainUtils $sharedDomainUtils,
+		private readonly ?MobileContext $mobileContext = null,
 	) {
-		$this->config = $config;
-		$this->urlUtils = $urlUtils;
-		$this->filteredRequestTracker = $filteredRequestTracker;
-		$this->sharedDomainUtils = $sharedDomainUtils;
-		$this->mobileContext = $mobileContext;
 	}
 
 	/** @inheritDoc */

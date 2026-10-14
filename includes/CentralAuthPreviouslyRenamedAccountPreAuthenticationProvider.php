@@ -19,7 +19,7 @@ class CentralAuthPreviouslyRenamedAccountPreAuthenticationProvider
 		IConnectionProvider $dbProvider,
 		UserFactory $userFactory,
 		private readonly CentralAuthConnectionProvider $caConnectionProvider,
-		array $params = []
+		array $params = [],
 	) {
 		parent::__construct( $dbProvider, $userFactory, $params );
 	}

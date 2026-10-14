@@ -27,22 +27,16 @@ use Wikimedia\Rdbms\IReadableDatabase;
  */
 class CentralAuthIdLookup extends CentralIdLookup {
 
-	private Config $config;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private CentralAuthUserCache $userCache;
-	private MapCacheLRU $idCache;
+	private readonly MapCacheLRU $idCache;
 
 	/** @var array<string,bool> Names that cause a NormalizedException */
 	private $badNameCache = [];
 
 	public function __construct(
-		Config $config,
-		CentralAuthConnectionProvider $caConnectionProvider,
-		CentralAuthUserCache $userCache
+		private readonly Config $config,
+		private CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly CentralAuthUserCache $userCache,
 	) {
-		$this->config = $config;
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->userCache = $userCache;
 		$this->idCache = new MapCacheLRU( 100 );
 	}
 

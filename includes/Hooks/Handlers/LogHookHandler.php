@@ -20,15 +20,10 @@ class LogHookHandler implements
 	SpecialLogAddLogSearchRelationsHook
 {
 
-	private IConnectionProvider $dbProvider;
-	private UserNameUtils $userNameUtils;
-
 	public function __construct(
-		IConnectionProvider $dbProvider,
-		UserNameUtils $userNameUtils
+		private readonly IConnectionProvider $dbProvider,
+		private readonly UserNameUtils $userNameUtils,
 	) {
-		$this->dbProvider = $dbProvider;
-		$this->userNameUtils = $userNameUtils;
 	}
 
 	/**

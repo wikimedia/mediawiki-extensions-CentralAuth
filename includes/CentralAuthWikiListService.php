@@ -15,8 +15,7 @@ use MediaWiki\MainConfigNames;
  */
 class CentralAuthWikiListService {
 
-	private ServiceOptions $options;
-	private CentralAuthHookRunner $hookRunner;
+	private readonly CentralAuthHookRunner $hookRunner;
 
 	/** @var string[]|null Cached array of known wikis. */
 	private $wikiList = null;
@@ -30,9 +29,11 @@ class CentralAuthWikiListService {
 	 * @param ServiceOptions $options Options used by this service, containing keys in ::CONSTRUCTOR_OPTIONS
 	 * @param HookContainer $hookContainer
 	 */
-	public function __construct( ServiceOptions $options, HookContainer $hookContainer ) {
+	public function __construct(
+		private readonly ServiceOptions $options,
+		HookContainer $hookContainer,
+	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
 		$this->hookRunner = new CentralAuthHookRunner( $hookContainer );
 	}
 

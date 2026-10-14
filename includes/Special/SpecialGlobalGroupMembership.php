@@ -41,7 +41,7 @@ class SpecialGlobalGroupMembership extends UserGroupsSpecialPage {
 	 */
 	protected CentralAuthUser $targetUser;
 
-	private StatusFormatter $statusFormatter;
+	private readonly StatusFormatter $statusFormatter;
 
 	public function __construct(
 		FormatterFactory $formatterFactory,

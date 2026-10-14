@@ -15,24 +15,17 @@ use MediaWiki\WikiMap\WikiMap;
 
 class SpecialGlobalRenameProgress extends FormSpecialPage {
 
-	private UserNameUtils $userNameUtils;
-	private CentralAuthUIService $uiService;
-	private GlobalRenameFactory $globalRenameFactory;
-
 	/**
 	 * @var GlobalRenameUserStatus
 	 */
 	private $renameuserStatus;
 
 	public function __construct(
-		UserNameUtils $userNameUtils,
-		CentralAuthUIService $uiService,
-		GlobalRenameFactory $globalRenameFactory
+		private readonly UserNameUtils $userNameUtils,
+		private readonly CentralAuthUIService $uiService,
+		private readonly GlobalRenameFactory $globalRenameFactory,
 	) {
 		parent::__construct( 'GlobalRenameProgress' );
-		$this->userNameUtils = $userNameUtils;
-		$this->uiService = $uiService;
-		$this->globalRenameFactory = $globalRenameFactory;
 	}
 
 	/** @inheritDoc */

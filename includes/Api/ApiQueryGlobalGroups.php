@@ -24,15 +24,12 @@ use Wikimedia\ParamValidator\ParamValidator;
  */
 class ApiQueryGlobalGroups extends ApiQueryBase {
 
-	private CentralAuthConnectionProvider $caConnectionProvider;
-
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		CentralAuthConnectionProvider $caConnectionProvider
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
 	) {
 		parent::__construct( $query, $moduleName, 'ggp' );
-		$this->caConnectionProvider = $caConnectionProvider;
 	}
 
 	public function execute() {

@@ -16,10 +16,9 @@ use MediaWiki\SpecialPage\Hook\SpecialPage_initListHook;
 
 class SpecialPageInitHookHandler implements SpecialPage_initListHook {
 
-	private Config $config;
-
-	public function __construct( Config $config ) {
-		$this->config = $config;
+	public function __construct(
+		private readonly Config $config,
+	) {
 	}
 
 	/**

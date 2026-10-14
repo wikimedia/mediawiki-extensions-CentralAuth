@@ -23,22 +23,12 @@ use MediaWiki\User\UserRigorOptions;
  */
 class GlobalRenameFactory {
 
-	private JobQueueGroupFactory $jobQueueGroupFactory;
-	private UserFactory $userFactory;
-
-	private CentralAuthAntiSpoofManager $caAntiSpoofManager;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-
 	public function __construct(
-		JobQueueGroupFactory $jobQueueGroupFactory,
-		UserFactory $userFactory,
-		CentralAuthAntiSpoofManager $caAntiSpoofManager,
-		CentralAuthConnectionProvider $caConnectionProvider
+		private readonly JobQueueGroupFactory $jobQueueGroupFactory,
+		private readonly UserFactory $userFactory,
+		private readonly CentralAuthAntiSpoofManager $caAntiSpoofManager,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
 	) {
-		$this->jobQueueGroupFactory = $jobQueueGroupFactory;
-		$this->userFactory = $userFactory;
-		$this->caAntiSpoofManager = $caAntiSpoofManager;
-		$this->caConnectionProvider = $caConnectionProvider;
 	}
 
 	public function newGlobalRenameUser(

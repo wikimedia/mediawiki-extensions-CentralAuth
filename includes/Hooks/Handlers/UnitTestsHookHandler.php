@@ -17,10 +17,9 @@ class UnitTestsHookHandler implements
 	UnitTestsBeforeDatabaseTeardownHook
 {
 
-	private ILoadBalancer $loadBalancer;
-
-	public function __construct( ILoadBalancer $loadBalancer ) {
-		$this->loadBalancer = $loadBalancer;
+	public function __construct(
+		private readonly ILoadBalancer $loadBalancer,
+	) {
 	}
 
 	/**

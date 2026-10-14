@@ -30,10 +30,6 @@ class GlobalRenameDenylist {
 	/** @var string[]|null Content of the denylist */
 	private $denylist = null;
 
-	private LoggerInterface $logger;
-	private HttpRequestFactory $httpRequestFactory;
-	private WikiPageFactory $wikiPageFactory;
-
 	/**
 	 * @param LoggerInterface $logger
 	 * @param HttpRequestFactory $httpRequestFactory
@@ -42,14 +38,11 @@ class GlobalRenameDenylist {
 	 *   or null for no list ($wgGlobalRenameDenylist)
 	 */
 	public function __construct(
-		LoggerInterface $logger,
-		HttpRequestFactory $httpRequestFactory,
-		WikiPageFactory $wikiPageFactory,
-		$denylistSource
+		private readonly LoggerInterface $logger,
+		private readonly HttpRequestFactory $httpRequestFactory,
+		private readonly WikiPageFactory $wikiPageFactory,
+		$denylistSource,
 	) {
-		$this->logger = $logger;
-		$this->httpRequestFactory = $httpRequestFactory;
-		$this->wikiPageFactory = $wikiPageFactory;
 		$this->file = $denylistSource;
 	}
 

@@ -32,22 +32,13 @@ class CentralAuthSessionManager {
 	/** @var BagOStuff|null Session cache */
 	private $sessionStore = null;
 
-	private ServiceOptions $options;
-	private StatsFactory $statsFactory;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-	private ObjectCacheFactory $objectCacheFactory;
-
 	public function __construct(
-		ServiceOptions $options,
-		StatsFactory $statsFactory,
-		CentralAuthConnectionProvider $caConnectionProvider,
-		ObjectCacheFactory $objectCacheFactory
+		private readonly ServiceOptions $options,
+		private readonly StatsFactory $statsFactory,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly ObjectCacheFactory $objectCacheFactory,
 	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
-		$this->statsFactory = $statsFactory;
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->objectCacheFactory = $objectCacheFactory;
 	}
 
 	/**

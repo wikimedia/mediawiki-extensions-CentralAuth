@@ -20,11 +20,10 @@ class CentralAuthAutomaticGlobalGroupManager {
 		CAMainConfigNames::CentralAuthAutomaticGlobalGroups,
 	];
 
-	private ServiceOptions $options;
-
-	public function __construct( ServiceOptions $options ) {
+	public function __construct(
+		private readonly ServiceOptions $options,
+	) {
 		$options->assertRequiredOptions( self::CONSTRUCTOR_OPTIONS );
-		$this->options = $options;
 	}
 
 	/**

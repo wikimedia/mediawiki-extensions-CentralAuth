@@ -27,15 +27,12 @@ use Wikimedia\ParamValidator\TypeDef\IntegerDef;
  */
 class ApiQueryWikiSets extends ApiQueryBase {
 
-	private CentralAuthWikiListService $wikiListService;
-
 	public function __construct(
 		ApiQuery $query,
 		string $moduleName,
-		CentralAuthWikiListService $wikiListService
+		private readonly CentralAuthWikiListService $wikiListService,
 	) {
 		parent::__construct( $query, $moduleName, 'ws' );
-		$this->wikiListService = $wikiListService;
 	}
 
 	public function execute() {

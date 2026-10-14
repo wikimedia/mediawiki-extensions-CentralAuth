@@ -41,7 +41,7 @@ class SpecialGlobalVanishRequest extends FormSpecialPage {
 		private readonly GlobalRenameRequestStore $globalRenameRequestStore,
 		private readonly JobQueueGroupFactory $jobQueueGroupFactory,
 		private readonly HttpRequestFactory $httpRequestFactory,
-		private readonly UserIdentityLookup $userIdentityLookup
+		private readonly UserIdentityLookup $userIdentityLookup,
 	) {
 		parent::__construct( 'GlobalVanishRequest' );
 	}

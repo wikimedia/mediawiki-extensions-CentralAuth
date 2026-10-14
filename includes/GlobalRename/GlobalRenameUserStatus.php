@@ -22,20 +22,14 @@ use Wikimedia\Rdbms\IReadableDatabase;
  */
 class GlobalRenameUserStatus {
 
-	private CentralAuthConnectionProvider $caConnectionProvider;
-
-	private string $name;
-
 	/**
 	 * @param CentralAuthConnectionProvider $caConnectionProvider
 	 * @param string $name Either old or new name of the user
 	 */
 	public function __construct(
-		CentralAuthConnectionProvider $caConnectionProvider,
-		string $name
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
+		private readonly string $name,
 	) {
-		$this->caConnectionProvider = $caConnectionProvider;
-		$this->name = $name;
 	}
 
 	/**

@@ -19,12 +19,10 @@ class ContentSecurityPolicyHookHandler implements
 	ContentSecurityPolicyScriptSourceHook
 {
 
-	private UrlUtils $urlUtils;
-	private CentralDomainUtils $centralDomainUtils;
-
-	public function __construct( UrlUtils $urlUtils, CentralDomainUtils $centralDomainUtils ) {
-		$this->urlUtils = $urlUtils;
-		$this->centralDomainUtils = $centralDomainUtils;
+	public function __construct(
+		private readonly UrlUtils $urlUtils,
+		private readonly CentralDomainUtils $centralDomainUtils,
+	) {
 	}
 
 	/**

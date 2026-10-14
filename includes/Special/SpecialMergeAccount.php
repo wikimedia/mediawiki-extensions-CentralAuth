@@ -31,19 +31,12 @@ class SpecialMergeAccount extends SpecialPage {
 	/** @var string */
 	protected $mSessionToken;
 
-	private NamespaceInfo $namespaceInfo;
-	private UserFactory $userFactory;
-	private CentralAuthConnectionProvider $caConnectionProvider;
-
 	public function __construct(
-		NamespaceInfo $namespaceInfo,
-		UserFactory $userFactory,
-		CentralAuthConnectionProvider $caConnectionProvider
+		private readonly NamespaceInfo $namespaceInfo,
+		private readonly UserFactory $userFactory,
+		private readonly CentralAuthConnectionProvider $caConnectionProvider,
 	) {
 		parent::__construct( 'MergeAccount' );
-		$this->namespaceInfo = $namespaceInfo;
-		$this->userFactory = $userFactory;
-		$this->caConnectionProvider = $caConnectionProvider;
 	}
 
 	/** @inheritDoc */
