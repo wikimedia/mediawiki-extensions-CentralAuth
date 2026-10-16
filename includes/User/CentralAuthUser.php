@@ -25,6 +25,7 @@ use MediaWiki\Extension\CentralAuth\RCFeed\CARCFeedFormatter;
 use MediaWiki\Extension\CentralAuth\ScrambledPassword;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Logging\ManualLogEntry;
+use MediaWiki\MainConfigNames;
 use MediaWiki\MediaWikiServices;
 use MediaWiki\Password\AbstractPbkdf2Password;
 use MediaWiki\Password\InvalidPassword;
@@ -2572,7 +2573,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$passwordMatches = $this->matchHash( $password, $passwordObject );
 
 		// Log a few bits of the password to differentiate between broken bot sand brute-force attacks.
-		$siteSecret = RequestContext::getMain()->getConfig()->get( 'SecretKey' );
+		$siteSecret = RequestContext::getMain()->getConfig()->get( MainConfigNames::SecretKey );
 		$passwordHashKey = 'random long arbitrary unique prefix' . $siteSecret . $this->mName . $this->mGlobalId;
 		$passwordHashFragment = substr( MWCryptHash::hmac( $password, $passwordHashKey, false ), 0, 1 );
 		$request = RequestContext::getMain()->getRequest();
@@ -3027,7 +3028,7 @@ class CentralAuthUser implements IDBAccessObject {
 		$mwServices = MediaWikiServices::getInstance();
 		$caConnectionProvider = CentralAuthServices::getConnectionProvider();
 
-		$knownDBs = $mwServices->getMainConfig()->get( 'LocalDatabases' );
+		$knownDBs = $mwServices->getMainConfig()->get( MainConfigNames::LocalDatabases );
 		// (T391511) Don't explode if the wiki isn't found, but treat it as "user not found" and warn for clean-up
 		if ( !WikiMap::isCurrentWikiDbDomain( $wikiID ) && !in_array( $wikiID, $knownDBs ) ) {
 			$this->logger->warning(
