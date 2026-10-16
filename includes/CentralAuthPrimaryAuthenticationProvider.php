@@ -42,13 +42,12 @@ class CentralAuthPrimaryAuthenticationProvider
 	/** @var string The internal ID of this provider. */
 	public const ID = 'CentralAuthPrimaryAuthenticationProvider';
 
-	/** @var bool Whether to auto-migrate non-merged accounts on login */
-	protected $autoMigrate = null;
-
-	/** @var bool Whether to auto-migrate non-global accounts on login */
-	protected $autoMigrateNonGlobalAccounts = null;
-	/** @var bool Whether to check for spoofed user names */
-	protected $antiSpoofAccounts = null;
+	/** Whether to auto-migrate non-merged accounts on login */
+	private readonly bool $autoMigrate;
+	/** Whether to auto-migrate non-global accounts on login */
+	private readonly bool $autoMigrateNonGlobalAccounts;
+	/** Whether to check for spoofed user names */
+	private readonly bool $antiSpoofAccounts;
 
 	/**
 	 * @param ReadOnlyMode $readOnlyMode

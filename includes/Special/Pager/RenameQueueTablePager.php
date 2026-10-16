@@ -28,8 +28,6 @@ use stdClass;
  */
 class RenameQueueTablePager extends TablePager {
 
-	protected readonly string $mPage;
-
 	/**
 	 * @var string[]|null
 	 */
@@ -40,10 +38,9 @@ class RenameQueueTablePager extends TablePager {
 		LinkRenderer $linkRenderer,
 		CentralAuthConnectionProvider $caConnectionProvider,
 		private readonly UserNameUtils $userNameUtils,
-		string $page
+		private readonly string $page,
 	) {
 		$this->setContext( $context );
-		$this->mPage = $page;
 		$this->mDb = $caConnectionProvider->getReplicaDatabase();
 
 		$limit = $this->getRequest()->getInt( 'limit', 100 );
@@ -59,11 +56,11 @@ class RenameQueueTablePager extends TablePager {
 	}
 
 	protected function showOpenRequests(): bool {
-		return $this->mPage === SpecialGlobalRenameQueue::PAGE_OPEN_QUEUE;
+		return $this->page === SpecialGlobalRenameQueue::PAGE_OPEN_QUEUE;
 	}
 
 	protected function showClosedRequests(): bool {
-		return $this->mPage === SpecialGlobalRenameQueue::PAGE_CLOSED_QUEUE;
+		return $this->page === SpecialGlobalRenameQueue::PAGE_CLOSED_QUEUE;
 	}
 
 	/** @inheritDoc */
