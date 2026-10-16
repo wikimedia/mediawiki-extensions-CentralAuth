@@ -94,8 +94,7 @@ class RenameQueueTablePager extends TablePager {
 		];
 	}
 
-	/** @inheritDoc */
-	protected function getQueryInfoConds() {
+	protected function getQueryInfoConds(): array {
 		$conds = [];
 
 		$username = $this->getRequest()->getText( 'username' );
