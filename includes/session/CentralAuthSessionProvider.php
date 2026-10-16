@@ -418,7 +418,7 @@ class CentralAuthSessionProvider extends CookieSessionProvider {
 		$user = $session->getUser();
 		$centralUser = CentralAuthUser::getInstance( $user );
 
-		if ( $centralUser->exists() && ( $centralUser->isAttached() || !$user->getId() ) ) {
+		if ( $centralUser->exists() && ( $centralUser->isAttached() || !$user->isRegistered() ) ) {
 			$metadata = $session->getProviderMetadata();
 			$metadata['CentralAuthSource'] = 'CentralAuth';
 			$session->setProviderMetadata( $metadata );

@@ -37,16 +37,15 @@ class CentralAuthUnattachUserJob extends Job {
 		$wiki = $this->params['wiki'];
 		$user = User::newFromName( $username );
 
-		$userId = $user->getId();
-		if ( !$userId ) {
+		if ( !$user->isRegistered() ) {
 			$user->load( IDBAccessObject::READ_LATEST );
-			$userId = $user->getId();
+			if ( $user->isRegistered() ) {
+				// User has been created since this job was queued.
+				// Races are fun!
+				return true;
+			}
 		}
-		if ( $userId !== 0 ) {
-			// User has been created since this job was queued.
-			// Races are fun!
-			return true;
-		}
+
 		$causer = CentralAuthUser::getPrimaryInstanceByName( $username );
 		if ( $causer->renameInProgress() ) {
 			// Do not unattach mid-rename. The only input we have is username, and it is possible

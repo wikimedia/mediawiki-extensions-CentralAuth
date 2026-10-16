@@ -280,10 +280,10 @@ class SpecialCentralLogin extends UnlistedSpecialPage {
 		}
 
 		$getException = static function ( CentralAuthUser $centralUser, UserIdentity $user ) {
-			if ( !$user->getId() ) {
+			if ( !$user->isRegistered() ) {
 				return new RuntimeException( "The user account logged into does not exist." );
 			}
-			if ( !$centralUser->getId() ) {
+			if ( !$centralUser->exists() ) {
 				return new RuntimeException( "The central user account does not exist." );
 			}
 			if ( !$centralUser->isAttached() ) {

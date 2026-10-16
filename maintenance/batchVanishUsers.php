@@ -46,7 +46,7 @@ class BatchVanishUsers extends Maintenance {
 
 		$performer = $this->getOption( 'performer' );
 		$performerUser = CentralAuthUser::getInstanceByName( $performer );
-		if ( $performerUser->getId() === 0 ) {
+		if ( !$performerUser->exists() ) {
 			$this->fatalError( "Performer with username {$performer} cannot be found.\n" );
 		}
 		// Fetching UserIdentity from performer because GlobalRenameFactory uses both CA and UI

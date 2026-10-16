@@ -37,7 +37,7 @@ class GlobalGroupAssignmentServiceTest extends MediaWikiIntegrationTestCase {
 	}
 
 	private function getRegisteredTestUser( ?User $user = null ): CentralAuthUser {
-		$user = $user ?? $this->getMutableTestUser()->getUser();
+		$user ??= $this->getMutableTestUser()->getUser();
 		$caUser = CentralAuthUser::getPrimaryInstance( $user );
 		$caUser->register( '', null );
 		$caUser->attach( WikiMap::getCurrentWikiId() );

@@ -47,7 +47,7 @@ class CentralAuthForcedLocalCreationService {
 			return StatusValue::newFatal( 'centralauth-createlocal-no-global-account' );
 		}
 
-		if ( $user->getId() ) {
+		if ( $user->isRegistered() ) {
 			return StatusValue::newFatal( 'centralauth-createlocal-already-exists' );
 		}
 

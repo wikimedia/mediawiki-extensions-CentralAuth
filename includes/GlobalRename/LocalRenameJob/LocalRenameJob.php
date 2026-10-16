@@ -172,11 +172,11 @@ abstract class LocalRenameJob extends Job {
 		// someone creates an account in the meantime and then bad
 		// stuff could happen...
 		// For the meantime, just use a system account
-		if ( !$caUser->attachedOn( WikiMap::getCurrentWikiId() ) && $user->getId() !== 0 ) {
+		if ( !$caUser->attachedOn( WikiMap::getCurrentWikiId() ) && $user->isRegistered() ) {
 			return User::newSystemUser( 'Global rename script', [ 'steal' => true ] );
 		}
 
-		if ( $user->getId() == 0 ) {
+		if ( !$user->isRegistered() ) {
 			// No local user, let's "auto-create" one
 			$status = CentralAuthServices::getUtilityService()->autoCreateUser( $user );
 			if ( $status->isGood() ) {

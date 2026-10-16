@@ -292,7 +292,7 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		}
 		$authority = $this->mockRegisteredAuthorityWithPermissions( $authorityRights );
 		// Execute the special page with the username specified via the target parameter
-		$request = $request ?? new FauxRequest();
+		$request ??= new FauxRequest();
 		$request->setVal( 'target', $targetUsername );
 		[ $html ] = $this->executeSpecialPage( '', $request, null, $authority );
 		// Verify that the fieldsets for the page are there

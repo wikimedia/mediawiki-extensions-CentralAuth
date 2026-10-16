@@ -214,10 +214,8 @@ class SharedDomainHookHandler implements
 				return false;
 			}
 			$allowedSpecialPages = $this->getRestrictions( self::ALLOWED_SPECIAL_PAGES );
-			foreach ( $allowedSpecialPages as $name ) {
-				if ( $title->isSpecial( $name ) ) {
-					return true;
-				}
+			if ( array_any( $allowedSpecialPages, $title->isSpecial( ... ) ) ) {
+				return true;
 			}
 			$result = wfMessage( 'centralauth-action-forbidden-shared-domain' );
 			return false;
@@ -398,15 +396,14 @@ class SharedDomainHookHandler implements
 	/** @inheritDoc */
 	public function onGetLocalURL( $title, &$url, $query ) {
 		if ( $this->sharedDomainUtils->shouldRestrictCurrentDomain() ) {
+			if ( $title->isExternal() ) {
+				return;
+			}
+
 			// Only allow links to auth-related special pages on the shared domain.
 			// Point all other links to the normal wiki domain.
 			$allowedSpecialPages = $this->getRestrictions( self::ALLOWED_SPECIAL_PAGES );
-			foreach ( $allowedSpecialPages as $name ) {
-				if ( $title->isSpecial( $name ) ) {
-					return;
-				}
-			}
-			if ( $title->getInterwiki() !== '' ) {
+			if ( array_any( $allowedSpecialPages, $title->isSpecial( ... ) ) ) {
 				return;
 			}
 

@@ -57,7 +57,7 @@ class CentralAuthCreateLocalAccountJob extends Job {
 		$centralUser = CentralAuthUser::getInstance( $user );
 		$logger = LoggerFactory::getInstance( 'CentralAuth' );
 
-		if ( $user->getId() !== 0 ) {
+		if ( $user->isRegistered() ) {
 			$logger->info(
 				__CLASS__ . ': tried to create local account for {username} '
 					. 'on {wiki} from {from} but one already exists',

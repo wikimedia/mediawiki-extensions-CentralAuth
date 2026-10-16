@@ -254,7 +254,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				}
 
 				$centralUser = CentralAuthUser::getInstance( $this->getUser() );
-				if ( $centralUser->getId() && $centralUser->isAttached() ) {
+				if ( $centralUser->exists() && $centralUser->isAttached() ) {
 					$remember = (bool)$this->getCentralSession()['remember'];
 					$delay = $this->session->delaySave();
 					$this->session->setRememberUser( $remember );
@@ -558,7 +558,7 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 				// attached, because then if the user is missing en.site they
 				// won't be auto logged in to any of the non-en versions either.
 				$centralUser = CentralAuthUser::getInstanceByName( $memcData['userName'] );
-				if ( !$centralUser->getId() || $centralUser->getId() != $memcData['gu_id'] ) {
+				if ( !$centralUser->exists() || $centralUser->getId() != $memcData['gu_id'] ) {
 					$this->logger->warning( __METHOD__ . ": Wrong user: expected {gu_id}, got {cu_id}", [
 						'gu_id' => $memcData['gu_id'],
 						'cu_id' => $centralUser->getId(),

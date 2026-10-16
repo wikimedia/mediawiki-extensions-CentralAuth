@@ -206,7 +206,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 				if ( $filter === self::FILTER_ATTACHED ) {
 					$filterPass = $centralUser->isAttached();
 				} elseif ( $filter === self::FILTER_OWNED ) {
-					if ( $centralUser->getId() === 0 ) {
+					if ( !$centralUser->exists() ) {
 						// Absent from globaluser
 						$filterPass = false;
 					} elseif ( $centralUser->isAttached() ) {
@@ -226,7 +226,7 @@ class CentralAuthIdLookup extends CentralIdLookup {
 					$this->idCache->set( $centralUser->getId(), [ $centralUser, $centralUser->isFromPrimary() ] );
 				}
 				if ( $filterPass && $this->canView( $audience, $centralUser->getHiddenLevelInt() ) ) {
-					if ( $centralUser->getId() ) {
+					if ( $centralUser->exists() ) {
 						$nameToId[$name] = $centralUser->getId();
 					}
 				}
