@@ -3,7 +3,8 @@
 		"authors": [
 			"Amire80",
 			"Guycn2",
-			"Yona b"
+			"Yona b",
+			"Neriah"
 		]
 	},
 	"apierror-centralauth-badsession": "אפשר לקבל centralauthtoken רק בעת שימוש בהתחברויות CentralAuth.",
