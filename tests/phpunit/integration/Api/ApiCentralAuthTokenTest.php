@@ -8,6 +8,8 @@ use MediaWiki\Api\ApiUsageException;
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Config\SiteConfiguration;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\Json\JwtCodec;
@@ -45,17 +47,14 @@ class ApiCentralAuthTokenTest extends ApiTestCase {
 	}
 
 	private function patchStores(): void {
-		$store = new HashBagOStuff();
+		$sessionManager = CentralAuthServices::getSessionManager( $this->getServiceContainer() );
+		/** @var CentralAuthSessionManager $wrappedSessionManager */
+		$wrappedSessionManager = TestingAccessWrapper::newFromObject( $sessionManager );
+		$wrappedSessionManager->sessionStore = new HashBagOStuff();
 
-		$wrappedSessionMgr = TestingAccessWrapper::newFromObject(
-			CentralAuthServices::getSessionManager( $this->getServiceContainer() )
+		$this->setService( 'CentralAuth.CentralAuthTokenManager',
+			new CentralAuthTokenManager( new HashBagOStuff() )
 		);
-		$wrappedSessionMgr->sessionStore = $store;
-
-		$wrappedTokenMgr = TestingAccessWrapper::newFromObject(
-			CentralAuthServices::getTokenManager( $this->getServiceContainer() )
-		);
-		$wrappedTokenMgr->tokenStore = $store;
 	}
 
 	/**

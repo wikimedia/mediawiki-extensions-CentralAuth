@@ -18,7 +18,7 @@ class CentralAuthTokenManager {
 	 *   Typically {@see MediaWikiServices::getMicroStash()}.
 	 */
 	public function __construct(
-		private BagOStuff $tokenStore,
+		private readonly BagOStuff $tokenStore,
 	) {
 	}
 

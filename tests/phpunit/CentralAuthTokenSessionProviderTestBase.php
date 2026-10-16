@@ -3,6 +3,8 @@
 use MediaWiki\Config\HashConfig;
 use MediaWiki\Context\RequestContext;
 use MediaWiki\Extension\CentralAuth\CentralAuthServices;
+use MediaWiki\Extension\CentralAuth\CentralAuthSessionManager;
+use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\HookContainer\HookContainer;
@@ -20,8 +22,6 @@ use MediaWiki\Title\Title;
 use MediaWiki\User\User;
 use MediaWiki\User\UserFactory;
 use PHPUnit\Framework\MockObject\MockObject;
-use Wikimedia\ObjectCache\BagOStuff;
-use Wikimedia\ObjectCache\HashBagOStuff;
 use Wikimedia\Rdbms\IDBAccessObject;
 use Wikimedia\TestingAccessWrapper;
 
@@ -33,8 +33,6 @@ use Wikimedia\TestingAccessWrapper;
 abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrationTestCase {
 
 	use SessionProviderTestTrait;
-
-	protected BagOStuff $sessionStore;
 
 	protected HookContainer $hookContainer;
 
@@ -53,7 +51,6 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 
 		$this->setUserLang( 'qqx' );
 
-		$this->sessionStore = new HashBagOStuff();
 		$this->patchStores();
 
 		// CentralAuthTokenSessionProvider registers hooks dynamically.
@@ -66,12 +63,13 @@ abstract class CentralAuthTokenSessionProviderTestBase extends MediaWikiIntegrat
 	 */
 	private function patchStores() {
 		$sessionManager = CentralAuthServices::getSessionManager( $this->getServiceContainer() );
+		/** @var CentralAuthSessionManager $wrappedSessionManager */
 		$wrappedSessionManager = TestingAccessWrapper::newFromObject( $sessionManager );
-		$wrappedSessionManager->sessionStore = $this->sessionStore;
+		$wrappedSessionManager->sessionStore = new HashBagOStuff();
 
-		$tokenManager = CentralAuthServices::getTokenManager( $this->getServiceContainer() );
-		$wrappedTokenManager = TestingAccessWrapper::newFromObject( $tokenManager );
-		$wrappedTokenManager->tokenStore = $this->sessionStore;
+		$this->setService( 'CentralAuth.CentralAuthTokenManager',
+			new CentralAuthTokenManager( new HashBagOStuff() )
+		);
 	}
 
 	protected function assertSessionInfoError(
