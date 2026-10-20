@@ -1,0 +1,26 @@
+{
+	"@metadata": {
+		"authors": [
+			"ऐक्टिवेटेड्"
+		]
+	},
+	"centralauth-days-ago": "$1 {{PLURAL:$1|दिन}} पहिले",
+	"centralauth-delete-empty-account": "खाली खाता",
+	"centralauth-hours-ago": "$1 {{PLURAL:$1|घण्टा}} पहिले",
+	"centralauth-incomplete": "खाता एकीकरण पूरा नै होलै !",
+	"centralauth-list-home-title": "गृहविकि",
+	"centralauth-minutes-ago": "$1 {{PLURAL:$1|मिनट}} पहिले",
+	"centralauth-months-ago": "$1 {{PLURAL:$1|माह}} पहिले",
+	"centralauth-multilock-homewiki": "गृहविकि",
+	"centralauth-non-login-wiki-buttonlabel": "केन्द्रीय प्रवेश",
+	"centralauth-seconds-ago": "$1 {{PLURAL:$1|सेकेण्ड}} पहिले",
+	"centralauth-years-ago": "$1 {{PLURAL:$1|बरिस}} पहिले",
+	"centralautologin": "केन्द्रीय प्रवेश",
+	"centrallogin": "केन्द्रीय प्रयोगकर्ता प्रवेश",
+	"createlocalaccount": "जबरन स्थानीय खाता बनैथिन",
+	"globalgroupmembership": "वैश्विक समूहमे सदस्यता",
+	"globalgrouppermissions": "वैश्विक समूह प्रबन्धन",
+	"globalrenamequeue-action-address": "पता",
+	"globalrenamequeue-action-view": "देखथिन",
+	"globalrenamequeue-type-rename": "पुनः नामकरण"
+}
