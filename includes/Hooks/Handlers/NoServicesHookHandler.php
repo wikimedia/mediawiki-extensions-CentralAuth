@@ -8,6 +8,7 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Extension\CentralAuth\Maintenance\MigrateGuSalt;
+use MediaWiki\Extension\CentralAuth\Maintenance\PopulateLuAttachmentMethod;
 use MediaWiki\Installer\DatabaseUpdater;
 use MediaWiki\Installer\Hook\LoadExtensionSchemaUpdatesHook;
 
@@ -74,6 +75,14 @@ class NoServicesHookHandler implements
 			'virtual-centralauth',
 			'dropTable',
 			'users_to_rename',
+		] );
+
+		// 1.48
+
+		$updater->addExtensionUpdateOnVirtualDomain( [
+			'virtual-centralauth',
+			'runMaintenance',
+			PopulateLuAttachmentMethod::class,
 		] );
 	}
 
