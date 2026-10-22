@@ -148,6 +148,7 @@ class CentralAuthTestUser {
 				'lu_name' => $this->username,
 				'lu_attached_timestamp' => $this->registration,
 				'lu_attached_method' => $wiki[1],
+				'lu_attachment_method' => CentralAuthUser::ATTACHMENT_METHOD_MAPPING[$wiki[1]],
 			];
 		}
 

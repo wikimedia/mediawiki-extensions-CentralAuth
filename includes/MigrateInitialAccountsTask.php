@@ -2,6 +2,7 @@
 
 namespace MediaWiki\Extension\CentralAuth;
 
+use MediaWiki\Extension\CentralAuth\User\CentralAuthUser;
 use MediaWiki\MainConfigNames;
 use MediaWiki\Status\Status;
 use MediaWiki\Utils\MWCryptRand;
@@ -88,6 +89,7 @@ class MigrateInitialAccountsTask extends \MediaWiki\Installer\Task\Task {
 						'lu_name' => $user->user_name,
 						'lu_attached_timestamp' => $user->user_registration,
 						'lu_attached_method' => 'new',
+						'lu_attachment_method' => CentralAuthUser::ATTACHMENT_METHOD_NEW,
 						'lu_local_id' => $user->user_id,
 						'lu_global_id' => $gu_id,
 					] )
