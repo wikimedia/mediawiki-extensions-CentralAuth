@@ -197,22 +197,6 @@ class SpecialMergeAccount extends SpecialPage {
 		$this->getRequest()->getSession()->setSecret( 'wsCentralAuthMigration', $data );
 	}
 
-	/**
-	 * @param string $text
-	 * @param string $key
-	 * @return string
-	 */
-	private function xorString( $text, $key ) {
-		if ( $key !== '' ) {
-			$textLen = strlen( $text );
-			$keyLen = strlen( $key );
-			for ( $i = 0; $i < $textLen; $i++ ) {
-				$text[$i] = chr( 0xff & ( ord( $text[$i] ) ^ ord( $key[$i % $keyLen] ) ) );
-			}
-		}
-		return $text;
-	}
-
 	private function doDryRunMerge() {
 		$globalUser = CentralAuthUser::getPrimaryInstance( $this->getUser() );
 
