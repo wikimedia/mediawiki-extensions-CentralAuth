@@ -88,7 +88,7 @@ class ApiQueryGlobalUsers extends ApiQueryBase {
 		$data = [];
 		foreach ( ( $params['users'] ?? [] ) as $name ) {
 			$canonical = $this->userNameUtils->getCanonical( $name );
-			if ( !$canonical ) {
+			if ( $canonical === false ) {
 				$data[$name] = [ 'name' => $name, 'invalid' => true ];
 				$users[] = $name;
 				continue;
