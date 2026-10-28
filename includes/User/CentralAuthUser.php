@@ -123,7 +123,7 @@ class CentralAuthUser implements IDBAccessObject {
 	private readonly WANObjectCache $wanCache;
 
 	/** @var string[] */
-	private static $mCacheVars = [
+	private const CACHE_VARS = [
 		'mGlobalId',
 		'mPassword',
 		'mAuthToken',
@@ -629,7 +629,7 @@ class CentralAuthUser implements IDBAccessObject {
 				}
 
 				$data = [];
-				foreach ( self::$mCacheVars as $var ) {
+				foreach ( self::CACHE_VARS as $var ) {
 					$data[$var] = $this->$var;
 				}
 
@@ -651,7 +651,7 @@ class CentralAuthUser implements IDBAccessObject {
 			[ 'user' => $this->mName ]
 		);
 
-		foreach ( self::$mCacheVars as $var ) {
+		foreach ( self::CACHE_VARS as $var ) {
 			$this->$var = $object[$var];
 		}
 

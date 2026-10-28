@@ -29,7 +29,7 @@ class WikiSet {
 	private $mWikis;
 
 	/** @var string[] */
-	private static $mCacheVars = [
+	private const CACHE_VARS = [
 		'mId',
 		'mName',
 		'mType',
@@ -214,7 +214,7 @@ class WikiSet {
 	 */
 	private function getDataForCache() {
 		$data = [];
-		foreach ( self::$mCacheVars as $var ) {
+		foreach ( self::CACHE_VARS as $var ) {
 			if ( $this->$var !== null ) {
 				$data[$var] = $this->$var;
 			}
