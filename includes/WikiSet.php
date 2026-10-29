@@ -303,10 +303,12 @@ class WikiSet {
 	public static function getWikiSetIdsForWiki( string $wiki ): array {
 		$cache = MediaWikiServices::getInstance()->getMainWANObjectCache();
 		$fname = __METHOD__;
-		return $cache->getWithSetCallback(
-			$cache->makeGlobalKey( 'centralauth-wikiset', 'wiki', $wiki ),
-			$cache::TTL_DAY,
-			static function () use ( $wiki, $fname ) {
+		return $cache->buildGetWithSetCallback()
+			->globalKey( 'centralauth-wikiset', 'wiki', $wiki )
+			->keepForADay()
+			->invalidatedByGlobalKey( 'centralauth-wikiset', 'list' )
+			->longProcessCache()
+			->callback( static function () use ( $wiki, $fname ) {
 				$dbr = CentralAuthServices::getConnectionProvider()->getReplicaDatabase();
 				$res = $dbr->newSelectQueryBuilder()
 					->select( [ 'ws_id', 'ws_name', 'ws_type', 'ws_wikis' ] )
@@ -322,12 +324,8 @@ class WikiSet {
 				}
 
 				return $matchedIds;
-			},
-			[
-				'checkKeys' => [ $cache->makeGlobalKey( 'centralauth-wikiset', 'list' ) ],
-				'pcTTL' => WANObjectCache::TTL_PROC_LONG,
-			]
-		);
+			} )
+			->fetch();
 	}
 
 	/**
