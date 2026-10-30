@@ -8,6 +8,7 @@
 			"Kipala",
 			"Kwisha",
 			"Lloffiwr",
+			"PrinceAzuka134",
 			"Stephenwanjau",
 			"Yasen igra"
 		]
@@ -15,7 +16,7 @@
 	"centralauth-admin-blocklog": "Kumbukumbu ya uzuio",
 	"centralauth-admin-delete-button": "Futa akaunti hii",
 	"centralauth-admin-delete-title": "Futa akaunti",
-	"centralauth-admin-hidden-list": "kutoka kwa orodha za umma",
+	"centralauth-admin-hidden-list": "kutoka kwenye orodha ya watumiaji wa kimataifa",
 	"centralauth-admin-info-editcount": "Jumla ya hariri:",
 	"centralauth-admin-info-hidden": "Kipimo kilijofichwa:",
 	"centralauth-admin-info-locked": "Imefungwa:",
@@ -30,6 +31,7 @@
 	"centralauth-admin-merge": "Shikanisha zilizochaguliwa",
 	"centralauth-admin-no": "la",
 	"centralauth-admin-none-selected": "Hakuna akaunti zilzochaguliwa kurekebishwa.",
+	"centralauth-admin-nonexistent": "Hakuna akaunti ya kimataifa kwa \"<nowiki> $1</nowiki> \".",
 	"centralauth-admin-reason": "Sababu:",
 	"centralauth-admin-status-hidden": "Imefichwa:",
 	"centralauth-admin-status-hidden-list": "Akaunti imefichwa kutoka kwa orodha za umma",
@@ -45,6 +47,8 @@
 	"centralauth-attach-title": "Dhibitisha akaunti",
 	"centralauth-complete-text": "Unaweza sasa kuingia katika tovuti yoyote ya wiki {{int:Centralauth-groupname}} bila kufungua akaunti mpay.",
 	"centralauth-contribs-link": "akaunti ya kimataifa",
+	"centralauth-contribs-locked": "Akaunti hii imefungwa kimataifa.\nTazama [[Special:CentralAuth/$1|maelezo ya akaunti ya kimataifa]] kwa maelezo zaidi.",
+	"centralauth-contribs-locked-log": "Akaunti hii imefungwa kimataifa.\nIngizo la hivi karibuni la kumbukumbu ya kufuli limetolewa hapa chini kwa ajili ya marejeleo:",
 	"centralauth-days-ago": "{{PLURAL:$1|siku $1 iliyo|siku $1 zilizo}}pita",
 	"centralauth-editgroup-display-edit": "$2 ([[MediaWiki:Group-$1|hariri]])",
 	"centralauth-editgroup-editsets": "([[Special:EditWikiSets|hariri]])",
@@ -124,6 +128,7 @@
 	"centralauth-years-ago": "{{PLURAL:$1|mwaka $1 ulio|miaka $1 iliyo}}pita",
 	"globalrenamerequest-self-error": "Labda hauwezi kuidhinisha ombi hili kwa kuwa huruhusiwi kubadilisha jina la akaunti yako mwenyewe.",
 	"globalrenamerequest-self-warning": "Unaweza kukataa tu ombi hili kwa kuwa huruhusiwi kubadilisha jina la akaunti yako mwenyewe.",
+	"logentry-globalauth-setstatus": "$1 {{GENDER:$2|imebadilishwa}} hali ya akaunti ya kimataifa \"$3\": imewekwa $4; haijawekwa $5",
 	"mergeaccount": "Kuunganishwa kwa hali ya kuingia",
 	"right-centralauth-merge": "Shikanisha akaunti yao"
 }
