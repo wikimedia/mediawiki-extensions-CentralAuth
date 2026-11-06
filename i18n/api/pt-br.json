@@ -9,7 +9,8 @@
 			"McDutchie",
 			"Stephanyb76",
 			"TheEduGobi",
-			"YuriNikolai"
+			"YuriNikolai",
+			"Fúlvio"
 		]
 	},
 	"apierror-centralauth-badsession": "Só pode obter um token central ao usar as sessões do CentralAuth.",
@@ -40,6 +41,7 @@
 	"apihelp-globaluserrights-param-userid": "ID de usuário global.",
 	"apihelp-globaluserrights-summary": "Adicionar/remover um usuário para/de grupos globais.",
 	"apihelp-main-param-centralauthtoken": "Ao acessar a API usando uma solicitação AJAX por domínio cruzado (CORS), use isto para autenticar-se como usuário(a) atual do SUL. Use <kbd>[[Special:ApiHelp/centralauthtoken|action=centralauthtoken]]</kbd> nesta wiki para recuperar o token, antes de fazer a solicitação CORS. Cada token deve ser utilizado apenas uma vez, e expira após 10 segundos. Isto deve estar incluso em toda solicitação ''pre-flight'', sendo portanto parte do URI da solicitação (ao invés do corpo do POST).",
+	"apihelp-main-param-centralauthtoken-jwt": "Nesta wiki, o valor esperado é um JSON Web Token, que pode ser validado por servidores proxy à frente do MediaWiki. Se o token tiver expirado ou for inválido por qualquer outro motivo, você poderá receber um erro HTTP do proxy em um formato diferente de um erro normal da API.",
 	"apihelp-query+globalallusers-example-1": "Listar usuários globais",
 	"apihelp-query+globalallusers-example-2": "Mostrar algumas informações para usuários globais a partir de \"ABC\"",
 	"apihelp-query+globalallusers-param-dir": "Direção para classificar.",

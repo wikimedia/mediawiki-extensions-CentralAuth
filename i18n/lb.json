@@ -126,6 +126,7 @@
 	"centralauth-complete-text": "Dir kënnt Iech elo op all Wiki-Site vun {{int:Centralauth-groupname}} aloggen ouni een neie Benotzerkont opmaachen ze mussen.",
 	"centralauth-completelogin-back": "Zeréck op déi vireg Säit.",
 	"centralauth-contribs-link": "globale Kont",
+	"centralauth-createlocal-no-global-account": "Esou ee globale Kont gëtt et net.",
 	"centralauth-createlocal-reason": "Grond",
 	"centralauth-createlocal-success": "Lokale Kont ugeluecht.",
 	"centralauth-createlocal-suppressed": "Dir kënnt kee lokale Kont fir een ënnerdréckte Benotzer uleeën.",
