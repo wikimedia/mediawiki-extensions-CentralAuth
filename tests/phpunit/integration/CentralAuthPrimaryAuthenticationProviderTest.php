@@ -41,7 +41,6 @@ class CentralAuthPrimaryAuthenticationProviderTest extends MediaWikiIntegrationT
 			->willReturn( $expired );
 
 		$provider = new CentralAuthPrimaryAuthenticationProvider(
-			$services->getReadOnlyMode(),
 			$tempUserDetailsLookup,
 			$services->getUserIdentityLookup(),
 			CentralAuthServices::getAntiSpoofManager(),

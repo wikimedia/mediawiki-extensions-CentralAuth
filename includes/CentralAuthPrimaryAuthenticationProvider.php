@@ -31,7 +31,6 @@ use Psr\Log\NullLogger;
 use StatusValue;
 use Wikimedia\Rdbms\DBAccessObjectUtils;
 use Wikimedia\Rdbms\IDBAccessObject;
-use Wikimedia\Rdbms\ReadOnlyMode;
 
 /**
  * A primary authentication provider that uses the CentralAuth password.
@@ -50,7 +49,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	private readonly bool $antiSpoofAccounts;
 
 	/**
-	 * @param ReadOnlyMode $readOnlyMode
 	 * @param TempUserDetailsLookup $tempUserDetailsLookup
 	 * @param UserIdentityLookup $userIdentityLookup
 	 * @param CentralAuthAntiSpoofManager $caAntiSpoofManager
@@ -68,7 +66,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	 *    AntiSpoof extension isn't installed or the extension is outdated.
 	 */
 	public function __construct(
-		private readonly ReadOnlyMode $readOnlyMode,
 		private readonly TempUserDetailsLookup $tempUserDetailsLookup,
 		private readonly UserIdentityLookup $userIdentityLookup,
 		private readonly CentralAuthAntiSpoofManager $caAntiSpoofManager,
@@ -283,26 +280,6 @@ class CentralAuthPrimaryAuthenticationProvider
 	/** @inheritDoc */
 	public function postAuthentication( $user, AuthenticationResponse $response ) {
 		if ( $response->status === AuthenticationResponse::PASS ) {
-			$centralUser = CentralAuthUser::getInstance( $user );
-			if ( $centralUser->exists() &&
-				$centralUser->isAttached() &&
-				$centralUser->getEmail() != $user->getEmail() &&
-				!$this->readOnlyMode->isReadOnly()
-			) {
-				DeferredUpdates::addCallableUpdate( static function () use ( $user ) {
-					$centralUser = CentralAuthUser::getPrimaryInstance( $user );
-					if ( !$centralUser->exists() || !$centralUser->isAttached() ) {
-						// something major changed?
-						return;
-					}
-
-					$user->setEmail( $centralUser->getEmail() );
-					// @TODO: avoid direct User object field access
-					$user->mEmailAuthenticated = $centralUser->getEmailAuthenticationTimestamp();
-					$user->saveSettings();
-				} );
-			}
-
 			// Trigger edge login on the next pageview, except in SUL3 mode, when this is
 			// the wrong domain / session.
 			if ( !$this->sharedDomainUtils->isSharedDomain() ) {
@@ -584,11 +561,6 @@ class CentralAuthPrimaryAuthenticationProvider
 			);
 			$centralUser->attach( WikiMap::getCurrentWikiId(), 'login' );
 			$centralUser->addLocalName( WikiMap::getCurrentWikiId() );
-
-			if ( $centralUser->getEmail() != $user->getEmail() ) {
-				$user->setEmail( $centralUser->getEmail() );
-				$user->mEmailAuthenticated = $centralUser->getEmailAuthenticationTimestamp();
-			}
 		}
 	}
 }

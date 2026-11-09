@@ -1021,7 +1021,6 @@
 				"class": "MediaWiki\\Extension\\CentralAuth\\CentralAuthPrimaryAuthenticationProvider",
 				"sort": 10,
 				"services": [
-					"ReadOnlyMode",
 					"TempUserDetailsLookup",
 					"UserIdentityLookup",
 					"CentralAuth.CentralAuthAntiSpoofManager",
