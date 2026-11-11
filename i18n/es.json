@@ -66,7 +66,8 @@
 			"Toliño",
 			"Translationista",
 			"Tusca",
-			"Vivaelcelta"
+			"Vivaelcelta",
+			"No se"
 		]
 	},
 	"abusefilter-edit-builder-vars-global-user-editcount": "Recuento de ediciones globales del usuario ($1)",
@@ -111,6 +112,7 @@
 	"centralauth-admin-hidden-oversight": "suprimida",
 	"centralauth-admin-info-attached": "Número de cuentas unificadas:",
 	"centralauth-admin-info-editcount": "Contador total de ediciones:",
+	"centralauth-admin-info-editcountsum": "Suma de recuentos de ediciones locales:",
 	"centralauth-admin-info-groups": "{{PLURAL:$1|Grupo global|Grupos globales}}:",
 	"centralauth-admin-info-groups-manage": "gestionar",
 	"centralauth-admin-info-header": "Información global del usuario",
