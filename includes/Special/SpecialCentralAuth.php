@@ -6,6 +6,7 @@ use DateInterval;
 use Exception;
 use InvalidArgumentException;
 use MediaWiki\Block\Restriction\ActionRestriction;
+use MediaWiki\Block\Restriction\CreatePageNamespaceRestriction;
 use MediaWiki\Block\Restriction\NamespaceRestriction;
 use MediaWiki\Block\Restriction\PageRestriction;
 use MediaWiki\CommentFormatter\CommentFormatter;
@@ -991,6 +992,7 @@ class SpecialCentralAuth extends SpecialPage {
 		}, [
 			PageRestriction::TYPE => 0,
 			NamespaceRestriction::TYPE => 0,
+			CreatePageNamespaceRestriction::TYPE => 0,
 			ActionRestriction::TYPE => 0,
 		] );
 
@@ -1009,6 +1011,7 @@ class SpecialCentralAuth extends SpecialPage {
 					// The following messages are generated here:
 					// * centralauth-block-editing-page
 					// * centralauth-block-editing-ns
+					// * centralauth-block-editing-createpage-ns
 					// * centralauth-block-editing-action
 					$this->msg( 'centralauth-block-editing-' . $type, $value )->text()
 				)
