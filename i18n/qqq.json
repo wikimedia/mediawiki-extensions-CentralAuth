@@ -195,6 +195,7 @@
 	"centralauth-automatic-global-groups-reason-config": "Reason given in the gblrights/usergroups log when a global group is updated automatically due to new configuration.",
 	"centralauth-block-already-locked": "{{gender}}\nShown at [[Special:Block]] when the user is already globally locked. Parameters:\n* $1 - the requested username",
 	"centralauth-block-editing-action": "Link text to link user to the local block list when there are actions. Parameters: \n* $1 - Number of actions.",
+	"centralauth-block-editing-createpage-ns": "Link text to link the user to the local block list when page creation is blocked in specific namespaces. Parameters: \n* $1 - Number of namespaces.",
 	"centralauth-block-editing-page": "Link text to link user to the local block list when there are pages. Parameters: \n* $1 - Number of pages.",
 	"centralauth-block-editing-ns": "Link text to link user to the local block list when there are namespaces. Parameters: \n* $1 - Number of namespaces.",
 	"centralauth-centralautologin-desc": "This is the text shown on [[Special:CentralAutoLogin]] when this page is requested by a user, not by the automatic global login system.",

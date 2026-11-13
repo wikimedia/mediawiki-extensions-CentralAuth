@@ -8,6 +8,7 @@
 namespace MediaWiki\Extension\CentralAuth\Tests\Phpunit\Integration\Special;
 
 use CentralAuthTestUser;
+use MediaWiki\Block\Restriction\CreatePageNamespaceRestriction;
 use MediaWiki\Context\DerivativeContext;
 use MediaWiki\Context\IContextSource;
 use MediaWiki\Context\RequestContext;
@@ -419,6 +420,29 @@ class SpecialCentralAuthTest extends SpecialPageTestBase {
 		$this->assertNotNull( $checkboxElement );
 		$this->assertSame( 'wpWikis[]', $checkboxElement->getAttribute( 'name' ) );
 		$this->assertSame( WikiMap::getCurrentWikiId(), $checkboxElement->getAttribute( 'value' ) );
+	}
+
+	public function testViewForAccountWithPageCreationNamespaceBlock() {
+		$targetUsername = $this->getTestCentralAuthUser();
+		$status = $this->getServiceContainer()->getBlockUserFactory()
+			->newBlockUser(
+				$targetUsername,
+				$this->mockRegisteredUltimateAuthority(),
+				'indefinite',
+				'Test reason',
+				[ 'isPartial' => true ],
+				[ new CreatePageNamespaceRestriction( 0, NS_MAIN ) ]
+			)
+			->placeBlock();
+		$this->assertStatusGood( $status );
+
+		CentralAuthServices::getUserCache()->clear();
+		$html = $this->verifyForExistingGlobalAccount( $targetUsername, true, true, true );
+		$rowInWikiList = $this->getRowInWikiListTable( $html );
+		$this->assertStringContainsString(
+			'(centralauth-block-editing-createpage-ns: 1)',
+			$rowInWikiList
+		);
 	}
 
 	public function testViewForGlobalAccountWithUnattachedAccount() {
