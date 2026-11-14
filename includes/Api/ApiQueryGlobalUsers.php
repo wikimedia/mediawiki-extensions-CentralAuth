@@ -55,7 +55,7 @@ class ApiQueryGlobalUsers extends ApiQueryBase {
 	) {
 		parent::__construct( $query, $moduleName, 'gus' );
 
-		$this->mCurrentWikiId = Wikimap::getCurrentWikiId();
+		$this->mCurrentWikiId = WikiMap::getCurrentWikiId();
 	}
 
 	/**
