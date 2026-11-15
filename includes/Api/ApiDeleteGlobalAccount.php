@@ -33,7 +33,7 @@ class ApiDeleteGlobalAccount extends ApiBase {
 		if ( !$globalUser->exists() ||
 			( $globalUser->isSuppressed() && !$this->getAuthority()->isAllowed( 'centralauth-suppress' ) )
 		) {
-			$this->dieWithError( [ 'nosuchusershort', wfEscapeWikitext( $globalUser->getName() ) ] );
+			$this->dieWithError( [ 'nosuchusershort', wfEscapeWikiText( $globalUser->getName() ) ] );
 
 		}
 

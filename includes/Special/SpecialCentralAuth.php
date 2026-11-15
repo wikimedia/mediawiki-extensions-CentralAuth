@@ -314,7 +314,7 @@ class SpecialCentralAuth extends SpecialPage {
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status );
 			} elseif ( $status->successCount > 0 ) {
-				$this->showSuccess( 'centralauth-admin-setstatus-success', wfEscapeWikitext( $this->mUserName ) );
+				$this->showSuccess( 'centralauth-admin-setstatus-success', wfEscapeWikiText( $this->mUserName ) );
 			}
 		} else {
 			$this->showError( 'centralauth-admin-bad-input' );
@@ -1045,7 +1045,7 @@ class SpecialCentralAuth extends SpecialPage {
 		foreach ( $row['groupMemberships'] as $group => $ugm ) {
 			if ( $ugm->getExpiry() ) {
 				$listTemporary[] = $this->msg( 'centralauth-admin-group-temporary',
-					wfEscapeWikitext( $group ) )->parse();
+					wfEscapeWikiText( $group ) )->parse();
 			} else {
 				$list[] = htmlspecialchars( $group );
 			}

@@ -429,7 +429,7 @@ class SpecialMultiLock extends SpecialPage {
 			if ( !$status->isGood() ) {
 				$this->showStatusError( $status );
 			} elseif ( $status->successCount > 0 ) {
-				$changedUserNames[] = wfEscapeWikitext( $globalUser->getName() );
+				$changedUserNames[] = wfEscapeWikiText( $globalUser->getName() );
 			}
 		}
 
