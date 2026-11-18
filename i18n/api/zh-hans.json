@@ -11,7 +11,8 @@
 			"Shizhao",
 			"SunAfterRain",
 			"Tranve",
-			"沈澄心"
+			"沈澄心",
+			"PacmanD"
 		]
 	},
 	"apierror-centralauth-badsession": "只能在使用CentralAuth会话时获得centralauthtoken。",
@@ -55,7 +56,7 @@
 	"apihelp-query+globalallusers-param-excludenamed": "排除指名账号的用户。",
 	"apihelp-query+globalallusers-param-excludetemp": "排除临时账号的用户。",
 	"apihelp-query+globalallusers-param-prefix": "搜索所有以此值开头的用户。",
-	"apihelp-query+globalallusers-param-prop": "要包含的信息束：",
+	"apihelp-query+globalallusers-param-prop": "要包含的信息：",
 	"apihelp-query+globalallusers-paramvalue-prop-lockinfo": "用户账号是否被锁定。",
 	"apihelp-query+globalallusers-paramvalue-prop-groups": "列出用户所在的全域用户组。这使用更多服务器资源并可能返回少于限制的结果。",
 	"apihelp-query+globalallusers-paramvalue-prop-existslocally": "如果用户在本地存在就添加信息。",
@@ -63,7 +64,7 @@
 	"apihelp-query+globalallusers-summary": "列举所有全域用户。",
 	"apihelp-query+globalgroups-example-1": "全域用户组列表",
 	"apihelp-query+globalgroups-example-2": "显示全域用户组带授予它们的权限",
-	"apihelp-query+globalgroups-param-prop": "要包含的信息片段。",
+	"apihelp-query+globalgroups-param-prop": "要包含的信息。",
 	"apihelp-query+globalgroups-summary": "列举所有全域用户。",
 	"apihelp-query+globalrenamestatus-example-1": "获取有关当前全域用户的信息",
 	"apihelp-query+globalrenamestatus-param-user": "正在重命名的用户。可以是旧用户名或新用户名。",
@@ -113,7 +114,7 @@
 	"apihelp-query+wikisets-param-from": "起始的wiki集合名称。",
 	"apihelp-query+wikisets-param-limit": "返回多少wiki集合。",
 	"apihelp-query+wikisets-param-orderbyname": "按名称整理结果。",
-	"apihelp-query+wikisets-param-prop": "要包含的信息束：",
+	"apihelp-query+wikisets-param-prop": "要包含的信息：",
 	"apihelp-query+wikisets-paramvalue-prop-type": "基于选择性加入（只包含特定wiki）或选择性退出（包含除特定wiki以外的所有wiki）。",
 	"apihelp-query+wikisets-paramvalue-prop-wikisincluded": "包含于此wiki集合中的wiki。",
 	"apihelp-query+wikisets-paramvalue-prop-wikisnotincluded": "未包含于此wiki集合中的wiki。",
