@@ -65,10 +65,10 @@ class GlobalPermissionManagerTest extends MediaWikiUnitTestCase {
 			'isAttached' => true,
 			'expectedGroups' => [],
 		];
-		yield 'Steward (but unattached)' => [
+		yield 'Steward (but unattached, T316303)' => [
 			'groups' => [ 'steward' ],
 			'isAttached' => false,
-			'expectedGroups' => [],
+			'expectedGroups' => [ 'steward' ],
 		];
 	}
 
@@ -364,7 +364,7 @@ class GlobalPermissionManagerTest extends MediaWikiUnitTestCase {
 		$user->method( 'getGlobalGroups' )->willReturn( $groups );
 		$user->method( 'isAttached' )->willReturn( $isAttached );
 		$user->method( 'exists' )->willReturn( $id > 0 );
-		$user->method( 'getLocalId' )->willReturn( $id );
+		$user->method( 'getLocalId' )->willReturn( $isAttached ? $id : null );
 		return $user;
 	}
 

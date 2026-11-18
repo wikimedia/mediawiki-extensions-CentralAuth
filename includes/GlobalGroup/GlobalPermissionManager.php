@@ -68,10 +68,14 @@ class GlobalPermissionManager {
 
 	/**
 	 * List all permissions that the specified user has due to their membership in global groups
+	 *
+	 * This method does not check if the user is attached on the current wiki. The caller must do this check
+	 * if it is necessary. For example, account autocreation requires the rights of an unattached user.
+	 *
 	 * @return list<string>
 	 */
 	public function getUserPermissions( CentralAuthUser $user ): array {
-		if ( !$user->exists() || !$user->isAttached() ) {
+		if ( !$user->exists() ) {
 			return [];
 		}
 
@@ -106,10 +110,12 @@ class GlobalPermissionManager {
 	 * Some of the groups returned by this method may be disabled for the user depending on additional
 	 * per-user conditions. See {@see getUserDisabledGroups} for more details.
 	 *
+	 * This method does not check if the user is attached on the current wiki. See {@see getUserPermissions}.
+	 *
 	 * @return list<string>
 	 */
 	public function getUserGroupsActiveOnWiki( CentralAuthUser $user ): array {
-		if ( !$user->exists() || !$user->isAttached() ) {
+		if ( !$user->exists() ) {
 			return [];
 		}
 
