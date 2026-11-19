@@ -157,6 +157,7 @@
 	"centralauth-automatic-global-groups-reason-config": "Globale Gruppen wurden nach einer Konfigurationsänderung automatisch aktualisiert.",
 	"centralauth-block-already-locked": "Das Benutzerkonto [[Special:CentralAuth/$1|$1]] ist bereits global geschlossen.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|Aktion|Aktionen}}",
+	"centralauth-block-editing-createpage-ns": "$1 Seitenerstellung {{PLURAL:$1|im Namensraum|in den Namensräumen}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|Seite|Seiten}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|Namensraum|Namensräume}}",
 	"centralauth-centralautologin-desc": "Diese Spezialseite wird von MediaWiki intern verwendet.\nWenn du eine verlinkte Domain besuchst und du nicht angemeldet bist, verwendet das zentrale Anmeldesystem diese Seite, um zu bestimmen, ob du auf der zentralen Domain angemeldet bist.\nDu hast diese Seite ohne irgendwelche Authentifizierungsdaten angefordert, so dass nichts weiter geschieht.",
