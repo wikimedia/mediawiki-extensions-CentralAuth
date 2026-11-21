@@ -34,7 +34,7 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	 * Used to prevent redirect loops. Normally the cookie would do that, but the client might
 	 * not record the cookie for some reason.
 	 */
-	private const AUTOLOGIN_TRIED_QUERY_PARAM = 'centralAuthAutologinTried';
+	public const AUTOLOGIN_TRIED_QUERY_PARAM = 'centralAuthAutologinTried';
 
 	/** Query parameter used to return error messages from SpecialCentralAutoLogin. */
 	public const AUTOLOGIN_ERROR_QUERY_PARAM = 'centralAuthError';

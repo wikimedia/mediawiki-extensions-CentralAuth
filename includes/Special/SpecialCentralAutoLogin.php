@@ -834,19 +834,35 @@ class SpecialCentralAutoLogin extends UnlistedSpecialPage {
 			] );
 			header( "Location: $returnUrl" );
 		} elseif ( $type === 'error' ) {
-			// type=redirect but the redirect URL is invalid. Just display the error message.
-			// This is poor UX (we might not even be on the wiki where the user started) but
-			// shouldn't happen unless the request was tampered with.
-			$this->getRequest()->response()->statusHeader( 400 );
+			// type=redirect but the redirect URL is invalid. Redirect to the login page and
+			// display the error message there.
+			$wikiId = $this->centralDomainUtils->isCentralDomain( $this->getRequest() )
+				? $this->getRequest()->getRawVal( 'wikiid' )
+				: WikiMap::getCurrentWikiId();
+			if ( !WikiMap::getWiki( $wikiId ?? '' ) ) {
+				// should never happen
+				$this->getRequest()->response()->statusHeader( 400 );
+				header( 'Content-Type: text/html; charset=UTF-8' );
+				header( "X-CentralAuth-Status: $status" );
+				echo Html::element( 'p', [], $status );
+				echo Html::rawElement( 'p', [],
+					Html::element( 'a',
+						[ 'href' => 'javascript:window.history.back()' ],
+						$this->msg( 'centralauth-completelogin-back' )->text()
+					)
+				);
+				return;
+			}
+			$originWikiUrl = $this->centralDomainUtils->getUrl(
+				$wikiId, 'Special:Userlogin', $this->getContext()->getRequest(), [
+					SpecialPageBeforeExecuteHookHandler::AUTOLOGIN_TRIED_QUERY_PARAM => 1,
+					SpecialPageBeforeExecuteHookHandler::AUTOLOGIN_ERROR_QUERY_PARAM => $status
+				]
+			);
+			$this->getRequest()->response()->statusHeader( 302 );
 			header( 'Content-Type: text/html; charset=UTF-8' );
 			header( "X-CentralAuth-Status: $status" );
-			echo Html::element( 'p', [], $status );
-			echo Html::rawElement( 'p', [],
-				Html::element( 'a',
-					[ 'href' => 'javascript:window.history.back()' ],
-					$this->msg( 'centralauth-completelogin-back' )->text()
-				)
-			);
+			header( "Location: $originWikiUrl" );
 		} else {
 			header( 'Content-Type: text/javascript; charset=utf-8' );
 			// T244682: Don't allow escaping out of the comment
