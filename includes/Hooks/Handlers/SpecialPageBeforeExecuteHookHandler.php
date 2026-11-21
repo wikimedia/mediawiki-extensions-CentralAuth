@@ -14,7 +14,6 @@ use MediaWiki\SpecialPage\Hook\SpecialPageBeforeExecuteHook;
 use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Specials\Helpers\LoginHelper;
 use MediaWiki\Title\Title;
-use MediaWiki\WikiMap\WikiMap;
 
 /**
  * Triggers a server-side (top-level) central autologin attempt on Special:Userlogin.
@@ -119,49 +118,6 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		}
 
 		$isMobile = $this->sharedDomainUtils->shouldUseMobile();
-
-		// Do a top-level autologin if the user needs to log in. Use a cookie to prevent
-		// unnecessary autologin attempts if we already know they will fail, and a query parameter
-		// (to be set by SpecialCentralAutoLogin) to avoid an infinite loop even if we cannot set
-		// cookies for some reason.
-		if ( $special->getUser()->isAnon()
-			 && !$request->getCookie( self::AUTOLOGIN_TRIED_COOKIE, '' )
-			 && !$request->getCheck( self::AUTOLOGIN_TRIED_QUERY_PARAM )
-		) {
-			$url = $this->centralDomainUtils->getUrl(
-				CentralDomainUtils::AUTOLOGIN_CENTRAL_DOMAIN_ID,
-				'Special:CentralAutoLogin/checkLoggedIn',
-				$request
-			);
-
-			$this->log( 'Top-level autologin started', $special, $isMobile );
-
-			$request->response()->setCookie(
-				self::AUTOLOGIN_TRIED_COOKIE,
-				'1',
-				// add 1 day, like in anon-set.js
-				time() + ( 24 * 3600 ),
-				// match the behavior of the CentralAuthAnon cookie
-				[ 'prefix' => '', 'httpOnly' => false ]
-			);
-
-			$returnUrl = wfAppendQuery( $request->getFullRequestURL(), [
-				self::AUTOLOGIN_TRIED_QUERY_PARAM => 1,
-			] );
-			$returnUrl = $this->sharedDomainUtils->makeUrlDeviceCompliant( $returnUrl );
-			$returnUrlToken = $this->tokenManager->tokenize( $returnUrl, 'centralautologin-returnurl' );
-			$url = wfAppendQuery( $url, [
-				'type' => 'redirect',
-				'returnUrlToken' => $returnUrlToken,
-				'wikiid' => WikiMap::getCurrentWikiId(),
-				'usesul3' => $this->sharedDomainUtils->isSul3Enabled( $request )
-					? SharedDomainUtils::SUL3_ENABLED : SharedDomainUtils::SUL3_DISABLED,
-			] );
-
-			$special->getOutput()->redirect( $this->sharedDomainUtils->makeUrlDeviceCompliant( $url ) );
-
-			return false;
-		}
 
 		// Clean up after successful autologin.
 		if ( $special->getUser()->isRegistered()
