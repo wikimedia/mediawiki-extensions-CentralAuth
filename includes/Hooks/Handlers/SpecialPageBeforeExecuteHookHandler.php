@@ -3,9 +3,11 @@
 namespace MediaWiki\Extension\CentralAuth\Hooks\Handlers;
 
 use MediaWiki\Auth\AuthManager;
+use MediaWiki\Config\Config;
 use MediaWiki\Extension\CentralAuth\CentralAuthRedirectingPrimaryAuthenticationProvider;
 use MediaWiki\Extension\CentralAuth\CentralAuthTokenManager;
 use MediaWiki\Extension\CentralAuth\CentralDomainUtils;
+use MediaWiki\Extension\CentralAuth\Config\CAMainConfigNames;
 use MediaWiki\Extension\CentralAuth\SharedDomainUtils;
 use MediaWiki\Logger\LoggerFactory;
 use MediaWiki\Request\WebRequest;
@@ -15,6 +17,8 @@ use MediaWiki\SpecialPage\SpecialPage;
 use MediaWiki\Specials\Helpers\LoginHelper;
 use MediaWiki\Title\Title;
 use MediaWiki\WikiMap\WikiMap;
+use Wikimedia\Stats\StatsFactory;
+use Wikimedia\Timestamp\ConvertibleTimestamp;
 
 /**
  * Triggers a server-side (top-level) central autologin attempt on Special:Userlogin.
@@ -39,8 +43,28 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 	/** Query parameter used to return error messages from SpecialCentralAutoLogin. */
 	public const AUTOLOGIN_ERROR_QUERY_PARAM = 'centralAuthError';
 
+	/**
+	 * Short-lived cookie used to check that the client keeps cookies before a SUL3 login
+	 * starts a session. See checkCookiesBeforeSul3Login().
+	 */
+	public const SUL3_COOKIE_CHECK_COOKIE = 'CentralAuthSul3CookieCheck';
+
+	/**
+	 * Query parameter that marks that the SUL3 cookie check cookie has been set.
+	 * Its value is the time when the cookie was set.
+	 */
+	public const SUL3_COOKIE_CHECK_QUERY_PARAM = 'centralAuthCookieCheck';
+
+	/**
+	 * Lifetime of the SUL3 cookie check cookie, in seconds. The query parameter counts
+	 * for the same time.
+	 */
+	private const SUL3_COOKIE_CHECK_LIFETIME = 300;
+
 	public function __construct(
 		private readonly AuthManager $authManager,
+		private readonly Config $config,
+		private readonly StatsFactory $statsFactory,
 		private readonly CentralAuthTokenManager $tokenManager,
 		private readonly CentralDomainUtils $centralDomainUtils,
 		private readonly SharedDomainUtils $sharedDomainUtils,
@@ -93,6 +117,13 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 			$localLoginUrl = SpecialPage::getTitleFor( 'Userlogin' )->getLocalURL();
 			$url = wfAppendQuery( $localLoginUrl, $params );
 			$special->getOutput()->redirect( $url );
+			return false;
+		}
+
+		if ( $special->getName() === 'Userlogin'
+			&& $isSul3Enabled
+			&& !$this->checkCookiesBeforeSul3Login( $special, $subPage )
+		) {
 			return false;
 		}
 
@@ -195,6 +226,78 @@ class SpecialPageBeforeExecuteHookHandler implements SpecialPageBeforeExecuteHoo
 		// to log in as another user. Nothing to do.
 
 		return true;
+	}
+
+	/**
+	 * Check that the client keeps cookies before a SUL3 login starts a session.
+	 *
+	 * On a wiki's own domain, Special:UserLogin saves a session and redirects to the shared
+	 * domain. A client that does not keep cookies cannot log in, but each of its requests
+	 * saves a new session. So for a client with no session, set a short-lived cookie and
+	 * redirect to the same URL, and go on only when the cookie comes back.
+	 *
+	 * @param SpecialPage $special
+	 * @param string|null $subPage
+	 * @return bool False when a redirect or an error page was sent
+	 */
+	private function checkCookiesBeforeSul3Login( SpecialPage $special, $subPage ): bool {
+		$request = $special->getRequest();
+		if ( !$this->config->get( CAMainConfigNames::CentralAuthSul3CookieCheck )
+			|| $request->wasPosted()
+			// The return from the shared domain
+			|| $subPage === 'return'
+			|| $special->getUser()->isRegistered()
+			|| $request->getSession()->isPersistent()
+		) {
+			return true;
+		}
+
+		// Only trust a recent marker. The marker stays in the URL after a passed check, so an
+		// old one (a reload, a bookmark, a shared link) does not mean that we just set the cookie.
+		$now = ConvertibleTimestamp::time();
+		$markerAge = $now - $request->getInt( self::SUL3_COOKIE_CHECK_QUERY_PARAM );
+		$hasMarker = $markerAge >= 0 && $markerAge < self::SUL3_COOKIE_CHECK_LIFETIME;
+
+		if ( $request->getCookie( self::SUL3_COOKIE_CHECK_COOKIE ) ) {
+			if ( $hasMarker ) {
+				$this->countCookieCheck( 'passed' );
+			}
+			return true;
+		}
+
+		$out = $special->getOutput();
+		// The response depends on the cookies and the time, so the browser must not reuse it.
+		$out->disableClientCache();
+		// Also when the check failed, so that a reload works once the client keeps cookies.
+		$request->response()->setCookie(
+			self::SUL3_COOKIE_CHECK_COOKIE, '1', $now + self::SUL3_COOKIE_CHECK_LIFETIME );
+
+		if ( $hasMarker ) {
+			// We set the cookie on the previous request, and it did not come back.
+			$this->countCookieCheck( 'failed' );
+			$this->log( 'SUL3 login stopped: client does not keep cookies', $special,
+				$this->sharedDomainUtils->shouldUseMobile() );
+			$out->showErrorPage( 'loginerror', 'nocookieslogin' );
+			return false;
+		}
+
+		$this->countCookieCheck( 'started' );
+		// A local URL, so that the client stays on the host that got the cookie.
+		$out->redirect( SpecialPage::getTitleFor( 'Userlogin', $subPage ?: false )->getLocalURL(
+			$request->appendQueryValue( self::SUL3_COOKIE_CHECK_QUERY_PARAM, (string)$now )
+		) );
+		return false;
+	}
+
+	/**
+	 * @param string $result 'started' (cookie set, client redirected), 'passed' (the cookie
+	 *   came back) or 'failed' (it did not, error shown)
+	 */
+	private function countCookieCheck( string $result ): void {
+		$this->statsFactory->withComponent( 'CentralAuth' )
+			->getCounter( 'sul3_cookie_check_total' )
+			->setLabel( 'result', $result )
+			->increment();
 	}
 
 	private function log( string $message, SpecialPage $special, bool $isMobile ): void {
