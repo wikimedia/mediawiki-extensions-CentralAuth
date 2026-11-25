@@ -131,6 +131,7 @@
 	"centralauth-automatic-global-groups-reason-config": "Samodejno posodobljene globalne skupine po spremembi konfiguracije",
 	"centralauth-block-already-locked": "Račun [[Special:CentralAuth/$1|$1]] je že globalno zaklenjen.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|dejanje|dejanji|dejanja|dejanj}}",
+	"centralauth-block-editing-createpage-ns": "$1 {{PLURAL:$1|imenski prostori|imenska prostora|imenski prostori|imenskih prostorov}} ustvarjanja strani",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|stran|strani}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|imenski prostor|imenska prostora|imenski prostori|imenskih prostorov}}",
 	"centralauth-centralautologin-desc": "Ta je posebna stran, ki jo interno uporablja MediaWiki.\nV primeru, da obiščeš povezano domeno neprijavljen, centralni sistem za prijavo uporabi to stran, da ugotovi, če si prijavljen na centralno domeno.\nBrez legitimacije uporabnika ta stran ne ponuja svoje storitve.",

@@ -132,6 +132,7 @@
 	"centralauth-automatic-global-groups-reason-config": "Si otomaatig ah ayaa loo cusboonaysiiyay kooxaha caalamiga ah kadib markii qaabeynta la beddelay.",
 	"centralauth-block-already-locked": "Akoonka [[Special:CentralAuth/$1|$1]] hore ayaa caalami ahaan loo qufulay.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|ficil|ficilo}}",
+	"centralauth-block-editing-createpage-ns": "$1 meel magaca {{PLURAL:$1|ee bogga lagu abuuro|ee bogagga lagu abuuro}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|bog|bogagg}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|meel magac|meel magacyo}}",
 	"centralauth-centralautologin-desc": "Boggan gaarka ah waxaa si gudaha ah u adeegsada MediaWiki.  \nMarkaad booqato domain ku xiran adigoon soo gelin, nidaamka gelitaanka dhexe ayaa isticmaala boggan si uu u ogaado inaad ku soo gashay domain-ka dhexe iyo in kale.  \nWaxaad codsatay boggan adigoon bixin wax xog aqoonsi ah, sidaas darteed wax hawl ah ma qabanayo.",

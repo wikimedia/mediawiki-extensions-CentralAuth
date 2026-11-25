@@ -144,6 +144,7 @@
 	"centralauth-automatic-global-groups-reason-config": "Grupos globais actualizados automaticamente despois de que se modificase a configuración.",
 	"centralauth-block-already-locked": "A conta [[Special:CentralAuth/$1|$1]] xa está bloqueada globalmente.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|acción|accións}}",
+	"centralauth-block-editing-createpage-ns": "$1 {{PLURAL:$1|espazo de nomes|espazos de nomes}} de creación de páxinas",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|páxina|páxinas}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|espazo de nomes|espazos de nomes}}",
 	"centralauth-centralautologin-desc": "MediaWiki utiliza internamente esta páxina especial.\nCando vostede visita un dominio ligado sen estar conectado, o sistema de rexistro central usa esta páxina para determinar se está conectado no dominio central.\nVostede solicitou esta páxina sen achegar ningún dato de autenticación, de modo que non fai nada.",

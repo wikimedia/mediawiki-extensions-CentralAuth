@@ -165,6 +165,7 @@
 	"centralauth-automatic-global-groups-reason-config": "Automatyczna zmiana grup globalnych po zmianie konfiguracji.",
 	"centralauth-block-already-locked": "Konto [[Special:CentralAuth/$1|$1]] jest już zablokowane globalnie.",
 	"centralauth-block-editing-action": "$1 {{PLURAL:$1|akcja|akcje|akcji}}",
+	"centralauth-block-editing-createpage-ns": "tworzenie stron w $1 {{PLURAL:$1|przestrzeni nazw|przestrzeniach nazw}}",
 	"centralauth-block-editing-page": "$1 {{PLURAL:$1|strona|strony|stron}}",
 	"centralauth-block-editing-ns": "$1 {{PLURAL:$1|przestrzeń|przestrzenie|przestrzeni}} nazw",
 	"centralauth-centralautologin-desc": "Ta strona specjalna jest używana wewnętrznie przez MediaWiki.\nKiedy odwiedzasz linkowaną domenę, gdy nie zalogowano Cię, system centralnego logowania używa tej strony do określenia, czy zalogowano Cię na centralną domenę.\nŻądano wyświetlenia tej strony bez podania żadnych danych autoryzacyjnych, więc aktualnie nic ona nie wykona.",
