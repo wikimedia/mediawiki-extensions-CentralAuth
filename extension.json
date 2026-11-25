@@ -678,6 +678,8 @@
 			"class": "MediaWiki\\Extension\\CentralAuth\\Hooks\\Handlers\\SpecialPageBeforeExecuteHookHandler",
 			"services": [
 				"AuthManager",
+				"MainConfig",
+				"StatsFactory",
 				"CentralAuth.CentralAuthTokenManager",
 				"CentralAuth.CentralDomainUtils",
 				"CentralAuth.SharedDomainUtils"
@@ -972,6 +974,10 @@
 		},
 		"CentralAuthEnableSul3": {
 			"description": "Enables SUL3 mode (https://www.mediawiki.org/wiki/SUL3). Requires CentralAuthSharedDomainCallback to be configured first.",
+			"value": false
+		},
+		"CentralAuthSul3CookieCheck": {
+			"description": "In SUL3 mode, before Special:UserLogin on a non-shared domain starts a session, check with a redirect that the client keeps cookies. A client that does not keep cookies cannot log in, so no session is written to the session store for it.",
 			"value": false
 		},
 		"CentralAuthSul3SharedDomainRestrictions": {
