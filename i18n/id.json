@@ -486,7 +486,7 @@
 	"grant-createlocalaccount": "Buat akun lokal secara paksa untuk akun global",
 	"grant-setglobalaccountstatus": "Mengelola status akun global",
 	"log-action-filter-gblrights": "Jenis perubahan:",
-	"log-action-filter-gblrights-groupprms": "Pengubahan hak pengguna global",
+	"log-action-filter-gblrights-groupprms": "Ubah izin grup pengguna global",
 	"log-action-filter-gblrights-setmodify": "Perubahan set wiki",
 	"log-action-filter-gblrights-usergroups": "Pengubahan hak pengguna global",
 	"log-action-filter-globalauth": "Jenis perubahan:",
